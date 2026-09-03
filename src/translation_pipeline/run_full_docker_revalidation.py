@@ -198,15 +198,10 @@ def _cpp_run_network_for_source(source_code: str) -> str | None:
 
 
 def _go_container_local_run_command() -> list[str]:
-    script = (
-        "rm -rf /tmp/safecoder_run && "
-        "mkdir -p /tmp/safecoder_run && "
-        "cp -a /work/. /tmp/safecoder_run/ && "
-        "rm -rf /tmp/safecoder_run/Test && "
-        "cd /tmp/safecoder_run && "
-        "./main"
-    )
-    return ["sh", "-lc", script]
+    # Executables created on a Windows bind mount may not carry a Linux
+    # executable bit. Run the already compiled source inside the container so
+    # validation does not depend on host filesystem permission emulation.
+    return ["go", "run", "/work/main.go"]
 
 
 def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int) -> ValidationResult:
@@ -303,6 +298,9 @@ def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int)
             stderr="saved Go harness main.go is missing",
             details={"error_type": "missing_harness", "sandbox_dir": str(temp_dir)},
         )
+    # GOTMPDIR is inside the bind-mounted work directory.  Go does not create
+    # the directory itself before compiling, so initialize it explicitly.
+    (temp_dir / ".tmp").mkdir(parents=True, exist_ok=True)
     if not (temp_dir / "go.mod").exists():
         (temp_dir / "go.mod").write_text("module safecoder_revalidation\n\ngo 1.22\n", encoding="utf-8")
     docker_cmd = shutil.which("docker")

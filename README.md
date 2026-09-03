@@ -93,6 +93,10 @@ The validation code uses mounted temporary directories and cache directories,
 short timeouts, `--rm`, bounded output, and explicit cleanup to reduce Docker
 VHDX growth. Do not delete the VHDX directly.
 
+The Go validator initializes `/work/.tmp` before compilation and runs the
+program with `go run` inside the container. This is intentional: binaries
+created on a Windows bind mount may not retain a Linux executable bit.
+
 ## Offline Smoke Checks
 
 These checks do not call an API and do not launch a full experiment:

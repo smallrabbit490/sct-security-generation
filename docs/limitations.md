@@ -9,3 +9,11 @@
   redistribution rules still apply.
 - API-backed experiments require a user-provided key and are intentionally not
   run during repository packaging.
+## Runtime validation scope
+
+The public dataset contains the translated C++ and Go programs, but the
+original per-task native harness directories are generated runtime artifacts
+and are not redistributed. A fresh Docker validation of C++/Go therefore
+requires either the original harness archive or a separately generated native
+harness set. Python tests are stored directly in the dataset and can be run
+from the public snapshot.

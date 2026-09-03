@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "SecEvoBasePlus"
+EXTERNAL = ROOT / "data" / "external"
 
 
 def main() -> None:
@@ -37,16 +38,33 @@ def main() -> None:
                 return any(contains_machine_path(item) for item in value.values())
             if isinstance(value, list):
                 return any(contains_machine_path(item) for item in value)
-            return isinstance(value, str) and bool(re.search(r"(?:[A-Za-z]:\\|/Users/)", value))
+            return isinstance(value, str) and bool(re.search(r"(?:[A-Za-z]:[/\\]|/Users/)", value))
         if contains_machine_path(rows):
             failures.append(f"{rel}: machine-specific absolute path remains")
+    external_json = {
+        "secodeplt/secodeplt/data.json": 1411,
+        "secodeplt/juliet/juliet_autocomplete.json": 263,
+    }
+    for rel, count in external_json.items():
+        path = EXTERNAL / rel
+        rows = json.loads(path.read_text(encoding="utf-8-sig"))
+        if len(rows) != count:
+            failures.append(f"external/{rel}: expected {count}, got {len(rows)}")
+        if contains_machine_path(rows):
+            failures.append(f"external/{rel}: machine-specific absolute path remains")
+    autosafe = EXTERNAL / "cweval" / "autosafecoder" / "dataset_copy.jsonl"
+    if sum(bool(line.strip()) for line in autosafe.read_text(encoding="utf-8-sig").splitlines()) != 121:
+        failures.append("external/cweval/autosafecoder/dataset_copy.jsonl: expected 121 records")
+    external_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in EXTERNAL.rglob("*") if p.is_file())
+    if re.search(r"(?:sk-[A-Za-z0-9]{20,}|AIza[0-9A-Za-z_-]{20,}|[A-Za-z]:[/\\]Users[/\\])", external_text):
+        failures.append("external: secret-like token or local user path remains")
     # The compatibility matrix is retained for historical result replay. The
     # formal prompt baseline and workflow runner are checked separately by
     # their own entry points; historical adapter wording is not a repository
     # integrity failure.
     if failures:
         raise SystemExit("repository check failed:\n- " + "\n- ".join(failures))
-    print(f"repository check passed: {len(expected)} dataset files and method labels checked")
+    print(f"repository check passed: {len(expected)} core files and external dataset checks")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 .env.local
 .env.*
+!.env.example
 *.key
 *apikey*
 *api_key*
