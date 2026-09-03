@@ -345,7 +345,7 @@ def selected_methods(include_ours: bool, only_ours: bool = False) -> list[dict[s
 
 def extract_code(raw: str, method: dict[str, Any], language: str) -> str:
     mode = "cot" if method.get("style") in {"cot", "cot_secure", "agentcoder", "secawarecoder", "ours_sct_agent"} else "greedy"
-    if actual.base is not None:
+    if actual.base is not None and actual.base.harness is not None:
         code = actual.base.harness.extract_code(raw or "", mode)
     else:
         blocks = re.findall(r"```[^\n]*\n(.*?)```", raw or "", flags=re.DOTALL)

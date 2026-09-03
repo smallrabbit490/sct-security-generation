@@ -1,6 +1,7 @@
 import sys
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
 
@@ -33,6 +34,15 @@ class BaselineExtractionTests(unittest.TestCase):
         code = matrix.extract_code("```go\nfunc solve() int { return 1 }\n```", {"style": "cot"}, "go")
 
         self.assertEqual(code, "package main\n\nfunc solve() int { return 1 }")
+
+    def test_language_matrix_extracts_code_when_base_module_has_no_harness(self):
+        original_base = actual.base
+        actual.base = SimpleNamespace(harness=None)
+        self.addCleanup(setattr, actual, "base", original_base)
+
+        code = matrix.extract_code("```python\ndef solve():\n    return 2\n```", {"style": "greedy"}, "python")
+
+        self.assertEqual(code, "def solve():\n    return 2")
 
 
 class BaselineEvaluationTests(unittest.TestCase):
