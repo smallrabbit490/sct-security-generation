@@ -29,6 +29,7 @@ if str(PROJECT_ROOT / "src") not in sys.path:
 
 from openai import OpenAI
 import run_language_method_matrix as matrix
+from fidelity import validate_trace
 
 WORKFLOW_METHODS = [
     {"name": "AutoSafeCoder", "group": "agent", "style": "autosafecoder"},
@@ -84,16 +85,17 @@ def call_model(
                 "completion_tokens": getattr(usage, "completion_tokens", 0) if usage else 0,
                 "total_tokens": getattr(usage, "total_tokens", 0) if usage else 0,
                 "reasoning_tokens": getattr(details, "reasoning_tokens", 0) if details else 0,
+                "model_calls": 1,
             }
             return response.choices[0].message.content or "", tokens, None
         except Exception as exc:
             last_error = f"{type(exc).__name__}: {exc}"
             time.sleep(min(20, 2 * (attempt + 1)))
-    return "", {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "reasoning_tokens": 0}, last_error
+    return "", {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "reasoning_tokens": 0, "model_calls": 1}, last_error
 
 
 def merge_tokens(*items: dict[str, int]) -> dict[str, int]:
-    merged = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "reasoning_tokens": 0}
+    merged = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "reasoning_tokens": 0, "model_calls": 0}
     for item in items:
         for key in merged:
             merged[key] += int((item or {}).get(key) or 0)
@@ -382,6 +384,7 @@ def agentcoder_workflow(
             retries=args.retries,
         )
         tokens_total = merge_tokens(tokens_total, ttokens)
+        trace.append({"stage": "test_designer", "epoch": epoch, "error": terror})
         epoch_rows = []
         for candidate_idx in range(1, args.agentcoder_candidates + 1):
             raw, tokens, error = call_model(
@@ -398,6 +401,7 @@ def agentcoder_workflow(
             score = int(bool(eval_result.get("fun"))) + int(bool(eval_result.get("sec"))) + int(bool(eval_result.get("fun_sec")))
             row = {"epoch": epoch, "candidate": candidate_idx, "raw": raw, "code": code, "error": error, "eval": eval_result, "score": score}
             epoch_rows.append(row)
+            trace.append({"stage": "programmer", "epoch": epoch, "candidate": candidate_idx, "error": error})
             if best is None or score > best["score"]:
                 best = row
             if eval_result.get("fun_sec"):
@@ -438,6 +442,12 @@ def ragen_workflow(
         final_error = perror or serror or gerror or eerror
         final_code = extract_code(final_raw, language)
         final_eval = evaluate_candidate(language, task, final_code) if not final_error else {"fun": False, "sec": False, "fun_sec": False, "error": final_error}
+        trace.extend([
+            {"stage": "planner", "iteration": iteration, "error": perror},
+            {"stage": "searcher", "iteration": iteration, "error": serror},
+            {"stage": "codegen", "iteration": iteration, "error": gerror},
+            {"stage": "extractor", "iteration": iteration, "error": eerror},
+        ])
         trace.append({
             "stage": "ragen_iteration",
             "iteration": iteration,
@@ -491,6 +501,7 @@ def secawarecoder_workflow(
     code = extract_code(raw, language)
     error = aerror or terror or gerror
     eval_result = evaluate_candidate(language, task, code) if not error else {"fun": False, "sec": False, "fun_sec": False, "error": error}
+    trace.append({"stage": "programmer", "error": gerror})
     trace.append({"stage": "code_executor", "eval": eval_result})
     for index in range(args.repair_iters):
         if eval_result.get("fun_sec"):
@@ -536,6 +547,7 @@ def swe_agent_workflow(
     code = extract_code(raw, language)
     eval_result = evaluate_candidate(language, task, code) if not error else {"fun": False, "sec": False, "fun_sec": False, "error": error}
     trace.append({"stage": "edit_main_file", "eval": eval_result, "error": error})
+    trace.append({"stage": "run_tests", "eval": eval_result})
     for index in range(args.repair_iters):
         if eval_result.get("fun_sec"):
             break
@@ -584,6 +596,17 @@ def run_workflow(
 
 def row_from_result(method: dict[str, Any], language: str, task: dict[str, Any], result: dict[str, Any]) -> dict[str, Any]:
     eval_result = result.get("eval") or {}
+    trace = result.get("trace") or []
+    workflow_completed = bool(result.get("code")) and not result.get("error") and isinstance(eval_result, dict)
+    fidelity_details = None
+    fidelity_passed = None
+    if method.get("group") == "agent":
+        fidelity_details = validate_trace(
+            method["name"],
+            trace,
+            model_calls=int((result.get("tokens") or {}).get("model_calls") or 0),
+        )
+        fidelity_passed = bool(fidelity_details["passed"])
     metrics = {
         "secure_functional": bool(eval_result.get("fun")),
         "secure_security": bool(eval_result.get("sec")),
@@ -602,13 +625,16 @@ def row_from_result(method: dict[str, Any], language: str, task: dict[str, Any],
             "tokens": result.get("tokens") or {},
             "error": result.get("error"),
             "eval": eval_result,
-            "trace": result.get("trace") or [],
+            "trace": trace,
         },
         "insecure": None,
         "metrics": metrics,
         "quality": matrix.generated_quality(language, result.get("code") or "", eval_result),
         "generation_errors": int(bool(result.get("error"))),
         "tokens": result.get("tokens") or {},
+        "workflow_completed": workflow_completed,
+        "fidelity_passed": fidelity_passed,
+        "fidelity_details": fidelity_details,
     }
 
 
