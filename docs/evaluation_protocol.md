@@ -9,6 +9,21 @@ test in the target-language environment.
 `Function` and `Secure` remain separate explanatory metrics. PRCS and EQS are
 engineering-quality supplements, not replacements for the primary outcome.
 
+## Baseline Evaluation Storage
+
+Live baseline runs write only below the ignored
+`translation_work/baseline_runs/<run-name>/<subset>/` directory. Each task row
+contains method identity, model metadata, generated code, sanitized workflow
+trace, Docker validation result, and terminal error class. `summary.json` and
+the Markdown report are the human-facing outputs; retain `rows.jsonl` when
+per-task auditability is needed.
+
+For the five workflow baselines, the evaluation order is: live generation →
+original multi-stage trace/fidelity check → code extraction → Docker
+functional/security validation → structured terminal row. The four prompt
+baselines use the same extraction and validation path without Agent fidelity.
+Do not classify a model-generated failing candidate as a runner failure.
+
 ## Data Isolation
 
 Experience preparation, development feedback, and gating must be separated
