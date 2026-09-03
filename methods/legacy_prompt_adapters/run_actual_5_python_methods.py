@@ -37,6 +37,13 @@ except ModuleNotFoundError:
 
 
 HERE = Path(__file__).resolve().parent
+PROJECT_ROOT = HERE.parents[1]
+if str(PROJECT_ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT / "src"))
+
+from translation_pipeline.code_extract import extract_code_block  # noqa: E402
+from translation_pipeline import python_validator  # noqa: E402
+
 FROZEN_MAIN_METRICS = getattr(dual, "FROZEN_MAIN_METRICS", ["secure_functional", "secure_security", "secure_func_sec"])
 
 METHODS = [
@@ -283,24 +290,42 @@ def call_model(client: OpenAI, prompt: str, model: str, max_tokens: int, tempera
 
 def extract_code(raw: str, method: dict) -> str:
     mode = "cot" if method["style"] in {"cot", "cot_secure", "agentcoder", "secawarecoder", "ours_sct_agent"} else "greedy"
-    return base.harness.extract_code(raw or "", mode)
+    if base is not None and base.harness is not None:
+        return base.harness.extract_code(raw or "", mode)
+    return extract_code_block(raw, "python")
 
 
-def evaluate_code(task: dict, code: str) -> dict:
-    old_cwd = Path.cwd()
-    os.chdir(base.GREEDY_DIR)
-    try:
-        fp, sp = base.suites.get_suites(task)
-        verdict = base.harness.evaluate_solution(code or "", task["Entry_Point"], fp, sp, timeout=20)
-    finally:
-        os.chdir(old_cwd)
-    return {
-        "fun": bool(verdict.get("fp")),
-        "sec": bool(verdict.get("sp")),
-        "fun_sec": bool(verdict.get("fp") and verdict.get("sp")),
-        "fp_err": verdict.get("fp_err"),
-        "sp_err": verdict.get("sp_err"),
+def evaluate_code(task: dict, code: str, track: str = "secure") -> dict:
+    if track == "secure":
+        verdict = python_validator.validate_python_secure(task, code=code or "", timeout=60)
+        fun = bool(verdict.details.get("secure_functional"))
+        sec = bool(verdict.details.get("secure_security"))
+        fun_sec = bool(verdict.details.get("secure_func_sec"))
+    elif track == "insecure":
+        verdict = python_validator.validate_python_insecure(task, code=code or "", timeout=60)
+        fun = bool(verdict.details.get("insecure_functional_observed"))
+        sec = bool(verdict.details.get("insecure_security_passed_observed"))
+        fun_sec = fun and sec
+    else:
+        raise ValueError(f"unsupported Python evaluation track: {track}")
+
+    result = {
+        "fun": fun,
+        "sec": sec,
+        "fun_sec": fun_sec,
+        "result": {
+            "ok": bool(verdict.ok),
+            "language": verdict.language,
+            "mode": verdict.mode,
+            "stdout": verdict.stdout,
+            "stderr": verdict.stderr,
+            "details": verdict.details,
+        },
     }
+    if track == "insecure":
+        result["insecure_behavior_match"] = bool(verdict.details.get("insecure_behavior_match"))
+        result["false_secure"] = bool(verdict.details.get("false_secure"))
+    return result
 
 
 def generate_track(

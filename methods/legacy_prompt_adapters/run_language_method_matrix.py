@@ -684,8 +684,8 @@ def validate_compiled_candidate_with_harness(language: str, task: dict[str, Any]
     return None
 
 
-def evaluate_python(task: dict[str, Any], code: str) -> dict[str, Any]:
-    return actual.evaluate_code(task, code)
+def evaluate_python(task: dict[str, Any], code: str, track: str) -> dict[str, Any]:
+    return actual.evaluate_code(task, code, track)
 
 
 def evaluate_compiled(language: str, task: dict[str, Any], code: str, track: str) -> dict[str, Any]:
@@ -719,7 +719,7 @@ def evaluate_compiled(language: str, task: dict[str, Any], code: str, track: str
 
 def evaluate(language: str, task: dict[str, Any], code: str, track: str) -> dict[str, Any]:
     if language == "python":
-        return evaluate_python(task, code)
+        return evaluate_python(task, code, track)
     return evaluate_compiled(language, task, code, track)
 
 
