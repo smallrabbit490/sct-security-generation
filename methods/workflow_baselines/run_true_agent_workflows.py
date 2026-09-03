@@ -21,6 +21,10 @@ from typing import Any
 
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parents[1]
+KEY_FILE = PROJECT_ROOT / "local_secrets" / "chatanywhereapi使用" / "apikey.txt"
+DEFAULT_MODEL = "deepseek-v4-flash"
+DEFAULT_API_BASE = "https://api.chatanywhere.tech/v1"
+DEFAULT_API_TIMEOUT = 90.0
 PROMPTING_DIR = PROJECT_ROOT / "methods" / "legacy_prompt_adapters"
 if str(PROMPTING_DIR) not in sys.path:
     sys.path.insert(0, str(PROMPTING_DIR))
@@ -49,12 +53,21 @@ TRADITIONAL_METHODS = [
 ALL_METHODS = TRADITIONAL_METHODS + WORKFLOW_METHODS
 
 
+def load_local_api_key() -> str | None:
+    if not KEY_FILE.exists():
+        return None
+    for line in KEY_FILE.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            return line.strip()
+    return None
+
+
 def make_client() -> OpenAI:
-    api_key = os.environ.get("ZHIPU_API_KEY") or matrix.actual.load_existing_key_from_runner()
+    api_key = os.environ.get("CHATANYWHERE_API_KEY") or os.environ.get("ZHIPU_API_KEY") or load_local_api_key()
     if not api_key:
-        raise RuntimeError("ZHIPU_API_KEY is not set and no local fallback key was found.")
-    base_url = os.environ.get("ZHIPU_API_BASE", "https://open.bigmodel.cn/api/paas/v4")
-    timeout = float(os.environ.get("ZHIPU_API_TIMEOUT", "90"))
+        raise RuntimeError("CHATANYWHERE_API_KEY is not set and no local fallback key was found.")
+    base_url = os.environ.get("CHATANYWHERE_API_BASE") or os.environ.get("ZHIPU_API_BASE", DEFAULT_API_BASE)
+    timeout = float(os.environ.get("CHATANYWHERE_API_TIMEOUT") or os.environ.get("ZHIPU_API_TIMEOUT", str(DEFAULT_API_TIMEOUT)))
     return OpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=0)
 
 
@@ -765,7 +778,7 @@ def main() -> None:
     parser.add_argument("--languages", nargs="+", choices=["python", "cpp", "go"], default=["python", "cpp", "go"])
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--out-name", default="true_agent_workflows_glm51_workers4_20260625")
-    parser.add_argument("--model", default="glm-5.1")
+    parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--max-tokens", type=int, default=4096)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--retries", type=int, default=3)

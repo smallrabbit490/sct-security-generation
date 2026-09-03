@@ -1,5 +1,7 @@
 import sys
 import unittest
+import os
+from unittest import mock
 from pathlib import Path
 
 
@@ -42,6 +44,16 @@ VALID_TRACES = {
 
 
 class AgentWorkflowFidelityTests(unittest.TestCase):
+    def test_chatanywhere_defaults_use_fast_supported_model(self):
+        self.assertEqual(runner.DEFAULT_MODEL, "deepseek-v4-flash")
+        self.assertEqual(runner.DEFAULT_API_BASE, "https://api.chatanywhere.tech/v1")
+        self.assertGreaterEqual(runner.DEFAULT_API_TIMEOUT, 60)
+
+    def test_local_key_loader_reads_only_nonempty_first_line(self):
+        with mock.patch.object(runner, "KEY_FILE", Path("D:/missing-key-file")):
+            with mock.patch.dict(os.environ, {"ZHIPU_API_KEY": "", "CHATANYWHERE_API_KEY": ""}, clear=False):
+                self.assertIsNone(runner.load_local_api_key())
+
     def test_contracts_cover_exactly_the_five_agent_baselines(self):
         self.assertEqual(
             set(CONTRACTS),
