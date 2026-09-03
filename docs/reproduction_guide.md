@@ -1,15 +1,12 @@
-# Reproduction Guide
+# 复现实验指南
 
-1. Clone the repository and create `.env.local` from `.env.example`.
-2. Confirm Docker Desktop is running and build the validator images.
-3. Run `python -m compileall src methods tools`.
-4. Run `python -m unittest discover -s tests -v`.
-5. Run `python tools/check_repository.py`.
-6. Run one task per method with a short timeout and inspect the trace.
-7. Run Base and Plus as separate jobs. Never reuse final-test failures as
-   experience input.
-8. Save large outputs outside Git or under ignored `translation_work/`.
+1. 克隆仓库，并由 `.env.example` 创建 `.env.local`。
+2. 确认 Docker Desktop 已运行并构建验证器镜像。
+3. 运行 `python -m compileall src methods tools`。
+4. 运行 `python -m unittest discover -s tests -v`。
+5. 运行 `python tools/check_repository.py`。
+6. 每条方法先跑一个任务，检查 trace 和 Docker 结果。
+7. Base 与 Plus 分开运行；最终测试失败不能反向作为经验输入。
+8. 大文件输出放在 Git 外部或被忽略的 `translation_work/` 下。
 
-The repository is intentionally conservative about completion claims. A JSONL
-file proves that a row was written; it does not prove that compilation,
-functional testing, and security testing all passed.
+本仓库对“完成”采用保守口径。JSONL 只能证明写入了一行，不能证明编译、功能测试和安全测试均通过。

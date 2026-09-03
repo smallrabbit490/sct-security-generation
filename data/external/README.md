@@ -1,10 +1,8 @@
-# External Datasets
+# 外部数据集
 
-This directory contains external security-code data that is useful for
-experience extraction or supplementary experiments. It is separate from the
-`SecEvoBasePlus` evaluation set.
+本目录保存用于经验提取或补充实验的外部安全代码数据，与 `SecEvoBasePlus` 正式评测集分离。
 
-| Directory | Contents | Intended role |
+| 目录 | 内容 | 用途 |
 |---|---|---|
 | `secodeplt/secodeplt/` | 1,411 vulnerable/patched Python pairs | Primary experience source |
 | `secodeplt/juliet/` | 263 Java autocomplete records | Java supplementary data |
@@ -13,8 +11,6 @@ experience extraction or supplementary experiments. It is separate from the
 | `cweval/benchmark/` | CWEval multi-language benchmark tasks and tests | Supplementary evaluation material |
 | `cweval/autosafecoder/` | 121 AutoSafeCoder Python negative examples | Negative examples for experience analysis |
 
-These files are copied from the local source packages documented in
-`docs/external_dataset_provenance.md`. They must not be mixed into the formal
-`SecEvoBasePlus` score unless a separate split and protocol are recorded.
+这些文件复制自 `docs/external_dataset_provenance.md` 记录的本地源包。除非另行记录数据划分和协议，否则不得混入 `SecEvoBasePlus` 正式得分。
 
-Secrets and machine-specific paths are redacted in this repository copy.
+仓库副本已脱敏密钥和机器相关路径。

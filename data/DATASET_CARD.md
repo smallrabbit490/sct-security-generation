@@ -1,36 +1,26 @@
-# Dataset Card
+# 数据集说明卡
 
-## Contents
+## 内容
 
-`SecEvoBasePlus` contains Secure/Insecure paired records translated or
-prepared for Python, C++, Go, Java, and JavaScript. The formal public evaluation
-track is Secure-only. Insecure fields are retained only as provenance and
-training-side security-difference material.
+`SecEvoBasePlus` 包含 Python、C++、Go、Java、JavaScript 的 Secure/Insecure 配对记录。正式公开评测只使用 Secure 轨；Insecure 字段仅用于来源追溯和训练侧安全差异分析。
 
-## Counts
+## 数量
 
-| Split | Python | C++ | Go | Java | JavaScript |
+| 划分 | Python | C++ | Go | Java | JavaScript |
 |---|---:|---:|---:|---:|---:|
 | Base | 115 | 115 | 115 | 116 | 116 |
 | Plus | 140 | 140 | 140 | 140 | 140 |
 
-## Provenance
+## 来源
 
-- Python: CodeSecEval/SecEvaBase and Plus sources.
-- C++ and Go: translated and checked project outputs.
-- Java and JavaScript: prepared dataset archive outputs; final Docker
-  reproducibility is pending.
+- Python：CodeSecEval/SecEvaBase 与 Plus。
+- C++、Go：项目内翻译并检查的结果。
+- Java、JavaScript：准备好的数据归档，最终 Docker 复现仍在完善。
 
-## Privacy and Reproducibility Cleaning
+## 隐私与复现清理
 
-The public copy must not contain API keys or machine-specific paths. Use
-`tools/sanitize_dataset.py` to replace local absolute paths with portable
-placeholders. The sanitizer preserves the JSON structure and does not alter
-code, task descriptions, or test semantics.
+公开副本不得包含 API key 或机器绝对路径。使用 `tools/sanitize_dataset.py` 将本地路径替换为可移植占位符；清洗器保持 JSON 结构，不改变代码、任务描述或测试语义。
 
-## Limitations
+## 限制
 
-The data files contain upstream benchmark material. Users must check upstream
-licenses and redistribution terms independently. Passing a historical
-validator report does not prove that every method in this repository has been
-re-run under the current protocol.
+数据文件包含上游 benchmark 内容，使用者需自行核对许可证和再分发条件。历史验证报告不代表每条方法都已按当前协议重新运行。

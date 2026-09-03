@@ -1,4 +1,3 @@
-# Curated Results
+# 精简结果
 
-Only compact, labelled summaries belong here. Raw generations, JSONL traces,
-logs, caches, and Docker artifacts are intentionally excluded from Git.
+这里只放精简且标注清楚的摘要。原始生成内容、JSONL trace、日志、缓存和 Docker 产物均不提交到 Git。

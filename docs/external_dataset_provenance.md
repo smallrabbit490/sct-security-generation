@@ -1,15 +1,11 @@
-# External Dataset Provenance
+# 外部数据来源说明
 
-The external data was copied from the existing local project rather than
-downloaded during repository setup.
+外部数据来自已有本地项目，而不是在仓库初始化时在线下载。
 
-| Source package | Repository path | Copied content |
+| 来源包 | 仓库路径 | 复制内容 |
 |---|---|---|
 | SeCodePLT | `baseline/SeCodePLT-main/SeCodePLT-main/virtue_code_eval/data/safety/` | SeCodePLT pairs, Juliet records, CyberSecEval files, RedCode examples, CWE metadata |
 | CWEval | `baseline/cweval/cweval/benchmark/` | Multi-language benchmark task and test files |
 | AutoSafeCoder | `baseline/cweval/cweval/third_party/AutoSafeCoder/dataset copy.jsonl` | Negative Python examples |
 
-The copied data is retained for experience extraction and supplementary
-analysis. `SecEvoBasePlus` remains the formal evaluation collection. Upstream
-licenses and redistribution requirements remain applicable; this repository
-does not claim ownership of the external datasets.
+复制数据仅用于经验提取和补充分析。`SecEvoBasePlus` 仍是正式评测集合。外部数据继续受原始许可证和再分发要求约束，本仓库不主张拥有这些数据。

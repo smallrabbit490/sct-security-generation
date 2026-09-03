@@ -1,19 +1,16 @@
-# Baseline Fidelity
+# Baseline 忠实性说明
 
-The repository distinguishes four direct prompting baselines from five
-workflow baselines.
+仓库将四条直接 Prompt baseline 与五条多阶段 workflow baseline 分开。
 
-## Direct Prompting
+## 直接 Prompt baseline
 
-Greedy, Greedy + Secure Prompt, Chain-of-Thought, and CoT + Secure Prompt use a
-single model request. Their difference is the prompt content. They are not
-complex agent systems.
+Greedy、Greedy + Secure Prompt、Chain-of-Thought 和 CoT + Secure Prompt 各使用一次模型请求，区别仅在提示词内容，不属于复杂 Agent 系统。
 
-## Workflow Baselines
+## 多阶段 Agent baseline
 
-The source CodeSecEval package contains more complete workflows:
+源 CodeSecEval 包含更完整的工作流：
 
-| Method | Workflow evidence | Caveat |
+| 方法 | 工作流证据 | 注意事项 |
 |---|---|---|
 | AutoSafeCoder | static review, fuzz/mutation, repair | target-language harness adaptation |
 | AgentCoder | programmer, test designer, self-test selection, epochs | target-language harness adaptation |
@@ -21,9 +18,7 @@ The source CodeSecEval package contains more complete workflows:
 | SWE-Agent | patch/trajectory and test evaluation | adapted from repository repair |
 | SecAwareCoder | security analysis, test generation, execution, repair graph | target-language harness adaptation |
 
-The old unified matrix used prompt-only adapters for these names. Those are not
-included as Agent workflow methods here. Historical adapter results, where
-retained, are explicitly labelled `agent_inspired_prompt_adapter`.
+旧统一矩阵曾用只发一个 prompt 的适配器冒充这些方法；本仓库不将其计为 Agent workflow。保留的历史结果会明确标记为 `agent_inspired_prompt_adapter`。
 
 ## Evaluation and Result Locations
 
