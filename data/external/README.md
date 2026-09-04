@@ -4,9 +4,9 @@
 
 | 目录 | 内容 | 用途 |
 |---|---|---|
-| `secodeplt/secodeplt/` | 1,411 vulnerable/patched Python pairs | Primary experience source |
+| `secodeplt/secodeplt/` | 1,411 组漏洞/修复 Python 对 | 主要经验来源 |
 | `secodeplt/juliet/` | 263 Java autocomplete records | Java supplementary data |
-| `secodeplt/cyber_sec_eval/` | SeCodePLT cybersecurity task files | Supplementary security data |
+| `secodeplt/cyber_sec_eval/` | SeCodePLT 网络安全任务文件 | 补充安全数据 |
 | `secodeplt/redcode/` | RedCode examples and metadata | Negative/security analysis material |
 | `cweval/benchmark/` | CWEval multi-language benchmark tasks and tests | Supplementary evaluation material |
 | `cweval/autosafecoder/` | 121 AutoSafeCoder Python negative examples | Negative examples for experience analysis |

@@ -1,6 +1,6 @@
 # Baseline 忠实性说明
 
-仓库将四条直接 Prompt baseline 与五条多阶段 workflow baseline 分开。
+仓库将四条直接 Prompt baseline 与五条多阶段 Agent baseline 分开。
 
 ## 直接 Prompt baseline
 
@@ -8,21 +8,17 @@ Greedy、Greedy + Secure Prompt、Chain-of-Thought 和 CoT + Secure Prompt 各�
 
 ## 多阶段 Agent baseline
 
-源 CodeSecEval 包含更完整的工作流：
-
-| 方法 | 工作流证据 | 注意事项 |
+| 方法 | 工作流证据 | 适配说明 |
 |---|---|---|
-| AutoSafeCoder | static review, fuzz/mutation, repair | target-language harness adaptation |
-| AgentCoder | programmer, test designer, self-test selection, epochs | target-language harness adaptation |
-| RA-Gen | planner, searcher, codegen, extractor | function-level reproduction |
-| SWE-Agent | patch/trajectory and test evaluation | adapted from repository repair |
-| SecAwareCoder | security analysis, test generation, execution, repair graph | target-language harness adaptation |
+| AutoSafeCoder | 静态审查、模糊/变异测试、修复 | 目标语言验证器适配 |
+| AgentCoder | 编程器、测试设计、自测选择、多轮 epoch | 目标语言验证器适配 |
+| RA-Gen | 规划器、搜索器、代码生成器、提取器 | 函数级复现 |
+| SWE-Agent | 编辑/轨迹、测试执行、修复循环 | 从仓库修复流程适配 |
+| SecAwareCoder | 安全分析、测试生成、执行、修复图 | 目标语言验证器适配 |
 
-旧统一矩阵曾用只发一个 prompt 的适配器冒充这些方法；本仓库不将其计为 Agent workflow。保留的历史结果会明确标记为 `agent_inspired_prompt_adapter`。
+旧统一矩阵曾用只发一个 prompt 的适配器冒充这些方法；本仓库不将其计为 Agent workflow。保留的历史结果必须标记为 `agent_inspired_prompt_adapter`。
 
-## Evaluation and Result Locations
-
-Run the five workflow baselines with the live ChatAnywhere-compatible endpoint:
+## 评测和结果位置
 
 ```powershell
 $env:CHATANYWHERE_API_BASE = 'https://api.chatanywhere.tech/v1'
@@ -32,14 +28,6 @@ python methods/workflow_baselines/run_true_agent_workflows.py `
   --retries 1 --workers 1 --only-agents
 ```
 
-Results belong under the ignored directory
-`translation_work/baseline_runs/<run-name>/<subset>/`. Keep `rows.jsonl` for
-per-task generated code, sanitized trace, fidelity, and Docker evaluation;
-`summary.json` and `true_agent_workflow_report.md` are the human-facing
-summaries. Temporary Docker work directories, raw transient responses, and
-build caches are disposable and must not be committed.
+结果写入被忽略的 `translation_work/baseline_runs/<run-name>/<subset>/`。保留 `rows.jsonl` 以复核逐任务生成代码、脱敏阶段 trace、fidelity 和 Docker 结果；`summary.json` 与 `true_agent_workflow_report.md` 是人工阅读的汇总文件。不要提交原始长响应、key、临时容器目录或构建缓存。
 
-For an Agent baseline, inspect `workflow_completed` and `fidelity_passed`
-before interpreting `secure_func_sec`. A candidate that fails Function or
-Secure is still a completed model result when a terminal row exists; API,
-timeout, extraction, missing-stage, and unhandled runner errors are not.
+对 Agent 方法，必须先检查 `workflow_completed` 和 `fidelity_passed`，再解释 `secure_func_sec`。代码质量失败是模型结果，不等于 runner 失败；API、超时、提取、缺阶段和未处理异常才是运行失败。
