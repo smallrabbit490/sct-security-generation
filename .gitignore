@@ -20,3 +20,6 @@ results/**/*.jsonl
 *.zip
 *.tar
 *.tar.gz
+
+# Local ChatAnywhere credentials and profiles
+local_secrets/chatanywhereapi使用/

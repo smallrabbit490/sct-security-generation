@@ -22,8 +22,9 @@ def clean(value):
         # Only replace the known source-machine prefix and Windows absolute
         # paths.  Do not rewrite POSIX paths such as /tmp used by test code.
         value = re.sub(LOCAL_ROOT + r"(?:\\[^\"\r\n]*)?", "<LOCAL_PATH>", value, flags=re.IGNORECASE)
-        value = re.sub(r"[A-Za-z]:\\(?:[^\"\r\n]*\\?)*[^\"\r\n]*", "<LOCAL_PATH>", value)
-        value = re.sub(r"[A-Za-z]:/(?:[^\"\r\n]*/)*[^\"\r\n]*", "<LOCAL_PATH>", value)
+        # Require a path boundary before the drive letter.  Without the
+        # boundary, the ``s:/`` in ``https://`` is mistaken for ``S:/``.
+        value = re.sub(r"(?<![A-Za-z0-9])[A-Za-z]:[\\/][^\"\r\n]*", "<LOCAL_PATH>", value)
         value = re.sub(r"sk-[A-Za-z0-9]{20,}", "<REDACTED_API_KEY>", value)
         value = re.sub(r"AIza[0-9A-Za-z_-]{20,}", "<REDACTED_API_KEY>", value)
         value = re.sub(r"(?i)(api[_-]?key|api[_-]?secret|client[_-]?secret)\s*([:=])\s*(['\"])[^'\"]+\3", r"\1\2\3<REDACTED_SECRET>\3", value)

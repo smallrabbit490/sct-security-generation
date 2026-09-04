@@ -1,0 +1,1 @@
+<!DOCTYPE a [<!ENTITY x 'y'>]><config><a>&x;</a></config>

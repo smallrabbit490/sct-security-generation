@@ -1,0 +1,4 @@
+<root><users>
+  <user name="alice"><location>CN</location><location>JP</location></user>
+  <user name="bob"><location>US</location></user>
+</users></root>

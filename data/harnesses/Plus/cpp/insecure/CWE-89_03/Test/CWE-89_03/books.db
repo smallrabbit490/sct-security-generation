@@ -1,0 +1,4 @@
+TABLE books book_id title author price
+ROW B123 The_Python_Handbook John_Smith 29.99
+ROW B456 Data_Science_Essentials Alice_Johnson 39.99
+ENDTABLE

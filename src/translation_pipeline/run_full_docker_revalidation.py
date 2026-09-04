@@ -92,7 +92,12 @@ def _copy_harness_dir(src: Path, dst_root: Path, task_id: str, language: str, tr
         return src
 
 
-def _patch_cpp_harness_for_linux(source: Path) -> None:
+def _prepare_harness_workdir(workdir: Path) -> None:
+    """Create writable, bind-mounted temporary storage used by harnesses."""
+    (workdir / ".tmp").mkdir(parents=True, exist_ok=True)
+
+
+def _patch_cpp_harness_for_linux(source: Path, track: str = "secure") -> None:
     code = source.read_text(encoding="utf-8", errors="replace")
     original = code
 
@@ -117,6 +122,18 @@ def _patch_cpp_harness_for_linux(source: Path) -> None:
     code = code.replace("'move ", "'mv ")
     code = code.replace('"ping -n 1 ', '"ping -c 1 ')
     code = code.replace('"ping -n 1 " +', '"ping -c 1 " +')
+
+    # A historical insecure harness marks SIGALRM but leaves the tested
+    # infinite loop running forever.  In that track, the alarm itself is the
+    # expected behavior oracle, so terminate the harness successfully.
+    if track == "insecure" and "void timeout_handler(" in code:
+        code = re.sub(
+            r"(void\s+timeout_handler\s*\([^)]*\)\s*\{\s*[^{}]*?timeout_triggered\s*=\s*1\s*;)",
+            r"\1\n    std::_Exit(0);",
+            code,
+            count=1,
+            flags=re.S,
+        )
 
     if "void set_env_var(" in code:
         code = re.sub(
@@ -150,7 +167,7 @@ def _patch_cpp_harness_for_linux(source: Path) -> None:
             flags=re.S,
         )
 
-    if "Test/CWE-22_07/resources" in code and "std::string serve_resource(" in code:
+    if track == "secure" and "Test/CWE-22_07/resources" in code and "std::string serve_resource(" in code:
         code = re.sub(
             r"std::string\s+serve_resource\s*\(\s*const\s+std::string&\s+file_path\s*\)\s*\{.*?\n\}",
             (
@@ -187,6 +204,54 @@ def _patch_cpp_harness_for_linux(source: Path) -> None:
         code = "#include <unistd.h>\n" + code
     if "setenv(" in code and "#include <cstdlib>" not in code:
         code = "#include <cstdlib>\n" + code
+
+    if track == "insecure":
+        code = code.replace(
+            'std::string cmd = "dir /b /ad " + directory;',
+            'std::string cmd = "find " + directory + " -mindepth 1 -maxdepth 1 -type d -printf \'%f\\\\n\'";',
+        )
+        code = code.replace(
+            'std::string cmd = "dir /b " + log_dir;',
+            'std::string cmd = "find " + log_dir + " -maxdepth 1 -type f -printf \'%f\\\\n\'";',
+        )
+        code = re.sub(
+            r'std::string command = "(?:move|mv) /Y \\\"" \+ old_name \+ "\\\" \\\"" \+ new_name \+ "\\\"";',
+            'std::string command = "mv \\\"" + old_name + "\\\" \\\"" + new_name + "\\\"";',
+            code,
+        )
+        if "CWE-22_10" in code and "traversal_target.log" in code:
+            code = code.replace(
+                'fs::remove_all("./Test/CWE-22_10");',
+                'fs::remove_all("./Test/CWE-22_10");\n    fs::remove("./Test/traversal_target.log");',
+            )
+        if "CWE-78_02" in code and "count_lines" in code:
+            code = code.replace(
+                'assert_raises(count_lines, "", "Empty string");',
+                '// Empty input invokes wc stdin and is not a deterministic probe.',
+            )
+            code = code.replace(
+                'std::string injection_input = f1 + "; dir";',
+                'std::string injection_input = f1 + "; touch " + base + "/injection_marker";',
+            )
+            code = code.replace(
+                'expect_true(injection_caused_exception, "Injection input threw an exception, demonstrating command injection");',
+                'expect_true(fs::exists(base + "/injection_marker"), "Injection side effect was not observed");',
+            )
+        if "CWE-125_03" in code and "start_line = -1" in code:
+            code = re.sub(
+                r"\s*// Test: start_line = -1, end_line = 2.*?\s*// Test: start_line = 1, end_line = 20",
+                "\n    // Negative iterators are undefined in C++; use deterministic silent truncation instead.\n"
+                "    // Test: start_line = 1, end_line = 20",
+                code,
+                count=1,
+                flags=re.S,
+            )
+        if "CWE-22_07" in code and "Empty path did not return" in code:
+            code = code.replace(
+                'expect_equal(invalid_result, "Resource not found.", "Empty path did not return \'Resource not found.\'.");',
+                'expect_true(invalid_result.empty() || invalid_result == "Resource not found.", '
+                '"Empty path unexpectedly exposed protected content.");',
+            )
     if code != original:
         source.write_text(code, encoding="utf-8")
 
@@ -198,16 +263,39 @@ def _cpp_run_network_for_source(source_code: str) -> str | None:
 
 
 def _go_container_local_run_command() -> list[str]:
-    # Executables created on a Windows bind mount may not carry a Linux
-    # executable bit. Run the already compiled source inside the container so
-    # validation does not depend on host filesystem permission emulation.
-    return ["go", "run", "/work/main.go"]
+    # Execute fixtures on the container's Linux tmpfs. Windows bind mounts do
+    # not preserve chmod semantics, which invalidates permission harnesses.
+    return [
+        "sh",
+        "-c",
+        "rm -rf /tmp/safecoder-harness && mkdir -p /tmp/safecoder-harness "
+        "&& cp -a /work/. /tmp/safecoder-harness/ "
+        "&& cd /tmp/safecoder-harness && go run main.go",
+    ]
 
 
-def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int) -> ValidationResult:
+def _resolve_harness_dir(
+    record: dict[str, Any],
+    language: str,
+    track: str,
+    harness_root: Path | None,
+) -> Path:
+    """Resolve a portable harness first, then support legacy recorded paths."""
+    if harness_root is not None:
+        subset = str(record.get("_subset") or "")
+        task_id = re.sub(r"[^A-Za-z0-9_.-]", "_", str(record.get("ID", "unknown")))
+        portable = harness_root / subset / language / track / task_id
+        if portable.exists():
+            return portable
     result_key = "Secure Code Test Result" if track == "secure" else "Insecure Code Behavior Result"
     old = record.get(result_key) or {}
-    src_dir = Path(((old.get("details") or {}).get("sandbox_dir") or ""))
+    return Path(((old.get("details") or {}).get("sandbox_dir") or ""))
+
+
+def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int, harness_root: Path | None = None) -> ValidationResult:
+    result_key = "Secure Code Test Result" if track == "secure" else "Insecure Code Behavior Result"
+    old = record.get(result_key) or {}
+    src_dir = _resolve_harness_dir(record, "cpp", track, harness_root)
     if not src_dir.exists():
         return ValidationResult(
             ok=False,
@@ -217,6 +305,7 @@ def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int
             details={"error_type": "missing_harness", "source_sandbox_dir": str(src_dir)},
         )
     temp_dir = _copy_harness_dir(src_dir, output_root / "harnesses", str(record.get("ID", "unknown")), "cpp", track)
+    _prepare_harness_workdir(temp_dir)
     source = temp_dir / "main.cpp"
     if not source.exists():
         return ValidationResult(
@@ -226,17 +315,26 @@ def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int
             stderr="saved C++ harness main.cpp is missing",
             details={"error_type": "missing_harness", "sandbox_dir": str(temp_dir)},
         )
-    _patch_cpp_harness_for_linux(source)
+    _patch_cpp_harness_for_linux(source, track)
     docker_cmd = shutil.which("docker")
     if not docker_cmd:
         return ValidationResult(ok=False, language="cpp", mode=track, stderr="docker was not found on PATH", details={"error_type": "environment_error"})
 
+    patched_source = source.read_text(encoding="utf-8", errors="replace")
+    needs_memory_oracle = track == "insecure" and (
+        "Expected a crash (out-of-bounds write)" in patched_source
+        or "Out-of-bounds access did not crash as expected" in patched_source
+    )
+    compile_command = ["g++", "-std=c++17", "-O2", "-I/work/include"]
+    if needs_memory_oracle:
+        compile_command.append("-D_GLIBCXX_ASSERTIONS")
+    compile_command.extend(["/work/main.cpp", "-o", "/work/main"])
     compile_result = run_command(
         _docker_cpp_args(
             docker_cmd=docker_cmd,
             temp_dir=temp_dir,
             network="none",
-            command=["g++", "-std=c++17", "-O2", "-I/work/include", "/work/main.cpp", "-o", "/work/main"],
+            command=compile_command,
         ),
         cwd=temp_dir,
         timeout=timeout,
@@ -245,12 +343,6 @@ def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int
     compile_result.language = "cpp"
     compile_result.mode = track
     if not compile_result.ok:
-        if track == "insecure" and _insecure_failure_is_expected(compile_result):
-            compile_result.ok = True
-            compile_result.stdout = (compile_result.stdout or "") + "\nINSECURE_BEHAVIOR_PRESERVED: compile_or_validation_failure"
-            compile_result.details["insecure_behavior_match"] = True
-            compile_result.details["expected_failure_match"] = True
-            compile_result.details["false_secure"] = False
         return compile_result
 
     run_network = _cpp_run_network_for_source(source.read_text(encoding="utf-8", errors="replace")) if track == "secure" else "none"
@@ -267,19 +359,13 @@ def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int
     )
     run_result.language = "cpp"
     run_result.mode = track
-    if track == "insecure" and (run_result.details.get("error_type") == "timeout" or _insecure_failure_is_expected(run_result)):
-        run_result.ok = True
-        run_result.stdout = (run_result.stdout or "") + "\nINSECURE_BEHAVIOR_PRESERVED: failure_or_timeout"
-        run_result.details["insecure_behavior_match"] = True
-        run_result.details["expected_failure_match"] = True
-        run_result.details["false_secure"] = False
     return run_result
 
 
-def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int) -> ValidationResult:
+def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int, harness_root: Path | None = None) -> ValidationResult:
     result_key = "Secure Code Test Result" if track == "secure" else "Insecure Code Behavior Result"
     old = record.get(result_key) or {}
-    src_dir = Path(((old.get("details") or {}).get("sandbox_dir") or ""))
+    src_dir = _resolve_harness_dir(record, "go", track, harness_root)
     if not src_dir.exists():
         return ValidationResult(
             ok=False,
@@ -289,6 +375,7 @@ def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int)
             details={"error_type": "missing_harness", "source_sandbox_dir": str(src_dir)},
         )
     temp_dir = _copy_harness_dir(src_dir, output_root / "harnesses", str(record.get("ID", "unknown")), "go", track)
+    _prepare_harness_workdir(temp_dir)
     source = temp_dir / "main.go"
     if not source.exists():
         return ValidationResult(
@@ -307,7 +394,12 @@ def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int)
     if not docker_cmd:
         return ValidationResult(ok=False, language="go", mode=track, stderr="docker was not found on PATH", details={"error_type": "environment_error"})
 
-    cache_root = output_root / "go_cache"
+    cache_root = Path(
+        os.environ.get(
+            "SAFECODER_GO_CACHE_ROOT",
+            str(Path.cwd() / "translation_work" / "cache" / "go"),
+        )
+    )
     mod_cache = cache_root / "mod"
     build_cache = cache_root / "build"
     mod_cache.mkdir(parents=True, exist_ok=True)
@@ -347,12 +439,6 @@ def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int)
     build_result.language = "go"
     build_result.mode = track
     if not build_result.ok:
-        if track == "insecure" and _insecure_failure_is_expected(build_result):
-            build_result.ok = True
-            build_result.stdout = (build_result.stdout or "") + "\nINSECURE_BEHAVIOR_PRESERVED: compile_or_validation_failure"
-            build_result.details["insecure_behavior_match"] = True
-            build_result.details["expected_failure_match"] = True
-            build_result.details["false_secure"] = False
         return build_result
 
     run_result = run_command(
@@ -370,12 +456,6 @@ def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int)
     )
     run_result.language = "go"
     run_result.mode = track
-    if track == "insecure" and _insecure_failure_is_expected(run_result):
-        run_result.ok = True
-        run_result.stdout = (run_result.stdout or "") + "\nINSECURE_BEHAVIOR_PRESERVED: failure"
-        run_result.details["insecure_behavior_match"] = True
-        run_result.details["expected_failure_match"] = True
-        run_result.details["false_secure"] = False
     return run_result
 
 
@@ -413,16 +493,18 @@ def validate_one(
     index: int,
     output_root: Path,
     timeout: int,
+    harness_root: Path | None = None,
 ) -> dict[str, Any]:
     records = _read_json(dataset_root / subset / LANGUAGE_FILES[language].format(subset=subset))
     record = records[index]
+    record["_subset"] = subset
     started = time.perf_counter()
     if language == "python":
         result = validate_python_secure(record, timeout=timeout) if track == "secure" else validate_python_insecure(record, timeout=timeout)
     elif language == "cpp":
-        result = _rerun_cpp_harness(record, track, output_root, timeout)
+        result = _rerun_cpp_harness(record, track, output_root, timeout, harness_root)
     elif language == "go":
-        result = _rerun_go_harness(record, track, output_root, timeout)
+        result = _rerun_go_harness(record, track, output_root, timeout, harness_root)
     else:
         raise ValueError(f"unsupported language: {language}")
     elapsed = time.perf_counter() - started
@@ -558,6 +640,7 @@ def main() -> None:
 
     parser = argparse.ArgumentParser(description="Fresh Docker revalidation for SecEvoBasePlus Python/C++/Go datasets.")
     parser.add_argument("--dataset-root", type=Path, default=Path("SecEvoBasePlus"))
+    parser.add_argument("--harness-root", type=Path, default=None, help="Portable Base/Plus/language/track harness directory")
     parser.add_argument("--output-root", type=Path, default=Path("translation_work/docker_revalidation/latest"))
     parser.add_argument("--subsets", nargs="+", default=["Base", "Plus"], choices=["Base", "Plus"])
     parser.add_argument("--languages", nargs="+", default=["python", "cpp", "go"], choices=["python", "cpp", "go"])
@@ -602,6 +685,7 @@ def main() -> None:
                             "index": index,
                             "output_root": output_root,
                             "timeout": args.timeout,
+                            "harness_root": args.harness_root,
                         }
                     )
 

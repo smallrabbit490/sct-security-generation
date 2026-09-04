@@ -706,6 +706,8 @@ def _docker_go_args(
             "GOTMPDIR=/work/.tmp",
             "-e",
             "PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "-e",
+            "GOPROXY=https://goproxy.cn,direct",
             GO_DOCKER_IMAGE,
             *command,
         ]

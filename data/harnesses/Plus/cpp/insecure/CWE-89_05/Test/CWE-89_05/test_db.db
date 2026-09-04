@@ -1,0 +1,4 @@
+CREATE TABLE users (name TEXT, email TEXT);
+INSERT INTO users VALUES('Alice','alice@example.com');
+INSERT INTO users VALUES('Bob','bob@example.com');
+INSERT INTO users VALUES('Charlie','charlie@example.com');

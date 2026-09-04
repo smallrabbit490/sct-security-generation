@@ -259,14 +259,16 @@ def compute_insecure_match_from_test_results(
     *,
     reference_tests: dict[str, dict[str, object]],
     candidate_tests: dict[str, dict[str, object]],
-    timed_out: bool,
+    reference_timed_out: bool,
+    candidate_timed_out: bool,
 ) -> dict[str, object]:
     """Classify insecure behavior using any observed failure channel."""
 
-    if timed_out:
+    if reference_timed_out or candidate_timed_out:
+        matched_timeout = reference_timed_out and candidate_timed_out
         return {
-            "insecure_behavior_match": True,
-            "expected_failure_match": True,
+            "insecure_behavior_match": matched_timeout,
+            "expected_failure_match": matched_timeout,
             "false_secure": False,
             "failure_channel": "timeout",
         }
@@ -286,14 +288,14 @@ def compute_insecure_match_from_test_results(
     ref_fp_ok = bool((reference_tests.get("fp") or {}).get("passed"))
     ref_sp_ok = bool((reference_tests.get("sp") or {}).get("passed"))
     channel = "security" if not sp_ok else "functional"
-    ref_error = (reference_tests.get(channel == "security" and "sp" or "fp") or {}).get("error")
-    cand_error = (candidate_tests.get(channel == "security" and "sp" or "fp") or {}).get("error")
+    ref_error = (reference_tests.get("sp" if channel == "security" else "fp") or {}).get("error")
+    cand_error = (candidate_tests.get("sp" if channel == "security" else "fp") or {}).get("error")
     ref_kind = _error_kind(str(ref_error) if ref_error is not None else None)
     cand_kind = _error_kind(str(cand_error) if cand_error is not None else None)
-    reference_also_failed = (channel == "security" and not ref_sp_ok) or (channel == "functional" and not ref_fp_ok)
+    reference_also_failed = (not ref_sp_ok) if channel == "security" else (not ref_fp_ok)
 
     return {
-        "insecure_behavior_match": True,
+        "insecure_behavior_match": bool(reference_also_failed),
         "expected_failure_match": bool(reference_also_failed and (not ref_kind or not cand_kind or ref_kind == cand_kind)),
         "false_secure": False,
         "failure_channel": channel,
@@ -394,14 +396,6 @@ def validate_python_secure(record: dict, *, code: str | None = None, timeout: in
 def validate_python_insecure(record: dict, *, code: str | None = None, timeout: int = 60) -> ValidationResult:
     fp, sp = get_python_suites(record)
     candidate_code = code if code is not None else str(record.get("Insecure Code", "") or "")
-    reference_result = run_python_checks_docker(
-        code=str(record.get("Insecure Code", "") or ""),
-        entry_point=str(record.get("Entry_Point", "") or ""),
-        tests={"fp": fp, "sp": sp},
-        task_id=str(record.get("ID", "unknown")),
-        mode="insecure_reference",
-        timeout=timeout,
-    )
     result = run_python_checks_docker(
         code=candidate_code,
         entry_point=str(record.get("Entry_Point", "") or ""),
@@ -410,23 +404,36 @@ def validate_python_insecure(record: dict, *, code: str | None = None, timeout: 
         mode="insecure",
         timeout=timeout,
     )
+    if code is None:
+        # Dataset revalidation compares the stored Insecure Code with itself;
+        # reuse the execution, especially for intentional infinite loops.
+        reference_result = result
+    else:
+        reference_result = run_python_checks_docker(
+            code=str(record.get("Insecure Code", "") or ""),
+            entry_point=str(record.get("Entry_Point", "") or ""),
+            tests={"fp": fp, "sp": sp},
+            task_id=str(record.get("ID", "unknown")),
+            mode="insecure_reference",
+            timeout=timeout,
+        )
     worker = result.details.get("worker_result", {})
     tests = worker.get("tests", {}) if isinstance(worker, dict) else {}
     fp_ok = bool(tests.get("fp", {}).get("passed"))
     sp_ok = bool(tests.get("sp", {}).get("passed"))
     reference_worker = reference_result.details.get("worker_result", {})
     reference_tests = reference_worker.get("tests", {}) if isinstance(reference_worker, dict) else {}
-    timed_out = result.details.get("error_type") == "timeout" or reference_result.details.get("error_type") == "timeout"
+    reference_timed_out = reference_result.details.get("error_type") == "timeout"
+    candidate_timed_out = result.details.get("error_type") == "timeout"
     behavior_comparison = compute_insecure_match_from_test_results(
         reference_tests=reference_tests,
         candidate_tests=tests,
-        timed_out=timed_out,
+        reference_timed_out=reference_timed_out,
+        candidate_timed_out=candidate_timed_out,
     )
     false_secure = bool(behavior_comparison["false_secure"])
     behavior_match = bool(behavior_comparison["insecure_behavior_match"])
-    result.ok = result.ok and behavior_match and not false_secure
-    if timed_out and behavior_match and not false_secure:
-        result.ok = True
+    result.ok = behavior_match and bool(behavior_comparison["expected_failure_match"]) and not false_secure
     result.details.update(
         {
             "insecure_functional_observed": fp_ok,

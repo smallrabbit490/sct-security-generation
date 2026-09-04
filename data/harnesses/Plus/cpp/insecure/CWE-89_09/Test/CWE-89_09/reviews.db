@@ -1,0 +1,5 @@
+INSERT INTO reviews (product_id, rating, comment) VALUES ('P-100', 5, 'Great!')
+INSERT INTO reviews (product_id, rating, comment) VALUES ('P-100', 1, '')
+INSERT INTO reviews (product_id, rating, comment) VALUES ('P-200', 3, 'Okay')
+INSERT INTO reviews (product_id, rating, comment) VALUES ('P-300', 4, 'nice'); DROP TABLE reviews; --')
+INSERT INTO reviews (product_id, rating, comment) VALUES ('P;DROP', 2, 'injection product')

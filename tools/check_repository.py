@@ -38,7 +38,11 @@ def main() -> None:
                 return any(contains_machine_path(item) for item in value.values())
             if isinstance(value, list):
                 return any(contains_machine_path(item) for item in value)
-            return isinstance(value, str) and bool(re.search(r"(?:[A-Za-z]:[/\\]|/Users/)", value))
+            # Require a non-alphanumeric boundary before a drive letter so
+            # URL schemes such as ``https://`` are not reported as paths.
+            return isinstance(value, str) and bool(
+                re.search(r"(?<![A-Za-z0-9])(?:[A-Za-z]:[/\\]|/Users/)", value)
+            )
         if contains_machine_path(rows):
             failures.append(f"{rel}: machine-specific absolute path remains")
     external_json = {
