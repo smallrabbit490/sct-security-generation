@@ -105,6 +105,8 @@ python methods/workflow_baselines/run_true_agent_workflows.py `
 
 不要提交 API key、`.env.local`、原始长日志、Docker VHDX、构建缓存或未脱敏响应。
 
+SCT 的正式经验轮次 `R0–R3` 不是历史缓存：它们分别表示初始经验建立和后续候选经验进化轮次，完整定义见[评测协议](docs/evaluation_protocol.md)。
+
 ## 进一步阅读
 
 如果你要复现实验，请按 [复现实验指南](docs/reproduction_guide.md)；如果你要判断某条 baseline 是否忠实，请按 [Baseline 忠实性说明](docs/baseline_fidelity.md)；如果你要理解 SCT 当前还缺什么，请按 [SCT 差异审计](docs/sct_docx_gap_analysis.md)。
