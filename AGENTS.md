@@ -1,6 +1,6 @@
 # 仓库协作与产物管理规范
 
-本文件是本仓库目录分类、实验产物保存和清理规则的唯一入口。README 负责导航，具体评测定义见 `docs/evaluation_protocol.md`。
+本文件是本仓库目录分类、实验产物保存和清理规则的唯一入口。README 负责导航，详细运行区说明见 `docs/translation_work.md`，具体评测定义见 `docs/evaluation_protocol.md`。
 
 ## 一、目录职责
 
