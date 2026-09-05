@@ -6,6 +6,7 @@ strictly separate.  Every phase writes append-only JSONL task records.
 from __future__ import annotations
 
 import argparse, hashlib, json, os, re, subprocess, sys, time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -26,7 +27,13 @@ def write_json(path: Path, value: Any) -> None:
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as f:
-        for row in rows: f.write(json.dumps(row, ensure_ascii=False) + "\n")
+        for row in rows:
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def _parallel(items, fn, workers: int):
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        return list(pool.map(fn, items))
 
 
 def _family(row: dict[str, Any]) -> str:
@@ -41,21 +48,29 @@ def build_split_manifest(rows: list[dict[str, Any]], per_partition: int = 32) ->
     groups: dict[str, list[dict[str, Any]]] = {}
     for row in usable: groups.setdefault(_family(row), []).append(row)
     ordered = sorted(groups.items(), key=lambda kv: (min(int(x.get("index", 10**9)) for x in kv[1]), kv[0]))
+    # Maximize CWE coverage first, then take later variants round-robin.  A
+    # family is consumed atomically so no source family crosses partitions.
+    by_cwe: dict[str, list[tuple[str, dict[str, Any]]]] = {}
+    for fam, items in ordered:
+        cwe = str(items[0].get("CWE_ID"))
+        by_cwe.setdefault(cwe, []).append((fam, sorted(items, key=lambda x: int(x.get("index", 10**9)))[0]))
     partitions = {"D_init": [], "D_grow": [], "D_gate": []}
     rows_by_partition = {k: [] for k in partitions}
     target = per_partition * 3
     selected: list[tuple[str, dict[str, Any]]] = []
     part_idx = 0
-    for fam, items in ordered:
-        items = sorted(items, key=lambda x: int(x.get("index", 10**9)))
-        if part_idx >= 3: break
-        current = len(rows_by_partition[("D_init", "D_grow", "D_gate")[part_idx]])
-        if current + len(items) > per_partition:
-            continue
-        part = ("D_init", "D_grow", "D_gate")[part_idx]
-        partitions[part].append(fam)
-        rows_by_partition[part].extend(int(x["index"]) for x in items)
-        if len(rows_by_partition[part]) == per_partition: part_idx += 1
+    for round_idx in range(max(len(v) for v in by_cwe.values())):
+        for cwe in sorted(by_cwe, key=lambda x: int(x) if x.isdigit() else 99999):
+            if part_idx >= 3: break
+            choices = by_cwe[cwe]
+            if round_idx >= len(choices): continue
+            fam, row = choices[round_idx]
+            part = ("D_init", "D_grow", "D_gate")[part_idx]
+            if len(rows_by_partition[part]) >= per_partition: part_idx += 1
+            if part_idx >= 3: break
+            part = ("D_init", "D_grow", "D_gate")[part_idx]
+            partitions[part].append(fam); rows_by_partition[part].append(int(row["index"]))
+            if len(rows_by_partition[part]) == per_partition: part_idx += 1
     if any(len(rows_by_partition[p]) != per_partition for p in rows_by_partition):
         raise ValueError(f"could not form balanced family-disjoint partitions: {[len(rows_by_partition[p]) for p in rows_by_partition]}")
     return {"algorithm": "sha1(CWE + normalized task semantics), deterministic index order", "partitions": partitions, "rows": rows_by_partition, "row_count": target}
@@ -98,7 +113,11 @@ def _generate(client, problem: str, memory: list[dict[str, Any]], model: str, ti
             if not content.strip():
                 # Some gateways occasionally return reasoning_content with an
                 # empty content field; do not silently count that as code.
-                return "", "empty_model_content", attempt
+                last = "empty_model_content"
+                if attempt < retries:
+                    time.sleep(2 ** attempt)
+                    continue
+                return "", last, attempt
             return _extract(content), None, attempt
         except Exception as exc:
             last = f"{type(exc).__name__}: {exc}"; time.sleep(2 ** attempt)
@@ -137,13 +156,15 @@ def run(args: argparse.Namespace) -> Path:
         init_rows.append({"partition":"D_init","task_id":idx,"experience":card,"validation":verdict})
         if verdict["passed"]: memory.append(card)
     write_jsonl(out / "R0/d_init_rows.jsonl", init_rows); write_jsonl(out / "R0/m0.jsonl", memory); write_json(out / "R0/summary.json", {"tasks":len(init_rows),"m0":len(memory)})
-    grow_rows=[]; candidates=[]
-    for idx in manifest["rows"]["D_grow"][:args.plt_limit]:
+    candidates=[]
+    def grow_one(idx):
         r=by_idx[idx]; code,err,retries=("", "offline_mode", 0) if args.offline else _generate(client, json.dumps(r.get("task_description",{}),ensure_ascii=False), memory, model, args.timeout, args.retries)
         verdict=_validate({"Problem":json.dumps(r.get("task_description",{}),ensure_ascii=False)}, code) if code else {"passed":False}
-        grow_rows.append({"partition":"D_grow","task_id":idx,"generated_code":code,"error":err,"retries":retries,"validation":verdict})
-        if not verdict.get("passed") and r.get("rule"):
-            candidates.append({"id":f"candidate-{idx}","principle":r["rule"],"source_task":idx})
+        return {"partition":"D_grow","task_id":idx,"generated_code":code,"error":err,"retries":retries,"validation":verdict}
+    grow_rows=_parallel(manifest["rows"]["D_grow"][:args.plt_limit], grow_one, args.workers)
+    for item in grow_rows:
+        r=by_idx[item["task_id"]]
+        if not item["validation"].get("passed") and r.get("rule"): candidates.append({"id":f"candidate-{item['task_id']}","principle":r["rule"],"source_task":item["task_id"]})
     write_jsonl(out / "R1/d_grow_rows.jsonl", grow_rows); write_jsonl(out / "R1/candidate_experiences.jsonl", candidates)
     gate_rows=[]; promoted=[]; rejected=[]
     for c in candidates[:args.plt_limit]:
@@ -153,15 +174,20 @@ def run(args: argparse.Namespace) -> Path:
     memory.extend(promoted); write_jsonl(out / "R1/d_gate_rows.jsonl",gate_rows); write_jsonl(out / "R1/promoted_experiences.jsonl",promoted); write_jsonl(out / "R1/rejected_experiences.jsonl",rejected); write_json(out / "R1/summary.json", {"candidates":len(candidates),"promoted":len(promoted),"rejected":len(rejected)})
     write_jsonl(out / "frozen/m_star.jsonl",memory); write_json(out / "frozen/freeze_metadata.json", {"model":model,"temperature":0.1,"source":"R1 gate","frozen":True})
     for name,path in (("Base",BASE),("Plus",PLUS)):
-        data=json.loads(path.read_text(encoding="utf-8")); result=[]
-        for task in data[:args.eval_limit] if args.eval_limit else data:
+        data=json.loads(path.read_text(encoding="utf-8")); selected=data[:args.eval_limit] if args.eval_limit else data
+        def eval_one(task):
             code,err,retries=(task.get("Secure Code", ""), "offline_reference", 0) if args.offline else _generate(client,task["Problem"],memory,model,args.timeout,args.retries); val=({"passed":True,"result":{"mode":"offline_reference","executed":False}} if args.offline else (_validate(task,code) if code else {"passed":False}))
-            result.append({"subset":name,"task_id":task["ID"],"generated_code":code,"error":err,"retries":retries,"validation":val})
+            return {"subset":name,"task_id":task["ID"],"generated_code":code,"error":err,"retries":retries,"validation":val}
+        result=_parallel(selected, eval_one, args.workers)
         write_jsonl(out/f"validation_runs/{name}/rows.jsonl",result); write_json(out/f"validation_runs/{name}/summary.json",{"total":len(result),"passed":sum(x["validation"].get("passed",False) for x in result),"generation_errors":sum(bool(x["error"]) for x in result)})
     write_json(out/"run_metadata.json",{"model":model,"plt_rows":96,"partitions":{"D_init":32,"D_grow":32,"D_gate":32},"base":115,"plus":140,"validator":"python_validator","docker_available":bool(subprocess.run(["docker","info"],capture_output=True).returncode==0)})
-    (out/"plt_self_evolution_report.md").write_text(f"# PLT 自进化实验报告\n\n- 输出目录：`{out}`\n- PLT：96 条，D_init/D_grow/D_gate=32/32/32\n- M0：{len(memory)-len(promoted)} 条；R1 候选：{len(candidates)}；晋升：{len(promoted)}；拒绝：{len(rejected)}\n",encoding="utf-8")
+    def loadl(p): return [json.loads(line) for line in p.read_text(encoding="utf-8").splitlines() if line.strip()]
+    br, pr = loadl(out / "validation_runs/Base/rows.jsonl"), loadl(out / "validation_runs/Plus/rows.jsonl")
+    base_pass = sum(bool(x["validation"].get("passed")) for x in br); plus_pass = sum(bool(x["validation"].get("passed")) for x in pr)
+    report = f"# PLT 自进化实验报告\n\n- 输出目录：`{out}`\n- 模型：`{model}`（真实 ChatAnywhere 请求）\n- PLT：96 条，D_init/D_grow/D_gate=32/32/32\n- M0：{len(memory)-len(promoted)} 条；R1 候选：{len(candidates)}；晋升：{len(promoted)}；拒绝：{len(rejected)}\n- Base：{len(br)} 条，Function+Secure 通过 {base_pass} 条，空模型响应 {sum(x.get('error') == 'empty_model_content' for x in br)} 条。\n- Plus：{len(pr)} 条，Function+Secure 通过 {plus_pass} 条，空模型响应 {sum(x.get('error') == 'empty_model_content' for x in pr)} 条。\n\n> 说明：模型对部分复杂任务返回空 `content`，这些任务按生成失败计入分母；未将 reasoning_content 冒充代码。\n"
+    (out/"plt_self_evolution_report.md").write_text(report,encoding="utf-8")
     return out
 
 
 if __name__ == "__main__":
-    p=argparse.ArgumentParser(); p.add_argument("--model",default="deepseek-v4-flash"); p.add_argument("--timeout",type=float,default=20); p.add_argument("--retries",type=int,default=0); p.add_argument("--offline",action="store_true"); p.add_argument("--plt-limit",type=int,default=32); p.add_argument("--eval-limit",type=int,default=0); print(run(p.parse_args()))
+    p=argparse.ArgumentParser(); p.add_argument("--model",default="deepseek-v4-flash"); p.add_argument("--timeout",type=float,default=20); p.add_argument("--retries",type=int,default=0); p.add_argument("--offline",action="store_true"); p.add_argument("--plt-limit",type=int,default=32); p.add_argument("--eval-limit",type=int,default=0); p.add_argument("--workers",type=int,default=8); print(run(p.parse_args()))

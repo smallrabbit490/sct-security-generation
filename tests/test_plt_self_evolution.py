@@ -29,6 +29,13 @@ class PltSelfEvolutionTests(unittest.TestCase):
             self.assertEqual(path.read_text(encoding="utf-8").count("\n"), 2)
             self.assertEqual([json.loads(x)["id"] for x in path.read_text(encoding="utf-8").splitlines()], [1, 2])
 
+    def test_real_plt_selection_covers_many_cwes(self):
+        rows = json.loads(Path("data/external/secodeplt/secodeplt/data.json").read_text(encoding="utf-8"))
+        manifest = build_split_manifest(rows, per_partition=32)
+        selected = set(sum(manifest["rows"].values(), []))
+        cwes = {str(r["CWE_ID"]) for r in rows if int(r["index"]) in selected}
+        self.assertGreaterEqual(len(cwes), 20)
+
 
 if __name__ == "__main__":
     unittest.main()

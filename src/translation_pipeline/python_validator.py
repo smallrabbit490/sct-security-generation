@@ -10,7 +10,7 @@ from .paths import ensure_work_dirs
 from .validators import _docker_mount_path, _task_temp_dir, classify_validation_result, find_command, run_command_limited
 
 
-PYTHON_DOCKER_IMAGE = os.environ.get("SAFECODER_PYTHON_DOCKER_IMAGE", "porta-bench-runtime-python3:latest")
+PYTHON_DOCKER_IMAGE = os.environ.get("SAFECODER_PYTHON_DOCKER_IMAGE", "safecoder-python-validator:local")
 PYTHON_DOCKER_ENTRYPOINT = os.environ.get("SAFECODER_PYTHON_DOCKER_ENTRYPOINT", "")
 MAX_VALIDATOR_OUTPUT_CHARS = int(os.environ.get("SAFECODER_MAX_VALIDATOR_OUTPUT_CHARS", "2000"))
 

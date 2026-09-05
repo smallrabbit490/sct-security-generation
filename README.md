@@ -17,6 +17,7 @@
    - [ChatAnywhere 配置](docs/chatanywhere-api.md)：本地 key、模型检查和脱敏输出位置。
    - [配置文件说明](configs/README.md)：哪些配置可以进入仓库。
 4. **最后阅读方法差异**
+   - [经验自进化操作指南](docs/experience_self_evolution_guide.md)：从 PLT 分区、R0/R1 门控到冻结和 Base/Plus 评测的逐步操作、JSON/JSONL 格式与真实示例。
    - [SCT 与 DOCX 差异审计](docs/sct_docx_gap_analysis.md)：当前实现与方法文档逐项对照。
    - [原始方法文档](docs/面向多语言安全代码生成的经验自进化方法.docx)：本项目的规范依据。
    - [实验运行区说明](docs/translation_work.md)：运行结果、缓存、诊断和临时文件的分类与清理规则。
@@ -77,6 +78,23 @@ python -m compileall src methods tools
 python -m unittest discover -s tests -v
 python tools/check_repository.py
 ```
+
+### ChatAnywhere API key 存储位置
+
+默认的本地 key 文件是：
+
+```text
+local_secrets/chatanywhereapi使用/apikey.txt
+```
+
+该目录已在 `.gitignore` 中忽略，文件内容只应保存在本机，不能提交到 GitHub。运行器按以下顺序读取凭据：
+
+1. 环境变量 `CHATANYWHERE_API_KEY`；
+2. 环境变量 `OPENAI_API_KEY`（仅 PLT 运行器兼容读取）；
+3. `local_secrets/chatanywhereapi使用/apikey.txt` 的第一个非空行；
+4. 部分历史兼容脚本还支持 `ZHIPU_API_KEY`，但新的 ChatAnywhere 实验应优先使用前两种变量或本地 key 文件。
+
+接口地址默认是 `https://api.chatanywhere.tech/v1`。Agent baseline 使用 `CHATANYWHERE_API_BASE` 覆盖，PLT 运行器使用 `CHATANYWHERE_BASE_URL` 覆盖。README、代码、结果 JSONL 和报告中都不得写入真实 key；检查 key 是否有效请使用 [ChatAnywhere 配置与检查说明](docs/chatanywhere-api.md) 中的脱敏脚本。
 
 ## Baseline 评测快速入口
 

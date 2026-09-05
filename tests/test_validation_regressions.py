@@ -73,6 +73,9 @@ class PythonInsecureClassificationTests(unittest.TestCase):
 
 
 class HarnessPreparationTests(unittest.TestCase):
+    def test_python_validator_uses_available_local_image_by_default(self):
+        from translation_pipeline import python_validator
+        self.assertEqual(python_validator.PYTHON_DOCKER_IMAGE, "safecoder-python-validator:local")
     def test_harness_work_directory_contains_tmp_directory(self):
         from translation_pipeline.run_full_docker_revalidation import _prepare_harness_workdir
 
