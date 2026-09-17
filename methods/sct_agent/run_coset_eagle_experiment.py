@@ -32,6 +32,12 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+# 该文件是原型/历史回放入口；正式 SCT 不依赖它。为保证直接执行
+# ``--help`` 和旧结果回放可用，这里显式加入 legacy adapter 目录。
+LEGACY_DIR = HERE.parent / "legacy_prompt_adapters"
+if LEGACY_DIR.exists() and str(LEGACY_DIR) not in sys.path:
+    sys.path.insert(0, str(LEGACY_DIR))
+
 import run_experiment as base  # noqa: E402
 
 
