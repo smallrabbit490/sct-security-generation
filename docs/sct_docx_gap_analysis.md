@@ -1,5 +1,7 @@
 # 当前 SCT 实现与方法 DOCX 差异分析
 
+> 2026-09-09 统一核心复核：已新增 `schemas.py`、`difference_analysis.py`、`validation_evidence.py`、`failure_clustering.py`、`experience_cards.py`、`candidate_gates.py` 和 `experience_lifecycle.py`。正式入口现在将候选经验隔离在临时目录，并在冻结后关闭 Base/Plus 反馈；下方历史逐条表格保留作为变更前证据，实施后的剩余限制见“统一核心复核结论”。
+
 审计日期：2026-09-04（复核）
 
 规范来源：`docs/面向多语言安全代码生成的经验自进化方法.docx`。本次以 DOCX 正文和 20 个表格的结构化提取结果为准。
@@ -8,11 +10,29 @@
 
 本审计与九条 baseline 的 CodeSecEval 对比运行相互独立。Baseline 使用 CodeSecEval 是实验设计要求，不构成 SCT 数据污染；下表中的“数据边界”只针对 SCT 自身的经验生成、门控、更新和最终评测路径。
 
-当前代码包含“经验卡、检索、失败反思、候选规则、微型门控、规则文件、任务内修复”等原型组件，但尚未实现 DOCX 定义的正式实验协议。最严重的问题不是功能细节缺失，而是数据边界相反：当前语言自进化入口直接把 Base/Plus 用于 micro gate、失败归纳和规则更新，而 DOCX 与 `docs/evaluation_protocol.md` 都要求 Base/Plus 只能用于冻结后的最终评测。
+下方“逐条需求映射”保留的是 2026-09-04 变更前审计，描述旧语言入口和 Coset Eagle 原型曾经存在的数据边界问题，不能直接当作 2026-09-11 当前实现状态。当前正式 PLT 入口已经把 Base/Plus 隔离为冻结后评测；旧入口仍只允许用于历史回放。
 
-此外，当前 SCT 从全新输出目录无法启动，因为仓库中缺少它默认加载的 `final_gated_sample/gate_best_rules.json`；另一个 Coset Eagle 入口直接运行时也因缺少 `run_experiment` 导入而失败。
+## 统一核心复核结论
 
-## 逐条需求映射
+- 图一差异分析现在输出 `DifferenceAnalysis` 六类字段，并保留解析错误、功能测试和安全测试是否测量的证据。
+- 动态验证现在输出八类 `ValidationEvidence`；未配置 Docker、harness、静态分析器或类型检查器时状态为 `unmeasured`，不再默认算通过。
+- 候选经验先写 `candidate_experiences.jsonl`，失败先脱敏并聚类；`candidate_gates.py` 严格要求 `ΔJointPass > 0`、H_pass 安全回归为零且功能退化不超过阈值。
+- `run_sct_language_evolution.py` 是正式语言入口，`run_plt_self_evolution.py` 是 PLT 适配器，`finalize_plt_evaluation.py` 只负责冻结后 Base/Plus；`run_coset_eagle_experiment.py` 仍是原型/历史回放。
+- 本次正式在线运行使用可用 PLT 的四分之一（353 条，D_init/D_grow/D_gate=118/118/117），生成 R0/R1 JSONL、候选门控和冻结清单；Base/Plus 分开评测且结果不回流经验库。实际模型为 `deepseek-v3.2`，Docker 预检为 29.4.2。
+- 正确的冻结后评测结果是 Base 29/12/7、Plus 104/57/54（Function/Secure/Joint）。同一验证器上的官方 Secure Code 校准为 Base 115/115、Plus 140/140；校准仅证明 harness 可执行，不计入模型得分。
+
+## 当前真实剩余限制（2026-09-11）
+
+本轮应定位为“第一版可审计工程实验”，不能宣称 DOCX 方法已经完整实现：
+
+1. 26 条候选经验的 `principle` 全部退化为“修复 training_validation 类目标语言实现错误，并保持安全后置条件”，`applicability` 也只有 CWE 编号和同一失败标签。失败聚类尚未细分语法、依赖、异常契约、输入边界和具体安全根因，因此经验内容的可操作性较弱。
+2. runner 当前把 `memory[-8:]` 放入生成提示，只是固定窗口截取，不是从“问题 → 经验”的 embedding 语义检索；尚未训练或冻结独立检索器。
+3. 正式运行使用 `candidate_gate_limit=1`：每条候选只在一条同 CWE 的独立 D_gate 任务上做成本受控预筛，不等价于让每条候选遍历完整 D_gate。26 次门控引用 26 条互异任务，其中 16 条有可执行动态测试，10 条没有；后者的 0→0 只表示缺少正增益证据，不能解释为经过真实动态验证。
+4. PLT 原生 `capability/safety` 夹具仍只覆盖 353 条选样中的一部分：R0 动态执行 73/118，R1 动态执行 74/118；未执行项保持 `unmeasured`，不计作通过。
+5. `freeze_metadata.json` 已记录 M* hash、模型和反馈关闭状态，但 `prompt_sha256`、`retriever_sha256` 仍为空。后续正式论文实验必须冻结实际 prompt 模板与 embedding 检索器版本/hash。
+6. 当前 PLT 只有 Python；Java/JavaScript 尚未接入统一多源验证，多语言入口也尚未使用真实独立 D_gate manifest。多语言结论仍需 Python/C++/Go（再扩展 Java/JavaScript）的独立实验支持。
+
+## 逐条需求映射（2026-09-04 变更前证据）
 
 状态只使用：`implemented`、`partial`、`documentation-only`、`missing`、`contradicted`。
 
@@ -43,31 +63,29 @@
 | CodeSecEval-X 覆盖 Python/C++/Go/Java/JS | partial | 数据文件有五种语言 | 正式 SCT CLI 只允许 python/cpp/go (`run_sct_language_evolution.py:546`) |
 | final hidden results 不用于错误归纳或 memory update | contradicted | full payload 来自 Base/Plus 评测并送入 `propose_rules` | 最关键的实验污染风险 |
 
-## 可运行性缺陷
+## 可运行性检查（2026-09-09）
 
-### 1. 新实验无法从空目录启动
+### 1. 新实验从空目录启动
 
-命令使用新的 ignored 输出目录、1 个 Python task、0 个进化轮次，尚未调用模型即失败：
-
-```text
-FileNotFoundError: ... methods/legacy_prompt_adapters/final_gated_sample/gate_best_rules.json
-```
-
-调用链为 `run_sct_language_evolution.py:393 -> load_language_rules:142-146 -> load_final_gated_rules`。仓库没有该 sample 目录或规则文件，因此 R0 不是可复现地产生的。
-
-### 2. Coset Eagle 主入口不能直接运行
-
-`python methods/sct_agent/run_coset_eagle_experiment.py --help` 在第 35 行失败：
+统一 schema、PLT 适配器和四个入口已可从空输出目录导入；`--help` 烟测全部退出 0。离线 PLT 结构烟测命令为：
 
 ```text
-ModuleNotFoundError: No module named 'run_experiment'
+python methods/sct_agent/run_plt_self_evolution.py --offline --smoke --eval-limit 1
 ```
 
-它只有在另一个脚本先把 legacy adapter 目录插入 `sys.path` 时才可能间接工作，入口自身不自包含。
+该命令可生成四分之一选样 manifest；最新正式在线结果保存在 `translation_work/sct_runs/plt_python_quarter_353_20260910_132431/`。本轮使用 ChatAnywhere `deepseek-v3.2`；PLT 训练侧不依赖 Docker，Base/Plus 使用 Python Docker 验证器并先做 daemon 预检。
 
-### 3. Python 验证依赖已删除的历史 harness
+### 2. Coset Eagle 主入口兼容性
 
-当前正式 runner 最终委托到 legacy adapters；Python 路径仍调用缺失的 CodeSecEval harness。因此即使 R0 文件补齐，也会在真实生成后评测失败。
+`python methods/sct_agent/run_coset_eagle_experiment.py --help` 已可直接运行。入口现在显式加入 `methods/legacy_prompt_adapters`，但仍标记为原型/历史回放，不写入正式 SCT 结果。
+
+```text
+prototype/legacy replay only
+```
+
+### 3. Python 验证边界
+
+PLT 训练侧不依赖 Docker，使用本地 `python -I` 子进程执行 `capability/safety` 数据驱动测试；CodeSecEval Base/Plus 仍调用 `python_validator` Docker 后端。两者的验证级别和结果用途不同，不能混写。
 
 ## 与 DOCX 最接近的已有部分
 
