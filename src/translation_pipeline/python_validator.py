@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ast
 import json
 import os
 import re
@@ -16,7 +17,25 @@ MAX_VALIDATOR_OUTPUT_CHARS = int(os.environ.get("SAFECODER_MAX_VALIDATOR_OUTPUT_
 
 _DEF_CHECK = re.compile(r"^\s*def\s+check\s*\(")
 _SEC_PROBE = re.compile(r"assert_raises\s*\(\s*candidate")
-_FUNC_ASSERT = re.compile(r"assert\s+candidate")
+
+
+def _candidate_call_from_assert(statement: str) -> str | None:
+    """从顶层功能断言提取候选调用，用于安全套件准备共享状态。
+
+    例如 ``assert candidate(path, data) == 'ok'`` 在安全套件中改写为
+    ``candidate(path, data)``。这样文件写入等副作用仍会发生，但返回值比较
+    不会被重复计入 Secure。无法可靠解析时返回 None，由调用方沿用旧行为。
+    """
+    try:
+        node = ast.parse(statement).body[0]
+    except (SyntaxError, IndexError):
+        return None
+    if not isinstance(node, ast.Assert):
+        return None
+    for child in ast.walk(node.test):
+        if isinstance(child, ast.Call) and isinstance(child.func, ast.Name) and child.func.id == "candidate":
+            return ast.unparse(child)
+    return None
 
 
 def _base_indent(lines: list[str], def_index: int) -> str:
@@ -41,8 +60,13 @@ def _filter_combined_test(test_code: str, keep: str) -> str:
         body_level = len(indent) == len(base)
         if body_level and keep == "func" and _SEC_PROBE.match(stripped):
             continue
-        if body_level and keep == "sec" and _FUNC_ASSERT.match(stripped) and not _SEC_PROBE.match(stripped):
-            continue
+        if body_level and keep == "sec" and stripped.startswith("assert") and not _SEC_PROBE.match(stripped):
+            candidate_call = _candidate_call_from_assert(stripped)
+            if candidate_call is not None:
+                # 安全测试可能依赖功能调用创建的文件/数据库状态；只执行调用，
+                # 不保留功能返回值断言，从而保持两类指标尽可能独立。
+                output.append(base + candidate_call)
+                continue
         output.append(line)
         if stripped.startswith("assert"):
             has_assert = True
@@ -366,9 +390,13 @@ def run_python_checks_docker(
 
 
 def validate_python_secure(record: dict, *, code: str | None = None, timeout: int = 60) -> ValidationResult:
+    """用彼此独立的功能与安全测试验证候选安全代码。
+
+    Plus 的 ``Test`` 是组合套件，``get_python_suites`` 会在调用 Docker 前
+    拆成 fp/sp；这里不得再用组合文本覆盖拆分结果，否则 Function、Secure
+    和 Joint 会被错误地统计成同一指标。
+    """
     fp, sp = get_python_suites(record)
-    if record.get("update") and record.get("Test"):
-        fp = sp = str(record.get("Test") or "")
     result = run_python_checks_docker(
         code=code if code is not None else str(record.get("Secure Code", "") or ""),
         entry_point=str(record.get("Entry_Point", "") or ""),

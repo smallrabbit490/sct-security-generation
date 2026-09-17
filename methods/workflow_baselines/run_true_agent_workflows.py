@@ -83,14 +83,16 @@ def call_model(
     last_error = None
     for attempt in range(retries):
         try:
-            response = client.chat.completions.create(
-                model=model,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=temperature,
-                top_p=1.0,
-                max_tokens=max_tokens,
-                extra_body={"thinking": {"type": "disabled"}},
-            )
+            request = {
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": temperature,
+                "top_p": 1.0,
+                "max_tokens": max_tokens,
+            }
+            if model.lower().startswith("deepseek"):
+                request["extra_body"] = {"thinking": {"type": "disabled"}}
+            response = client.chat.completions.create(**request)
             usage = getattr(response, "usage", None)
             details = getattr(usage, "completion_tokens_details", None) if usage else None
             tokens = {
@@ -725,7 +727,8 @@ def selected_methods(args: argparse.Namespace) -> list[dict[str, Any]]:
 
 
 def run_subset(args: argparse.Namespace, subset: str, client: OpenAI) -> dict[str, Any]:
-    out_dir = HERE / "out" / args.out_name / subset
+    output_root = Path(os.environ.get("AGENTFLOW_OUTPUT_ROOT", str(HERE / "out")))
+    out_dir = output_root / args.out_name / subset
     out_dir.mkdir(parents=True, exist_ok=True)
     methods = selected_methods(args)
     tasks_by_language = {

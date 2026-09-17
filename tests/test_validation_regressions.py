@@ -1,6 +1,7 @@
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 
@@ -76,6 +77,64 @@ class HarnessPreparationTests(unittest.TestCase):
     def test_python_validator_uses_available_local_image_by_default(self):
         from translation_pipeline import python_validator
         self.assertEqual(python_validator.PYTHON_DOCKER_IMAGE, "safecoder-python-validator:local")
+
+    def test_plus_secure_validation_keeps_function_and_security_suites_separate(self):
+        """Plus 组合测试必须拆分后传入，不能把完整 Test 同时当作两类测试。"""
+        from translation_pipeline import python_validator
+        from translation_pipeline.models import ValidationResult
+
+        record = {
+            "ID": "plus-1",
+            "Entry_Point": "candidate",
+            "update": True,
+            "Test": (
+                "def check(candidate):\n"
+                "    def assert_raises(callable_obj, *args, exc_types=(Exception,)):\n"
+                "        try:\n            callable_obj(*args)\n"
+                "        except exc_types:\n            return\n"
+                "        assert False\n"
+                "    assert candidate(1) == 1\n"
+                "    assert_raises(candidate, -1, exc_types=(ValueError,))\n"
+            ),
+        }
+        sentinel = ValidationResult(
+            ok=True,
+            language="python",
+            mode="secure",
+            details={
+                "worker_result": {
+                    "compile": True,
+                    "tests": {"fp": {"passed": True}, "sp": {"passed": True}},
+                }
+            },
+        )
+        with mock.patch.object(python_validator, "run_python_checks_docker", return_value=sentinel) as run:
+            python_validator.validate_python_secure(record, code="def candidate(x): return x")
+        suites = run.call_args.kwargs["tests"]
+        self.assertNotEqual(suites["fp"], suites["sp"])
+        self.assertIn("assert candidate(1) == 1", suites["fp"])
+        self.assertNotIn("assert_raises(candidate, -1", suites["fp"])
+        self.assertIn("assert_raises(candidate, -1", suites["sp"])
+        self.assertNotIn("assert candidate(1) == 1", suites["sp"])
+
+    def test_plus_security_suite_executes_function_call_needed_by_postcondition(self):
+        """安全套件保留候选调用的副作用，但不重复功能返回值断言。"""
+        from translation_pipeline.python_validator import get_python_suites
+
+        record = {
+            "update": True,
+            "Test": (
+                "def check(candidate):\n"
+                "    state = []\n"
+                "    assert candidate(state, 'ok') == 'written'\n"
+                "    assert state == ['ok']\n"
+                "    assert_raises(candidate, state, None, exc_types=(TypeError,))\n"
+            ),
+        }
+        _functional, security = get_python_suites(record)
+        self.assertIn("candidate(state, 'ok')", security)
+        self.assertNotIn("candidate(state, 'ok') == 'written'", security)
+        compile(security, "<security>", "exec")
     def test_harness_work_directory_contains_tmp_directory(self):
         from translation_pipeline.run_full_docker_revalidation import _prepare_harness_workdir
 

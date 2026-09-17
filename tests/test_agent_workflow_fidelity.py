@@ -44,6 +44,34 @@ VALID_TRACES = {
 
 
 class AgentWorkflowFidelityTests(unittest.TestCase):
+    def test_chatanywhere_thinking_parameter_only_for_deepseek(self):
+        import run_true_agent_workflows as runner
+
+        class Usage:
+            prompt_tokens = completion_tokens = total_tokens = 0
+            completion_tokens_details = None
+
+        class Msg:
+            content = "OK"
+
+        class Choice:
+            message = Msg()
+
+        class Response:
+            choices = [Choice()]
+            usage = Usage()
+
+        class Completions:
+            def __init__(self): self.kwargs = []
+            def create(self, **kwargs): self.kwargs.append(kwargs); return Response()
+
+        class Client:
+            def __init__(self): self.chat = type("Chat", (), {"completions": Completions()})()
+
+        for model, expected in [("gpt-5.1", False), ("gemini-2.5-flash", False), ("deepseek-v3.2", True)]:
+            c = Client()
+            runner.call_model(c, "x", model=model, max_tokens=10, temperature=0, retries=1)
+            self.assertEqual("extra_body" in c.chat.completions.kwargs[0], expected)
     def test_chatanywhere_defaults_use_fast_supported_model(self):
         self.assertEqual(runner.DEFAULT_MODEL, "deepseek-v4-flash")
         self.assertEqual(runner.DEFAULT_API_BASE, "https://api.chatanywhere.tech/v1")
