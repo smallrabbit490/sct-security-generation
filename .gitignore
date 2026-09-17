@@ -23,3 +23,19 @@ results/**/*.jsonl
 
 # Local ChatAnywhere credentials and profiles
 local_secrets/chatanywhereapi使用/
+
+# 服务器连接配置与凭据（含明文密码，禁止提交）
+服务器连接/
+*密码*
+*credentials*
+*.pem
+id_rsa
+
+# 大体积原始数据（可由 tools/convert_hf_secodeplt.py 重新下载生成）
+data/external/secodeplt/hf_full/
+
+# 第三方上游仓库副本（无 LICENSE，可由上游重新克隆）
+data/external/secodeplt_github/
+
+# 本地 AI 助手工作区状态
+.workbuddy-ai/
