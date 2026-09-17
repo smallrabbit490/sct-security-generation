@@ -1,0 +1,164 @@
+[
+  {
+    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "authors": "Aman Madaan et al.",
+    "year": 2023,
+    "arxiv": "2303.17651",
+    "url": "https://arxiv.org/abs/2303.17651",
+    "mechanism": "同一模型执行生成、反馈和迭代改写",
+    "sct_use": "任务内多轮修复基线"
+  },
+  {
+    "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "authors": "Noah Shinn et al.",
+    "year": 2023,
+    "arxiv": "2303.11366",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "mechanism": "把环境反馈压缩成语言反思并写入情景记忆",
+    "sct_use": "失败根因和下一步行动字段"
+  },
+  {
+    "title": "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+    "authors": "Zhibin Gou et al.",
+    "year": 2023,
+    "arxiv": "2305.11738",
+    "url": "https://arxiv.org/abs/2305.11738",
+    "mechanism": "外部工具批评、反馈和修复闭环",
+    "sct_use": "编译器、静态分析和 harness 统一反馈"
+  },
+  {
+    "title": "Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models",
+    "authors": "Andy Zhou et al.",
+    "year": 2023,
+    "arxiv": "2310.04406",
+    "url": "https://arxiv.org/abs/2310.04406",
+    "mechanism": "蒙特卡洛树搜索加环境反馈和自反思",
+    "sct_use": "高风险 CWE 多候选验证"
+  },
+  {
+    "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+    "authors": "Guanzhi Wang et al.",
+    "year": 2023,
+    "arxiv": "2305.16291",
+    "url": "https://arxiv.org/abs/2305.16291",
+    "mechanism": "自动课程、可执行技能库和环境反馈",
+    "sct_use": "验证模板卡和可执行安全技能"
+  },
+  {
+    "title": "Learning From Failure: Integrating Negative Examples when Fine-tuning Large Language Models as Agents",
+    "authors": "Renxi Wang et al.",
+    "year": 2024,
+    "arxiv": "2402.11651",
+    "url": "https://arxiv.org/abs/2402.11651",
+    "mechanism": "质量控制后的失败轨迹作为负例学习信号",
+    "sct_use": "失败根因分类和负面经验"
+  },
+  {
+    "title": "Training Language Models to Self-Correct via Reinforcement Learning",
+    "authors": "Aviral Kumar et al.",
+    "year": 2024,
+    "arxiv": "2409.12917",
+    "url": "https://arxiv.org/abs/2409.12917",
+    "mechanism": "在线多轮纠错轨迹和奖励正则化",
+    "sct_use": "未来参数训练的轨迹采集参考"
+  },
+  {
+    "title": "ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory",
+    "authors": "Siru Ouyang et al.",
+    "year": 2025,
+    "arxiv": "2509.25140",
+    "url": "https://arxiv.org/abs/2509.25140",
+    "mechanism": "从成功和失败轨迹抽象可泛化策略并检索复用",
+    "sct_use": "成功差异加失败根因双通道"
+  },
+  {
+    "title": "Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution",
+    "authors": "Zouying Cao et al.",
+    "year": 2025,
+    "arxiv": "2512.10696",
+    "url": "https://arxiv.org/abs/2512.10696",
+    "mechanism": "多面蒸馏、上下文复用和效用驱动增删",
+    "sct_use": "经验收窄、降级、淘汰"
+  },
+  {
+    "title": "A-MEM: Agentic Memory for LLM Agents",
+    "authors": "Wujiang Xu et al.",
+    "year": 2025,
+    "arxiv": "2502.12110",
+    "url": "https://arxiv.org/abs/2502.12110",
+    "mechanism": "结构化记忆笔记、动态索引和记忆链接",
+    "sct_use": "经验冲突、特化和相关链接"
+  },
+  {
+    "title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+    "authors": "Prateek Chhikara et al.",
+    "year": 2025,
+    "arxiv": "2504.19413",
+    "url": "https://arxiv.org/abs/2504.19413",
+    "mechanism": "动态提取、整合、检索并关注延迟和成本",
+    "sct_use": "检索成本和上下文预算报告"
+  },
+  {
+    "title": "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents",
+    "authors": "Haozhen Zhang et al.",
+    "year": 2026,
+    "arxiv": "2602.02474",
+    "url": "https://arxiv.org/abs/2602.02474",
+    "mechanism": "把记忆抽取、合并和裁剪操作变成可进化技能",
+    "sct_use": "任务自适应经验抽取器"
+  },
+  {
+    "title": "Memento-Skills: Let Agents Design Agents",
+    "authors": "Huichi Zhou et al.",
+    "year": 2026,
+    "arxiv": "2603.18743",
+    "url": "https://arxiv.org/abs/2603.18743v1",
+    "mechanism": "stateful prompt 和 Read-Write Reflective Learning",
+    "sct_use": "经验读写分离和结构化技能文件"
+  },
+  {
+    "title": "Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills",
+    "authors": "Chuan Xiao et al.",
+    "year": 2026,
+    "arxiv": "2606.07412",
+    "url": "https://arxiv.org/abs/2606.07412v1",
+    "mechanism": "轨迹抽取技能并生成针对弱点的可执行任务",
+    "sct_use": "弱点驱动 D_grow 采样"
+  },
+  {
+    "title": "SEVerA: Verified Synthesis of Self-Evolving Agents",
+    "authors": "Debangshu Banerjee et al.",
+    "year": 2026,
+    "arxiv": "2603.25111",
+    "url": "https://arxiv.org/abs/2603.25111v2",
+    "mechanism": "形式化输出契约、拒绝采样和验证 fallback",
+    "sct_use": "安全不变量和硬约束"
+  },
+  {
+    "title": "Self-Evolving Coding Agents",
+    "authors": "Hao Zhou et al.",
+    "year": 2026,
+    "arxiv": "2608.03392",
+    "url": "https://arxiv.org/abs/2608.03392v3",
+    "mechanism": "对代码 Agent 自进化目标、时机、反馈和风险的分类综述",
+    "sct_use": "界定 SCT 的进化对象和实验边界"
+  },
+  {
+    "title": "EVOMAL: Self-Poisoning in Self-Evolving Coding Agents",
+    "authors": "Xiaodong Wu et al.",
+    "year": 2026,
+    "arxiv": "2608.25776",
+    "url": "https://arxiv.org/abs/2608.25776v1",
+    "mechanism": "检索技能模仿导致记忆投毒和自传播",
+    "sct_use": "候选经验隔离和传播风险指标"
+  },
+  {
+    "title": "Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents",
+    "authors": "Xing Zhang et al.",
+    "year": 2026,
+    "arxiv": "2607.12790",
+    "url": "https://arxiv.org/abs/2607.12790v2",
+    "mechanism": "用锚点集和独立隐藏集约束评价器自身演化",
+    "sct_use": "D_gate 评价器防退化"
+  }
+]
