@@ -128,47 +128,105 @@ class HskTreeRetriever:
         }
         return card
 
+    def _all_active(self, language: str) -> list[SecurityInvariantNode]:
+        """全树 active+language 白名单过滤（跨 CWE 检索用）。"""
+        out: list[SecurityInvariantNode] = []
+        for fam in self.tree.all_families():
+            for n in fam.invariants:
+                if n.status == "active" and language in n.language_leaves:
+                    out.append(n)
+        return out
+
+    def _cross_cwe_score(self, task: dict, node: SecurityInvariantNode, *, max_utility: float) -> float:
+        """跨 CWE 打分：CWE 命中只作加分项（不同 CWE 也能靠语义得分），
+        让 CWE 覆盖不完整时仍能召回语义相近的经验。"""
+        cwe = str(task.get("CWE_ID") or task.get("cwe") or "")
+        same = 1.0 if str(node.cwe) == cwe else 0.0
+        overlap = tfidf_overlap(_query_text(task), _node_text(node))
+        utility_norm = utility_score(node.support_count, node.regression_count) / max(1.0, max_utility)
+        # 不同 CWE 时不再给满额 CWE 加分，避免硬路由失效后语义项被淹没
+        return self.cwe_bonus * same * 0.5 + overlap * 2.0 + self.alpha * utility_norm
+
     def search(
         self,
         task: dict,
         limit: int = 3,
         *,
         extra_nodes: list[SecurityInvariantNode] | None = None,
+        mode: str = "hybrid",
     ) -> list[dict]:
-        """自顶向下检索：CWE 硬路由 → active+language 过滤 → base 分 → LLM 重排。
+        """检索经验。三种模式（用户要求支持跨 CWE 兜底）：
 
-        extra_nodes：额外纳入检索范围的节点（用于 Gate1 召回探针——把 provisional
-        候选临时加入，检验它能否在真实审查任务上被召回；不改变树本身）。
+        - ``strict_cwe``：只在同 CWE 分支内检索（DOCX 原始设计，覆盖不全时返回空）；
+        - ``cross_cwe`` ：忽略 CWE，全树按语义+效用打分检索，靠 LLM 打分辨相关性；
+        - ``hybrid``    ：先同 CWE；不足 limit 时跨 CWE 兜底补足（默认，兼顾精度与覆盖）。
+
+        extra_nodes：额外纳入检索范围的节点（Gate1 召回探针用，不改变树本身）。
         """
         cwe = str(task.get("CWE_ID") or task.get("cwe") or "")
         language = str(task.get("language", "python"))
-        # 1+2：CWE 硬路由 + status=active 白名单 + language 双层过滤
-        nodes = list(self.tree.active_invariants(cwe, language=language))
-        if extra_nodes:
-            extra = [n for n in extra_nodes
-                     if str(n.cwe) == cwe and language in n.language_leaves]
-            nodes.extend(extra)
+
+        def _strict_pool() -> list[SecurityInvariantNode]:
+            pool = list(self.tree.active_invariants(cwe, language=language))
+            if extra_nodes:
+                pool.extend(n for n in extra_nodes
+                            if str(n.cwe) == cwe and language in n.language_leaves)
+            return pool
+
+        def _cross_pool() -> list[SecurityInvariantNode]:
+            pool = self._all_active(language)
+            if extra_nodes:
+                pool.extend(n for n in extra_nodes if language in n.language_leaves)
+            return pool
+
+        if mode == "strict_cwe":
+            nodes = _strict_pool()
+            scorer = lambda n, mu: self.base_score(task, n, max_utility=mu)  # noqa: E731
+        elif mode == "cross_cwe":
+            nodes = _cross_pool()
+            scorer = lambda n, mu: self._cross_cwe_score(task, n, max_utility=mu)  # noqa: E731
+        else:  # hybrid
+            nodes = _strict_pool()
+            scorer = lambda n, mu: self.base_score(task, n, max_utility=mu)  # noqa: E731
+
+        if mode == "hybrid" and not nodes:
+            # 同 CWE 完全没有经验 → 直接走跨 CWE 语义检索（覆盖缺口兜底）
+            nodes = _cross_pool()
+            scorer = lambda n, mu: self._cross_cwe_score(task, n, max_utility=mu)  # noqa: E731
+
         if not nodes:
             return []
 
-        # 归一化基准：候选集内的最大效用（含 extra），使效用项落在 0~1
         max_utility = max(utility_score(n.support_count, n.regression_count) for n in nodes)
-
-        # 3：base 分数排序，初召回 recall_k
-        nodes = sorted(nodes, key=lambda n: -self.base_score(task, n, max_utility=max_utility))[: self.recall_k]
+        ranked = sorted(nodes, key=lambda n: -scorer(n, max_utility))[: self.recall_k]
 
         if self.requester is None:
-            return [self._to_card(task, n, base=self.base_score(task, n, max_utility=max_utility), llm=None)
-                    for n in nodes[:limit]]
+            cards = [self._to_card(task, n, base=scorer(n, max_utility), llm=None) for n in ranked[:limit]]
+        else:
+            scored = []
+            for n in ranked:
+                scored.append((n, scorer(n, max_utility), self._llm_score(task, n)))
+            scored.sort(key=lambda t: (-(t[2]["score"] if t[2]["error"] is None else 0.0), -t[1]))
+            cards = [self._to_card(task, n, base=base, llm=llm) for n, base, llm in scored[:limit]]
 
-        # 4：LLM 打分配序（真实调用）
-        scored = []
-        for n in nodes:
-            llm = self._llm_score(task, n)
-            scored.append((n, self.base_score(task, n, max_utility=max_utility), llm))
-        # 主排序键 = LLM 分数；base 分数作次级排序键
-        scored.sort(key=lambda t: (-(t[2]["score"] if t[2]["error"] is None else 0.0), -t[1]))
-        return [self._to_card(task, n, base=base, llm=llm) for n, base, llm in scored[:limit]]
+        # hybrid：同 CWE 命中不足时，用跨 CWE 语义检索兜底补足
+        if mode == "hybrid" and len(cards) < limit:
+            have = {c["invariant_id"] for c in cards}
+            cross_nodes = [n for n in _cross_pool() if n.invariant_id not in have]
+            if cross_nodes:
+                mu = max(utility_score(n.support_count, n.regression_count) for n in cross_nodes)
+                cross_ranked = sorted(cross_nodes, key=lambda n: -self._cross_cwe_score(task, n, max_utility=mu))
+                for n in cross_ranked[: self.recall_k]:
+                    if len(cards) >= limit:
+                        break
+                    llm = self._llm_score(task, n) if self.requester is not None else None
+                    # 跨 CWE 兜底条目必须由 LLM 判定相关（默认保守：无 LLM 时只在语义重叠>0 时采纳）
+                    if llm is not None and llm.get("error") is None and llm.get("score", 0) < 0.5:
+                        continue
+                    if llm is None and tfidf_overlap(_query_text(task), _node_text(n)) <= 0:
+                        continue
+                    cards.append(self._to_card(task, n, base=self._cross_cwe_score(task, n, max_utility=mu), llm=llm))
+        return cards[:limit]
 
 
 def build_retriever(tree: HskTree, requester: Requester | None = None) -> HskTreeRetriever:

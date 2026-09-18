@@ -72,6 +72,9 @@ class RolloutTrace:
     cwe: str = ""
     family_id: str = ""
     language: str = "python"
+    # 所属 Phase2 演进轮次（0 = Phase1 冷启动；1,2,3... = 第几轮重放演进）。
+    # 看板据此把轨迹归到正确轮次，实现"逐轮 ABCD / 逐轮分项通过率"。
+    round: int = 0
     states: list[str] = field(default_factory=list)  # 每轮 FourState.label
     transitions: list[Transition] = field(default_factory=list)
     generated_codes: list[str] = field(default_factory=list)  # 每轮代码（脱敏后）
@@ -80,6 +83,10 @@ class RolloutTrace:
     retrieved_per_round: list[list[dict]] = field(default_factory=list)
     # 修复轮的代码差分（供人工核对局部补丁是否真的局部）
     patch_diffs: list[str] = field(default_factory=list)
+    # 前向四步 Agent 的完整交互上下文（每轮一条），供 Distillation Agent 做细粒度归因：
+    # {"analysis": Analysis 结构化输出, "plan": Planning 三键计划,
+    #  "retrieved_cards": 该轮检索到的经验卡正文}
+    agent_context: list[dict] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

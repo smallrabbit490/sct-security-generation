@@ -73,6 +73,9 @@ class SecurityInvariantNode:
     regression_count: int = 0
     status: str = "provisional"
     language_leaves: dict[str, LanguageLeaf] = field(default_factory=dict)
+    # 来源元数据（不区分待遇，仅用于审计追溯）：{"stage": "phase1"/"phase2"/"consolidate",
+    # "kind": 跃迁类型/提取方式, "task_id": 来源任务, "state_flow": "B->C" 等}
+    source: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         if self.status not in NODE_STATUS:
@@ -104,6 +107,7 @@ class SecurityInvariantNode:
             regression_count=int(value.get("regression_count", 0)),
             status=str(value.get("status", "provisional")),
             language_leaves=leaves,
+            source=dict(value.get("source") or {}),
         )
 
 

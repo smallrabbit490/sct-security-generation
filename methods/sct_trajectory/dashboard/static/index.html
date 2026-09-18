@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>CLE 自进化任务看板</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <h1>CLE 自进化任务看板</h1>
+  <div class="toolbar">
+    <label>运行：
+      <select id="runSelect"></select>
+    </label>
+    <span id="statusBadge" class="badge">—</span>
+    <button id="refreshBtn">刷新</button>
+    <label class="switch"><input type="checkbox" id="autoRefresh"> 自动刷新(5s)</label>
+    <span class="muted">导出：</span>
+    <button onclick="exportData('phase1')">Phase1</button>
+    <button onclick="exportData('phase2')">Phase2</button>
+    <button onclick="exportData('phase3')">Phase3</button>
+    <button onclick="exportData('pool')">任务池</button>
+    <span id="lastUpdated" class="muted"></span>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="overview">概览</button>
+  <button class="tab" data-tab="phase1">Phase 1 冷启动</button>
+  <button class="tab" data-tab="phase2">Phase 2 重放进化</button>
+  <button class="tab" data-tab="phase3">Phase 3 门控与最终评测</button>
+  <button class="tab" data-tab="pool">经验库</button>
+</nav>
+
+<main>
+  <!-- 概览 -->
+  <section id="tab-overview" class="tabpane active">
+    <div class="cards" id="overviewCards"></div>
+    <div class="panel"><h3>阶段进度</h3><div id="stageProgress"></div></div>
+    <div class="panel"><h3>成本 / 耗时统计（按已落盘记录估算）</h3><div id="costPanel"></div></div>
+    <div class="panel" id="missingPanel"></div>
+  </section>
+
+  <!-- Phase 1 -->
+  <section id="tab-phase1" class="tabpane">
+    <div class="cards" id="p1Cards"></div>
+    <div class="panel">
+      <h3>第一次动态测试 vs 迭代后测试（成功率）</h3>
+      <div id="p1Rates"></div>
+    </div>
+    <div class="panel">
+      <h3>ABCD 四态分布</h3>
+      <div class="row">
+        <div class="half"><h4>第一次测试</h4><div id="p1AbcdFirst"></div></div>
+        <div class="half"><h4>迭代后测试</h4><div id="p1AbcdAfter"></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Phase 1 形成的经验（按 CWE 分组）</h3>
+      <div id="p1Tree"></div>
+    </div>
+    <div class="panel">
+      <h3>测试失败的例子（<span id="p1FailCount">0</span> 条）— 点击展开代码与 diff</h3>
+      <div id="p1Failures"></div>
+    </div>
+  </section>
+
+  <!-- Phase 2 -->
+  <section id="tab-phase2" class="tabpane">
+    <div class="cards" id="p2Cards"></div>
+    <div class="panel">
+      <h3>任务池（replay）— 点击查看是否被选中</h3>
+      <div id="p2Pool"></div>
+    </div>
+    <div class="panel">
+      <h3>每轮主动回放选择了什么任务（含 LLM 理由）</h3>
+      <div id="p2Rounds"></div>
+    </div>
+    <div class="panel">
+      <h3>每轮 ABCD 分布（功能与安全通过）</h3>
+      <div class="row">
+        <div class="half"><h4>最终态分布</h4><div id="p2Abcd"></div></div>
+        <div class="half"><h4>逐任务</h4><div id="p2Traj" class="scroll"></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>树的成长轨迹</h3>
+      <div id="p2Growth"></div>
+    </div>
+  </section>
+
+  <!-- Phase 3 -->
+  <section id="tab-phase3" class="tabpane">
+    <div class="cards" id="p3Cards"></div>
+    <div class="panel">
+      <h3>经验需要通过的任务数（门控审计明细）</h3>
+      <div id="p3Audit"></div>
+    </div>
+    <div class="panel">
+      <h3>树的变化（门控判定）</h3>
+      <div id="p3TreeChange"></div>
+    </div>
+    <div class="panel">
+      <h3>最终评测：固化经验树在审计池全量运行</h3>
+      <div id="p3Final"></div>
+    </div>
+    <div class="panel">
+      <h3>最终评测失败案例</h3>
+      <div id="p3FinalFail"></div>
+    </div>
+  </section>
+
+  <!-- 经验库 -->
+  <section id="tab-pool" class="tabpane">
+    <div class="cards" id="poolCards"></div>
+    <div class="panel"><h3>统一经验池（树形图）</h3><div id="poolList"></div></div>
+    <div class="panel"><h3>审计池任务清单</h3><div id="auditPoolList" class="scroll"></div></div>
+  </section>
+</main>
+
+<script src="/tree.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

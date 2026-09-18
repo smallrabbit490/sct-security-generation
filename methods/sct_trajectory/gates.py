@@ -65,9 +65,19 @@ def gate1_retrieval_probe(
     return any(str(c.get("invariant_id")) == str(candidate_id) for c in ranked)
 
 
-def gate2_effectiveness(delta_joint_pass: float) -> str:
-    """Gate 2：ΔJointPass 的判定（>0 继续 / =0 revised / <0 demoted）。"""
+def gate2_effectiveness(delta_joint_pass: float, *, allow_equal: bool = True) -> str:
+    """Gate 2：ΔJointPass 的判定。
+
+    allow_equal=True（默认，按用户拍板放宽）：Δ ≥ 0 即视为"不劣化"→ proceed；
+    只有 Δ < 0（加入经验后通过率下降）才 demoted。
+    放宽原因：D_audit 基线通过率实测约 26%，很多任务基线已接近上限，
+    "严格正增益"（DOCX 原始要求 Δ>0）会让几乎所有经验都无法晋升，
+    而"不劣化即可采纳"更符合"经验库只增不减、由后续效用衰减自洁"的设计。
+    allow_equal=False 可恢复 DOCX 的严格模式用于消融对比。
+    """
     if delta_joint_pass > 0:
+        return "proceed"
+    if delta_joint_pass == 0 and allow_equal:
         return "proceed"
     if delta_joint_pass == 0:
         return "revised"
@@ -101,15 +111,18 @@ def audit_candidate(
     tau_func: int = 0,
     top_k: int = 3,
     candidate_node=None,
+    allow_equal: bool = True,
 ) -> GateRecord:
     """综合 Gate1/2/3 判定候选经验，返回 GateRecord。
 
-    判定顺序（DOCX 表 5）：
-      1. 未命中召回探针 → revised（当前库中不具备召回能力，比对为噪声）；
-      2. ΔJointPass=0 → revised；<0 → demoted；
-      3. 缺测（hpass_missing>0）→ revised（不伪造回归证据）；
-      4. 回归超限（sec>τ_sec 或 func>τ_func）→ demoted；
-      5. 全部通过 → supported。
+    判定顺序（放宽模式 allow_equal=True，按用户拍板）：
+      1. ΔJointPass < 0（加入后变差）→ demoted；
+      2. 缺测（hpass_missing>0）→ revised（不伪造回归证据）；
+      3. 回归超限（sec>τ_sec 或 func>τ_func）→ demoted；
+      4. ΔJointPass ≥ 0 且无回归 → supported（不劣化即可采纳）。
+    Gate1 召回探针在放宽模式下只记录不拒绝（候选未入树时探针本就不稳定）。
+
+    allow_equal=False 时恢复 DOCX 严格模式：Gate1 未命中 → revised，Δ=0 → revised。
     """
     record = GateRecord(candidate_id=candidate_id, delta_joint_pass=delta_joint_pass)
     record.security_regressions = security_regressions
@@ -119,12 +132,14 @@ def audit_candidate(
     record.gate1_retrieved = gate1_retrieval_probe(
         candidate_id, retriever, audit_task, top_k=top_k, candidate_node=candidate_node
     )
-    if not record.gate1_retrieved:
+    # Gate1 在放宽模式下只作为"可召 recall 能力"的记录项，不作为拒绝理由：
+    # 经验尚未入树时召回探针本就不稳定，用 MoE 式硬拒绝会大量误杀。
+    if not record.gate1_retrieved and not allow_equal:
         record.decision = "revised"
         record.reasons.append("gate1_retrieval_probe_missed")
         return record
 
-    g2 = gate2_effectiveness(delta_joint_pass)
+    g2 = gate2_effectiveness(delta_joint_pass, allow_equal=allow_equal)
     if g2 == "revised":
         record.decision = "revised"
         record.reasons.append("delta_joint_pass_zero")

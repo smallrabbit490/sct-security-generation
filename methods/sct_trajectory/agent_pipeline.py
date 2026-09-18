@@ -125,15 +125,33 @@ def parse_analysis(text: str) -> dict:
 
 
 def dual_track_text(cards: list[dict]) -> str:
-    """把检索到的经验卡（含 polarity=positive/negative 双轨）拼成给 Planning 的文本。"""
-    lines = []
+    """把检索到的经验卡拼成给 Planning 的文本。
+
+    按《自进化论文调研》L148 的建议区分两类经验，并显式标注，避免模型把
+    "软建议"当成"必须满足的硬约束"而无差别加固（这是诱发过度防御的主要来源）：
+    - 【硬不变量】：不可违反、但可通过局部改动满足的条件；
+    - 【软建议】：仅供参考的实现提示，**不得**以破坏功能契约为代价去满足。
+    """
+    if not cards:
+        return "（无经验）"
+    hard, soft, negative = [], [], []
     for c in cards:
+        principle = str(c.get("principle") or c.get("positive_principle") or "").strip()
+        guardrail = str(c.get("forbidden_patterns") or c.get("negative_guardrail") or "").strip()
         polarity = str(c.get("polarity", ""))
-        tag = "【负向红线】" if polarity == "negative" else "【正向准则】"
-        principle = str(c.get("principle") or c.get("positive_principle") or "")
-        guardrail = str(c.get("forbidden_patterns") or c.get("negative_guardrail") or "")
-        lines.append(f"{tag} {principle}" + (f"；禁忌：{guardrail}" if guardrail else ""))
-    return "\n".join(lines) if lines else "（无经验）"
+        ctype = str(c.get("constraint_type", ""))
+        risk = c.get("overdefense_risk")
+        if polarity == "negative" or (guardrail and not principle):
+            negative.append(f"【负向红线·务必避免】{guardrail or principle}"
+                            + (f"（过度防御风险 {risk}）" if risk is not None else ""))
+        elif ctype == "hard_invariant":
+            hard.append(f"【硬不变量·必须满足】{principle}"
+                        + (f"；同时避免：{guardrail}" if guardrail else ""))
+        else:
+            soft.append(f"【软建议·仅供参考，不得为满足它而破坏功能】{principle}"
+                        + (f"；同时避免：{guardrail}" if guardrail else ""))
+    parts = hard + soft + negative
+    return "\n".join(parts) if parts else "（无经验）"
 
 
 # ---------- 3. Planning Agent ----------
@@ -149,17 +167,39 @@ def _task_contract(task: dict) -> str:
     return json.dumps(trimmed, ensure_ascii=False)
 
 
-def planning_prompt(analysis: str, cards: list[dict], task: dict) -> str:
-    """构造安全规划 prompt：要求输出 {Preserved_Func, Patch_Scope, Avoidance_List}。"""
-    return (
-        "你是安全规划专家（决策中枢）。基于安全分析和双轨经验，制定一个「极小化修改范围、"
+def planning_prompt(analysis: str, cards: list[dict], task: dict, *, anti_overdefense: bool = True) -> str:
+    """构造安全规划 prompt：要求输出 {Preserved_Func, Patch_Scope, Avoidance_List}。
+
+    anti_overdefense=True（默认，本方法的新版）：显式加入**功能优先**约束，针对
+      "经验注入诱发过度防御"的实测问题——经验只是达成安全的参考，绝不能以破坏
+      原有功能契约/合法输入处理为代价。
+    anti_overdefense=False（旧版基线）：仅保留"极小化修改范围"约束，用于消融实验，
+      用于定位该强化约束本身是帮忙还是添乱。
+    """
+    common = (
+        "你是安全规划专家（决策中枢）。基于安全分析和经验，制定一个「极小化修改范围、"
         "严禁推翻整体骨架」的修补计划。只返回 JSON，字段为：\n"
         '{"Preserved_Func": "必须保持不变的业务逻辑与合法输入边界", '
         '"Patch_Scope": "最小化修改范围（具体改哪里）", '
         '"Avoidance_List": ["禁止的破坏性操作（如整体重写、清空返回、禁用接口）"]}\n'
         "只返回这一个 JSON 对象，不要输出任何其他文字或代码。\n\n"
+    )
+    if anti_overdefense:
+        guard = (
+            "【功能优先原则（必须遵守）】\n"
+            "1. 经验是达成安全的参考，不是必须无条件满足的要求：经验若要求增加额外校验层、"
+            "收窄输入范围或拒绝更多输入，必须先确认它不会让原本合法的输入被拒绝。\n"
+            "2. 任何修复都必须保持函数名、参数、返回值与异常契约不变；禁止以清空返回、"
+            "抛异常、禁用接口、整体重写等方式换取安全。\n"
+            "3. 若某条经验与本任务的功能契约冲突，应在 Patch_Scope 中说明取舍，"
+            "并把该冲突写入 Avoidance_List，而不是照搬经验。\n\n"
+        )
+    else:
+        guard = ""
+    return (
+        common + guard +
         "安全分析：\n" + analysis +
-        "\n双轨经验：\n" + dual_track_text(cards) +
+        "\n经验：\n" + dual_track_text(cards) +
         "\n任务契约：" + _task_contract(task)
     )
 
@@ -237,13 +277,19 @@ def run_pipeline(
     *,
     requester: Requester | None = None,
     reference_code: str = "",
+    filter_experiences: bool = False,
+    risk_threshold: float = 0.6,
+    anti_overdefense: bool = True,
 ) -> dict:
     """执行四步流水线（Analysis→Retrieval→Planning→CodeGen）。
 
     requester 缺省时只构造各步 prompt（可单测/离线）；requester 提供时真实调用。
+    filter_experiences=True 时，在注入前对经验做「过度防御风险」过滤（见
+    experience_filter.py）——这解决"注入经验反而导致功能失败"的实测问题。
     返回 dict：
       prompts: 各步 prompt 文本
       analysis / analysis_parsed / plan / plan_parsed / code / patch_diff
+      experience_filter: {"kept": n, "dropped": n, "assessments": [...]}（审计用）
       error_type: 任一步失败时的分类，否则 None
     """
     prompts = {
@@ -260,6 +306,7 @@ def run_pipeline(
             "plan_parsed": {"unmeasured": True},
             "code": "",
             "patch_diff": "",
+            "experience_filter": {"kept": len(cards), "dropped": 0, "assessments": []},
             "error_type": None,
         }
 
@@ -271,6 +318,18 @@ def run_pipeline(
     plan_parsed: dict = {"unmeasured": True}
     step_errors: list[str] = []
 
+    # ---- 经验注入前过滤（解决"注入反而有害"：丢弃会诱发过度防御的经验）----
+    # 由调用方通过 filter_experiences=True 开启；默认关闭以保持既有行为可复现。
+    filter_result: dict = {"kept": list(cards), "dropped": [], "assessments": [], "error": None}
+    if filter_experiences:
+        try:
+            from .experience_filter import filter_experiences as _filter
+
+            filter_result = _filter(task, cards, requester, risk_threshold=risk_threshold)
+            cards = filter_result["kept"]
+        except Exception as exc:
+            step_errors.append(f"experience_filter:{type(exc).__name__}")
+
     try:
         analysis_text = _content(requester(analyze_prompt(task, reference_code)))
         analysis_parsed = parse_analysis(analysis_text)
@@ -279,7 +338,8 @@ def run_pipeline(
         analysis_text = analysis_text or "（分析步骤不可用，请直接依据源文件做安全加固）"
 
     try:
-        plan_text = _content(requester(planning_prompt(analysis_text, cards, task)))
+        plan_text = _content(requester(planning_prompt(analysis_text, cards, task,
+                                                       anti_overdefense=anti_overdefense)))
         plan_parsed = parse_planning(plan_text)
     except (ValueError, RuntimeError) as exc:
         step_errors.append(f"planning:{exc}")
@@ -295,7 +355,8 @@ def run_pipeline(
     try:
         code_text = strip_code_fence(_content(requester(generation_prompt(plan_text, cards, task, reference_code))))
         patch_diff = compute_patch_diff(reference_code, code_text) if reference_code else ""
-        prompts["planning"] = planning_prompt(analysis_text, cards, task)
+        prompts["planning"] = planning_prompt(analysis_text, cards, task,
+                                              anti_overdefense=anti_overdefense)
         prompts["generation"] = generation_prompt(plan_text, cards, task, reference_code)
         return {
             "prompts": prompts,
@@ -305,6 +366,11 @@ def run_pipeline(
             "plan_parsed": plan_parsed,
             "code": code_text,
             "patch_diff": patch_diff,
+            "experience_filter": {
+                "kept": len(filter_result["kept"]),
+                "dropped": len(filter_result["dropped"]),
+                "assessments": filter_result["assessments"],
+            },
             "error_type": None if not step_errors else ";".join(step_errors),
         }
     except (ValueError, RuntimeError) as exc:
@@ -318,5 +384,10 @@ def run_pipeline(
             "plan_parsed": plan_parsed,
             "code": "",
             "patch_diff": "",
+            "experience_filter": {
+                "kept": len(filter_result["kept"]),
+                "dropped": len(filter_result["dropped"]),
+                "assessments": filter_result["assessments"],
+            },
             "error_type": ";".join(step_errors),
         }

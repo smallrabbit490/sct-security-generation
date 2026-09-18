@@ -28,7 +28,7 @@ _OPTIONAL_FIELDS = ("dangerous_pattern", "recommended_action", "unsafe_alternati
                     "language_adaptation", "non_applicable_boundary")
 
 
-def build_prompt(row: dict) -> str:
+def build_prompt(row: dict, *, output_language: str = "zh") -> str:
     """构造不要求模型复制补丁代码的差异分析提示。
 
     提示要求模型按文档 3.3 的经验卡结构返回 JSON：原则（security_invariant）、
@@ -36,29 +36,51 @@ def build_prompt(row: dict) -> str:
     危险替代（unsafe_alternative）、多语言适配（language_adaptation）、
     不适用边界（non_applicable_boundary）。只提取可跨任务复用的安全语义，
     不复制漏洞/补丁代码、测试输入或答案常量。
+
+    output_language："zh"（默认，保持既有行为）或 "en"。选 "en" 是为了让经验节点
+    语言与 PLT 任务描述（英文）一致，否则检索器 TF-IDF 在中英之间重叠恒为 0，
+    语义相关性失效（实测 71% 查询-节点对重叠为 0）。
     """
     task = row.get("task_description") or {}
     truth = row.get("ground_truth") or {}
+    if output_language == "en":
+        instruction = (
+            "Return JSON ONLY with these fields: principle (the security invariant), "
+            "applicability (when it applies), dangerous_pattern, recommended_action, "
+            "unsafe_alternative, language_adaptation (JSON object: how python/go/cpp each "
+            "implement the same principle), non_applicable_boundary. "
+            "Extract a reusable security invariant from the vulnerable and patched code. "
+            "Write ALL field values in ENGLISH. "
+            "Do not copy code, test inputs, or answer constants.\n"
+        )
+    else:
+        instruction = (
+            "请只返回 JSON，字段为：principle（安全不变量）、applicability（适用条件）、"
+            "dangerous_pattern（危险模式）、recommended_action（推荐动作）、"
+            "unsafe_alternative（不安全替代做法）、language_adaptation（python/go/cpp "
+            "三种语言如何实现同一原则，用 JSON 对象）、non_applicable_boundary（不适用边界）。"
+            "从漏洞代码和补丁代码提取可跨任务复用的安全不变量，不要复制代码、测试输入或答案。\n"
+        )
     return (
-        "请只返回 JSON，字段为：principle（安全不变量）、applicability（适用条件）、"
-        "dangerous_pattern（危险模式）、recommended_action（推荐动作）、"
-        "unsafe_alternative（不安全替代做法）、language_adaptation（python/go/cpp "
-        "三种语言如何实现同一原则，用 JSON 对象）、non_applicable_boundary（不适用边界）。"
-        "从漏洞代码和补丁代码提取可跨任务复用的安全不变量，不要复制代码、测试输入或答案。\n"
-        f"CWE: {row.get('CWE_ID')}\n任务: {task.get('description', task.get('function_name', ''))}\n"
-        f"漏洞差异: {truth.get('vulnerable_code', '')}\n补丁差异: {truth.get('patched_code', '')}"
+        instruction
+        + f"CWE: {row.get('CWE_ID')}\n"
+        + f"task: {task.get('description', task.get('function_name', ''))}\n"
+        + f"vulnerable diff: {truth.get('vulnerable_code', '')}\n"
+        + f"patched diff: {truth.get('patched_code', '')}"
     )
 
 
-def extract_initial_hypothesis(row: dict, requester: Callable[[str], dict]) -> dict:
+def extract_initial_hypothesis(row: dict, requester: Callable[[str], dict], *, output_language: str = "zh") -> dict:
     """调用 LLM 提取 seed 假设；输出只保留安全语义，不保留源代码。
 
     输出经验卡包含文档 3.3 的核心字段（principle/applicability 为必填，
     dangerous_pattern/recommended_action/unsafe_alternative/language_adaptation/
     non_applicable_boundary 为可选），status 固定为 seed；evidence 由后续
     轨迹验证回填，此处不伪造验证结果。
+
+    output_language 透传给 build_prompt，用于让经验文本与检索查询同语言。
     """
-    content = ((requester(build_prompt(row)).get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+    content = ((requester(build_prompt(row, output_language=output_language)).get("choices") or [{}])[0].get("message") or {}).get("content") or ""
     if not content.strip():
         raise ValueError("empty_model_content")
     try:

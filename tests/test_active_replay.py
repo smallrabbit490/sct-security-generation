@@ -113,6 +113,7 @@ def test_llm_bounded_select_drops_invalid_ids():
 
 
 def test_llm_bad_json_degrades_gracefully():
+    """LLM 输出无法解析时：记录 error，并由规则兜底补足（不让整轮空转）。"""
     tree = HskTree()
     ledger = ErrorLedger()
     tasks = [_task(1, "CWE-22")]
@@ -121,8 +122,41 @@ def test_llm_bad_json_degrades_gracefully():
         return {"choices": [{"message": {"content": "not json"}}]}
 
     result = llm_bounded_select(tree, ledger, tasks, bad_requester)
-    assert result["selected"] == []
-    assert result["error"] is not None
+    assert result["error"] is not None              # 记录了 LLM 输出异常
+    assert result["fallback_used"] is True          # 走了规则兜底
+    assert [t["index"] for t in result["selected"]] == [1]
+
+
+def test_llm_selects_zero_falls_back():
+    """LLM 把候选全判 false 时，规则兜底应补足，避免整轮演进空转。"""
+    tree = HskTree()
+    ledger = ErrorLedger()
+    tasks = [_task(1, "CWE-22"), _task(2, "CWE-78")]
+
+    def zero_requester(prompt):
+        return {"choices": [{"message": {"content":
+            '{"decisions": [{"Task_ID": 1, "Selected": false, "Reason": "no value"},'
+            ' {"Task_ID": 2, "Selected": false, "Reason": "no value"}]}'}}]}
+
+    result = llm_bounded_select(tree, ledger, tasks, zero_requester, fallback_min=1)
+    assert result["selected"], "兜底后不应为空"
+    assert result["fallback_used"] is True
+    assert "rule_fallback" in result["reasons"][str(result["selected"][0]["index"])]
+
+
+def test_llm_selection_respected_when_enough():
+    """LLM 选中数达标时不应触发兜底。"""
+    tree = HskTree()
+    ledger = ErrorLedger()
+    tasks = [_task(1, "CWE-22"), _task(2, "CWE-78")]
+
+    def ok_requester(prompt):
+        return {"choices": [{"message": {"content":
+            '{"decisions": [{"Task_ID": 1, "Selected": true, "Reason": "weak cwe"}]}'}}]}
+
+    result = llm_bounded_select(tree, ledger, tasks, ok_requester, fallback_min=1)
+    assert [t["index"] for t in result["selected"]] == [1]
+    assert result["fallback_used"] is False
 
 
 def test_schedule_replay_end_to_end_no_daudit_move():

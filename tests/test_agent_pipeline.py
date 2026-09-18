@@ -69,12 +69,22 @@ def test_compute_patch_diff():
 
 
 def test_dual_track_text_tags():
+    """经验按类型分标签：硬不变量 / 软建议 / 负向红线（防过度防御的关键）。"""
     cards = [
-        {"polarity": "positive", "principle": "先规范化再打开"},
+        {"polarity": "positive", "principle": "先规范化再打开", "constraint_type": "hard_invariant"},
+        {"polarity": "positive", "principle": "可考虑增加长度限制", "constraint_type": "soft_guidance"},
         {"polarity": "negative", "forbidden_patterns": "禁止前缀弱判断"},
     ]
     text = dual_track_text(cards)
-    assert "正向准则" in text and "负向红线" in text
+    assert "硬不变量" in text
+    assert "软建议" in text and "不得为满足它而破坏功能" in text
+    assert "负向红线" in text
+    # 软建议必须排在硬不变量之后（先满足硬约束，再参考软建议）
+    assert text.index("硬不变量") < text.index("软建议")
+
+
+def test_dual_track_text_empty(): 
+    assert dual_track_text([]) == "（无经验）"
 
 
 def test_run_pipeline_offline_no_requester():

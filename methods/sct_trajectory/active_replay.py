@@ -160,29 +160,34 @@ def llm_bounded_select(
     requester: Callable[[str], dict],
     *,
     replay_limit: int = 96,
+    fallback_min: int = 1,
 ) -> dict:
-    """阶段二：LLM 语义感知有界筛选（真实调用）。
+    """阶段二：LLM 语义感知有界筛选（真实调用），带规则兜底。
 
-    返回 {"selected": [...], "reasons": {task_id: reason}, "decisions": [...], "error": ...}。
+    返回 {"selected": [...], "reasons": {...}, "decisions": [...], "error": ..., "fallback_used": bool}。
     - selected 只含 LLM 判定 Selected=true 且 task_id 合法的任务（去重、有界 replay_limit）；
     - 未选中的任务不出现在 selected（即留在 replay 池，供后续轮次再次参与）；
-    - 解析失败返回空选择 + error，不中断。
+    - 解析失败返回空选择 + error，不中断；
+    - **规则兜底**：若 LLM 选中数 < fallback_min（含"全判 false"与"输出无法解析"两种情况），
+      按阶段一的规则分从高到低补足到 fallback_min 条。避免单次保守/异常响应让整轮演进空转
+      （实测出现过 LLM 返回"候选任务列表为空"导致整轮选中 0）。
     """
     by_task_id = {int(t.get("index")): t for t in tasks}
+    decisions: list[dict] = []
+    error: str | None = None
     try:
         prompt = build_scheduler_prompt(tree, ledger, tasks)
         payload = requester(prompt)
         content = ((payload.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
         decisions = _parse_decisions(content)
+        if not decisions:
+            error = "no_valid_decisions"
     except Exception as exc:
-        return {"selected": [], "reasons": {}, "decisions": [], "error": type(exc).__name__}
+        error = type(exc).__name__
 
     selected: list[dict] = []
     reasons: dict = {}
     seen: set[int] = set()
-    if not decisions:
-        # 容错解析后仍无任何可解析决策：记录审计错误，不抛异常
-        return {"selected": [], "reasons": {}, "decisions": [], "error": "no_valid_decisions"}
     for item in decisions:
         if not isinstance(item, dict):
             continue
@@ -199,7 +204,24 @@ def llm_bounded_select(
         reasons[str(task_id)] = str(item.get("Reason") or "")
         if len(selected) >= max(1, replay_limit):
             break
-    return {"selected": selected, "reasons": reasons, "decisions": decisions, "error": None}
+
+    # 规则兜底：LLM 保守或输出异常时，按信息价值补足，保证每轮有实质演进
+    fallback_used = False
+    if len(selected) < max(0, fallback_min):
+        ranked = rule_budget_filter(tree, ledger, tasks, batch_size=len(tasks) or 1)
+        for t in ranked:
+            tid = int(t.get("index", -1))
+            if tid in seen:
+                continue
+            seen.add(tid)
+            selected.append(t)
+            reasons[str(tid)] = "rule_fallback: LLM 未给出足够选择，按薄弱CWE+错题密度补足"
+            fallback_used = True
+            if len(selected) >= max(1, fallback_min):
+                break
+
+    return {"selected": selected, "reasons": reasons, "decisions": decisions,
+            "error": error, "fallback_used": fallback_used}
 
 
 def schedule_replay(

@@ -82,8 +82,13 @@ def build_distillation_prompt(
     failure_type: str,
     analysis: dict | None = None,
     plan: dict | None = None,
+    retrieved_cards: list[dict] | None = None,
 ) -> str:
-    """构造经验总结提示：要求 LLM 输出去特化的高级不变量 + 归因 + 盲区（视跃迁而定）。"""
+    """构造经验总结提示：要求 LLM 输出去特化的高级不变量 + 归因 + 盲区（视跃迁而定）。
+
+    输入证据链路（DOCX 3.2）：前向四步 Agent 的完整交互上下文（Analysis 分析意图、
+    Retrieval 检索卡、Planning 规划约束、CodeGen 代码/差分）+ 状态跃迁 + 脱敏失败类型。
+    """
     target = distill_target(kind)
     lines = [
         "你是经验总结智能体（旁路元认知观察者）。请审视下面这条安全代码生成轨迹，"
@@ -93,10 +98,12 @@ def build_distillation_prompt(
         f"状态跃迁：{before} -> {after}（类型 {kind}，沉淀目标 {target}）",
         f"脱敏失败类型：{failure_type or '（达 A，无失败）'}",
     ]
+    if retrieved_cards:
+        lines.append("Retrieval Agent 检索到的经验卡：" + json.dumps(retrieved_cards[:3], ensure_ascii=False)[:500])
     if analysis:
-        lines.append("Analysis 中间输出：" + json.dumps(analysis, ensure_ascii=False))
+        lines.append("Analysis 中间输出：" + json.dumps(analysis, ensure_ascii=False)[:900])
     if plan:
-        lines.append("Planning 中间输出：" + json.dumps(plan, ensure_ascii=False))
+        lines.append("Planning 中间输出：" + json.dumps(plan, ensure_ascii=False)[:900])
     if patch_diff:
         lines.append("修复代码差分（before→after）：\n" + patch_diff[:3000])
     elif code_before or code_after:
@@ -106,17 +113,34 @@ def build_distillation_prompt(
         "",
         "请严格做到：",
         "1. 去特化：不要出现具体任务的变量名、函数名、常量、任务 ID；只保留跨任务通用的原则。",
-        "2. 细粒度归因：判定失误根因——是 Analysis 遗漏了合法输入边界，还是 Planning 制定了"
+        "2. 【跨 CWE 可迁移】提炼的经验必须能被其他漏洞类别的任务复用，不要只针对本题材写。"
+        "要抽象到『输入来源 → 敏感操作 → 必须满足的安全不变量』这一层，"
+        "使同一原则能迁移到其他 CWE 的相似结构上。例如可写成"
+        "『外部输入在进入敏感操作前必须经过与目标语义一致的校验，"
+        "且校验不得改变合法输入的处理结果』这类跨类别表述。",
+        "3. 【避免过度防御】若未达标是功能失败（functional fail / 过度防御）造成的，"
+        "必须明确指出是哪种『为了安全而牺牲功能』的做法导致的，并把"
+        "『在保持原有功能与接口契约不变的前提下做最小必要改动』作为首要准则写入 "
+        "positive_principle（这是本方法最关键的经验类型）。",
+        "4. 细粒度归因：判定失误根因——是 Analysis 遗漏了合法输入边界，还是 Planning 制定了"
         "暴力截断/清空返回等错误策略（若无失误写「无」）。",
-        "3. 全状态无偏：无论状态是否改善，都要给出相应的知识（正向准则/负向红线/认知盲区）。",
+        "5. 全状态无偏：无论状态是否改善，都要给出相应的知识（正向准则/负向红线/认知盲区）。",
+        "6. 【最小改动手法】总结本题中『为达成安全实际只改了哪一处、为什么这样改不会破坏功能』，"
+        "写成可迁移的手术式改法（只描述改动位置类型与理由，不含具体标识符）。"
+        "这是经验库中最有价值的一类：它告诉后续任务『怎样用最小代价达成安全』。",
+        "7. 【过度防御陷阱】反向总结『哪些看似安全、实则破坏功能的做法必须避免』，"
+        "例如无差别拒绝输入、清空返回值、把合法边界收得过窄、增加不必要的校验层。"
+        "即使本题未犯该错，也要指出相邻的常见陷阱。",
         "",
         "只返回 JSON，字段：",
-        '{"high_level_invariant": "去特化后的高级安全不变量", '
+        '{"high_level_invariant": "去特化且跨 CWE 可迁移的高级安全不变量", '
         '"positive_principle": "保持功能下的正向修复准则（非增益类可为空字符串）", '
         '"negative_guardrail": "破坏功能的禁忌手段（非 B_to_C 可为空字符串）", '
-        '"applicability": "适用条件", '
+        '"applicability": "适用条件（写清可迁移的输入来源/敏感操作结构，而非某个具体任务）", '
         '"attribution": "失误根因归因", '
-        '"blind_spot": "无改善/恶化时的高频误区与认知盲区（否则为空字符串）"}',
+        '"blind_spot": "无改善/恶化时的高频误区与认知盲区（否则为空字符串）", '
+        '"minimal_patch_hint": "最小改动手法：只改哪一处、为何不破坏功能（可迁移表述）", '
+        '"overdefense_pitfall": "过度防御陷阱：看似安全实则破坏功能的做法（务必避免）"}',
     ]
     return "\n".join(lines)
 
@@ -142,10 +166,12 @@ def distill_transition(
     requester: Requester,
     analysis: dict | None = None,
     plan: dict | None = None,
+    retrieved_cards: list[dict] | None = None,
 ) -> dict:
     """对单条跃迁做真实 LLM 经验总结，返回结构化经验 dict。
 
     返回 dict 含 kind/target/cwe + LLM 提炼字段；解析失败时返回 {"error": ...}。
+    analysis/plan/retrieved_cards 是前向四步 Agent 的交互上下文，用于细粒度归因。
     """
     target = distill_target(kind)
     try:
@@ -153,7 +179,7 @@ def distill_transition(
             cwe=cwe, kind=kind, before=before, after=after,
             code_before=code_before, code_after=code_after,
             patch_diff=patch_diff, failure_type=failure_type,
-            analysis=analysis, plan=plan,
+            analysis=analysis, plan=plan, retrieved_cards=retrieved_cards,
         )
         value = _extract_json(_content(requester(prompt)))
     except Exception as exc:
@@ -169,8 +195,13 @@ def distill_transition(
         "applicability": str(value.get("applicability") or ""),
         "attribution": str(value.get("attribution") or ""),
         "blind_spot": str(value.get("blind_spot") or ""),
+        # 新增两类经验（保留上方全部原有字段，使经验库更丰富而非更单薄）：
+        # - minimal_patch_hint：最小改动手法，告诉后续任务"怎样用最小代价达成安全"
+        # - overdefense_pitfall：过度防御陷阱，告诉后续任务"哪些看似安全的做法会破坏功能"
+        "minimal_patch_hint": str(value.get("minimal_patch_hint") or ""),
+        "overdefense_pitfall": str(value.get("overdefense_pitfall") or ""),
         "deidentified": _deidentified_check(
-            " ".join(str(value.get(k, "")) for k in ("high_level_invariant", "positive_principle", "negative_guardrail", "applicability", "blind_spot")),
+            " ".join(str(value.get(k, "")) for k in ("high_level_invariant", "positive_principle", "negative_guardrail", "applicability", "blind_spot", "minimal_patch_hint", "overdefense_pitfall")),
             code_before, code_after,
         ),
     }
@@ -182,6 +213,7 @@ def distill_trace(
     *,
     analysis: dict | None = None,
     plan: dict | None = None,
+    phase: str = "phase2",
 ) -> dict:
     """对一条轨迹做全状态无偏反思，按 8 类跃迁分流产出三类经验。
 
@@ -189,6 +221,8 @@ def distill_trace(
     - positive：增益类（B_to_A/C_to_A/D_to_A）+ A 直出（direct_A）；
     - negative：B_to_C；
     - error_ledger：stalled 类（B/C/D_stalled）。
+    phase：来源阶段标签（"phase1" 冷启动 / "phase2" 重放进化），只用于追溯，
+    不影响提炼逻辑——两个阶段的经验一视同仁。
     """
     positive: list[dict] = []
     negative: list[dict] = []
@@ -217,11 +251,24 @@ def distill_trace(
         patch_diff = compute_local_diff(code_before, code_after)
         failure_type = state_to_failure_type(after)
 
+        # 取该跃迁两端的四步 Agent 交互上下文（第 i 轮与第 i+1 轮）做细粒度归因
+        ctx_before = (trace.agent_context[i] if i < len(trace.agent_context) else {}) or {}
+        ctx_after = (trace.agent_context[i + 1] if i + 1 < len(trace.agent_context) else {}) or {}
+        step_analysis = {
+            "round_before": ctx_before.get("analysis") or {},
+            "round_after": ctx_after.get("analysis") or {},
+        } if (ctx_before or ctx_after) else analysis
+        step_plan = {
+            "round_before": ctx_before.get("plan") or {},
+            "round_after": ctx_after.get("plan") or {},
+        } if (ctx_before or ctx_after) else plan
+
         out = distill_transition(
             cwe=trace.cwe, kind=kind, before=before, after=after,
             code_before=code_before, code_after=code_after,
             patch_diff=patch_diff, failure_type=failure_type,
-            requester=requester, analysis=analysis, plan=plan,
+            requester=requester, analysis=step_analysis, plan=step_plan,
+            retrieved_cards=(ctx_after.get("retrieved_cards") or ctx_before.get("retrieved_cards") or []),
         )
 
         if target == "positive_principle":
