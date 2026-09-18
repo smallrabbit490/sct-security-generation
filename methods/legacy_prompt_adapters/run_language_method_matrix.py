@@ -514,14 +514,106 @@ def _extract_cpp_signature(source: str, entry: str) -> str | None:
     return _normalize_signature(match.group(1)) if match else None
 
 
+class _SpanMatch:
+    """`re.Match` 的轻量替身：调用方只用到 ``group(1)`` / ``start(1)`` / ``end(1)``。"""
+
+    def __init__(self, text: str, start: int, end: int) -> None:
+        self._text = text
+        self._start = start
+        self._end = end
+
+    def group(self, index: int = 0) -> str:  # noqa: ARG002
+        return self._text
+
+    def start(self, index: int = 0) -> int:  # noqa: ARG002
+        return self._start
+
+    def end(self, index: int = 0) -> int:  # noqa: ARG002
+        return self._end
+
+
+def _match_delimiter(source: str, start: int, opener: str, closer: str) -> int | None:
+    """返回与 ``source[start]``（``opener``）配对的 ``closer`` 下标。"""
+    if start >= len(source) or source[start] != opener:
+        return None
+    depth = 0
+    for index in range(start, len(source)):
+        char = source[index]
+        if char == opener:
+            depth += 1
+        elif char == closer:
+            depth -= 1
+            if depth == 0:
+                return index
+    return None
+
+
+def _go_body_brace(source: str, probe: int) -> int | None:
+    """从 ``probe`` 起找 Go 函数体的左花括号，跳过类型里的 ``interface{}`` / ``struct{}``。
+
+    为什么不能用「找第一个 ``{``」：单值返回类型可能是
+    ``map[string]interface{}``，其中就带花括号，会被误判成函数体。
+    """
+    index = probe
+    while index < len(source):
+        if source[index] == "{":
+            word = re.search(r"([A-Za-z_]\w*)\s*$", source[:index])
+            previous = word.group(1) if word else ""
+            if previous in {"interface", "struct"}:
+                end = _match_delimiter(source, index, "{", "}")
+                if end is None:
+                    return None
+                index = end + 1
+                continue
+            return index
+        index += 1
+    return None
+
+
+def _scan_go_func(source: str, name: str) -> _SpanMatch | None:
+    """扫描 ``func <name>(...) [返回类型] {``，返回签名片段。
+
+    为什么不用纯正则：Go 的返回类型里可以有花括号（``interface{}``、
+    ``map[string]interface{}``），而 ``\\([^{}]*\\)`` 这类写法遇到它们会直接
+    匹配失败。实测 Base/Go 里 6 个任务有 3 个因此取不到入口签名，
+    于是 `harness_contract_text` 返回空串——**提示词里整段 harness 契约静默消失**，
+    模型只能瞎猜类型。这类"找不到就降级"的分支必须堵住。
+    """
+    anchor_re = re.compile(rf"(?m)^[ \t]*func\s+{re.escape(name)}\s*\(")
+    for anchor in anchor_re.finditer(source):
+        start = anchor.start()
+        open_paren = anchor.end() - 1
+        close_paren = _match_delimiter(source, open_paren, "(", ")")
+        if close_paren is None:
+            continue
+        cursor = close_paren + 1
+        probe = cursor
+        while probe < len(source) and source[probe] in " \t":
+            probe += 1
+        if probe < len(source) and source[probe] == "(":
+            end_of_returns = _match_delimiter(source, probe, "(", ")")
+            if end_of_returns is None:
+                continue
+            cursor = end_of_returns + 1
+        elif probe < len(source) and source[probe] != "{":
+            body = _go_body_brace(source, probe)
+            if body is None:
+                continue
+            cursor = body
+        body_brace = _go_body_brace(source, cursor)
+        if body_brace is None:
+            continue
+        return _SpanMatch(source[start:body_brace].rstrip(), start, body_brace)
+    return None
+
+
 def _go_signature_match(source: str, entry: str) -> re.Match[str] | None:
     prefix = _split_saved_harness_main("go", source)
     search_area = prefix[0] if prefix else source
     for name in sorted(entry_name_variants(entry), key=len, reverse=True):
-        pattern = rf"(?ms)(func\s+{re.escape(name)}\s*\([^{{}}]*\)\s*(?:\([^{{}}]*\)|[\w\[\]\*\.]+)?)(?:\s*\{{)"
-        match = re.search(pattern, search_area)
+        match = _scan_go_func(search_area, name)
         if match:
-            return match
+            return match  # type: ignore[return-value]
     return None
 
 
