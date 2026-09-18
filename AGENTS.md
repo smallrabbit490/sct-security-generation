@@ -106,3 +106,116 @@ translation_work/
 - 涉及数据和反馈流时，注释必须标明 `D_init`、`D_grow`、`D_gate`、`H_pass` 与 CodeSecEval Base/Plus 的边界；禁止用最终测试反馈生成或更新经验。
 - 禁止为了缩短代码把关键流程压成难以审计的单行语句。阶段切换、门控决策、异常处理、冻结和结果写入必须使用清晰的变量名与分段注释。
 - 注释不得包含 API key、原始未脱敏 prompt、隐藏测试输入、答案常量或其他敏感信息；注释描述的是方法职责和安全边界，不是实验秘密。
+
+## 九、Baseline 怎么跑（九条方法的唯一入口）
+
+### 9.1 唯一 runner
+
+九条 baseline（4 条 Prompt + 5 条 Agent）都由**同一个**入口运行：
+
+```text
+methods/workflow_baselines/run_true_agent_workflows.py
+```
+
+| 需求 | 参数 |
+|---|---|
+| 四条 Prompt baseline（Greedy / Greedy+Secure / CoT / CoT+Secure） | `--only-traditional` |
+| 五条 Agent baseline（AutoSafeCoder / RA-Gen / SWE-Agent / AgentCoder / SecAwareCoder） | `--only-agents` |
+| 九条全跑 | 两个都不加 |
+
+`methods/prompting_baselines/run_prompt_baseline.py` **只是桩**（只打印提示词，不调模型、
+不跑 Docker）。它的四条方法真实实现在上面的 runner 里（`direct_workflow`）。
+不要把它当成 Prompt baseline 的运行入口。
+
+### 9.2 冒烟命令（跑全量前先过这一步）
+
+```powershell
+$PY = "D:/ANACONDA/python.exe"   # 需要装了 openai 的解释器
+& $PY tools/vhdx_watchdog.py --label smoke --max-containers 16 --interval 2 -- `
+  $PY methods/workflow_baselines/run_true_agent_workflows.py `
+    --subsets Base --languages python cpp go --limit 1 `
+    --out-name smoke_20260918 `
+    --model deepseek-v3.2 --max-tokens 2048 --temperature 0 `
+    --retries 1 --workers 2 --only-traditional
+```
+
+通过判据（缺一不可）：
+
+- `tools/vhdx_watchdog.py` 判定 **PASS**（见 9.4）；
+- `rows.jsonl` 条数 = 方法数 × 语言数 × `--limit`；
+- 每行 `secure.code` 非空、`workflow_completed=true`；
+- Agent 行额外要求 `fidelity_passed=true`；
+- 不允许出现 `error_type=environment_error`（那是环境事故，不是模型结果）。
+
+### 9.3 输出位置与必存文件
+
+```text
+translation_work/baseline_runs/<run-name>/<subset>/
+├─ rows.jsonl                       # 逐任务：代码、脱敏 trace、fidelity、Function/Secure
+├─ summary.json                     # 按方法/语言汇总
+├─ true_agent_workflow_report.md    # 人工可读报告
+├─ run_metadata.json                # commit、模型、参数、Docker 镜像、凭据来源、输出 schema
+└─ true_agent_workflows/<lang>/<method>.jsonl   # 逐方法缓存（断点续跑用）
+```
+
+`run_metadata.json` 是第三节的硬要求，runner 会自动写；其中 `credential_source`
+只记录凭据**来源标签**（如 `local:apikey.txt`），不含 key 本身。
+
+### 9.4 Docker 纪律（硬约束，禁止绕过）
+
+**目标：评测期间 `docker_data.vhdx` 水位不涨。** 2026-09-17 的事故（vhdx 从
+14.9 GB 涨到 67.72 GB）根因是"每个任务 `docker run --rm` 新建容器 + 中途强杀留下孤儿容器"。
+现在的执行层（`src/translation_pipeline/persistent_container.py`）已经改成常驻容器池，
+以下纪律是配套要求：
+
+1. **所有 Docker 验证必须走常驻容器执行层**，不要在评测代码里新写 `docker run`。
+   新增验证器请复用 `run_docker_task` / `ContainerSpec`。
+2. **池大小必须 >= 并发数**。runner 已自动设
+   `SAFECODER_DOCKER_POOL_SIZE = max(--workers, 1)`。池耗尽会抛 `RuntimeError`
+   并被折算成 `environment_error`，把并发配置问题伪装成环境故障。
+3. **跑前必须清理残留池容器**。runner 的 `main()` 会自动调
+   `cleanup_stale_containers()`；手写脚本时也要自己调，否则残留容器会挡住 vhdx 压缩。
+4. **每次大批量运行都要用 `tools/vhdx_watchdog.py` 包裹**，它会在运行期间连续采样
+   vhdx 文件大小与容器数，并给出可引用的判定报告
+   （`translation_work/diagnostics/vhdx_watchdog_<label>.json`）。
+   判定项：vhdx 增量 ≤ 上限、容器数回落到 0、峰值出现在收尾之前、无残留容器。
+5. **强杀不等于泄漏**。即使进程被 SIGKILL，泄漏也只限于池内那几个容器（有界），
+   且 `cleanup_stale_containers()` 能收掉；实测此时 vhdx 仍然不涨。
+   但**不要**把"强杀后残留"当成正常状态，下次运行前必须清理。
+6. **JUnit / juliet-support / Mockito 等工具链以只读方式挂载**
+   （`ContainerSpec.readonly_mounts`），候选代码不得改写评测工具。
+7. **只挂 `translation_work/`**，绝不挂仓库根——`local_secrets/` 与 `.env.local`
+   里有 API key。
+
+### 9.5 三个会静默让结果失真的陷阱（都已修复，勿回退）
+
+| 陷阱 | 症状 | 正确做法 |
+|---|---|---|
+| harness 查找只认历史 `sandbox_dir` | C++/Go 全部落到 `compile_run_only_no_security_credit`，**不给任何安全学分**，表面看像"模型全写错" | 必须有回退：`data/harnesses/<subset>/<language>/<track>/<task_id>/main.<ext>`。见 `run_language_method_matrix._source_path_from_saved_harness` |
+| 推理模型吃光 `max_tokens` | `raw` 为空、`code` 为空、Function/Secure 全 False，像"模型不会写代码" | 用 `deepseek-v3.2`（非推理，`reasoning_tokens=0`）；用 v4 系列必须把 `--max-tokens` 提到 4096+ |
+| 凭据解析顺序被 `.env` 快照遮蔽 | 403 余额不足 | 顺序固定为：环境变量 → `apikey.txt` → `.env` 快照兜底。`.env` 只是派生快照，可能已过期 |
+
+**通用教训**：验证链路里任何"找不到就降级"的分支都必须**显式记录降级原因**并
+在冒烟检查里断言不允许出现，否则会静默产出看似合理、实则全零的结果。
+
+### 9.6 PLT Java 评测（`methods/secodeplt_eval/java_executor.py`）
+
+PLT Java 不走上面的 runner，走独立执行器。要点：
+
+- 数据在 `data/external/secodeplt/hf_full/jsonl/java_secure_coding-*.jsonl`
+  （924 条 Juliet，869 条带单测；**单测在 `meta_data.unit_test` 里**，不在顶层字段）。
+- 不用 Maven：`javac` + `junit-platform-console-standalone-1.9.3.jar`，
+  报告走 JUnit 的 `--reports-dir` XML（比在 Maven stdout 上做正则稳）。
+- 前置资源（都在仓库内，无需联网）：
+  `translation_work/downloads/java/`（JUnit jar + `lib/` 下的 Mockito 及依赖）、
+  `data/external/secodeplt_github/executor_docker/docker/juliet-java-env/juliet-support/`。
+- 容器基座用本机已有的 JDK 17 镜像 `secevo-java-js-baseplus-validator:current`；
+  也可用 `docker/java-validator/Dockerfile` 构建干净镜像。
+- 编译失败 / 类加载失败必须记成 `measured=False`，**不得**与 `score=0` 混同。
+- 回归脚本：`translation_work/temp/e2e_persistent_container_20260917/e2e_java_real.py`
+  （真实数据分层抽样）与 `e2e_java_positive.py`（正向对照）。
+
+### 9.7 凭据
+
+按 README「ChatAnywhere API key 存储位置」的顺序解析。默认模型是
+`deepseek-v3.2`。`local_secrets/` 已在 `.gitignore` 内，**任何情况下不得提交**。

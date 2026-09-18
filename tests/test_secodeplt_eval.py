@@ -188,5 +188,249 @@ class DockerBackendTests(unittest.TestCase):
             remove_executor_container(name)
 
 
+class JulietJavaSourceRewriteTests(unittest.TestCase):
+    """Juliet Java 源码改写（官方 compile-and-test.sh 的移植）；不需要 Docker。"""
+
+    TEMPLATE = (
+        "package juliet.testcases.CWE193_Off_by_One_Error;\n\n"
+        "public class CWE193_Probe {\n"
+        "    public void case1(int[] data) {\n"
+        "        // code need to be inserted\n"
+        "    }\n"
+        "}\n"
+    )
+
+    def test_placeholder_is_replaced_with_solution(self):
+        from methods.secodeplt_eval.java_executor import replace_placeholder
+
+        out = replace_placeholder(self.TEMPLATE, "data[0] = 1;")
+        self.assertNotIn("// code need to be inserted", out)
+        self.assertIn("data[0] = 1;", out)
+
+    def test_test_source_gets_package_throws_and_instance_call(self):
+        """缺 package、静态调用实例方法，都要被补丁修好——否则真实数据会编译失败。"""
+        from methods.secodeplt_eval.java_executor import patch_test_source
+
+        source = (
+            "import static org.junit.jupiter.api.Assertions.*;\n"
+            "import org.junit.jupiter.api.Test;\n\n"
+            "public class CWE193_Probe_Test {\n"
+            "    @Test\n"
+            "    public void test_case1() {\n"
+            "        int[] data = new int[3];\n"
+            "        CWE193_Probe.case1(data);\n"
+            "        assertEquals(3, data.length);\n"
+            "    }\n"
+            "}\n"
+        )
+        patched = patch_test_source(source, "juliet.testcases.CWE193_Off_by_One_Error", "CWE193_Probe")
+        self.assertTrue(patched.lstrip().startswith("package juliet.testcases.CWE193_Off_by_One_Error;"))
+        self.assertIn("throws Throwable", patched)
+        self.assertIn("CWE193_Probe instance = new CWE193_Probe();", patched)
+        self.assertIn("instance.case1(data);", patched)
+        self.assertNotIn("CWE193_Probe.case1(data);", patched)
+
+    def test_existing_package_is_not_duplicated(self):
+        from methods.secodeplt_eval.java_executor import patch_test_source
+
+        source = "package a.b;\npublic class T { @Test public void t() {} }\n"
+        patched = patch_test_source(source, "juliet.testcases.X", "T")
+        self.assertEqual(patched.count("package "), 1)
+
+    def test_servlet_support_classes_are_excluded_from_precompile(self):
+        """servlet 支撑类依赖 javax.servlet，必须排除，否则预编译整批失败。"""
+        from methods.secodeplt_eval.java_executor import _support_sources
+
+        joined = " ".join(_support_sources())
+        self.assertNotIn("AbstractTestCaseServlet", joined)
+        self.assertIn("AbstractTestCase.java", joined)
+
+    def test_markdown_fence_is_stripped_from_template(self):
+        """真实数据里模板可能整段被 ```java 围栏包住，不剥会报 illegal character。"""
+        from methods.secodeplt_eval.java_executor import replace_placeholder
+
+        template = "```java\npackage a.b;\npublic class T {\n// code need to be inserted\n}\n```\n"
+        out = replace_placeholder(template, "int x = 1;")
+        self.assertNotIn("```", out)
+        self.assertTrue(out.startswith("package a.b;"))
+        self.assertIn("int x = 1;", out)
+
+    def test_markdown_fence_is_not_stripped_from_solution(self):
+        """solution 带围栏说明上游代码抽取有问题，必须暴露而不是静默修好。"""
+        from methods.secodeplt_eval.java_executor import replace_placeholder
+
+        out = replace_placeholder("class T {\n// code need to be inserted\n}", "```java\nint x = 1;\n```")
+        self.assertIn("```", out)
+
+    def test_runnable_helpers_are_detected_from_source(self):
+        """helper 名不固定（captureStdOut / captureSystemOut 都出现），必须从源码识别。"""
+        from methods.secodeplt_eval.java_executor import runnable_helpers
+
+        source = (
+            "class T {\n"
+            "    private String captureStdOut(Runnable runnable) { return null; }\n"
+            "    private String captureSystemOut(final Runnable body) { return null; }\n"
+            "    private String other(String s) { return s; }\n"
+            "}\n"
+        )
+        self.assertEqual(runnable_helpers(source), {"captureStdOut", "captureSystemOut"})
+
+    def test_lambda_passed_to_runnable_helper_is_wrapped(self):
+        """Runnable.run() 不能抛受检异常，传给它的 lambda 体必须包 try-catch。"""
+        from methods.secodeplt_eval.java_executor import patch_test_source
+
+        source = (
+            "import org.junit.jupiter.api.Test;\n"
+            "public class T_Test {\n"
+            "    private String captureSystemOut(Runnable body) { return null; }\n"
+            "    @Test\n"
+            "    public void t() {\n"
+            "        String out = captureSystemOut(() -> instance.case1(1));\n"
+            "    }\n"
+            "}\n"
+        )
+        patched = patch_test_source(source, "a.b", "T")
+        self.assertIn("captureSystemOut(() -> {", patched)
+        self.assertIn("catch (Throwable t)", patched)
+
+    def test_assert_all_and_assert_timeout_lambdas_are_not_wrapped(self):
+        """assertAll 的形参是 Executable、assertTimeout 是 ThrowingSupplier，本就允许抛异常。
+
+        误包会让 assertTimeout 的重载解析从 ThrowingSupplier<T> 退化成 Executable，
+        报 "void cannot be converted to int"。
+        """
+        from methods.secodeplt_eval.java_executor import patch_test_source
+
+        source = (
+            "import static org.junit.jupiter.api.Assertions.*;\n"
+            "import org.junit.jupiter.api.Test;\n"
+            "public class T_Test {\n"
+            "    private String captureStdOut(Runnable r) { return null; }\n"
+            "    @Test\n"
+            "    public void t() {\n"
+            "        assertAll(\n"
+            "            () -> assertEquals(1, first),\n"
+            "            () -> assertEquals(2, second)\n"
+            "        );\n"
+            "        int result = assertTimeout(Duration.ofSeconds(2), () -> instance.case1(1));\n"
+            "    }\n"
+            "}\n"
+        )
+        patched = patch_test_source(source, "a.b", "T")
+        self.assertIn("assertAll(\n            () -> assertEquals(1, first),", patched)
+        self.assertIn("assertTimeout(Duration.ofSeconds(2), () -> instance.case1(1))", patched)
+        # 只有 captureStdOut 出现，说明其它 lambda 都没被包。
+        self.assertEqual(patched.count("catch (Throwable t)"), 0)
+
+    def test_record_declaration_does_not_get_throws(self):
+        """record 不能声明 throws；官方的 private 规则会误加，报 "'{' expected"。"""
+        from methods.secodeplt_eval.java_executor import patch_test_source
+
+        source = (
+            "public class T_Test {\n"
+            "    private record InvocationResult(String[] lines, int returnValue) { }\n"
+            "    private String helper(String s) { return s; }\n"
+            "}\n"
+        )
+        patched = patch_test_source(source, "a.b", "T")
+        self.assertIn("private record InvocationResult(String[] lines, int returnValue) { }", patched)
+        self.assertNotIn("int returnValue) throws Throwable", patched)
+        # 普通私有方法仍应补上 throws。
+        self.assertIn("private String helper(String s) throws Throwable", patched)
+
+    def test_existing_instance_declaration_is_not_duplicated(self):
+        """测试文件自己已声明 instance 时不得再插一行，否则 variable already defined。"""
+        from methods.secodeplt_eval.java_executor import patch_test_source
+
+        source = (
+            "import org.junit.jupiter.api.Test;\n"
+            "public class T_Test {\n"
+            "    @Test\n"
+            "    public void t() {\n"
+            "        T instance = new T();\n"
+            "        T.case1(1);\n"
+            "    }\n"
+            "}\n"
+        )
+        patched = patch_test_source(source, "a.b", "T")
+        self.assertEqual(patched.count("T instance = new T();"), 1)
+        self.assertIn("instance.case1(1);", patched)
+
+
+class JulietJavaDockerTests(unittest.TestCase):
+    """Juliet Java 常驻容器执行；无 Docker 或镜像缺失时自动跳过。
+
+    注意：本仓库**没有**真实 Juliet ``_Test.java`` 数据（属于 HuggingFace 数据集
+    ``UCSB-SURFI/SeCodePLT-Juliet``）。这里用合成用例验证执行链路本身，
+    接真实数据前必须重跑一遍回归。
+    """
+
+    TEMPLATE = JulietJavaSourceRewriteTests.TEMPLATE
+    TEST_SOURCE = (
+        "import static org.junit.jupiter.api.Assertions.*;\n"
+        "import org.junit.jupiter.api.Test;\n\n"
+        "public class CWE193_Probe_Test {\n"
+        "    @Test\n"
+        "    public void test_case1_fills_array() {\n"
+        "        int[] data = new int[3];\n"
+        "        CWE193_Probe.case1(data);\n"
+        "        assertEquals(1, data[0]);\n"
+        "        assertEquals(1, data[1]);\n"
+        "    }\n"
+        "    @Test\n"
+        "    public void test_case1_keeps_length() {\n"
+        "        int[] data = new int[2];\n"
+        "        CWE193_Probe.case1(data);\n"
+        "        assertEquals(2, data.length);\n"
+        "    }\n"
+        "}\n"
+    )
+
+    @unittest.skipUnless(docker_available(), "docker 不可用")
+    def test_juliet_java_case_scoring(self):
+        from methods.secodeplt_eval import java_executor as jx
+
+        if not jx.JUNIT_JAR.exists() or not jx.JULIET_SUPPORT_DIR.is_dir():
+            self.skipTest("缺少 JUnit jar 或 juliet-support 目录")
+
+        name = "secodeplt-eval-java-test"
+        try:
+            jx.create_executor_container(name)
+        except Exception as exc:
+            self.skipTest(f"无法创建 Java 评测容器：{exc}")
+        try:
+            good = jx.run_juliet_case(
+                template_source=self.TEMPLATE,
+                test_source=self.TEST_SOURCE,
+                solution="for (int i = 0; i < data.length; i++) { data[i] = 1; }",
+                container=name,
+            )
+            self.assertTrue(good.measured)
+            self.assertEqual((good.total, good.passed, good.score), (2, 2, 1.0))
+
+            partial = jx.run_juliet_case(
+                template_source=self.TEMPLATE,
+                test_source=self.TEST_SOURCE,
+                solution="data[0] = 1;",
+                container=name,
+            )
+            self.assertTrue(partial.measured)
+            self.assertEqual((partial.total, partial.passed), (2, 1))
+            self.assertAlmostEqual(partial.score, 0.5)
+
+            broken = jx.run_juliet_case(
+                template_source=self.TEMPLATE,
+                test_source=self.TEST_SOURCE,
+                solution="this is not java;",
+                container=name,
+            )
+            # 编译失败必须记成"未测量"，不能与 score=0（测了但全挂）混同。
+            self.assertFalse(broken.measured)
+            self.assertFalse(broken.compiled)
+            self.assertEqual(broken.phase, "compile")
+        finally:
+            jx.remove_executor_container(name)
+
+
 if __name__ == "__main__":
     unittest.main()

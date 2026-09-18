@@ -14,6 +14,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -22,7 +23,12 @@ from typing import Any
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parents[1]
 KEY_FILE = PROJECT_ROOT / "local_secrets" / "chatanywhereapi使用" / "apikey.txt"
-DEFAULT_MODEL = "deepseek-v4-flash"
+# 默认模型用 deepseek-v3.2：它是非推理模型（实测 reasoning_tokens=0），
+# 全部 max_tokens 预算都用于正文输出。deepseek-v4-flash 是推理模型，在长任务提示下
+# 会把 1024 的预算全烧在推理上（实测 completion=1024 / reasoning=1024 / 正文为空），
+# 导致 rows.jsonl 里 code 为空、Function/Secure 全为 False——看起来像模型不会写代码，
+# 实际是预算被推理吃光。要用 v4 系列必须同时把 --max-tokens 提到 4096 以上。
+DEFAULT_MODEL = os.environ.get("CHATANYWHERE_MODEL") or "deepseek-v3.2"
 DEFAULT_API_BASE = "https://api.chatanywhere.tech/v1"
 DEFAULT_API_TIMEOUT = 90.0
 PROMPTING_DIR = PROJECT_ROOT / "methods" / "legacy_prompt_adapters"
@@ -62,10 +68,104 @@ def load_local_api_key() -> str | None:
     return None
 
 
+SECRETS_DIR = PROJECT_ROOT / "local_secrets" / "chatanywhereapi使用"
+PROFILE_FILES = {
+    "formal": SECRETS_DIR / "chatanywhere_formal.env",
+    "test": SECRETS_DIR / "chatanywhere_test.env",
+}
+# .env 里用的是 INFRAMIG_ 前缀，运行器读的是 CHATANYWHERE_ 前缀，这里做一次映射。
+PROFILE_KEY_MAP = {
+    "INFRAMIG_API_KEY": "CHATANYWHERE_API_KEY",
+    "INFRAMIG_BASE_URL": "CHATANYWHERE_API_BASE",
+    "INFRAMIG_TIMEOUT": "CHATANYWHERE_API_TIMEOUT",
+    "INFRAMIG_MODEL": "CHATANYWHERE_MODEL",
+}
+
+
+def apply_chatanywhere_profile(profile: str | None = None) -> str | None:
+    """从 local_secrets 的 .env 载入 base_url / timeout / model 默认值。
+
+    **不设置 API key**。原因：这些 .env 是 2026-06-02 从 ``apikey.txt`` 生成的
+    **派生快照**，之后 key 可能已经轮换或欠费。实测（2026-09-18）两份 .env 里的
+    key 都返回 403 余额不足，而 ``apikey.txt`` 里的 key 可用；如果这里把 .env 的
+    key 塞进 ``CHATANYWHERE_API_KEY``，就会盖住 README 约定的
+    "环境变量 → apikey.txt" 顺序，把本来能跑的实验变成 403。
+    key 的解析统一交给 :func:`resolve_api_key`。
+
+    返回实际使用的 profile 名（未找到任何文件时返回 None）。
+    """
+    order = [profile] if profile else []
+    order += [name for name in ("formal", "test") if name not in order]
+    for name in order:
+        path = PROFILE_FILES.get(name or "")
+        if path is None or not path.is_file():
+            continue
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = (part.strip() for part in line.split("=", 1))
+            target = PROFILE_KEY_MAP.get(key)
+            if target and value and target != "CHATANYWHERE_API_KEY":
+                os.environ.setdefault(target, value)
+        return name
+    return None
+
+
+def _profile_api_key(profile: str | None = None) -> str | None:
+    """从 .env 快照里取 API key（最后的兜底，仅在环境变量与 apikey.txt 都没有时用）。"""
+    order = [profile] if profile else []
+    order += [name for name in ("formal", "test") if name not in order]
+    for name in order:
+        path = PROFILE_FILES.get(name or "")
+        if path is None or not path.is_file():
+            continue
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = (part.strip() for part in line.split("=", 1))
+            if key == "INFRAMIG_API_KEY" and value:
+                return value
+    return None
+
+
+def resolve_api_key(profile: str | None = None) -> tuple[str | None, str]:
+    """按 README 约定的顺序解析 API key，返回 ``(key, 来源标签)``。
+
+    顺序（与 README「ChatAnywhere API key 存储位置」一节一致）：
+
+    1. 环境变量 ``CHATANYWHERE_API_KEY``；
+    2. 环境变量 ``ZHIPU_API_KEY``（历史兼容）；
+    3. ``local_secrets/chatanywhereapi使用/apikey.txt`` 的第一个非空行
+       —— **这是活的 key 文件**，.env 只是它的派生快照；
+    4. ``chatanywhere_{profile}.env`` 的 ``INFRAMIG_API_KEY``（最后兜底，可能已过期）。
+
+    来源标签用于在失败时报出"用的是哪一路凭据"，但**不包含 key 本身**。
+    """
+    for name in ("CHATANYWHERE_API_KEY", "ZHIPU_API_KEY"):
+        value = os.environ.get(name)
+        if value:
+            return value, f"env:{name}"
+    local = load_local_api_key()
+    if local:
+        return local, "local:apikey.txt"
+    fallback = _profile_api_key(profile)
+    if fallback:
+        return fallback, f"env-file:{profile or 'auto'}"
+    return None, "none"
+
+
 def make_client() -> OpenAI:
-    api_key = os.environ.get("CHATANYWHERE_API_KEY") or os.environ.get("ZHIPU_API_KEY") or load_local_api_key()
+    profile = os.environ.get("CHATANYWHERE_PROFILE")
+    apply_chatanywhere_profile(profile)
+    api_key, source = resolve_api_key(profile)
     if not api_key:
-        raise RuntimeError("CHATANYWHERE_API_KEY is not set and no local fallback key was found.")
+        raise RuntimeError(
+            "CHATANYWHERE_API_KEY is not set and no local fallback key was found. "
+            f"Expected either the env var or a profile file under {SECRETS_DIR}."
+        )
+    os.environ.setdefault("CHATANYWHERE_KEY_SOURCE", source)
     base_url = os.environ.get("CHATANYWHERE_API_BASE") or os.environ.get("ZHIPU_API_BASE", DEFAULT_API_BASE)
     timeout = float(os.environ.get("CHATANYWHERE_API_TIMEOUT") or os.environ.get("ZHIPU_API_TIMEOUT", str(DEFAULT_API_TIMEOUT)))
     return OpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=0)
@@ -726,8 +826,82 @@ def selected_methods(args: argparse.Namespace) -> list[dict[str, Any]]:
     return ALL_METHODS
 
 
+def _git_commit() -> str:
+    """当前 commit（拿不到就返回 unknown，不让元数据写入失败阻断实验）。"""
+    try:
+        proc = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=str(PROJECT_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=20,
+            check=False,
+        )
+        return (proc.stdout or "").strip() or "unknown"
+    except (OSError, subprocess.TimeoutExpired):
+        return "unknown"
+
+
+def write_run_metadata(out_dir: Path, args: argparse.Namespace, methods: list[dict[str, Any]]) -> Path:
+    """写 run_metadata.json。
+
+    AGENTS.md 第三节要求每次正式 baseline 运行都保存它（commit、数据清单、模型、
+    参数、Docker 镜像、输出 schema）。之前 runner 只写了 rows/summary/report，
+    缺这一项，审计时无法回答"这批结果是用哪个镜像、哪组参数跑出来的"。
+    只记录镜像名与参数，**不含任何密钥**。
+    """
+    metadata = {
+        "runner": "methods/workflow_baselines/run_true_agent_workflows.py",
+        "commit": _git_commit(),
+        "created_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "model": args.model,
+        "credential_source": os.environ.get("CHATANYWHERE_KEY_SOURCE", "unknown"),
+        "parameters": {
+            "subsets": args.subsets,
+            "languages": args.languages,
+            "limit": args.limit,
+            "max_tokens": args.max_tokens,
+            "temperature": args.temperature,
+            "retries": args.retries,
+            "workers": args.workers,
+            "repair_iters": args.repair_iters,
+            "static_rounds": args.static_rounds,
+            "agentcoder_candidates": args.agentcoder_candidates,
+            "agentcoder_tests": args.agentcoder_tests,
+            "agentcoder_epochs": args.agentcoder_epochs,
+            "ragen_iters": args.ragen_iters,
+        },
+        "methods": [method["name"] for method in methods],
+        "docker": {
+            "python_image": os.environ.get("SAFECODER_PYTHON_DOCKER_IMAGE", "safecoder-python-validator:local"),
+            "cpp_image": os.environ.get("SAFECODER_CPP_DOCKER_IMAGE", "safecoder-cpp-validator:local"),
+            "go_image": os.environ.get("SAFECODER_GO_DOCKER_IMAGE", "golang:1.22"),
+            "pool_size": os.environ.get("SAFECODER_DOCKER_POOL_SIZE", ""),
+            "cpp_backend": os.environ.get("SAFECODER_CPP_BACKEND", "local"),
+            "go_backend": os.environ.get("SAFECODER_GO_BACKEND", "local"),
+        },
+        "output_schema": {
+            "rows.jsonl": "逐任务方法、生成代码、脱敏 trace、fidelity、Function/Secure 结果与终态错误",
+            "summary.json": "按方法/语言汇总的指标",
+            "true_agent_workflow_report.md": "人工可读报告",
+            "run_metadata.json": "本文件",
+        },
+    }
+    path = out_dir / "run_metadata.json"
+    matrix.write_json(path, metadata)
+    return path
+
+
 def run_subset(args: argparse.Namespace, subset: str, client: OpenAI) -> dict[str, Any]:
-    output_root = Path(os.environ.get("AGENTFLOW_OUTPUT_ROOT", str(HERE / "out")))
+    # 输出根默认落到 translation_work/baseline_runs，与 AGENTS.md 第二节的
+    # 目录规范一致；旧默认是 methods/workflow_baselines/out，会把运行产物
+    # 写进源码目录，违反"methods/ 不放实验输出"。
+    output_root = Path(
+        os.environ.get(
+            "AGENTFLOW_OUTPUT_ROOT",
+            str(PROJECT_ROOT / "translation_work" / "baseline_runs"),
+        )
+    )
     out_dir = output_root / args.out_name / subset
     out_dir.mkdir(parents=True, exist_ok=True)
     methods = selected_methods(args)
@@ -749,6 +923,7 @@ def run_subset(args: argparse.Namespace, subset: str, client: OpenAI) -> dict[st
             print(f"{subset} {matrix.LANGUAGE_LABELS[language]} {method['name']} done", flush=True)
     matrix.write_jsonl(out_dir / "rows.jsonl", all_rows)
     matrix.write_json(out_dir / "summary.json", summaries_by_language)
+    metadata_path = write_run_metadata(out_dir, args, methods)
     report = matrix.render_report(
         subset=subset,
         languages=args.languages,
@@ -771,7 +946,13 @@ def run_subset(args: argparse.Namespace, subset: str, client: OpenAI) -> dict[st
     )
     report_path = out_dir / "true_agent_workflow_report.md"
     report_path.write_text(report, encoding="utf-8")
-    return {"subset": subset, "report": str(report_path), "rows": len(all_rows)}
+    return {
+        "subset": subset,
+        "report": str(report_path),
+        "rows": len(all_rows),
+        "out_dir": str(out_dir),
+        "run_metadata": str(metadata_path),
+    }
 
 
 def main() -> None:
@@ -780,7 +961,7 @@ def main() -> None:
     parser.add_argument("--subsets", nargs="+", choices=["Base", "Plus"], default=["Base", "Plus"])
     parser.add_argument("--languages", nargs="+", choices=["python", "cpp", "go"], default=["python", "cpp", "go"])
     parser.add_argument("--limit", type=int, default=0)
-    parser.add_argument("--out-name", default="true_agent_workflows_glm51_workers4_20260625")
+    parser.add_argument("--out-name", default="true_agent_workflows_deepseek_v32_20260918")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--max-tokens", type=int, default=4096)
     parser.add_argument("--temperature", type=float, default=0.0)
@@ -801,6 +982,21 @@ def main() -> None:
     os.environ.setdefault("SAFECODER_PYTHON_DOCKER_IMAGE", "safecoder-python-validator:local")
     os.environ.setdefault("SAFECODER_CPP_DOCKER_IMAGE", "safecoder-cpp-validator:local")
     os.environ.setdefault("SAFECODER_GO_DOCKER_IMAGE", "golang:1.22")
+
+    # 常驻容器池大小必须 >= 并发数，否则池耗尽会抛 RuntimeError，
+    # 被 run_docker_task 折算成 environment_error，把并发配置问题伪装成环境故障。
+    # 每个 spec（cpp / go-离线 / go-联网 / python）各一个池，池内并发上限即 workers。
+    os.environ["SAFECODER_DOCKER_POOL_SIZE"] = str(
+        max(args.workers, int(os.environ.get("SAFECODER_DOCKER_POOL_SIZE") or "0"), 1)
+    )
+
+    # 起点干净：清掉上次异常退出留下的池容器，否则它们会占着名字、
+    # 让本次启动的容器改名，并挡住后续的 vhdx 压缩。
+    from translation_pipeline.persistent_container import cleanup_stale_containers
+
+    stale = cleanup_stale_containers()
+    if stale:
+        print(f"[preflight] 清理残留池容器: {stale}", flush=True)
 
     client = make_client()
     results = [run_subset(args, subset, client) for subset in args.subsets]

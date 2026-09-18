@@ -6,14 +6,25 @@ import os
 import re
 from pathlib import Path
 
-from .models import ValidationResult, truncate_text
-from .paths import ensure_work_dirs
-from .validators import _docker_mount_path, _task_temp_dir, classify_validation_result, find_command, run_command_limited
+from .models import ValidationResult
+from .persistent_container import ContainerSpec
+from .validators import (
+    CONTAINER_WORK_ROOT,
+    _container_task_dir,
+    _docker_mount_path,
+    _mount_root,
+    _task_temp_dir,
+    classify_validation_result,
+    find_command,
+    run_command_limited,
+    run_docker_task,
+)
 
 
 PYTHON_DOCKER_IMAGE = os.environ.get("SAFECODER_PYTHON_DOCKER_IMAGE", "safecoder-python-validator:local")
-PYTHON_DOCKER_ENTRYPOINT = os.environ.get("SAFECODER_PYTHON_DOCKER_ENTRYPOINT", "")
 MAX_VALIDATOR_OUTPUT_CHARS = int(os.environ.get("SAFECODER_MAX_VALIDATOR_OUTPUT_CHARS", "2000"))
+# 已废弃：``SAFECODER_PYTHON_DOCKER_ENTRYPOINT``。常驻容器必须以
+# ``--entrypoint tail`` 保活，否则镜像自带的 docker_runner ENTRYPOINT 会接管进程。
 
 _DEF_CHECK = re.compile(r"^\s*def\s+check\s*\(")
 _SEC_PROBE = re.compile(r"assert_raises\s*\(\s*candidate")
@@ -85,47 +96,19 @@ def get_python_suites(record: dict) -> tuple[str, str]:
     return str(record.get("Test-FP", "") or ""), str(record.get("Test-SP", "") or "")
 
 
-def _docker_python_args(
-    *,
-    docker_cmd: str,
-    temp_dir: Path,
-    network: str | None,
-    command: list[str],
-) -> list[str]:
-    args = [
-        docker_cmd,
-        "run",
-        "--rm",
-        "--stop-timeout",
-        "1",
-        "--memory",
-        "512m",
-        "--cpus",
-        "1",
-        "--tmpfs",
-        "/tmp:rw,nosuid,nodev,size=128m",
-    ]
-    if network is not None:
-        args.extend(["--network", network])
-    if PYTHON_DOCKER_ENTRYPOINT != "__default__":
-        args.extend(["--entrypoint", PYTHON_DOCKER_ENTRYPOINT])
-    args.extend(
-        [
-            "-v",
-            f"{_docker_mount_path(temp_dir)}:/work",
-            "-w",
-            "/work",
-            "-e",
-            "TMPDIR=/work/.tmp",
-            "-e",
-            "TEMP=/work/.tmp",
-            "-e",
-            "TMP=/work/.tmp",
-            PYTHON_DOCKER_IMAGE,
-            *command,
-        ]
+def python_docker_spec() -> ContainerSpec:
+    """CodeSecEval Python ``check()`` 工作进程的容器规格。
+
+    与 C++/Go 不同，Python 侧不需要编译器和工具链，只需要一个能跑
+    ``check_worker.py`` 的 Python 解释器，因此镜像用
+    ``safecoder-python-validator:local``，且完全断网（``network="none"``）——
+    候选代码在容器内执行，必须没有外网出口。
+    """
+    return ContainerSpec(
+        image=PYTHON_DOCKER_IMAGE,
+        mounts=((_docker_mount_path(_mount_root()), CONTAINER_WORK_ROOT),),
+        network="none",
     )
-    return args
 
 
 def _run_command(args: list[str], cwd: Path, timeout: int, phase: str) -> ValidationResult:
@@ -337,6 +320,13 @@ def run_python_checks_docker(
     mode: str,
     timeout: int = 60,
 ) -> ValidationResult:
+    """在常驻容器里跑 ``check_worker.py``，返回功能/安全两个套件的判定。
+
+    与旧实现的关键差异：旧代码的 ``docker run`` **没有容器内超时**，一旦候选
+    代码进入死循环，宿主侧超时杀掉 ``docker exec``/``docker run`` 客户端后，
+    容器里的工作进程会变成孤儿继续运行（这正是 2026-09-17 容器泄漏事故的成因
+    之一）。现在超时由容器内 ``timeout`` 执行，Linux 自己杀干净。
+    """
     docker_cmd = find_command("docker")
     if not docker_cmd:
         return ValidationResult(
@@ -372,19 +362,18 @@ def run_python_checks_docker(
         check_result.details["error_type"] = "environment_error"
         return check_result
 
-    run_result = _run_command(
-        _docker_python_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            network="none",
-            command=["python3", "/work/check_worker.py", "/work/spec.json"],
-        ),
-        cwd=temp_dir,
-        timeout=timeout,
+    container_dir = _container_task_dir(temp_dir)
+    run_result = run_docker_task(
+        spec=python_docker_spec(),
+        temp_dir=temp_dir,
+        command=["python3", f"{container_dir}/check_worker.py", f"{container_dir}/spec.json"],
         phase="run",
+        language="python",
+        mode=mode,
+        container_timeout=timeout,
+        host_timeout=timeout + 30,
     )
     payload = _parse_worker_output(run_result)
-    run_result.mode = mode
     run_result.details["worker_result"] = payload
     return run_result
 

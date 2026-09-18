@@ -15,9 +15,10 @@ from typing import Any
 from .models import ValidationResult
 from .python_validator import validate_python_insecure, validate_python_secure
 from .validators import (
-    _docker_cpp_args,
-    _docker_go_args,
-    run_command,
+    _container_task_dir,
+    cpp_docker_spec,
+    go_docker_spec,
+    run_docker_task,
 )
 
 
@@ -262,14 +263,16 @@ def _cpp_run_network_for_source(source_code: str) -> str | None:
     return "none"
 
 
-def _go_container_local_run_command() -> list[str]:
+def _go_container_local_run_command(container_dir: str) -> list[str]:
     # Execute fixtures on the container's Linux tmpfs. Windows bind mounts do
     # not preserve chmod semantics, which invalidates permission harnesses.
+    # 只复制本任务目录（/work/<task_dir>）：挂载根 /work 下同时存在其他任务目录，
+    # 复制整个 /work 既慢又会把无关文件带进执行目录。
     return [
         "sh",
         "-c",
         "rm -rf /tmp/safecoder-harness && mkdir -p /tmp/safecoder-harness "
-        "&& cp -a /work/. /tmp/safecoder-harness/ "
+        f"&& cp -a {container_dir}/. /tmp/safecoder-harness/ "
         "&& cd /tmp/safecoder-harness && go run main.go",
     ]
 
@@ -325,41 +328,37 @@ def _rerun_cpp_harness(record: dict, track: str, output_root: Path, timeout: int
         "Expected a crash (out-of-bounds write)" in patched_source
         or "Out-of-bounds access did not crash as expected" in patched_source
     )
+    container_dir = _container_task_dir(temp_dir)
     compile_command = ["g++", "-std=c++17", "-O2", "-I/work/include"]
     if needs_memory_oracle:
         compile_command.append("-D_GLIBCXX_ASSERTIONS")
-    compile_command.extend(["/work/main.cpp", "-o", "/work/main"])
-    compile_result = run_command(
-        _docker_cpp_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            network="none",
-            command=compile_command,
-        ),
-        cwd=temp_dir,
-        timeout=timeout,
+    compile_command.extend([f"{container_dir}/main.cpp", "-o", f"{container_dir}/main"])
+    compile_result = run_docker_task(
+        spec=cpp_docker_spec("none"),
+        temp_dir=temp_dir,
+        command=compile_command,
         phase="compile",
+        language="cpp",
+        mode=track,
+        container_timeout=timeout,
+        host_timeout=timeout + 30,
     )
-    compile_result.language = "cpp"
-    compile_result.mode = track
     if not compile_result.ok:
         return compile_result
 
+    # 运行阶段的网络策略按 harness 源码决定：部分安全 harness 需要回环网络
+    # 才能验证网络类缺陷。不同网络对应不同的容器池，互不影响。
     run_network = _cpp_run_network_for_source(source.read_text(encoding="utf-8", errors="replace")) if track == "secure" else "none"
-    run_result = run_command(
-        _docker_cpp_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            network=run_network,
-            command=["/work/main"],
-        ),
-        cwd=temp_dir,
-        timeout=timeout,
+    return run_docker_task(
+        spec=cpp_docker_spec(run_network),
+        temp_dir=temp_dir,
+        command=[f"{container_dir}/main"],
         phase="run",
+        language="cpp",
+        mode=track,
+        container_timeout=timeout,
+        host_timeout=timeout + 30,
     )
-    run_result.language = "cpp"
-    run_result.mode = track
-    return run_result
 
 
 def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int, harness_root: Path | None = None) -> ValidationResult:
@@ -405,58 +404,43 @@ def _rerun_go_harness(record: dict, track: str, output_root: Path, timeout: int,
     mod_cache.mkdir(parents=True, exist_ok=True)
     build_cache.mkdir(parents=True, exist_ok=True)
 
-    download_result = run_command(
-        _docker_go_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            mod_cache=mod_cache,
-            build_cache=build_cache,
-            network=None,
-            command=["go", "mod", "download"],
-        ),
-        cwd=temp_dir,
-        timeout=timeout,
+    container_dir = _container_task_dir(temp_dir)
+    download_result = run_docker_task(
+        spec=go_docker_spec(None, cache_root=cache_root),
+        temp_dir=temp_dir,
+        command=["go", "mod", "download"],
         phase="dependency",
+        language="go",
+        mode=track,
+        container_timeout=timeout,
+        host_timeout=timeout + 30,
     )
-    download_result.language = "go"
-    download_result.mode = track
     if not download_result.ok:
         return download_result
 
-    build_result = run_command(
-        _docker_go_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            mod_cache=mod_cache,
-            build_cache=build_cache,
-            network="none",
-            command=["go", "build", "-o", "/work/main", "/work/main.go"],
-        ),
-        cwd=temp_dir,
-        timeout=timeout,
+    build_result = run_docker_task(
+        spec=go_docker_spec("none", cache_root=cache_root),
+        temp_dir=temp_dir,
+        command=["go", "build", "-o", f"{container_dir}/main", f"{container_dir}/main.go"],
         phase="compile",
+        language="go",
+        mode=track,
+        container_timeout=timeout,
+        host_timeout=timeout + 30,
     )
-    build_result.language = "go"
-    build_result.mode = track
     if not build_result.ok:
         return build_result
 
-    run_result = run_command(
-        _docker_go_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            mod_cache=mod_cache,
-            build_cache=build_cache,
-            network="none",
-            command=_go_container_local_run_command(),
-        ),
-        cwd=temp_dir,
-        timeout=timeout,
+    return run_docker_task(
+        spec=go_docker_spec("none", cache_root=cache_root),
+        temp_dir=temp_dir,
+        command=_go_container_local_run_command(container_dir),
         phase="run",
+        language="go",
+        mode=track,
+        container_timeout=timeout,
+        host_timeout=timeout + 30,
     )
-    run_result.language = "go"
-    run_result.mode = track
-    return run_result
 
 
 def _insecure_failure_is_expected(result: ValidationResult) -> bool:

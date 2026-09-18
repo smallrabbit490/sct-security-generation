@@ -39,3 +39,10 @@ data/external/secodeplt_github/
 
 # 本地 AI 助手工作区状态
 .workbuddy-ai/
+
+# 测试用临时目录
+# tests/test_validation_regressions.py 里有两个用例用
+# `tempfile.TemporaryDirectory(dir=ROOT)` 把临时目录建在仓库根，
+# 正常情况下退出即清理；但进程被强杀（SIGTERM/SIGKILL）时 finalizer 不执行，
+# 会留下 181 字节的 main.cpp 桩。根锚定只匹配仓库顶层的 tmp*，不误伤子目录。
+/tmp*/

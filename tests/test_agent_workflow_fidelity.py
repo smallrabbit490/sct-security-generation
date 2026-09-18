@@ -73,7 +73,15 @@ class AgentWorkflowFidelityTests(unittest.TestCase):
             runner.call_model(c, "x", model=model, max_tokens=10, temperature=0, retries=1)
             self.assertEqual("extra_body" in c.chat.completions.kwargs[0], expected)
     def test_chatanywhere_defaults_use_fast_supported_model(self):
-        self.assertEqual(runner.DEFAULT_MODEL, "deepseek-v4-flash")
+        """默认模型必须是非推理模型。
+
+        2026-09-18 由 `deepseek-v4-flash` 改为 `deepseek-v3.2`：v4-flash 是推理模型，
+        在长任务提示下会把整个 `max_tokens` 预算烧在推理上（实测
+        `completion=1024 / reasoning=1024 / 正文为空`），产出"代码为空、
+        Function/Secure 全 False"的假结果。v3.2 实测 `reasoning_tokens=0`。
+        要用 v4 系列必须同时把 `--max-tokens` 提到 4096 以上。
+        """
+        self.assertEqual(runner.DEFAULT_MODEL, "deepseek-v3.2")
         self.assertEqual(runner.DEFAULT_API_BASE, "https://api.chatanywhere.tech/v1")
         self.assertGreaterEqual(runner.DEFAULT_API_TIMEOUT, 60)
 

@@ -20,6 +20,31 @@
 - 镜像 9 个 tag / 11.47 GB，容器 0 个，悬空镜像 0 个
 - `docker system df` 显示"95% 可回收"是误导：那是因为容器数为 0，**不要执行 `docker system prune -a`**，否则会删掉全部验证器镜像（secevo-*、safecoder-*、gosec、semgrep 等），下次运行需重建
 
+## 案例：评测误用 Docker 后端导致 VHDX 膨胀到 67 GB（2026-09-17）
+
+**事故**：对 510 条 Base/Plus 任务逐条调用 `python_validator.validate_python_secure`（Docker 后端），
+产生大量容器可写层；中途强杀进程又留下 8 个孤儿容器，VHDX 从 14.9 GB 涨到 **67.72 GB**
+（内部实际用量仅 13.19 GB，可回收约 **54 GB**）。
+
+**根因**：CodeSecEval Python 的 Test-FP/Test-SP 是 `check(candidate)` 契约，
+**本来就不需要 Docker**——仓库已有本地评测器 `methods/sct_lifecycle_replay/local_codeseceval.py`，
+用 `python -I` 临时子进程执行。这与 AGENTS.md「PLT 训练侧默认使用本地临时子进程」一致，
+**只有 C++/Go harness 才需要 Docker**。
+
+**正确做法（Python 评测一律走本地）**：
+
+```powershell
+# 零 Docker：冻结经验检索 + 生成 + python -I 本地验证
+python -m methods.sct_trajectory.run_local_frozen_eval `
+    --cle-run translation_work/sct_runs/<cle-run> `
+    --out translation_work/validation_runs/cle_local_<ts>
+```
+
+实测：本地评测器跑完 510 条任务后，容器数保持 0、VHDX 大小完全不变。
+
+**另一条教训**：不要在长跑任务中途强杀 Python 进程——`docker run --rm` 只在正常退出时清理容器，
+强杀会留下孤儿容器（用 `docker rm -f $(docker ps -aq)` 清理）。
+
 ## 一键压缩脚本
 
 `tools/compact_docker_vhdx.ps1`（需管理员权限，脚本会自动请求提权）：

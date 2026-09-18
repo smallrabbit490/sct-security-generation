@@ -27,10 +27,18 @@ except ModuleNotFoundError:
 
 
 HERE = Path(__file__).resolve().parent
-PROJECT_ROOT = HERE.parents[2]
+# 本文件在 methods/legacy_prompt_adapters/ 下，仓库根是 parents[1]。
+# 原来是 parents[2]，指向仓库的上一级（D:\thecourceofdasi），
+# 于是 SEC_AWARE = D:\thecourceofdasi\src 根本不存在——import 之所以还能成功，
+# 只是因为更早导入的 run_actual_5_python_methods 顺手插了正确的 src 路径，
+# 把这里的错误掩盖了。--dataset-root 的默认值也因此是错的。
+PROJECT_ROOT = HERE.parents[1]
 SEC_AWARE = PROJECT_ROOT / "src"
 if str(SEC_AWARE) not in sys.path:
     sys.path.insert(0, str(SEC_AWARE))
+
+# 仓库内的可移植 harness 根：data/harnesses/<subset>/<language>/<track>/<task_id>/main.<ext>
+HARNESS_ROOT = PROJECT_ROOT / "data" / "harnesses"
 
 from translation_pipeline import quality_metrics, validators  # noqa: E402
 
@@ -121,6 +129,10 @@ def language_dataset_path(dataset_root: Path, subset: str, language: str) -> Pat
 
 def load_language_tasks(dataset_root: Path, subset: str, language: str, limit: int) -> list[dict[str, Any]]:
     rows = read_json(language_dataset_path(dataset_root, subset, language))
+    # 标记划分来源，供 _source_path_from_saved_harness 定位 data/harnesses/<subset>/...
+    # 只用下划线前缀的内部字段，不会进入提示词（提示词只取 task["Problem"]）。
+    for row in rows:
+        row["_subset"] = subset
     return rows if limit <= 0 else rows[:limit]
 
 
@@ -207,11 +219,11 @@ def generation_strategy_text(method: dict[str, Any], language: str, track: str) 
 def harness_contract_text(language: str, task: dict[str, Any], track: str) -> str:
     if language == "python" or track != "secure":
         return ""
-    signature = extract_harness_entry_signature(language, task)
+    signature = extract_harness_entry_signature(language, task, track)
     if not signature:
         return ""
     entry = task.get("Entry_Point") or "the requested entry point"
-    context = extract_harness_entry_context(language, task)
+    context = extract_harness_entry_context(language, task, track=track)
     context_block = ""
     if context:
         context_block = f"""
@@ -437,13 +449,49 @@ def compiled_harness_eval_from_result(
     }
 
 
-def _source_path_from_saved_harness(task: dict[str, Any], language: str) -> Path | None:
+def _source_path_from_saved_harness(
+    task: dict[str, Any], language: str, track: str | None = None
+) -> Path | None:
+    """定位某个任务的 harness 源文件。
+
+    两级查找：
+
+    1. **历史记录里的 ``sandbox_dir``**（``Secure Code Test Result`` /
+       ``Insecure Code Behavior Result`` 的 ``details.sandbox_dir``）。
+       这是 2026-09 那次全量运行留下的**绝对路径**，换机器或清理运行区之后就失效。
+    2. **仓库内可移植 harness**：``data/harnesses/<subset>/<language>/<track>/<task_id>/main.<ext>``。
+
+    为什么必须加第 2 级：只有第 1 级时，harness 找不到会**静默**退化成
+    ``compile_run_only_no_security_credit``，也就是 C++/Go 全部拿不到安全学分。
+    实测（2026-09-18）4 条 prompt baseline 在 Base 上 16 条 C++/Go 结果全部如此，
+    表面上像"模型全写错了"，实际是 harness 没被找到。这类静默退化会让
+    整张对比表失真，属于必须在评测链路里堵住的问题。
+
+    ``track`` 为空时只做第 1 级查找，保持旧调用点的行为不变。
+    """
     old = task.get("Secure Code Test Result") or {}
     sandbox_dir = Path(((old.get("details") or {}).get("sandbox_dir") or ""))
-    if not sandbox_dir.exists():
+    if sandbox_dir and sandbox_dir.exists():
+        source = sandbox_dir / ("main.cpp" if language == "cpp" else "main.go")
+        if source.exists():
+            return source
+
+    if not track:
         return None
-    source = sandbox_dir / ("main.cpp" if language == "cpp" else "main.go")
-    return source if source.exists() else None
+    subset = str(task.get("_subset") or "")
+    task_id = re.sub(r"[^A-Za-z0-9_.-]", "_", str(task.get("ID", "unknown")))
+    filename = "main.cpp" if language == "cpp" else "main.go"
+    candidates: list[Path] = []
+    if subset:
+        candidates.append(HARNESS_ROOT / subset / language / track / task_id / filename)
+    # subset 未标记时，退回在 Base/Plus 两个划分里各找一次；两边同名任务极少，
+    # 真出现冲突时以 Base 优先（与数据集加载顺序一致）。
+    for name in ("Base", "Plus"):
+        candidates.append(HARNESS_ROOT / name / language / track / task_id / filename)
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
 
 
 def _normalize_signature(signature: str) -> str:
@@ -482,8 +530,8 @@ def _extract_go_signature(source: str, entry: str) -> str | None:
     return _normalize_signature(match.group(1)) if match else None
 
 
-def extract_harness_entry_signature(language: str, task: dict[str, Any]) -> str | None:
-    source = _source_path_from_saved_harness(task, language)
+def extract_harness_entry_signature(language: str, task: dict[str, Any], track: str | None = None) -> str | None:
+    source = _source_path_from_saved_harness(task, language, track)
     if source is None:
         return None
     code = source.read_text(encoding="utf-8", errors="replace")
@@ -495,8 +543,10 @@ def extract_harness_entry_signature(language: str, task: dict[str, Any]) -> str 
     return None
 
 
-def extract_harness_entry_context(language: str, task: dict[str, Any], limit: int = 1800) -> str | None:
-    source = _source_path_from_saved_harness(task, language)
+def extract_harness_entry_context(
+    language: str, task: dict[str, Any], limit: int = 1800, track: str | None = None
+) -> str | None:
+    source = _source_path_from_saved_harness(task, language, track)
     if source is None:
         return None
     code = source.read_text(encoding="utf-8", errors="replace")
@@ -657,8 +707,10 @@ def build_cpp_candidate_harness(task: dict[str, Any], candidate_code: str, saved
     return saved_prefix.rstrip() + include_block + "\n\n" + candidate_body.rstrip() + "\n\n" + saved_main
 
 
-def build_candidate_harness_code(language: str, task: dict[str, Any], candidate_code: str) -> str | None:
-    source = _source_path_from_saved_harness(task, language)
+def build_candidate_harness_code(
+    language: str, task: dict[str, Any], candidate_code: str, track: str | None = None
+) -> str | None:
+    source = _source_path_from_saved_harness(task, language, track)
     if source is None:
         return None
     saved = source.read_text(encoding="utf-8", errors="replace")
@@ -673,7 +725,7 @@ def build_candidate_harness_code(language: str, task: dict[str, Any], candidate_
 
 
 def validate_compiled_candidate_with_harness(language: str, task: dict[str, Any], code: str, track: str) -> Any | None:
-    harness_code = build_candidate_harness_code(language, task, code)
+    harness_code = build_candidate_harness_code(language, task, code, track)
     if not harness_code:
         return None
     task_id = f"{task.get('ID', 'task')}_{slug(track)}_{language}_harness"

@@ -123,13 +123,13 @@
 | 文件 | 说明 |
 |---|---|
 | [prompts.py](methods/prompting_baselines/prompts.py) | Greedy / Greedy+Secure / CoT / CoT+Secure 提示词 |
-| [run_prompt_baseline.py](methods/prompting_baselines/run_prompt_baseline.py) | 四条 Prompt baseline 运行入口 |
+| [run_prompt_baseline.py](methods/prompting_baselines/run_prompt_baseline.py) | **仅桩**：只打印提示词，不调模型、不跑 Docker。四条 Prompt 的真实运行入口是 `workflow_baselines/run_true_agent_workflows.py --only-traditional` |
 
-**workflow_baselines/**（五条多阶段 Agent workflow）
+**workflow_baselines/**（四条 Prompt + 五条多阶段 Agent 的统一 runner）
 
 | 文件 | 说明 |
 |---|---|
-| [run_true_agent_workflows.py](methods/workflow_baselines/run_true_agent_workflows.py) | AutoSafeCoder / AgentCoder / RA-Gen / SWE-Agent / SecAwareCoder 统一 runner |
+| [run_true_agent_workflows.py](methods/workflow_baselines/run_true_agent_workflows.py) | 九条 baseline 的统一入口；`--only-traditional` 跑四条 Prompt，`--only-agents` 跑五条 Agent |
 | [fidelity.py](methods/workflow_baselines/fidelity.py) | 五条 Agent baseline 的可机检 fidelity 合约 |
 
 **sct_agent/**（SCT 方法：经验卡、检索、进化、门控）
@@ -201,12 +201,13 @@
 | 文件 | 覆盖内容 |
 |---|---|
 | [test_repository_smoke.py](tests/test_repository_smoke.py) | 数据量、根路径、Prompt 方法数 |
-| [test_validation_regressions.py](tests/test_validation_regressions.py) | 验证器回归 |
-| [test_baseline_runtime.py](tests/test_baseline_runtime.py) | baseline 运行链路 |
+| [test_validation_regressions.py](tests/test_validation_regressions.py) | 验证器回归、常驻容器挂载根与 Go 规格 |
+| [test_baseline_runtime.py](tests/test_baseline_runtime.py) | baseline 运行链路、harness 回退查找、凭据解析顺序 |
 | [test_agent_workflow_fidelity.py](tests/test_agent_workflow_fidelity.py) | Agent workflow fidelity |
 | [test_plt_self_evolution.py](tests/test_plt_self_evolution.py) | PLT 自进化 |
 | [test_llm_scheduler.py](tests/test_llm_scheduler.py) | LLM 任务选择器 |
 | [test_local_codeseceval.py](tests/test_local_codeseceval.py) | 本地 CodeSecEval 评测器 |
+| [test_secodeplt_eval.py](tests/test_secodeplt_eval.py) | SeCodePLT 移植（模板注入、本地/Docker 执行器、Juliet Java 源码改写与常驻容器执行） |
 | [test_sct_schemas.py](tests/test_sct_schemas.py) | SCT 数据结构 |
 | [test_sct_difference_analysis.py](tests/test_sct_difference_analysis.py) | 差异分析 |
 | [test_sct_experience_cards.py](tests/test_sct_experience_cards.py) | 经验卡 / 失败聚类 |
@@ -214,6 +215,17 @@
 | [test_sct_freeze_isolation.py](tests/test_sct_freeze_isolation.py) | 冻结隔离 |
 | [test_sct_validation_evidence.py](tests/test_sct_validation_evidence.py) | 验证证据 |
 | [test_sct_lifecycle_replay.py](tests/test_sct_lifecycle_replay.py) | 生命周期 + 主动回放 |
+| [test_active_replay.py](tests/test_active_replay.py) | 主动回放任务选择 |
+| [test_agent_pipeline.py](tests/test_agent_pipeline.py) | Agent 流水线 |
+| [test_distillation.py](tests/test_distillation.py) | 经验蒸馏 |
+| [test_error_ledger.py](tests/test_error_ledger.py) | 错误台账 |
+| [test_four_state.py](tests/test_four_state.py) | 四态判定 |
+| [test_frozen_report.py](tests/test_frozen_report.py) | 冻结报告 |
+| [test_gates.py](tests/test_gates.py) | 门控 |
+| [test_hsk_tree.py](tests/test_hsk_tree.py) | HSK 树 |
+| [test_retriever_align.py](tests/test_retriever_align.py) | 检索器对齐 |
+| [test_split.py](tests/test_split.py) | 数据划分 |
+| [test_trajectory_reflection.py](tests/test_trajectory_reflection.py) | 轨迹反思 |
 
 ### tools/、configs/、docker/、results/
 
@@ -221,11 +233,13 @@
 |---|---|
 | [tools/check_repository.py](tools/check_repository.py) | 仓库完整性检查（数量、脱敏） |
 | [tools/sanitize_dataset.py](tools/sanitize_dataset.py) | 数据集脱敏（机器路径、密钥） |
+| [tools/vhdx_watchdog.py](tools/vhdx_watchdog.py) | 跑命令并全程采样 vhdx 水位与容器数，给出"Docker 是否膨胀"的可引用判定 |
 | [tools/check_chatanywhere_keys.ps1](tools/check_chatanywhere_keys.ps1) | ChatAnywhere key 脱敏检查 |
 | [configs/README.md](configs/README.md) | 配置放置规则 |
 | [docker/python-validator/Dockerfile](docker/python-validator/Dockerfile) | Python 验证器镜像 |
 | [docker/cpp-validator/Dockerfile](docker/cpp-validator/Dockerfile) | C++ 验证器镜像 |
-| [docker/go-validator/Dockerfile](docker/go-validator/Dockerfile) | Go 验证器镜像 |
+| [docker/go-validator/Dockerfile](docker/go-validator/Dockerfile) | Go 验证器镜像（历史定义；实际用 `golang:1.22`） |
+| [docker/java-validator/Dockerfile](docker/java-validator/Dockerfile) | PLT Juliet Java 评测镜像（JDK 17 + JUnit standalone；本机默认复用已有 JDK 镜像） |
 | [results/curated/README.md](results/curated/README.md) | 精简结果提交规则 |
 
 ## 方法分组
@@ -252,7 +266,7 @@ configs/                      不含密钥的运行配置
 docker/                       Python/C++/Go 验证器镜像定义
 results/curated/              可提交的精简结果摘要
 docs/                         协议、审计、复现和数据说明
-tests/                        离线回归测试（14 个）
+tests/                        离线回归测试（26 个文件）
 tools/                        数据清洗、key 检查和仓库检查工具
 ```
 
@@ -288,6 +302,12 @@ docker build -t safecoder-cpp-validator:local docker/cpp-validator
 docker pull golang:1.22
 ```
 
+默认模型是 `deepseek-v3.2`（**非推理模型**，`reasoning_tokens=0`，全部 `max_tokens`
+预算都用于正文）。不要默认改用推理模型：`deepseek-v4-flash` 在长任务提示下会把
+1024 的预算全烧在推理上（实测 `completion=1024 / reasoning=1024 / 正文为空`），
+产出"代码为空、Function/Secure 全 False"的假结果。用 v4 系列必须同时把
+`--max-tokens` 提到 4096 以上。
+
 离线检查：
 
 ```powershell
@@ -297,6 +317,10 @@ python tools/check_repository.py
 ```
 
 跑完大批量实验后若 D 盘空间明显减少，用 [Docker 数据盘压缩指南](docs/docker_disk_hygiene.md) 和 `tools/compact_docker_vhdx.ps1` 一键回收 `docker_data.vhdx` 里已删除但未归还的空间。
+
+**但更该做的是别让它涨**：大批量运行一律用 `tools/vhdx_watchdog.py` 包裹（见上方
+「Docker 纪律」），它会全程采样水位并给出判定报告；跑完确认 `docker ps -a` 为空，
+再考虑是否需要压缩。
 
 ### ChatAnywhere API key 存储位置
 
@@ -317,21 +341,77 @@ local_secrets/chatanywhereapi使用/apikey.txt
 
 ## Baseline 评测快速入口
 
+九条 baseline（4 条 Prompt + 5 条 Agent）由**同一个** runner 运行：
+
+```text
+methods/workflow_baselines/run_true_agent_workflows.py
+```
+
+- `--only-traditional` → 四条 Prompt baseline（Greedy / Greedy + Secure Prompt / CoT / CoT + Secure Prompt）
+- `--only-agents` → 五条 Agent baseline（AutoSafeCoder / RA-Gen / SWE-Agent / AgentCoder / SecAwareCoder）
+- 两个都不加 → 九条全跑
+
+> `methods/prompting_baselines/run_prompt_baseline.py` **只是桩**：它只打印提示词，
+> 不调模型、不跑 Docker。四条 Prompt 方法的真实实现就在上面的 runner 里。
+
 结果统一写入被忽略的目录：
 
 `translation_work/baseline_runs/<run-name>/<subset>/`
+（`rows.jsonl` / `summary.json` / `true_agent_workflow_report.md` / `run_metadata.json`）
 
-推荐先跑一个任务验证链路：
+### 冒烟：先跑一个任务验证链路
+
+用 vhdx 看门狗包裹，跑完直接给出"Docker 有没有膨胀"的判定：
 
 ```powershell
-$env:CHATANYWHERE_API_BASE = 'https://api.chatanywhere.tech/v1'
-python methods/workflow_baselines/run_true_agent_workflows.py `
-  --subsets Base --languages python --limit 1 `
-  --model deepseek-v4-flash --max-tokens 1024 --temperature 0 `
-  --retries 1 --workers 1
+$PY = "D:/ANACONDA/python.exe"   # 需要装了 openai 的解释器
+& $PY tools/vhdx_watchdog.py --label smoke --max-containers 16 --interval 2 -- `
+  $PY methods/workflow_baselines/run_true_agent_workflows.py `
+    --subsets Base --languages python cpp go --limit 1 `
+    --out-name smoke_20260918 `
+    --model deepseek-v3.2 --max-tokens 2048 --temperature 0 `
+    --retries 1 --workers 2 --only-traditional
 ```
 
-每条结果至少检查：真实模型请求、生成代码非空、`workflow_completed`、Agent 的 `fidelity_passed`、Docker Function/Secure 结果。模型生成了错误代码但流程到达终态，属于模型结果；API 超时、代码提取异常、缺阶段或 runner 崩溃，才属于运行失败。
+每条结果至少检查：真实模型请求、生成代码非空、`workflow_completed`、Agent 的
+`fidelity_passed`、Docker Function/Secure 结果。模型生成了错误代码但流程到达终态，
+属于模型结果；API 超时、代码提取异常、缺阶段或 runner 崩溃，才属于运行失败。
+
+另外**必须**确认没有 `error_type=environment_error`——那是环境事故，不是模型结果。
+
+### Docker 纪律：评测期间 VHDX 不涨
+
+2026-09-17 的事故（vhdx 从 14.9 GB 涨到 67.72 GB）根因是"每个任务 `docker run --rm`
+新建容器 + 中途强杀留下孤儿容器"。执行层已改成**常驻容器池**
+（`src/translation_pipeline/persistent_container.py`），配套纪律见
+[AGENTS.md 第九节](AGENTS.md)。要点：
+
+1. 所有 Docker 验证走常驻容器执行层，不新写 `docker run`；
+2. 池大小 >= 并发数（runner 会自动设 `SAFECODER_DOCKER_POOL_SIZE = max(--workers, 1)`）；
+3. 跑前自动清理残留池容器（`cleanup_stale_containers()`）；
+4. 大批量运行一律用 `tools/vhdx_watchdog.py` 包裹，产出可引用的判定报告；
+5. 只读挂载 JUnit / juliet-support / Mockito 等工具链；只挂 `translation_work/`，
+   绝不挂仓库根（`local_secrets/` 里有 key）。
+
+### 会静默让结果失真的三个陷阱（已修复，勿回退）
+
+| 陷阱 | 症状 | 正确做法 |
+|---|---|---|
+| harness 查找只认历史 `sandbox_dir` | C++/Go 全部落到 `compile_run_only_no_security_credit`，**不给安全学分**，像"模型全写错" | 必须回退到 `data/harnesses/<subset>/<language>/<track>/<task_id>/main.<ext>` |
+| 推理模型吃光 `max_tokens` | `code` 为空、Function/Secure 全 False，像"模型不会写代码" | 用 `deepseek-v3.2`（`reasoning_tokens=0`）；用 v4 系列须把 `--max-tokens` 提到 4096+ |
+| 凭据被 `.env` 快照遮蔽 | 403 余额不足 | 顺序固定：环境变量 → `apikey.txt` → `.env` 兜底 |
+
+**通用教训**：验证链路里任何"找不到就降级"的分支都必须显式记录降级原因，
+并在冒烟检查里断言不允许出现，否则会静默产出看似合理、实则全零的结果。
+
+### PLT Java 评测
+
+PLT Java 不走上面的 runner，走 `methods/secodeplt_eval/java_executor.py`。
+数据在 `data/external/secodeplt/hf_full/jsonl/java_secure_coding-*.jsonl`
+（924 条 Juliet，**869 条带单测，单测在 `meta_data.unit_test` 里**）。
+不用 Maven：`javac` + JUnit standalone jar，报告走 `--reports-dir` XML。
+编译失败必须记成 `measured=False`，不得与 `score=0` 混同。
+细节与回归脚本见 [AGENTS.md 第九节 9.6](AGENTS.md)。
 
 ## 结果管理规则
 

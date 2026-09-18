@@ -3,13 +3,17 @@ from __future__ import annotations
 import os
 import re
 import shutil
-import subprocess
 import threading
 import uuid
 from pathlib import Path
 
 from .models import ValidationResult, truncate_text
 from .paths import ensure_work_dirs, get_work_dir
+from .persistent_container import (
+    ContainerSpec,
+    implicit_pool,
+    run_limited_command,
+)
 
 
 CPP_PREFLIGHT_RULES: tuple[tuple[str, str], ...] = (
@@ -43,9 +47,16 @@ GO_SINGLE_IMPORT_RE = re.compile(r'(?m)^import\s+(?P<prefix>(?:[\w.]+|_|\.)\s+)?
 GO_STDLIB_HOSTS = {"github.com", "gopkg.in", "golang.org", "gitlab.com", "bitbucket.org"}
 GO_DOCKER_IMAGE = os.environ.get("SAFECODER_GO_DOCKER_IMAGE", "golang:1.22")
 CPP_DOCKER_IMAGE = os.environ.get("SAFECODER_CPP_DOCKER_IMAGE", GO_DOCKER_IMAGE)
-CPP_DOCKER_ENTRYPOINT = os.environ.get("SAFECODER_CPP_DOCKER_ENTRYPOINT", "")
-GO_DOCKER_ENTRYPOINT = os.environ.get("SAFECODER_GO_DOCKER_ENTRYPOINT", "__default__")
 MAX_VALIDATOR_OUTPUT_CHARS = int(os.environ.get("SAFECODER_MAX_VALIDATOR_OUTPUT_CHARS", "2000"))
+# 常驻容器里所有任务共用的挂载根。宿主 <translation_work>/... 对应 /work/...。
+CONTAINER_WORK_ROOT = "/work"
+# 不在挂载根内的任务目录 → 暂存目录的映射（见 stage_task_dir）。
+_STAGED_DIRS: dict[Path, Path] = {}
+_STAGE_LOCK = threading.Lock()
+# 已废弃：``SAFECODER_CPP_DOCKER_ENTRYPOINT`` / ``SAFECODER_GO_DOCKER_ENTRYPOINT``
+# 在常驻容器方案下不再有意义——容器必须以 ``--entrypoint tail`` 保活，
+# 否则 porta-bench / safecoder 镜像自带的 docker_runner ENTRYPOINT 会立刻接管进程
+# 并让容器退出。这两个变量原本也没有任何脚本设置过。
 
 
 def _to_text(value: object) -> str:
@@ -60,112 +71,20 @@ def _truncate_output(value: object, limit: int = MAX_VALIDATOR_OUTPUT_CHARS) -> 
     return truncate_text(value, limit)
 
 
-def _read_limited_pipe(pipe: object, limit: int, chunks: list[str], truncated: list[bool]) -> None:
-    while True:
-        chunk = pipe.readline()
-        if not chunk:
-            break
-        if sum(len(item) for item in chunks) < limit:
-            remaining = limit - sum(len(item) for item in chunks)
-            chunks.append(chunk[:remaining])
-            if len(chunk) > remaining:
-                truncated[0] = True
-        else:
-            truncated[0] = True
-
-
 def run_command_limited(
     args: list[str],
     cwd: Path,
     timeout: int = 30,
     env: dict[str, str] | None = None,
     output_limit: int = MAX_VALIDATOR_OUTPUT_CHARS,
-) -> tuple[int, str, str, bool]:
-    docker_container_name = _extract_docker_container_name(args)
-    process = subprocess.Popen(
-        args,
-        cwd=cwd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-        env=env,
-    )
-    stdout_chunks: list[str] = []
-    stderr_chunks: list[str] = []
-    stdout_truncated = [False]
-    stderr_truncated = [False]
-    assert process.stdout is not None
-    assert process.stderr is not None
-    stdout_thread = threading.Thread(
-        target=_read_limited_pipe,
-        args=(process.stdout, output_limit, stdout_chunks, stdout_truncated),
-        daemon=True,
-    )
-    stderr_thread = threading.Thread(
-        target=_read_limited_pipe,
-        args=(process.stderr, output_limit, stderr_chunks, stderr_truncated),
-        daemon=True,
-    )
-    stdout_thread.start()
-    stderr_thread.start()
-    timed_out = False
-    try:
-        returncode = process.wait(timeout=timeout)
-    except subprocess.TimeoutExpired:
-        timed_out = True
-        process.kill()
-        returncode = process.wait()
-        if docker_container_name:
-            _force_remove_docker_container(docker_container_name)
-    stdout_thread.join(timeout=2)
-    stderr_thread.join(timeout=2)
-    process.stdout.close()
-    process.stderr.close()
-    stdout = "".join(stdout_chunks)
-    stderr = "".join(stderr_chunks)
-    if stdout_truncated[0]:
-        stdout += f"\n...[truncated validator stdout at {output_limit} chars]..."
-    if stderr_truncated[0]:
-        stderr += f"\n...[truncated validator stderr at {output_limit} chars]..."
-    if timed_out and not stderr:
-        stderr = "command timed out"
-    return returncode, stdout, stderr, timed_out
+) -> tuple[int | None, str, str, bool]:
+    """运行外部命令，返回 ``(returncode, stdout, stderr, timed_out)``。
 
-
-def _extract_docker_container_name(args: list[str]) -> str | None:
-    if len(args) < 2 or Path(args[0]).name.lower() not in {"docker", "docker.exe"} or args[1] != "run":
-        return None
-    for index, arg in enumerate(args):
-        if arg == "--name" and index + 1 < len(args):
-            return args[index + 1]
-        if arg.startswith("--name="):
-            return arg.split("=", 1)[1]
-    return None
-
-
-def _force_remove_docker_container(name: str) -> None:
-    try:
-        subprocess.run(
-            ["docker", "rm", "-f", name],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            timeout=10,
-            check=False,
-        )
-    except Exception:
-        pass
-
-
-def _docker_safe_name(prefix: str, temp_dir: Path) -> str:
-    digest = uuid.uuid5(uuid.NAMESPACE_URL, str(temp_dir.resolve())).hex[:12]
-    return f"safecoder_{prefix}_{digest}"
-
-
-def _linux_timeout_command(seconds: int, command: list[str]) -> list[str]:
-    quoted = " ".join("'" + item.replace("'", "'\"'\"'") + "'" for item in command)
-    return ["sh", "-c", f"timeout -k 5s {seconds}s {quoted}"]
+    实现已统一到 :mod:`translation_pipeline.persistent_container`，本函数只做转发，
+    避免两份几乎相同的管道读取逻辑各自漂移（旧实现在循环里反复
+    ``sum(len(item) for item in chunks)``，块数一多就是 O(n²)）。
+    """
+    return run_limited_command(args, cwd, timeout=timeout, env=env, output_limit=output_limit)
 
 
 def _mask_go_double_quoted_strings(code: str) -> str:
@@ -658,122 +577,249 @@ def _docker_mount_path(path: Path) -> str:
     return str(path.resolve()).replace("\\", "/")
 
 
-def _docker_go_args(
-    *,
-    docker_cmd: str,
-    temp_dir: Path,
-    mod_cache: Path,
-    build_cache: Path,
-    network: str | None,
-    command: list[str],
-) -> list[str]:
-    args = [
-        docker_cmd,
-        "run",
-        "--rm",
-        "--name",
-        _docker_safe_name("go", temp_dir),
-        "--stop-timeout",
-        "1",
-        "--memory",
-        "512m",
-        "--cpus",
-        "1",
-        "--tmpfs",
-        "/tmp:rw,nosuid,nodev,size=128m",
-    ]
-    if network is not None:
-        args.extend(["--network", network])
-    if GO_DOCKER_ENTRYPOINT != "__default__":
-        args.extend(["--entrypoint", GO_DOCKER_ENTRYPOINT])
-    args.extend(
-        [
-            "-v",
-            f"{_docker_mount_path(temp_dir)}:/work",
-            "-v",
-            f"{_docker_mount_path(mod_cache)}:/go/pkg/mod",
-            "-v",
-            f"{_docker_mount_path(build_cache)}:/root/.cache/go-build",
-            "-w",
-            "/work",
-            "-e",
-            "TMPDIR=/work/.tmp",
-            "-e",
-            "TEMP=/work/.tmp",
-            "-e",
-            "TMP=/work/.tmp",
-            "-e",
-            "GOTMPDIR=/work/.tmp",
-            "-e",
-            "PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-            "-e",
-            "GOPROXY=https://goproxy.cn,direct",
-            GO_DOCKER_IMAGE,
-            *command,
-        ]
+def _mount_root() -> Path:
+    """常驻容器的宿主挂载根，挂载为容器内 ``/work``。
+
+    为什么是 ``translation_work/`` 而不是 ``sandbox/``：任务目录不一定落在
+    ``sandbox/`` 下。例如 ``run_full_docker_revalidation`` 会把 harness 复制到
+    调用方指定的 ``output_root``（CLI 可指向 ``translation_work/`` 下任意位置）。
+    只挂 ``sandbox/`` 时，容器内 ``/work/<任务名>`` 根本不存在，
+    ``docker exec -w`` 会直接报 ``chdir to cwd ... no such file or directory``。
+
+    用 ``translation_work/`` 作根后，任务目录按**相对路径**映射：
+    ``translation_work/sandbox/<t>`` → ``/work/sandbox/<t>``，
+    ``translation_work/temp/<run>/harnesses/...`` → ``/work/temp/<run>/harnesses/...``。
+
+    安全边界：**只挂 ``translation_work/``**。绝不挂仓库根目录——``local_secrets/``
+    与 ``.env.local`` 里有 API key，挂进去等于把密钥交给容器内运行的候选代码。
+
+    不在此根下的目录由 :func:`stage_task_dir` 复制进 ``sandbox/_stage/`` 兜底。
+    """
+    return get_work_dir()
+
+
+def stage_task_dir(temp_dir: Path) -> Path:
+    """确保任务目录位于挂载根内；不在根内则复制到 ``sandbox/_stage/`` 并复用。
+
+    同一源目录多次调用（编译阶段、运行阶段）返回同一个暂存目录，
+    因此编译产物能在阶段之间保留，不会被重复复制覆盖。
+    """
+    root = _mount_root().resolve()
+    resolved = temp_dir.resolve()
+    try:
+        resolved.relative_to(root)
+        return temp_dir
+    except ValueError:
+        pass
+    with _STAGE_LOCK:
+        cached = _STAGED_DIRS.get(resolved)
+        if cached is not None and cached.exists():
+            return cached
+        digest = uuid.uuid5(uuid.NAMESPACE_URL, str(resolved)).hex[:12]
+        safe_name = "".join(ch if ch.isalnum() or ch in "-_" else "_" for ch in resolved.name)
+        staged = root / "sandbox" / "_stage" / f"{safe_name}_{digest}"
+        shutil.copytree(resolved, staged, dirs_exist_ok=True)
+        _STAGED_DIRS[resolved] = staged
+        return staged
+
+
+def _container_task_dir(temp_dir: Path) -> str:
+    """宿主任务目录 → 容器内工作目录；不在挂载根内时自动暂存。
+
+    调用方在构造命令前调用本函数，:func:`run_docker_task` 内部也会调用；
+    由于 :func:`stage_task_dir` 带缓存且幂等，两处拿到的是同一个暂存目录，
+    编译产物因此在编译阶段与运行阶段之间保留。
+    """
+    staged = stage_task_dir(temp_dir)
+    root = _mount_root().resolve()
+    relative = staged.resolve().relative_to(root)
+    return f"{CONTAINER_WORK_ROOT}/{relative.as_posix()}"
+
+
+def _docker_task_env(container_dir: str) -> dict[str, str]:
+    """任务级临时目录指向该任务自己的挂载目录，与旧行为保持一致。
+
+    为什么不改指容器内 tmpfs ``/tmp``：``g++``/``go`` 编译大源文件时中间文件可能
+    超过 ``--tmpfs`` 的 128m 上限，会把"编译成功"变成"环境失败"，属于行为回归。
+    指回任务目录后临时文件仍在宿主盘，但随任务目录一起清理，不写容器可写层。
+    这些变量必须按任务传入（容器级 ENV 是固定的，无法区分任务目录）。
+    """
+    tmp = f"{container_dir}/.tmp"
+    return {"TMPDIR": tmp, "TEMP": tmp, "TMP": tmp, "GOTMPDIR": tmp}
+
+
+def cpp_docker_spec(network: str | None = "none") -> ContainerSpec:
+    """CodeSecEval C++ harness 的容器规格。
+
+    ``network`` 必须按阶段区分：编译固定 ``"none"``；运行阶段由调用方决定，
+    因为部分 harness 需要回环网络才能验证网络相关缺陷
+    （见 ``run_full_docker_revalidation._cpp_run_network_for_source``）。
+    不同 ``network`` 会得到不同的池，互不干扰。
+    """
+    return ContainerSpec(
+        image=CPP_DOCKER_IMAGE,
+        mounts=((_docker_mount_path(_mount_root()), CONTAINER_WORK_ROOT),),
+        network=network,
     )
-    return args
 
 
-def _docker_cpp_args(
+def go_docker_spec(
+    network: str | None = "none",
     *,
-    docker_cmd: str,
-    temp_dir: Path,
-    network: str | None,
-    command: list[str],
-) -> list[str]:
-    args = [
-        docker_cmd,
-        "run",
-        "--rm",
-        "--name",
-        _docker_safe_name("cpp", temp_dir),
-        "--stop-timeout",
-        "1",
-        "--memory",
-        "512m",
-        "--cpus",
-        "1",
-        "--tmpfs",
-        "/tmp:rw,nosuid,nodev,size=128m",
-    ]
-    if network is not None:
-        args.extend(["--network", network])
-    if CPP_DOCKER_ENTRYPOINT != "__default__":
-        args.extend(["--entrypoint", CPP_DOCKER_ENTRYPOINT])
-    args.extend(
-        [
-            "-v",
-            f"{_docker_mount_path(temp_dir)}:/work",
-            "-w",
-            "/work",
-            "-e",
-            "TMPDIR=/work/.tmp",
-            "-e",
-            "TEMP=/work/.tmp",
-            "-e",
-            "TMP=/work/.tmp",
-            CPP_DOCKER_IMAGE,
-            *command,
-        ]
+    cache_root: Path | None = None,
+) -> ContainerSpec:
+    """CodeSecEval Go harness 的容器规格。
+
+    模块缓存与构建缓存挂到宿主 ``translation_work/cache/go/``：镜像
+    ``golang:1.22`` 只设 ``GOPATH=/go``，不设 ``GOCACHE``/``GOMODCACHE``，
+    因此默认路径 ``/go/pkg/mod`` 与 ``/root/.cache/go-build`` 正好落在挂载点上，
+    缓存可以跨任务复用。``docker/go-validator/Dockerfile`` 里那组
+    ``GOCACHE=/work/.cache/...`` 属于**未被使用**的旧镜像定义
+    （``SAFECODER_GO_DOCKER_IMAGE`` 实际指向 ``golang:1.22``），不影响当前路径。
+    """
+    root = cache_root or (get_work_dir() / "cache" / "go")
+    mod_cache = root / "mod"
+    build_cache = root / "build"
+    for path in (mod_cache, build_cache):
+        path.mkdir(parents=True, exist_ok=True)
+    return ContainerSpec(
+        image=GO_DOCKER_IMAGE,
+        mounts=(
+            (_docker_mount_path(_mount_root()), CONTAINER_WORK_ROOT),
+            (_docker_mount_path(mod_cache), "/go/pkg/mod"),
+            (_docker_mount_path(build_cache), "/root/.cache/go-build"),
+        ),
+        env=(
+            ("GOPROXY", "https://goproxy.cn,direct"),
+            ("GO111MODULE", "on"),
+            ("GOWORK", "off"),
+        ),
+        network=network,
     )
-    return args
 
 
-def _docker_environment_error(stderr: str, cwd: Path) -> ValidationResult:
+def docker_environment_error(
+    stderr: str,
+    cwd: Path,
+    *,
+    language: str = "go",
+    mode: str = "run",
+    phase: str = "docker_check",
+    extra: dict[str, object] | None = None,
+) -> ValidationResult:
+    """构造 ``environment_error``：环境事故，不得折算成方法失败或方法得分。"""
+    details: dict[str, object] = {
+        "phase": phase,
+        "sandbox_dir": str(cwd),
+        "error_type": "environment_error",
+    }
+    if extra:
+        details.update(extra)
     return ValidationResult(
         ok=False,
-        language="go",
-        mode="run",
+        language=language,
+        mode=mode,
         stderr=(
-            "Docker daemon is not available. Start Docker Desktop or switch "
-            "SAFECODER_GO_BACKEND back to local.\n"
+            "Docker validation environment failed. Start Docker Desktop or switch "
+            "SAFECODER_*_BACKEND back to local.\n"
             f"{stderr}"
         ).strip(),
+        details=details,
+    )
+
+
+def run_docker_task(
+    *,
+    spec: ContainerSpec,
+    temp_dir: Path,
+    command: list[str],
+    phase: str,
+    language: str,
+    mode: str,
+    container_timeout: int,
+    host_timeout: int | None = None,
+    env: dict[str, str] | None = None,
+) -> ValidationResult:
+    """在常驻容器里执行一条任务级命令，返回与旧 ``run_command`` 兼容的结果。
+
+    与旧实现的区别：不再每个阶段 ``docker run --rm`` 新建容器，而是从容器池里
+    借一个常驻容器做 ``docker exec``；容器在整轮评测中复用，只有评测结束才删除。
+
+    超时用两层：``container_timeout`` 交给容器内 ``timeout``（正常路径，Linux
+    自己杀干净），``host_timeout`` 是宿主侧兜底（默认比容器内多 30 秒）。
+
+    未测量项：本函数不判断编译/功能/安全语义，只负责"命令跑没跑完"。
+    判定仍由各 harness 的 ``returncode`` 与 ``classify_validation_result`` 决定。
+    """
+    staged_dir = stage_task_dir(temp_dir)
+    container_dir = _container_task_dir(staged_dir)
+    if host_timeout is None:
+        host_timeout = container_timeout + 30
+    task_env = _docker_task_env(container_dir)
+    if env:
+        task_env.update(env)
+    try:
+        pool = implicit_pool(spec)
+        with pool.acquire() as container:
+            result = container.exec_argv(
+                command,
+                workdir=container_dir,
+                env=task_env,
+                timeout=host_timeout,
+                container_timeout=container_timeout,
+                cwd=staged_dir,
+            )
+            # 只在异常信号出现时才做一次 docker inspect，避免给每个任务增加固定开销。
+            container_alive = True
+            if result.timed_out or result.returncode != 0:
+                container_alive = container.is_running()
+    except RuntimeError as exc:
+        # 池启动失败 / 池耗尽 / 容器重建失败：都属于环境事故。
+        return docker_environment_error(str(exc), temp_dir, language=language, mode=mode, phase=phase)
+
+    common_details = {
+        "args": result.argv,
+        "phase": phase,
+        "sandbox_dir": str(staged_dir),
+        "source_dir": str(temp_dir),
+        "container_dir": container_dir,
+        **result.as_details(),
+    }
+    if not container_alive:
+        # 容器在任务执行期间消失（OOM 被杀、daemon 重启、镜像被删）。
+        # 必须记成 environment_error：否则环境事故会被当成方法失败，污染得分。
+        return docker_environment_error(
+            f"container {result.container} stopped during phase '{phase}'",
+            temp_dir,
+            language=language,
+            mode=mode,
+            phase=phase,
+            extra=common_details,
+        )
+    if result.timed_out:
+        return ValidationResult(
+            ok=False,
+            language=language,
+            mode=mode,
+            stdout=result.stdout,
+            stderr=result.stderr or "command timed out",
+            details={"timeout": container_timeout, "error_type": "timeout", **common_details},
+        )
+    return ValidationResult(
+        ok=result.returncode == 0,
+        language=language,
+        mode=mode,
+        stdout=result.stdout,
+        stderr=result.stderr,
         details={
-            "phase": "docker_check",
-            "sandbox_dir": str(cwd),
-            "error_type": "environment_error",
+            "returncode": result.returncode,
+            "error_type": classify_validation_result(
+                ok=result.returncode == 0,
+                phase=phase,
+                returncode=result.returncode,
+                stderr=result.stderr,
+            ),
+            **common_details,
         },
     )
 
@@ -940,6 +986,12 @@ def validate_cpp_program(code: str, task_id: str, mode: str) -> ValidationResult
 
 
 def validate_cpp_program_docker(code: str, task_id: str, mode: str) -> ValidationResult:
+    """用常驻容器验证 C++ harness：编译 + 运行两个阶段。
+
+    与旧实现的差异：两阶段复用同一个常驻容器（``docker exec``），而不是各自
+    ``docker run --rm`` 起一个新容器。命令路径从 ``/work/xxx`` 变为
+    ``/work/<task_dir>/xxx``，因为宿主沙盒根整体挂载到 ``/work``。
+    """
     docker_cmd = find_command("docker")
     if not docker_cmd:
         return ValidationResult(
@@ -972,47 +1024,38 @@ def validate_cpp_program_docker(code: str, task_id: str, mode: str) -> Validatio
         check_result.details["error_type"] = "environment_error"
         return check_result
 
-    compile_result = run_command(
-        _docker_cpp_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            network="none",
-            command=_linux_timeout_command(
-                220,
-                [
-                    "g++",
-                    "-std=c++17",
-                    "-O2",
-                    "-I/work/include",
-                    "/work/main.cpp",
-                    "-o",
-                    "/work/main",
-                ],
-            ),
-        ),
-        cwd=temp_dir,
-        timeout=240,
+    container_dir = _container_task_dir(temp_dir)
+    compile_result = run_docker_task(
+        spec=cpp_docker_spec("none"),
+        temp_dir=temp_dir,
+        command=[
+            "g++",
+            "-std=c++17",
+            "-O2",
+            "-I/work/include",
+            f"{container_dir}/main.cpp",
+            "-o",
+            f"{container_dir}/main",
+        ],
         phase="compile",
+        language="cpp",
+        mode=mode,
+        container_timeout=220,
+        host_timeout=240,
     )
-    compile_result.language = "cpp"
-    compile_result.mode = mode
     if not compile_result.ok:
         return compile_result
 
-    run_result = run_command(
-        _docker_cpp_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            network="none",
-            command=_linux_timeout_command(110, ["/work/main"]),
-        ),
-        cwd=temp_dir,
-        timeout=120,
+    return run_docker_task(
+        spec=cpp_docker_spec("none"),
+        temp_dir=temp_dir,
+        command=[f"{container_dir}/main"],
         phase="run",
+        language="cpp",
+        mode=mode,
+        container_timeout=110,
+        host_timeout=120,
     )
-    run_result.language = "cpp"
-    run_result.mode = mode
-    return run_result
 
 
 def validate_go_program(code: str, task_id: str, mode: str) -> ValidationResult:
@@ -1129,59 +1172,46 @@ def validate_go_program_docker(code: str, task_id: str, mode: str) -> Validation
             local_result.details["docker_fallback"] = True
             local_result.details["docker_error"] = check_result.stderr
             return local_result
-        return _docker_environment_error(check_result.stderr, temp_dir)
+        return docker_environment_error(check_result.stderr, temp_dir, language="go", mode=mode)
 
+    container_dir = _container_task_dir(temp_dir)
     third_party_modules = extract_go_third_party_modules(code)
     if third_party_modules:
-        get_result = run_command(
-            _docker_go_args(
-                docker_cmd=docker_cmd,
-                temp_dir=temp_dir,
-                mod_cache=mod_cache,
-                build_cache=build_cache,
-                network=None,
-                command=_linux_timeout_command(220, ["go", "get", *[f"{module}@latest" for module in third_party_modules]]),
-            ),
-            cwd=temp_dir,
-            timeout=240,
+        # 依赖下载需要网络：用放开网络的池。模块缓存挂载在两套池之间共享，
+        # 所以后面的离线构建阶段能直接命中已下载的模块。
+        get_result = run_docker_task(
+            spec=go_docker_spec(None, cache_root=work_dirs["cache"] / "go"),
+            temp_dir=temp_dir,
+            command=["go", "get", *[f"{module}@latest" for module in third_party_modules]],
             phase="dependency",
+            language="go",
+            mode=mode,
+            container_timeout=220,
+            host_timeout=240,
         )
-        get_result.language = "go"
-        get_result.mode = mode
         if not get_result.ok:
             return get_result
 
-    build_result = run_command(
-        _docker_go_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            mod_cache=mod_cache,
-            build_cache=build_cache,
-            network="none",
-            command=_linux_timeout_command(220, ["go", "build", "-o", "/work/main", "/work/main.go"]),
-        ),
-        cwd=temp_dir,
-        timeout=240,
+    build_result = run_docker_task(
+        spec=go_docker_spec("none", cache_root=work_dirs["cache"] / "go"),
+        temp_dir=temp_dir,
+        command=["go", "build", "-o", f"{container_dir}/main", f"{container_dir}/main.go"],
         phase="compile",
+        language="go",
+        mode=mode,
+        container_timeout=220,
+        host_timeout=240,
     )
-    build_result.language = "go"
-    build_result.mode = mode
     if not build_result.ok:
         return build_result
 
-    run_result = run_command(
-        _docker_go_args(
-            docker_cmd=docker_cmd,
-            temp_dir=temp_dir,
-            mod_cache=mod_cache,
-            build_cache=build_cache,
-            network="none",
-            command=_linux_timeout_command(80, ["/work/main"]),
-        ),
-        cwd=temp_dir,
-        timeout=90,
+    return run_docker_task(
+        spec=go_docker_spec("none", cache_root=work_dirs["cache"] / "go"),
+        temp_dir=temp_dir,
+        command=[f"{container_dir}/main"],
         phase="run",
+        language="go",
+        mode=mode,
+        container_timeout=80,
+        host_timeout=90,
     )
-    run_result.language = "go"
-    run_result.mode = mode
-    return run_result
