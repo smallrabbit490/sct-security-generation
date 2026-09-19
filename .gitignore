@@ -21,8 +21,13 @@ results/**/*.jsonl
 *.tar
 *.tar.gz
 
-# Local ChatAnywhere credentials and profiles
-local_secrets/chatanywhereapi使用/
+# 本地凭据目录（整个目录都忽略）
+# 注意：这里原来是 `local_secrets/chatanywhereapi使用/`，只覆盖了一个子目录。
+# 后来新增了 `local_secrets/智谱api使用/`，它的 newkey.env 就落在了规则之外——
+# `git add .` 会把它提交上去，而仓库是公开的，等于直接泄露 key。
+# 所以改成忽略整个 `local_secrets/`：这个目录按定义只放本地凭据，
+# 没有任何需要进版本控制的内容。
+local_secrets/
 
 # 服务器连接配置与凭据（含明文密码，禁止提交）
 服务器连接/

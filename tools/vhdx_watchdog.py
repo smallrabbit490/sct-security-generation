@@ -43,6 +43,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from translation_pipeline.persistent_container import (  # noqa: E402
+    POOL_NAME_PREFIX,
     cleanup_stale_containers,
     docker_data_vhdx_path,
     measure_docker_disk,
@@ -70,6 +71,14 @@ def _vhdx_size() -> int:
 
 
 def _container_names() -> list[str]:
+    """只返回**本流水线自己的池容器**（前缀 ``POOL_NAME_PREFIX``）。
+
+    为什么不统计全机容器：共享主机上常有与本评测无关的历史容器
+    （实测服务器上有 76 个 7 周前的 `secodeplt/juliet-java-env` 僵尸容器），
+    把它们算进来会让"容器数回落到 0""峰值不超过上限""无残留"三条判据
+    **全部误判为 FAIL**，把一份本来干净的运行判成事故。
+    看门狗要管的是**自己有没有泄漏**，不是替整台机器做盘点。
+    """
     try:
         proc = subprocess.run(
             ["docker", "ps", "-a", "--format", "{{.Names}}"],
@@ -80,7 +89,11 @@ def _container_names() -> list[str]:
         )
     except (OSError, subprocess.TimeoutExpired):
         return []
-    return [line.strip() for line in (proc.stdout or "").splitlines() if line.strip()]
+    return [
+        line.strip()
+        for line in (proc.stdout or "").splitlines()
+        if line.strip().startswith(POOL_NAME_PREFIX)
+    ]
 
 
 def _take_sample() -> dict:
