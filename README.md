@@ -63,6 +63,9 @@
 | [chatanywhere-api.md](docs/chatanywhere-api.md) | ChatAnywhere 本地配置与检查 |
 | [translation_work.md](docs/translation_work.md) | 运行区目录规范与清理规则 |
 | [sct_trajectory_contrastive.md](docs/sct_trajectory_contrastive.md) | SCT 轨迹对比式自进化（新方案：四态 + 轨迹对比 + 四步 Agent） |
+| [cle_negative_findings.md](docs/cle_negative_findings.md) | CLE 方法学发现：经验注入无收益的三次实验、过度防御瓶颈定位，以及有效的"功能契约冻结"干预（四次真实实验） |
+| [cle_full_run_analysis_20260919.md](docs/cle_full_run_analysis_20260919.md) | 全量 874 运行分析：门控全放行、83.8% 跨 CWE 注入、47.3% 过度防御等六大问题与优化空间 |
+| [cle_full_run_v2_report.md](docs/cle_full_run_v2_report.md) | 优化后全量 874 v2 对比报告：九项改动、同 task_id 配对口径、机制性指标对比 |
 | [superpowers/specs/2026-09-09-sct-unified-core-design.md](docs/superpowers/specs/2026-09-09-sct-unified-core-design.md) | SCT 统一核心设计（方案 B） |
 | [superpowers/specs/2026-09-03-agent-baseline-integration-design.md](docs/superpowers/specs/2026-09-03-agent-baseline-integration-design.md) | Agent baseline 集成设计（开发过程记录） |
 | [superpowers/plans/2026-09-09-sct-unified-core.md](docs/superpowers/plans/2026-09-09-sct-unified-core.md) | SCT 统一核心实施计划 |
@@ -234,6 +237,9 @@
 | [tools/check_repository.py](tools/check_repository.py) | 仓库完整性检查（数量、脱敏） |
 | [tools/sanitize_dataset.py](tools/sanitize_dataset.py) | 数据集脱敏（机器路径、密钥） |
 | [tools/vhdx_watchdog.py](tools/vhdx_watchdog.py) | 跑命令并全程采样 vhdx 水位与容器数，给出"Docker 是否膨胀"的可引用判定 |
+| [tools/run_baseline_server.sh](tools/run_baseline_server.sh) | 服务器侧一键启动 baseline（看门狗包裹 + 参数校验） |
+| [tools/make_baseline_table.py](tools/make_baseline_table.py) | 把运行结果渲染成组会口径的两张表，并拦截"全 0 陷阱" |
+| [tools/summarize_run.py](tools/summarize_run.py) | 逐方法汇总通过数与错误类型，快速判断"全 0"是模型失败还是链路故障 |
 | [tools/check_chatanywhere_keys.ps1](tools/check_chatanywhere_keys.ps1) | ChatAnywhere key 脱敏检查 |
 | [configs/README.md](configs/README.md) | 配置放置规则 |
 | [docker/python-validator/Dockerfile](docker/python-validator/Dockerfile) | Python 验证器镜像 |
@@ -358,6 +364,71 @@ methods/workflow_baselines/run_true_agent_workflows.py
 
 `translation_work/baseline_runs/<run-name>/<subset>/`
 （`rows.jsonl` / `summary.json` / `true_agent_workflow_report.md` / `run_metadata.json`）
+
+### 当前实验矩阵：9 条 baseline × 5 个模型
+
+正在跑的对比实验是 **9 条 baseline（4 Prompt + 5 Agent）× 5 个模型 × {Base, Plus} × {python, cpp, go}**。
+
+#### 模型与渠道（已逐个发最小请求实测）
+
+| 表格用名 | 实际 model ID | 渠道 | 备注 |
+|---|---|---|---|
+| deepseek v4.1 flash | `deepseek-v4.1-flash` | ChatAnywhere | 非推理，`reasoning_tokens=0` |
+| 5.6 luna | `gpt-5.6-luna` | ChatAnywhere | **不是 `5.6luna`**；少了 `gpt-` 前缀会 404 |
+| gemini 2.5 flash | `gemini-2.5-flash` | ChatAnywhere | 非推理 |
+| qwen3.5 plus | `qwen3.5-plus` | ChatAnywhere | **推理模型** |
+| glm 5.3 flash | `glm-5.3-flash` | 智谱 | **推理模型** |
+
+**两个推理模型要特别处理**：`qwen3.5-plus` 和 `glm-5.3-flash` 简单一句问候就消耗
+100+ reasoning token。跑代码题必须把 `--max-tokens` 提到 **8192**；否则正文被
+reasoning 吃光，表现成"代码为空 + 结果全 0"，看起来像模型不会写代码。
+
+智谱渠道**不用改代码**——runner 支持用环境变量切换端点：
+
+```bash
+export CHATANYWHERE_API_BASE=https://open.bigmodel.cn/api/paas/v4
+export CHATANYWHERE_API_KEY=<智谱 key>    # 或放 local_secrets/智谱api使用/newkey.env
+```
+
+#### 在服务器上跑
+
+```bash
+cd ~/sct-security-generation
+bash tools/run_baseline_server.sh <run-name> <model> [max-tokens] [workers] [subsets] [languages] [limit]
+```
+
+例（deepseek-v4.1-flash × Base × python × 九条全跑）：
+
+```bash
+bash tools/run_baseline_server.sh val_dsv41_base_python_20260920 deepseek-v4.1-flash 4096 6 Base python 0
+```
+
+脚本内部用 `tools/vhdx_watchdog.py` 包裹，跑完在
+`translation_work/diagnostics/vhdx_watchdog_<run-name>.json` 留下可引用的 Docker 判定。
+
+#### 跑完自动出表
+
+```bash
+python tools/make_baseline_table.py --run <run-name>            # 百分比（默认）
+python tools/make_baseline_table.py --run <run-name> --counts   # 通过条数
+python tools/make_baseline_table.py --all --by-language         # 每个语言单独出表
+python tools/make_baseline_table.py --run <name> --out docs/baseline_table.md
+```
+
+输出**两张表**（基础方法 / Agent 方法），列口径与组会模板一致：
+
+```text
+CodeSecEval (255) → SecEvalBase[func|sec|func_sec] | SecEvalPlus[func|sec|func_sec]
+```
+
+`func` / `sec` / `func_sec` 分别对应 `metrics.secure_functional` /
+`secure_security` / `secure_func_sec`（`func_sec` 是最严口径，两者同时通过）。
+分母 Base 115 + Plus 140 = **255**，是单语言口径；跨语言聚合时表头会自动改成实际总数。
+`Ours` 不由本 runner 产出，固定留空行待 SCT 结果填入。
+
+**表格会自动拦截"全 0 陷阱"**：若某个分组超过一半的记录代码为空（代码生成整批失败），
+表下会显式打出警告。这种行看着像"模型一个都没通过"，实际是链路故障，**不能进论文**。
+实测历史 `agents_full_deepseek_v32_20260906` 的 Plus 侧就是这样：280/280 条代码为空。
 
 ### 冒烟：先跑一个任务验证链路
 
