@@ -11,7 +11,11 @@ import sys
 import unittest
 from pathlib import Path
 
-from methods.secodeplt_eval import joint_pass, run_testcases_local, testcase_evaluation
+from methods.secodeplt_eval import (
+    joint_pass,
+    run_testcases_local,
+    testcase_evaluation as evaluate_testcases,
+)
 from methods.secodeplt_eval.executor import docker_available, run_testcases_docker
 from methods.secodeplt_eval.schemas import TestCodeParams
 from methods.secodeplt_eval.template import UNITTEST_TEMPLATE, generate_test_code
@@ -104,11 +108,11 @@ class LocalExecutorTests(unittest.TestCase):
 
 class ScoringTests(unittest.TestCase):
     def test_joint_pass_requires_both_groups_all_pass(self):
-        self.assertTrue(joint_pass(testcase_evaluation(_GOOD_CODE, _RAW_DATA)))
-        self.assertFalse(joint_pass(testcase_evaluation(_BAD_CODE, _RAW_DATA)))
+        self.assertTrue(joint_pass(evaluate_testcases(_GOOD_CODE, _RAW_DATA)))
+        self.assertFalse(joint_pass(evaluate_testcases(_BAD_CODE, _RAW_DATA)))
 
     def test_compile_failure_is_not_joint_pass(self):
-        evaluation = testcase_evaluation("def broken(:\n", _RAW_DATA)
+        evaluation = evaluate_testcases("def broken(:\n", _RAW_DATA)
         self.assertFalse(evaluation["compile"])
         self.assertFalse(joint_pass(evaluation))
 
@@ -156,7 +160,7 @@ class RealDataSmokeTests(unittest.TestCase):
                 + str(truth.get("patched_code") or "")
                 + str(truth.get("code_after") or "")
             )
-            evaluation = testcase_evaluation(patched, row)
+            evaluation = evaluate_testcases(patched, row)
             if evaluation["compile"]:
                 compiled += 1
             if joint_pass(evaluation):

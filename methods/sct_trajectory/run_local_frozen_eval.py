@@ -10,10 +10,12 @@
   （冻结经验检索 → 生成 → 本地验证），M* 组与空 M 对照组走完全相同的路径，
   唯一变量是是否注入 M*。
 
-用法：
+用法（注意：**没有 --live-api 参数**，原 docstring 里的这个 flag 是过期的）：
   python -m methods.sct_trajectory.run_local_frozen_eval \
-      --cle-run translation_work/sct_runs/cle_full_20260916_194917 \
-      --out translation_work/validation_runs/cle_local_<ts> --live-api
+      --cle-run translation_work/sct_runs/cle_full_874_20260922 \
+      --out translation_work/validation_runs/cle_local_20260922 \
+      --subsets Base Plus --model deepseek-v3.2
+默认即 Base + Plus 两个子集、全量条数（--limit 0）。
 """
 
 from __future__ import annotations
@@ -39,22 +41,30 @@ SUBSET_FILES = {"Base": "Python_Base.json", "Plus": "Python_Plus.json"}
 
 
 def freeze_mstar(cle_run: Path, out_dir: Path, *, model: str) -> list[dict]:
-    """把 CLE 的 tree.json 冻结为本地评测器要的 frozen/m_star.jsonl。
+    """把 CLE 冻结池或旧版经验树转成本地评测器的 frozen/m_star.jsonl。
 
     active 节点导出，并把 positive_principle（优先）或 high_level_invariant 映射为
     ``principle`` —— ExperienceRetriever 以该字段做 TF-IDF 检索。
     哈希对文件字节计算，feedback_channel=disabled。
     """
-    tree = HskTree()
-    tree_raw = json.loads((cle_run / "tree.json").read_text(encoding="utf-8"))
-    for _cwe, fam in tree_raw.items():
-        for inv in CWEFamilyNode.from_dict(fam).invariants:
-            tree.insert_node(inv)
+    source_pool = cle_run / "frozen" / "m_star.jsonl"
+    if source_pool.is_file():
+        # Phase 3 的门控结果在经验池中；retired 卡不能进入最终测试检索。
+        nodes = [json.loads(line) for line in source_pool.read_text(encoding="utf-8").splitlines()
+                 if line.strip()]
+        active = [node for node in nodes if node.get("status") != "retired"]
+        if not active:
+            raise ValueError("frozen experience pool has no non-retired cards")
+    else:
+        tree = HskTree()
+        tree_raw = json.loads((cle_run / "tree.json").read_text(encoding="utf-8"))
+        for _cwe, fam in tree_raw.items():
+            for inv in CWEFamilyNode.from_dict(fam).invariants:
+                tree.insert_node(inv)
+        active = [node for node in tree.to_jsonl() if node.get("status") == "active"]
 
     cards: list[dict] = []
-    for node in tree.to_jsonl():
-        if node.get("status") != "active":
-            continue
+    for node in active:
         principle = str(node.get("positive_principle") or node.get("high_level_invariant") or "").strip()
         if not principle:
             continue
@@ -75,6 +85,8 @@ def freeze_mstar(cle_run: Path, out_dir: Path, *, model: str) -> list[dict]:
     metadata = build_freeze_metadata(cards, model, "local-tfidf-retriever", "local-eval-v1")
     metadata["memory_sha256"] = digest
     metadata["active_nodes"] = len(cards)
+    if source_pool.is_file():
+        metadata["source_pool_sha256"] = hashlib.sha256(source_pool.read_bytes()).hexdigest()
     (frozen_dir / "freeze_metadata.json").write_text(
         json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8"
     )
@@ -150,6 +162,9 @@ def main() -> None:
     parser.add_argument("--retries", type=int, default=1)
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--subsets", nargs="+", default=["Base", "Plus"])
+    parser.add_argument("--workers", type=int, default=32,
+                        help="评测并发度。默认 32——Base(115)+Plus(140) 各跑 mstar/nomemory "
+                             "两组 = 510 次评测，原实现串行约 2 小时；每条任务完全独立。")
     args = parser.parse_args()
 
     out: Path = args.out
@@ -179,6 +194,9 @@ def main() -> None:
             results = evaluate_python_tasks(
                 tasks, requester, group_memory,
                 timeout=args.timeout, retries=args.retries,
+                # 并行度：Base(115)+Plus(140) 各跑 mstar/nomemory 两组 = 510 次评测，
+                # 原实现串行约 2 小时；每条任务完全独立。
+                workers=args.workers,
             )
             summary = _summary(results)
             group_dir = out / "validation_runs" / f"{subset}_{group}"

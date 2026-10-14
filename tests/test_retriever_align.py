@@ -108,6 +108,12 @@ def test_llm_reorder_by_score():
 
 
 def test_llm_bad_output_degrades():
+    """LLM 打分失败时：默认（开启相关性门槛）保守丢弃，宁缺毋滥。
+
+    这与此前"仍返回该条、只标注 _align_error"的行为不同——因为实测显示
+    未验证相关的经验注入会稀释上下文（83.8% 跨 CWE 注入且无增益）。
+    需要旧行为时可显式设 min_llm_score=0。
+    """
     tree = HskTree()
     tree.insert_node(_node("CWE-22", "节点"))
 
@@ -115,9 +121,58 @@ def test_llm_bad_output_degrades():
         return {"choices": [{"message": {"content": "no json"}}]}
 
     r = HskTreeRetriever(tree, requester=bad_requester)
-    out = r.search(_task(), limit=1)
-    assert len(out) == 1
-    assert out[0]["_align_error"] is not None
+    assert r.search(_task(), limit=1) == []          # 打分失败 → 不注入
+
+    # 关闭门槛后回到旧行为（保留 _align_error 标记，便于审计）
+    r2 = HskTreeRetriever(tree, requester=bad_requester, min_llm_score=0.0)
+    out = r2.search(_task(), limit=1)
+    assert len(out) == 1 and out[0]["_align_error"] is not None
+
+
+def test_relevance_gate_drops_low_score():
+    """低分经验被门槛拦掉；高分经验保留。"""
+    tree = HskTree()
+    tree.insert_node(_node("CWE-22", "高分经验"))
+    tree.insert_node(_node("CWE-22", "低分经验"))
+
+    def requester(prompt):
+        if "高分经验" in prompt:
+            return {"choices": [{"message": {"content": '{"score": 0.95, "reason": "x"}'}}]}
+        return {"choices": [{"message": {"content": '{"score": 0.2, "reason": "y"}'}}]}
+
+    r = HskTreeRetriever(tree, requester=requester, min_llm_score=0.6)
+    out = r.search(_task(), limit=3)
+    assert [c["high_level_invariant"] for c in out] == ["高分经验"]
+    assert out[0]["_relevance_gate"] == "same_cwe"
+
+
+def test_relevance_gate_allows_zero_injection():
+    """全部低分时返回 0 条（用户要求：不需要就 0 条也可以）。"""
+    tree = HskTree()
+    for i in range(3):
+        tree.insert_node(_node("CWE-22", f"经验{i}"))
+
+    def low_requester(prompt):
+        return {"choices": [{"message": {"content": '{"score": 0.1, "reason": "low"}'}}]}
+
+    r = HskTreeRetriever(tree, requester=low_requester, min_llm_score=0.6)
+    assert r.search(_task(), limit=3) == []
+
+
+def test_cross_cwe_uses_stricter_threshold():
+    """跨 CWE 经验用更高门槛：同分下同 CWE 保留、跨 CWE 丢弃。"""
+    tree = HskTree()
+    tree.insert_node(_node("CWE-22", "同CWE经验"))
+    tree.insert_node(_node("CWE-78", "跨CWE经验"))
+
+    def requester(prompt):
+        return {"choices": [{"message": {"content": '{"score": 0.65, "reason": "mid"}'}}]}
+
+    r = HskTreeRetriever(tree, requester=requester, min_llm_score=0.6, cross_cwe_min_score=0.75)
+    out = r.search(_task(cwe="CWE-22"), limit=3, mode="cross_cwe")
+    names = [c["high_level_invariant"] for c in out]
+    assert "同CWE经验" in names
+    assert "跨CWE经验" not in names      # 0.65 < 0.75 被拦
 
 
 def test_card_contains_dual_track_and_leaf():

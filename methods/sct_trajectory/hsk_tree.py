@@ -23,8 +23,16 @@ from __future__ import annotations
 from dataclasses import dataclass, field, asdict
 from typing import Any
 
-# 节点生命周期状态（DOCX 2.2）
-NODE_STATUS = ("provisional", "active", "consolidated", "retired")
+# 节点生命周期状态（DOCX 2.2 + 本次新增 unmeasured / revised）
+# 说明（实测教训）：门控会产生 unmeasured 与 revised 两种终态，但早期 NODE_STATUS
+#   未收录它们，导致 `cand.status = "unmeasured"` 抛 ValueError 直接中断整条运行。
+#   这里补齐，并加单元测试锁住"门控所有可能的终态都在允许集合内"。
+# unmeasured：门控测了但没测出差异（ΔJointPass=0）→ 不晋升、不删除，
+#   保留在经验池里继续参与检索（用户拍板的"降级处理"）。不进入树的 active 集合，
+#   也不会被重复审计（审计目标只筛 provisional）。
+# revised：被判需要修订（如缺测 hpass_missing）→ 同样留在池里等待后续处理。
+NODE_STATUS = ("provisional", "active", "consolidated", "retired",
+               "unmeasured", "revised")
 
 # 拓扑演化阈值（DOCX 6.3）
 OVERLAP_ABSORB = 0.6     # TF-IDF 语义重叠 ≥ 0.6 → 就地吸收
@@ -39,12 +47,24 @@ def utility_score(support_count: int, regression_count: int) -> float:
 
 @dataclass
 class LanguageLeaf:
-    """Level 4 语言叶节点（以正文字段为准，见拍板决策 11）。"""
+    """Level 4 语言叶节点（以正文字段为准，见拍板决策 11）。
+
+    记录某语言下该安全不变量的落地细节：
+      - safe_constructs：推荐使用的安全 API / 库 / 结构（如 Python 的 hmac.compare_digest）
+      - prohibited_constructs：该语言下的禁忌写法 / 易断裂反模式（如 eval、字符串拼 SQL）
+      - pattern_snippet：可直接参考的最小代码片段（保持功能前提下的最小改动范式）
+    消融实验（A1~A6）会分别开关这些字段的生成与注入。
+    """
 
     language: str
     safe_constructs: list[str] = field(default_factory=list)
     prohibited_constructs: list[str] = field(default_factory=list)
     pattern_snippet: str = ""
+
+    def has_content(self) -> bool:
+        """叶节点是否有实质内容（消融实验判据：空壳叶等同没有 Level 4）。"""
+        return bool(self.safe_constructs or self.prohibited_constructs
+                    or (self.pattern_snippet or "").strip())
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -56,6 +76,39 @@ class LanguageLeaf:
             safe_constructs=list(value.get("safe_constructs") or []),
             prohibited_constructs=list(value.get("prohibited_constructs") or []),
             pattern_snippet=str(value.get("pattern_snippet", "")),
+        )
+
+
+@dataclass
+class TrackRule:
+    """Level 3 单条轨道规则（仅"L2/3 拆分"模式下使用）。
+
+    DOCX 把 Level 2&3 合并为一个 SecurityInvariantNode（双轨字段内嵌）。
+    拆分模式把双轨提升为独立子节点，可分别计数/检索/演化：
+      - track="positive"：保持功能下的正向修复准则
+      - track="negative"：破坏功能的禁忌手段（负向红线）
+    拆分与否由消融实验 A2/A6 检验（用户拍板 Q1）。
+    """
+
+    rule_id: str
+    track: str                      # positive | negative
+    text: str                       # 规则正文
+    source_kind: str = ""           # 来源跃迁类型（B_to_A / B_to_C ...）
+    support_count: int = 0
+    regression_count: int = 0
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, value: dict[str, Any]) -> "TrackRule":
+        return cls(
+            rule_id=str(value.get("rule_id", "")),
+            track=str(value.get("track", "positive")),
+            text=str(value.get("text", "")),
+            source_kind=str(value.get("source_kind", "")),
+            support_count=int(value.get("support_count", 0)),
+            regression_count=int(value.get("regression_count", 0)),
         )
 
 
@@ -76,6 +129,9 @@ class SecurityInvariantNode:
     # 来源元数据（不区分待遇，仅用于审计追溯）：{"stage": "phase1"/"phase2"/"consolidate",
     # "kind": 跃迁类型/提取方式, "task_id": 来源任务, "state_flow": "B->C" 等}
     source: dict[str, Any] = field(default_factory=dict)
+    # 【仅拆分模式使用】Level 3 轨道规则列表；合并模式下该字段为空，
+    # 双轨信息内嵌在 positive_principle / negative_guardrail 两个字段里（DOCX 原设计）。
+    track_rules: list[TrackRule] = field(default_factory=list)
 
     def __post_init__(self) -> None:
         if self.status not in NODE_STATUS:
@@ -88,7 +144,14 @@ class SecurityInvariantNode:
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)
         value["language_leaves"] = {k: v.to_dict() for k, v in self.language_leaves.items()}
+        value["track_rules"] = [r.to_dict() for r in self.track_rules]
         value["utility"] = round(self.utility, 4)
+        # 消融用计数：叶节点是否真的有内容（空壳叶等同没有 Level 4）
+        value["leaf_stats"] = {
+            "leaves": len(self.language_leaves),
+            "filled_leaves": sum(1 for lf in self.language_leaves.values() if lf.has_content()),
+            "languages": sorted(self.language_leaves.keys()),
+        }
         return value
 
     @classmethod
@@ -108,6 +171,7 @@ class SecurityInvariantNode:
             status=str(value.get("status", "provisional")),
             language_leaves=leaves,
             source=dict(value.get("source") or {}),
+            track_rules=[TrackRule.from_dict(r) for r in (value.get("track_rules") or [])],
         )
 
 
@@ -148,12 +212,19 @@ class HskTree:
     def family(self, cwe: str) -> CWEFamilyNode | None:
         return self._families.get(str(cwe))
 
-    def active_invariants(self, cwe: str, language: str | None = None) -> list[SecurityInvariantNode]:
-        """返回某 CWE 下 active 的 Invariant 节点；language 非空时要求含对应叶。"""
+    def active_invariants(self, cwe: str, language: str | None = None,
+                          *, statuses: tuple[str, ...] = ("active",)) -> list[SecurityInvariantNode]:
+        """返回某 CWE 下指定 status 的 Invariant 节点；language 非空时要求含对应叶。
+
+        statuses 默认只取 active（DOCX 原设计的"active 白名单"）。
+        消融实验需要放宽到 provisional：Phase1 产出的经验要等 Phase3 门控才晋升为
+        active，若严格只检索 active，则 Phase1/轮1 阶段必然检索为空，
+        导致 Level 3/4 的注入效果无法被测量（实测命中率仅 4/10）。
+        """
         fam = self._families.get(str(cwe))
         if fam is None:
             return []
-        nodes = [n for n in fam.invariants if n.status == "active"]
+        nodes = [n for n in fam.invariants if n.status in statuses]
         if language is not None:
             nodes = [n for n in nodes if language in n.language_leaves]
         return nodes
@@ -263,6 +334,11 @@ def consolidate_family(
     """DOCX 6.3 第 3 步：活跃节点超限 → 离线归并（LLM 提取公约数）为 1 条高阶节点。
 
     原分散节点归档（status 改 consolidated），新节点挂载为 active。
+
+    注意阈值与实际规模的匹配：实测全量运行中每个 CWE 的 active 节点最多只有 3 个
+    （因为门控抽样保守），而默认阈值 max_active=4 → **归并从未触发**（3 轮均为 0 次）。
+    因此调用方若要真正启用归并，应把 max_active 调到与实际规模相符的值
+    （见 run_closed_loop 的 --consolidate-max-active）。
     """
     actives = [n for n in family.invariants if n.status == "active"]
     if len(actives) <= max_active:

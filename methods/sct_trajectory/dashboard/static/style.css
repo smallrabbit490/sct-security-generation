@@ -65,13 +65,24 @@ pre{background:#0b0f14;border:1px solid var(--line);border-radius:6px;padding:10
 .pill.unmeasured{background:#222a33;color:var(--muted)}
 .empty{color:var(--muted);font-style:italic;padding:8px 0}
 .warnbox{background:#2d2412;border:1px solid #6b5620;color:#e8c46a;border-radius:6px;padding:8px 10px;font-size:13px}
+/* 口径声明：引用带选择偏差的数字时必须同框出现，所以做成显眼但非报错的提示框 */
+.caveat{background:#2d2412;border:1px solid #6b5620;color:#e8c46a;border-radius:8px;
+  padding:10px 14px;margin-bottom:14px;font-size:13px}
+.caveat ul{margin:6px 0 0;padding-left:20px}
+.caveat li{margin-bottom:3px}
+.caveat code{background:#1b2330;padding:1px 5px;border-radius:4px;color:#e6edf3}
+/* Joint 通过率为 0 的 CWE 家族：整行标红，防止被当成普通低分行略过 */
+tr.row-zero td{background:#2d1214}
+.flag{background:#2d1214;color:#ff9d95;border:1px solid #6b2026;border-radius:4px;
+  padding:1px 6px;font-size:11px;display:inline-block}
 .mini{font-size:11px;color:var(--muted)}
 
 /* ---- 树形图（SVG） ---- */
 .treebar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
 .treebar button{font-size:12px;padding:4px 9px}
 .treebar .tree-toggle{margin-left:auto;border-color:var(--blue);color:var(--blue)}
-.treecanvas{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:8px;
+/* 高度由 tree.js 按树规模动态设置（默认 560px 仅作兜底） */
+.treecanvas{position:relative;overflow:auto;border:1px solid var(--line);border-radius:8px;
   background:#0b1017;height:560px}
 .treecanvas svg{display:block;user-select:none}
 .tnode{cursor:default}

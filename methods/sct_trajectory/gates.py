@@ -65,22 +65,31 @@ def gate1_retrieval_probe(
     return any(str(c.get("invariant_id")) == str(candidate_id) for c in ranked)
 
 
-def gate2_effectiveness(delta_joint_pass: float, *, allow_equal: bool = True) -> str:
-    """Gate 2：ΔJointPass 的判定。
+def gate2_effectiveness(delta_joint_pass: float, *, allow_equal: bool = False) -> str:
+    """Gate 2：ΔJointPass 的判定（改为"要求正证据"，用户拍板）。
 
-    allow_equal=True（默认，按用户拍板放宽）：Δ ≥ 0 即视为"不劣化"→ proceed；
-    只有 Δ < 0（加入经验后通过率下降）才 demoted。
-    放宽原因：D_audit 基线通过率实测约 26%，很多任务基线已接近上限，
-    "严格正增益"（DOCX 原始要求 Δ>0）会让几乎所有经验都无法晋升，
-    而"不劣化即可采纳"更符合"经验库只增不减、由后续效用衰减自洁"的设计。
-    allow_equal=False 可恢复 DOCX 的严格模式用于消融对比。
+    判定：
+      Δ > 0  → proceed    ：有正证据，可晋升
+      Δ = 0  → unmeasured ：**无证据**（测了但没测出差异）→ 不晋升，但保留在池里参与检索
+      Δ < 0  → demoted    ：有负证据（加入后变差）→ 淘汰
+
+    为什么把 Δ=0 从 proceed 改为 unmeasured（实测依据）：
+      全量运行 cle_full_874_20260919 中 24 条被审计的经验里 **21 条 Δ=0**，
+      但当时规则是"Δ≥0 即 supported"，于是这 21 条**零证据的经验全部晋升入树**，
+      门控实际退化成"几乎全放行"；事后分析发现树内 19 个节点有 10 个（52.6%）
+      命中"低价值"判据（零增益、来源 CWE 基线 0%、泛化无操作性等）。
+      把 Δ=0 记为 unmeasured 后，树只收有正证据的经验。
+
+    "降级处理"的含义（用户明确要求）：Δ=0 的经验**不被删除**，
+    状态记为 unmeasured 并**继续留在经验池中参与检索**——既不污染树的
+    active 集合，又不浪费已提炼的知识。
+
+    allow_equal=True 可恢复旧的放宽模式（Δ=0 也 proceed），仅用于消融/对照。
     """
     if delta_joint_pass > 0:
         return "proceed"
-    if delta_joint_pass == 0 and allow_equal:
-        return "proceed"
     if delta_joint_pass == 0:
-        return "revised"
+        return "proceed" if allow_equal else "unmeasured"
     return "demoted"
 
 
@@ -111,18 +120,22 @@ def audit_candidate(
     tau_func: int = 0,
     top_k: int = 3,
     candidate_node=None,
-    allow_equal: bool = True,
+    allow_equal: bool = False,
+    block_on_probe_miss: bool = False,
 ) -> GateRecord:
     """综合 Gate1/2/3 判定候选经验，返回 GateRecord。
 
-    判定顺序（放宽模式 allow_equal=True，按用户拍板）：
+    判定顺序（默认"要求正证据"，用户拍板）：
       1. ΔJointPass < 0（加入后变差）→ demoted；
-      2. 缺测（hpass_missing>0）→ revised（不伪造回归证据）；
-      3. 回归超限（sec>τ_sec 或 func>τ_func）→ demoted；
-      4. ΔJointPass ≥ 0 且无回归 → supported（不劣化即可采纳）。
-    Gate1 召回探针在放宽模式下只记录不拒绝（候选未入树时探针本就不稳定）。
+      2. ΔJointPass = 0（无证据）→ **unmeasured**（不晋升，但保留在池里参与检索）；
+      3. 缺测（hpass_missing>0）→ revised（不伪造回归证据）；
+      4. 回归超限（sec>τ_sec 或 func>τ_func）→ demoted；
+      5. ΔJointPass > 0 且无回归 → supported（有正证据才采纳）。
 
-    allow_equal=False 时恢复 DOCX 严格模式：Gate1 未命中 → revised，Δ=0 → revised。
+    Gate1 召回探针默认只记录、不拒绝——经验尚未入树时探针本就不稳定，
+    硬拒绝会大量误杀。需要 DOCX 严格语义时用 block_on_probe_miss=True。
+    allow_equal=True 恢复旧放宽模式（Δ=0 也 supported），仅用于对照实验。
+    两个开关相互独立，避免语义混淆。
     """
     record = GateRecord(candidate_id=candidate_id, delta_joint_pass=delta_joint_pass)
     record.security_regressions = security_regressions
@@ -132,14 +145,17 @@ def audit_candidate(
     record.gate1_retrieved = gate1_retrieval_probe(
         candidate_id, retriever, audit_task, top_k=top_k, candidate_node=candidate_node
     )
-    # Gate1 在放宽模式下只作为"可召 recall 能力"的记录项，不作为拒绝理由：
-    # 经验尚未入树时召回探针本就不稳定，用 MoE 式硬拒绝会大量误杀。
-    if not record.gate1_retrieved and not allow_equal:
+    if not record.gate1_retrieved and block_on_probe_miss:
         record.decision = "revised"
         record.reasons.append("gate1_retrieval_probe_missed")
         return record
 
     g2 = gate2_effectiveness(delta_joint_pass, allow_equal=allow_equal)
+    if g2 == "unmeasured":
+        # 无证据：不晋升、不删除、保留在池里参与检索（用户要求的"降级处理"）
+        record.decision = "unmeasured"
+        record.reasons.append("delta_joint_pass_zero_no_evidence")
+        return record
     if g2 == "revised":
         record.decision = "revised"
         record.reasons.append("delta_joint_pass_zero")

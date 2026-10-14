@@ -187,6 +187,6 @@ def test_tree_summary_and_prompt_contain_weak_cwe():
     summary = tree_summary(tree)
     assert "CWE-22" in summary and "active" in summary
     prompt = build_scheduler_prompt(tree, ledger, tasks)
-    assert "薄弱 CWE" in prompt
+    assert "Weak CWEs" in prompt
     assert "CWE-22" in prompt  # 薄弱 CWE 列表里
-    assert "盲区预警" in prompt
+    assert "Historical blind spots" in prompt

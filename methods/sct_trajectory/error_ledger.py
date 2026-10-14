@@ -88,7 +88,7 @@ class ErrorLedger:
         """
         hits = [e for e in self.entries if e.cwe == cwe]
         patterns = Counter(
-            f"此前处理该 CWE 时反复因 {e.failure_type or '未知原因'} 失败" for e in hits
+            f"Repeated historical failure for this CWE: {e.failure_type or 'unknown cause'}" for e in hits
         )
         return [text for text, _ in patterns.most_common(top)]
 

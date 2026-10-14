@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 from pathlib import Path
 
 
@@ -59,7 +60,15 @@ def main() -> None:
     autosafe = EXTERNAL / "cweval" / "autosafecoder" / "dataset_copy.jsonl"
     if sum(bool(line.strip()) for line in autosafe.read_text(encoding="utf-8-sig").splitlines()) != 121:
         failures.append("external/cweval/autosafecoder/dataset_copy.jsonl: expected 121 records")
-    external_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in EXTERNAL.rglob("*") if p.is_file())
+    # 公共快照只检查版本控制候选，不扫描被忽略的大数据、二进制下载和上游副本。
+    external_paths = subprocess.check_output(
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--", "data/external"],
+        cwd=ROOT,
+    ).decode("utf-8").split("\0")
+    external_text = "\n".join(
+        (ROOT / rel).read_text(encoding="utf-8", errors="replace")
+        for rel in external_paths if rel and (ROOT / rel).is_file()
+    )
     if re.search(r"(?:sk-[A-Za-z0-9]{20,}|AIza[0-9A-Za-z_-]{20,}|[A-Za-z]:[/\\]Users[/\\])", external_text):
         failures.append("external: secret-like token or local user path remains")
     # The compatibility matrix is retained for historical result replay. The

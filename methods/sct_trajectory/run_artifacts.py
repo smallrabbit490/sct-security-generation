@@ -20,6 +20,7 @@ from __future__ import annotations
 import json
 import os
 import time
+import uuid
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -32,9 +33,17 @@ def _now() -> str:
 def write_json_atomic(path: Path, value: Any) -> None:
     """原子写 JSON：先写临时文件再替换，避免看板读到写了一半的文件。"""
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp = path.with_suffix(path.suffix + '.' + uuid.uuid4().hex + '.tmp')
     tmp.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
-    os.replace(tmp, path)
+    # Windows读者可能短暂占用目标文件；只重试访问冲突，不吞磁盘/权限永久错误。
+    for attempt in range(8):
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError:
+            if attempt == 7:
+                raise
+            time.sleep(min(0.05 * 2 ** attempt, 0.5))
 
 
 def write_status(run_dir: Path, *, status: str, stage: str, detail: str = "", error: str | None = None,
@@ -144,15 +153,30 @@ def write_tree_snapshot(run_dir: Path, *, label: str, tree, extra: dict | None =
     """写某一轮结束时的整棵树快照（看板画成长轨迹与结构变化）。
 
     label: phase1 / round1 / round2 / ...
-    pool : 统一经验池条目（可选）。架构归一化后 Phase1 不再直接入树，Phase1 页要看的
+    pool : 统一经验池条目（可选）。架构归一化后 Phase1 不再直接树，Phase1 页要看的
            "第一阶段形成的经验"其实是经验池，因此快照同时记录池内容。
+    快照同时记录**完整规则 ID 集合**，用于逐轮相邻 diff（看板"这一轮比上一轮多了哪些规则"）。
     """
     snap_dir = run_dir / "tree_snapshots"
     snap_dir.mkdir(parents=True, exist_ok=True)
+    tree_dict = tree.to_dict() if hasattr(tree, "to_dict") else tree
+    # 规则指纹：invariant_id -> {status, cwe, 摘要}，供 diff 比较
+    rules: dict[str, dict] = {}
+    for cwe, fam in (tree_dict or {}).items():
+        for node in (fam.get("invariants") or []):
+            rules[str(node.get("invariant_id"))] = {
+                "cwe": str(cwe),
+                "status": node.get("status"),
+                "summary": str(node.get("high_level_invariant") or "")[:120],
+                "filled_leaves": (node.get("leaf_stats") or {}).get("filled_leaves", 0),
+                "track_rules": len(node.get("track_rules") or []),
+            }
     payload: dict[str, Any] = {
         "label": label,
         "created_at": _now(),
-        "tree": tree.to_dict() if hasattr(tree, "to_dict") else tree,
+        "tree": tree_dict,
+        "rule_ids": sorted(rules.keys()),
+        "rules": rules,
     }
     if pool is not None:
         payload["pool"] = [n.to_dict() if hasattr(n, "to_dict") else n for n in pool]
@@ -161,3 +185,30 @@ def write_tree_snapshot(run_dir: Path, *, label: str, tree, extra: dict | None =
     path = snap_dir / f"{label}.json"
     write_json_atomic(path, payload)
     return path
+
+
+def diff_snapshots(prev: dict, curr: dict) -> dict:
+    """比较两个树快照，算出"这一轮比上一轮"的规则级差异。
+
+    返回：
+      added   新增的规则（invariant_id 列表 + 摘要）
+      removed 移除的规则
+      changed 状态或内容发生变化的规则（前后对比）
+    供看板"树成长轨迹"直接展示，回答"哪些规则多了"。
+    """
+    pr = (prev or {}).get("rules") or {}
+    cr = (curr or {}).get("rules") or {}
+    added = [{"invariant_id": k, **(cr[k] or {})} for k in sorted(set(cr) - set(pr))]
+    removed = [{"invariant_id": k, **(pr[k] or {})} for k in sorted(set(pr) - set(cr))]
+    changed = []
+    for k in sorted(set(pr) & set(cr)):
+        a, b = pr[k] or {}, cr[k] or {}
+        if a.get("status") != b.get("status") or a.get("filled_leaves") != b.get("filled_leaves") \
+                or a.get("track_rules") != b.get("track_rules"):
+            changed.append({"invariant_id": k, "before": a, "after": b})
+    return {
+        "from": (prev or {}).get("label"), "to": (curr or {}).get("label"),
+        "added": added, "removed": removed, "changed": changed,
+        "counts": {"before": len(pr), "after": len(cr),
+                   "added": len(added), "removed": len(removed), "changed": len(changed)},
+    }

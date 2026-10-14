@@ -25,6 +25,20 @@ except ImportError:  # 直接脚本执行时使用当前目录导入。
 Callback = Callable[[str], Any]
 
 
+def _local_plt_environment() -> dict[str, str]:
+    """PLT 本地动态验证的最小环境白名单；不传凭据或 Python 注入变量。
+
+    所属阶段为训练功能/安全测试，输入宿主必要系统路径，输出子进程环境；
+    Windows 的 Winsock 初始化依赖 SYSTEMROOT，缺失会产生 WinError 10106，
+    把基础设施问题误计为候选失败。保留 -I/-X utf8 隔离与编码策略，不复制
+    全部 os.environ，不读取测试答案、不修改长期经验库。
+    """
+    environment = {"PATH": os.environ.get("PATH", ""), "PYTHONIOENCODING": "utf-8"}
+    if os.name == "nt" and os.environ.get("SYSTEMROOT"):
+        environment["SYSTEMROOT"] = os.environ["SYSTEMROOT"]
+    return environment
+
+
 def _item_from_callback(callback: Callback | None, code: str, label: str) -> EvidenceItem:
     """把回调的 bool/tuple/dict/异常统一为 EvidenceItem。"""
     if callback is None:
@@ -130,9 +144,18 @@ print(json.dumps(result, ensure_ascii=False))
                 handle.write(worker)
             with open(spec_path, "w", encoding="utf-8") as handle:
                 json.dump({"solution": code, "entry_point": entry_point, "test": test_code}, handle, ensure_ascii=False)
-            env = {"PATH": os.environ.get("PATH", ""), "PYTHONIOENCODING": "utf-8"}
-            command = [sys.executable, "-I", worker_path, spec_path]
-            completed = subprocess.run(command, cwd=root, env=env, capture_output=True, text=True, timeout=timeout)
+            env = _local_plt_environment()
+            # 【必须显式 -X utf8】（缺陷 D38，2026-09-22 实测）
+            # `-I` 是隔离模式，它会**忽略环境变量**（等价于 -E），
+            # 所以上面的 PYTHONIOENCODING=utf-8 根本不生效：子进程按系统默认
+            # （中文 Windows = GBK）输出，父进程按 UTF-8 解码 →
+            # UnicodeDecodeError 打在读取线程里 → **验证输出整体丢失** →
+            # 任务被误判为失败。`-X utf8` 是命令行开关，不受 -E 影响。
+            # errors="replace" 是第二道保险：即使仍有非 UTF-8 字节也不崩。
+            command = [sys.executable, "-X", "utf8", "-I", worker_path, spec_path]
+            completed = subprocess.run(command, cwd=root, env=env, capture_output=True,
+                                       text=True, encoding="utf-8", errors="replace",
+                                       timeout=timeout)
             if completed.returncode != 0:
                 error = (completed.stderr or completed.stdout or "local worker failed").strip()[-1000:]
                 failed = EvidenceItem("fail", error, "local_worker_error")
@@ -172,6 +195,8 @@ def _run_local_plt_data_driven(
             "groups": {},
             "error": None,
         }
+        # 区分夹具初始化、候选顶层执行和测试定义，避免候选错误冒充验证器事故。
+        stage = "setup"
 
         def run_group(namespace, name, cases):
             group = {"total": len(cases), "passed": 0, "failures": []}
@@ -193,6 +218,10 @@ def _run_local_plt_data_driven(
                             "expected_type": type(expected).__name__,
                         })
                 except Exception as exc:
+                    # 已确认的系统 Winsock 初始化事故上抛给阶段分类；不能混入
+                    # 普通测试失败，也不能因为用例期待 OSError 而误计安全通过。
+                    if getattr(exc, "winerror", None) == 10106:
+                        raise
                     expected = case[1] if isinstance(case, (tuple, list)) and len(case) > 1 else None
                     if isinstance(expected, type) and issubclass(expected, Exception) and isinstance(exc, expected):
                         group["passed"] += 1
@@ -205,14 +234,17 @@ def _run_local_plt_data_driven(
             namespace = {"__name__": "plt_candidate", "__builtins__": __builtins__}
             if spec["setup"]:
                 exec(compile(spec["setup"], "<setup>", "exec"), namespace)
+            stage = "candidate"
             exec(compile(spec["solution"], "<solution>", "exec"), namespace)
             if spec["entry_point"] not in namespace:
                 raise NameError("entry point not defined")
+            stage = "test_definition"
             test_namespace = dict(namespace)
             exec(compile(spec["tests"], "<testcases>", "exec"), test_namespace)
             testcases = test_namespace.get("testcases")
             if not isinstance(testcases, dict):
                 raise TypeError("testcases must be a dict")
+            stage = "test_execution"
             for group_name in ("capability", "safety"):
                 cases = testcases.get(group_name)
                 if isinstance(cases, list) and cases:
@@ -221,7 +253,8 @@ def _run_local_plt_data_driven(
                     result["groups"][group_name] = {"total": 0, "passed": 0, "passed_all": False, "failures": []}
         except Exception as exc:
             result["compile"] = False
-            result["error"] = {"type": type(exc).__name__, "message": str(exc)}
+            result["error"] = {"type": type(exc).__name__, "message": str(exc),
+                               "stage": stage, "winerror": getattr(exc, "winerror", None)}
             result["traceback"] = traceback.format_exc().strip().splitlines()[-3:]
         print(json.dumps(result, ensure_ascii=False))
         '''
@@ -244,19 +277,32 @@ def _run_local_plt_data_driven(
                     handle,
                     ensure_ascii=False,
                 )
-            env = {"PATH": os.environ.get("PATH", ""), "PYTHONIOENCODING": "utf-8"}
+            env = _local_plt_environment()
             completed = subprocess.run(
-                [sys.executable, "-I", worker_path, spec_path],
+                # 同上：-I 会忽略 PYTHONIOENCODING，必须用 -X utf8 显式指定
+                [sys.executable, "-X", "utf8", "-I", worker_path, spec_path],
                 cwd=root,
                 env=env,
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=timeout,
             )
             payload = json.loads((completed.stdout or "{}").splitlines()[-1])
             if completed.returncode != 0 or not payload.get("compile"):
                 message = payload.get("error") or (completed.stderr or "local worker failed").strip()[-1000:]
-                failed = EvidenceItem("fail", str(message), "plt_validator_exception")
+                failure = payload.get("error") or {}
+                error_type = "plt_validator_exception"
+                # 只有已定位的 Winsock 系统依赖故障按环境缺测处理；普通 OSError
+                # 可能来自候选自身，不能一概豁免。候选导入/缺入口失败是可测失败，
+                # setup/test_definition 仍归夹具异常，不允许驱动经验淘汰。
+                if failure.get("winerror") == 10106:
+                    error_type = "environment_error"
+                elif completed.returncode == 0 and failure.get("stage") == "candidate":
+                    error_type = ("candidate_import_error" if failure.get("type") in
+                                  {"ImportError", "ModuleNotFoundError"} else "candidate_execution_error")
+                failed = EvidenceItem("fail", str(message), error_type)
                 return failed, failed, EvidenceItem("pass", f"local timeout bound {timeout}s"), payload
 
             groups = payload.get("groups") or {}

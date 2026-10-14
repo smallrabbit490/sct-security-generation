@@ -28,11 +28,11 @@ def _fake_requester(response_json):
 
 
 VALID = (
-    '{"high_level_invariant": "路径必须规范化到受信根目录内", '
-    '"positive_principle": "打开前 resolve 并校验包含关系", '
+    '{"high_level_invariant": "Paths must resolve inside a trusted root", '
+    '"positive_principle": "Apply resolve and verify containment before opening", '
     '"negative_guardrail": "", '
-    '"applicability": "路径输入需防目录逃逸", '
-    '"attribution": "Analysis 遗漏了合法输入边界", '
+    '"applicability": "Path input requiring traversal protection", '
+    '"attribution": "Analysis omitted legitimate input boundaries", '
     '"blind_spot": ""}'
 )
 
@@ -64,10 +64,10 @@ def test_distill_transition_negative_guardrail():
         code_before="def f(p): return open(p)",
         code_after="def f(p): return None",
         failure_type="functional_regression",
-        requester=_fake_requester(VALID.replace('"negative_guardrail": ""', '"negative_guardrail": "禁止清空返回"')),
+        requester=_fake_requester(VALID.replace('"negative_guardrail": ""', '"negative_guardrail": "Do not empty return values"')),
     )
     assert out["target"] == "negative_guardrail"
-    assert "清空返回" in out["negative_guardrail"]
+    assert "empty return values" in out["negative_guardrail"]
 
 
 def test_distill_transition_error_ledger():
@@ -76,18 +76,13 @@ def test_distill_transition_error_ledger():
         code_before="def f(p): return open(p)",
         code_after="def f(p): return open(p)",
         failure_type="security_gap",
-        requester=_fake_requester(VALID.replace('"blind_spot": ""', '"blind_spot": "反复用前缀判断而非规范化"')),
+        requester=_fake_requester(VALID.replace('"blind_spot": ""', '"blind_spot": "Repeated prefix checks instead of normalization"')),
     )
     assert out["target"] == "error_ledger"
     assert out["blind_spot"]
 
 
 def test_distill_trace_partitions_by_target():
-    # 一条含 B→A（正例）和 B→C（负例）的轨迹
-    trace = _trace(
-        ["B", "A", "C"],
-        [("B", "A"), ("A", "C")],  # 注意 A→C 是 invalid，不会产出；改用 D 场景更清晰
-    )
     # 用更明确的轨迹：B→A（gain）和 C→C（stalled）需要分开测
     t = RolloutTrace(
         task_id="t2", cwe="CWE-78",
@@ -99,7 +94,39 @@ def test_distill_trace_partitions_by_target():
     out = distill_trace(t, req)
     assert len(out["positive"]) == 1
     assert out["negative"] == []
-    assert out["error_ledger"] == []
+    # 【按轮提炼】第 0 轮状态为 B（未达 A），会额外产出一条该轮的失败分析。
+    # 这是用户要求的行为：首轮与修复轮各自的失败都要单独沉淀经验，
+    # 否则"why the previous repair failed"会被丢弃。
+    assert len(out["error_ledger"]) == 1
+    assert out["error_ledger"][0]["round_index"] == 0
+    assert out["error_ledger"][0]["round_state"] == "B"
+
+
+def test_distill_trace_extracts_each_round_separately():
+    """C→C 这种"两轮都失败"的轨迹，应产出**两条**按轮经验而非一条。"""
+    t = RolloutTrace(
+        task_id="t4", cwe="CWE-79",
+        states=["C", "C"],
+        transitions=[make_transition("C", "C")],
+        generated_codes=["def f(): pass", "def f(): pass"],
+        evidence=[{"functional": {"status": "fail", "details": "x"}},
+                  {"functional": {"status": "fail", "details": "y"}}],
+    )
+    out = distill_trace(t, _fake_requester(VALID))
+    rounds = [e.get("round_index") for e in out["error_ledger"] + out["negative"]
+              if e.get("round_index") is not None]
+    assert sorted(rounds) == [0, 1], f"应分别沉淀第 0/1 轮，实际 {rounds}"
+
+
+def test_round_prompt_asks_prev_fix_assessment():
+    """修复轮的提示词必须要求回答"上一轮改法为何没奏效"。"""
+    from methods.sct_trajectory.distillation import build_round_prompt
+
+    p = build_round_prompt(cwe="CWE-79", round_index=1, state="C", code="def f(): pass",
+                           evidence={"functional": {"status": "fail", "details": "d"}},
+                           prev_summary="Previous round 0 had state C")
+    assert "prev_fix_assessment" in p
+    assert "why the previous repair failed" in p
 
 
 def test_distill_trace_direct_A():
