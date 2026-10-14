@@ -19,15 +19,15 @@ def test_prompt_requests_new_fields():
     assert "minimal_patch_hint" in p
     assert "overdefense_pitfall" in p
     # 新经验的说明要点
-    assert "最小改动手法" in p
-    assert "过度防御陷阱" in p
+    assert "Minimal change" in p
+    assert "overdefense" in p
 
 
 def test_node_from_hint():
-    node = _node_from_hint({"cwe": "CWE-79", "minimal_patch_hint": "只对输出做上下文相关转义，不改数据结构",
-                            "overdefense_pitfall": "禁止整体重写"})
+    node = _node_from_hint({"cwe": "CWE-79", "minimal_patch_hint": "Escape only output for its context; preserve data structure",
+                            "overdefense_pitfall": "Do not rewrite the program"})
     assert node is not None
-    assert node.positive_principle.startswith("只对输出")
+    assert node.positive_principle.startswith("Escape only output")
     assert node.cwe == "CWE-79"
     assert node.status == "provisional"
 
@@ -38,11 +38,11 @@ def test_node_from_hint_empty_returns_none():
 
 
 def test_node_from_pitfall():
-    node = _node_from_pitfall({"cwe": "CWE-89", "overdefense_pitfall": "无差别拒绝含引号的输入会让合法查询失败"})
+    node = _node_from_pitfall({"cwe": "CWE-89", "overdefense_pitfall": "Indiscriminate rejection of quoted input breaks valid queries"})
     assert node is not None
-    assert node.negative_guardrail.startswith("无差别拒绝")
+    assert node.negative_guardrail.startswith("Indiscriminate rejection")
     assert node.positive_principle == ""
-    assert "过度防御陷阱" in node.high_level_invariant
+    assert "overdefense" in node.high_level_invariant.lower()
 
 
 def test_node_from_pitfall_empty_returns_none():

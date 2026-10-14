@@ -10,6 +10,7 @@
    - [当前限制](docs/limitations.md)：哪些语言和实验仍未完全冻结。
 2. **再理解评测规则**
    - [评测协议](docs/evaluation_protocol.md)：Function、Secure、Function+Secure 指标和数据隔离要求。
+   - [CLE Method Complete Description](docs/CLE_Method_Complete_Description_20260924_Final.md)（[Word version](docs/CLE_Method_Complete_Description_20260924_Final.docx)）：基于原最终 DOCX 与 9 月 24 日修订，用详细流程图、路径越界、SQL 注入等具体例子说明三层 HSK Tree、四步 Agent、经验形成、embedding 主流程、经验审查与冻结；区分最终设计与尚待验证的效果。
    - [Baseline 忠实性说明](docs/baseline_fidelity.md)：四条 Prompt baseline 与五条 Agent baseline 的区别、阶段和判定标准。
    - [Baseline 执行审计](docs/baseline_execution_audit.md)：当前真实运行证据和已知阻断点。
 3. **然后配置环境**
@@ -17,6 +18,17 @@
    - [ChatAnywhere 配置](docs/chatanywhere-api.md)：本地 key、模型检查和脱敏输出位置。
    - [配置文件说明](configs/README.md)：哪些配置可以进入仓库。
 4. **最后阅读方法差异与实现**
+   - [MASE 架构与记忆进化](docs/mase_evolution.md)：独立流程设计、模型改图、逐步证据和本地版本网页；明确区分运行链路验证与效果确认。
+   - [历史消融与对照实验总统计（2026-10-13）](docs/experiment_evidence_summary_20261013.md)：M1–M6、A1–A7、最新九组组合、提示词与CLE矩阵的完整统计；区分实际收益、未确认信号、未测方向和无效消融标签。
+   - [CLE 独立 P0–P7 消融（2026-09-28）](docs/cle_ablation_20260928.md)：ChatAnywhere deepseek-v3.2、PLT Phase3 开发诊断和 Base/Plus 冻结评测，含反馈边界与实际运行状态。
+   - [相关论文仓库与实现对照（2026-09-28）](docs/paper_repository_implementation_audit_20260928.md)：RESCUE、SkillOpt 源码审计与 EvoRepair、SecTrace 的公开证据边界。
+   - [CLE 全量 Phase 3 中断、修复与续跑（2026-09-25）](docs/cle_phase3_resume_20260925.md)：定位检索轨迹误入经验版本哈希，完成训练侧 298 题三臂续跑；过滤后 Joint 80/298，非 Plus 成绩。
+   - [经验筛选协议与并发可靠性修复（2026-09-24）](docs/selector_protocol_reliability_20260924.md)：短编号严格返回、有限重试、独立筛选限流；486 查询仅 1 次网络失败，2 次格式错误均恢复；24 题两臂端到端完成，语义 41 次筛选全成功，Joint 均 7/24，未启动全量。
+   - [检索命中正确率实验（2026-10-14）](docs/retrieval_hit_accuracy_20261014.md)：六组配对、纯 embedding 对照、匿名盲评与人工复核口径。
+   - [英文经验与语义检索修订（2026-09-24，完整对照已完成）](docs/english_semantic_retrieval_20260924.md)：1939 卡英文副本、官方 embedding 实测、273 题配对及三轮链路；最终 Joint 层次 76 vs 语义 71，p=0.487，未证明增益，未启动 874 全量。
+   - [训练侧多分支探索与全量门控验证（2026-09-23，已完成）](docs/branch_global_gate_20260923.md)：273题三臂与298题门控；多思路/普通采样的任一候选成功上界88/87，实际选择61/67；停用前后68→70，未证明可靠提升。
+   - [SecTrace 论文与 Plus 对照研究（2026-09-23）](docs/sectrace_paper_comparison_20260923.md)：公开仓库检索结果、论文方法与分数口径、最新报告统计及真实卡片传递核验。
+   - [分析驱动检索修订与复测记录（历史阶段）](docs/context_retrieval_revision_20260923.md)：方法改动、训练侧五臂对照及旧重训故障证据；后续 Plus 计划已让位于上面的训练侧方法验证。
    - [经验自进化操作指南](docs/experience_self_evolution_guide.md)：从 PLT 分区、R0/R1 门控到冻结和 Base/Plus 评测的逐步操作、JSON/JSONL 格式与真实示例。
    - [PLT 自进化实验说明](docs/plt_self_evolution.md)：PLT 训练侧分区、Seed family 和运行入口。
    - [SCT 统一核心设计](docs/superpowers/specs/2026-09-09-sct-unified-core-design.md)：方案 B 的模块边界、数据流、冻结协议和验收标准。
@@ -28,6 +40,7 @@
    - [原始方法文档](docs/面向多语言安全代码生成的经验自进化方法.docx)：本项目的规范依据。
    - [重构方法设计说明](简介论文修改方案/重构方法设计说明.docx)：新方法（安全经验生命周期 + 验证驱动主动回放）的设计规范，`methods/sct_lifecycle_replay/` 的实现依据。
    - [实验运行区说明](docs/translation_work.md)：运行结果、缓存、诊断和临时文件的分类与清理规则。
+   - [Plus 冻结经验双臂评测](docs/plus_frozen_comparison_20260922.md)：完整冻结库、最新层次检索、单 prompt/四步生成及任务内修复的对比口径。
 
 ## 项目文件总索引
 
@@ -66,6 +79,17 @@
 | [cle_negative_findings.md](docs/cle_negative_findings.md) | CLE 方法学发现：经验注入无收益的三次实验、过度防御瓶颈定位，以及有效的"功能契约冻结"干预（四次真实实验） |
 | [cle_full_run_analysis_20260919.md](docs/cle_full_run_analysis_20260919.md) | 全量 874 运行分析：门控全放行、83.8% 跨 CWE 注入、47.3% 过度防御等六大问题与优化空间 |
 | [cle_full_run_v2_report.md](docs/cle_full_run_v2_report.md) | 优化后全量 874 v2 对比报告：九项改动、同 task_id 配对口径、机制性指标对比 |
+| [experiment_evidence_summary_20261013.md](docs/experiment_evidence_summary_20261013.md) | 历史消融与对照总统计：完整方法表、实际通过数、可比性与实现问题 |
+| [cle_decisive_finding_granularity.md](docs/cle_decisive_finding_granularity.md) | 答案可见诊断（2026-09-22，2026-10-13勘误）：直接给当前题参考代码的上界；不能证明粒度为唯一根因，旧经验负分差不显著 |
+| [plus_failure_analysis_20260922.md](docs/plus_failure_analysis_20260922.md) | **Plus 评测失败分析**：14 个 CWE 里 9 个零经验、81% 的安全失败缺异常类型（TypeError 占 57）、功能过/安全败的精确机制与因果链 |
+| [cle_chain_interruption_20260923.md](docs/cle_chain_interruption_20260923.md) | **最新运行中断原因 + 全链路排查**：GBK 日志崩溃（已修）、覆盖率目标与 replay_limit 自相矛盾、LLM 门控选择器连续失败、树 0 节点与 M* 不一致 |
+| [cle_step1_hierarchical_retrieval.md](docs/cle_step1_hierarchical_retrieval.md) | 层次检索与4臂消融：调用减少约53%、估算费用减少约10%，未证明准确率提升或统计等价 |
+| [cle_step1_payload_rootcause.md](docs/cle_step1_payload_rootcause.md) | 第一步取证：注入通道是通的（代码逐字体现指令），缺陷在载荷（0% 硬约束/截断/同卡矛盾） |
+| [cle_step2_pool_comparison.md](docs/cle_step2_pool_comparison.md) | 第二步：五个阶段经验库对比（Phase1/各轮/final），无显著差异；池规模不解决问题 |
+| [cle_step3_gate_and_payload.md](docs/cle_step3_gate_and_payload.md) | 第三步：载荷缺陷量化（18% 可疑/5.3% 不可用）、四项载荷修复、Tier A 静态评分器（覆盖率仅 1.06×） |
+| [runtime_reflection.md](docs/runtime_reflection.md) | 全量运行耗时反思：实测分段剖析、四个拖时间环节、失误检讨与优化空间 |
+| [runtime_optimization.md](docs/runtime_optimization.md) | 运行效率优化：已完成的并发提升/去 L4/扩大选择面，及五项待做项设计 |
+| [architecture_and_experiment_history.md](docs/architecture_and_experiment_history.md) | **架构演进与实验历史全梳理**：三条方法线、按日期的全部实验与结论、可比性陷阱 |
 | [superpowers/specs/2026-09-09-sct-unified-core-design.md](docs/superpowers/specs/2026-09-09-sct-unified-core-design.md) | SCT 统一核心设计（方案 B） |
 | [superpowers/specs/2026-09-03-agent-baseline-integration-design.md](docs/superpowers/specs/2026-09-03-agent-baseline-integration-design.md) | Agent baseline 集成设计（开发过程记录） |
 | [superpowers/plans/2026-09-09-sct-unified-core.md](docs/superpowers/plans/2026-09-09-sct-unified-core.md) | SCT 统一核心实施计划 |
@@ -180,6 +204,29 @@
 | [chatanywhere_smoke.py](methods/sct_lifecycle_replay/chatanywhere_smoke.py) | DeepSeek 3.2 连通性烟测 |
 | [reporting.py](methods/sct_lifecycle_replay/reporting.py) | 精简运行报告 |
 
+**sct_trajectory/**（CLE 轨迹对比、检索和门控实验）
+
+| 入口 | 说明 |
+|---|---|
+| [run_closed_loop.py](methods/sct_trajectory/run_closed_loop.py) | 经验初始化、轨迹回放、候选蒸馏与门控的闭环训练 |
+| [run_local_frozen_eval.py](methods/sct_trajectory/run_local_frozen_eval.py) | 冻结经验后的本地评测；最终测试反馈不得回流训练 |
+| [run_branch_gate_study.py](methods/sct_trajectory/run_branch_gate_study.py) | 分支经验与全局门控对照 |
+| [run_context_ablation.py](methods/sct_trajectory/run_context_ablation.py) | 分析上下文驱动检索的消融 |
+| [run_semantic_retrieval_study.py](methods/sct_trajectory/run_semantic_retrieval_study.py) | 英文经验、embedding 与层次检索的配对研究 |
+| [retrieval_hit_study.py](methods/sct_trajectory/retrieval_hit_study.py) | 检索命中正确率、匿名评审与复核记录 |
+| [dashboard/README.md](methods/sct_trajectory/dashboard/README.md) | 本地只读轨迹与经验树网页 |
+
+**独立探索与消融目录**（开发诊断与冻结评测须按各自协议区分）
+
+| 目录 / 入口 | 说明 |
+|---|---|
+| [a7_exploration/run.py](methods/a7_exploration/run.py) | A7 流程与记忆组合探索；[实验说明](docs/a7_exploration_20261009.md) |
+| [direction_screening/run.py](methods/direction_screening/run.py) | 记忆架构方向筛选、复测与报告；[筛选口径](docs/memory_architecture_screening_20261009.md) |
+| [cle_ablation/README.md](methods/cle_ablation/README.md) | CLE P0–P7 独立消融运行入口 |
+| [cle_ablation_matrix/README.md](methods/cle_ablation_matrix/README.md) | 训练与冻结评测矩阵、池清单与指标汇总 |
+| [cle_prompt_ablation/run_prompt_matrix.py](methods/cle_prompt_ablation/run_prompt_matrix.py) | 提示词消融矩阵；[launch_full.py](methods/cle_prompt_ablation/launch_full.py) 为全量启动器 |
+| [mase_evolution/README.md](methods/mase_evolution/README.md) | 架构与记忆共同进化探索、执行器、曝光审计和本地网页；完整对照与独立确认尚未完成 |
+
 **secodeplt_eval/**（官方 SeCodePLT 评测方式移植）
 
 | 文件 | 说明 |
@@ -229,12 +276,21 @@
 | [test_retriever_align.py](tests/test_retriever_align.py) | 检索器对齐 |
 | [test_split.py](tests/test_split.py) | 数据划分 |
 | [test_trajectory_reflection.py](tests/test_trajectory_reflection.py) | 轨迹反思 |
+| [test_global_gate.py](tests/test_global_gate.py)、[test_branch_gate_integration.py](tests/test_branch_gate_integration.py) | 全局门控、分支经验与端到端集成 |
+| [test_semantic_retrieval.py](tests/test_semantic_retrieval.py)、[test_retrieval_hit_study.py](tests/test_retrieval_hit_study.py) | 语义检索与命中研究协议 |
+| [test_cle_ablation_runner.py](tests/test_cle_ablation_runner.py)、[test_cle_ablation_matrix.py](tests/test_cle_ablation_matrix.py)、[test_cle_prompt_ablation.py](tests/test_cle_prompt_ablation.py) | CLE 独立、矩阵和提示词消融 |
+| [test_a7_exploration.py](tests/test_a7_exploration.py)、[test_direction_screening.py](tests/test_direction_screening.py) | A7 探索与方向筛选 |
+| [test_mase_evolution.py](tests/test_mase_evolution.py)、[test_mase_control.py](tests/test_mase_control.py)、[test_mase_dashboard_api.py](tests/test_mase_dashboard_api.py) | MASE 进化、控制边界和网页接口 |
+
+运行全部离线测试：`python -m pytest tests -q --tb=short`。这些测试验证实现与协议，正式 Function/Secure 成绩仍以对应运行证据为准。
 
 ### tools/、configs/、docker/、results/
 
 | 文件 | 说明 |
 |---|---|
 | [tools/check_repository.py](tools/check_repository.py) | 仓库完整性检查（数量、脱敏） |
+| [tools/server_monitor.py](tools/server_monitor.py) | Linux 服务器健康快照与实时面板（标准库，支持 JSON） |
+| [tools/server_health_check.py](tools/server_health_check.py) | 本机通过 SSH 拉取健康快照；默认上传监控脚本，`--no-upload` 可关闭上传，凭据仅从忽略的本地文件读取 |
 | [tools/sanitize_dataset.py](tools/sanitize_dataset.py) | 数据集脱敏（机器路径、密钥） |
 | [tools/vhdx_watchdog.py](tools/vhdx_watchdog.py) | 跑命令并全程采样 vhdx 水位与容器数，给出"Docker 是否膨胀"的可引用判定 |
 | [tools/run_baseline_server.sh](tools/run_baseline_server.sh) | 服务器侧一键启动 baseline（看门狗包裹 + 参数校验） |
@@ -497,6 +553,14 @@ PLT Java 不走上面的 runner，走 `methods/secodeplt_eval/java_executor.py`�
 SCT 的正式经验轮次 `R0–R3` 不是历史缓存：它们分别表示初始经验建立和后续候选经验进化轮次，完整定义见[评测协议](docs/evaluation_protocol.md)。
 
 ## 进一步阅读
+
+本轮三种独立流程与各自记忆调整的执行说明见 [A7 探索设计](docs/a7_design_20261009.md)。
+
+本轮 A7 的完整三阶段结果、内环拒绝原因和失败分析见 [A7 探索结果](docs/a7_exploration_20261009.md)。
+
+记忆与架构方向的训练开发验证见 [PLT 联合初筛记录](docs/memory_architecture_screening_20261009.md)，其中分别记录 family 划分、原型边界、实际结果和未验证部分。
+
+具体代码流程、来源补丁为何不能保证迁移成功、M/A 各方向的实现缺口与 CLE 的关系，见 [M1–M6、A1–A7 源码审计](docs/memory_architecture_code_audit_20261009.md)。
 
 如果你要复现实验，请按 [复现实验指南](docs/reproduction_guide.md)；如果你要判断某条 baseline 是否忠实，请按 [Baseline 忠实性说明](docs/baseline_fidelity.md)；如果你要理解 SCT 当前还缺什么，请按 [SCT 差异审计](docs/sct_docx_gap_analysis.md)。
 

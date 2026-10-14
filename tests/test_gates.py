@@ -30,12 +30,12 @@ def test_majority_vote():
 
 
 def test_gate2_effectiveness():
-    # 放宽模式（默认）：Δ≥0 即通过，只有 Δ<0 才 demoted
+    """默认"要求正证据"：Δ>0 通过，Δ=0 记为无证据，Δ<0 淘汰。"""
     assert gate2_effectiveness(0.1) == "proceed"
-    assert gate2_effectiveness(0.0) == "proceed"
+    assert gate2_effectiveness(0.0) == "unmeasured"      # 测了但没测出差异
     assert gate2_effectiveness(-0.1) == "demoted"
-    # 严格模式（消融对比用）：Δ=0 → revised
-    assert gate2_effectiveness(0.0, allow_equal=False) == "revised"
+    # 旧放宽模式（仅对照实验用）：Δ=0 也算通过
+    assert gate2_effectiveness(0.0, allow_equal=True) == "proceed"
 
 
 def test_gate3_tolerance():
@@ -53,18 +53,18 @@ def test_audit_supported():
     assert rec.gate1_retrieved is True
 
 
-def test_audit_probe_miss_not_blocking_in_relaxed_mode():
-    """放宽模式：Gate1 未命中只记录，不作为拒绝理由（避免误杀）。"""
+def test_audit_probe_miss_not_blocking_in_default_mode():
+    """默认模式：Gate1 未命中只记录，不作为拒绝理由（避免误杀）。"""
     r = _FakeRetriever(["inv-other"])
     rec = audit_candidate("inv-1", r, _task(), delta_joint_pass=0.2, security_regressions=0)
     assert rec.gate1_retrieved is False
     assert rec.decision == "supported"
 
 
-def test_audit_probe_miss_blocks_in_strict_mode():
+def test_audit_probe_miss_blocks_in_relaxed_mode():
     r = _FakeRetriever(["inv-other"])
     rec = audit_candidate("inv-1", r, _task(), delta_joint_pass=0.2,
-                          security_regressions=0, allow_equal=False)
+                          security_regressions=0, block_on_probe_miss=True)
     assert rec.decision == "revised"
     assert "probe_missed" in rec.reasons[0]
 
@@ -75,18 +75,27 @@ def test_audit_demoted_on_negative_delta():
     assert rec.decision == "demoted"
 
 
-def test_audit_supported_on_zero_delta_in_relaxed_mode():
-    """放宽模式核心行为：Δ=0（不劣化）→ supported 入树。"""
+def test_audit_unmeasured_on_zero_delta_default():
+    """核心改动：Δ=0（无证据）→ unmeasured，不晋升但保留在池里参与检索。"""
     r = _FakeRetriever(["inv-1"])
     rec = audit_candidate("inv-1", r, _task(), delta_joint_pass=0.0, security_regressions=0)
+    assert rec.decision == "unmeasured"
+    assert "no_evidence" in rec.reasons[0]
+
+
+def test_audit_supported_on_zero_delta_in_relaxed_mode():
+    """旧放宽模式（对照用）：Δ=0 也 supported。"""
+    r = _FakeRetriever(["inv-1"])
+    rec = audit_candidate("inv-1", r, _task(), delta_joint_pass=0.0,
+                          security_regressions=0, allow_equal=True)
     assert rec.decision == "supported"
 
 
-def test_audit_revised_on_zero_delta_strict_mode():
+def test_audit_supported_only_with_positive_evidence():
+    """只有 Δ>0 才 supported（本改动的核心验收点）。"""
     r = _FakeRetriever(["inv-1"])
-    rec = audit_candidate("inv-1", r, _task(), delta_joint_pass=0.0,
-                          security_regressions=0, allow_equal=False)
-    assert rec.decision == "revised"
+    rec = audit_candidate("inv-1", r, _task(), delta_joint_pass=0.5, security_regressions=0)
+    assert rec.decision == "supported"
 
 
 def test_audit_demoted_on_regression():

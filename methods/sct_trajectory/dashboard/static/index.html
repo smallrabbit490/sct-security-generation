@@ -33,6 +33,7 @@
 </nav>
 
 <main>
+  <div id="loadErrors" class="warnbox" style="display:none;margin-bottom:14px"></div>
   <!-- 概览 -->
   <section id="tab-overview" class="tabpane active">
     <div class="cards" id="overviewCards"></div>
@@ -69,7 +70,11 @@
   <section id="tab-phase2" class="tabpane">
     <div class="cards" id="p2Cards"></div>
     <div class="panel">
-      <h3>任务池（replay）— 点击查看是否被选中</h3>
+      <h3>各轮通过率（功能 / 安全 / 联合）— 含"初始(Phase1)"基线</h3>
+      <div id="p2Rates"></div>
+    </div>
+    <div class="panel">
+      <h3>任务池（replay）</h3>
       <div id="p2Pool"></div>
     </div>
     <div class="panel">
@@ -84,7 +89,7 @@
       </div>
     </div>
     <div class="panel">
-      <h3>树的成长轨迹</h3>
+      <h3>树的成长轨迹（逐轮相邻对比：这一轮比上一轮多了哪些规则）</h3>
       <div id="p2Growth"></div>
     </div>
   </section>

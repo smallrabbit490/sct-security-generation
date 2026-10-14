@@ -257,17 +257,17 @@ class LifecycleReplaySkeletonTests(unittest.TestCase):
         row = {"index": 1, "CWE_ID": "22", "task_description": {"function_name": "read_file"},
                "ground_truth": {"vulnerable_code": "open(path)", "patched_code": "check(path)"}}
         response = {"choices": [{"message": {"content": json.dumps({
-            "principle": "规范化路径并限制在根目录内",
-            "applicability": "外部路径",
-            "dangerous_pattern": "字符串前缀判断",
-            "recommended_action": "resolve + relative_to 目录边界检查",
+            "principle": "Normalize paths and enforce trusted-root containment",
+            "applicability": "External filesystem paths",
+            "dangerous_pattern": "String prefix checks",
+            "recommended_action": "resolve + relative_to containment checks",
             "language_adaptation": {"python": "resolve", "go": "Abs/Rel", "cpp": "weakly_canonical"},
-            "non_applicable_boundary": "不涉及文件系统路径时不适用",
+            "non_applicable_boundary": "Not applicable without filesystem paths",
         })}}]}
         result = extract_initial_hypothesis(row, requester=lambda _: response)
-        self.assertEqual(result["recommended_action"], "resolve + relative_to 目录边界检查")
+        self.assertEqual(result["recommended_action"], "resolve + relative_to containment checks")
         self.assertEqual(result["language_adaptation"]["go"], "Abs/Rel")
-        self.assertEqual(result["non_applicable_boundary"], "不涉及文件系统路径时不适用")
+        self.assertEqual(result["non_applicable_boundary"], "Not applicable without filesystem paths")
 
     def test_experience_memory_tracks_support_count_and_retire(self):
         # 修复点：文档 8.2 要求支持计数/证据引用等追踪字段，且退役经验
@@ -293,10 +293,10 @@ class LifecycleReplaySkeletonTests(unittest.TestCase):
     def test_initial_knowledge_extracts_structured_hypothesis_without_answer_code(self):
         row = {"index": 1, "CWE_ID": "22", "task_description": {"function_name": "read_file"},
                "ground_truth": {"vulnerable_code": "open(path)", "patched_code": "check(path)"}}
-        response = {"choices": [{"message": {"content": '{"principle":"规范化路径并限制在根目录内","applicability":"外部路径"}'}}]}
+        response = {"choices": [{"message": {"content": '{"principle":"Normalize paths and enforce trusted-root containment","applicability":"External filesystem paths"}'}}]}
         result = extract_initial_hypothesis(row, requester=lambda _: response)
         self.assertEqual(result["cwe"], "22")
-        self.assertEqual(result["principle"], "规范化路径并限制在根目录内")
+        self.assertEqual(result["principle"], "Normalize paths and enforce trusted-root containment")
         self.assertNotIn("vulnerable_code", result)
 
     def test_trajectory_validation_records_unmeasured_when_tests_are_missing(self):

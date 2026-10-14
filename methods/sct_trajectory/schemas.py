@@ -87,6 +87,17 @@ class RolloutTrace:
     # {"analysis": Analysis 结构化输出, "plan": Planning 三键计划,
     #  "retrieved_cards": 该轮检索到的经验卡正文}
     agent_context: list[dict] = field(default_factory=list)
+    # 任务契约（该函数被要求做什么）。提炼 agent 用它判断
+    # "是否引入了契约外的多余约束"——这是过度防御的判定依据。
+    task_contract: str = ""
+    # 【已在 rollout 内逐轮即时提炼过的轮次索引】（方案 A，用户拍板 2026-09-21）
+    # 为了让"修复轮能检索到自己上一轮失败提炼的经验"，首轮失败后会**立刻**提炼入池
+    # （见 CleRunner._distill_round_inline）。收尾的 distill_trace 必须跳过这些轮次，
+    # 否则同一轮会被提炼两次、经验池里出现成对重复条目。
+    inline_distilled_rounds: list[int] = field(default_factory=list)
+    # Phase2 并行探索证据；兄弟方案不构成修复转移，选优口径必须显式保留。
+    branches: list[dict] = field(default_factory=list)
+    branch_selection: dict = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
