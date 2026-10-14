@@ -49,3 +49,13 @@ translation_work/
 - `R0–R3` 方法概念本身，它们不是缓存目录。
 
 清理结束后重新运行单元测试、`git diff --check` 和 key 泄露扫描，并确认正式结果仍可读取。
+
+## 2026-10-14 仓库整理记录
+
+本次将此前未提交的有效源码、测试、实验分析、方法规范原件和论文资料纳入版本管理，并在根 README 补充入口。浏览器调试会话、临时设计会话和 Office 锁文件加入忽略规则。
+
+清理仅覆盖已核对的 Python 缓存、`translation_work/temp/session_941683a9/` 中的源码备份，以及 sandbox 中遗留的临时 token 文件。正式结果、R0–R3 记录、冻结经验库、失败证据和复现元数据继续保留；候选清单中的历史日志与中间结果并未批量删除。
+
+本机清理清单保存在 `translation_work/diagnostics/cleanup_plan_20261014/`，其中 `cleanup_candidates.json` 和 CSV 保存盘点，`delete_manifest.json` 是候选清单，不能作为全部已删除的证明。收尾复核时，500 个候选路径中 15 个已不存在，485 个仍保留；测试可能重新生成缓存。
+
+整理后的离线测试结果为 **704 passed、2 skipped、30 subtests passed**，仓库完整性检查通过。运行区仍被 Git 忽略，正式成果的发布入口是中文文档及 `results/curated/`。
