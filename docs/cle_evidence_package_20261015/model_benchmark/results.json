@@ -1,1 +1,2409 @@
-@docs/cle_evidence_package_20261015/model_benchmark/results.json
+{
+  "gold_sha256": "2f10aa2a9cc10c0249346c549a3ee1f87fe1f2d433f8d8e944329a3278367408",
+  "completed_at": "2026-09-23T16:14:17.859102+00:00",
+  "results": [
+    {
+      "model": "text-embedding-3-large",
+      "status": "completed",
+      "dimensions": 3072,
+      "seconds": 58.70299999999406,
+      "usage": {
+        "calls": 3,
+        "failures": 0,
+        "prompt_tokens": 2156,
+        "total_tokens": 2156,
+        "cache_hits": 0,
+        "embedded_texts": 68,
+        "usage_missing_calls": 0
+      },
+      "n": 30,
+      "top1": 0.7,
+      "recall3": 0.9666666666666667,
+      "mrr": 0.836111111111111,
+      "rows": [
+        {
+          "query_id": "q01",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "sqlite_values",
+              "cosine": 0.538780204102292
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.48218058372602784
+            },
+            {
+              "id": "postgres_values",
+              "cosine": 0.4137284319629508
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.34811553477419954
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.26734858724603455
+            }
+          ]
+        },
+        {
+          "query_id": "q02",
+          "gold_rank": 4,
+          "top5": [
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.4680110353138327
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.4512320147433273
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.4470699993579939
+            },
+            {
+              "id": "postgres_values",
+              "cosine": 0.4382528724018409
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.3742771482387856
+            }
+          ]
+        },
+        {
+          "query_id": "q03",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.5536266037030277
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.39847480640210614
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.32757188526042585
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.29597456596637467
+            },
+            {
+              "id": "wrong_auth_numeric",
+              "cosine": 0.27903860376985457
+            }
+          ]
+        },
+        {
+          "query_id": "q04",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.5371210260857394
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.4274500066157218
+            },
+            {
+              "id": "archive_members",
+              "cosine": 0.3384026553622459
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.33749475426472947
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.28979564785146616
+            }
+          ]
+        },
+        {
+          "query_id": "q05",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "archive_members",
+              "cosine": 0.5213921792810368
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.3250001517014794
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.27878601863957514
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.2646896161936227
+            },
+            {
+              "id": "temp_exclusive",
+              "cosine": 0.20888931105974815
+            }
+          ]
+        },
+        {
+          "query_id": "q06",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "temp_exclusive",
+              "cosine": 0.4985850736740677
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.4130107542891637
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.3178526420154665
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.30518383459355036
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.3050319782174458
+            }
+          ]
+        },
+        {
+          "query_id": "q07",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "shell_argv",
+              "cosine": 0.4418174270677004
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.38123722146418526
+            },
+            {
+              "id": "wrong_shell_escape",
+              "cosine": 0.3800383464999008
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.3583995797829912
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.3216915840255133
+            }
+          ]
+        },
+        {
+          "query_id": "q08",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "shell_argv",
+              "cosine": 0.5046504674666916
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.5001452466667339
+            },
+            {
+              "id": "wrong_shell_escape",
+              "cosine": 0.48115922470607475
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.3628594742634047
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.2936286491015136
+            }
+          ]
+        },
+        {
+          "query_id": "q09",
+          "gold_rank": 3,
+          "top5": [
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.2621015088925869
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.26072173309934266
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.24102030898142685
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.23589525269766085
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.23463964626937
+            }
+          ]
+        },
+        {
+          "query_id": "q10",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "url_scheme",
+              "cosine": 0.5950770689729771
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.5925823645115221
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.458706918667451
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.45853966174821903
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.4358140145849942
+            }
+          ]
+        },
+        {
+          "query_id": "q11",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "javascript_data",
+              "cosine": 0.6041615855958694
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.4657629878246807
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.46565359942718526
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.4248597618804631
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.389166091530711
+            }
+          ]
+        },
+        {
+          "query_id": "q12",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "yaml_safe",
+              "cosine": 0.47965734551696837
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.4383594113613866
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.3834042162799678
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.35006896560751993
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.30734212963168067
+            }
+          ]
+        },
+        {
+          "query_id": "q13",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.518122995362092
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.44484148865632006
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.36239844469785537
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.35578429629881253
+            },
+            {
+              "id": "tls_verify",
+              "cosine": 0.330651617052451
+            }
+          ]
+        },
+        {
+          "query_id": "q14",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "xml_entities",
+              "cosine": 0.5636583628607342
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.25202828925097626
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.23475013276137718
+            },
+            {
+              "id": "archive_members",
+              "cosine": 0.22915735766148237
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.2209075091089553
+            }
+          ]
+        },
+        {
+          "query_id": "q15",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.5177044805550282
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.48315900460653577
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.38546057454211774
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.3530817552247807
+            },
+            {
+              "id": "yaml_safe",
+              "cosine": 0.34150227287338714
+            }
+          ]
+        },
+        {
+          "query_id": "q16",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "password_hash",
+              "cosine": 0.47845281984947596
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.38518768297296796
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.33059601936000443
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.3279327404608112
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.3178856494247156
+            }
+          ]
+        },
+        {
+          "query_id": "q17",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "public_signature",
+              "cosine": 0.5144274288134975
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.4980672507483204
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.4867974886617028
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.4278633404935335
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.37999380996876836
+            }
+          ]
+        },
+        {
+          "query_id": "q18",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.4716388436637623
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.4426411290379052
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.3869686192262118
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.38526527956508844
+            },
+            {
+              "id": "exception_redaction",
+              "cosine": 0.3727355295623298
+            }
+          ]
+        },
+        {
+          "query_id": "q19",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "public_signature",
+              "cosine": 0.5759496987677077
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.46964057770706874
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.3891028039288452
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.36753719392641293
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.3418218208163578
+            }
+          ]
+        },
+        {
+          "query_id": "q20",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "random_token",
+              "cosine": 0.5936574195451033
+            },
+            {
+              "id": "password_hash",
+              "cosine": 0.38055359244509085
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.37430640564240836
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.35119928634363196
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.33830517549059996
+            }
+          ]
+        },
+        {
+          "query_id": "q21",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "constant_compare",
+              "cosine": 0.5726657171537672
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.5310123231834604
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.37689770112960963
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.32779266665067797
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.25966712202910736
+            }
+          ]
+        },
+        {
+          "query_id": "q22",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "jwt_algorithms",
+              "cosine": 0.6871090033215301
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.35553016527580317
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.29673637642559586
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.2866846440098587
+            },
+            {
+              "id": "tls_verify",
+              "cosine": 0.250278249720476
+            }
+          ]
+        },
+        {
+          "query_id": "q23",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "ssrf_target",
+              "cosine": 0.4213437837323496
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.4064380180965112
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.277272561900022
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.2500409831530878
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.23999296999167524
+            }
+          ]
+        },
+        {
+          "query_id": "q24",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "redirect_local",
+              "cosine": 0.5499280081070244
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.4035695198913767
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.3596188711615211
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.31957057824920954
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.2751386951268002
+            }
+          ]
+        },
+        {
+          "query_id": "q25",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.5639993971073998
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.4208176822773181
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.3578546998869144
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.32371297013737044
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.30501163805478987
+            }
+          ]
+        },
+        {
+          "query_id": "q26",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "wrong_auth_numeric",
+              "cosine": 0.5667479042648562
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.30100754207524166
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.23055693735001745
+            },
+            {
+              "id": "exception_redaction",
+              "cosine": 0.21646162092029347
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.16824605817084964
+            }
+          ]
+        },
+        {
+          "query_id": "q27",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "regex_literal",
+              "cosine": 0.5609403531059204
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.4946986869690918
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.4749483259508902
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.2647055942080561
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.2576591963941806
+            }
+          ]
+        },
+        {
+          "query_id": "q28",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "regex_literal",
+              "cosine": 0.5350656889214054
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.4804783917292862
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.42258838720355035
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.3653535971194842
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.34870518049162175
+            }
+          ]
+        },
+        {
+          "query_id": "q29",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "tls_verify",
+              "cosine": 0.5476213650624994
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.3411895794339201
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.3079433076961327
+            },
+            {
+              "id": "random_token",
+              "cosine": 0.30482691401453643
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.3042799639357236
+            }
+          ]
+        },
+        {
+          "query_id": "q30",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "exception_redaction",
+              "cosine": 0.4950582790052076
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.33231305448272863
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.29136275739675616
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.2844891965615853
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.24731240476864896
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "text-embedding-3-small",
+      "status": "completed",
+      "dimensions": 1536,
+      "seconds": 25.797000000005937,
+      "usage": {
+        "calls": 3,
+        "failures": 0,
+        "prompt_tokens": 2156,
+        "total_tokens": 2156,
+        "cache_hits": 0,
+        "embedded_texts": 68,
+        "usage_missing_calls": 0
+      },
+      "n": 30,
+      "top1": 0.6666666666666666,
+      "recall3": 1.0,
+      "mrr": 0.8166666666666667,
+      "rows": [
+        {
+          "query_id": "q01",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "sqlite_values",
+              "cosine": 0.6010534939819074
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.4829681398949274
+            },
+            {
+              "id": "postgres_values",
+              "cosine": 0.4718103410766225
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.3527722248236063
+            },
+            {
+              "id": "wrong_shell_escape",
+              "cosine": 0.3155150931594112
+            }
+          ]
+        },
+        {
+          "query_id": "q02",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "postgres_values",
+              "cosine": 0.5080656400325698
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.48881773908034026
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.391963244500035
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.3818089752279838
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.29191304672857427
+            }
+          ]
+        },
+        {
+          "query_id": "q03",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.5770704069038011
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.37899878119791225
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.33442959304988146
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.3014222003337957
+            },
+            {
+              "id": "exception_redaction",
+              "cosine": 0.2716061183030534
+            }
+          ]
+        },
+        {
+          "query_id": "q04",
+          "gold_rank": 3,
+          "top5": [
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.5574207870106429
+            },
+            {
+              "id": "archive_members",
+              "cosine": 0.3493179781363989
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.3389167869900614
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.31708621848145546
+            },
+            {
+              "id": "regex_literal",
+              "cosine": 0.275519555898606
+            }
+          ]
+        },
+        {
+          "query_id": "q05",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "archive_members",
+              "cosine": 0.6079025971202853
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.44282678711094636
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.3359418198314725
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.26231655614960286
+            },
+            {
+              "id": "temp_exclusive",
+              "cosine": 0.24492752311996852
+            }
+          ]
+        },
+        {
+          "query_id": "q06",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "temp_exclusive",
+              "cosine": 0.5494275447689867
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.47527953666368583
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.33200502549822936
+            },
+            {
+              "id": "archive_members",
+              "cosine": 0.32520344464493434
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.30395859335271075
+            }
+          ]
+        },
+        {
+          "query_id": "q07",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "shell_argv",
+              "cosine": 0.5490074362376824
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.4272477948261934
+            },
+            {
+              "id": "wrong_shell_escape",
+              "cosine": 0.42093821441492524
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.40974993863220155
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.34475613919021825
+            }
+          ]
+        },
+        {
+          "query_id": "q08",
+          "gold_rank": 3,
+          "top5": [
+            {
+              "id": "shell_argv",
+              "cosine": 0.5388509318296498
+            },
+            {
+              "id": "wrong_shell_escape",
+              "cosine": 0.537235254367712
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.4823680793269669
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.4436093640206365
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.3290913321748546
+            }
+          ]
+        },
+        {
+          "query_id": "q09",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "javascript_data",
+              "cosine": 0.29829499982831553
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.2791776874169417
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.2550996619954818
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.23003780553381425
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.19928337813622055
+            }
+          ]
+        },
+        {
+          "query_id": "q10",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.6591955861706716
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.5897415801638141
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.4832240414053131
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.4615136187229463
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.43388528978135
+            }
+          ]
+        },
+        {
+          "query_id": "q11",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "javascript_data",
+              "cosine": 0.6399036137079023
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.5131132767909254
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.47640194758714965
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.4660849138929303
+            },
+            {
+              "id": "regex_literal",
+              "cosine": 0.4521842781424638
+            }
+          ]
+        },
+        {
+          "query_id": "q12",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "yaml_safe",
+              "cosine": 0.503230602155113
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.4089303794473358
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.40800894593890225
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.3564082872935358
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.2742007677231918
+            }
+          ]
+        },
+        {
+          "query_id": "q13",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.39740669910491955
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.35817593272992254
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.3056223448241877
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.2960355705969907
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.29295325144456896
+            }
+          ]
+        },
+        {
+          "query_id": "q14",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "xml_entities",
+              "cosine": 0.6185730316665874
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.34610756987572283
+            },
+            {
+              "id": "yaml_safe",
+              "cosine": 0.32225788094403296
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.2986327878975166
+            },
+            {
+              "id": "archive_members",
+              "cosine": 0.2980062275307268
+            }
+          ]
+        },
+        {
+          "query_id": "q15",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.5296709199860131
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.5023792075355618
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.4118679272981552
+            },
+            {
+              "id": "yaml_safe",
+              "cosine": 0.3827936911109869
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.3821218294484917
+            }
+          ]
+        },
+        {
+          "query_id": "q16",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "password_hash",
+              "cosine": 0.5211262538554284
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.4065951990031355
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.3981769868338602
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.3979254823238547
+            },
+            {
+              "id": "exception_redaction",
+              "cosine": 0.38338414099216617
+            }
+          ]
+        },
+        {
+          "query_id": "q17",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "aead_encryption",
+              "cosine": 0.5405283181479967
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.511657126262973
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.48068392674555266
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.47836590196947826
+            },
+            {
+              "id": "exception_redaction",
+              "cosine": 0.44052957625573547
+            }
+          ]
+        },
+        {
+          "query_id": "q18",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "exception_redaction",
+              "cosine": 0.5099042323230462
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.5074679939391358
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.5074561337915534
+            },
+            {
+              "id": "password_hash",
+              "cosine": 0.3958321056292766
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.38395502762412875
+            }
+          ]
+        },
+        {
+          "query_id": "q19",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "public_signature",
+              "cosine": 0.5822226584692738
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.4706490290494442
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.43035069614699417
+            },
+            {
+              "id": "tls_verify",
+              "cosine": 0.39572426915723685
+            },
+            {
+              "id": "jwt_algorithms",
+              "cosine": 0.3738958335880383
+            }
+          ]
+        },
+        {
+          "query_id": "q20",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "random_token",
+              "cosine": 0.6291465397500074
+            },
+            {
+              "id": "password_hash",
+              "cosine": 0.439128067855661
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.3491902041385133
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.3281944197547662
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.3267177374280948
+            }
+          ]
+        },
+        {
+          "query_id": "q21",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "constant_compare",
+              "cosine": 0.6024521052966902
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.5141598291434782
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.34767461394206056
+            },
+            {
+              "id": "jwt_algorithms",
+              "cosine": 0.32224818706210323
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.3087338118197829
+            }
+          ]
+        },
+        {
+          "query_id": "q22",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "jwt_algorithms",
+              "cosine": 0.7615843839702999
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.4653163066945513
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.4379970774123655
+            },
+            {
+              "id": "constant_compare",
+              "cosine": 0.3758007484721144
+            },
+            {
+              "id": "tls_verify",
+              "cosine": 0.36369868822229906
+            }
+          ]
+        },
+        {
+          "query_id": "q23",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "redirect_local",
+              "cosine": 0.40519638454463713
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.4005534210620935
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.30918883491160337
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.27075580393338683
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.26459186982269334
+            }
+          ]
+        },
+        {
+          "query_id": "q24",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "redirect_local",
+              "cosine": 0.5343526896555465
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.4492921522164638
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.38292744406810714
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.35712303835709347
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.33416765505518237
+            }
+          ]
+        },
+        {
+          "query_id": "q25",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.5665797059862986
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.43090717161938785
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.4191246800240465
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.34118702091493247
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.3308265116254197
+            }
+          ]
+        },
+        {
+          "query_id": "q26",
+          "gold_rank": 3,
+          "top5": [
+            {
+              "id": "wrong_auth_numeric",
+              "cosine": 0.5910081478344599
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.270230440512969
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.2602353483958667
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.19637222625972808
+            },
+            {
+              "id": "jwt_algorithms",
+              "cosine": 0.18036669353899407
+            }
+          ]
+        },
+        {
+          "query_id": "q27",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "regex_literal",
+              "cosine": 0.6182063161637449
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.5393692535304212
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.5228333320344688
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.3306423610926773
+            },
+            {
+              "id": "wrong_shell_escape",
+              "cosine": 0.3191891902795517
+            }
+          ]
+        },
+        {
+          "query_id": "q28",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "regex_literal",
+              "cosine": 0.5996739335533653
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.48194741528387186
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.3932962676121045
+            },
+            {
+              "id": "xml_entities",
+              "cosine": 0.3886988515353686
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.38418971459111545
+            }
+          ]
+        },
+        {
+          "query_id": "q29",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "tls_verify",
+              "cosine": 0.5186569708395441
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.34166091077182
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.3401005872675442
+            },
+            {
+              "id": "random_token",
+              "cosine": 0.338377862845625
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.3207642467017092
+            }
+          ]
+        },
+        {
+          "query_id": "q30",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "exception_redaction",
+              "cosine": 0.43019937999705726
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.36998054872827724
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.3427891307189768
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.32992751393125713
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.26809256289110744
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "text-embedding-ada-002",
+      "status": "completed",
+      "dimensions": 1536,
+      "seconds": 27.297000000005937,
+      "usage": {
+        "calls": 3,
+        "failures": 0,
+        "prompt_tokens": 2156,
+        "total_tokens": 2156,
+        "cache_hits": 0,
+        "embedded_texts": 68,
+        "usage_missing_calls": 0
+      },
+      "n": 30,
+      "top1": 0.5333333333333333,
+      "recall3": 0.9666666666666667,
+      "mrr": 0.7472222222222222,
+      "rows": [
+        {
+          "query_id": "q01",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "sqlite_values",
+              "cosine": 0.8617936784751911
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.8070634820664052
+            },
+            {
+              "id": "postgres_values",
+              "cosine": 0.8042437010235053
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.7706599724697103
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.7410632589815643
+            }
+          ]
+        },
+        {
+          "query_id": "q02",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "postgres_values",
+              "cosine": 0.809208278096019
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.807537801343458
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.7908724884359373
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.7627863647670662
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.7603044936532904
+            }
+          ]
+        },
+        {
+          "query_id": "q03",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.8546928909982248
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.8216117705185849
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.7722319387932416
+            },
+            {
+              "id": "postgres_values",
+              "cosine": 0.7716976387514468
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.7681843627326965
+            }
+          ]
+        },
+        {
+          "query_id": "q04",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.8490967519189235
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.7927194245835043
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.7906570791125027
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.7901531482188119
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.7858802539575923
+            }
+          ]
+        },
+        {
+          "query_id": "q05",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "archive_members",
+              "cosine": 0.8603493212951572
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.7824836379453203
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.7754493894663843
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.7478078539278458
+            },
+            {
+              "id": "path_containment",
+              "cosine": 0.7390836005461906
+            }
+          ]
+        },
+        {
+          "query_id": "q06",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "path_containment",
+              "cosine": 0.807159719824322
+            },
+            {
+              "id": "temp_exclusive",
+              "cosine": 0.8003378061291893
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.7852518616612577
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.7563237951449785
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.7512178825989463
+            }
+          ]
+        },
+        {
+          "query_id": "q07",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "shell_argv",
+              "cosine": 0.8154199721571718
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.8098187118029676
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.7900514056231311
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.7869691972299699
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.781322755055922
+            }
+          ]
+        },
+        {
+          "query_id": "q08",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "shell_argv",
+              "cosine": 0.8299522713777281
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.8044985534364192
+            },
+            {
+              "id": "wrong_shell_escape",
+              "cosine": 0.7959995834046197
+            },
+            {
+              "id": "wrong_path_prefix",
+              "cosine": 0.7737518803262664
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.7529009115716042
+            }
+          ]
+        },
+        {
+          "query_id": "q09",
+          "gold_rank": 4,
+          "top5": [
+            {
+              "id": "url_scheme",
+              "cosine": 0.7751870870392893
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.772886786195654
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.7717966327070792
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.7677074206067511
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.7496696183818022
+            }
+          ]
+        },
+        {
+          "query_id": "q10",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "url_scheme",
+              "cosine": 0.8661042979217642
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.8648626251701451
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.819145035569654
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.807344730628728
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.8067928884588177
+            }
+          ]
+        },
+        {
+          "query_id": "q11",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "javascript_data",
+              "cosine": 0.8619244861776815
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.8326369608525134
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.8294592948467916
+            },
+            {
+              "id": "html_text",
+              "cosine": 0.8257794140749595
+            },
+            {
+              "id": "regex_literal",
+              "cosine": 0.79049252708322
+            }
+          ]
+        },
+        {
+          "query_id": "q12",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.8229707630700918
+            },
+            {
+              "id": "yaml_safe",
+              "cosine": 0.8198862762426218
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.8103412870407601
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.7687500849994349
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.7576342664480891
+            }
+          ]
+        },
+        {
+          "query_id": "q13",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.8255633025600656
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.8010689062684241
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.7854291592248057
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.7823192041878095
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.780225438841219
+            }
+          ]
+        },
+        {
+          "query_id": "q14",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "xml_entities",
+              "cosine": 0.854289930226513
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.7549420221942553
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.75101127020166
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.7503083296289513
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.750214139145004
+            }
+          ]
+        },
+        {
+          "query_id": "q15",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.8317860588446119
+            },
+            {
+              "id": "json_limits",
+              "cosine": 0.8052359098233687
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.8022911671834259
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.7945506647279758
+            },
+            {
+              "id": "xml_entities",
+              "cosine": 0.7765890417152455
+            }
+          ]
+        },
+        {
+          "query_id": "q16",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "password_hash",
+              "cosine": 0.8364844770026059
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.8086005321924117
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.8055612687061535
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.797726803411258
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.7972040448844004
+            }
+          ]
+        },
+        {
+          "query_id": "q17",
+          "gold_rank": 3,
+          "top5": [
+            {
+              "id": "aead_encryption",
+              "cosine": 0.824788646136142
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.8211725418690181
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.8208858077326922
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.8161078255771218
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.7796530157117697
+            }
+          ]
+        },
+        {
+          "query_id": "q18",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.8415499676360102
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.8409598345110254
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.8123383769102207
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.7953067405877889
+            },
+            {
+              "id": "password_hash",
+              "cosine": 0.7846815013813286
+            }
+          ]
+        },
+        {
+          "query_id": "q19",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "public_signature",
+              "cosine": 0.8528554804183228
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.8153426791632582
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.7992788425943798
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.7976996628418597
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.7822123721242412
+            }
+          ]
+        },
+        {
+          "query_id": "q20",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "password_hash",
+              "cosine": 0.8144935927369749
+            },
+            {
+              "id": "random_token",
+              "cosine": 0.8108382151616385
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.7845593863368462
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.7775481136350281
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.7711443628867258
+            }
+          ]
+        },
+        {
+          "query_id": "q21",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "constant_compare",
+              "cosine": 0.8235875850547131
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.806563075236925
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.7614472144296727
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.7288871303475106
+            },
+            {
+              "id": "wrong_crypto_base64",
+              "cosine": 0.7251346687591446
+            }
+          ]
+        },
+        {
+          "query_id": "q22",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "jwt_algorithms",
+              "cosine": 0.8749076556550605
+            },
+            {
+              "id": "public_signature",
+              "cosine": 0.8065947272063128
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.7826822825600742
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.775762231810828
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.767292965852092
+            }
+          ]
+        },
+        {
+          "query_id": "q23",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "redirect_local",
+              "cosine": 0.8176952938846493
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.7887027214444056
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.7684703943897083
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.7655496536626094
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.756999370441768
+            }
+          ]
+        },
+        {
+          "query_id": "q24",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "redirect_local",
+              "cosine": 0.8483884185655378
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.7912157566120636
+            },
+            {
+              "id": "url_scheme",
+              "cosine": 0.789945958488282
+            },
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.7887112725259804
+            },
+            {
+              "id": "wrong_html_url",
+              "cosine": 0.7636764417288388
+            }
+          ]
+        },
+        {
+          "query_id": "q25",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "csrf_mutation",
+              "cosine": 0.8450128724475986
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.814952491888149
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.8022939302092243
+            },
+            {
+              "id": "hmac_integrity",
+              "cosine": 0.7913168890422915
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.7889219696777815
+            }
+          ]
+        },
+        {
+          "query_id": "q26",
+          "gold_rank": 3,
+          "top5": [
+            {
+              "id": "wrong_auth_numeric",
+              "cosine": 0.8636424908581615
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.7582015533798208
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.7574852483396465
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.7424245029853066
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.7264143312413472
+            }
+          ]
+        },
+        {
+          "query_id": "q27",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "regex_resource",
+              "cosine": 0.8412941834227352
+            },
+            {
+              "id": "regex_literal",
+              "cosine": 0.8286700619297033
+            },
+            {
+              "id": "wrong_regex_timeout",
+              "cosine": 0.8246522831026801
+            },
+            {
+              "id": "wrong_pickle_filter",
+              "cosine": 0.7733994623787379
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.7634222896950995
+            }
+          ]
+        },
+        {
+          "query_id": "q28",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "regex_literal",
+              "cosine": 0.8302006378193324
+            },
+            {
+              "id": "regex_resource",
+              "cosine": 0.8151801968551082
+            },
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.7876962328324285
+            },
+            {
+              "id": "option_injection",
+              "cosine": 0.7746409584222979
+            },
+            {
+              "id": "javascript_data",
+              "cosine": 0.770779639312394
+            }
+          ]
+        },
+        {
+          "query_id": "q29",
+          "gold_rank": 1,
+          "top5": [
+            {
+              "id": "tls_verify",
+              "cosine": 0.8329559272769026
+            },
+            {
+              "id": "pickle_untrusted",
+              "cosine": 0.7988583596005969
+            },
+            {
+              "id": "redirect_local",
+              "cosine": 0.7873729746140882
+            },
+            {
+              "id": "ssrf_target",
+              "cosine": 0.7817657620920827
+            },
+            {
+              "id": "aead_encryption",
+              "cosine": 0.7717021574717658
+            }
+          ]
+        },
+        {
+          "query_id": "q30",
+          "gold_rank": 2,
+          "top5": [
+            {
+              "id": "sql_identifiers",
+              "cosine": 0.7746047986311971
+            },
+            {
+              "id": "exception_redaction",
+              "cosine": 0.7721785132756067
+            },
+            {
+              "id": "wrong_sql_question",
+              "cosine": 0.7716391877466993
+            },
+            {
+              "id": "sqlite_values",
+              "cosine": 0.7589124533255742
+            },
+            {
+              "id": "object_authorization",
+              "cosine": 0.738587853337626
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

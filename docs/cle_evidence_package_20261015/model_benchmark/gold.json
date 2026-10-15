@@ -1,1 +1,382 @@
-@docs/cle_evidence_package_20261015/model_benchmark/gold.json
+{
+  "version": "self_authored_security_v1",
+  "created_at": "2026-09-23T16:12:17.918125+00:00",
+  "provenance": "Self-authored before any embedding responses; no PLT, Plus, official benchmark or generated execution results.",
+  "selection_rule": "Compare recall@3 first, MRR second, top1 third; tie selects lower official documented input price. No revisions after responses.",
+  "queries": [
+    {
+      "id": "q01",
+      "text": "A Python report looks up a customer by an arbitrary display name using sqlite3.execute. Apostrophes must remain valid. How should the WHERE value enter the query?",
+      "relevant_ids": [
+        "sqlite_values"
+      ]
+    },
+    {
+      "id": "q02",
+      "text": "The PostgreSQL Python service uses psycopg and receives an untrusted surname. It currently formats that surname into a SELECT predicate. Which database binding rule fits?",
+      "relevant_ids": [
+        "postgres_values"
+      ]
+    },
+    {
+      "id": "q03",
+      "text": "A reporting API lets users select one of three allowed table names. Binding the table identifier as a SQL value does not work. Preserve selection among the allowed tables.",
+      "relevant_ids": [
+        "sql_identifiers"
+      ]
+    },
+    {
+      "id": "q04",
+      "text": "A Python download endpoint joins a submitted relative filename to a document root. Dot-dot components and links must not escape the permitted tree; ordinary nested files must work.",
+      "relevant_ids": [
+        "path_containment"
+      ]
+    },
+    {
+      "id": "q05",
+      "text": "A ZIP import extracts user archives under a chosen directory. Member filenames can be absolute or traverse upward. Existing unrelated files outside the destination must be untouched.",
+      "relevant_ids": [
+        "archive_members"
+      ]
+    },
+    {
+      "id": "q06",
+      "text": "The program chooses a predictable temporary file and then opens it for privileged output. Another local user can place a symbolic link first. Which creation strategy addresses the race?",
+      "relevant_ids": [
+        "temp_exclusive"
+      ]
+    },
+    {
+      "id": "q07",
+      "text": "A Python utility runs a fixed executable with a user-supplied search phrase. It needs no pipelines or shell expansion. Metacharacters in the phrase should stay literal.",
+      "relevant_ids": [
+        "shell_argv"
+      ]
+    },
+    {
+      "id": "q08",
+      "text": "The subprocess already uses shell=False and a list. The user-controlled filename may start with a dash, which grep interprets as an option. What additional boundary is missing?",
+      "relevant_ids": [
+        "option_injection"
+      ]
+    },
+    {
+      "id": "q09",
+      "text": "A web page inserts a visitor biography between ordinary HTML paragraph tags. The biography is plain text, not a URL, script, or permitted markup.",
+      "relevant_ids": [
+        "html_text"
+      ]
+    },
+    {
+      "id": "q10",
+      "text": "A profile template correctly escapes HTML attributes but lets a visitor choose the href target. Script schemes still execute when clicked. How should the link be constrained?",
+      "relevant_ids": [
+        "url_scheme"
+      ]
+    },
+    {
+      "id": "q11",
+      "text": "A server embeds a user string into a JavaScript literal inside an inline script. HTML text escaping broke quoting and did not prevent closing the script tag.",
+      "relevant_ids": [
+        "javascript_data"
+      ]
+    },
+    {
+      "id": "q12",
+      "text": "A configuration upload in Python uses PyYAML to decode mappings and lists. Custom object constructors are not part of the format. Untrusted tags must not instantiate classes.",
+      "relevant_ids": [
+        "yaml_safe"
+      ]
+    },
+    {
+      "id": "q13",
+      "text": "A network endpoint accepts bytes said to contain Python objects. The service can change its public wire format to simple dictionaries and lists. It must prevent arbitrary code during decoding.",
+      "relevant_ids": [
+        "pickle_untrusted"
+      ]
+    },
+    {
+      "id": "q14",
+      "text": "An XML upload parser resolves a DTD entity referring to a local file. The application only needs ordinary document elements, not DTD expansion or external resource access.",
+      "relevant_ids": [
+        "xml_entities"
+      ]
+    },
+    {
+      "id": "q15",
+      "text": "A JSON-only endpoint never uses pickle or YAML. Very deep and huge JSON documents consume excessive CPU and memory before application validation.",
+      "relevant_ids": [
+        "json_limits"
+      ]
+    },
+    {
+      "id": "q16",
+      "text": "A login system must store verifiers for human-chosen passwords. It should survive a database leak and verify future login attempts without recovering the original password.",
+      "relevant_ids": [
+        "password_hash"
+      ]
+    },
+    {
+      "id": "q17",
+      "text": "Two backend services share a secret and need to reject modified message bytes. Confidentiality is not required and they do not have a public-key infrastructure.",
+      "relevant_ids": [
+        "hmac_integrity"
+      ]
+    },
+    {
+      "id": "q18",
+      "text": "The service must hide a record from observers and detect tampering. It encrypts many records using one symmetric key and needs a safe mode with authentication.",
+      "relevant_ids": [
+        "aead_encryption"
+      ]
+    },
+    {
+      "id": "q19",
+      "text": "Untrusted clients need to verify that a software release was signed by the publisher. Clients must not receive the secret signing material or gain power to sign releases.",
+      "relevant_ids": [
+        "public_signature"
+      ]
+    },
+    {
+      "id": "q20",
+      "text": "A Python password-reset link contains a token that an attacker should not predict after observing earlier tokens. The token is not a simulation random seed.",
+      "relevant_ids": [
+        "random_token"
+      ]
+    },
+    {
+      "id": "q21",
+      "text": "The application already computes the correct HMAC digest. It compares the received tag character by character and returns at the first mismatch.",
+      "relevant_ids": [
+        "constant_compare"
+      ]
+    },
+    {
+      "id": "q22",
+      "text": "A JWT verifier reads the algorithm name from the untrusted token header and configures verification from that value. The issuer and verification key are already known.",
+      "relevant_ids": [
+        "jwt_algorithms"
+      ]
+    },
+    {
+      "id": "q23",
+      "text": "An image proxy fetches user-specified HTTP URLs. Requests to loopback, private addresses and cloud metadata must be blocked, including redirects and DNS changes.",
+      "relevant_ids": [
+        "ssrf_target"
+      ]
+    },
+    {
+      "id": "q24",
+      "text": "After sign-in, a web app redirects to a supplied next parameter. Only routes on this same application may be used; absolute or protocol-relative external destinations are unwanted.",
+      "relevant_ids": [
+        "redirect_local"
+      ]
+    },
+    {
+      "id": "q25",
+      "text": "A cookie-authenticated web endpoint changes a mailing address on POST. A different website can submit the form using the victim browser. The application must keep legitimate updates working.",
+      "relevant_ids": [
+        "csrf_mutation"
+      ]
+    },
+    {
+      "id": "q26",
+      "text": "A logged-in user requests invoice number 817. The database lookup validates that the ID is numeric, but the invoice may belong to another customer.",
+      "relevant_ids": [
+        "object_authorization"
+      ]
+    },
+    {
+      "id": "q27",
+      "text": "A search function wants to find a user-supplied literal fragment with Python re, but punctuation in the fragment currently becomes regex operators.",
+      "relevant_ids": [
+        "regex_literal"
+      ]
+    },
+    {
+      "id": "q28",
+      "text": "Users intentionally supply full regular expressions for a matching service. Nested quantifiers on adversarial text hang the engine. Treating patterns as literal text would violate the API.",
+      "relevant_ids": [
+        "regex_resource"
+      ]
+    },
+    {
+      "id": "q29",
+      "text": "A Python HTTPS client disables certificate verification to bypass local configuration errors. It communicates with a known external API and should authenticate the remote endpoint.",
+      "relevant_ids": [
+        "tls_verify"
+      ]
+    },
+    {
+      "id": "q30",
+      "text": "A production API catches a database exception and sends its raw message to the caller. That message includes host names and the SQL statement. Operators still need diagnostic details.",
+      "relevant_ids": [
+        "exception_redaction"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "sqlite_values",
+      "text": "For sqlite3 statements, use question-mark parameter placeholders and pass values separately to execute. Preserve literal apostrophes. This rule concerns SQL data values, not table names or filesystem names."
+    },
+    {
+      "id": "postgres_values",
+      "text": "With psycopg use percent-s placeholders and a separate parameter sequence for PostgreSQL values. Do not substitute SQLite question-mark syntax and do not manually quote the placeholder."
+    },
+    {
+      "id": "sql_identifiers",
+      "text": "SQL identifiers require a fixed identifier allowlist or the driver identifier composition API. Values still use binding. A value placeholder cannot stand for a table or column identifier."
+    },
+    {
+      "id": "path_containment",
+      "text": "Resolve the destination against the trusted root and check path-aware containment after normalization and symlink resolution. Do not use raw string startswith for filesystem boundaries. Assess link races separately."
+    },
+    {
+      "id": "archive_members",
+      "text": "Validate each archive member destination for traversal and absolute paths before extraction. Enforce containment under the extraction root and handle symlink entries explicitly. Checking only the archive filename is insufficient."
+    },
+    {
+      "id": "temp_exclusive",
+      "text": "Create temporary files atomically with tempfile.mkstemp or an equivalent exclusive secure primitive. Keep the returned descriptor rather than checking existence and reopening a guessed filename."
+    },
+    {
+      "id": "shell_argv",
+      "text": "For subprocess.run with a fixed executable, pass a list of arguments and keep shell=False. Do not build a command string. Check separately whether the executable interprets leading option characters."
+    },
+    {
+      "id": "option_injection",
+      "text": "Argument arrays avoid shell parsing but not executable option parsing. For tools that support it, put -- before untrusted positional operands or use an explicit operand option. Preserve legitimate filenames."
+    },
+    {
+      "id": "html_text",
+      "text": "Escape untrusted content for the HTML text context with template autoescaping or html.escape. Do not treat it as trusted markup. Context-specific encoding differs for URLs and JavaScript."
+    },
+    {
+      "id": "url_scheme",
+      "text": "For untrusted hyperlink destinations, validate the parsed scheme against allowed schemes such as https and http, then perform HTML attribute escaping. HTML escaping alone does not make javascript URLs safe."
+    },
+    {
+      "id": "javascript_data",
+      "text": "Avoid inline executable contexts when possible. Serialize data with a JSON encoder designed for safe HTML embedding and escape script-closing delimiters. HTML text escaping alone is not JavaScript string encoding."
+    },
+    {
+      "id": "yaml_safe",
+      "text": "Use yaml.safe_load for an untrusted YAML subset and validate the resulting data schema. Avoid unsafe Loader and arbitrary constructors. Preserve normal mapping and list values."
+    },
+    {
+      "id": "pickle_untrusted",
+      "text": "Never deserialize untrusted pickle bytes. Replace pickle with a non-executable interchange format such as JSON plus schema validation when the contract permits. Authentication does not make arbitrary external object graphs safe by itself."
+    },
+    {
+      "id": "xml_entities",
+      "text": "Disable external entity resolution and DTD processing in the XML parser, or use a hardened parser appropriate to the language. Also constrain entity expansion and resource use. Escaping output does not prevent XXE during parsing."
+    },
+    {
+      "id": "json_limits",
+      "text": "Bound request size and nesting or parser resource consumption for untrusted JSON. JSON avoids object constructors but is not inherently immune to resource exhaustion. Apply limits before expensive decoding where possible."
+    },
+    {
+      "id": "password_hash",
+      "text": "Use an adaptive password hashing function with a unique salt and suitable work factor, such as Argon2id, scrypt, or bcrypt. Fast general-purpose hashes and reversible encryption are not password storage substitutes."
+    },
+    {
+      "id": "hmac_integrity",
+      "text": "Use HMAC with a secret key for message integrity and authenticity between parties sharing that key. Verify tags with constant-time comparison. Hashing or base64 encoding without a key does not authenticate a message."
+    },
+    {
+      "id": "aead_encryption",
+      "text": "Use authenticated encryption such as AES-GCM or ChaCha20-Poly1305 with the required unique nonce policy. Verify authentication before releasing plaintext. A signature or bare hash alone provides no confidentiality."
+    },
+    {
+      "id": "public_signature",
+      "text": "Use a digital signature with a publisher-held private key and distribute only the public verification key. A shared-secret MAC would let every verifier forge signatures. Verify the exact intended bytes and algorithm."
+    },
+    {
+      "id": "random_token",
+      "text": "Generate authentication and reset tokens with a cryptographically secure random source such as secrets.token_urlsafe. The random module is for simulation and can be predictable; enforce expiry and single use separately."
+    },
+    {
+      "id": "constant_compare",
+      "text": "Use hmac.compare_digest or an equivalent constant-time comparison for secret-dependent authentication tags after validating representations. Do not replace cryptographic verification with ordinary early-exit string equality."
+    },
+    {
+      "id": "jwt_algorithms",
+      "text": "Configure JWT verification with a fixed allowed algorithm set and appropriate key type, independent of the token header. Verify issuer, audience and expiry as required. Decoding claims is not signature verification."
+    },
+    {
+      "id": "ssrf_target",
+      "text": "SSRF defenses validate scheme and resolved destinations, exclude internal address ranges, and revalidate every redirect. Account for DNS rebinding and enforce outbound network policy. URL HTML escaping does not constrain network destinations."
+    },
+    {
+      "id": "redirect_local",
+      "text": "For post-authentication redirects, accept verified local paths or allowlisted same-origin destinations. Reject protocol-relative and foreign-host URLs after consistent parsing. Do not confuse open redirects with server-side URL fetching."
+    },
+    {
+      "id": "csrf_mutation",
+      "text": "Protect state-changing cookie-authenticated requests using validated anti-CSRF tokens and suitable origin checks; SameSite cookies provide an additional layer. Authentication cookies alone do not prove intentional action."
+    },
+    {
+      "id": "object_authorization",
+      "text": "Enforce object-level authorization by binding database access to the authenticated principal or checking ownership/permissions on every requested object. Input validation and authentication alone do not prevent IDOR."
+    },
+    {
+      "id": "regex_literal",
+      "text": "Use re.escape for a literal fragment before embedding it in a regex, or use ordinary substring matching when appropriate. Do not escape a pattern when the public contract intentionally allows full regex syntax."
+    },
+    {
+      "id": "regex_resource",
+      "text": "For intentionally supported regex syntax, manage catastrophic backtracking with a bounded-time or non-backtracking engine and input/resource limits. Python standard-library re does not accept a timeout keyword; re.escape would change the contract."
+    },
+    {
+      "id": "tls_verify",
+      "text": "Keep TLS certificate and hostname verification enabled. Fix the trust store or configure the correct CA bundle instead of verify=False. Encryption without authenticated peer identity permits interception."
+    },
+    {
+      "id": "exception_redaction",
+      "text": "Return a stable minimal public error while recording diagnostic detail in access-controlled logs with secret redaction. Preserve error semantics without exposing internal connection strings, credentials or queries to clients."
+    },
+    {
+      "id": "wrong_sql_question",
+      "text": "Use question-mark placeholders with every database driver including psycopg; all Python SQL APIs accept identical syntax."
+    },
+    {
+      "id": "wrong_path_prefix",
+      "text": "After joining the filename, require path.startswith(root) to prove directory containment; sibling prefixes and symbolic links need no further handling."
+    },
+    {
+      "id": "wrong_crypto_base64",
+      "text": "Base64 encode confidential records and append a SHA256 digest to provide encryption and secret-key authentication."
+    },
+    {
+      "id": "wrong_pickle_filter",
+      "text": "For remote pickle objects, reject the substring eval before pickle.loads; ordinary object constructors cannot otherwise execute code."
+    },
+    {
+      "id": "wrong_regex_timeout",
+      "text": "Pass timeout=1 directly to Python standard-library re.search to prevent catastrophic backtracking while preserving arbitrary regex syntax."
+    },
+    {
+      "id": "wrong_shell_escape",
+      "text": "Always shell-quote every argv element even with shell=False and a list; literal quotes will be stripped by subprocess."
+    },
+    {
+      "id": "wrong_html_url",
+      "text": "HTML-escape a URL attribute and allow any scheme because escaping alone prevents javascript links."
+    },
+    {
+      "id": "wrong_auth_numeric",
+      "text": "For invoice authorization, require the invoice identifier to be decimal digits; this ensures only its owner can access it."
+    }
+  ],
+  "models": [
+    "text-embedding-3-large",
+    "text-embedding-3-small",
+    "text-embedding-ada-002"
+  ],
+  "limitations": [
+    "Small self-authored sanity benchmark; semantic proximity cannot establish factual correctness.",
+    "Does not estimate downstream JointPass or generalization.",
+    "One cold batch sequence per model; latency is descriptive only."
+  ]
+}
