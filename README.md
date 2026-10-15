@@ -42,6 +42,7 @@
    - [重构方法设计说明](简介论文修改方案/重构方法设计说明.docx)：新方法（安全经验生命周期 + 验证驱动主动回放）的设计规范，`methods/sct_lifecycle_replay/` 的实现依据。
    - [实验运行区说明](docs/translation_work.md)：运行结果、缓存、诊断和临时文件的分类与清理规则。
    - [Plus 冻结经验双臂评测](docs/plus_frozen_comparison_20260922.md)：完整冻结库、最新层次检索、单 prompt/四步生成及任务内修复的对比口径。
+   - [CLE 网页历史数据快照（2026-10-15）](docs/cle_web_history_20261015/README.md)：35 个 CLE 网页运行记录的大小、摘要元数据、文件哈希和未上传原件说明；完整运行区仍按规范保存在本地 `translation_work/`。
 
 ## 项目文件总索引
 
