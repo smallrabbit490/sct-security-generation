@@ -17,7 +17,7 @@
 | --- | --- |
 | `inventory_20261015.md` | 六类材料的状态、缺失项、原始路径和 Git 路径 |
 | `source_task_index.jsonl` | 从 1939 张卡的 `source.task_id` 聚合出的脱敏来源索引，不含题目代码正文 |
-| `experience_pool_1939.jsonl` | 原运行区经验卡原件副本；SHA256 为 `a643c07d4b847e4d40cfbef3e8edbd2158d73618077093a70e2bb75b1e7a0dd9` |
+| `experience_pool_1939.jsonl` | 原运行区经验卡内容副本；运行区原文件 SHA256 为 `a643c07d4b847e4d40cfbef3e8edbd2158d73618077093a70e2bb75b1e7a0dd9`，Git 提交采用 LF 换行 |
 | `model_benchmark/` | 30 查询/38 卡小实验的 `preregistered.json`、`gold.json`、`results.json` 和中文报告 |
 | `retrieval_cache_schema.md` | 实际 SQLite 表结构和保存边界 |
 | `source_materials.md` | 来源数据、运行元数据和代码快照的关联说明 |

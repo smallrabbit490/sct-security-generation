@@ -8,7 +8,7 @@ paired 273 的 `run_metadata.json` 记录了以下输入及 SHA256：
 
 | 输入 | SHA256 |
 | --- | --- |
-| 英文经验池（运行区） | `a643c07d4b847e4d40cfbef3e8edbd2158d73618077093a70e2bb75b1e7a0dd9` |
+| 英文经验池（运行区） | 原文件 SHA256 `a643c07d4b847e4d40cfbef3e8edbd2158d73618077093a70e2bb75b1e7a0dd9`；提交副本为 LF 换行，Git blob SHA256 `f5d2cd505fe452b94fdacb34770fb5bcb486d0be483b66f8d522b025647c912b` |
 | `data/external/secodeplt/derived_metadata/family_manifest.json` | `6bca9c7eee8a1e93d11256693b24eff73626854bcddcb52ba8bf65008ecf5267` |
 | `data/external/secodeplt/secodeplt/data.json` | `4779e09d14fb2a2a1a6912cca9e6403fea02470b9963b7d5a438d371c9416839` |
 

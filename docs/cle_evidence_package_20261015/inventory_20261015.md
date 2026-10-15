@@ -20,7 +20,7 @@
 
 ## 关键数量与哈希
 
-- 两份 1939 卡 JSONL：1939 行，JSON 解析错误 0；SHA256：`a643c07d4b847e4d40cfbef3e8edbd2158d73618077093a70e2bb75b1e7a0dd9`。
+- 两份运行区 1939 卡 JSONL：1939 行，JSON 解析错误 0；原文件（CRLF）SHA256：`a643c07d4b847e4d40cfbef3e8edbd2158d73618077093a70e2bb75b1e7a0dd9`。Git 提交中的 LF 规范化 blob SHA256 为 `f5d2cd505fe452b94fdacb34770fb5bcb486d0be483b66f8d522b025647c912b`。
 - paired 273：运行元数据记录 273 个 replay task，`hier_llm` 与 `semantic_llm` 两臂；不是原题 100% 检索准确率实验。
 - retrieval_hit_accuracy_v3：`formal_rows=1194`，`human_review_required=true`，`memory_updates=false`，`final_test_access=false`，`dynamic_validation=unmeasured`。
 - model benchmark：30 条查询、38 张卡，三个模型各嵌入 68 条文本；固定 gold SHA256 为 `2f10aa2a9cc10c0249346c549a3ee1f87fe1f2d433f8d8e944329a3278367408`。
