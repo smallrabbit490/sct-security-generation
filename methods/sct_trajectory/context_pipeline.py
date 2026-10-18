@@ -20,6 +20,13 @@ CONTRACT_POLICY = (
     "to the current contract; passing their source task does not establish general validity. "
 )
 
+# 所有实验臂共用的输出格式约束；保持严格解析，不修补模型输出或吞掉格式错误。
+JSON_FORMAT_POLICY = (
+    'JSON strings must escape every literal backslash as two backslashes, including regexes and paths. '
+    'Do not write raw regex escapes such as backslash-d inside JSON strings. '
+    'Valid example: ' + json.dumps({'regex': r'\d+\s', 'path': r'C:\temp'}) + '\n'
+)
+
 
 def safe_feedback(evidence, internal=None):
     """修复阶段只回流测量状态；不传隐藏测试输入、期望值或异常原文，不更新库。"""
@@ -48,7 +55,7 @@ def experience_text(cards: list[dict]) -> str:
 def analysis_prompt(task, reference='', evidence=None, *, initial=None, cards=None):
     """初析只用契约与许可证据；复析加入具体经验，检查 source/sink/API 的适用性。"""
     stage = 'experience-conditioned reanalysis' if initial is not None else 'initial task threat analysis'
-    prompt = (f'Perform {stage}. {CONTRACT_POLICY}\n'
+    prompt = (f'Perform {stage}. {CONTRACT_POLICY}\n' + JSON_FORMAT_POLICY +
               'Return strict JSON with list fields vulnerability_hypothesis, functional_invariants, '
               'sources, sinks, sensitive_operations, api_assumptions, data_flows, '
               'attack_surface, safe_actions, uncertainty. Ground analysis in the actual task type and interface; '
@@ -178,7 +185,7 @@ def run_context_pipeline(task, cards, *, requester, reference_code='', previous_
     # 原复析完整留审计，既不传递拒绝理由，也不把推断当验证证据。
     if reanalyze and len(selected) != len(retrieved):
         analysis = initial
-    plan_prompt = ('Plan the implementation. ' + CONTRACT_POLICY + '\n'
+    plan_prompt = ('Plan the implementation. ' + CONTRACT_POLICY + '\n' + JSON_FORMAT_POLICY +
                    'Reanalyze the task using only the adopted experiences below and the clean task analysis. '
                    'Check task type, API semantics, applicability and exclusions before specifying implementation actions. '
                    'For existing code locate actual defects and make necessary changes; otherwise plan a complete implementation. '

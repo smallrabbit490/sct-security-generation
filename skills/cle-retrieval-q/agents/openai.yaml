@@ -1,0 +1,4 @@
+interface:
+  display_name: "CLE 检索与 Q 探索"
+  short_description: "分析CLE候选检索、人工适用性标签及Q改选采用的真实作用链"
+  default_prompt: "使用 $cle-retrieval-q 完成当前CLE任务，依据本项目记录选择实际入口并保留证据边界。"

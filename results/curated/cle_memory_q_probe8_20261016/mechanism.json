@@ -1,0 +1,2494 @@
+[
+  {
+    "task_id": "126",
+    "family_id": "ff83c3274cf8",
+    "cwe": "179",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 26,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "60723a5ac172c0d1c10fb2b73dbb5ac4b5beda300e7a31ba460cc96a5332e2d0",
+    "eligible_count": 2,
+    "trained_candidates": 5,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-179-1624482322512773181",
+        "pitfall-179-5856665165081377012"
+      ],
+      "Q2": [
+        "hint-179-1624482322512773181",
+        "pitfall-179-5856665165081377012"
+      ],
+      "Q3": [
+        "hint-179-1624482322512773181",
+        "pitfall-179-5856665165081377012"
+      ]
+    },
+    "actual_ranked_ids": [
+      "hint-179-1624482322512773181",
+      "pitfall-179-5856665165081377012"
+    ],
+    "delivered_ids": [
+      "hint-179-1624482322512773181",
+      "pitfall-179-5856665165081377012"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "hint-179-1624482322512773181",
+      "pitfall-179-5856665165081377012"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "126",
+    "family_id": "ff83c3274cf8",
+    "cwe": "179",
+    "arm": "Q2",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "135e84ac203fe4fc8e13937c19dbe4aa2cf4d9fd29208f3b9c3fecdea4597c64",
+    "eligible_count": 0,
+    "trained_candidates": 5,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "153",
+    "family_id": "a97cf683d8ab",
+    "cwe": "200",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 31,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "7fea8cd0bb1ad4daa7a934d0be2412fdf8ab9f55ddcfff9934ed96119c5f1858",
+    "eligible_count": 0,
+    "trained_candidates": 11,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "153",
+    "family_id": "a97cf683d8ab",
+    "cwe": "200",
+    "arm": "Q2",
+    "attempt": 1,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "5d31a1184c364bcab31633bb4152ee403e5bb3c076fc2ca80d3aa344623e1f90",
+    "eligible_count": 1,
+    "trained_candidates": 9,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-200-6571837767319683435"
+      ],
+      "Q2": [
+        "pitfall-200-6571837767319683435"
+      ],
+      "Q3": [
+        "pitfall-200-6571837767319683435"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-200-6571837767319683435"
+    ],
+    "delivered_ids": [
+      "pitfall-200-6571837767319683435"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "pitfall-200-6571837767319683435"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "126",
+    "family_id": "ff83c3274cf8",
+    "cwe": "179",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 26,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "c6dfc27b948302f9ff3fadeb1fb46fffbf3267005e6a5cdc1a051dad502f0b4c",
+    "eligible_count": 13,
+    "trained_candidates": 5,
+    "trained_eligible": 3,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-179-1624482322512773181",
+        "hint-179-2641057612355738641",
+        "pitfall-179-5856665165081377012"
+      ],
+      "Q2": [
+        "hint-179-1624482322512773181",
+        "pitfall-179-7678064253295235050",
+        "hint-179-228404689983239309"
+      ],
+      "Q3": [
+        "hint-179-1624482322512773181",
+        "hint-179-2641057612355738641",
+        "pitfall-179-5856665165081377012"
+      ]
+    },
+    "actual_ranked_ids": [
+      "hint-179-1624482322512773181",
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012"
+    ],
+    "delivered_ids": [
+      "hint-179-1624482322512773181",
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "hint-179-1624482322512773181",
+      "hint-179-2641057612355738641"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [
+      "hint-179-2641057612355738641"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "126",
+    "family_id": "ff83c3274cf8",
+    "cwe": "179",
+    "arm": "Q1",
+    "attempt": 1,
+    "candidate_count": 25,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "f662b2c14a278810ff506e4a487f59d16f8c112a3f88874a3a0a9206f77fc2af",
+    "eligible_count": 25,
+    "trained_candidates": 5,
+    "trained_eligible": 5,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-179-2641057612355738641",
+        "pitfall-179-5856665165081377012",
+        "hint-179-1624482322512773181"
+      ],
+      "Q2": [
+        "pitfall-179-7678064253295235050",
+        "blind-179-2495142057914515900",
+        "hint-179-228404689983239309"
+      ],
+      "Q3": [
+        "hint-179-8239095006744349880",
+        "hint-179-2641057612355738641",
+        "blind-179-2495142057914515900"
+      ]
+    },
+    "actual_ranked_ids": [
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012",
+      "hint-179-1624482322512773181"
+    ],
+    "delivered_ids": [
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012",
+      "hint-179-1624482322512773181"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "hint-179-1624482322512773181",
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "126",
+    "family_id": "ff83c3274cf8",
+    "cwe": "179",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 25,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "f8c13d0e0cbf14d54072157a4a05c2b23776ddd9bf8ddae676fb0230f9629a17",
+    "eligible_count": 4,
+    "trained_candidates": 3,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-179-1624482322512773181",
+        "hint-179-2641057612355738641",
+        "pitfall-179-5856665165081377012"
+      ],
+      "Q2": [
+        "hint-179-1624482322512773181",
+        "pitfall-179-5856665165081377012",
+        "blind-179-83430041598943990"
+      ],
+      "Q3": [
+        "hint-179-1624482322512773181",
+        "hint-179-2641057612355738641",
+        "pitfall-179-5856665165081377012"
+      ]
+    },
+    "actual_ranked_ids": [
+      "hint-179-1624482322512773181",
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012"
+    ],
+    "delivered_ids": [
+      "hint-179-1624482322512773181",
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "hint-179-1624482322512773181",
+      "hint-179-2641057612355738641",
+      "pitfall-179-5856665165081377012"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "126",
+    "family_id": "ff83c3274cf8",
+    "cwe": "179",
+    "arm": "Q3",
+    "attempt": 1,
+    "candidate_count": 27,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "250da072fad889758a7aa921d19fe1126a562a293a185a5b93342e441911c949",
+    "eligible_count": 0,
+    "trained_candidates": 4,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "153",
+    "family_id": "a97cf683d8ab",
+    "cwe": "200",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "81f7cd140c446b1aea7f64d9ae6286ac8fad22d3f72a4d906c48c36ce6f2640e",
+    "eligible_count": 0,
+    "trained_candidates": 0,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "153",
+    "family_id": "a97cf683d8ab",
+    "cwe": "200",
+    "arm": "Q3",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "f2982d4c5d31eccf447a4d0fadcb7108536a3e8b8e5e13cb366e0302127aed18",
+    "eligible_count": 2,
+    "trained_candidates": 5,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-200-6571837767319683435",
+        "hint-200-5710611321666430154"
+      ],
+      "Q2": [
+        "pitfall-200-6571837767319683435",
+        "hint-200-5710611321666430154"
+      ],
+      "Q3": [
+        "pitfall-200-6571837767319683435",
+        "hint-200-5710611321666430154"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-200-6571837767319683435",
+      "hint-200-5710611321666430154"
+    ],
+    "delivered_ids": [
+      "pitfall-200-6571837767319683435",
+      "hint-200-5710611321666430154"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "pitfall-200-6571837767319683435",
+      "hint-200-5710611321666430154"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "345",
+    "family_id": "c368fe2fb12f",
+    "cwe": "327",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 31,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "6959a3dd83bffd7e470be53831d735badcb84544c8642f1e544ad0f3dfee290f",
+    "eligible_count": 0,
+    "trained_candidates": 16,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "345",
+    "family_id": "c368fe2fb12f",
+    "cwe": "327",
+    "arm": "Q1",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "6f8493d4f4579a4e05c12975d71d336f568379b08a80a9f56d75ade274f14d0c",
+    "eligible_count": 0,
+    "trained_candidates": 15,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "345",
+    "family_id": "c368fe2fb12f",
+    "cwe": "327",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "3e8c4ec4312d4a49813d7103577b3efefccdf0f997340f034067454a7e22db46",
+    "eligible_count": 6,
+    "trained_candidates": 8,
+    "trained_eligible": 1,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-327-2516411163311597246",
+        "hint-327-4528130991497775195",
+        "pitfall-327-1647608197379019549"
+      ],
+      "Q2": [
+        "hint-327-4528130991497775195",
+        "pitfall-327-2516411163311597246",
+        "pitfall-327-1647608197379019549"
+      ],
+      "Q3": [
+        "pitfall-327-2516411163311597246",
+        "pitfall-327-1647608197379019549",
+        "blind-327-4603067818071552262"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-327-2516411163311597246",
+      "pitfall-327-1647608197379019549",
+      "blind-327-4603067818071552262"
+    ],
+    "delivered_ids": [
+      "pitfall-327-2516411163311597246",
+      "pitfall-327-1647608197379019549",
+      "blind-327-4603067818071552262"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "blind-327-4603067818071552262"
+    ],
+    "removed_ids": [
+      "hint-327-4528130991497775195"
+    ],
+    "adopted_ids": [
+      "pitfall-327-2516411163311597246",
+      "blind-327-4603067818071552262"
+    ],
+    "new_cards_adopted": [
+      "blind-327-4603067818071552262"
+    ],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "pitfall-327-1647608197379019549"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "345",
+    "family_id": "c368fe2fb12f",
+    "cwe": "327",
+    "arm": "Q3",
+    "attempt": 1,
+    "candidate_count": 27,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "9157b056f7bf68368d93b1569a0b42e1c1f29949a7214196e1b536fa3c4499fe",
+    "eligible_count": 27,
+    "trained_candidates": 8,
+    "trained_eligible": 8,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-327-2516411163311597246",
+        "hint-327-4528130991497775195",
+        "blind-327-4603067818071552262"
+      ],
+      "Q2": [
+        "hint-327-4528130991497775195",
+        "pitfall-327-2516411163311597246",
+        "pitfall-327-2138602210193468302"
+      ],
+      "Q3": [
+        "pitfall-327-2516411163311597246",
+        "blind-327-4603067818071552262",
+        "pitfall-327-800379591047543034"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-327-2516411163311597246",
+      "blind-327-4603067818071552262",
+      "pitfall-327-800379591047543034"
+    ],
+    "delivered_ids": [
+      "pitfall-327-2516411163311597246",
+      "blind-327-4603067818071552262",
+      "pitfall-327-800379591047543034"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "pitfall-327-800379591047543034"
+    ],
+    "removed_ids": [
+      "hint-327-4528130991497775195"
+    ],
+    "adopted_ids": [
+      "pitfall-327-2516411163311597246",
+      "blind-327-4603067818071552262"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "pitfall-327-800379591047543034"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "153",
+    "family_id": "a97cf683d8ab",
+    "cwe": "200",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "56facd093e3452f4d3581afaed9c6e1cdc7d04c6d14e3fc6627e2c5740f45ffc",
+    "eligible_count": 0,
+    "trained_candidates": 9,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "153",
+    "family_id": "a97cf683d8ab",
+    "cwe": "200",
+    "arm": "Q1",
+    "attempt": 1,
+    "candidate_count": 0,
+    "retrieval_status": "error",
+    "retrieval_errors": [
+      "embedding_input_budget_exceeded"
+    ],
+    "trace_source": "generation.stages.retrieval",
+    "query_hash": "77e36713362044fe2f04e56949b35f6b41a6b13ca15c05bf7a9f72515aa38f9b",
+    "eligible_count": 0,
+    "trained_candidates": 0,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": false,
+    "error_type": "retrieval:RuntimeError",
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "96",
+    "family_id": "8bdcf5ddbde8",
+    "cwe": "179",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 32,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "b4972ca8ae36c1c660c25e9f8e5f740518a2b84563f18f8d99e7f92852fa8538",
+    "eligible_count": 1,
+    "trained_candidates": 4,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "guard-601-340895232419954315"
+      ],
+      "Q2": [
+        "guard-601-340895232419954315"
+      ],
+      "Q3": [
+        "guard-601-340895232419954315"
+      ]
+    },
+    "actual_ranked_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "delivered_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": true,
+    "joint": true,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "345",
+    "family_id": "c368fe2fb12f",
+    "cwe": "327",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "3249752019359ad52e97daff4420b45a4dcc39673df87b43ffb191ce5a54bab6",
+    "eligible_count": 0,
+    "trained_candidates": 16,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "345",
+    "family_id": "c368fe2fb12f",
+    "cwe": "327",
+    "arm": "Q2",
+    "attempt": 1,
+    "candidate_count": 27,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "48485893c9f898ce101b8e1247eb6d47b71f8f6a0c1ca5f7f47abff50d2231a2",
+    "eligible_count": 25,
+    "trained_candidates": 13,
+    "trained_eligible": 13,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-327-2516411163311597246",
+        "hint-327-4528130991497775195",
+        "blind-327-4603067818071552262"
+      ],
+      "Q2": [
+        "hint-327-4528130991497775195",
+        "pitfall-327-2516411163311597246",
+        "pitfall-327-2138602210193468302"
+      ],
+      "Q3": [
+        "pitfall-327-2516411163311597246",
+        "pitfall-327-800379591047543034",
+        "blind-327-4603067818071552262"
+      ]
+    },
+    "actual_ranked_ids": [
+      "hint-327-4528130991497775195",
+      "pitfall-327-2516411163311597246",
+      "pitfall-327-2138602210193468302"
+    ],
+    "delivered_ids": [
+      "hint-327-4528130991497775195",
+      "pitfall-327-2516411163311597246",
+      "pitfall-327-2138602210193468302"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "pitfall-327-2138602210193468302"
+    ],
+    "removed_ids": [
+      "blind-327-4603067818071552262"
+    ],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "hint-327-4528130991497775195",
+      "pitfall-327-2138602210193468302",
+      "pitfall-327-2516411163311597246"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "96",
+    "family_id": "8bdcf5ddbde8",
+    "cwe": "179",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 32,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "466e70b0344a2df2b4edd5e21875a70b15ff0142fea448f06a31e1dccb958361",
+    "eligible_count": 1,
+    "trained_candidates": 6,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "guard-601-340895232419954315"
+      ],
+      "Q2": [
+        "guard-601-340895232419954315"
+      ],
+      "Q3": [
+        "guard-601-340895232419954315"
+      ]
+    },
+    "actual_ranked_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "delivered_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "96",
+    "family_id": "8bdcf5ddbde8",
+    "cwe": "179",
+    "arm": "Q2",
+    "attempt": 1,
+    "candidate_count": 32,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "3ade6f89d4916d010562f8d795e1a0d69d74663146e9772c16d8e1c0b4f8b177",
+    "eligible_count": 18,
+    "trained_candidates": 5,
+    "trained_eligible": 2,
+    "rankings_same_query": {
+      "Q1": [
+        "guard-601-340895232419954315",
+        "hint-601-8016121395692254125",
+        "hint-601-3446157873634605920"
+      ],
+      "Q2": [
+        "guard-601-340895232419954315",
+        "hint-601-8016121395692254125",
+        "hint-601-3446157873634605920"
+      ],
+      "Q3": [
+        "guard-601-340895232419954315",
+        "hint-601-8016121395692254125",
+        "hint-601-3446157873634605920"
+      ]
+    },
+    "actual_ranked_ids": [
+      "guard-601-340895232419954315",
+      "hint-601-8016121395692254125",
+      "hint-601-3446157873634605920"
+    ],
+    "delivered_ids": [
+      "guard-601-340895232419954315",
+      "hint-601-8016121395692254125",
+      "hint-601-3446157873634605920"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": "missing_applied_experience_ids",
+    "rejected_ids": [],
+    "workflow_completed": false,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "96",
+    "family_id": "8bdcf5ddbde8",
+    "cwe": "179",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 32,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "b9af9a4e12ee0108ebc1fd26709e6838c192b0948617b65aa650b11a9a3085db",
+    "eligible_count": 1,
+    "trained_candidates": 2,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "guard-601-340895232419954315"
+      ],
+      "Q2": [
+        "guard-601-340895232419954315"
+      ],
+      "Q3": [
+        "guard-601-340895232419954315"
+      ]
+    },
+    "actual_ranked_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "delivered_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "96",
+    "family_id": "8bdcf5ddbde8",
+    "cwe": "179",
+    "arm": "Q3",
+    "attempt": 1,
+    "candidate_count": 32,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "7073deb77d78367874bafe4cb0a34c413d6d09f2f5010ad270f75e4cd4fda18a",
+    "eligible_count": 7,
+    "trained_candidates": 4,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "guard-601-340895232419954315",
+        "blind-601-2890755005808309622",
+        "hint-601-8016121395692254125"
+      ],
+      "Q2": [
+        "guard-601-340895232419954315",
+        "blind-601-2890755005808309622",
+        "hint-601-8016121395692254125"
+      ],
+      "Q3": [
+        "guard-601-340895232419954315",
+        "blind-601-2890755005808309622",
+        "hint-601-8016121395692254125"
+      ]
+    },
+    "actual_ranked_ids": [
+      "guard-601-340895232419954315",
+      "blind-601-2890755005808309622",
+      "hint-601-8016121395692254125"
+    ],
+    "delivered_ids": [
+      "guard-601-340895232419954315",
+      "blind-601-2890755005808309622",
+      "hint-601-8016121395692254125"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "370",
+    "family_id": "2fb9cba7e80b",
+    "cwe": "327",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 31,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "768b1b10b84ca9c058e8bae73a8f5664e21311b43d186d1327a958959b914ed8",
+    "eligible_count": 15,
+    "trained_candidates": 9,
+    "trained_eligible": 4,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-327-1647608197379019549",
+        "blind-327-8593650276137647774",
+        "pitfall-327-2138602210193468302"
+      ],
+      "Q2": [
+        "pitfall-327-2138602210193468302",
+        "cand-327-8553196517194194335",
+        "pitfall-327-1647608197379019549"
+      ],
+      "Q3": [
+        "pitfall-327-1647608197379019549",
+        "blind-327-8593650276137647774",
+        "pitfall-327-2138602210193468302"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-327-1647608197379019549",
+      "blind-327-8593650276137647774",
+      "pitfall-327-2138602210193468302"
+    ],
+    "delivered_ids": [
+      "pitfall-327-1647608197379019549",
+      "blind-327-8593650276137647774",
+      "pitfall-327-2138602210193468302"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "pitfall-327-1647608197379019549",
+      "blind-327-8593650276137647774",
+      "pitfall-327-2138602210193468302"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": true,
+    "joint": true,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "162",
+    "family_id": "729b8f7d0224",
+    "cwe": "200",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 31,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "ecdf2ea07cba258ef18ac3900618c846d1b3790ebc50dd99c032040808ae8140",
+    "eligible_count": 0,
+    "trained_candidates": 2,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "162",
+    "family_id": "729b8f7d0224",
+    "cwe": "200",
+    "arm": "Q3",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "f51fb0aef14b92f206cd6feb93f0de482ded6d73b546806995751ad3663ee23f",
+    "eligible_count": 24,
+    "trained_candidates": 1,
+    "trained_eligible": 1,
+    "rankings_same_query": {
+      "Q1": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ],
+      "Q2": [
+        "pitfall-200-4281592802977813019",
+        "hint-200-2008538241253382356",
+        "blind-200-3640170680710794318"
+      ],
+      "Q3": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ]
+    },
+    "actual_ranked_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576",
+      "pitfall-200-4281592802977813019"
+    ],
+    "delivered_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576",
+      "pitfall-200-4281592802977813019"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "blind-200-140999058858358603"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "pitfall-200-4281592802977813019",
+      "pitfall-200-8309021425623226576"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "162",
+    "family_id": "729b8f7d0224",
+    "cwe": "200",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 32,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "5afab6135f09672d4238159f28bee2e67bb73015caa76886eba0e6fcfc5613d9",
+    "eligible_count": 0,
+    "trained_candidates": 12,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": false,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "fail"
+    }
+  },
+  {
+    "task_id": "162",
+    "family_id": "729b8f7d0224",
+    "cwe": "200",
+    "arm": "Q2",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "1c806174bff2192f63393562f7eeb1fbca2e73e31b1c9b2a3ff5d12041437221",
+    "eligible_count": 9,
+    "trained_candidates": 8,
+    "trained_eligible": 3,
+    "rankings_same_query": {
+      "Q1": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ],
+      "Q2": [
+        "pitfall-200-4281592802977813019",
+        "guard-200-3663880209624965880",
+        "hint-200-2008538241253382356"
+      ],
+      "Q3": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-200-4281592802977813019",
+      "guard-200-3663880209624965880",
+      "hint-200-2008538241253382356"
+    ],
+    "delivered_ids": [
+      "pitfall-200-4281592802977813019",
+      "guard-200-3663880209624965880",
+      "hint-200-2008538241253382356"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "guard-200-3663880209624965880",
+      "hint-200-2008538241253382356"
+    ],
+    "removed_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576"
+    ],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "guard-200-3663880209624965880",
+      "hint-200-2008538241253382356",
+      "pitfall-200-4281592802977813019"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "370",
+    "family_id": "2fb9cba7e80b",
+    "cwe": "327",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 30,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "dbc06c8534aea4f99d2348ce5f70f0febb294276ebba097786815220c9acdf05",
+    "eligible_count": 15,
+    "trained_candidates": 16,
+    "trained_eligible": 10,
+    "rankings_same_query": {
+      "Q1": [
+        "blind-327-8593650276137647774",
+        "pitfall-327-1647608197379019549",
+        "pitfall-327-2138602210193468302"
+      ],
+      "Q2": [
+        "pitfall-327-2138602210193468302",
+        "cand-327-8553196517194194335",
+        "hint-327-2046676837649952570"
+      ],
+      "Q3": [
+        "blind-327-8593650276137647774",
+        "hint-327-2046676837649952570",
+        "pitfall-327-1647608197379019549"
+      ]
+    },
+    "actual_ranked_ids": [
+      "blind-327-8593650276137647774",
+      "pitfall-327-1647608197379019549",
+      "pitfall-327-2138602210193468302"
+    ],
+    "delivered_ids": [
+      "blind-327-8593650276137647774",
+      "pitfall-327-1647608197379019549",
+      "pitfall-327-2138602210193468302"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "blind-327-8593650276137647774",
+      "pitfall-327-1647608197379019549",
+      "pitfall-327-2138602210193468302"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [
+      "blind-327-8593650276137647774",
+      "pitfall-327-1647608197379019549"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": true,
+    "joint": true,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "162",
+    "family_id": "729b8f7d0224",
+    "cwe": "200",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "766d2499e804523c6fb68ccc91f243c45aef2daf80879187fdc732b9986803a4",
+    "eligible_count": 13,
+    "trained_candidates": 10,
+    "trained_eligible": 5,
+    "rankings_same_query": {
+      "Q1": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "blind-200-3954178413768858638"
+      ],
+      "Q2": [
+        "guard-200-3663880209624965880",
+        "pitfall-200-4281592802977813019",
+        "hint-200-2008538241253382356"
+      ],
+      "Q3": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "blind-200-3954178413768858638"
+      ]
+    },
+    "actual_ranked_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576",
+      "blind-200-3954178413768858638"
+    ],
+    "delivered_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576",
+      "blind-200-3954178413768858638"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "blind-200-140999058858358603",
+      "blind-200-3954178413768858638"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [
+      "blind-200-140999058858358603",
+      "blind-200-3954178413768858638"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [
+      "pitfall-200-8309021425623226576"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "162",
+    "family_id": "729b8f7d0224",
+    "cwe": "200",
+    "arm": "Q1",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "04951a08fb9b0eb8d18a1b0b84011a5f355ebb6a53d5c0bf0c8e91bd93c8cc34",
+    "eligible_count": 24,
+    "trained_candidates": 10,
+    "trained_eligible": 8,
+    "rankings_same_query": {
+      "Q1": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ],
+      "Q2": [
+        "pitfall-200-4281592802977813019",
+        "blind-200-3640170680710794318",
+        "hint-200-2008538241253382356"
+      ],
+      "Q3": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ]
+    },
+    "actual_ranked_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576",
+      "pitfall-200-4281592802977813019"
+    ],
+    "delivered_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576",
+      "pitfall-200-4281592802977813019"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576",
+      "pitfall-200-4281592802977813019"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [
+      "blind-200-140999058858358603",
+      "pitfall-200-8309021425623226576"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "370",
+    "family_id": "2fb9cba7e80b",
+    "cwe": "327",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 30,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "6c843e9548ddfdcff60fdc149626935865e3688ced3aec94148141280ddb944f",
+    "eligible_count": 30,
+    "trained_candidates": 16,
+    "trained_eligible": 16,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-327-1647608197379019549",
+        "pitfall-327-2138602210193468302",
+        "blind-327-8593650276137647774"
+      ],
+      "Q2": [
+        "pitfall-327-2138602210193468302",
+        "hint-327-2192871425371349296",
+        "pitfall-327-3958700371924071797"
+      ],
+      "Q3": [
+        "pitfall-327-1647608197379019549",
+        "hint-327-2046676837649952570",
+        "pitfall-327-2138602210193468302"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-327-2138602210193468302",
+      "hint-327-2192871425371349296",
+      "pitfall-327-3958700371924071797"
+    ],
+    "delivered_ids": [
+      "pitfall-327-2138602210193468302",
+      "hint-327-2192871425371349296",
+      "pitfall-327-3958700371924071797"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "hint-327-2192871425371349296",
+      "pitfall-327-3958700371924071797"
+    ],
+    "removed_ids": [
+      "blind-327-8593650276137647774",
+      "pitfall-327-1647608197379019549"
+    ],
+    "adopted_ids": [
+      "pitfall-327-2138602210193468302",
+      "hint-327-2192871425371349296",
+      "pitfall-327-3958700371924071797"
+    ],
+    "new_cards_adopted": [
+      "hint-327-2192871425371349296",
+      "pitfall-327-3958700371924071797"
+    ],
+    "nonzero_q_adopted": [
+      "pitfall-327-3958700371924071797"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": true,
+    "security": true,
+    "joint": true,
+    "measured": true,
+    "validation_status": {
+      "functional": "pass",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "612",
+    "family_id": "07ac5bd70b75",
+    "cwe": "502",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "668595587c45ec028b1bf7fb0a5b92ebff5c6f89d35c127d2a5ceac19251fb6a",
+    "eligible_count": 24,
+    "trained_candidates": 3,
+    "trained_eligible": 3,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-502-9221828655041060041",
+        "blind-502-1870086129301104184",
+        "pitfall-502-3788521669358819407"
+      ],
+      "Q2": [
+        "seed-611",
+        "hint-502-9221828655041060041",
+        "blind-502-1870086129301104184"
+      ],
+      "Q3": [
+        "blind-502-1870086129301104184",
+        "hint-502-9221828655041060041",
+        "pitfall-502-3788521669358819407"
+      ]
+    },
+    "actual_ranked_ids": [
+      "hint-502-9221828655041060041",
+      "blind-502-1870086129301104184",
+      "pitfall-502-3788521669358819407"
+    ],
+    "delivered_ids": [
+      "hint-502-9221828655041060041",
+      "blind-502-1870086129301104184",
+      "pitfall-502-3788521669358819407"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "pitfall-502-3788521669358819407"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "612",
+    "family_id": "07ac5bd70b75",
+    "cwe": "502",
+    "arm": "Q1",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "babd17a6be07ee916f4659187030e7082f7823bf2d6fc69e01a3e720ae4f12bc",
+    "eligible_count": 0,
+    "trained_candidates": 5,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "612",
+    "family_id": "07ac5bd70b75",
+    "cwe": "502",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "f51c272fd6c0807513d65ced77d385c81945cd97a4619a60dfda4bd2ae74f33b",
+    "eligible_count": 24,
+    "trained_candidates": 1,
+    "trained_eligible": 1,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-502-9221828655041060041",
+        "blind-502-1870086129301104184",
+        "pitfall-502-3788521669358819407"
+      ],
+      "Q2": [
+        "seed-611",
+        "hint-502-9221828655041060041",
+        "blind-502-1870086129301104184"
+      ],
+      "Q3": [
+        "blind-502-1870086129301104184",
+        "hint-502-9221828655041060041",
+        "pitfall-502-3788521669358819407"
+      ]
+    },
+    "actual_ranked_ids": [
+      "seed-611",
+      "hint-502-9221828655041060041",
+      "blind-502-1870086129301104184"
+    ],
+    "delivered_ids": [
+      "seed-611",
+      "hint-502-9221828655041060041",
+      "blind-502-1870086129301104184"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "seed-611"
+    ],
+    "removed_ids": [
+      "pitfall-502-3788521669358819407"
+    ],
+    "adopted_ids": [
+      "seed-611"
+    ],
+    "new_cards_adopted": [
+      "seed-611"
+    ],
+    "nonzero_q_adopted": [
+      "seed-611"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "612",
+    "family_id": "07ac5bd70b75",
+    "cwe": "502",
+    "arm": "Q2",
+    "attempt": 1,
+    "candidate_count": 30,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "0bc42c9917b992fbaf8d98b558dd707fc3b17a90e0645a2eef6993e1fdc5b5e4",
+    "eligible_count": 0,
+    "trained_candidates": 5,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "603",
+    "family_id": "eff3a70e735f",
+    "cwe": "502",
+    "arm": "Q2",
+    "attempt": 0,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "085a972b970a764d5935191b7d3e82ef4f12520c67859147394077e9dd3594d1",
+    "eligible_count": 16,
+    "trained_candidates": 4,
+    "trained_eligible": 2,
+    "rankings_same_query": {
+      "Q1": [
+        "blind-502-2743438159853928070",
+        "hint-502-9221828655041060041",
+        "pitfall-502-3788521669358819407"
+      ],
+      "Q2": [
+        "seed-611",
+        "blind-502-2743438159853928070",
+        "hint-502-9221828655041060041"
+      ],
+      "Q3": [
+        "blind-502-1870086129301104184",
+        "blind-502-2743438159853928070",
+        "hint-502-9221828655041060041"
+      ]
+    },
+    "actual_ranked_ids": [
+      "seed-611",
+      "blind-502-2743438159853928070",
+      "hint-502-9221828655041060041"
+    ],
+    "delivered_ids": [
+      "seed-611",
+      "blind-502-2743438159853928070",
+      "hint-502-9221828655041060041"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "seed-611"
+    ],
+    "removed_ids": [
+      "pitfall-502-3788521669358819407"
+    ],
+    "adopted_ids": [
+      "seed-611"
+    ],
+    "new_cards_adopted": [
+      "seed-611"
+    ],
+    "nonzero_q_adopted": [
+      "seed-611"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [
+      "blind-502-2743438159853928070",
+      "hint-502-9221828655041060041"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "603",
+    "family_id": "eff3a70e735f",
+    "cwe": "502",
+    "arm": "Q2",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "e8812245f3ef523f05f36fe9519956614c844b4658d0095c279c5843caff1fb6",
+    "eligible_count": 0,
+    "trained_candidates": 5,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "612",
+    "family_id": "07ac5bd70b75",
+    "cwe": "502",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "8f77135702431f8c643333e6dc175bcf56530b603e5510682b042869e5056f89",
+    "eligible_count": 0,
+    "trained_candidates": 3,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "612",
+    "family_id": "07ac5bd70b75",
+    "cwe": "502",
+    "arm": "Q3",
+    "attempt": 1,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "1162d1fcbe127fa8b08ac2c484e116765b0182c9675c9c437ff4eacf6b885157",
+    "eligible_count": 25,
+    "trained_candidates": 2,
+    "trained_eligible": 2,
+    "rankings_same_query": {
+      "Q1": [
+        "blind-502-1870086129301104184",
+        "hint-502-9221828655041060041",
+        "hint-502-3523063928316955033"
+      ],
+      "Q2": [
+        "blind-502-1870086129301104184",
+        "pitfall-502-1443610889810473944",
+        "hint-502-9221828655041060041"
+      ],
+      "Q3": [
+        "blind-502-1870086129301104184",
+        "hint-502-9221828655041060041",
+        "pitfall-502-1443610889810473944"
+      ]
+    },
+    "actual_ranked_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041",
+      "pitfall-502-1443610889810473944"
+    ],
+    "delivered_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041",
+      "pitfall-502-1443610889810473944"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "pitfall-502-1443610889810473944"
+    ],
+    "removed_ids": [
+      "hint-502-3523063928316955033"
+    ],
+    "adopted_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [
+      "blind-502-1870086129301104184"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [
+      "pitfall-502-1443610889810473944"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "603",
+    "family_id": "eff3a70e735f",
+    "cwe": "502",
+    "arm": "Q3",
+    "attempt": 0,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "c4ba75fa354941ce741902af3b2b174565a410668814d5debaca59c19537da99",
+    "eligible_count": 20,
+    "trained_candidates": 3,
+    "trained_eligible": 3,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-502-9221828655041060041",
+        "blind-502-2743438159853928070",
+        "seed-611"
+      ],
+      "Q2": [
+        "seed-611",
+        "hint-502-9221828655041060041",
+        "blind-502-2743438159853928070"
+      ],
+      "Q3": [
+        "blind-502-1870086129301104184",
+        "hint-502-9221828655041060041",
+        "blind-502-2743438159853928070"
+      ]
+    },
+    "actual_ranked_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041",
+      "blind-502-2743438159853928070"
+    ],
+    "delivered_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041",
+      "blind-502-2743438159853928070"
+    ],
+    "set_changed_vs_sim": true,
+    "order_changed_vs_sim": true,
+    "added_ids": [
+      "blind-502-1870086129301104184"
+    ],
+    "removed_ids": [
+      "seed-611"
+    ],
+    "adopted_ids": [
+      "blind-502-1870086129301104184",
+      "hint-502-9221828655041060041"
+    ],
+    "new_cards_adopted": [
+      "blind-502-1870086129301104184"
+    ],
+    "nonzero_q_adopted": [
+      "blind-502-1870086129301104184"
+    ],
+    "adoption_error": null,
+    "rejected_ids": [
+      "blind-502-2743438159853928070"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "603",
+    "family_id": "eff3a70e735f",
+    "cwe": "502",
+    "arm": "Q3",
+    "attempt": 1,
+    "candidate_count": 29,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "367573e9e5d0861e005501afea82ba6330efd67ee0e3d03d45b9a7016408d716",
+    "eligible_count": 0,
+    "trained_candidates": 4,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": []
+    },
+    "actual_ranked_ids": [],
+    "delivered_ids": [],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "603",
+    "family_id": "eff3a70e735f",
+    "cwe": "502",
+    "arm": "Q1",
+    "attempt": 0,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "c1347fcae354723308d427eab7e04788794bf7eb22b2197c7e83e7bcdbd83ca5",
+    "eligible_count": 25,
+    "trained_candidates": 4,
+    "trained_eligible": 4,
+    "rankings_same_query": {
+      "Q1": [
+        "hint-502-9221828655041060041",
+        "blind-502-2743438159853928070",
+        "pitfall-502-3407259096245554280"
+      ],
+      "Q2": [
+        "seed-611",
+        "hint-502-9221828655041060041",
+        "blind-502-2743438159853928070"
+      ],
+      "Q3": [
+        "blind-502-1870086129301104184",
+        "hint-502-9221828655041060041",
+        "blind-502-2743438159853928070"
+      ]
+    },
+    "actual_ranked_ids": [
+      "hint-502-9221828655041060041",
+      "blind-502-2743438159853928070",
+      "pitfall-502-3407259096245554280"
+    ],
+    "delivered_ids": [
+      "hint-502-9221828655041060041",
+      "blind-502-2743438159853928070",
+      "pitfall-502-3407259096245554280"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "pitfall-502-3407259096245554280"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "blind-502-2743438159853928070",
+      "hint-502-9221828655041060041"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  },
+  {
+    "task_id": "603",
+    "family_id": "eff3a70e735f",
+    "cwe": "502",
+    "arm": "Q1",
+    "attempt": 1,
+    "candidate_count": 28,
+    "retrieval_status": "completed",
+    "retrieval_errors": [],
+    "trace_source": "attempt.retrieval_trace",
+    "query_hash": "f2f93246d32f5128d3911ebfd6e27ccc9a22dc41a5e575b558f342b803e186e0",
+    "eligible_count": 23,
+    "trained_candidates": 0,
+    "trained_eligible": 0,
+    "rankings_same_query": {
+      "Q1": [
+        "pitfall-502-3407259096245554280",
+        "hint-502-9221828655041060041",
+        "hint-502-4680575897595903924"
+      ],
+      "Q2": [
+        "pitfall-502-3407259096245554280",
+        "hint-502-9221828655041060041",
+        "hint-502-4680575897595903924"
+      ],
+      "Q3": [
+        "blind-502-1870086129301104184",
+        "pitfall-502-3407259096245554280",
+        "hint-502-9221828655041060041"
+      ]
+    },
+    "actual_ranked_ids": [
+      "pitfall-502-3407259096245554280",
+      "hint-502-9221828655041060041",
+      "hint-502-4680575897595903924"
+    ],
+    "delivered_ids": [
+      "pitfall-502-3407259096245554280",
+      "hint-502-9221828655041060041",
+      "hint-502-4680575897595903924"
+    ],
+    "set_changed_vs_sim": false,
+    "order_changed_vs_sim": false,
+    "added_ids": [],
+    "removed_ids": [],
+    "adopted_ids": [
+      "pitfall-502-3407259096245554280",
+      "hint-502-4680575897595903924"
+    ],
+    "new_cards_adopted": [],
+    "nonzero_q_adopted": [],
+    "adoption_error": null,
+    "rejected_ids": [
+      "hint-502-9221828655041060041"
+    ],
+    "workflow_completed": true,
+    "error_type": null,
+    "functional": false,
+    "security": true,
+    "joint": false,
+    "measured": true,
+    "validation_status": {
+      "functional": "fail",
+      "security": "pass"
+    }
+  }
+]

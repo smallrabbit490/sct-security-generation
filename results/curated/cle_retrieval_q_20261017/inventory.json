@@ -1,0 +1,161 @@
+{
+  "protocol": "cle-retrieval-q-v1",
+  "raw_plt": 1411,
+  "pools": {
+    "D_init": 303,
+    "D_grow": 273,
+    "D_gate": 298
+  },
+  "cards": 1939,
+  "learned_cards": 297,
+  "q_updates": 543,
+  "historical_q_rows": 24,
+  "historical_attempts": 41,
+  "history_retrieval_tasks": 199,
+  "historical_labels_authority": "model_estimate_pending_human_review",
+  "reserved_q_evaluation_overlap": [],
+  "reserved_old_retrieval_family_overlap": [],
+  "reserved_whole_CLE_exposure": "historical_D_gate_members_not_globally_unseen",
+  "old_retrieval_top3": {
+    "hierarchical_original": {
+      "tasks": 199,
+      "returned_cards": 366,
+      "label_counts": {
+        "conditional": 190,
+        "conflict": 123,
+        "direct": 36,
+        "irrelevant": 17
+      },
+      "unlabeled_cards": 0,
+      "strict_precision": 0.09836065573770492,
+      "known_label_precision": 0.09836065573770492,
+      "conflict_rate": 0.3360655737704918,
+      "hit_rate": 0.1658291457286432,
+      "hit_rate_lower_bound": 0.1658291457286432,
+      "hit_rate_upper_bound": 0.1658291457286432,
+      "average_returned": 1.8391959798994975,
+      "technical_failure_rate": 0.0,
+      "fallback_rate": 0.0,
+      "successful_empty_rate": 0.0
+    },
+    "hierarchical_analysis": {
+      "tasks": 199,
+      "returned_cards": 353,
+      "label_counts": {
+        "conditional": 190,
+        "irrelevant": 16,
+        "conflict": 110,
+        "direct": 37
+      },
+      "unlabeled_cards": 0,
+      "strict_precision": 0.1048158640226629,
+      "known_label_precision": 0.1048158640226629,
+      "conflict_rate": 0.311614730878187,
+      "hit_rate": 0.15577889447236182,
+      "hit_rate_lower_bound": 0.15577889447236182,
+      "hit_rate_upper_bound": 0.15577889447236182,
+      "average_returned": 1.7738693467336684,
+      "technical_failure_rate": 0.005025125628140704,
+      "fallback_rate": 0.0,
+      "successful_empty_rate": 0.010050251256281407
+    },
+    "hierarchical_combined": {
+      "tasks": 199,
+      "returned_cards": 360,
+      "label_counts": {
+        "conditional": 197,
+        "conflict": 116,
+        "irrelevant": 14,
+        "direct": 33
+      },
+      "unlabeled_cards": 0,
+      "strict_precision": 0.09166666666666666,
+      "known_label_precision": 0.09166666666666666,
+      "conflict_rate": 0.32222222222222224,
+      "hit_rate": 0.1407035175879397,
+      "hit_rate_lower_bound": 0.1407035175879397,
+      "hit_rate_upper_bound": 0.1407035175879397,
+      "average_returned": 1.8090452261306533,
+      "technical_failure_rate": 0.005025125628140704,
+      "fallback_rate": 0.0,
+      "successful_empty_rate": 0.010050251256281407
+    },
+    "embedding_original": {
+      "tasks": 199,
+      "returned_cards": 597,
+      "label_counts": {
+        "direct": 56,
+        "conflict": 286,
+        "conditional": 229,
+        "irrelevant": 26
+      },
+      "unlabeled_cards": 0,
+      "strict_precision": 0.09380234505862646,
+      "known_label_precision": 0.09380234505862646,
+      "conflict_rate": 0.47906197654941374,
+      "hit_rate": 0.22613065326633167,
+      "hit_rate_lower_bound": 0.22613065326633167,
+      "hit_rate_upper_bound": 0.22613065326633167,
+      "average_returned": 3.0,
+      "technical_failure_rate": 0.0,
+      "fallback_rate": 0.0,
+      "successful_empty_rate": 0.0
+    },
+    "embedding_analysis": {
+      "tasks": 199,
+      "returned_cards": 594,
+      "label_counts": {
+        "conditional": 267,
+        "conflict": 235,
+        "direct": 73,
+        "irrelevant": 16,
+        "insufficient": 3
+      },
+      "unlabeled_cards": 0,
+      "strict_precision": 0.12289562289562289,
+      "known_label_precision": 0.12289562289562289,
+      "conflict_rate": 0.3956228956228956,
+      "hit_rate": 0.2964824120603015,
+      "hit_rate_lower_bound": 0.2964824120603015,
+      "hit_rate_upper_bound": 0.2964824120603015,
+      "average_returned": 2.9849246231155777,
+      "technical_failure_rate": 0.005025125628140704,
+      "fallback_rate": 0.0,
+      "successful_empty_rate": 0.0
+    },
+    "embedding_combined": {
+      "tasks": 199,
+      "returned_cards": 594,
+      "label_counts": {
+        "conditional": 244,
+        "direct": 54,
+        "conflict": 276,
+        "irrelevant": 20
+      },
+      "unlabeled_cards": 0,
+      "strict_precision": 0.09090909090909091,
+      "known_label_precision": 0.09090909090909091,
+      "conflict_rate": 0.46464646464646464,
+      "hit_rate": 0.23115577889447236,
+      "hit_rate_lower_bound": 0.23115577889447236,
+      "hit_rate_upper_bound": 0.23115577889447236,
+      "average_returned": 2.9849246231155777,
+      "technical_failure_rate": 0.005025125628140704,
+      "fallback_rate": 0.0,
+      "successful_empty_rate": 0.0
+    }
+  },
+  "generation_parameters": {
+    "model": "deepseek-v3.2",
+    "embedding_model": "text-embedding-3-large",
+    "thinking": "disabled",
+    "max_tokens": 4096,
+    "delta": 0.7613717780938312,
+    "alpha": 0.3,
+    "lambda_q": 0.5
+  },
+  "memory_matches_learning": true,
+  "memory_updates": false,
+  "Base_Plus_access": false,
+  "stage_A_passed": true
+}

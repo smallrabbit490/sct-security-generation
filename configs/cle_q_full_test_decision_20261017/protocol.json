@@ -1,0 +1,19 @@
+{
+  "protocol": "cle-q-full-test-decision-v1",
+  "study_protocol": "cle-retrieval-q-v2-public-contract",
+  "study_config": "configs/cle_retrieval_q_public_contract_20261017",
+  "study_run": "translation_work/diagnostics/20261017/cle_retrieval_q/public_contract_v2",
+  "decision_run": "translation_work/diagnostics/20261017/cle_q_full_test_decision",
+  "curated_dir": "results/curated/cle_q_full_test_decision_20261017",
+  "report_file": "docs/CLE_Q全量测试决策阶段报告_20261017.md",
+  "calibration_tasks": 6,
+  "development_tasks": 8,
+  "confirmation_tasks": 24,
+  "max_new_P7_runs": 128,
+  "confirmation_F_C_not_below_B_for_full_recommendation": true,
+  "human_confirmation_required": true,
+  "Q_updates": false,
+  "automatic_full_test": false,
+  "automatic_sample_expansion": false,
+  "full_targets": ["D_gate_development_diagnostics", "Python_Base", "Python_Plus"]
+}

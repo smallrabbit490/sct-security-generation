@@ -688,6 +688,10 @@ class CleRunner:
         branch_count: int = 1,
         gate_mode: str = "candidate",
         embedding_client=None,
+        semantic_delta: float | None = None,
+        lambda_q: float = 0.5,
+        q_learning: bool = False,
+        q_alpha: float = 0.3,
     ) -> None:
         if branch_count < 1 or gate_mode not in ('candidate', 'global'):
             raise ValueError('invalid_branch_gate_mode')
@@ -725,6 +729,13 @@ class CleRunner:
         # / flat_rule 与 hier_rule 为无 LLM 消融对照臂。
         self.retrieval_mode = retrieval_mode
         self.embedding_client = embedding_client
+        if q_learning and (workers != 1 or branch_count != 1 or not context_pipeline):
+            raise ValueError('Q learning requires sequential context rollout with one branch')
+        if retrieval_mode in ('semantic_sim', 'semantic_q') and semantic_delta is None:
+            raise ValueError('Q/sim retrieval requires a frozen semantic_delta')
+        self.semantic_delta, self.lambda_q = semantic_delta, lambda_q
+        self.q_learning, self.q_alpha = q_learning, q_alpha
+        self.memory_q_events = []
         self.admission_rejections = []
         # 【修复轮直接注入上一轮报错】默认**关闭**（用户拍板 2026-09-21）。
         # 用户的设计意图是"报错先入经验库，下一轮由检索器取回"，而不是直接拼进 prompt。
@@ -862,7 +873,7 @@ class CleRunner:
                     cross_cwe_min_score=self.cross_cwe_min_score,
                     antioverdefense_bonus=self.antioverdefense_bonus,
                     same_task_bonus=self.same_task_bonus,
-                                         retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client),
+                                         retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client, semantic_delta=self.semantic_delta, lambda_q=self.lambda_q),
                 repairs=1, phase="phase1",
                 seed_card={"invariant_id": card.get("id"), "kind": "seed_from_diff", "status": "seed",
                            "recommended_action": card.get("recommended_action", ""),
@@ -1230,7 +1241,7 @@ class CleRunner:
                 with self._pool_lock:
                     snapshot = copy.deepcopy(self.experience_pool)
                 local_retriever = HskTreeRetriever(HskTree(), requester=self.req_score,
-                    ablation=self.ablation, retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client,
+                    ablation=self.ablation, retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client, semantic_delta=self.semantic_delta, lambda_q=self.lambda_q,
                     min_llm_score=self.min_llm_score, cross_cwe_min_score=self.cross_cwe_min_score,
                     antioverdefense_bonus=self.antioverdefense_bonus, same_task_bonus=self.same_task_bonus)
                 task = {**(row.get('task_description') or {}), 'task_id': row['index'],
@@ -1298,7 +1309,7 @@ class CleRunner:
                                          cross_cwe_min_score=self.cross_cwe_min_score,
                                          antioverdefense_bonus=self.antioverdefense_bonus,
                                          same_task_bonus=self.same_task_bonus,
-                                         retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client)
+                                         retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client, semantic_delta=self.semantic_delta, lambda_q=self.lambda_q)
         sched = schedule_replay(self.tree, self.ledger, replay_pool, self.req_schedule,
                                 batch_size=batch_size, replay_limit=replay_limit,
                                 already_used=already_used, coverage_quota=coverage_quota)
@@ -1727,7 +1738,7 @@ class CleRunner:
                                          cross_cwe_min_score=self.cross_cwe_min_score,
                                          antioverdefense_bonus=self.antioverdefense_bonus,
                                          same_task_bonus=self.same_task_bonus,
-                                         retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client)
+                                         retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client, semantic_delta=self.semantic_delta, lambda_q=self.lambda_q)
         rows: list[dict] = []
         counter = {"n": 0}
 
@@ -1913,6 +1924,19 @@ class CleRunner:
             if not code:
                 states.append("D"); codes.append(""); evidence_list.append({"error": "empty_code"}); break
             evidence, label = validate_and_state(row, code, timeout=self.timeout)
+            if self.q_learning and phase == 'phase2':
+                # 只在D_grow的逐次验证后更新；Phase1、门控、回归和收尾评价均无此回调。
+                from .memory_q import update_adopted
+                learning_evidence = {'error': 'pipeline_incomplete'} if pipeline.get('error_type') else evidence
+                with self._pool_lock:
+                    events = update_adopted({n.invariant_id: n for n in self.experience_pool},
+                        [c['invariant_id'] for c in cards], learning_evidence, code=code,
+                        pool='D_grow', alpha=self.q_alpha)
+                tagged = [{'task_id': row.get('index'), 'family_id': row.get('family_id'),
+                           'pool': 'D_grow', 'outer_round': round_index, 'attempt': round_i,
+                           'selection_policy': self.retrieval_mode, **e} for e in events]
+                self.memory_q_events.extend(tagged)
+                agent_context[-1]['memory_q_events'] = tagged
             if self.internal_checks:
                 from .internal_checks import propose_checks, execute_checks
                 if internal_suite is None:
@@ -1986,19 +2010,19 @@ class CleRunner:
                                             cards_provider=(lambda q: cards_provider({**query, **q}))
                                             if self.context_pipeline else None)
                     code = (pipeline.get("code") or "").strip()
-                    if self.retrieval_mode == 'semantic_llm' and pipeline.get('error_type'):
+                    if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q') and pipeline.get('error_type'):
                         raise RuntimeError('unmeasured_gate_pipeline:' + pipeline['error_type'])
                     if not code:
                         sample_flags.append(False)
                         continue
                     evidence, label = validate_and_state(row, code, timeout=self.timeout)
-                    if self.retrieval_mode == 'semantic_llm':
+                    if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q'):
                         from .global_gate import evidence_is_measured
                         if not evidence_is_measured(evidence):
                             raise RuntimeError('unmeasured_gate_validation')
                     sample_flags.append(label == "A")
                 except Exception:
-                    if self.retrieval_mode == 'semantic_llm':
+                    if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q'):
                         raise
                     # 该次采样失败 → 视为未通过（保守），但不影响其它任务
                     sample_flags.append(False)
@@ -2047,19 +2071,19 @@ class CleRunner:
                                         cards_provider=(lambda q: cards_provider({**query, **q}))
                                         if self.context_pipeline else None)
                 code = (pipeline.get("code") or "").strip()
-                if self.retrieval_mode == 'semantic_llm' and pipeline.get('error_type'):
+                if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q') and pipeline.get('error_type'):
                     raise RuntimeError('unmeasured_regression_pipeline:' + pipeline['error_type'])
                 if not code:
                     return True, True
                 evidence, _ = validate_and_state(row, code, timeout=self.timeout)
-                if self.retrieval_mode == 'semantic_llm':
+                if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q'):
                     from .global_gate import evidence_is_measured
                     if not evidence_is_measured(evidence):
                         raise RuntimeError('unmeasured_regression_validation')
                 return (_ev_status(evidence, "security") == "fail",
                         _ev_status(evidence, "functional") == "fail")
             except Exception:
-                if self.retrieval_mode == 'semantic_llm':
+                if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q'):
                     raise
                 return True, True
 
@@ -2124,10 +2148,10 @@ class CleRunner:
                                     retrieval_mode=("hier_rule"
                                                     if self.retrieval_mode in ("hier_llm", "hier_rule")
                                                     else "flat_rule"))
-        if self.retrieval_mode == 'semantic_llm':
+        if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q'):
             # Gate1召回探针与Gate2/3基线使用部署检索，不能用旧词面规则冒充向量召回。
             retriever = HskTreeRetriever(self.tree, requester=self.req_score, ablation=self.ablation,
-                retrieval_mode='semantic_llm', embedding_client=self.embedding_client)
+                retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client, semantic_delta=self.semantic_delta, lambda_q=self.lambda_q)
         records: list[dict] = []
         audit_detail: list[dict] = []
         targets = entries if entries is not None else self.experience_pool
@@ -2448,7 +2472,7 @@ class CleRunner:
             detail["reasons"] = rec.reasons
         except Exception as exc:      # 单条失败不拖垮整批
             # 向量/生成/测试基础设施缺测不能归因为候选有害，也不能据此晋升。
-            detail["decision"] = "unmeasured" if self.retrieval_mode == 'semantic_llm' else "revised"
+            detail["decision"] = "unmeasured" if self.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q') else "revised"
             detail["reasons"] = [f"audit_error:{type(exc).__name__}"]
             rec = GateRecord(candidate_id=cand.invariant_id, delta_joint_pass=0.0)
             rec.decision = detail['decision']

@@ -50,6 +50,25 @@ class CleAblationRunnerTests(unittest.TestCase):
         self.assertIsNone(seen[1]['feedback'])
         self.assertNotIn('SECRET', str(result))
 
+    def test_q_selection_keeps_p7_workflow_and_records_real_adoption(self):
+        task = {'index': 1, 'CWE_ID': '22', 'task_description': {'description': 'implement f'}}
+        def generation(arm, contract, request, provider, **kwargs):
+            self.assertEqual(arm, 'P7')
+            provider({'description': 'f'})
+            return {'code': 'def f(): return 1', 'cards': [{'invariant_id': 'adopted'}],
+                    'retrieved_cards': [{'invariant_id': 'recalled'}], 'workflow_completed': True}
+        evidence = {'functional': {'status': 'pass'}, 'security': {'status': 'pass'}}
+        with patch('methods.cle_ablation.runner.generate', side_effect=generation), patch(
+                'methods.sct_trajectory.retriever.HskTreeRetriever') as retriever, patch(
+                'methods.sct_trajectory.closed_loop.validate_and_state', return_value=(evidence, 'A')):
+            retriever.return_value.search.return_value = []
+            result = run_one('PLT', task, 'P7', None, {'full': []}, object(),
+                             retrieval_mode='semantic_q', delta=0.4, lambda_q=0.5)
+        self.assertEqual(retriever.call_args.kwargs['retrieval_mode'], 'semantic_q')
+        self.assertEqual(retriever.call_args.kwargs['semantic_delta'], 0.4)
+        self.assertEqual(len(result['attempts']), 1)
+        self.assertEqual(result['attempts'][0]['generation']['cards'][0]['invariant_id'], 'adopted')
+
 
 if __name__ == '__main__':
     unittest.main()

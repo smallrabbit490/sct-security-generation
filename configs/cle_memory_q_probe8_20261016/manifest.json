@@ -1,0 +1,113 @@
+{
+  "protocol": "cle-q-full-dgrow-probe8-cwe-shuffle-v1",
+  "role": "D_gate_mechanism_development_only",
+  "development": [
+    126,
+    153,
+    345,
+    96,
+    162,
+    370,
+    612,
+    603
+  ],
+  "confirmation": [],
+  "cwes": [
+    "179",
+    "200",
+    "327",
+    "502"
+  ],
+  "rows": {
+    "126": {
+      "family_id": "ff83c3274cf8",
+      "cwe": "179"
+    },
+    "153": {
+      "family_id": "a97cf683d8ab",
+      "cwe": "200"
+    },
+    "345": {
+      "family_id": "c368fe2fb12f",
+      "cwe": "327"
+    },
+    "96": {
+      "family_id": "8bdcf5ddbde8",
+      "cwe": "179"
+    },
+    "162": {
+      "family_id": "729b8f7d0224",
+      "cwe": "200"
+    },
+    "370": {
+      "family_id": "2fb9cba7e80b",
+      "cwe": "327"
+    },
+    "612": {
+      "family_id": "07ac5bd70b75",
+      "cwe": "502"
+    },
+    "603": {
+      "family_id": "eff3a70e735f",
+      "cwe": "502"
+    }
+  },
+  "parameters": {
+    "model": "deepseek-v3.2",
+    "embedding_model": "text-embedding-3-large",
+    "thinking": "disabled",
+    "max_tokens": 4096,
+    "temperature": 0,
+    "alpha": 0.3,
+    "lambda_q": 0.5,
+    "delta_rule": "D_grow candidate cosine 80th percentile before evaluation",
+    "shuffle_scope": "CWE",
+    "shuffle_seed": 20261015,
+    "delta": 0.7613717780938312
+  },
+  "arms": [
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "input_memory": "translation_work\\diagnostics\\20261016\\cle_memory_q\\full_dgrow\\frozen\\m_star_q.jsonl",
+  "input_pools": "configs\\cle_memory_q_autonomous_20261015\\pools.recovered.json",
+  "learning_source": "translation_work\\diagnostics\\20261016\\cle_memory_q\\full_dgrow",
+  "selection": "remote sample_families ordering, skip calibration failures; exclude all old manifest/previous-probe families; no LOCAL_PATH anywhere in task; patched reference passes before model generation",
+  "old_confirmation_preserved": [
+    72,
+    129,
+    160,
+    371,
+    439,
+    490,
+    1317,
+    1322,
+    112,
+    141,
+    343,
+    448,
+    492,
+    615,
+    672,
+    133,
+    161,
+    338,
+    428,
+    471,
+    1318,
+    639,
+    119,
+    166
+  ],
+  "evaluation_progression_gate": {
+    "measured_each_arm": 8,
+    "min_changed_tasks_Q2": 3,
+    "min_changed_new_card_adopted_tasks_Q2": 2,
+    "workflow_errors_each_arm_max": 0,
+    "Q2_joint_greater_than_Q1": true,
+    "Q2_joint_greater_than_Q3": true,
+    "Q2_functional_at_least_Q1": true
+  },
+  "scope": "24 native P7 rollouts, maximum 48 generated-code validations; no learning or Base/Plus; no automatic escalation"
+}

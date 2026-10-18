@@ -1,0 +1,141 @@
+{
+  "arms": {
+    "Q0": {
+      "n": 273,
+      "functional": 122,
+      "security": 208,
+      "joint": 105,
+      "measured": 272,
+      "first_joint": 99,
+      "errors": 23,
+      "calls": 2230,
+      "total_tokens": 19120176,
+      "seconds": 30002.85320990003
+    }
+  },
+  "paired": {},
+  "role": "D_grow learning diagnostics, not independent accuracy evaluation",
+  "stage": "learn",
+  "workflow": "remote CLE P7",
+  "families": 217,
+  "mechanism": [],
+  "Q_learning": {
+    "visited_cards": 297,
+    "positive_updates": 192,
+    "negative_updates": 351,
+    "skipped_events": 256,
+    "cards_two_independent_families": 104,
+    "cards_three_independent_families": 43,
+    "visit_distribution": {
+      "1": 172,
+      "4": 14,
+      "2": 67,
+      "3": 29,
+      "8": 1,
+      "5": 8,
+      "6": 5,
+      "16": 1
+    },
+    "by_card_cwe": {
+      "1333": 20,
+      "179": 16,
+      "200": 19,
+      "327": 25,
+      "347": 29,
+      "352": 16,
+      "502": 15,
+      "74": 16,
+      "77": 18,
+      "770": 19,
+      "79": 23,
+      "862": 26,
+      "915": 11,
+      "94": 9,
+      "95": 14,
+      "863": 21
+    }
+  },
+  "reward_eligible_cohort": {
+    "Q0": {
+      "n": 230,
+      "functional": 120,
+      "security": 174,
+      "joint": 103,
+      "measured": 230,
+      "first_joint": 97,
+      "errors": 21,
+      "calls": 1811,
+      "total_tokens": 15024563,
+      "seconds": 23850.58988819993
+    }
+  },
+  "protocol": "cle-q-fixed-M0-full-Dgrow-20261016",
+  "artifact_role": "D_grow learning only",
+  "format_check": {
+    "stage": "learn",
+    "rows": 273,
+    "tasks": 273,
+    "families": 217,
+    "schema": "cle-ablation-p7-with-ma-final-v1",
+    "native_statistics_recomputed": true,
+    "calls_and_tokens_matched": true,
+    "q_event_attribution_checked": true,
+    "status": "pass"
+  },
+  "costs": {
+    "llm": {
+      "model": "deepseek-v3.2",
+      "total": {
+        "calls": 2230,
+        "prompt_tokens": 17126581,
+        "completion_tokens": 1993595,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0,
+        "total_tokens": 19120176
+      }
+    },
+    "embedding": {
+      "calls": 447,
+      "failures": 0,
+      "prompt_tokens": 588482,
+      "total_tokens": 588482,
+      "cache_hits": 1933,
+      "embedded_texts": 447,
+      "usage_missing_calls": 0
+    },
+    "accounting": "Native per-row logical LLM usage; embedding measured by process segment. No invoice or currency estimate."
+  },
+  "reference_calibration": {
+    "total": 273,
+    "joint": 231,
+    "reward_eligible": 230,
+    "reward_eligible_families": 181,
+    "excluded": 43,
+    "reasons": {
+      "reference_not_joint": 42,
+      "placeholder_in_task": 35
+    }
+  },
+  "tasks": 273,
+  "memory_entries": 1939,
+  "raw_root": "translation_work\\diagnostics\\20261016\\cle_memory_q\\full_dgrow",
+  "git_branch": "fjy/cle-memory-q-batch2",
+  "git_commit": "5ca7b98128ca84faef79579d4c49e7b6c4fc3dd6",
+  "implementation_committed": false,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "D_gate_evaluated": false,
+  "Base_Plus_evaluated": false,
+  "wall_seconds": 3803.383745500003,
+  "learning_funnel": {
+    "attempted_tasks": 273,
+    "reward_eligible_tasks": 230,
+    "tasks_with_Q_credit": 192,
+    "families_with_Q_credit": 155,
+    "attempts_with_Q_credit": 246,
+    "card_updates": 543
+  }
+}

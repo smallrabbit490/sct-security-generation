@@ -169,10 +169,14 @@ def main():
     parser.add_argument('--subsets', nargs='+', choices=['Base', 'Plus'], default=['Plus'])
     parser.add_argument('--prompt-only', action='store_true')
     parser.add_argument('--no-memory-control', action='store_true')
-    parser.add_argument('--retrieval-mode', choices=['hier_llm', 'semantic_llm'], default='hier_llm')
+    parser.add_argument('--retrieval-mode', choices=['hier_llm', 'semantic_llm', 'semantic_sim', 'semantic_q'], default='hier_llm')
+    parser.add_argument('--semantic-delta', type=float)
+    parser.add_argument('--lambda-q', type=float, default=0.5)
     parser.add_argument('--embedding-model', default='text-embedding-3-large')
     parser.add_argument('--embedding-cache', default='translation_work/cache/embeddings/cle.sqlite3')
     args = parser.parse_args()
+    if args.retrieval_mode in ('semantic_sim', 'semantic_q') and args.semantic_delta is None:
+        parser.error('Q/sim frozen retrieval requires calibrated --semantic-delta')
     out = (ROOT / args.out).resolve()
     if not out.is_relative_to((ROOT / 'translation_work').resolve()):
         parser.error('out must be inside translation_work')
@@ -202,7 +206,7 @@ def main():
                 'memory_statuses': dict(Counter(n.status for n in memory)), 'retrieval_mode': args.retrieval_mode,
                 'retrieval_statuses': config.retrieval_statuses,
                 'dataset_sha256': {subset: digest(path) for subset, path in data_files.items()},
-                'tasks': len(data), 'feedback_channel': 'task_local_redacted_only_no_memory_updates',
+                'tasks': len(data), 'feedback_channel': 'official_feedback_disabled; self_generated_checks_only',
                 'backend': 'persistent_docker', 'image': os.environ['SAFECODER_PYTHON_DOCKER_IMAGE'],
                 'credential_source': 'environment_or_local:apikey.txt', 'source_code_provided': False,
                 'git_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()}
@@ -240,7 +244,7 @@ def main():
                 usage[key] += (response.get('usage') or {}).get(key, 0)
         return response
     embedding_client = None
-    if args.retrieval_mode == 'semantic_llm':
+    if args.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q'):
         from .semantic_retrieval import EmbeddingClient
         from .run_closed_loop import load_key
         embedding_client = EmbeddingClient(model=args.embedding_model, cache_path=ROOT / args.embedding_cache,
@@ -251,7 +255,8 @@ def main():
     write('run_metadata.json', metadata)
     def retrieve(contract, pool):
         retriever = HskTreeRetriever(tree, requester=request, ablation=config,
-                                     retrieval_mode=args.retrieval_mode, embedding_client=embedding_client)
+                                     retrieval_mode=args.retrieval_mode, embedding_client=embedding_client,
+                                     semantic_delta=args.semantic_delta, lambda_q=args.lambda_q)
         cards = retriever.search(contract, limit=3, pool_nodes=pool)
         return cards, getattr(retriever, 'last_hier_trace', {})
     rows = []
@@ -336,10 +341,11 @@ def main():
                                   'retrieval_trace': htrace, 'attempt': attempt,
                                   'internal_checks': internal_result, 'internal_suite': suite}
                         row['attempts'].append(record)
-                        if result.get('environment_error') or result['joint']:
+                        # 独立测试不得按隐藏Joint早停或将其状态回流；固定两次，取末次代码。
+                        if result.get('environment_error'):
                             break
                         reference = code
-                        prev = result['evidence']
+                        prev = None
                         internal = internal_result
                     except Exception as exc:
                         reason = str(exc) if isinstance(exc, ValueError) and str(exc) in {

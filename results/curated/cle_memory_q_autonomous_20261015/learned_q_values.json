@@ -1,0 +1,107 @@
+{
+  "source": "learn/frozen/m_star_q.jsonl",
+  "model": "deepseek-v3.2",
+  "values": [
+    {
+      "invariant_id": "cand-1333-6989274955709860577",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "cand-1333-4003705983803461794",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "blind-200-12638892956483399",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "guard-200-4561753616830538025",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "hint-200-1492490072255762731",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "cand-327-8553196517194194335",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "hint-327-6119233296852092656",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "blind-352-1715052647889880122",
+      "q_value": -0.51,
+      "q_visits": 2
+    },
+    {
+      "invariant_id": "seed-440",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "seed-459",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "seed-614",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "hint-502-4263120956699496651",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "pitfall-502-205608610009184081",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "seed-611",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "blind-601-2890755005808309622",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "guard-601-6462984621777116443",
+      "q_value": -0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "guard-601-340895232419954315",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "hint-601-7166751291274134299",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "pitfall-1333-1465610006318670494",
+      "q_value": 0.3,
+      "q_visits": 1
+    },
+    {
+      "invariant_id": "seed-1299",
+      "q_value": -0.3,
+      "q_visits": 1
+    }
+  ],
+  "full_bank_entries": 1939
+}

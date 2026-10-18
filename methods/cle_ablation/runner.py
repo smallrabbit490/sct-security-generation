@@ -119,7 +119,7 @@ def write_report(out, rows):
     (out / 'report.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
-def generate(arm, contract, request, provider, *, reference='', feedback=None):
+def generate(arm, contract, request, provider, *, reference='', feedback=None, initial_analysis=None):
     from methods.sct_trajectory.agent_pipeline import _content, strip_code_fence
     from methods.sct_trajectory.context_pipeline import CONTRACT_POLICY, run_context_pipeline
     spec = arm_spec(arm)
@@ -131,11 +131,15 @@ def generate(arm, contract, request, provider, *, reference='', feedback=None):
         return {'code': code, 'workflow_completed': bool(code), 'stages': [{'stage': 'generation', 'status': 'completed' if code else 'failed'}]}
     result = run_context_pipeline(contract, [], requester=request, reference_code=reference,
                                   previous_evidence=feedback, cards_provider=provider if spec.memory != 'none' else None,
-                                  reanalyze=spec.reanalyze)
+                                  reanalyze=spec.reanalyze,
+                                  **({'initial_analysis': initial_analysis} if initial_analysis is not None else {}))
     return {key: value for key, value in result.items() if key != 'prompts'}
 
 
-def run_one(subset, task, arm, requester, memory, embedding_client=None):
+def run_one(subset, task, arm, requester, memory, embedding_client=None, *,
+            retrieval_mode='semantic_llm', delta=None, lambda_q=0.5, initial_analysis=None,
+            retrieval_query_mode='combined'):
+    """复用既有逐题流程；可共享c0初析，c1仍独立分析本臂代码和反馈。"""
     from methods.sct_trajectory.ablation import get_config
     from methods.sct_trajectory.context_pipeline import safe_feedback
     from methods.sct_trajectory.hsk_tree import HskTree
@@ -163,8 +167,14 @@ def run_one(subset, task, arm, requester, memory, embedding_client=None):
         return response
 
     def provider(query):
+        # 查询消融只改变检索输入，生成、复析及原P7反馈契约保持不变。
+        if retrieval_query_mode == 'original':
+            query = {key: value for key, value in query.items() if key != 'threat_analysis'}
+        elif retrieval_query_mode != 'combined':
+            raise ValueError('unknown_retrieval_query_mode')
         retriever = HskTreeRetriever(HskTree(), requester=request, ablation=get_config('A7'),
-                                     retrieval_mode='semantic_llm', embedding_client=embedding_client)
+                                     retrieval_mode=retrieval_mode, embedding_client=embedding_client,
+                                     semantic_delta=delta, lambda_q=lambda_q)
         found = retriever.search(query, limit=3, pool_nodes=memory[spec.memory])
         traces.append(getattr(retriever, 'last_hier_trace', None))
         if not spec.negative:
@@ -174,7 +184,8 @@ def run_one(subset, task, arm, requester, memory, embedding_client=None):
     reference, feedback = '', None
     for attempt in range(spec.attempts):
         try:
-            generation = generate(arm, contract, request, provider, reference=reference, feedback=feedback)
+            prepared = {'initial_analysis': initial_analysis} if attempt == 0 and initial_analysis is not None else {}
+            generation = generate(arm, contract, request, provider, reference=reference, feedback=feedback, **prepared)
             code = generation.get('code', '').strip()
             if not code:
                 row['attempts'].append({'attempt': attempt, 'code': '', 'measured': False,

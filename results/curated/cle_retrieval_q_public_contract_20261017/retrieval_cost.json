@@ -1,0 +1,27 @@
+{
+  "initial_analysis": {
+    "calls": 14,
+    "failed_calls": 0,
+    "prompt_tokens": 7938,
+    "completion_tokens": 12597,
+    "total_tokens": 20535,
+    "known_tokens": {
+      "prompt_tokens": 7938,
+      "completion_tokens": 12597,
+      "total_tokens": 20535
+    },
+    "missing_usage_calls": {},
+    "usage_complete": true,
+    "currency_cost": null,
+    "currency_cost_reason": "provider_billing_not_measured"
+  },
+  "embedding": {
+    "calls": 42,
+    "failures": 0,
+    "prompt_tokens": 26142,
+    "total_tokens": 26142,
+    "cache_hits": 1933,
+    "embedded_texts": 42,
+    "usage_missing_calls": 0
+  }
+}

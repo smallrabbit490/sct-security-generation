@@ -132,6 +132,9 @@ class SecurityInvariantNode:
     # 【仅拆分模式使用】Level 3 轨道规则列表；合并模式下该字段为空，
     # 双轨信息内嵌在 positive_principle / negative_guardrail 两个字段里（DOCX 原设计）。
     track_rules: list[TrackRule] = field(default_factory=list)
+    # 固定库Q校准独立于支持/回归计数；旧库从未学习的0/0开始。
+    q_value: float = 0.0
+    q_visits: int = 0
 
     def __post_init__(self) -> None:
         if self.status not in NODE_STATUS:
@@ -172,6 +175,8 @@ class SecurityInvariantNode:
             language_leaves=leaves,
             source=dict(value.get("source") or {}),
             track_rules=[TrackRule.from_dict(r) for r in (value.get("track_rules") or [])],
+            q_value=float(value.get("q_value", 0.0)),
+            q_visits=int(value.get("q_visits", 0)),
         )
 
 
@@ -297,6 +302,7 @@ def absorb_or_new(
             best, best_score = existing, score
 
     if best is not None and best_score >= overlap_threshold:
+        before_content = (best.negative_guardrail, {k: v.to_dict() for k, v in best.language_leaves.items()})
         # 就地吸收：负向红线合并、叶节点求并集、support 累加
         if node.negative_guardrail and node.negative_guardrail not in best.negative_guardrail:
             best.negative_guardrail = (best.negative_guardrail + "；" + node.negative_guardrail).strip("；")
@@ -308,6 +314,10 @@ def absorb_or_new(
             else:
                 best.language_leaves[lang] = leaf
         best.support_count += node.support_count
+        after_content = (best.negative_guardrail, {k: v.to_dict() for k, v in best.language_leaves.items()})
+        if after_content != before_content:
+            # 旧Q估计对应旧正文；单纯支持计数增加不代表新一次Q奖励。
+            best.q_value, best.q_visits = 0.0, 0
         return f"absorbed:{best.invariant_id}"
 
     family.invariants.append(node)
@@ -344,6 +354,7 @@ def consolidate_family(
     if len(actives) <= max_active:
         return None
     merged = consolidator(actives)
+    merged.q_value, merged.q_visits = 0.0, 0
     for n in actives:
         n.status = "consolidated"
     merged.status = "active"

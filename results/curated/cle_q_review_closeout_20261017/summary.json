@@ -1,0 +1,621 @@
+{
+  "protocol": "cle-q-retrospective-closeout-v1",
+  "decision_protocol": "cle-q-full-test-decision-v1",
+  "status": "STOP_INCONCLUSIVE",
+  "reason": "historical_gates_failed_and_no_Q_attributable_rescue",
+  "claim": "当前冻结Q方案收益未建立，不值得继续全量投入；未证明Q普遍无效。",
+  "full_test_recommended": false,
+  "full_test_started": false,
+  "confirmation_started": false,
+  "Q_updates": false,
+  "new_model_calls": 0,
+  "new_embedding_calls": 0,
+  "new_dynamic_validations": 0,
+  "current_study": {
+    "protocol": "cle-retrieval-q-v2-public-contract",
+    "gate_B": {
+      "passed": false,
+      "reason": "complete_retrieval_and_human_labels_required",
+      "missing_human_pairs": 914,
+      "next": "human_review_not_paid_generation"
+    },
+    "AI_labels": 914,
+    "human_confirmed": 0,
+    "development_run": false,
+    "confirmation_run": false,
+    "execution_state": "WAIT_HUMAN",
+    "performance_failure": false
+  },
+  "comparisons": {
+    "autonomous24": {
+      "protocol": "cle-q-autonomous-v2",
+      "source": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/compare",
+      "format_check": {
+        "stage": "compare",
+        "rows": 96,
+        "tasks": 24,
+        "families": 24,
+        "schema": "cle-ablation-p7-with-ma-final-v1",
+        "native_statistics_recomputed": true,
+        "calls_and_tokens_matched": true,
+        "q_event_attribution_checked": true,
+        "status": "pass"
+      },
+      "arms": {
+        "Q3": {
+          "n": 24,
+          "functional": 8,
+          "security": 15,
+          "joint": 5,
+          "measured": 24,
+          "first_joint": 5,
+          "errors": 2,
+          "calls": 172,
+          "total_tokens": 592821,
+          "seconds": 2404.2649504000583
+        },
+        "Q1": {
+          "n": 24,
+          "functional": 6,
+          "security": 18,
+          "joint": 3,
+          "measured": 24,
+          "first_joint": 3,
+          "errors": 2,
+          "calls": 180,
+          "total_tokens": 639597,
+          "seconds": 2380.3501889999898
+        },
+        "Q2": {
+          "n": 24,
+          "functional": 8,
+          "security": 18,
+          "joint": 4,
+          "measured": 24,
+          "first_joint": 3,
+          "errors": 4,
+          "calls": 180,
+          "total_tokens": 658264,
+          "seconds": 2552.0821515999996
+        },
+        "Q0": {
+          "n": 24,
+          "functional": 9,
+          "security": 17,
+          "joint": 5,
+          "measured": 24,
+          "first_joint": 5,
+          "errors": 3,
+          "calls": 215,
+          "total_tokens": 1899940,
+          "seconds": 3033.976195899988
+        }
+      },
+      "paired": {
+        "Q1": {
+          "pairs": 24,
+          "unpaired": 0,
+          "old_only": 0,
+          "new_only": 1,
+          "p_exact_two_sided": 1.0,
+          "delta_percentage_points": 4.166666666666667,
+          "conservative_95_ci_percentage_points": [
+            -16.63617312043707,
+            23.793316215598686
+          ],
+          "functional_rescues": 2,
+          "functional_harms": 0,
+          "p_holm_two_planned": 1.0
+        },
+        "Q3": {
+          "pairs": 24,
+          "unpaired": 0,
+          "old_only": 1,
+          "new_only": 0,
+          "p_exact_two_sided": 1.0,
+          "delta_percentage_points": -4.166666666666667,
+          "conservative_95_ci_percentage_points": [
+            -23.793316215598686,
+            16.63617312043707
+          ],
+          "functional_rescues": 1,
+          "functional_harms": 1,
+          "p_holm_two_planned": 1.0
+        }
+      },
+      "Q2_funnel": {
+        "attempts": 45,
+        "empty_gate_attempts": 23,
+        "retrieval_failed_attempts": 0,
+        "set_changed_tasks": 4,
+        "order_changed_tasks": 4,
+        "new_card_adopted_tasks": 2,
+        "first_query_set_changed_tasks": 3,
+        "first_query_order_changed_tasks": 3,
+        "trained_eligible_tasks": 6
+      },
+      "rescues": [
+        {
+          "run": "autonomous24",
+          "task_id": "498",
+          "family_id": "60d85fdd66a2",
+          "Q2_set_changed": false,
+          "Q2_order_changed": false,
+          "new_card_ids_adopted": [],
+          "Q2_rescue_vs_Q1": true,
+          "Q2_harm_vs_Q1": false,
+          "all_arms_selected_card_exposures": 0,
+          "all_arms_adopted_card_exposures": 0,
+          "outcomes": {
+            "Q3": {
+              "functional": true,
+              "security": true,
+              "joint": true,
+              "measured": true
+            },
+            "Q1": {
+              "functional": false,
+              "security": true,
+              "joint": false,
+              "measured": true
+            },
+            "Q2": {
+              "functional": true,
+              "security": true,
+              "joint": true,
+              "measured": true
+            },
+            "Q0": {
+              "functional": true,
+              "security": true,
+              "joint": true,
+              "measured": true
+            }
+          }
+        }
+      ],
+      "original_gate_checks": {
+        "Q2_joint_greater_than_Q1": true,
+        "Q2_functional_at_least_Q1": true,
+        "Q2_measured_at_least_23": true,
+        "Q2_errors_not_above_Q1": false
+      },
+      "original_gate_passed": false,
+      "shared_initial_candidates_verified": false,
+      "shuffle_scope": "global",
+      "metadata_Q_frozen": true,
+      "Q_bank_count": 1939,
+      "delta": 0.7578450819762121,
+      "parameters": {
+        "max_tokens": 4096,
+        "thinking": "disabled",
+        "lambda_q": 0.5,
+        "embedding_model": "text-embedding-3-large"
+      },
+      "cost": {
+        "llm": {
+          "calls": 747,
+          "prompt_tokens": 3045676,
+          "completion_tokens": 744946,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 3790622,
+          "cost_ca": 4.995714
+        },
+        "embedding": {
+          "calls": 176,
+          "failures": 0,
+          "prompt_tokens": 235340,
+          "total_tokens": 235340,
+          "cache_hits": 1933,
+          "embedded_texts": 176,
+          "usage_missing_calls": 0
+        },
+        "wall_seconds": 2627.140431199994
+      }
+    },
+    "probe8": {
+      "protocol": "cle-q-full-dgrow-probe8-cwe-shuffle-v1",
+      "source": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare",
+      "format_check": {
+        "stage": "compare",
+        "rows": 24,
+        "tasks": 8,
+        "families": 8,
+        "schema": "cle-ablation-p7-with-ma-final-v1",
+        "native_statistics_recomputed": true,
+        "calls_and_tokens_matched": true,
+        "q_event_attribution_checked": true,
+        "status": "pass"
+      },
+      "arms": {
+        "Q2": {
+          "n": 8,
+          "functional": 3,
+          "security": 5,
+          "joint": 1,
+          "measured": 8,
+          "first_joint": 1,
+          "errors": 1,
+          "calls": 60,
+          "total_tokens": 201552,
+          "seconds": 732.1155770999903
+        },
+        "Q1": {
+          "n": 8,
+          "functional": 3,
+          "security": 7,
+          "joint": 2,
+          "measured": 8,
+          "first_joint": 2,
+          "errors": 1,
+          "calls": 56,
+          "total_tokens": 238158,
+          "seconds": 765.1031410000287
+        },
+        "Q3": {
+          "n": 8,
+          "functional": 3,
+          "security": 6,
+          "joint": 1,
+          "measured": 8,
+          "first_joint": 1,
+          "errors": 0,
+          "calls": 60,
+          "total_tokens": 240106,
+          "seconds": 767.3825349000399
+        }
+      },
+      "paired": {
+        "Q1": {
+          "pairs": 8,
+          "unpaired": 0,
+          "old_only": 1,
+          "new_only": 0,
+          "p_exact_two_sided": 1.0,
+          "delta_percentage_points": -12.5,
+          "conservative_95_ci_percentage_points": [
+            -57.545001961694254,
+            42.018140394366036
+          ],
+          "functional_rescues": 0,
+          "functional_harms": 0,
+          "p_holm_two_planned": 1.0
+        },
+        "Q3": {
+          "pairs": 8,
+          "unpaired": 0,
+          "old_only": 0,
+          "new_only": 0,
+          "p_exact_two_sided": 1.0,
+          "delta_percentage_points": 0.0,
+          "conservative_95_ci_percentage_points": [
+            -42.17525162283792,
+            42.17525162283792
+          ],
+          "functional_rescues": 0,
+          "functional_harms": 0,
+          "p_holm_two_planned": 1.0
+        }
+      },
+      "Q2_funnel": {
+        "attempts": 15,
+        "empty_gate_attempts": 6,
+        "retrieval_failed_attempts": 0,
+        "set_changed_tasks": 5,
+        "order_changed_tasks": 5,
+        "new_card_adopted_tasks": 3,
+        "first_query_set_changed_tasks": 3,
+        "first_query_order_changed_tasks": 3,
+        "trained_eligible_tasks": 6
+      },
+      "rescues": [],
+      "original_gate_checks": {
+        "measured_each_arm": true,
+        "min_changed_tasks_Q2": true,
+        "min_changed_new_card_adopted_tasks_Q2": true,
+        "workflow_errors_each_arm_max": false,
+        "Q2_joint_greater_than_Q1": false,
+        "Q2_joint_greater_than_Q3": false,
+        "Q2_functional_at_least_Q1": true
+      },
+      "original_gate_passed": false,
+      "shared_initial_candidates_verified": false,
+      "shuffle_scope": "cwe",
+      "metadata_Q_frozen": true,
+      "Q_bank_count": 1939,
+      "delta": 0.7613717780938312,
+      "parameters": {
+        "max_tokens": 4096,
+        "thinking": "disabled",
+        "lambda_q": 0.5,
+        "embedding_model": "text-embedding-3-large"
+      },
+      "cost": {
+        "llm": {
+          "calls": 176,
+          "prompt_tokens": 487944,
+          "completion_tokens": 191872,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 679816,
+          "cost_ca": 0.930902
+        },
+        "embedding": {
+          "calls": 43,
+          "failures": 0,
+          "prompt_tokens": 57990,
+          "total_tokens": 57990,
+          "cache_hits": 1933,
+          "embedded_texts": 43,
+          "usage_missing_calls": 0
+        },
+        "wall_seconds": 616.3128328000021
+      }
+    },
+    "shared8": {
+      "protocol": "cle-q-shared-initial8-v1",
+      "source": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare",
+      "format_check": {
+        "stage": "compare",
+        "rows": 24,
+        "tasks": 8,
+        "families": 8,
+        "schema": "cle-ablation-p7-with-ma-final-v1",
+        "native_statistics_recomputed": true,
+        "calls_and_tokens_matched": true,
+        "q_event_attribution_checked": true,
+        "status": "pass"
+      },
+      "arms": {
+        "Q2": {
+          "n": 8,
+          "functional": 4,
+          "security": 4,
+          "joint": 3,
+          "measured": 8,
+          "first_joint": 3,
+          "errors": 2,
+          "calls": 44,
+          "total_tokens": 156575,
+          "seconds": 488.26408229995286
+        },
+        "Q3": {
+          "n": 8,
+          "functional": 3,
+          "security": 4,
+          "joint": 2,
+          "measured": 8,
+          "first_joint": 2,
+          "errors": 3,
+          "calls": 48,
+          "total_tokens": 143498,
+          "seconds": 446.2050690999895
+        },
+        "Q1": {
+          "n": 8,
+          "functional": 3,
+          "security": 5,
+          "joint": 2,
+          "measured": 8,
+          "first_joint": 2,
+          "errors": 3,
+          "calls": 48,
+          "total_tokens": 144601,
+          "seconds": 449.92268359995796
+        }
+      },
+      "paired": {
+        "Q1": {
+          "pairs": 8,
+          "unpaired": 0,
+          "old_only": 0,
+          "new_only": 1,
+          "p_exact_two_sided": 1.0,
+          "delta_percentage_points": 12.5,
+          "conservative_95_ci_percentage_points": [
+            -42.018140394366036,
+            57.545001961694254
+          ],
+          "functional_rescues": 1,
+          "functional_harms": 0,
+          "p_holm_two_planned": 1.0
+        },
+        "Q3": {
+          "pairs": 8,
+          "unpaired": 0,
+          "old_only": 0,
+          "new_only": 1,
+          "p_exact_two_sided": 1.0,
+          "delta_percentage_points": 12.5,
+          "conservative_95_ci_percentage_points": [
+            -42.018140394366036,
+            57.545001961694254
+          ],
+          "functional_rescues": 1,
+          "functional_harms": 0,
+          "p_holm_two_planned": 1.0
+        }
+      },
+      "Q2_funnel": {
+        "attempts": 13,
+        "empty_gate_attempts": 7,
+        "retrieval_failed_attempts": 0,
+        "set_changed_tasks": 2,
+        "order_changed_tasks": 3,
+        "new_card_adopted_tasks": 2,
+        "first_query_set_changed_tasks": 1,
+        "first_query_order_changed_tasks": 2,
+        "trained_eligible_tasks": 4
+      },
+      "rescues": [
+        {
+          "run": "shared8",
+          "task_id": "1013",
+          "family_id": "1047f2bc6f3b",
+          "Q2_set_changed": false,
+          "Q2_order_changed": false,
+          "new_card_ids_adopted": [],
+          "Q2_rescue_vs_Q1": true,
+          "Q2_harm_vs_Q1": false,
+          "all_arms_selected_card_exposures": 0,
+          "all_arms_adopted_card_exposures": 0,
+          "outcomes": {
+            "Q2": {
+              "functional": true,
+              "security": true,
+              "joint": true,
+              "measured": true
+            },
+            "Q3": {
+              "functional": false,
+              "security": true,
+              "joint": false,
+              "measured": true
+            },
+            "Q1": {
+              "functional": false,
+              "security": true,
+              "joint": false,
+              "measured": true
+            }
+          }
+        }
+      ],
+      "original_gate_checks": {
+        "measured_each_arm": true,
+        "min_changed_tasks_Q2": false,
+        "min_changed_new_card_adopted_tasks_Q2": true,
+        "workflow_errors_each_arm_max": false,
+        "Q2_joint_greater_than_Q1": true,
+        "Q2_joint_greater_than_Q3": true,
+        "Q2_functional_at_least_Q1": true
+      },
+      "original_gate_passed": false,
+      "shared_initial_candidates_verified": true,
+      "shuffle_scope": "cwe",
+      "metadata_Q_frozen": true,
+      "Q_bank_count": 1939,
+      "delta": 0.7613717780938312,
+      "parameters": {
+        "max_tokens": 4096,
+        "thinking": "disabled",
+        "lambda_q": 0.5,
+        "embedding_model": "text-embedding-3-large"
+      },
+      "cost": {
+        "llm": {
+          "calls": 148,
+          "prompt_tokens": 329958,
+          "completion_tokens": 126672,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 456630,
+          "cost_ca": 0.623959
+        },
+        "embedding": {
+          "calls": 25,
+          "failures": 0,
+          "prompt_tokens": 30157,
+          "total_tokens": 30157,
+          "cache_hits": 1945,
+          "embedded_texts": 25,
+          "usage_missing_calls": 0
+        },
+        "wall_seconds": 398.45789399999194
+      }
+    }
+  },
+  "learning_checks": {
+    "learn8": {
+      "source": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/learn",
+      "format_check": {
+        "stage": "learn",
+        "rows": 8,
+        "tasks": 8,
+        "families": 8,
+        "schema": "cle-ablation-p7-with-ma-final-v1",
+        "native_statistics_recomputed": true,
+        "calls_and_tokens_matched": true,
+        "q_event_attribution_checked": true,
+        "status": "pass"
+      },
+      "cost": {
+        "llm": {
+          "calls": 70,
+          "prompt_tokens": 534133,
+          "completion_tokens": 62352,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 596485,
+          "cost_ca": 0.753193
+        },
+        "embedding": {
+          "calls": 14,
+          "failures": 0,
+          "prompt_tokens": 20527,
+          "total_tokens": 20527,
+          "cache_hits": 1933,
+          "embedded_texts": 14,
+          "usage_missing_calls": 0
+        },
+        "wall_seconds": 993.0678849999967
+      }
+    },
+    "full_dgrow": {
+      "source": "translation_work/diagnostics/20261016/cle_memory_q/full_dgrow",
+      "format_check": {
+        "stage": "learn",
+        "rows": 273,
+        "tasks": 273,
+        "families": 217,
+        "schema": "cle-ablation-p7-with-ma-final-v1",
+        "native_statistics_recomputed": true,
+        "calls_and_tokens_matched": true,
+        "q_event_attribution_checked": true,
+        "status": "pass"
+      },
+      "cost": {
+        "llm": {
+          "calls": 2230,
+          "prompt_tokens": 17126581,
+          "completion_tokens": 1993595,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 19120176
+        },
+        "embedding": {
+          "calls": 447,
+          "failures": 0,
+          "prompt_tokens": 588482,
+          "total_tokens": 588482,
+          "cache_hits": 1933,
+          "embedded_texts": 447,
+          "usage_missing_calls": 0
+        },
+        "wall_seconds": 3803.383745500003
+      }
+    }
+  },
+  "Q_coverage": {
+    "cards": 1939,
+    "visited": 297,
+    "at_least_two_families": 104,
+    "at_least_three_families": 43,
+    "positive_updates": 192,
+    "negative_updates": 351,
+    "learned_signs": {
+      "positive": 112,
+      "negative": 185
+    },
+    "visited_once": 172
+  },
+  "retrospective_only": true,
+  "different_protocol_scores_pooled": false,
+  "reviewed_native_rows": 425
+}

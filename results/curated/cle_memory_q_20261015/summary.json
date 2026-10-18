@@ -1,0 +1,418 @@
+{
+  "experiment": "cle-memory-q-remote-p7-probe-20261015",
+  "status": "completed",
+  "role": "training_development_probe_only",
+  "unique_tasks": 4,
+  "learning_families": 2,
+  "evaluation_families": 2,
+  "protocol": {
+    "entry": "methods.cle_ablation.run_memory_q",
+    "execution": "methods.cle_ablation.runner.run_one(P7)",
+    "statistics": "methods.direction_screening.protocol.summarize",
+    "material_head": "5ca7b98128ca84faef79579d4c49e7b6c4fc3dd6",
+    "working_tree_q_changes_committed": false,
+    "model": "deepseek-v3.2",
+    "embedding_model": "text-embedding-3-large",
+    "thinking": "disabled",
+    "max_tokens": 4096,
+    "workers": 1,
+    "alpha": 0.3,
+    "lambda_q": 0.5,
+    "delta": 0.7111816374685903,
+    "threshold_basis": "80th percentile of D_grow recalled candidates; no D_gate scores",
+    "original_historical_args_reproduced": false
+  },
+  "learning": {
+    "task_ids": [
+      1394,
+      102
+    ],
+    "summary": {
+      "arms": {
+        "Q0": {
+          "n": 2,
+          "functional": 2,
+          "security": 2,
+          "joint": 2,
+          "measured": 2,
+          "first_joint": 2,
+          "errors": 1,
+          "calls": 10,
+          "total_tokens": 71340,
+          "seconds": 1402.2210346000065
+        }
+      },
+      "paired": {},
+      "role": "training_development_only",
+      "stage": "learn",
+      "workflow": "remote CLE P7",
+      "families": 2,
+      "mechanism": []
+    },
+    "reward_updates": 2,
+    "learned_cards": [
+      {
+        "invariant_id": "pitfall-179-7678064253295235050",
+        "q_value": 0.3,
+        "q_visits": 1
+      },
+      {
+        "invariant_id": "hint-179-5161619869064341280",
+        "q_value": 0.3,
+        "q_visits": 1
+      }
+    ],
+    "pipeline_degradations": [
+      {
+        "task_id": "1394",
+        "attempt": 0,
+        "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids;planning:JSONDecodeError",
+        "stages": [
+          {
+            "stage": "experience_analysis",
+            "status": "degraded",
+            "error": "JSONDecodeError",
+            "parse_reason": "Invalid \\escape",
+            "parse_position": 3543,
+            "content_length": 6212,
+            "finish_reason": "stop",
+            "request_diagnostics": []
+          },
+          {
+            "stage": "adoption",
+            "status": "degraded",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": "missing_applied_experience_ids"
+          },
+          {
+            "stage": "planning",
+            "status": "degraded",
+            "error": "JSONDecodeError",
+            "parse_reason": "Invalid \\escape",
+            "parse_position": 1361,
+            "content_length": 2504,
+            "finish_reason": "stop",
+            "request_diagnostics": []
+          }
+        ]
+      }
+    ]
+  },
+  "comparison": {
+    "arms": {
+      "Q0": {
+        "n": 2,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 2,
+        "first_joint": 2,
+        "errors": 0,
+        "calls": 10,
+        "total_tokens": 67181,
+        "seconds": 120.44664419999754
+      },
+      "Q1": {
+        "n": 2,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 2,
+        "first_joint": 2,
+        "errors": 0,
+        "calls": 8,
+        "total_tokens": 27182,
+        "seconds": 108.21658419999585
+      },
+      "Q2": {
+        "n": 2,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 2,
+        "first_joint": 2,
+        "errors": 0,
+        "calls": 8,
+        "total_tokens": 28313,
+        "seconds": 123.00048970000353
+      }
+    },
+    "paired": {
+      "Q0": {
+        "pairs": 2,
+        "measured_pairs": 2,
+        "wins": 0,
+        "losses": 0,
+        "p_exact": 1,
+        "functional_harms": 0,
+        "p_holm": 1
+      },
+      "Q2": {
+        "pairs": 2,
+        "measured_pairs": 2,
+        "wins": 0,
+        "losses": 0,
+        "p_exact": 1,
+        "functional_harms": 0,
+        "p_holm": 1
+      }
+    },
+    "role": "training_development_only",
+    "stage": "compare",
+    "workflow": "remote CLE P7",
+    "families": 2,
+    "mechanism": [
+      {
+        "task_id": "1256",
+        "attempt": 0,
+        "similarity_ids_same_query": [
+          "pitfall-1333-4233333839735618083",
+          "hint-1333-8153697007201238305",
+          "pitfall-1333-5795252323512681018"
+        ],
+        "q_ids_same_query": [
+          "pitfall-1333-4233333839735618083",
+          "hint-1333-8153697007201238305",
+          "pitfall-1333-5795252323512681018"
+        ],
+        "set_changed": false,
+        "order_changed": false,
+        "visited_candidates": 0
+      },
+      {
+        "task_id": "100",
+        "attempt": 0,
+        "similarity_ids_same_query": [
+          "hint-179-8968661898205924741",
+          "pitfall-179-3925319144962369407",
+          "pitfall-179-7502035719223623204"
+        ],
+        "q_ids_same_query": [
+          "pitfall-179-7678064253295235050",
+          "hint-179-8968661898205924741",
+          "pitfall-179-3925319144962369407"
+        ],
+        "set_changed": true,
+        "order_changed": true,
+        "visited_candidates": 1
+      }
+    ]
+  },
+  "conclusion": {
+    "q_changed_selection_on_same_query_tasks": 1,
+    "q_vs_similarity_delta_joint": 0.0,
+    "accuracy_improvement_demonstrated": false,
+    "mechanism_case": "task100: learned card rose from outside cosine top3 to first; downstream adopted it",
+    "next": "stabilize shared JSON protocol, then predeclare more independent families; no full training/Base/Plus yet"
+  },
+  "cost": {
+    "learn": {
+      "llm": {
+        "model": "deepseek-v3.2",
+        "pricing": {
+          "input": 0.0012,
+          "output": 0.0018
+        },
+        "pricing_source": "ChatAnywhere 费用标准 https://chatanywhere.apifox.cn/doc-2694962 (2026-09-18)",
+        "currency": "CA元",
+        "by_label": {
+          "Q0.pipeline": {
+            "calls": 10,
+            "prompt_tokens": 64421,
+            "completion_tokens": 6919,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 71340,
+            "cost_ca": 0.089759
+          }
+        },
+        "total": {
+          "calls": 10,
+          "prompt_tokens": 64421,
+          "completion_tokens": 6919,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 71340,
+          "cost_ca": 0.089759
+        },
+        "note": "usage 缺失的调用计入 usage_missing，未按 0 计费；errors 为调用失败的次数（无 usage）"
+      },
+      "embedding": {
+        "calls": 93,
+        "failures": 0,
+        "prompt_tokens": 1350720,
+        "total_tokens": 1350720,
+        "cache_hits": 0,
+        "embedded_texts": 1935,
+        "usage_missing_calls": 0
+      },
+      "by_arm": {
+        "Q0": {
+          "embedding": {
+            "calls": 93,
+            "failures": 0,
+            "prompt_tokens": 1350720,
+            "total_tokens": 1350720,
+            "cache_hits": 0,
+            "embedded_texts": 1935,
+            "usage_missing_calls": 0
+          },
+          "seconds": 1402.2210346000065
+        }
+      },
+      "accounting": "Sequential incremental embedding/cache usage. First arm includes cold bank preparation; not a policy cost advantage. Currency uses old repository estimates, not invoice."
+    },
+    "compare": {
+      "llm": {
+        "model": "deepseek-v3.2",
+        "pricing": {
+          "input": 0.0012,
+          "output": 0.0018
+        },
+        "pricing_source": "ChatAnywhere 费用标准 https://chatanywhere.apifox.cn/doc-2694962 (2026-09-18)",
+        "currency": "CA元",
+        "by_label": {
+          "Q0.pipeline": {
+            "calls": 10,
+            "prompt_tokens": 61634,
+            "completion_tokens": 5547,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 67181,
+            "cost_ca": 0.083945
+          },
+          "Q1.pipeline": {
+            "calls": 8,
+            "prompt_tokens": 20432,
+            "completion_tokens": 6750,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 27182,
+            "cost_ca": 0.036668
+          },
+          "Q2.pipeline": {
+            "calls": 8,
+            "prompt_tokens": 21831,
+            "completion_tokens": 6482,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 28313,
+            "cost_ca": 0.037865
+          }
+        },
+        "total": {
+          "calls": 26,
+          "prompt_tokens": 103897,
+          "completion_tokens": 18779,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 122676,
+          "cost_ca": 0.158479
+        },
+        "note": "usage 缺失的调用计入 usage_missing，未按 0 计费；errors 为调用失败的次数（无 usage）"
+      },
+      "embedding": {
+        "calls": 6,
+        "failures": 0,
+        "prompt_tokens": 4890,
+        "total_tokens": 4890,
+        "cache_hits": 1933,
+        "embedded_texts": 6,
+        "usage_missing_calls": 0
+      },
+      "by_arm": {
+        "Q0": {
+          "embedding": {
+            "calls": 2,
+            "failures": 0,
+            "prompt_tokens": 1654,
+            "total_tokens": 1654,
+            "cache_hits": 1933,
+            "embedded_texts": 2,
+            "usage_missing_calls": 0
+          },
+          "seconds": 120.44664419999754
+        },
+        "Q1": {
+          "embedding": {
+            "calls": 2,
+            "failures": 0,
+            "prompt_tokens": 1565,
+            "total_tokens": 1565,
+            "cache_hits": 0,
+            "embedded_texts": 2,
+            "usage_missing_calls": 0
+          },
+          "seconds": 108.21658419999585
+        },
+        "Q2": {
+          "embedding": {
+            "calls": 2,
+            "failures": 0,
+            "prompt_tokens": 1671,
+            "total_tokens": 1671,
+            "cache_hits": 0,
+            "embedded_texts": 2,
+            "usage_missing_calls": 0
+          },
+          "seconds": 123.00048970000353
+        }
+      },
+      "accounting": "Sequential incremental embedding/cache usage. First arm includes cold bank preparation; not a policy cost advantage. Currency uses old repository estimates, not invoice."
+    },
+    "total_llm_calls": 36,
+    "total_llm_tokens": 194016,
+    "total_embedding_calls": 99,
+    "total_embedding_tokens": 1355610,
+    "note": "Logical LLM calls; internal retries are not physical request counts. Currency is the old repository estimate, not invoice. Learning includes cold embedding preparation."
+  },
+  "format_check": {
+    "learn": {
+      "stage": "learn",
+      "rows": 2,
+      "tasks": 2,
+      "families": 2,
+      "schema": "cle-ablation-p7-with-ma-final-v1",
+      "native_statistics_recomputed": true,
+      "calls_and_tokens_matched": true,
+      "q_event_attribution_checked": true,
+      "status": "pass"
+    },
+    "compare": {
+      "stage": "compare",
+      "rows": 6,
+      "tasks": 2,
+      "families": 2,
+      "schema": "cle-ablation-p7-with-ma-final-v1",
+      "native_statistics_recomputed": true,
+      "calls_and_tokens_matched": true,
+      "q_event_attribution_checked": true,
+      "status": "pass"
+    },
+    "learning_evaluation_families_disjoint": true
+  },
+  "artifacts": {
+    "raw_root": "translation_work/diagnostics/20261015/cle_memory_q/remote_p7",
+    "learn": "learn/rows.jsonl",
+    "compare": "compare/rows.jsonl",
+    "format_check": "format_check.json",
+    "original_record_inventory": "record_inventory.json",
+    "remote_method_check": "remote_method_check.json",
+    "commands": "commands.ps1"
+  },
+  "remaining": {
+    "Q5_full_training": "not connected",
+    "Q6_Base_Plus": "not connected or run",
+    "original_pools_file": "not received; deterministic recovery used",
+    "full_historical_args": "not received",
+    "other_mechanism_raw_runs": "source-machine runtime manifests and rows still absent"
+  }
+}

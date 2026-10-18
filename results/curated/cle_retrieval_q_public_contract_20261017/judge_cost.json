@@ -1,0 +1,18 @@
+[
+  {
+    "calls": 892,
+    "failed_calls": 0,
+    "prompt_tokens": 972253,
+    "completion_tokens": 203203,
+    "total_tokens": 1175456,
+    "known_tokens": {
+      "prompt_tokens": 972253,
+      "completion_tokens": 203203,
+      "total_tokens": 1175456
+    },
+    "missing_usage_calls": {},
+    "usage_complete": true,
+    "currency_cost": null,
+    "currency_cost_reason": "provider_billing_not_measured"
+  }
+]

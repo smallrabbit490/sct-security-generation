@@ -1,0 +1,24 @@
+{
+  "protocol": "cle-q-retrospective-closeout-v1",
+  "observed_at": "2026-10-17T21:22:15.735186+08:00",
+  "branch": "fjy/cle-memory-q-batch2",
+  "HEAD": "5ca7b98128ca84faef79579d4c49e7b6c4fc3dd6",
+  "runner": "configs/cle_q_review_closeout_20261017/review.py",
+  "native_functions": [
+    "audit_memory_q.check_run",
+    "direction_screening.protocol.summarize",
+    "report_memory_q.paired_effect",
+    "report_memory_q_probe.attempt_readout"
+  ],
+  "input_manifest": {
+    "autonomous24": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/compare",
+    "probe8": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare",
+    "shared8": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare",
+    "learn8": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/learn",
+    "full_dgrow": "translation_work/diagnostics/20261016/cle_memory_q/full_dgrow"
+  },
+  "tracked_and_untracked_source_changes_preexisting": true,
+  "operation": "read_only_reanalysis_no_API_no_validator",
+  "new_model_calls": 0,
+  "new_embedding_calls": 0
+}

@@ -97,6 +97,8 @@ class HskTreeRetriever:
         same_task_bonus: float = 2.0,
         retrieval_mode: str = "flat_llm",
         embedding_client=None,
+        semantic_delta: float | None = None,
+        lambda_q: float = 0.5,
     ) -> None:
         self.tree = tree
         self.requester = requester
@@ -122,6 +124,10 @@ class HskTreeRetriever:
         #   flat_rule / hier_rule = 无 LLM 对照臂，用于消融实验隔离贡献
         self.retrieval_mode = retrieval_mode
         self.embedding_client = embedding_client
+        if retrieval_mode in ("semantic_sim", "semantic_q") and semantic_delta is None:
+            raise ValueError("semantic_delta_required_for_value_selection")
+        self.semantic_delta = semantic_delta
+        self.lambda_q = lambda_q
         # 层次化检索的决策轨迹（供消融实验核对每层选了谁、是否回退）
         self._trace_local = threading.local()
 
@@ -377,7 +383,7 @@ class HskTreeRetriever:
         # "先看全树再下探"就退化成"只能选自己"。
         # 因此层次化模式一律用全量候选池，由 L1 的 LLM 决定是否跨 CWE——
         # 这正是它相对 flat 的额外能力（实测 flat 的跨 CWE 注入率恒为 0%）。
-        if self.retrieval_mode in ("hier_llm", "hier_rule", "semantic_llm"):
+        if self.retrieval_mode in ("hier_llm", "hier_rule", "semantic_llm", "semantic_sim", "semantic_q"):
             nodes = _cross_pool()
             scorer = lambda n, mu: self._base_for_hier(task, n, max_utility=mu)  # noqa: E731
 
@@ -386,12 +392,17 @@ class HskTreeRetriever:
 
         max_utility = max(utility_score(n.support_count, n.regression_count) for n in nodes)
 
-        if self.retrieval_mode == "semantic_llm":
+        if self.retrieval_mode in ("semantic_llm", "semantic_sim", "semantic_q"):
             # 训练/冻结检索：向量召回后适用性选择；失败显式关闭注入，不改库或证据。
-            from .semantic_retrieval import semantic_select
+            from .semantic_retrieval import semantic_select, semantic_value_select
             if self.embedding_client is None:
                 raise ValueError("semantic_retrieval_requires_embedding_client")
-            chosen, trace = semantic_select(task, nodes, self.requester, self.embedding_client, limit=limit)
+            if self.retrieval_mode == "semantic_llm":
+                chosen, trace = semantic_select(task, nodes, self.requester, self.embedding_client, limit=limit)
+            else:
+                chosen, trace = semantic_value_select(task, nodes, self.embedding_client,
+                    delta=self.semantic_delta, lambda_q=self.lambda_q if self.retrieval_mode == "semantic_q" else 0,
+                    limit=limit)
             self.last_hier_trace = trace
             if trace.get('status') == 'error':
                 error = RuntimeError('semantic_retrieval_failed:' + ','.join(trace.get('errors') or ['unknown']))

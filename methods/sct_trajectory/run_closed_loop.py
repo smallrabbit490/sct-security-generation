@@ -48,7 +48,7 @@ def _requester(model: str, timeout: int, max_tokens: int = 1500,
                max_inflight: int = 0, *, hard_timeout: float | None = None,
                gate_wait_timeout: float | None = None, retry_backoff: float = 2.0,
                circuit_failures: int = 15, circuit_cooldown: float = 60.0, semaphore=None,
-               selector_max_inflight: int = 16):
+               selector_max_inflight: int = 16, thinking: str | None = None):
     """构造 LLM 请求器。
 
     max_inflight > 0 时，用本请求器实例的信号量把真实HTTP在途数限制在该值。
@@ -87,10 +87,12 @@ def _requester(model: str, timeout: int, max_tokens: int = 1500,
     BACKOFF_MAX = 20.0
 
     def _one_call(prompt: str) -> dict:
-        body = json.dumps(
-            {"model": model, "messages": [{"role": "user", "content": prompt}],
-             "temperature": 0, "max_tokens": min(max_tokens, 256) if isinstance(prompt, SelectorPrompt) else max_tokens}
-        ).encode("utf-8")
+        payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
+                   "temperature": 0, "max_tokens": min(max_tokens, 256) if isinstance(prompt, SelectorPrompt) else max_tokens}
+        # Q探针已实测默认思考耗尽输出预算；仅显式调用者关闭，不改变旧CLE默认请求。
+        if thinking is not None:
+            payload["thinking"] = {"type": thinking}
+        body = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(
             "https://api.chatanywhere.tech/v1/chat/completions",
             data=body,
@@ -397,11 +399,16 @@ def main() -> None:
                              "默认 48——门控是唯一的质量过滤器，覆盖面越大筛得越准；"
                              "用户要求增加被挑选的例子数量")
     parser.add_argument("--retrieval-mode", type=str, default="flat_llm",
-                        choices=["flat_llm", "flat_rule", "hier_llm", "hier_rule", "semantic_llm"],
+                        choices=["flat_llm", "flat_rule", "hier_llm", "hier_rule", "semantic_llm", "semantic_sim", "semantic_q"],
                         help="检索机制（用户 2026-09-22）。flat_llm=旧机制逐候选打 LLM 分；"
                              "hier_llm=层次化自顶向下检索（LLM 看树骨架后逐层下探）；"
                              "flat_rule/hier_rule 为无 LLM 消融对照臂")
     parser.add_argument('--embedding-model', default='text-embedding-3-large')
+    parser.add_argument('--semantic-delta', type=float)
+    parser.add_argument('--lambda-q', type=float, default=0.5)
+    parser.add_argument('--q-learning', action='store_true', help='仅D_grow逐次采用后学习Q；workers=1')
+    parser.add_argument('--q-alpha', type=float, default=0.3)
+    parser.add_argument('--thinking', choices=['disabled'], default=None)
     parser.add_argument('--selector-max-inflight', type=int, default=16,
                         help='语义筛选长上下文请求子上限；所有阶段仍共享 max-inflight 总上限')
     parser.add_argument('--embedding-cache', type=Path, default=Path('translation_work/cache/embeddings/cle.sqlite3'))
@@ -451,6 +458,10 @@ def main() -> None:
                              "却让每个 seed 多 4 次 LLM 调用，故默认关闭。"
                              "需要复现带 L4 的实验时用 A4/A5/A6。见 ablation.py")
     args = parser.parse_args()
+    if args.retrieval_mode in ('semantic_sim', 'semantic_q') and args.semantic_delta is None:
+        parser.error('semantic_sim/q requires --semantic-delta from learning calibration')
+    if args.q_learning and (args.workers != 1 or args.branch_count != 1 or not args.context_pipeline):
+        parser.error('Q learning requires workers=1, branch-count=1 and context-pipeline')
     if args.selector_max_inflight < 1:
         parser.error('--selector-max-inflight must be positive')
     if args.branch_count < 1 or (args.branch_count > 1 and not args.context_pipeline):
@@ -595,12 +606,12 @@ def main() -> None:
     _inflight = args.max_inflight if args.max_inflight > 0 else args.workers
     shared_requests = threading.BoundedSemaphore(_inflight)
     embedding_client = None
-    if args.retrieval_mode == 'semantic_llm':
+    if args.retrieval_mode in ('semantic_llm', 'semantic_sim', 'semantic_q'):
         from methods.sct_trajectory.semantic_retrieval import EmbeddingClient
         embedding_client = EmbeddingClient(model=args.embedding_model, cache_path=args.embedding_cache,
                                            key_loader=load_key, semaphore=shared_requests, timeout=args.timeout)
     runner = CleRunner(_requester(args.model, args.timeout, args.max_tokens, _inflight, semaphore=shared_requests,
-                                 selector_max_inflight=args.selector_max_inflight),
+                                 selector_max_inflight=args.selector_max_inflight, thinking=args.thinking),
                        tree, ledger,
                        timeout=args.validation_timeout, workers=args.workers, progress=progress,
                        ablation=ablation_cfg, anti_overdefense=args.anti_overdefense,
@@ -616,7 +627,8 @@ def main() -> None:
                        context_pipeline=args.context_pipeline,
                        internal_checks=args.internal_checks,
                        branch_count=args.branch_count, gate_mode=args.gate_mode,
-                       embedding_client=embedding_client)
+                       embedding_client=embedding_client, semantic_delta=args.semantic_delta,
+                       lambda_q=args.lambda_q, q_learning=args.q_learning, q_alpha=args.q_alpha)
 
     # 【周期落盘经验池】（缺陷 D35，2026-09-22 卡死事故）
     # 原先 experience_pool.jsonl 只在"每轮结束"或"抛异常"时写。而**卡死**（LLM 请求
@@ -685,6 +697,8 @@ def main() -> None:
         if trace is not None:
             traj_handle.write(json.dumps(trace.to_dict(), ensure_ascii=False) + "\n")
             traj_handle.flush()
+            if args.q_learning:
+                _write_jsonl(out / 'memory_q_events.jsonl', runner.memory_q_events)
 
     audit_handle = open(out / "audit_detail.jsonl", "a", encoding="utf-8")
 
@@ -925,6 +939,14 @@ def main() -> None:
     write_status(out, status="running", stage="final_eval", detail="冻结 + 审计池全量评测")
     frozen = runner.freeze_tree()
     _write_jsonl(out / "frozen" / "m_star.jsonl", frozen)
+    _write_jsonl(out / 'memory_q_events.jsonl', runner.memory_q_events)
+    if args.retrieval_mode in ('semantic_sim', 'semantic_q') or args.q_learning:
+        from methods.sct_lifecycle_replay.freeze_protocol import build_freeze_metadata
+        q_metadata = build_freeze_metadata(frozen, args.model, args.retrieval_mode, 'CLE')
+        q_metadata.update(delta=args.semantic_delta, lambda_q=args.lambda_q, alpha=args.q_alpha,
+                          embedding_model=args.embedding_model, thinking=args.thinking,
+                          max_tokens=args.max_tokens, update_pool='D_grow only')
+        (out/'frozen'/'memory_q.json').write_text(json.dumps(q_metadata, indent=2), encoding='utf-8')
     progress(f"=== 冻结经验树 M*：{len(frozen)} 条经验；开始审计池全量评测（{len(audit)} 条）===")
     fe_handle = open(out / "final_eval.jsonl", "a", encoding="utf-8")
 
