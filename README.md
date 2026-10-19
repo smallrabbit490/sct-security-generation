@@ -13,6 +13,7 @@
    - [外部数据来源](docs/external_dataset_provenance.md)：经验提取所用外部数据及许可说明。
    - [当前限制](docs/limitations.md)：哪些语言和实验仍未完全冻结。
 2. **再理解评测规则**
+   - **[Q探索Pro结论与收尾执行清单](docs/CLE_Q探索Pro结论与收尾执行清单_20261019.md)**：GPT-6 Pro网页版审阅后完成零API收尾，当前Q专项STOP_INCONCLUSIVE，停止新付费扩展；原1192条成绩、1090条奖励均复核。资格屏蔽后416卡有反馈，298个固定查询127题改序；不将旧成绩分配给新Q。见[综合报告](docs/CLE_Q探索综合报告_Pro审阅材料_20261019.md)、[Pro原文](docs/CLE_Q探索Pro网页版审阅原文_20261019.md)及[复现入口](configs/cle_q_pro_closeout_20261019/README.md)。完整CLE主课题和最终评价保持独立状态。 [本次上传任务与边界](docs/CLE_Q探索收尾上传说明_20261019.md)。
    - [2026-10-18 Q探索任务交付说明](docs/CLE_Q探索任务交付说明_20261018.md)：说明本分支任务、代码与产物范围、已执行实验、184项实现测试、STOP_INCONCLUSIVE结论及未上传的本地原件。
    - [Q探索复审与失败收口报告](docs/CLE_Q探索复审与失败收口报告_20261017.md)（[Word版](docs/CLE_Q探索复审与失败收口报告_20261017.docx)）：Skills复审并零API复算425条原生记录，三批开发原门未过，无Q作用链新增救回；**STOP_INCONCLUSIVE，不推荐全量**。[复算入口](configs/cle_q_review_closeout_20261017/README.md)。此前[决策规格](docs/CLE_Q全量测试决策实验规格_20261017.md)和[阶段快照](docs/CLE_Q全量测试决策阶段报告_20261017.md)保留；新公开契约协议仍待人工，不冒称它已经实验失败。
    - [102/136 公开契约补齐后的新协议](configs/cle_retrieval_q_public_contract_20261017/README.md)：保留原始数据，以独立context覆盖补齐外部依赖，通过预检后生成AI初标与人工复核材料；[新协议阶段报告](docs/CLE检索与Q公开契约补齐及初标报告_20261017.md)。
