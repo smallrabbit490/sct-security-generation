@@ -1,0 +1,277 @@
+[
+  {
+    "run": "autonomous24",
+    "task_id": "606",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/autonomous24_606_Q2_attempt0.py",
+    "adopted_ids": [
+      "seed-633",
+      "seed-602"
+    ],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "606",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/autonomous24_606_Q2_attempt1.py",
+    "adopted_ids": [
+      "pitfall-502-3788521669358819407",
+      "blind-502-8129900557211162496"
+    ],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "87",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/autonomous24_87_Q2_attempt0.py",
+    "adopted_ids": [
+      "cand-1333-4003705983803461794"
+    ],
+    "functional": true,
+    "security": true,
+    "joint": true
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "498",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/autonomous24_498_Q2_attempt0.py",
+    "adopted_ids": [],
+    "functional": true,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "498",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/autonomous24_498_Q2_attempt1.py",
+    "adopted_ids": [],
+    "functional": true,
+    "security": true,
+    "joint": true
+  },
+  {
+    "run": "probe8",
+    "task_id": "96",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/probe8_96_Q2_attempt0.py",
+    "adopted_ids": [
+      "guard-601-340895232419954315"
+    ],
+    "functional": true,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "probe8",
+    "task_id": "96",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/probe8_96_Q2_attempt1.py",
+    "adopted_ids": [],
+    "functional": true,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "probe8",
+    "task_id": "370",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/probe8_370_Q2_attempt0.py",
+    "adopted_ids": [
+      "pitfall-327-2138602210193468302",
+      "hint-327-2192871425371349296",
+      "pitfall-327-3958700371924071797"
+    ],
+    "functional": true,
+    "security": true,
+    "joint": true
+  },
+  {
+    "run": "probe8",
+    "task_id": "612",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/probe8_612_Q2_attempt0.py",
+    "adopted_ids": [
+      "seed-611"
+    ],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "probe8",
+    "task_id": "612",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/probe8_612_Q2_attempt1.py",
+    "adopted_ids": [],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "probe8",
+    "task_id": "603",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/probe8_603_Q2_attempt0.py",
+    "adopted_ids": [
+      "seed-611"
+    ],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "probe8",
+    "task_id": "603",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/probe8_cwe_shuffle/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/probe8_603_Q2_attempt1.py",
+    "adopted_ids": [],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "1000",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_1000_Q2_attempt0.py",
+    "adopted_ids": [],
+    "functional": false,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "1000",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_1000_Q2_attempt1.py",
+    "adopted_ids": [],
+    "functional": false,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "1013",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_1013_Q2_attempt0.py",
+    "adopted_ids": [],
+    "functional": true,
+    "security": true,
+    "joint": true
+  },
+  {
+    "run": "shared8",
+    "task_id": "1055",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_1055_Q2_attempt0.py",
+    "adopted_ids": [],
+    "functional": true,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "1055",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_1055_Q2_attempt1.py",
+    "adopted_ids": [],
+    "functional": true,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "777",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_777_Q2_attempt0.py",
+    "adopted_ids": [
+      "blind-74-7891981125696054376"
+    ],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "777",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_777_Q2_attempt1.py",
+    "adopted_ids": [],
+    "functional": false,
+    "security": true,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "1015",
+    "arm": "Q2",
+    "attempt": 0,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_1015_Q2_attempt0.py",
+    "adopted_ids": [],
+    "functional": false,
+    "security": false,
+    "joint": false
+  },
+  {
+    "run": "shared8",
+    "task_id": "1015",
+    "arm": "Q2",
+    "attempt": 1,
+    "source_rows": "translation_work/diagnostics/20261016/cle_memory_q/shared_initial8/compare/rows.jsonl",
+    "code": "translation_work/diagnostics/20261017/cle_q_review_closeout/code_examples/shared8_1015_Q2_attempt1.py",
+    "adopted_ids": [
+      "hint-862-1405133312613939756",
+      "pitfall-862-8413160066841834279"
+    ],
+    "functional": false,
+    "security": false,
+    "joint": false
+  }
+]

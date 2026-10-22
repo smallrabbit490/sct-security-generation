@@ -1,0 +1,4 @@
+interface:
+  display_name: "CLE 训练与开发执行"
+  short_description: "执行旧版CLE训练、门控开发与恢复并核对各阶段实际产物"
+  default_prompt: "使用 $cle-training-run 完成当前CLE任务，依据本项目记录选择实际入口并保留证据边界。"

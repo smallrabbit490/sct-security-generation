@@ -1,0 +1,12 @@
+{
+  "docker_daemon_available": true,
+  "required_images": {
+    "safecoder-python-validator:local": false,
+    "porta-bench-runtime-python3:latest": false
+  },
+  "project_drive_free_bytes": 18670354432,
+  "original_validator_positive_control": "not_executed",
+  "frozen_CWE_shuffle_qualification": "not_executed",
+  "watchdog_qualification": "not_executed",
+  "full_environment_qualified": false
+}

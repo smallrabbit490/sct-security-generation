@@ -1,0 +1,59 @@
+{
+  "protocol": "cle-q-online-dinit-grow-cap3-v1",
+  "stage_order": [
+    "D_init",
+    "D_grow",
+    "D_gate"
+  ],
+  "initial_visited": 926,
+  "card_count": 1939,
+  "model": "deepseek-v3.2",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 4096,
+  "selector_max_tokens": 256,
+  "embedding_model": "text-embedding-3-large",
+  "delta": -1,
+  "lambda_q": 0.5,
+  "alpha": 0.3,
+  "candidate_order_training": "q",
+  "max_experiences": 3,
+  "max_code_attempts": 2,
+  "learning_workers": 1,
+  "update_boundary": "after each P7 task, c0 then c1; next task sees updated Q",
+  "new_cards": false,
+  "body_lifecycle_changes": false,
+  "performance_continuation_gate": false,
+  "D_init_tasks": 303,
+  "D_grow_tasks": 273,
+  "D_grow_reward_eligible": 228,
+  "D_gate_tasks": 298,
+  "D_gate_new_arms": [
+    "Q2",
+    "Q3"
+  ],
+  "D_gate_reused_arms": [
+    "Q0",
+    "Q1"
+  ],
+  "D_gate_Q_updates": false,
+  "shuffle_scope": "cwe",
+  "shuffle_seed": 20261015,
+  "training_selector_prompt_chars": 420000,
+  "gate_selector_prompt_chars": 180000,
+  "request_timeout_seconds": 120,
+  "gate_request_timeout_seconds": 60,
+  "phase_token_stop": {
+    "D_init": 35000000,
+    "D_grow": 35000000,
+    "D_gate": 65000000
+  },
+  "phase_logical_call_stop": {
+    "D_init": 5000,
+    "D_grow": 5000,
+    "D_gate": 10000
+  },
+  "paid_execution_authorized": true,
+  "Base_Plus": false,
+  "actual_bill_CNY": null
+}

@@ -1,0 +1,97 @@
+{
+  "protocol": "cle-q-dinit-observer-cap3-v1",
+  "status": "prepared_no_API",
+  "inventory": {
+    "protocol": "cle-q-dinit-observer-cap3-v1",
+    "cards": 1939,
+    "learned_cards": 466,
+    "origin_pools": {
+      "D_init": 1939
+    },
+    "origin_tasks": 303,
+    "origin_families": 217,
+    "cards_with_unresolved_origins": 67,
+    "pools": {
+      "D_init": 303,
+      "D_grow": 273,
+      "D_gate": 298
+    },
+    "family_overlap": {
+      "D_init|D_grow": 0,
+      "D_init|D_gate": 0,
+      "D_grow|D_gate": 0
+    },
+    "Q_baseline": "M1: prior D_grow unlimited observer, inherited without resetting",
+    "new_API_calls": 0
+  },
+  "new_P7_runs": 0,
+  "Joint": null,
+  "F": null,
+  "S": null,
+  "measured": 0,
+  "technical_issues": [],
+  "credit": {
+    "all_feedback": {
+      "policy": "all_feedback",
+      "learned_cards": 466,
+      "new_cards": 0,
+      "coverage": 0.24033006704486848,
+      "new_card_ids": [],
+      "valid_updates": 0,
+      "credited_relations": {},
+      "cards_with_two_feedback_families": 217
+    },
+    "cross_family": {
+      "policy": "cross_family",
+      "learned_cards": 466,
+      "new_cards": 0,
+      "coverage": 0.24033006704486848,
+      "new_card_ids": [],
+      "valid_updates": 0,
+      "credited_relations": {},
+      "cards_with_two_feedback_families": 217
+    }
+  },
+  "D_gate_execution": false,
+  "qualification": {
+    "qualified": 222,
+    "excluded": 81,
+    "preflight_passed": true,
+    "probe": [
+      "1258",
+      "1288",
+      "1299",
+      "1303",
+      "1319",
+      "1338",
+      "831",
+      "1350",
+      "1003",
+      "1008",
+      "1216",
+      "1053"
+    ]
+  },
+  "cost": {
+    "P7": {
+      "calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "shared_initial": {
+      "calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "embedding": [],
+    "currency": null
+  }
+}

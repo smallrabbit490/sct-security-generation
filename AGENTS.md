@@ -15,6 +15,7 @@
 | `methods/sct_agent/` | SCT 方法源码 | 经验卡、检索、进化和门控实现。 |
 | `methods/legacy_prompt_adapters/` | 历史兼容源码 | 仅用于旧结果回放；不能冒充正式 Agent baseline。 |
 | `configs/` | 无密钥配置 | 只放可提交配置；key 放在 `.env.local` 或 `local_secrets/`。 |
+| `skills/` | CLE 项目技能源 | 历史工作方法调研形成的可交接技能；仅在任务匹配时加载，不能替代当次实验协议。 |
 | `docker/` | 镜像定义 | Dockerfile 和验证器构建上下文。 |
 | `docs/` | 中文实验文档 | 协议、复现、审计、限制和数据来源。 |
 | `results/curated/` | 精简结果 | 只放小型、脱敏、标注完整的最终摘要。 |

@@ -1,0 +1,184 @@
+{
+  "protocol": "cle-q-pro-review-closeout-20261019",
+  "date": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "status": "STOP_INCONCLUSIVE",
+  "scope": "Q extension only; accepted CLE school topic and target ISSTA remain unchanged",
+  "reviewer_route": "GPT-6 Pro web",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "review_url": "https://chatgpt.com/c/6ad626a2-c670-83ea-9191-8e17f218ae59",
+  "conclusion": "Selection effect detectable under tested unlimited protocol; stable Joint benefit not established for frozen M1.",
+  "new_experiment_API_calls": 0,
+  "new_embeddings": 0,
+  "new_code_generation": 0,
+  "new_Joint": null,
+  "derived_Q_is_deployed": false,
+  "paid_Dinit": "STOP_AS_PROPOSED",
+  "two_round_Dgrow": "STOP",
+  "new_full_Dgate": "STOP",
+  "Q_Base_Plus": "STOP",
+  "whole_CLE_status": "not closed by this decision",
+  "human_relevance_labels": "0/222 in equalK study; formal human-grounded metrics unmeasured",
+  "qualification_replay_summary": {
+    "operation": "zero_API_qualification_screening_sensitivity",
+    "original_M1_exactly_reproduced": true,
+    "starting_cards": 1939,
+    "prelearning_snapshot_verified_zero_Q": true,
+    "fixed_card_body_equal_prelearning": true,
+    "credited_events_verified_against_native_attempts": 1090,
+    "original_family_support_exactly_reproduced": true,
+    "original_two_feedback_family_cards": 217,
+    "screened_two_feedback_family_cards": 178,
+    "original_valid_updates": 1090,
+    "retained_updates": 928,
+    "removed_updates": 162,
+    "removed_feedback_tasks": 32,
+    "affected_cards": 89,
+    "lost_all_support": 50,
+    "Q_sign_changes_including_zero": 57,
+    "original_visited": 466,
+    "screened_visited": 416,
+    "screened_Q_signs": {
+      "zero": 1523,
+      "positive": 161,
+      "negative": 255
+    },
+    "fixed_query_replays": 298,
+    "skipped_first_traces": [],
+    "recovered_embedded_first_traces": [
+      "1343",
+      "458",
+      "860"
+    ],
+    "included_first_queries_with_selector_errors": [
+      "458",
+      "860"
+    ],
+    "presentation_order_changes": 127,
+    "top3_set_changes": 69,
+    "tasks_original_selected_Q_changed": 52,
+    "tasks_original_adopted_Q_changed": 39,
+    "Q3_saved_bank_exact_CWE_shuffle": true,
+    "Q3_trace_assignment_entries_verified": 14015,
+    "actual_exposure": {
+      "Q0": {
+        "selected": 1363,
+        "selected_originally_learned": 746,
+        "selected_assigned_visits": 746,
+        "adopted": 882,
+        "adopted_originally_learned": 535,
+        "adopted_assigned_visits": 535
+      },
+      "Q1": {
+        "selected": 1368,
+        "selected_originally_learned": 751,
+        "selected_assigned_visits": 751,
+        "adopted": 870,
+        "adopted_originally_learned": 508,
+        "adopted_assigned_visits": 508
+      },
+      "Q2": {
+        "selected": 1364,
+        "selected_originally_learned": 758,
+        "selected_assigned_visits": 758,
+        "adopted": 905,
+        "adopted_originally_learned": 554,
+        "adopted_assigned_visits": 554
+      },
+      "Q3": {
+        "selected": 1346,
+        "selected_originally_learned": 728,
+        "selected_assigned_visits": 354,
+        "adopted": 829,
+        "adopted_originally_learned": 485,
+        "adopted_assigned_visits": 191
+      }
+    },
+    "new_API_calls": 0,
+    "new_outcome_measurements": 0,
+    "new_Joint": null,
+    "limitations": [
+      "Only already assigned rewards retained; no missing rewards reconstructed.",
+      "Qualification-screened does not mean human-validated clean.",
+      "Replayed top3 is ranked preview, not actual LLM selection under new ordering.",
+      "No new selection/adoption/code/outcome can be inferred from historical outcomes."
+    ]
+  },
+  "tasks": [
+    {
+      "id": "C1",
+      "operation": "native final outcome recomputation",
+      "status": "PASS",
+      "threshold": "1192 rows and original arm counts / complete-pair gains-losses match",
+      "actual": "97/104/102/100 Joint; 296 Q2 complete pairs",
+      "supported_conclusion": "Primary results reproduce",
+      "API_budget": 0
+    },
+    {
+      "id": "C2",
+      "operation": "M1 reconstruction and native evidence audit",
+      "status": "PASS",
+      "threshold": "all credited events match actual adoption and same-attempt reward; Q/visits/family support exact",
+      "actual": "1090/1090; 1939 card Q/visits exact",
+      "supported_conclusion": "M1 is reproducible",
+      "API_budget": 0
+    },
+    {
+      "id": "C3",
+      "operation": "qualification-screened replay",
+      "status": "PASS",
+      "threshold": "only previously credited eligible events; original order; no fabricated 1391 reward",
+      "actual": "928 retained / 162 removed; 416 cards supported; two-family cards178",
+      "supported_conclusion": "Known eligibility affects Q; corrected policy efficacy unmeasured",
+      "API_budget": 0
+    },
+    {
+      "id": "C4",
+      "operation": "fixed-query ranking sensitivity",
+      "status": "PASS",
+      "threshold": "every old presented order reproduced; new ranks never assigned historical outcomes",
+      "actual": "298/298;127 order changes;69 top3-set changes",
+      "supported_conclusion": "Archived order sensitive to Q credit qualification",
+      "API_budget": 0
+    },
+    {
+      "id": "C5",
+      "operation": "Q3 CWE assignment audit",
+      "status": "PASS",
+      "threshold": "saved bank exact same-CWE shuffle; assigned trace values match",
+      "actual": "1939 cards exact;14015 ranking entries match",
+      "supported_conclusion": "Specified shuffle implemented; exposure matching not established",
+      "API_budget": 0
+    },
+    {
+      "id": "C6",
+      "operation": "candidate/presentation/selection/adoption exposure",
+      "status": "PASS",
+      "threshold": "occurrence and unique counts plus assigned vs real history; first/all separated",
+      "actual": "32 stage strata;Q2 adopted real-history554/905;Q3 assigned191/829",
+      "supported_conclusion": "Bank coverage is not decision exposure",
+      "API_budget": 0
+    },
+    {
+      "id": "C7",
+      "operation": "limits, labels, costs, exposure disclosure",
+      "status": "RECORDED_WITH_UNMEASURED_ITEMS",
+      "threshold": "no fabricated human labels, bills or missing outcomes",
+      "actual": "human0/222; final-test unknown; actual currency unknown",
+      "supported_conclusion": "No human-grounded retrieval or final-test claim",
+      "API_budget": 0
+    },
+    {
+      "id": "C8",
+      "operation": "Q-extension closeout",
+      "status": "COMPLETE",
+      "threshold": "Pro response retained, raw sources preserved, no new paid expansion",
+      "actual": "STOP_INCONCLUSIVE; M1 preserved; historical Dinit implementation retained",
+      "supported_conclusion": "Q exploration closes without whole-CLE completion claim",
+      "API_budget": 0
+    }
+  ],
+  "automatic_reopen": false,
+  "reopen_evidence": "Reproducible intended-intervention credit/assignment defect plus exposure-relevant correction; separately bounded plan and user direction. Extra Q-card count alone is insufficient."
+}

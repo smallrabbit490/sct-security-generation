@@ -1,0 +1,115 @@
+{
+  "aggregate": {
+    "Q1": {
+      "functional": 10,
+      "security": 14,
+      "joint": 10,
+      "measured": 16,
+      "P7_runs": 16,
+      "unique_tasks": 8,
+      "joint_rate": 0.625,
+      "workflow_error_runs": 0,
+      "final_public_signature_diffs": 1,
+      "final_binding_redeclarations": 0
+    },
+    "Q2": {
+      "functional": 10,
+      "security": 12,
+      "joint": 9,
+      "measured": 16,
+      "P7_runs": 16,
+      "unique_tasks": 8,
+      "joint_rate": 0.5625,
+      "workflow_error_runs": 2,
+      "final_public_signature_diffs": 1,
+      "final_binding_redeclarations": 0
+    },
+    "Q3": {
+      "functional": 10,
+      "security": 14,
+      "joint": 10,
+      "measured": 16,
+      "P7_runs": 16,
+      "unique_tasks": 8,
+      "joint_rate": 0.625,
+      "workflow_error_runs": 3,
+      "final_public_signature_diffs": 2,
+      "final_binding_redeclarations": 0
+    }
+  },
+  "repeat_disagreement": {
+    "Q1": 2,
+    "Q2": 1,
+    "Q3": 0
+  },
+  "primary": {
+    "Q1": {
+      "complete": true,
+      "families": 8,
+      "mean_joint_difference": -0.0625,
+      "paired_family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0
+      ],
+      "p_exact_sign_flip": 1.0,
+      "ci95": [
+        -0.1875,
+        0.0
+      ],
+      "p_holm": 1
+    },
+    "Q3": {
+      "complete": true,
+      "families": 8,
+      "mean_joint_difference": -0.0625,
+      "paired_family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "p_exact_sign_flip": 1.0,
+      "ci95": [
+        -0.375,
+        0.1875
+      ],
+      "p_holm": 1
+    }
+  },
+  "adoption": {
+    "Q1": {
+      "attempts": 22,
+      "selected": 121,
+      "declared_adopted": 57,
+      "above_three_selected": 16,
+      "above_three_adopted": 5
+    },
+    "Q2": {
+      "attempts": 23,
+      "selected": 126,
+      "declared_adopted": 51,
+      "above_three_selected": 17,
+      "above_three_adopted": 4
+    },
+    "Q3": {
+      "attempts": 22,
+      "selected": 122,
+      "declared_adopted": 39,
+      "above_three_selected": 16,
+      "above_three_adopted": 5
+    }
+  },
+  "human_confirmed": 0,
+  "technical_errors_retained": true,
+  "model_estimate_is_not_human_gold": true
+}

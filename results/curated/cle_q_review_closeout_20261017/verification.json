@@ -1,0 +1,13 @@
+{
+  "native_rows_checked": 425,
+  "report_score_rows_checked": 11,
+  "local_report_links_checked": 18,
+  "whitespace_files_checked": 13,
+  "CRLF_respected": true,
+  "docx_rendered_pages": 12,
+  "all_page_images_visually_reviewed": true,
+  "new_model_calls": 0,
+  "new_embedding_calls": 0,
+  "new_dynamic_validations": 0,
+  "status": "pass"
+}

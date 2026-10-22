@@ -1,0 +1,9 @@
+﻿id,operation,status,threshold,actual,supported_conclusion,API_budget
+C1,native final outcome recomputation,PASS,1192 rows and original arm counts / complete-pair gains-losses match,97/104/102/100 Joint; 296 Q2 complete pairs,Primary results reproduce,0
+C2,M1 reconstruction and native evidence audit,PASS,all credited events match actual adoption and same-attempt reward; Q/visits/family support exact,1090/1090; 1939 card Q/visits exact,M1 is reproducible,0
+C3,qualification-screened replay,PASS,only previously credited eligible events; original order; no fabricated 1391 reward,928 retained / 162 removed; 416 cards supported; two-family cards178,Known eligibility affects Q; corrected policy efficacy unmeasured,0
+C4,fixed-query ranking sensitivity,PASS,every old presented order reproduced; new ranks never assigned historical outcomes,298/298;127 order changes;69 top3-set changes,Archived order sensitive to Q credit qualification,0
+C5,Q3 CWE assignment audit,PASS,saved bank exact same-CWE shuffle; assigned trace values match,1939 cards exact;14015 ranking entries match,Specified shuffle implemented; exposure matching not established,0
+C6,candidate/presentation/selection/adoption exposure,PASS,occurrence and unique counts plus assigned vs real history; first/all separated,32 stage strata;Q2 adopted real-history554/905;Q3 assigned191/829,Bank coverage is not decision exposure,0
+C7,"limits, labels, costs, exposure disclosure",RECORDED_WITH_UNMEASURED_ITEMS,"no fabricated human labels, bills or missing outcomes",human0/222; final-test unknown; actual currency unknown,No human-grounded retrieval or final-test claim,0
+C8,Q-extension closeout,COMPLETE,"Pro response retained, raw sources preserved, no new paid expansion",STOP_INCONCLUSIVE; M1 preserved; historical Dinit implementation retained,Q exploration closes without whole-CLE completion claim,0

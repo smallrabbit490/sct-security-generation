@@ -1,0 +1,224 @@
+{
+  "observer_unique_card_funnel": {
+    "candidate": 1359,
+    "selected": 898,
+    "declared_adopted": 577,
+    "credited": 466
+  },
+  "observer_unexposed_cards": 580,
+  "observer_selected_never_adopted": 321,
+  "observer_adopted_never_credited": 111,
+  "observer_card_reward_updates": {
+    "1.0": 421,
+    "-1.0": 669
+  },
+  "observer_skipped_rewards": {
+    "incomplete_or_technical_measurement": 79,
+    "no_adopted_experiences": 67,
+    "reference_not_joint;placeholder_in_task": 171,
+    "reference_not_joint": 35,
+    "placeholder_in_task": 4
+  },
+  "by_arm": {
+    "observe/Q0": {
+      "attempts": 442,
+      "selected_total": 2714,
+      "declared_adopted_total": 1356,
+      "selected_mean": 6.14027149321267,
+      "declared_adopted_mean": 3.067873303167421,
+      "selected_above_three": 316,
+      "declared_adopted_above_three": 156,
+      "normal_empty_selection": 6,
+      "retrieval_status": {
+        "completed": 442
+      },
+      "final_outcomes": {
+        "joint": 109,
+        "security_only": 99,
+        "functional_only": 19,
+        "unmeasured": 2,
+        "neither": 44
+      },
+      "error_categories": {
+        "planning:JSONDecodeError": 10,
+        "adoption:missing_applied_experience_ids": 12,
+        "initial_analysis:ValueError": 4,
+        "adoption:unknown_applied_experience_ids": 2,
+        "retrieval:RuntimeError": 4,
+        "initial_analysis:invalid_reused_analysis": 2,
+        "experience_analysis:JSONDecodeError": 7,
+        "initial_analysis:JSONDecodeError": 2,
+        "planning:ValueError": 1,
+        "adoption:invalid_rejected_experiences": 1,
+        "planning:EnglishPolicyError": 1
+      },
+      "unmeasured_final_ids": [
+        "1344",
+        "774"
+      ]
+    },
+    "retest/Q2": {
+      "attempts": 449,
+      "selected_total": 2834,
+      "declared_adopted_total": 1411,
+      "selected_mean": 6.311804008908686,
+      "declared_adopted_mean": 3.1425389755011137,
+      "selected_above_three": 345,
+      "declared_adopted_above_three": 178,
+      "normal_empty_selection": 6,
+      "retrieval_status": {
+        "completed": 447,
+        "missing": 2
+      },
+      "final_outcomes": {
+        "joint": 100,
+        "security_only": 101,
+        "functional_only": 24,
+        "neither": 48
+      },
+      "error_categories": {
+        "planning:JSONDecodeError": 10,
+        "initial_analysis:ValueError": 6,
+        "experience_analysis:JSONDecodeError": 5,
+        "adoption:missing_applied_experience_ids": 9,
+        "adoption:invalid_rejected_experiences": 2,
+        "retrieval:RuntimeError": 7,
+        "initial_analysis:invalid_reused_analysis": 2,
+        "adoption:unknown_applied_experience_ids": 3,
+        "initial_analysis:JSONDecodeError": 1,
+        "planning:EnglishPolicyError": 2
+      },
+      "unmeasured_final_ids": []
+    },
+    "gate/Q1": {
+      "attempts": 79,
+      "selected_total": 503,
+      "declared_adopted_total": 249,
+      "selected_mean": 6.367088607594937,
+      "declared_adopted_mean": 3.151898734177215,
+      "selected_above_three": 58,
+      "declared_adopted_above_three": 28,
+      "normal_empty_selection": 3,
+      "retrieval_status": {
+        "completed": 79
+      },
+      "final_outcomes": {
+        "joint": 17,
+        "security_only": 18,
+        "neither": 7,
+        "functional_only": 6
+      },
+      "error_categories": {
+        "initial_analysis:invalid_reused_analysis": 1,
+        "adoption:unknown_applied_experience_ids": 2,
+        "experience_analysis:JSONDecodeError": 1,
+        "adoption:missing_applied_experience_ids": 2,
+        "adoption:invalid_rejected_experiences": 1,
+        "planning:EnglishPolicyError": 1,
+        "planning:JSONDecodeError": 1
+      },
+      "unmeasured_final_ids": []
+    },
+    "gate/Q2": {
+      "attempts": 75,
+      "selected_total": 557,
+      "declared_adopted_total": 308,
+      "selected_mean": 7.426666666666667,
+      "declared_adopted_mean": 4.1066666666666665,
+      "selected_above_three": 61,
+      "declared_adopted_above_three": 43,
+      "normal_empty_selection": 1,
+      "retrieval_status": {
+        "completed": 75
+      },
+      "final_outcomes": {
+        "joint": 21,
+        "security_only": 15,
+        "neither": 8,
+        "functional_only": 4
+      },
+      "error_categories": {
+        "adoption:unknown_applied_experience_ids": 2,
+        "initial_analysis:invalid_reused_analysis": 1,
+        "retrieval:RuntimeError": 1,
+        "initial_analysis:JSONDecodeError": 1,
+        "experience_analysis:ValueError": 1
+      },
+      "unmeasured_final_ids": []
+    },
+    "gate/Q3": {
+      "attempts": 76,
+      "selected_total": 480,
+      "declared_adopted_total": 285,
+      "selected_mean": 6.315789473684211,
+      "declared_adopted_mean": 3.75,
+      "selected_above_three": 58,
+      "declared_adopted_above_three": 37,
+      "normal_empty_selection": 2,
+      "retrieval_status": {
+        "completed": 76
+      },
+      "final_outcomes": {
+        "joint": 20,
+        "security_only": 16,
+        "neither": 7,
+        "functional_only": 5
+      },
+      "error_categories": {
+        "initial_analysis:invalid_reused_analysis": 1,
+        "planning:EnglishPolicyError": 1,
+        "retrieval:RuntimeError": 1
+      },
+      "unmeasured_final_ids": []
+    }
+  },
+  "known_native_llm_usage": {
+    "calls": 5232,
+    "prompt_tokens": 48673153,
+    "completion_tokens": 4298401,
+    "total_tokens": 52971554,
+    "errors": 3,
+    "usage_missing": 0
+  },
+  "known_embedding_usage": {
+    "calls": 728,
+    "failures": 0,
+    "total_tokens": 995544,
+    "usage_missing_calls": 0
+  },
+  "separate_infrastructure_health": [
+    {
+      "kind": "infrastructure_health",
+      "model": "deepseek-v3.2",
+      "max_tokens": 16,
+      "thinking": "disabled",
+      "logical_calls": 1,
+      "status": "ok",
+      "usage": {
+        "prompt_tokens": 8,
+        "completion_tokens": 1,
+        "total_tokens": 9,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "seconds": 4.06
+    }
+  ],
+  "infrastructure_recoveries": [
+    {
+      "event": "restart_stalled_owned_transport",
+      "time_local": "2026-10-18T21:18:46",
+      "owned_pid": 38272,
+      "saved_rows": 161,
+      "checkpoint_rows": 160,
+      "established_connections_observed": 8,
+      "model_health_token_usage": 9,
+      "reason": "No new rows for several minutes; 8 established HTTP slots, no validator subprocess; same-model small request healthy. Late responses cannot be used after native hard timeout.",
+      "unreturned_request_usage": "unknown",
+      "scope": "same source/model/manifest, only unsaved tasks resume; no saved failures rerun"
+    }
+  ],
+  "interrupted_unsaved_usage_unknown": true,
+  "cost_scope": "Recorded native receipts; inherited probes counted once; health separate; interrupted unsaved usage unknown; no invoice."
+}

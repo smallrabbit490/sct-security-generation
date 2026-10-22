@@ -1,0 +1,4 @@
+interface:
+  display_name: "CLE 冻结评测"
+  short_description: "按原验证环境执行CLE冻结库和空库对照及Base和Plus评价"
+  default_prompt: "使用 $cle-frozen-evaluation 完成当前CLE任务，依据本项目记录选择实际入口并保留证据边界。"

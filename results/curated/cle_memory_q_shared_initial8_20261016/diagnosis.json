@@ -1,0 +1,710 @@
+{
+  "model_calls": 0,
+  "embedding_calls": 0,
+  "primary_denominator_unchanged": 8,
+  "public_context_bindings": [
+    {
+      "task_id": "1341",
+      "public_provided_names": [
+        "xml_template"
+      ],
+      "setup_assigned_names": [
+        "xml_template"
+      ],
+      "missing_public_names": []
+    },
+    {
+      "task_id": "1000",
+      "public_provided_names": [
+        "BLOG_FORMAT"
+      ],
+      "setup_assigned_names": [
+        "BLOG_FORMAT"
+      ],
+      "missing_public_names": []
+    },
+    {
+      "task_id": "1013",
+      "public_provided_names": [
+        "USERS",
+        "USER_PROFILES"
+      ],
+      "setup_assigned_names": [
+        "USERS",
+        "USER_PROFILES"
+      ],
+      "missing_public_names": []
+    },
+    {
+      "task_id": "1055",
+      "public_provided_names": [
+        "PERMITTED_FIELDS"
+      ],
+      "setup_assigned_names": [
+        "PERMITTED_FIELDS"
+      ],
+      "missing_public_names": []
+    },
+    {
+      "task_id": "340",
+      "public_provided_names": [],
+      "setup_assigned_names": [],
+      "missing_public_names": []
+    },
+    {
+      "task_id": "777",
+      "public_provided_names": [
+        "ALLOWED_COMMANDS"
+      ],
+      "setup_assigned_names": [
+        "ALLOWED_COMMANDS"
+      ],
+      "missing_public_names": []
+    },
+    {
+      "task_id": "1001",
+      "public_provided_names": [],
+      "setup_assigned_names": [],
+      "missing_public_names": []
+    },
+    {
+      "task_id": "1015",
+      "public_provided_names": [
+        "USERS",
+        "USER_PROFILES"
+      ],
+      "setup_assigned_names": [
+        "USER_DETAILS",
+        "USER_PROFILES"
+      ],
+      "missing_public_names": [
+        "USERS"
+      ]
+    }
+  ],
+  "post_run_contract_defect_tasks": [
+    "1015"
+  ],
+  "preflight_limitation": "Public review and passing reference missed a runtime global-name mismatch; original rows/scores preserved, no replacement or paid rerun.",
+  "shared_initial_failed_tasks": [
+    "1013"
+  ],
+  "post_hoc_sensitivity": [
+    {
+      "label": "exclude_observed_contract_defect",
+      "excluded_task_ids": [
+        "1015"
+      ],
+      "arms": {
+        "Q1": {
+          "n": 7,
+          "functional": 3,
+          "security": 4,
+          "joint": 2
+        },
+        "Q2": {
+          "n": 7,
+          "functional": 4,
+          "security": 4,
+          "joint": 3
+        },
+        "Q3": {
+          "n": 7,
+          "functional": 3,
+          "security": 4,
+          "joint": 2
+        }
+      },
+      "post_hoc_descriptive_only": true
+    },
+    {
+      "label": "exclude_contract_defect_and_common_initial_failure",
+      "excluded_task_ids": [
+        "1013",
+        "1015"
+      ],
+      "arms": {
+        "Q1": {
+          "n": 6,
+          "functional": 3,
+          "security": 3,
+          "joint": 2
+        },
+        "Q2": {
+          "n": 6,
+          "functional": 3,
+          "security": 3,
+          "joint": 2
+        },
+        "Q3": {
+          "n": 6,
+          "functional": 3,
+          "security": 3,
+          "joint": 2
+        }
+      },
+      "post_hoc_descriptive_only": true
+    }
+  ],
+  "Q2_vs_Q1_rescues": [
+    {
+      "task_id": "1013",
+      "Q2_rank_changed": false,
+      "all_arms_all_attempts_selected_cards": 0,
+      "all_arms_all_attempts_adopted_cards": 0
+    }
+  ],
+  "q_promoted_adopted_cards": [
+    {
+      "task_id": "777",
+      "attempt": 0,
+      "card_id": "blind-74-7891981125696054376",
+      "q_value": 0.0,
+      "q_visits": 0
+    },
+    {
+      "task_id": "1015",
+      "attempt": 1,
+      "card_id": "pitfall-862-8413160066841834279",
+      "q_value": 0.0,
+      "q_visits": 0
+    }
+  ],
+  "all_attempts_syntax_valid": 41,
+  "code_diagnostics": [
+    {
+      "task_id": "1000",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "headline",
+        "content"
+      ],
+      "overridden_provided_globals": [
+        "BLOG_FORMAT"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q2",
+      "attempt": 1,
+      "signature_args": [
+        "headline",
+        "content"
+      ],
+      "overridden_provided_globals": [
+        "BLOG_FORMAT"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "user_content",
+        "xml_template"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "attempt": 1,
+      "signature_args": [
+        "user_content",
+        "xml_template"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "xml_template",
+        "user_content"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q1",
+      "attempt": 1,
+      "signature_args": [
+        "xml_template",
+        "user_content"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "user_content"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q2",
+      "attempt": 1,
+      "signature_args": [
+        "user_content",
+        "xml_template"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1013",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "current_id",
+        "target_id"
+      ],
+      "overridden_provided_globals": [
+        "USERS",
+        "USER_PROFILES"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "1013",
+      "arm": "Q3",
+      "attempt": 1,
+      "signature_args": [
+        "current_id",
+        "target_id"
+      ],
+      "overridden_provided_globals": [
+        "USERS",
+        "USER_PROFILES"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "headline",
+        "content"
+      ],
+      "overridden_provided_globals": [
+        "BLOG_FORMAT"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q1",
+      "attempt": 1,
+      "signature_args": [
+        "headline",
+        "content"
+      ],
+      "overridden_provided_globals": [
+        "BLOG_FORMAT"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "headline",
+        "content"
+      ],
+      "overridden_provided_globals": [
+        "BLOG_FORMAT"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q3",
+      "attempt": 1,
+      "signature_args": [
+        "headline",
+        "content"
+      ],
+      "overridden_provided_globals": [
+        "BLOG_FORMAT"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "1013",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "current_id",
+        "target_id"
+      ],
+      "overridden_provided_globals": [
+        "USERS",
+        "USER_PROFILES"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "1013",
+      "arm": "Q1",
+      "attempt": 1,
+      "signature_args": [
+        "current_id",
+        "target_id"
+      ],
+      "overridden_provided_globals": [
+        "USERS",
+        "USER_PROFILES"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1013",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "current_id",
+        "target_id"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "340",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "algorithm_name",
+        "user_pass"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "inventory",
+        "update_data"
+      ],
+      "overridden_provided_globals": [
+        "PERMITTED_FIELDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q3",
+      "attempt": 1,
+      "signature_args": [
+        "inventory",
+        "update_data"
+      ],
+      "overridden_provided_globals": [
+        "PERMITTED_FIELDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "inventory",
+        "update_data"
+      ],
+      "overridden_provided_globals": [
+        "PERMITTED_FIELDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q1",
+      "attempt": 1,
+      "signature_args": [
+        "inventory",
+        "update_data"
+      ],
+      "overridden_provided_globals": [
+        "PERMITTED_FIELDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "340",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "algorithm_name",
+        "user_pass"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "inventory",
+        "update_data"
+      ],
+      "overridden_provided_globals": [
+        "PERMITTED_FIELDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q2",
+      "attempt": 1,
+      "signature_args": [
+        "inventory",
+        "update_data"
+      ],
+      "overridden_provided_globals": [
+        "PERMITTED_FIELDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "340",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "algorithm_name",
+        "user_pass"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "1001",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "comment"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "777",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "command"
+      ],
+      "overridden_provided_globals": [
+        "ALLOWED_COMMANDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "777",
+      "arm": "Q1",
+      "attempt": 1,
+      "signature_args": [
+        "command"
+      ],
+      "overridden_provided_globals": [
+        "ALLOWED_COMMANDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1001",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "comment"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "777",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "command"
+      ],
+      "overridden_provided_globals": [
+        "ALLOWED_COMMANDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "777",
+      "arm": "Q3",
+      "attempt": 1,
+      "signature_args": [
+        "command"
+      ],
+      "overridden_provided_globals": [
+        "ALLOWED_COMMANDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "777",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "command"
+      ],
+      "overridden_provided_globals": [
+        "ALLOWED_COMMANDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "777",
+      "arm": "Q2",
+      "attempt": 1,
+      "signature_args": [
+        "command"
+      ],
+      "overridden_provided_globals": [
+        "ALLOWED_COMMANDS"
+      ],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1001",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "comment"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": false
+    },
+    {
+      "task_id": "1015",
+      "arm": "Q3",
+      "attempt": 0,
+      "signature_args": [
+        "acting_user_id",
+        "viewing_user_id"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1015",
+      "arm": "Q3",
+      "attempt": 1,
+      "signature_args": [
+        "acting_user_id",
+        "viewing_user_id"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1015",
+      "arm": "Q1",
+      "attempt": 0,
+      "signature_args": [
+        "acting_user_id",
+        "viewing_user_id"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1015",
+      "arm": "Q1",
+      "attempt": 1,
+      "signature_args": [
+        "acting_user_id",
+        "viewing_user_id"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1015",
+      "arm": "Q2",
+      "attempt": 0,
+      "signature_args": [
+        "acting_user_id",
+        "viewing_user_id"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    },
+    {
+      "task_id": "1015",
+      "arm": "Q2",
+      "attempt": 1,
+      "signature_args": [
+        "acting_user_id",
+        "viewing_user_id"
+      ],
+      "overridden_provided_globals": [],
+      "syntax_valid": true,
+      "workflow_completed": true
+    }
+  ],
+  "workflow_incomplete_attempts": 9,
+  "Q2_c0_set_changed_tasks": 1,
+  "Q2_c0_order_changed_tasks": 2,
+  "conclusion": "No demonstrated Q-attributable Joint gain; observed sole rescue has no selected/adopted cards. No escalation."
+}

@@ -1,0 +1,24 @@
+{
+  "protocol": "cle-q-dinit-observer-cap3-v1",
+  "authorized_training_pool": "D_init",
+  "starting_memory": "translation_work/diagnostics/20261018/cle_memory_q/unlimited_complete_v2/observe/frozen/m_star_q.jsonl",
+  "parameters": {
+    "model": "deepseek-v3.2", "thinking": "disabled", "temperature": 0,
+    "max_tokens": 4096, "embedding_model": "text-embedding-3-large",
+    "retrieval_mode": "semantic_llm", "candidate_order": null,
+    "delta": -1, "lambda_q": 0.5, "max_experiences": 3,
+    "max_code_attempts": 2, "alpha": 0.3, "max_rounds": 1
+  },
+  "reward": "Each actual adopted card receives Joint +1 or measured non-Joint -1 per complete c0/c1 attempt; no reward for missing/technical evidence.",
+  "credit_views": ["all_feedback", "cross_family"],
+  "primary_transfer_candidate": "cross_family",
+  "same_family_is_independent_evidence": false,
+  "generation_uses_Q": false,
+  "source_body_lifecycle_frozen": true,
+  "qualification": "Native reference Joint plus existing public-binding and placeholder checks; no new public-contract overrides.",
+  "probe": {"tasks": 12, "smoke_tasks": 2, "unique_families": true, "all_feedback_new_cards": 6, "cross_family_new_cards": 3},
+  "budget": "At most N qualified D_init P7 runs, including reused probe runs; at most N initial analyses and 2N code attempts. No automatic retries or second round.",
+  "forbidden_learning_pools": ["D_gate", "Base", "Plus"],
+  "D_gate_execution": false,
+  "current_delivery": "Implementation and zero-API preflight only; no paid generation is started by this delivery."
+}

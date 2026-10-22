@@ -1,0 +1,833 @@
+{
+  "protocol": "cle-q-shared-initial8-v1",
+  "role": "D_gate_controlled_mechanism_development_only",
+  "branch": "fjy/cle-memory-q-batch2",
+  "git_commit": "5ca7b98128ca84faef79579d4c49e7b6c4fc3dd6",
+  "manifest": {
+    "protocol": "cle-q-shared-initial8-v1",
+    "role": "D_gate_controlled_mechanism_development_only",
+    "development": [
+      1341,
+      1000,
+      1013,
+      1055,
+      340,
+      777,
+      1001,
+      1015
+    ],
+    "confirmation": [],
+    "arms": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ],
+    "rows": {
+      "1341": {
+        "family_id": "694af4fba622",
+        "cwe": "74"
+      },
+      "1000": {
+        "family_id": "8effd9406673",
+        "cwe": "79"
+      },
+      "1013": {
+        "family_id": "1047f2bc6f3b",
+        "cwe": "862"
+      },
+      "1055": {
+        "family_id": "b27afdfa4c6d",
+        "cwe": "915"
+      },
+      "340": {
+        "family_id": "4048652cb877",
+        "cwe": "327"
+      },
+      "777": {
+        "family_id": "8ac9f3ea0eb2",
+        "cwe": "74"
+      },
+      "1001": {
+        "family_id": "bf1c4709bade",
+        "cwe": "79"
+      },
+      "1015": {
+        "family_id": "ef36f1232121",
+        "cwe": "862"
+      }
+    },
+    "input_memory": "translation_work\\diagnostics\\20261016\\cle_memory_q\\full_dgrow\\frozen\\m_star_q.jsonl",
+    "input_pools": "configs\\cle_memory_q_autonomous_20261015\\pools.recovered.json",
+    "old_confirmation_preserved": [
+      72,
+      129,
+      160,
+      371,
+      439,
+      490,
+      1317,
+      1322,
+      112,
+      141,
+      343,
+      448,
+      492,
+      615,
+      672,
+      133,
+      161,
+      338,
+      428,
+      471,
+      1318,
+      639,
+      119,
+      166
+    ],
+    "selection": "First 8 qualified distinct families in native CWE/string-ID rotation, excluding all prior evaluation and reserved confirmation families; no Q/model-outcome screening",
+    "parameters": {
+      "model": "deepseek-v3.2",
+      "thinking": "disabled",
+      "max_tokens": 4096,
+      "embedding_model": "text-embedding-3-large",
+      "delta": 0.7613717780938312,
+      "alpha": 0.3,
+      "lambda_q": 0.5
+    },
+    "shared_initial": true,
+    "shuffle_scope": "cwe",
+    "shuffle_seed": 20261015,
+    "workers": 4,
+    "evaluation_progression_gate": {
+      "min_changed_tasks_Q2": 3,
+      "min_changed_new_card_adopted_tasks_Q2": 2,
+      "workflow_errors_each_arm_max": 0
+    },
+    "scope": "8 shared initial calls, 24 P7 rollouts, max 48 code validations; fixed Q; no automatic escalation",
+    "stopping": "Report measured intervention and paired Joint/F outcomes; no new learning, confirmation, full CLE or Base/Plus regardless of scores"
+  },
+  "checks": {
+    "stage": "compare",
+    "rows": 24,
+    "tasks": 8,
+    "families": 8,
+    "schema": "cle-ablation-p7-with-ma-final-v1",
+    "native_statistics_recomputed": true,
+    "calls_and_tokens_matched": true,
+    "q_event_attribution_checked": true,
+    "status": "pass",
+    "cwe_q_pair_distributions_preserved": true,
+    "card_content_unchanged": true,
+    "source_memory_unchanged": true,
+    "learning_calibration_unchanged": true,
+    "dataset_families_pools_unchanged": true,
+    "shared_initial_queries_candidates_equal": true
+  },
+  "arms": {
+    "Q2": {
+      "n": 8,
+      "functional": 4,
+      "security": 4,
+      "joint": 3,
+      "measured": 8,
+      "first_joint": 3,
+      "errors": 2,
+      "calls": 44,
+      "total_tokens": 156575,
+      "seconds": 488.26408229995286
+    },
+    "Q3": {
+      "n": 8,
+      "functional": 3,
+      "security": 4,
+      "joint": 2,
+      "measured": 8,
+      "first_joint": 2,
+      "errors": 3,
+      "calls": 48,
+      "total_tokens": 143498,
+      "seconds": 446.2050690999895
+    },
+    "Q1": {
+      "n": 8,
+      "functional": 3,
+      "security": 5,
+      "joint": 2,
+      "measured": 8,
+      "first_joint": 2,
+      "errors": 3,
+      "calls": 48,
+      "total_tokens": 144601,
+      "seconds": 449.92268359995796
+    }
+  },
+  "paired_full_denominator": {
+    "Q2_vs_Q1": {
+      "pairs": 8,
+      "unpaired": 0,
+      "old_only": 0,
+      "new_only": 1,
+      "p_exact_two_sided": 1.0,
+      "delta_percentage_points": 12.5,
+      "conservative_95_ci_percentage_points": [
+        -42.018140394366036,
+        57.545001961694254
+      ],
+      "functional_rescues": 1,
+      "functional_harms": 0,
+      "p_holm_two_planned": 1.0
+    },
+    "Q2_vs_Q3": {
+      "pairs": 8,
+      "unpaired": 0,
+      "old_only": 0,
+      "new_only": 1,
+      "p_exact_two_sided": 1.0,
+      "delta_percentage_points": 12.5,
+      "conservative_95_ci_percentage_points": [
+        -42.018140394366036,
+        57.545001961694254
+      ],
+      "functional_rescues": 1,
+      "functional_harms": 0,
+      "p_holm_two_planned": 1.0
+    }
+  },
+  "paired_complete_measured": {
+    "Q2": {
+      "pairs": 8,
+      "measured_pairs": 8,
+      "wins": 1,
+      "losses": 0,
+      "p_exact": 1,
+      "functional_harms": 0,
+      "p_holm": 1
+    },
+    "Q3": {
+      "pairs": 8,
+      "measured_pairs": 8,
+      "wins": 0,
+      "losses": 0,
+      "p_exact": 1,
+      "functional_harms": 0,
+      "p_holm": 1
+    }
+  },
+  "funnel": {
+    "Q1": {
+      "attempts": 14,
+      "empty_gate_attempts": 9,
+      "retrieval_failed_attempts": 0,
+      "retrieval_errors": {},
+      "candidate_cards": 411,
+      "eligible_cards": 42,
+      "selected_cards": 15,
+      "adopted_cards": 2,
+      "nonzero_q_adopted_cards": 0,
+      "trained_candidate_tasks": 8,
+      "trained_eligible_tasks": 3,
+      "set_changed_tasks": 0,
+      "order_changed_tasks": 0,
+      "new_card_adopted_tasks": 0,
+      "ranking_changed_with_adoption_tasks": 0,
+      "workflow_incomplete_attempts": 3,
+      "adoption_errors": {
+        "missing_applied_experience_ids": 1
+      }
+    },
+    "Q2": {
+      "attempts": 13,
+      "empty_gate_attempts": 7,
+      "retrieval_failed_attempts": 0,
+      "retrieval_errors": {},
+      "candidate_cards": 381,
+      "eligible_cards": 62,
+      "selected_cards": 18,
+      "adopted_cards": 5,
+      "nonzero_q_adopted_cards": 3,
+      "trained_candidate_tasks": 8,
+      "trained_eligible_tasks": 4,
+      "set_changed_tasks": 2,
+      "order_changed_tasks": 3,
+      "new_card_adopted_tasks": 2,
+      "ranking_changed_with_adoption_tasks": 3,
+      "workflow_incomplete_attempts": 2,
+      "adoption_errors": {}
+    },
+    "Q3": {
+      "attempts": 14,
+      "empty_gate_attempts": 10,
+      "retrieval_failed_attempts": 0,
+      "retrieval_errors": {},
+      "candidate_cards": 411,
+      "eligible_cards": 32,
+      "selected_cards": 11,
+      "adopted_cards": 4,
+      "nonzero_q_adopted_cards": 0,
+      "trained_candidate_tasks": 8,
+      "trained_eligible_tasks": 3,
+      "set_changed_tasks": 2,
+      "order_changed_tasks": 3,
+      "new_card_adopted_tasks": 0,
+      "ranking_changed_with_adoption_tasks": 1,
+      "workflow_incomplete_attempts": 4,
+      "adoption_errors": {
+        "missing_applied_experience_ids": 1
+      }
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "1341",
+      "cwe": "74",
+      "family_id": "694af4fba622",
+      "outcomes": {
+        "Q1": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 14681,
+            "completion_tokens": 6059,
+            "total_tokens": 20740
+          }
+        },
+        "Q2": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 11103,
+            "completion_tokens": 5109,
+            "total_tokens": 16212
+          }
+        },
+        "Q3": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 10755,
+            "completion_tokens": 5579,
+            "total_tokens": 16334
+          }
+        }
+      },
+      "Q2_set_changed": false,
+      "Q2_order_changed": false,
+      "Q2_new_cards_adopted": [],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "tie"
+    },
+    {
+      "task_id": "1000",
+      "cwe": "79",
+      "family_id": "8effd9406673",
+      "outcomes": {
+        "Q1": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 13009,
+            "completion_tokens": 5769,
+            "total_tokens": 18778
+          }
+        },
+        "Q2": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 12009,
+            "completion_tokens": 5059,
+            "total_tokens": 17068
+          }
+        },
+        "Q3": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": "planning:EnglishPolicyError",
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 13147,
+            "completion_tokens": 6469,
+            "total_tokens": 19616
+          }
+        }
+      },
+      "Q2_set_changed": false,
+      "Q2_order_changed": false,
+      "Q2_new_cards_adopted": [],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "tie"
+    },
+    {
+      "task_id": "1013",
+      "cwe": "862",
+      "family_id": "1047f2bc6f3b",
+      "outcomes": {
+        "Q1": {
+          "functional": false,
+          "security": true,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": "initial_analysis:invalid_reused_analysis",
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 10306,
+            "completion_tokens": 4679,
+            "total_tokens": 14985
+          }
+        },
+        "Q2": {
+          "functional": true,
+          "security": true,
+          "joint": true,
+          "measured": true,
+          "attempts": 1,
+          "error_type": "initial_analysis:invalid_reused_analysis",
+          "usage": {
+            "calls": 3,
+            "failed_calls": 0,
+            "prompt_tokens": 3969,
+            "completion_tokens": 1949,
+            "total_tokens": 5918
+          }
+        },
+        "Q3": {
+          "functional": false,
+          "security": true,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": "initial_analysis:invalid_reused_analysis",
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 10512,
+            "completion_tokens": 4694,
+            "total_tokens": 15206
+          }
+        }
+      },
+      "Q2_set_changed": false,
+      "Q2_order_changed": false,
+      "Q2_new_cards_adopted": [],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "rescue"
+    },
+    {
+      "task_id": "1055",
+      "cwe": "915",
+      "family_id": "b27afdfa4c6d",
+      "outcomes": {
+        "Q1": {
+          "functional": true,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 25161,
+            "completion_tokens": 6374,
+            "total_tokens": 31535
+          }
+        },
+        "Q2": {
+          "functional": true,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 20002,
+            "completion_tokens": 6599,
+            "total_tokens": 26601
+          }
+        },
+        "Q3": {
+          "functional": true,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 16055,
+            "completion_tokens": 5061,
+            "total_tokens": 21116
+          }
+        }
+      },
+      "Q2_set_changed": false,
+      "Q2_order_changed": false,
+      "Q2_new_cards_adopted": [],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "tie"
+    },
+    {
+      "task_id": "340",
+      "cwe": "327",
+      "family_id": "4048652cb877",
+      "outcomes": {
+        "Q1": {
+          "functional": true,
+          "security": true,
+          "joint": true,
+          "measured": true,
+          "attempts": 1,
+          "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+          "usage": {
+            "calls": 3,
+            "failed_calls": 0,
+            "prompt_tokens": 8051,
+            "completion_tokens": 2680,
+            "total_tokens": 10731
+          }
+        },
+        "Q2": {
+          "functional": true,
+          "security": true,
+          "joint": true,
+          "measured": true,
+          "attempts": 1,
+          "error_type": null,
+          "usage": {
+            "calls": 3,
+            "failed_calls": 0,
+            "prompt_tokens": 11544,
+            "completion_tokens": 2468,
+            "total_tokens": 14012
+          }
+        },
+        "Q3": {
+          "functional": true,
+          "security": true,
+          "joint": true,
+          "measured": true,
+          "attempts": 1,
+          "error_type": null,
+          "usage": {
+            "calls": 3,
+            "failed_calls": 0,
+            "prompt_tokens": 10670,
+            "completion_tokens": 2752,
+            "total_tokens": 13422
+          }
+        }
+      },
+      "Q2_set_changed": false,
+      "Q2_order_changed": true,
+      "Q2_new_cards_adopted": [],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "tie"
+    },
+    {
+      "task_id": "777",
+      "cwe": "74",
+      "family_id": "8ac9f3ea0eb2",
+      "outcomes": {
+        "Q1": {
+          "functional": false,
+          "security": true,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 16213,
+            "completion_tokens": 6103,
+            "total_tokens": 22316
+          }
+        },
+        "Q2": {
+          "functional": false,
+          "security": true,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 25107,
+            "completion_tokens": 8661,
+            "total_tokens": 33768
+          }
+        },
+        "Q3": {
+          "functional": false,
+          "security": true,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 15857,
+            "completion_tokens": 6238,
+            "total_tokens": 22095
+          }
+        }
+      },
+      "Q2_set_changed": true,
+      "Q2_order_changed": true,
+      "Q2_new_cards_adopted": [
+        "blind-74-7891981125696054376"
+      ],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "tie"
+    },
+    {
+      "task_id": "1001",
+      "cwe": "79",
+      "family_id": "bf1c4709bade",
+      "outcomes": {
+        "Q1": {
+          "functional": true,
+          "security": true,
+          "joint": true,
+          "measured": true,
+          "attempts": 1,
+          "error_type": "planning:EnglishPolicyError",
+          "usage": {
+            "calls": 3,
+            "failed_calls": 0,
+            "prompt_tokens": 4137,
+            "completion_tokens": 2003,
+            "total_tokens": 6140
+          }
+        },
+        "Q2": {
+          "functional": true,
+          "security": true,
+          "joint": true,
+          "measured": true,
+          "attempts": 1,
+          "error_type": "planning:EnglishPolicyError",
+          "usage": {
+            "calls": 3,
+            "failed_calls": 0,
+            "prompt_tokens": 4741,
+            "completion_tokens": 2455,
+            "total_tokens": 7196
+          }
+        },
+        "Q3": {
+          "functional": true,
+          "security": true,
+          "joint": true,
+          "measured": true,
+          "attempts": 1,
+          "error_type": "planning:EnglishPolicyError",
+          "usage": {
+            "calls": 3,
+            "failed_calls": 0,
+            "prompt_tokens": 3861,
+            "completion_tokens": 1777,
+            "total_tokens": 5638
+          }
+        }
+      },
+      "Q2_set_changed": false,
+      "Q2_order_changed": false,
+      "Q2_new_cards_adopted": [],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "tie"
+    },
+    {
+      "task_id": "1015",
+      "cwe": "862",
+      "family_id": "ef36f1232121",
+      "outcomes": {
+        "Q1": {
+          "functional": false,
+          "security": true,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 13155,
+            "completion_tokens": 6221,
+            "total_tokens": 19376
+          }
+        },
+        "Q2": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 27925,
+            "completion_tokens": 7875,
+            "total_tokens": 35800
+          }
+        },
+        "Q3": {
+          "functional": false,
+          "security": false,
+          "joint": false,
+          "measured": true,
+          "attempts": 2,
+          "error_type": null,
+          "usage": {
+            "calls": 7,
+            "failed_calls": 0,
+            "prompt_tokens": 23686,
+            "completion_tokens": 6385,
+            "total_tokens": 30071
+          }
+        }
+      },
+      "Q2_set_changed": true,
+      "Q2_order_changed": true,
+      "Q2_new_cards_adopted": [
+        "pitfall-862-8413160066841834279"
+      ],
+      "Q1_Q2_c0_query_equal": true,
+      "Q1_Q2_final_code_equal": false,
+      "Q2_vs_Q1": "tie"
+    }
+  ],
+  "predeclared_development_gate": {
+    "measured_each_arm": true,
+    "min_changed_tasks_Q2": false,
+    "min_changed_new_card_adopted_tasks_Q2": true,
+    "workflow_errors_each_arm_max": false,
+    "Q2_joint_greater_than_Q1": true,
+    "Q2_joint_greater_than_Q3": true,
+    "Q2_functional_at_least_Q1": true
+  },
+  "development_gate_passed": false,
+  "cost": {
+    "by_arm": {
+      "Q1": {
+        "calls": 48,
+        "prompt_tokens": 104713,
+        "completion_tokens": 39888,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0,
+        "total_tokens": 144601,
+        "cost_ca": 0.197454,
+        "summed_job_seconds": 449.92268359995796,
+        "currency_actual": null
+      },
+      "Q2": {
+        "calls": 44,
+        "prompt_tokens": 116400,
+        "completion_tokens": 40175,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0,
+        "total_tokens": 156575,
+        "cost_ca": 0.211995,
+        "summed_job_seconds": 488.26408229995286,
+        "currency_actual": null
+      },
+      "Q3": {
+        "calls": 48,
+        "prompt_tokens": 104543,
+        "completion_tokens": 38955,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0,
+        "total_tokens": 143498,
+        "cost_ca": 0.195571,
+        "summed_job_seconds": 446.2050690999895,
+        "currency_actual": null
+      }
+    },
+    "llm_total": {
+      "calls": 148,
+      "prompt_tokens": 329958,
+      "completion_tokens": 126672,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0,
+      "total_tokens": 456630,
+      "cost_ca": 0.623959
+    },
+    "embedding_shared": {
+      "calls": 25,
+      "failures": 0,
+      "prompt_tokens": 30157,
+      "total_tokens": 30157,
+      "cache_hits": 1945,
+      "embedded_texts": 25,
+      "usage_missing_calls": 0
+    },
+    "shared_initial": {
+      "calls": 8,
+      "prompt_tokens": 4302,
+      "completion_tokens": 7654,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0,
+      "total_tokens": 11956,
+      "cost_ca": 0.01894
+    },
+    "wall_seconds": 398.45789399999194,
+    "currency_actual": null,
+    "legacy_pricing_source": "ChatAnywhere 费用标准 https://chatanywhere.apifox.cn/doc-2694962 (2026-09-18)",
+    "note": "Logical LLM requests; usage from provider; legacy cost_ca is an old-rate estimate, not a bill. Embedding is shared and not assigned to arms."
+  },
+  "post_run_actions": "none; no additional learning, confirmation, full CLE or Base/Plus"
+}

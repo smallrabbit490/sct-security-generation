@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CLE 自进化任务看板 · 新版</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="heading-row">
+    <h1>CLE 自进化任务看板</h1>
+    <div class="context-controls">
+      <label>轮次 <select id="roundSelect" aria-label="轮次" disabled></select></label>
+      <label>经验快照 <select id="snapshotSelect" aria-label="经验快照" disabled></select></label>
+      <span id="modeLabel" class="badge">真实运行</span>
+      <a class="entity-link small" href="http://127.0.0.1:8770/" target="_blank" rel="noopener">旧版站点 ↗</a>
+    </div>
+  </div>
+  <div class="toolbar">
+    <label>运行 <select id="runSelect" aria-label="运行"></select></label>
+    <span id="statusBadge" class="badge">未选择</span>
+    <button id="refreshBtn">刷新</button>
+    <label class="switch"><input type="checkbox" id="autoRefresh"> 自动刷新(5s)</label>
+    <div class="exports"><span>导出：</span><button data-export="phase1">Phase1</button><button data-export="phase2">Phase2</button><button data-export="phase3">Phase3</button><button data-export="pool">任务池</button></div>
+    <span id="lastUpdated" class="small"></span>
+  </div>
+</header>
+<nav class="tabs" aria-label="运行阶段">
+  <button class="tab active" data-tab="overview" aria-current="page">概览</button>
+  <button class="tab" data-tab="phase1">Phase 1 冷启动</button>
+  <button class="tab" data-tab="phase2">Phase 2 重放进化</button>
+  <button class="tab" data-tab="phase3">Phase 3 门控与审计评测</button>
+  <button class="tab" data-tab="pool">经验库</button>
+</nav>
+<main>
+  <div id="loadErrors" class="notice error" role="alert" hidden></div>
+  <div id="demoNotice" class="notice" hidden>当前为合成示例，便于查看操作与图表。不是实验结果，不会写入真实运行目录。 <button id="realMode" class="text-button">返回真实运行</button></div>
+  <div id="contextLine" class="context-line" aria-live="polite"></div>
+  <div id="emptyState"></div>
+  <section id="tab-overview" class="tabpane active" aria-label="概览"></section>
+  <section id="tab-phase1" class="tabpane" aria-label="冷启动"></section>
+  <section id="tab-phase2" class="tabpane" aria-label="重放进化"></section>
+  <section id="tab-phase3" class="tabpane" aria-label="门控与审计评测"></section>
+  <section id="tab-pool" class="tabpane" aria-label="经验库"></section>
+</main>
+<dialog id="detailDialog" aria-labelledby="detailTitle">
+  <div class="dialog-toolbar"><button id="detailBack" hidden>返回上一层</button><span id="detailTrail"></span><button id="detailClose">关闭并返回列表</button></div>
+  <div id="detailContent"></div>
+</dialog>
+<script src="/tree.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

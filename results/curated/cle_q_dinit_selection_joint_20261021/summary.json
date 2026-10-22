@@ -1,0 +1,211 @@
+{
+  "comparison": "Q2 online cap3 versus historical no-Q-value coverage-first L1 cap3",
+  "all": {
+    "n": 303,
+    "old_joint": 138,
+    "new_joint": 140,
+    "rescue": 20,
+    "loss": 18,
+    "both_pass": 120,
+    "both_fail": 145,
+    "any_recorded_exception": 57,
+    "new_failure_exception": 21,
+    "new_failure_global_redefinition_verified": 31,
+    "old_joint_rate": 0.45544554455445546,
+    "new_joint_rate": 0.46204620462046203,
+    "net_joint_change": 2
+  },
+  "same_initial_analysis": 300,
+  "comparable_n": 296,
+  "presented_order_changed_n": 296,
+  "selection_groups": {
+    "成员改变": {
+      "n": 281,
+      "old_joint": 128,
+      "new_joint": 130,
+      "rescue": 19,
+      "loss": 17,
+      "both_pass": 111,
+      "both_fail": 134,
+      "any_recorded_exception": 46,
+      "new_failure_exception": 19,
+      "new_failure_global_redefinition_verified": 29,
+      "old_joint_rate": 0.4555160142348754,
+      "new_joint_rate": 0.4626334519572954,
+      "net_joint_change": 2
+    },
+    "成员相同": {
+      "n": 15,
+      "old_joint": 8,
+      "new_joint": 9,
+      "rescue": 1,
+      "loss": 0,
+      "both_pass": 8,
+      "both_fail": 6,
+      "any_recorded_exception": 4,
+      "new_failure_exception": 0,
+      "new_failure_global_redefinition_verified": 1,
+      "old_joint_rate": 0.5333333333333333,
+      "new_joint_rate": 0.6,
+      "net_joint_change": 1
+    },
+    "选卡不可直接配对": {
+      "n": 7,
+      "old_joint": 2,
+      "new_joint": 1,
+      "rescue": 0,
+      "loss": 1,
+      "both_pass": 1,
+      "both_fail": 5,
+      "any_recorded_exception": 7,
+      "new_failure_exception": 2,
+      "new_failure_global_redefinition_verified": 1,
+      "old_joint_rate": 0.2857142857142857,
+      "new_joint_rate": 0.14285714285714285,
+      "net_joint_change": -1
+    }
+  },
+  "changed_member_adoption_groups": {
+    "不适用或采用记录异常": {
+      "n": 5,
+      "old_joint": 3,
+      "new_joint": 2,
+      "rescue": 0,
+      "loss": 1,
+      "both_pass": 2,
+      "both_fail": 2,
+      "any_recorded_exception": 5,
+      "new_failure_exception": 3,
+      "new_failure_global_redefinition_verified": 2,
+      "old_joint_rate": 0.6,
+      "new_joint_rate": 0.4,
+      "net_joint_change": -1
+    },
+    "新增卡未被声明采用": {
+      "n": 51,
+      "old_joint": 22,
+      "new_joint": 18,
+      "rescue": 3,
+      "loss": 7,
+      "both_pass": 15,
+      "both_fail": 26,
+      "any_recorded_exception": 8,
+      "new_failure_exception": 5,
+      "new_failure_global_redefinition_verified": 7,
+      "old_joint_rate": 0.43137254901960786,
+      "new_joint_rate": 0.35294117647058826,
+      "net_joint_change": -4
+    },
+    "新增卡被声明采用": {
+      "n": 225,
+      "old_joint": 103,
+      "new_joint": 110,
+      "rescue": 16,
+      "loss": 9,
+      "both_pass": 94,
+      "both_fail": 106,
+      "any_recorded_exception": 33,
+      "new_failure_exception": 11,
+      "new_failure_global_redefinition_verified": 20,
+      "old_joint_rate": 0.4577777777777778,
+      "new_joint_rate": 0.4888888888888889,
+      "net_joint_change": 7
+    }
+  },
+  "clean_pair_sensitivity": {
+    "成员改变": {
+      "n": 233,
+      "old_joint": 117,
+      "new_joint": 119,
+      "rescue": 15,
+      "loss": 13,
+      "both_pass": 104,
+      "both_fail": 101,
+      "any_recorded_exception": 0,
+      "new_failure_exception": 0,
+      "new_failure_global_redefinition_verified": 23,
+      "old_joint_rate": 0.5021459227467812,
+      "new_joint_rate": 0.5107296137339056,
+      "net_joint_change": 2
+    },
+    "成员相同": {
+      "n": 11,
+      "old_joint": 6,
+      "new_joint": 6,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 6,
+      "both_fail": 5,
+      "any_recorded_exception": 0,
+      "new_failure_exception": 0,
+      "new_failure_global_redefinition_verified": 1,
+      "old_joint_rate": 0.5454545454545454,
+      "new_joint_rate": 0.5454545454545454,
+      "net_joint_change": 0
+    }
+  },
+  "loss_ids": {
+    "成员改变": [
+      "1299",
+      "1003",
+      "642",
+      "874",
+      "1223",
+      "352",
+      "150",
+      "1241",
+      "907",
+      "1037",
+      "989",
+      "1363",
+      "1364",
+      "487",
+      "488",
+      "664",
+      "670"
+    ],
+    "成员相同": [],
+    "选卡不可直接配对": [
+      "885"
+    ]
+  },
+  "rescue_ids": {
+    "成员改变": [
+      "1004",
+      "834",
+      "1063",
+      "1021",
+      "1113",
+      "354",
+      "1022",
+      "1234",
+      "1024",
+      "976",
+      "1158",
+      "1162",
+      "981",
+      "1034",
+      "88",
+      "996",
+      "999",
+      "1382",
+      "1174"
+    ],
+    "成员相同": [
+      "1150"
+    ],
+    "选卡不可直接配对": []
+  },
+  "not_comparable_ids": [
+    "446",
+    "1249",
+    "127",
+    "836",
+    "885",
+    "671",
+    "105"
+  ],
+  "causal_limit": "historical coverage baseline differs in initial Q/history and execution timing; repair queries may differ; association not isolated Q causality",
+  "API_calls": 0,
+  "Q_or_formal_scores_changed": false
+}

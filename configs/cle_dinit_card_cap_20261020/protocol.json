@@ -1,0 +1,45 @@
+{
+  "protocol": "cle-dinit-card-cap-v1",
+  "status": "READY_FOR_OFFLINE_VALIDATION",
+  "model": "deepseek-v3.2",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 4096,
+  "selector_max_tokens": 256,
+  "embedding_model": "text-embedding-3-large",
+  "delta": -1,
+  "alpha": 0.3,
+  "max_experiences": {
+    "L3": 3,
+    "Lall": null
+  },
+  "max_code_attempts": 2,
+  "max_rounds": 1,
+  "workers": 4,
+  "Q_value_in_forward": false,
+  "candidate_order": "coverage",
+  "coverage_mask": "all_feedback baseline669 fixed in pilot12; update per12 in Lall remainder",
+  "primary_baseline_visited": 669,
+  "cross_baseline_visited": 584,
+  "shared_initial": "reuse unchanged public tasks and protocol, no historical downstream reuse",
+  "performance_continuation_gate": false,
+  "new_Dgate_generation": false,
+  "command_runtime_path": "C:\\Program Files\\Git\\usr\\bin",
+  "budget_cumulative": {
+    "pilot12": {
+      "P7": 24,
+      "LLM_token_stop": 4000000,
+      "logical_calls_stop": 400
+    },
+    "full303": {
+      "P7": 315,
+      "LLM_token_stop": 35000000,
+      "logical_calls_stop": 5000
+    }
+  },
+  "embedding_input_token_stop": 1500000,
+  "request_timeout_seconds": 120,
+  "actual_bill_CNY": null,
+  "allowed_learning_pool": "D_init",
+  "source_tasks": "configs/cle_dinit_full_learning_20261020_v4b/tasks.json"
+}

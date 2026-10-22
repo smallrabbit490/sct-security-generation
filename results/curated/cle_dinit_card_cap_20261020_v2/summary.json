@@ -1,0 +1,167 @@
+{
+  "protocol": "cle-dinit-card-cap-v2-selector-budget420k",
+  "status": "completed_full",
+  "P7_runs": 315,
+  "arms": {
+    "L3": {
+      "executed": 12,
+      "measured": 12,
+      "F": 6,
+      "S": 8,
+      "Joint": 5,
+      "credit": {
+        "all_feedback": {
+          "baseline_learned": 669,
+          "learned_cards": 674,
+          "new_cards": 5,
+          "coverage": 0.3476018566271274,
+          "valid_updates": 28,
+          "positive_updates": 10,
+          "negative_updates": 18
+        },
+        "cross_family": {
+          "baseline_learned": 584,
+          "learned_cards": 588,
+          "new_cards": 4,
+          "coverage": 0.30324909747292417,
+          "valid_updates": 16,
+          "positive_updates": 5,
+          "negative_updates": 11
+        }
+      },
+      "cost": {
+        "calls": 96,
+        "prompt_tokens": 763026,
+        "completion_tokens": 70967,
+        "total_tokens": 833993,
+        "errors": 0,
+        "usage_missing": 0,
+        "unfinished": 0
+      },
+      "selected_unique": 46,
+      "adopted_unique": 30,
+      "attempts": 20
+    },
+    "Lall": {
+      "executed": 303,
+      "measured": 299,
+      "F": 158,
+      "S": 239,
+      "Joint": 140,
+      "credit": {
+        "all_feedback": {
+          "baseline_learned": 669,
+          "learned_cards": 926,
+          "new_cards": 257,
+          "coverage": 0.4775657555440949,
+          "valid_updates": 1588,
+          "positive_updates": 577,
+          "negative_updates": 1011
+        },
+        "cross_family": {
+          "baseline_learned": 584,
+          "learned_cards": 776,
+          "new_cards": 192,
+          "coverage": 0.4002062919030428,
+          "valid_updates": 938,
+          "positive_updates": 336,
+          "negative_updates": 602
+        }
+      },
+      "cost": {
+        "calls": 2048,
+        "prompt_tokens": 20982313,
+        "completion_tokens": 1690176,
+        "total_tokens": 22672489,
+        "errors": 0,
+        "usage_missing": 0,
+        "unfinished": 0
+      },
+      "selected_unique": 1042,
+      "adopted_unique": 741,
+      "attempts": 470
+    }
+  },
+  "cost": {
+    "LLM": {
+      "calls": 2147,
+      "prompt_tokens": 21747192,
+      "completion_tokens": 1764824,
+      "total_tokens": 23512016,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    },
+    "embedding": {
+      "calls": 179,
+      "total_tokens": 290859,
+      "failures": 0,
+      "usage_missing_calls": 0
+    },
+    "actual_bill_CNY": null
+  },
+  "shared_candidates": [
+    {
+      "task_id": "1258",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1288",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1299",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1303",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1319",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1338",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "831",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1350",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1003",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1008",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1216",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    },
+    {
+      "task_id": "1053",
+      "shared_candidates": true,
+      "retrieval_completed": true
+    }
+  ],
+  "fatal_issues": [],
+  "new_Dgate_generation": false
+}

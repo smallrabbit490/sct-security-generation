@@ -1,0 +1,85 @@
+{
+  "analysis": "posthoc_contract_qualification_sensitivity_not_new_generation",
+  "excluded_task_ids": [
+    "1003",
+    "1258",
+    "1288",
+    "1299",
+    "1319"
+  ],
+  "old_scores_modified": false,
+  "raw_protocol_banks_modified": false,
+  "new_API_calls": 0,
+  "arms": {
+    "L0": {
+      "retained_tasks": 7,
+      "credit": {
+        "all_feedback": {
+          "policy": "all_feedback",
+          "learned_cards": 439,
+          "new_cards": 3,
+          "coverage": 0.2264053635894791,
+          "new_card_ids": [
+            "blind-863-8088684451811391920",
+            "blind-915-4314305093846659757",
+            "hint-863-2665491201146380755"
+          ],
+          "valid_updates": 14,
+          "credited_relations": {
+            "same_family": 7,
+            "unknown": 1,
+            "cross_family": 6
+          }
+        },
+        "cross_family": {
+          "policy": "cross_family",
+          "learned_cards": 438,
+          "new_cards": 2,
+          "coverage": 0.2258896338318721,
+          "new_card_ids": [
+            "blind-915-4314305093846659757",
+            "hint-863-2665491201146380755"
+          ],
+          "valid_updates": 6,
+          "credited_relations": {
+            "cross_family": 6
+          }
+        }
+      }
+    },
+    "L1": {
+      "retained_tasks": 7,
+      "credit": {
+        "all_feedback": {
+          "policy": "all_feedback",
+          "learned_cards": 440,
+          "new_cards": 4,
+          "coverage": 0.22692109334708613,
+          "new_card_ids": [
+            "guard-74-7793362990548184397",
+            "guard-863-5004425121286820553",
+            "hint-863-5324637914215124338",
+            "pitfall-862-5846273370123312649"
+          ],
+          "valid_updates": 21,
+          "credited_relations": {
+            "cross_family": 6,
+            "unknown": 3,
+            "same_family": 12
+          }
+        },
+        "cross_family": {
+          "policy": "cross_family",
+          "learned_cards": 436,
+          "new_cards": 0,
+          "coverage": 0.22485817431665808,
+          "new_card_ids": [],
+          "valid_updates": 6,
+          "credited_relations": {
+            "cross_family": 6
+          }
+        }
+      }
+    }
+  }
+}

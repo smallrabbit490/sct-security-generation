@@ -1,0 +1,2678 @@
+{
+  "values": [
+    {
+      "invariant_id": "cand-1333-6455772803584774934",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-46",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-1333-7879173211493331773",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-1333-7952593739990058655",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-1333-3608707898927210175",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-1333-1790577940432390465",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-1333-8153697007201238305",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-1333-7972143074757284700",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-1333-2573297353640838985",
+      "cwe": "1333",
+      "q_value": -0.7599,
+      "q_visits": 4,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "pitfall-1333-3557470096494656103",
+      "cwe": "1333",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-82",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-86",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-81",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-1333-1133371200237659485",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-179-6365112243198787786",
+      "cwe": "179",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-179-6588603929062018052",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-179-7247804407684050276",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-179-1913639351786694370",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-179-3925319144962369407",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-179-4033271042427474956",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-179-2495142057914515900",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-179-4447016737760265079",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-66",
+      "cwe": "1333",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "guard-1333-6139920292922740632",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-1333-4902636512247485291",
+      "cwe": "1333",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-1333-7149508835909224135",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-179-228404689983239309",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-179-7678064253295235050",
+      "cwe": "179",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-179-2641057612355738641",
+      "cwe": "179",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-200-4012621885868663364",
+      "cwe": "200",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "blind-200-3954178413768858638",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-200-3152073733892179357",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-200-140999058858358603",
+      "cwe": "200",
+      "q_value": -0.7599,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "blind-200-12638892956483399",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-200-1620221962012165754",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "guard-200-1546478321451863561",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-200-719050430352558799",
+      "cwe": "200",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-200-8131294206841412331",
+      "cwe": "200",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "blind-200-1141564890726783161",
+      "cwe": "200",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-200-2544818441187161473",
+      "cwe": "200",
+      "q_value": -0.7599,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "pitfall-200-5885687420316519908",
+      "cwe": "200",
+      "q_value": -0.94235199,
+      "q_visits": 8,
+      "independent_families": 5,
+      "positive_updates": 0,
+      "negative_updates": 8
+    },
+    {
+      "invariant_id": "pitfall-200-4680476479142946258",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-200-8309021425623226576",
+      "cwe": "200",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-152",
+      "cwe": "200",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-200-4713069239264687050",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-200-6001571461080982659",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-327-4365999615897032294",
+      "cwe": "327",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "guard-200-6877408012929152713",
+      "cwe": "200",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-327-8617023731509449179",
+      "cwe": "327",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-200-6381718150718906034",
+      "cwe": "200",
+      "q_value": -0.8319300000000001,
+      "q_visits": 5,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 5
+    },
+    {
+      "invariant_id": "blind-327-7673803069532548139",
+      "cwe": "327",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-373",
+      "cwe": "327",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-327-8553196517194194335",
+      "cwe": "327",
+      "q_value": 0.06206999999999996,
+      "q_visits": 5,
+      "independent_families": 5,
+      "positive_updates": 2,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "hint-327-6119233296852092656",
+      "cwe": "327",
+      "q_value": -0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-327-2046676837649952570",
+      "cwe": "327",
+      "q_value": 0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-327-7866269729904786990",
+      "cwe": "327",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-327-165494848271691655",
+      "cwe": "327",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-352",
+      "cwe": "327",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-327-3012199065129083649",
+      "cwe": "327",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "pitfall-327-3958700371924071797",
+      "cwe": "327",
+      "q_value": 0.237,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 2,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-327-3870876482290286184",
+      "cwe": "327",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-327-4679012437812372694",
+      "cwe": "327",
+      "q_value": -0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-369",
+      "cwe": "327",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-327-8593650276137647774",
+      "cwe": "327",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-327-6872489790173679963",
+      "cwe": "327",
+      "q_value": 0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-327-7897068649486742632",
+      "cwe": "327",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-327-1647608197379019549",
+      "cwe": "327",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "cand-327-7067616438519360168",
+      "cwe": "327",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-355",
+      "cwe": "327",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-347-2200572731205078597",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-347-7937612257866966110",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-347-435091515231303867",
+      "cwe": "347",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "seed-423",
+      "cwe": "347",
+      "q_value": -0.7599,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "guard-347-1177926686543262562",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-347-1351018855307127737",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-440",
+      "cwe": "347",
+      "q_value": -0.7599,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "blind-347-2178107697605400695",
+      "cwe": "347",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-347-6066877049803253277",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-347-3436730488326106814",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-347-534356073684544857",
+      "cwe": "347",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "seed-442",
+      "cwe": "347",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-347-2235550156700228859",
+      "cwe": "347",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-347-4156544031588949365",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-347-8852856027972637597",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-464",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "guard-347-4534544551612244077",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-347-5980154578431352250",
+      "cwe": "347",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "seed-449",
+      "cwe": "347",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-347-4166145031858323157",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-467",
+      "cwe": "347",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-347-2920273083522308209",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-347-1156255607768761937",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-446",
+      "cwe": "347",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "seed-456",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-459",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-481",
+      "cwe": "352",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "guard-352-2619939440023958964",
+      "cwe": "352",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-352-2612359070093856346",
+      "cwe": "352",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-482",
+      "cwe": "352",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-483",
+      "cwe": "352",
+      "q_value": -0.882351,
+      "q_visits": 6,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 6
+    },
+    {
+      "invariant_id": "hint-352-193982814329061022",
+      "cwe": "352",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-484",
+      "cwe": "352",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-352-3354814272575635747",
+      "cwe": "352",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-486",
+      "cwe": "352",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "guard-352-1749492279493194452",
+      "cwe": "352",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-352-1841603666555571990",
+      "cwe": "352",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-352-546483336572745064",
+      "cwe": "352",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-352-2968473026619016351",
+      "cwe": "352",
+      "q_value": 0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-594",
+      "cwe": "502",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-352-5629701447724784240",
+      "cwe": "352",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-352-694839719183572027",
+      "cwe": "352",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-599",
+      "cwe": "502",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-633",
+      "cwe": "502",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-502-7106917869499550172",
+      "cwe": "502",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-634",
+      "cwe": "502",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-502-2884867450348772595",
+      "cwe": "502",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-502-1721682616923174794",
+      "cwe": "502",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-502-1443610889810473944",
+      "cwe": "502",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-502-4263120956699496651",
+      "cwe": "502",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-502-205608610009184081",
+      "cwe": "502",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-502-8852551038571015296",
+      "cwe": "502",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-611",
+      "cwe": "502",
+      "q_value": 0.5541,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 3,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-502-400574190874052502",
+      "cwe": "502",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-502-5289363153619763752",
+      "cwe": "502",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-502-9019453572835709259",
+      "cwe": "502",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-775",
+      "cwe": "74",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-74-8782917158325326543",
+      "cwe": "74",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-780",
+      "cwe": "74",
+      "q_value": -0.7599,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "blind-74-8309064660480437526",
+      "cwe": "74",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-74-7748912239743265061",
+      "cwe": "74",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-74-386984343909433584",
+      "cwe": "74",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-74-8137363318719743459",
+      "cwe": "74",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-790",
+      "cwe": "74",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "blind-74-6225662376305405436",
+      "cwe": "74",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-74-8957170276327786341",
+      "cwe": "74",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-74-4843472815418369115",
+      "cwe": "74",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-801",
+      "cwe": "74",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "blind-74-1657140894613605732",
+      "cwe": "74",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-804",
+      "cwe": "74",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "cand-77-3764461584536249728",
+      "cwe": "77",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-77-3268359013232096375",
+      "cwe": "77",
+      "q_value": 0.237,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 2,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-805",
+      "cwe": "74",
+      "q_value": -0.8319300000000001,
+      "q_visits": 5,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 5
+    },
+    {
+      "invariant_id": "guard-74-2647850976286081500",
+      "cwe": "74",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-77-8718774082089604333",
+      "cwe": "77",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "cand-77-2602055048707870030",
+      "cwe": "77",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-77-7379208722696672118",
+      "cwe": "77",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-77-5172092033421997615",
+      "cwe": "77",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-77-1719531174312373036",
+      "cwe": "77",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-77-2866356245140060870",
+      "cwe": "77",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-77-202583673954374676",
+      "cwe": "77",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-77-4829761193262211557",
+      "cwe": "77",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-842",
+      "cwe": "77",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-77-8790990326746052971",
+      "cwe": "77",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-77-2536575725798201523",
+      "cwe": "77",
+      "q_value": 0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "guard-77-1206394617974540456",
+      "cwe": "77",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-77-1308507374633588249",
+      "cwe": "77",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "cand-77-2035088974679404547",
+      "cwe": "77",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-77-3679424343564818818",
+      "cwe": "77",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-77-3219081811540845227",
+      "cwe": "77",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-876",
+      "cwe": "770",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-770-5275147467336335582",
+      "cwe": "770",
+      "q_value": 0.8319300000000001,
+      "q_visits": 5,
+      "independent_families": 2,
+      "positive_updates": 5,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-770-5014484374352035747",
+      "cwe": "770",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-879",
+      "cwe": "770",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-770-2043927641374152407",
+      "cwe": "770",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "cand-770-1548745941377888602",
+      "cwe": "770",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-770-2008374754185997460",
+      "cwe": "770",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-770-8704963408001515995",
+      "cwe": "770",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-770-1150898205105313184",
+      "cwe": "770",
+      "q_value": 0.045899999999999996,
+      "q_visits": 4,
+      "independent_families": 4,
+      "positive_updates": 2,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "cand-770-8697203914033335625",
+      "cwe": "770",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-770-5323402054131486444",
+      "cwe": "770",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "cand-770-4574917050561002640",
+      "cwe": "770",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-770-1679714600905809291",
+      "cwe": "770",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-770-638199515920934119",
+      "cwe": "770",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-874",
+      "cwe": "770",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-770-8234328493087520323",
+      "cwe": "770",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-79-4087288206584655986",
+      "cwe": "79",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-79-2110270030406030704",
+      "cwe": "79",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-910",
+      "cwe": "770",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 1,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-770-2882393762105451950",
+      "cwe": "770",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-969",
+      "cwe": "79",
+      "q_value": -0.53793,
+      "q_visits": 5,
+      "independent_families": 5,
+      "positive_updates": 1,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "guard-79-1957200912379971310",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-79-2306742277535297230",
+      "cwe": "79",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-79-3612102915711796976",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-976",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-79-3129731699431462557",
+      "cwe": "79",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-79-6147276136210494056",
+      "cwe": "79",
+      "q_value": -0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-79-6066578642865576742",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-79-7891981125696054376",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-979",
+      "cwe": "79",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "blind-79-5125740181959079601",
+      "cwe": "79",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-79-4142691317997540576",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-79-7495036769267073171",
+      "cwe": "79",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-79-5381193779325474553",
+      "cwe": "79",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "pitfall-79-2450978787675707576",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-79-1145545785162960315",
+      "cwe": "79",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-79-1744267437481985477",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-79-7255895706670200400",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-79-2610473178815181734",
+      "cwe": "79",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-79-2163491215939261110",
+      "cwe": "79",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-862-6294070334361514088",
+      "cwe": "862",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "cand-862-6373336081617056007",
+      "cwe": "862",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-862-5818189147437479149",
+      "cwe": "862",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-862-1661072772299129651",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-862-1405133312613939756",
+      "cwe": "862",
+      "q_value": -0.08787000000000006,
+      "q_visits": 5,
+      "independent_families": 5,
+      "positive_updates": 2,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "pitfall-862-8315288935440038004",
+      "cwe": "862",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-79-4223192076816222301",
+      "cwe": "79",
+      "q_value": -0.7599,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 4
+    },
+    {
+      "invariant_id": "cand-862-5033292903860531435",
+      "cwe": "862",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-862-8911678859959141422",
+      "cwe": "862",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-862-8899825322851418978",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-862-5321497189330350658",
+      "cwe": "862",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "blind-862-4297136031601513649",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-862-1837887519828208470",
+      "cwe": "862",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "guard-862-2745888587119396170",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-862-2299880987641155806",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-862-8198522528466209797",
+      "cwe": "862",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "pitfall-862-8139226318492269667",
+      "cwe": "862",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "guard-862-4648873030789731142",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-862-7631835979259533241",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-1051",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "guard-862-7304725669341727808",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-862-1984779645365010592",
+      "cwe": "862",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-862-773619797469008721",
+      "cwe": "862",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "pitfall-862-8125342695756018329",
+      "cwe": "862",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "blind-915-6482361870127709022",
+      "cwe": "915",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-1054",
+      "cwe": "915",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "guard-915-1851254758089417513",
+      "cwe": "915",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "hint-915-2729803398624131527",
+      "cwe": "915",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "seed-1058",
+      "cwe": "915",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-1063",
+      "cwe": "915",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-915-3963284539217860468",
+      "cwe": "915",
+      "q_value": 0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 3,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "guard-915-5255553702557698529",
+      "cwe": "915",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-915-4995271580702466672",
+      "cwe": "915",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-915-8901919800919581777",
+      "cwe": "915",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-915-652300268832645192",
+      "cwe": "915",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-94-606124515740896318",
+      "cwe": "94",
+      "q_value": -0.363,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 1,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-94-7278376456866242101",
+      "cwe": "94",
+      "q_value": 0.7599,
+      "q_visits": 4,
+      "independent_families": 4,
+      "positive_updates": 4,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-94-8837922020318398342",
+      "cwe": "94",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-1162",
+      "cwe": "94",
+      "q_value": 0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "cand-94-5780628374529773199",
+      "cwe": "94",
+      "q_value": 0.575709,
+      "q_visits": 6,
+      "independent_families": 6,
+      "positive_updates": 4,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "seed-1131",
+      "cwe": "94",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-1143",
+      "cwe": "94",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-1145",
+      "cwe": "94",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-95-6294227950759346460",
+      "cwe": "95",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-1192",
+      "cwe": "95",
+      "q_value": 0.7599,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 4,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-95-3518437816754057507",
+      "cwe": "95",
+      "q_value": 0.24107716816443991,
+      "q_visits": 16,
+      "independent_families": 10,
+      "positive_updates": 11,
+      "negative_updates": 5
+    },
+    {
+      "invariant_id": "hint-95-4715285485938227465",
+      "cwe": "95",
+      "q_value": 0.5883510000000001,
+      "q_visits": 6,
+      "independent_families": 3,
+      "positive_updates": 5,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "cand-95-7732690237929204893",
+      "cwe": "95",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-95-3993872653019239786",
+      "cwe": "95",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-95-1106752917280016682",
+      "cwe": "95",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-95-6700824698465931983",
+      "cwe": "95",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-95-8648973905722541388",
+      "cwe": "95",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "seed-1187",
+      "cwe": "95",
+      "q_value": 0.237,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-863-515290983181693286",
+      "cwe": "863",
+      "q_value": -0.8319300000000001,
+      "q_visits": 5,
+      "independent_families": 4,
+      "positive_updates": 0,
+      "negative_updates": 5
+    },
+    {
+      "invariant_id": "hint-95-9201320014070743827",
+      "cwe": "95",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-95-7820471714343859529",
+      "cwe": "95",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-95-2712193922071274475",
+      "cwe": "95",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-95-7579614607258416714",
+      "cwe": "95",
+      "q_value": -0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-863-7529151384849917386",
+      "cwe": "863",
+      "q_value": 0.026129999999999987,
+      "q_visits": 5,
+      "independent_families": 5,
+      "positive_updates": 3,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-863-5427687073637847282",
+      "cwe": "863",
+      "q_value": -0.5541,
+      "q_visits": 4,
+      "independent_families": 3,
+      "positive_updates": 1,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "blind-863-7891981125696054376",
+      "cwe": "863",
+      "q_value": -0.46235100000000007,
+      "q_visits": 6,
+      "independent_families": 5,
+      "positive_updates": 1,
+      "negative_updates": 5
+    },
+    {
+      "invariant_id": "hint-863-5369086614076845123",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-863-2689148787317916936",
+      "cwe": "863",
+      "q_value": -0.4659,
+      "q_visits": 4,
+      "independent_families": 4,
+      "positive_updates": 1,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "blind-863-4786238142732850547",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-863-8407276941887006925",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-863-7680165389882070274",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-863-6259117618726082419",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-1333-5550405253882905830",
+      "cwe": "1333",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "cand-863-2313771720923432923",
+      "cwe": "863",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-863-7804366502440317356",
+      "cwe": "863",
+      "q_value": 0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 2,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-863-5143831357720802719",
+      "cwe": "863",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "hint-863-4420649339396542987",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-863-4423682770525396755",
+      "cwe": "863",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "blind-179-7551985758467311526",
+      "cwe": "179",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-863-2057109491290976501",
+      "cwe": "863",
+      "q_value": -0.882351,
+      "q_visits": 6,
+      "independent_families": 4,
+      "positive_updates": 0,
+      "negative_updates": 6
+    },
+    {
+      "invariant_id": "hint-863-5666264225867275662",
+      "cwe": "863",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "blind-863-8539774469001709140",
+      "cwe": "863",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "pitfall-863-8383840434846856043",
+      "cwe": "863",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "hint-1333-3046501157188907753",
+      "cwe": "1333",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-347-6139454383397529422",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "guard-863-4542335777279200008",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-863-6444643308351956679",
+      "cwe": "863",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-1262",
+      "cwe": "179",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "guard-179-3705218961822856052",
+      "cwe": "179",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-179-4852125117042658301",
+      "cwe": "179",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-179-5695096040596148802",
+      "cwe": "179",
+      "q_value": -0.657,
+      "q_visits": 3,
+      "independent_families": 2,
+      "positive_updates": 0,
+      "negative_updates": 3
+    },
+    {
+      "invariant_id": "pitfall-770-2696737863978663825",
+      "cwe": "770",
+      "q_value": 0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 1,
+      "negative_updates": 0
+    },
+    {
+      "invariant_id": "blind-327-4603067818071552262",
+      "cwe": "327",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "pitfall-327-9110905060906513995",
+      "cwe": "327",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-327-4528130991497775195",
+      "cwe": "327",
+      "q_value": 0.045899999999999996,
+      "q_visits": 4,
+      "independent_families": 4,
+      "positive_updates": 2,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-327-2516411163311597246",
+      "cwe": "327",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "seed-1299",
+      "cwe": "347",
+      "q_value": -0.51,
+      "q_visits": 2,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-347-1522223954061401000",
+      "cwe": "347",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-352-6968976870347731261",
+      "cwe": "352",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-862-6059840767614764213",
+      "cwe": "862",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "blind-862-5691665084168364812",
+      "cwe": "862",
+      "q_value": 0.09000000000000002,
+      "q_visits": 2,
+      "independent_families": 2,
+      "positive_updates": 1,
+      "negative_updates": 1
+    },
+    {
+      "invariant_id": "hint-862-7960496208416158657",
+      "cwe": "862",
+      "q_value": -0.05700000000000005,
+      "q_visits": 3,
+      "independent_families": 3,
+      "positive_updates": 1,
+      "negative_updates": 2
+    },
+    {
+      "invariant_id": "pitfall-94-4719200950297832095",
+      "cwe": "94",
+      "q_value": -0.3,
+      "q_visits": 1,
+      "independent_families": 1,
+      "positive_updates": 0,
+      "negative_updates": 1
+    }
+  ],
+  "full_bank": 1939
+}

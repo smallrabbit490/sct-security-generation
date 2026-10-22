@@ -1,0 +1,87 @@
+{
+  "protocol": "cle-dinit-coverage-cross-family-design-v3",
+  "status": "DESIGNED_NOT_EXECUTED",
+  "scope": "design updated after81 source/contract repair; no paid generation or Dinit credits",
+  "baseline_memory": "translation_work/diagnostics/20261020/cle_dgrow_url_q_learning_v1/frozen/m_star_q.jsonl",
+  "baseline_family_support": "translation_work/diagnostics/20261020/cle_dgrow_url_q_learning_v1/q_family_support.json",
+  "origins_source": "translation_work\\diagnostics\\20261019\\cle_memory_q\\dinit_learning_v1\\origins.json",
+  "qualification_source": "translation_work\\diagnostics\\20261020\\cle_dinit_repair_v1\\commands_v2\\qualification.combined303.json",
+  "arms": {
+    "L0": "native original candidate union order",
+    "L1": "unlearned first using rank_coverage_candidates; cosine within visited group; same candidates and native LLM cap3"
+  },
+  "feedback_views": [
+    "all_feedback",
+    "cross_family_incremental"
+  ],
+  "primary_view": "cross_family_incremental; only new Dinit events filtered, inherited436 not retroactively certified",
+  "Q_value_in_forward": false,
+  "coverage_mask": "L1 primary-view visits fixed at start of blocks:12 / next48 / next236",
+  "model": "deepseek-v3.2",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 4096,
+  "selector_max_tokens": 256,
+  "embedding_model": "text-embedding-3-large",
+  "max_experiences": 3,
+  "max_code_attempts": 2,
+  "alpha": 0.3,
+  "delta": -1,
+  "workers": 2,
+  "max_rounds": 1,
+  "shuffle_execution_seed": 20261020,
+  "shared_initial": "probe L0/L1 same task initial, query and candidates; own c1 code/feedback",
+  "gates": {
+    "absolute_probe": "each arm12 measured; final workflows>=10; new cross-family cards>=6; new anchor cards>=4; touch>=8 anchor queries; >=2 new card implementation+Joint chains in different families; no system fault; budget pass",
+    "choose_L1": "absolute pass; at least3 more new cross-family cards than L0; F/Joint>=L0; tokens<=1.25*L0; else choose L0 if absolute pass; else stop",
+    "after60": "last48 new cross-family cards>=24 incl anchor>=16;48 measured and >=44 complete finals; anchor card yield per million tokens >=50% probe efficiency; >=3 cumulative family implementation+Joint chains; no system fault/budget overrun",
+    "after296": "freeze once; stop regardless coverage; no automatic second round"
+  },
+  "budget_cumulative": {
+    "smoke2_two_arms": {
+      "P7": 4,
+      "code_versions_max": 8,
+      "LLM_token_stop": 500000,
+      "logical_calls_stop": 60
+    },
+    "probe12_two_arms": {
+      "P7": 24,
+      "code_versions_max": 48,
+      "LLM_token_stop": 2400000,
+      "logical_calls_stop": 350
+    },
+    "winner60_plus_other12": {
+      "P7": 72,
+      "code_versions_max": 144,
+      "LLM_token_stop": 7000000,
+      "logical_calls_stop": 1000
+    },
+    "winner296_plus_other12": {
+      "P7": 308,
+      "code_versions_max": 616,
+      "LLM_token_stop": 20000000,
+      "logical_calls_stop": 3000,
+      "note": "20M Token/3000 logical requests unchanged; stop on budget even if fewer than296 completed"
+    }
+  },
+  "embedding_input_token_stop": 1000000,
+  "actual_bill_CNY": null,
+  "forbidden_learning_pools": [
+    "D_gate",
+    "Base",
+    "Plus"
+  ],
+  "new_Dgate_generation": false,
+  "Dgate_replay": "optional once after freezing, descriptive only, not used in gates/task selection",
+  "proposed_runner": "methods/cle_ablation/run_memory_q_dinit_coverage.py",
+  "runner_implemented": false,
+  "future_output": "translation_work/diagnostics/<execution_date>/cle_dinit_q_coverage_v3/",
+  "report": "docs/CLE_Dinit扩大Q覆盖学习实验方案_20261020_v3.md",
+  "qualification_evidence": "74 fresh positive/negative controls +222 historical qualifications; not303 fresh controls",
+  "data_overlay": "configs\\cle_dinit_repair_20261020\\repaired_tasks.json",
+  "public_overlay": "configs\\cle_dinit_repair_20261020\\public_task_descriptions.json",
+  "command_runtime_path": "C:\\Program Files\\Git\\usr\\bin",
+  "command_runtime": "prepend PATH only in learning/validation process; required for native subprocess echo/cat; no mocks or validator changes",
+  "scheduled_positive_negative_preflight": "before dispatch, validate each not-yet-revalidated scheduled task with original validator in same environment; retain failures and stop block, do not silently replace",
+  "current_delivery": "81-task restoration and zero-API preflight complete; future coverage runner still not implemented"
+}

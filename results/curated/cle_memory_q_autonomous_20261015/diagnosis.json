@@ -1,0 +1,890 @@
+{
+  "role": "posthoc_diagnosis_not_new_confirmation",
+  "model_calls": 0,
+  "original_scores_unchanged": true,
+  "Q2_tasks": 24,
+  "Q2_attempts": 45,
+  "learned_cards": 20,
+  "visited_count_distribution": {
+    "1": 19,
+    "2": 1
+  },
+  "learned_card_cwes": {
+    "1333": 3,
+    "200": 3,
+    "327": 2,
+    "352": 1,
+    "347": 3,
+    "502": 4,
+    "601": 4
+  },
+  "funnel_attempts": {
+    "trained_recalled": 21,
+    "trained_above_threshold": 6,
+    "trained_selected": 3,
+    "trained_adopted": 1,
+    "retrieval_empty": 23,
+    "any_adopted": 15
+  },
+  "funnel_tasks": {
+    "trained_recalled": 16,
+    "trained_above_threshold": 6,
+    "trained_selected": 3,
+    "trained_adopted": 1,
+    "any_adopted": 13,
+    "set_changed": 4,
+    "new_cards_adopted": 2,
+    "no_retrieval_entire_task": 7
+  },
+  "structured_error_rows": [
+    {
+      "task_id": "63",
+      "arm": "Q0",
+      "error_type": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "103",
+      "arm": "Q0",
+      "error_type": "initial_analysis:ValueError;experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "364",
+      "arm": "Q0",
+      "error_type": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "455",
+      "arm": "Q2",
+      "error_type": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "657",
+      "arm": "Q2",
+      "error_type": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "130",
+      "arm": "Q1",
+      "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "627",
+      "arm": "Q2",
+      "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "627",
+      "arm": "Q3",
+      "error_type": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "627",
+      "arm": "Q1",
+      "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "349",
+      "arm": "Q2",
+      "error_type": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "443",
+      "arm": "Q3",
+      "error_type": "initial_analysis:ValueError"
+    }
+  ],
+  "degraded_stages": {
+    "initial_analysis": 6,
+    "experience_analysis": 4,
+    "adoption": 6
+  },
+  "original_paired_result": {
+    "pairs": 24,
+    "unpaired": 0,
+    "old_only": 0,
+    "new_only": 1,
+    "p_exact_two_sided": 1.0,
+    "delta_percentage_points": 4.166666666666667,
+    "conservative_95_ci_percentage_points": [
+      -16.63617312043707,
+      23.793316215598686
+    ],
+    "functional_rescues": 2,
+    "functional_harms": 0,
+    "p_holm_two_planned": 1.0
+  },
+  "reference_controls": {
+    "learning_pass": 7,
+    "development_pass": 19,
+    "failed_ids": [
+      "87",
+      "455",
+      "657",
+      "666",
+      "675",
+      "1323"
+    ],
+    "all_compile_pass": true,
+    "official_template_six_failures_reproduced": true
+  },
+  "reference_passed_exploratory_subset": {
+    "ids": [
+      "63",
+      "103",
+      "125",
+      "130",
+      "159",
+      "164",
+      "172",
+      "342",
+      "349",
+      "364",
+      "430",
+      "443",
+      "489",
+      "498",
+      "606",
+      "617",
+      "627",
+      "1259",
+      "1306"
+    ],
+    "n": 19,
+    "joint": {
+      "Q0": 4,
+      "Q1": 2,
+      "Q2": 3,
+      "Q3": 4
+    }
+  },
+  "suspect_learning_675": {
+    "negative_updated_id": "guard-601-6462984621777116443",
+    "updates": 1,
+    "reset_Q_only_counterfactual_changed_attempts": 0,
+    "scope": "ranking only; no generated code rerun"
+  },
+  "data_placeholder_count": 910,
+  "data_origin_master_LF_content_verified_equal": true,
+  "tasks": [
+    {
+      "task_id": "63",
+      "cwe": "1333",
+      "family_id": "6fbcc772170d",
+      "states": {
+        "Q0": "D",
+        "Q1": "D",
+        "Q2": "D",
+        "Q3": "D"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": "initial_analysis:JSONDecodeError",
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "87",
+      "cwe": "1333",
+      "family_id": "3db7e7372b49",
+      "states": {
+        "Q0": "A",
+        "Q1": "A",
+        "Q2": "A",
+        "Q3": "A"
+      },
+      "reference_state": "C",
+      "placeholder_count": 0,
+      "Q2_attempts": 1,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [
+        0
+      ],
+      "Q2_new_cards_adopted": [
+        {
+          "task_id": "87",
+          "attempt": 0,
+          "ids": [
+            "cand-1333-4003705983803461794"
+          ]
+        }
+      ],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": true,
+      "trained_selected": true,
+      "trained_adopted": true,
+      "any_adopted": true
+    },
+    {
+      "task_id": "103",
+      "cwe": "179",
+      "family_id": "ae44044347c3",
+      "states": {
+        "Q0": "B",
+        "Q1": "B",
+        "Q2": "B",
+        "Q3": "B"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 2,
+      "Q2_no_retrieval_entire_task": true,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": "initial_analysis:ValueError;experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "125",
+      "cwe": "179",
+      "family_id": "885e9ab65610",
+      "states": {
+        "Q0": "B",
+        "Q1": "B",
+        "Q2": "B",
+        "Q3": "B"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 2,
+      "Q2_no_retrieval_entire_task": true,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "130",
+      "cwe": "179",
+      "family_id": "5c7bfe257436",
+      "states": {
+        "Q0": "B",
+        "Q1": "B",
+        "Q2": "B",
+        "Q3": "B"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "159",
+      "cwe": "200",
+      "family_id": "e683b1265cd8",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "164",
+      "cwe": "200",
+      "family_id": "eae93c4cb8e1",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "172",
+      "cwe": "200",
+      "family_id": "4f2d8f9b918d",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "D"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "342",
+      "cwe": "327",
+      "family_id": "0b3f7e6e2a7a",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [
+        1
+      ],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": true,
+      "trained_selected": true,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "349",
+      "cwe": "327",
+      "family_id": "433aa1a34185",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [
+        0
+      ],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": "adoption:missing_applied_experience_ids",
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": true,
+      "trained_selected": true,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "364",
+      "cwe": "327",
+      "family_id": "f597e4620d22",
+      "states": {
+        "Q0": "A",
+        "Q1": "A",
+        "Q2": "A",
+        "Q3": "A"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 1,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": "initial_analysis:ValueError",
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "430",
+      "cwe": "347",
+      "family_id": "e096886b5f87",
+      "states": {
+        "Q0": "B",
+        "Q1": "D",
+        "Q2": "B",
+        "Q3": "D"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "443",
+      "cwe": "347",
+      "family_id": "7e0acd228b50",
+      "states": {
+        "Q0": "D",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "D"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 2,
+      "Q2_no_retrieval_entire_task": true,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": "initial_analysis:ValueError"
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "455",
+      "cwe": "347",
+      "family_id": "4b8cb0f8aff1",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "D"
+      },
+      "reference_state": "D",
+      "placeholder_count": 6,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 2,
+      "Q2_no_retrieval_entire_task": true,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": "initial_analysis:JSONDecodeError",
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "489",
+      "cwe": "352",
+      "family_id": "cf9e2b4681b9",
+      "states": {
+        "Q0": "D",
+        "Q1": "D",
+        "Q2": "D",
+        "Q3": "D"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "498",
+      "cwe": "352",
+      "family_id": "60d85fdd66a2",
+      "states": {
+        "Q0": "A",
+        "Q1": "C",
+        "Q2": "A",
+        "Q3": "A"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 2,
+      "Q2_no_retrieval_entire_task": true,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "606",
+      "cwe": "502",
+      "family_id": "768266d3cc92",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [
+        0
+      ],
+      "Q2_new_cards_adopted": [
+        {
+          "task_id": "606",
+          "attempt": 0,
+          "ids": [
+            "seed-602"
+          ]
+        }
+      ],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": true,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "617",
+      "cwe": "502",
+      "family_id": "89015705883e",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": true,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "627",
+      "cwe": "502",
+      "family_id": "7231c95b629d",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+        "Q2": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+        "Q3": "initial_analysis:JSONDecodeError"
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "657",
+      "cwe": "601",
+      "family_id": "2b4dc69294a4",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "D",
+      "placeholder_count": 8,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": "adoption:missing_applied_experience_ids",
+        "Q3": null
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "666",
+      "cwe": "601",
+      "family_id": "5a6a83dbb919",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "C",
+      "placeholder_count": 5,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 2,
+      "Q2_no_retrieval_entire_task": true,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "1259",
+      "cwe": "1333",
+      "family_id": "5aeb6e97473a",
+      "states": {
+        "Q0": "A",
+        "Q1": "A",
+        "Q2": "A",
+        "Q3": "A"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 1,
+      "Q2_empty_attempts": 0,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": false,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": true
+    },
+    {
+      "task_id": "1306",
+      "cwe": "352",
+      "family_id": "c491a96333c7",
+      "states": {
+        "Q0": "A",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "A"
+      },
+      "reference_state": "A",
+      "placeholder_count": 0,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 2,
+      "Q2_no_retrieval_entire_task": true,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": false,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    },
+    {
+      "task_id": "1323",
+      "cwe": "601",
+      "family_id": "0871c2ec5cd8",
+      "states": {
+        "Q0": "C",
+        "Q1": "C",
+        "Q2": "C",
+        "Q3": "C"
+      },
+      "reference_state": "C",
+      "placeholder_count": 10,
+      "Q2_attempts": 2,
+      "Q2_empty_attempts": 1,
+      "Q2_no_retrieval_entire_task": false,
+      "Q2_changed_attempts": [],
+      "Q2_new_cards_adopted": [],
+      "workflow_errors": {
+        "Q0": null,
+        "Q1": null,
+        "Q2": null,
+        "Q3": null
+      },
+      "trained_recalled": true,
+      "trained_above_threshold": true,
+      "trained_selected": false,
+      "trained_adopted": false,
+      "any_adopted": false
+    }
+  ]
+}

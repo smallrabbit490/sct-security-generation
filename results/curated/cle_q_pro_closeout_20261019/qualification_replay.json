@@ -1,0 +1,85 @@
+{
+  "operation": "zero_API_qualification_screening_sensitivity",
+  "original_M1_exactly_reproduced": true,
+  "starting_cards": 1939,
+  "prelearning_snapshot_verified_zero_Q": true,
+  "fixed_card_body_equal_prelearning": true,
+  "credited_events_verified_against_native_attempts": 1090,
+  "original_family_support_exactly_reproduced": true,
+  "original_two_feedback_family_cards": 217,
+  "screened_two_feedback_family_cards": 178,
+  "original_valid_updates": 1090,
+  "retained_updates": 928,
+  "removed_updates": 162,
+  "removed_feedback_tasks": 32,
+  "affected_cards": 89,
+  "lost_all_support": 50,
+  "Q_sign_changes_including_zero": 57,
+  "original_visited": 466,
+  "screened_visited": 416,
+  "screened_Q_signs": {
+    "zero": 1523,
+    "positive": 161,
+    "negative": 255
+  },
+  "fixed_query_replays": 298,
+  "skipped_first_traces": [],
+  "recovered_embedded_first_traces": [
+    "1343",
+    "458",
+    "860"
+  ],
+  "included_first_queries_with_selector_errors": [
+    "458",
+    "860"
+  ],
+  "presentation_order_changes": 127,
+  "top3_set_changes": 69,
+  "tasks_original_selected_Q_changed": 52,
+  "tasks_original_adopted_Q_changed": 39,
+  "Q3_saved_bank_exact_CWE_shuffle": true,
+  "Q3_trace_assignment_entries_verified": 14015,
+  "actual_exposure": {
+    "Q0": {
+      "selected": 1363,
+      "selected_originally_learned": 746,
+      "selected_assigned_visits": 746,
+      "adopted": 882,
+      "adopted_originally_learned": 535,
+      "adopted_assigned_visits": 535
+    },
+    "Q1": {
+      "selected": 1368,
+      "selected_originally_learned": 751,
+      "selected_assigned_visits": 751,
+      "adopted": 870,
+      "adopted_originally_learned": 508,
+      "adopted_assigned_visits": 508
+    },
+    "Q2": {
+      "selected": 1364,
+      "selected_originally_learned": 758,
+      "selected_assigned_visits": 758,
+      "adopted": 905,
+      "adopted_originally_learned": 554,
+      "adopted_assigned_visits": 554
+    },
+    "Q3": {
+      "selected": 1346,
+      "selected_originally_learned": 728,
+      "selected_assigned_visits": 354,
+      "adopted": 829,
+      "adopted_originally_learned": 485,
+      "adopted_assigned_visits": 191
+    }
+  },
+  "new_API_calls": 0,
+  "new_outcome_measurements": 0,
+  "new_Joint": null,
+  "limitations": [
+    "Only already assigned rewards retained; no missing rewards reconstructed.",
+    "Qualification-screened does not mean human-validated clean.",
+    "Replayed top3 is ranked preview, not actual LLM selection under new ordering.",
+    "No new selection/adoption/code/outcome can be inferred from historical outcomes."
+  ]
+}

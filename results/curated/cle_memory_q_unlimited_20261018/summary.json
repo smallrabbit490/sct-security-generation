@@ -1,0 +1,141 @@
+{
+  "protocol": "cle-q-unlimited-observer-participant-v1",
+  "status": "stopped_probe",
+  "stages": {
+    "observe": {
+      "summary": {
+        "arms": {
+          "Q0": {
+            "n": 2,
+            "functional": 2,
+            "security": 2,
+            "joint": 2,
+            "measured": 2,
+            "first_joint": 2,
+            "errors": 1,
+            "calls": 8,
+            "total_tokens": 108440,
+            "seconds": 130.21953329999815
+          }
+        },
+        "paired": {},
+        "role": "training fit",
+        "protocol": "cle-q-unlimited-observer-participant-v1",
+        "stage": "observe",
+        "rows": 2,
+        "technical_errors": [
+          {
+            "task_id": "1394",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          }
+        ],
+        "adoption": {
+          "attempts": 2,
+          "retrieved_cards": 16,
+          "declared_adopted_cards": 16,
+          "retrieved_above_three": 2,
+          "adopted_above_three": 2,
+          "code_implementation_review": "not automatically verified; declaration is not implementation"
+        },
+        "Q_learning": {
+          "visited_cards": 5,
+          "total_cards": 1939,
+          "coverage": 0.0025786487880350697,
+          "updates": 5,
+          "positive_updates": 5,
+          "negative_updates": 0,
+          "two_family_cards": 0,
+          "visit_distribution": {
+            "1": 5
+          }
+        }
+      },
+      "cost": {
+        "llm": {
+          "total": {
+            "calls": 10,
+            "prompt_tokens": 105614,
+            "completion_tokens": 5413,
+            "total_tokens": 111027,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "by_arm": {
+            "Q0": {
+              "calls": 8,
+              "prompt_tokens": 104449,
+              "completion_tokens": 3991,
+              "total_tokens": 108440,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            }
+          },
+          "shared_initial": {
+            "calls": 2,
+            "prompt_tokens": 1165,
+            "completion_tokens": 1422,
+            "total_tokens": 2587,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          }
+        },
+        "embedding": {
+          "calls": 2,
+          "failures": 0,
+          "total_tokens": 1635,
+          "cache_hits": 1933,
+          "embedded_texts": 2,
+          "usage_missing_calls": 0
+        },
+        "currency_actual": null,
+        "note": "Logical requests; no invoice/old price estimate. Shared initial counted once."
+      }
+    }
+  },
+  "probe_gate": {
+    "passed": false,
+    "tasks": [
+      1394,
+      102
+    ],
+    "errors": [
+      {
+        "task_id": "1394",
+        "arm": "Q0",
+        "attempt": 0,
+        "error": "planning:JSONDecodeError"
+      }
+    ],
+    "joint": 2,
+    "rule": "2 complete native P7 tasks, measured F/S, no pipeline/technical errors; Joint need not pass"
+  },
+  "execution_progress": {
+    "probe": {
+      "done": 2,
+      "target": 2,
+      "passed": false
+    },
+    "observer": {
+      "done": 2,
+      "target": 273,
+      "complete": false
+    },
+    "retest": {
+      "done": 0,
+      "target": 273,
+      "started": false
+    },
+    "gate": {
+      "done": 0,
+      "target": 144,
+      "tasks": 48,
+      "started": false
+    }
+  },
+  "interpretation": "Card cap removed; final Joint 2/2 but planning JSON invalid escape caused degraded workflow. Technical gate failed; Q benefit and full coverage not established."
+}

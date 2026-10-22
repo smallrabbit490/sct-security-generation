@@ -1,0 +1,4 @@
+interface:
+  display_name: "CLE 数据与公开契约"
+  short_description: "核对CLE数据分池、题族、公开接口与夹具依赖并保留原始材料"
+  default_prompt: "使用 $cle-data-contracts 完成当前CLE任务，依据本项目记录选择实际入口并保留证据边界。"

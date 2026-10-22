@@ -1,0 +1,2438 @@
+{
+  "operation": "existing_result_review_no_API",
+  "raw_gate_source": "translation_work/diagnostics/20261019/cle_memory_q/full_gate_cap3_v4/rows.jsonl",
+  "native_gate_rows_verified": 1192,
+  "native_gate_counts": {
+    "Q1": {
+      "n": 298,
+      "functional": 123,
+      "security": 230,
+      "joint": 104,
+      "measured": 298
+    },
+    "Q2": {
+      "n": 298,
+      "functional": 118,
+      "security": 228,
+      "joint": 102,
+      "measured": 296
+    },
+    "Q0": {
+      "n": 298,
+      "functional": 120,
+      "security": 227,
+      "joint": 97,
+      "measured": 298
+    },
+    "Q3": {
+      "n": 298,
+      "functional": 119,
+      "security": 230,
+      "joint": 100,
+      "measured": 298
+    }
+  },
+  "native_gate_pairs": {
+    "Q0": {
+      "measured_pairs": 296,
+      "wins": 16,
+      "losses": 10,
+      "net": 6,
+      "p_holm": 0.94065,
+      "ci95_family_bootstrap": [
+        -0.012821543408360126,
+        0.052980132450331126
+      ]
+    },
+    "Q1": {
+      "measured_pairs": 296,
+      "wins": 13,
+      "losses": 14,
+      "net": -1,
+      "p_holm": 1.0,
+      "ci95_family_bootstrap": [
+        -0.03558718861209965,
+        0.028125
+      ]
+    },
+    "Q3": {
+      "measured_pairs": 296,
+      "wins": 14,
+      "losses": 12,
+      "net": 2,
+      "p_holm": 1.0,
+      "ci95_family_bootstrap": [
+        -0.027306091916405626,
+        0.04037345504736808
+      ]
+    }
+  },
+  "gate_primary_source": "results/curated/cle_memory_q_full_gate_cap3_20261019/final_analysis.json",
+  "gate_summary_source": "results/curated/cle_memory_q_full_gate_cap3_20261019/summary.json",
+  "gate_costs": {
+    "calls": 9180,
+    "prompt_tokens": 77514896,
+    "completion_tokens": 7502642,
+    "total_tokens": 85017538,
+    "cached_tokens": 0,
+    "usage_missing": 0,
+    "errors": 26
+  },
+  "known_cost_is_lower_bound": true,
+  "other_evidence": {
+    "unlimited": {
+      "source": "results/curated/cle_memory_q_unlimited_complete_20261018/analysis.json",
+      "data": {
+        "protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+        "total_P7_rows": 690,
+        "stage_arms": {
+          "observe": {
+            "Q0": {
+              "n": 273,
+              "functional": 128,
+              "security": 208,
+              "joint": 109,
+              "measured": 271,
+              "first_joint": 103,
+              "errors": 36,
+              "calls": 1934,
+              "total_tokens": 20600613,
+              "seconds": 24599.7348049
+            }
+          },
+          "retest": {
+            "Q2": {
+              "n": 273,
+              "functional": 124,
+              "security": 201,
+              "joint": 100,
+              "measured": 273,
+              "first_joint": 97,
+              "errors": 42,
+              "calls": 1970,
+              "total_tokens": 21262438,
+              "seconds": 25140.584388599964
+            }
+          },
+          "gate": {
+            "Q2": {
+              "n": 48,
+              "functional": 25,
+              "security": 36,
+              "joint": 21,
+              "measured": 48,
+              "first_joint": 21,
+              "errors": 6,
+              "calls": 328,
+              "total_tokens": 3591400,
+              "seconds": 4145.499167000045
+            },
+            "Q1": {
+              "n": 48,
+              "functional": 23,
+              "security": 35,
+              "joint": 17,
+              "measured": 48,
+              "first_joint": 17,
+              "errors": 8,
+              "calls": 347,
+              "total_tokens": 3510978,
+              "seconds": 4243.140007999973
+            },
+            "Q3": {
+              "n": 48,
+              "functional": 25,
+              "security": 36,
+              "joint": 20,
+              "measured": 48,
+              "first_joint": 20,
+              "errors": 2,
+              "calls": 332,
+              "total_tokens": 3511848,
+              "seconds": 4043.3271351000003
+            }
+          }
+        },
+        "Q_coverage": {
+          "cards": 1939,
+          "visited": 466,
+          "positive_q": 168,
+          "negative_q": 298,
+          "one_visit": 208,
+          "two_family": 217,
+          "three_family": 93,
+          "fraction": 0.24033006704486848
+        }
+      }
+    },
+    "Q0_addendum": {
+      "source": "results/curated/cle_memory_q_unlimited_gate_q0_20261019/summary.json",
+      "data": {
+        "arms": {
+          "Q2": {
+            "n": 48,
+            "functional": 25,
+            "security": 36,
+            "joint": 21,
+            "measured": 48,
+            "first_joint": 21,
+            "errors": 6,
+            "calls": 328,
+            "total_tokens": 3591400,
+            "seconds": 4145.499167000045
+          },
+          "Q1": {
+            "n": 48,
+            "functional": 23,
+            "security": 35,
+            "joint": 17,
+            "measured": 48,
+            "first_joint": 17,
+            "errors": 8,
+            "calls": 347,
+            "total_tokens": 3510978,
+            "seconds": 4243.140007999973
+          },
+          "Q3": {
+            "n": 48,
+            "functional": 25,
+            "security": 36,
+            "joint": 20,
+            "measured": 48,
+            "first_joint": 20,
+            "errors": 2,
+            "calls": 332,
+            "total_tokens": 3511848,
+            "seconds": 4043.3271351000003
+          },
+          "Q0": {
+            "n": 48,
+            "functional": 24,
+            "security": 34,
+            "joint": 18,
+            "measured": 48,
+            "first_joint": 17,
+            "errors": 11,
+            "calls": 349,
+            "total_tokens": 3700783,
+            "seconds": 4919.412361699999
+          }
+        },
+        "paired": {
+          "Q2": {
+            "pairs": 48,
+            "measured_pairs": 48,
+            "wins": 4,
+            "losses": 1,
+            "p_exact": 0.375,
+            "functional_harms": 1,
+            "p_holm": 1,
+            "delta_joint": 0.0625,
+            "ci95_paired_tasks": [
+              -0.020833333333333332,
+              0.16666666666666666
+            ]
+          },
+          "Q1": {
+            "pairs": 48,
+            "measured_pairs": 48,
+            "wins": 2,
+            "losses": 3,
+            "p_exact": 1,
+            "functional_harms": 2,
+            "p_holm": 1,
+            "delta_joint": -0.020833333333333332,
+            "ci95_paired_tasks": [
+              -0.10416666666666667,
+              0.0625
+            ]
+          },
+          "Q3": {
+            "pairs": 48,
+            "measured_pairs": 48,
+            "wins": 4,
+            "losses": 2,
+            "p_exact": 0.6875,
+            "functional_harms": 2,
+            "p_holm": 1,
+            "delta_joint": 0.041666666666666664,
+            "ci95_paired_tasks": [
+              -0.0625,
+              0.14583333333333334
+            ]
+          }
+        },
+        "role": "training_development_only",
+        "protocol": "cle-q-unlimited-gate-q0-addendum-v1",
+        "added_rows": 48,
+        "reused_rows": 144,
+        "completed": true,
+        "expected_combined_rows": 192,
+        "unique_tasks": 48,
+        "original_parent_protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+        "adoption": {
+          "Q0": {
+            "attempts": 79,
+            "selected": 536,
+            "declared_adopted": 279,
+            "over_three_selected": 57,
+            "over_three_adopted": 35
+          },
+          "Q1": {
+            "attempts": 79,
+            "selected": 503,
+            "declared_adopted": 249,
+            "over_three_selected": 58,
+            "over_three_adopted": 28
+          },
+          "Q2": {
+            "attempts": 75,
+            "selected": 557,
+            "declared_adopted": 308,
+            "over_three_selected": 61,
+            "over_three_adopted": 43
+          },
+          "Q3": {
+            "attempts": 76,
+            "selected": 480,
+            "declared_adopted": 285,
+            "over_three_selected": 58,
+            "over_three_adopted": 37
+          }
+        },
+        "Q_frozen": true,
+        "new_Q_updates": 0,
+        "new_cost": {
+          "Q0": {
+            "calls": 349,
+            "prompt_tokens": 3426732,
+            "completion_tokens": 274051,
+            "total_tokens": 3700783,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "embedding": {
+            "calls": 31,
+            "total_tokens": 46971,
+            "failures": 0,
+            "usage_missing_calls": 0
+          },
+          "shared_initial_new_calls": 0,
+          "currency_actual": null
+        },
+        "parent_cost": {
+          "llm": {
+            "total": {
+              "calls": 1055,
+              "prompt_tokens": 9866680,
+              "completion_tokens": 823468,
+              "total_tokens": 10690148,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 1
+            },
+            "by_arm": {
+              "Q1": {
+                "calls": 347,
+                "prompt_tokens": 3246807,
+                "completion_tokens": 264171,
+                "total_tokens": 3510978,
+                "cached_tokens": 0,
+                "usage_missing": 0,
+                "errors": 0
+              },
+              "Q2": {
+                "calls": 328,
+                "prompt_tokens": 3330332,
+                "completion_tokens": 261068,
+                "total_tokens": 3591400,
+                "cached_tokens": 0,
+                "usage_missing": 0,
+                "errors": 1
+              },
+              "Q3": {
+                "calls": 332,
+                "prompt_tokens": 3262703,
+                "completion_tokens": 249145,
+                "total_tokens": 3511848,
+                "cached_tokens": 0,
+                "usage_missing": 0,
+                "errors": 0
+              }
+            },
+            "shared_initial": {
+              "calls": 48,
+              "prompt_tokens": 26838,
+              "completion_tokens": 49084,
+              "total_tokens": 75922,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            }
+          },
+          "embedding": {
+            "calls": 134,
+            "failures": 0,
+            "total_tokens": 174234,
+            "cache_hits": 2017,
+            "embedded_texts": 134,
+            "usage_missing_calls": 0
+          },
+          "currency_actual": null,
+          "note": "Logical requests; no invoice/old price estimate. Shared initial counted once."
+        },
+        "engineering_errors": {
+          "items": 13
+        },
+        "unverified_failed_retrieval_attempts": [],
+        "comparison_scope": "late_added_development_control",
+        "full_library_recall": "unmeasured",
+        "formal_retrieval_labels": "not_added",
+        "claim": "exploratory_comparison_complete"
+      }
+    },
+    "equal_K": {
+      "source": "results/curated/cle_memory_q_equal_k_20261019/analysis.json",
+      "data": {
+        "aggregate": {
+          "Q1": {
+            "functional": 10,
+            "security": 14,
+            "joint": 10,
+            "measured": 16,
+            "P7_runs": 16,
+            "unique_tasks": 8,
+            "joint_rate": 0.625,
+            "workflow_error_runs": 0,
+            "final_public_signature_diffs": 1,
+            "final_binding_redeclarations": 0
+          },
+          "Q2": {
+            "functional": 10,
+            "security": 12,
+            "joint": 9,
+            "measured": 16,
+            "P7_runs": 16,
+            "unique_tasks": 8,
+            "joint_rate": 0.5625,
+            "workflow_error_runs": 2,
+            "final_public_signature_diffs": 1,
+            "final_binding_redeclarations": 0
+          },
+          "Q3": {
+            "functional": 10,
+            "security": 14,
+            "joint": 10,
+            "measured": 16,
+            "P7_runs": 16,
+            "unique_tasks": 8,
+            "joint_rate": 0.625,
+            "workflow_error_runs": 3,
+            "final_public_signature_diffs": 2,
+            "final_binding_redeclarations": 0
+          }
+        },
+        "repeat_disagreement": {
+          "Q1": 2,
+          "Q2": 1,
+          "Q3": 0
+        },
+        "primary": {
+          "Q1": {
+            "complete": true,
+            "families": 8,
+            "mean_joint_difference": -0.0625,
+            "paired_family_deltas": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.5,
+              0.0,
+              0.0
+            ],
+            "p_exact_sign_flip": 1.0,
+            "ci95": [
+              -0.1875,
+              0.0
+            ],
+            "p_holm": 1
+          },
+          "Q3": {
+            "complete": true,
+            "families": 8,
+            "mean_joint_difference": -0.0625,
+            "paired_family_deltas": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "p_exact_sign_flip": 1.0,
+            "ci95": [
+              -0.375,
+              0.1875
+            ],
+            "p_holm": 1
+          }
+        },
+        "adoption": {
+          "Q1": {
+            "attempts": 22,
+            "selected": 121,
+            "declared_adopted": 57,
+            "above_three_selected": 16,
+            "above_three_adopted": 5
+          },
+          "Q2": {
+            "attempts": 23,
+            "selected": 126,
+            "declared_adopted": 51,
+            "above_three_selected": 17,
+            "above_three_adopted": 4
+          },
+          "Q3": {
+            "attempts": 22,
+            "selected": 122,
+            "declared_adopted": 39,
+            "above_three_selected": 16,
+            "above_three_adopted": 5
+          }
+        },
+        "human_confirmed": 0,
+        "technical_errors_retained": true,
+        "model_estimate_is_not_human_gold": true
+      }
+    },
+    "selection_repeat": {
+      "source": "results/curated/cle_selector_repeat_20261019/summary.json",
+      "data": {
+        "protocol": "cle-selector-repeat-four-arm-v1",
+        "expected": 160,
+        "rows": 160,
+        "valid": 160,
+        "complete_valid": true,
+        "unique_families": 8,
+        "by_arm": {
+          "Q0": {
+            "operations": 40,
+            "valid": 40,
+            "logical_requests": 40,
+            "response_count": 40,
+            "usage_missing_responses": 0,
+            "prompt_tokens": 981940,
+            "completion_tokens": 536,
+            "total_tokens": 982476,
+            "within_jaccard_macro": 0.5750685425685427,
+            "mean_selected": 5.15,
+            "unique_sets_per_task": [
+              3,
+              4,
+              5,
+              4,
+              4,
+              5,
+              4,
+              4
+            ]
+          },
+          "Q1": {
+            "operations": 40,
+            "valid": 40,
+            "logical_requests": 40,
+            "response_count": 40,
+            "usage_missing_responses": 0,
+            "prompt_tokens": 981940,
+            "completion_tokens": 554,
+            "total_tokens": 982494,
+            "within_jaccard_macro": 0.5268166035353535,
+            "mean_selected": 5.425000000000001,
+            "unique_sets_per_task": [
+              5,
+              5,
+              5,
+              4,
+              5,
+              4,
+              3,
+              5
+            ]
+          },
+          "Q2": {
+            "operations": 40,
+            "valid": 40,
+            "logical_requests": 41,
+            "response_count": 41,
+            "usage_missing_responses": 0,
+            "prompt_tokens": 1008645,
+            "completion_tokens": 529,
+            "total_tokens": 1009174,
+            "within_jaccard_macro": 0.5728472222222223,
+            "mean_selected": 4.8,
+            "unique_sets_per_task": [
+              5,
+              5,
+              5,
+              5,
+              4,
+              5,
+              2,
+              4
+            ]
+          },
+          "Q3": {
+            "operations": 40,
+            "valid": 40,
+            "logical_requests": 40,
+            "response_count": 40,
+            "usage_missing_responses": 0,
+            "prompt_tokens": 981940,
+            "completion_tokens": 556,
+            "total_tokens": 982496,
+            "within_jaccard_macro": 0.568220806970807,
+            "mean_selected": 5.425,
+            "unique_sets_per_task": [
+              5,
+              4,
+              5,
+              5,
+              4,
+              5,
+              2,
+              5
+            ]
+          }
+        },
+        "primary_comparisons": [
+          {
+            "test": "Q2",
+            "control": "Q0",
+            "complete_families": 8,
+            "excess_distance": 0.055126418537602744,
+            "between": 0.6290843009329852,
+            "within_test": 0.5728472222222223,
+            "within_control": 0.5750685425685427,
+            "ci95_families": [
+              0.002335653746837918,
+              0.11710444850288601
+            ],
+            "p_block_permutation": 0.0065,
+            "p_holm": 0.0065,
+            "detectable_order_effect": true
+          },
+          {
+            "test": "Q2",
+            "control": "Q1",
+            "complete_families": 8,
+            "excess_distance": 0.09235588281365176,
+            "between": 0.6421877956924397,
+            "within_test": 0.5728472222222223,
+            "within_control": 0.5268166035353535,
+            "ci95_families": [
+              0.033993294287411914,
+              0.15388802400944426
+            ],
+            "p_block_permutation": 0.0002,
+            "p_holm": 0.0006000000000000001,
+            "detectable_order_effect": true
+          },
+          {
+            "test": "Q2",
+            "control": "Q3",
+            "complete_families": 8,
+            "excess_distance": 0.11220849289599291,
+            "between": 0.6827425074925075,
+            "within_test": 0.5728472222222223,
+            "within_control": 0.568220806970807,
+            "ci95_families": [
+              0.018204820266539044,
+              0.22203784054487183
+            ],
+            "p_block_permutation": 0.00025,
+            "p_holm": 0.0006000000000000001,
+            "detectable_order_effect": true
+          }
+        ],
+        "identical_prompt_controls": [
+          {
+            "task_id": "1256",
+            "left": "Q0",
+            "right": "Q1",
+            "left_within": 0.18,
+            "right_within": 0.453452380952381,
+            "left_sets": [
+              [
+                "hint-1333-8153697007201238305",
+                "seed-46",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773",
+                "cand-1333-6455772803584774934"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773",
+                "seed-46"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773",
+                "seed-46"
+              ]
+            ],
+            "right_sets": [
+              [
+                "hint-1333-8153697007201238305",
+                "seed-46",
+                "cand-1333-7879173211493331773"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "pitfall-1333-4233333839735618083",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-6455772803584774934",
+                "cand-1333-7879173211493331773"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "seed-46",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773",
+                "cand-1333-3608707898927210175"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773"
+              ],
+              [
+                "hint-1333-8153697007201238305",
+                "seed-46",
+                "cand-1333-3426898155253259203",
+                "hint-1333-7952593739990058655",
+                "cand-1333-7879173211493331773"
+              ]
+            ]
+          },
+          {
+            "task_id": "1317",
+            "left": "Q1",
+            "right": "Q2",
+            "left_within": 0.6138888888888889,
+            "right_within": 0.5797222222222222,
+            "left_sets": [
+              [
+                "blind-502-8129900557211162496",
+                "pitfall-502-7431284674649118922",
+                "hint-502-5550085703477956797",
+                "guard-502-6772803219417487760",
+                "pitfall-502-1298662043445647790"
+              ],
+              [
+                "pitfall-502-4463873035273598773",
+                "blind-502-8566308265546111808",
+                "hint-502-8411363469143739472",
+                "pitfall-502-5289363153619763752",
+                "hint-502-4118108166954546592",
+                "hint-502-2688312304942497856"
+              ],
+              [
+                "blind-502-8129900557211162496",
+                "pitfall-502-7431284674649118922",
+                "hint-502-5550085703477956797",
+                "guard-502-6772803219417487760",
+                "pitfall-502-1298662043445647790",
+                "hint-502-5980882292082295094",
+                "hint-502-2688312304942497856"
+              ],
+              [
+                "blind-502-8129900557211162496",
+                "pitfall-502-7431284674649118922",
+                "hint-502-5550085703477956797",
+                "guard-502-6772803219417487760",
+                "hint-502-5980882292082295094"
+              ],
+              [
+                "blind-502-8129900557211162496",
+                "pitfall-502-7431284674649118922",
+                "hint-502-5550085703477956797",
+                "hint-502-2688312304942497856"
+              ]
+            ],
+            "right_sets": [
+              [
+                "blind-502-8129900557211162496",
+                "blind-502-2743438159853928070",
+                "hint-502-5550085703477956797",
+                "pitfall-502-7431284674649118922"
+              ],
+              [
+                "blind-502-8129900557211162496",
+                "hint-502-5550085703477956797",
+                "pitfall-502-7431284674649118922",
+                "pitfall-502-1318931948765780892",
+                "hint-502-1391038843738024674",
+                "blind-502-8476565611246247174",
+                "blind-502-3091382397090513020",
+                "hint-502-3523063928316955033"
+              ],
+              [
+                "blind-502-8129900557211162496",
+                "hint-502-5550085703477956797",
+                "hint-502-2688312304942497856"
+              ],
+              [
+                "blind-502-8129900557211162496",
+                "hint-502-5550085703477956797",
+                "hint-502-5980882292082295094"
+              ],
+              [
+                "blind-502-8129900557211162496",
+                "pitfall-502-7431284674649118922",
+                "hint-502-5550085703477956797"
+              ]
+            ]
+          }
+        ],
+        "code_generation_calls": 0,
+        "validation_calls": 0,
+        "Q_updates": 0,
+        "new_embedding_calls": 0,
+        "currency_actual": null,
+        "errors": {},
+        "Q_reorders_vs_similarity_detectable": true,
+        "Q_assignment_vs_shuffle_detectable": true,
+        "joint_improvement": "not measured; selection-only study",
+        "old_records_preserved": true,
+        "plain_language_conclusion": "在本批固定输入中，学习Q排序造成的选卡集合差异超出了模型自身波动，并且与打乱Q有可检测差异。仍未测量选卡更准确或Joint提高。",
+        "output_order_diagnostics": [
+          {
+            "arm": "Q0",
+            "within_repeat_pairs": 80,
+            "same_members": 8,
+            "same_members_different_output_order": 3
+          },
+          {
+            "arm": "Q1",
+            "within_repeat_pairs": 80,
+            "same_members": 4,
+            "same_members_different_output_order": 3
+          },
+          {
+            "arm": "Q2",
+            "within_repeat_pairs": 80,
+            "same_members": 8,
+            "same_members_different_output_order": 2
+          },
+          {
+            "arm": "Q3",
+            "within_repeat_pairs": 80,
+            "same_members": 8,
+            "same_members_different_output_order": 3
+          }
+        ],
+        "response_identity": {
+          "reported_models": [
+            "deepseek-v3.2"
+          ],
+          "system_fingerprints": [
+            "e72d3c7f663d3e1383b00b3884cb4501"
+          ],
+          "fingerprint_missing_responses": 0
+        },
+        "native_format_retries": {
+          "Q0": 0,
+          "Q1": 0,
+          "Q2": 1,
+          "Q3": 0
+        },
+        "posthoc_retry_task_sensitivity": {
+          "excluded_from_sensitivity_only": [
+            "1317"
+          ],
+          "comparisons": [
+            {
+              "test": "Q2",
+              "control": "Q0",
+              "complete_families": 7,
+              "excess_distance": 0.049660101802958934,
+              "between": 0.6200682650682652,
+              "within_test": 0.5718650793650794,
+              "within_control": 0.5689512471655328,
+              "ci95_families": [
+                -0.007793516007801775,
+                0.12198742527313956
+              ],
+              "p_block_permutation": 0.02595,
+              "p_holm": 0.02595
+            },
+            {
+              "test": "Q2",
+              "control": "Q1",
+              "complete_families": 7,
+              "excess_distance": 0.1009163604038106,
+              "between": 0.6440377529002032,
+              "within_test": 0.5718650793650794,
+              "within_control": 0.5143777056277056,
+              "ci95_families": [
+                0.03235986818970007,
+                0.1652689651618223
+              ],
+              "p_block_permutation": 0.00025,
+              "p_holm": 0.00075
+            },
+            {
+              "test": "Q2",
+              "control": "Q3",
+              "complete_families": 7,
+              "excess_distance": 0.07802329416615132,
+              "between": 0.6413150024578597,
+              "within_test": 0.5718650793650794,
+              "within_control": 0.5547183372183372,
+              "ci95_families": [
+                0.0026701829916116076,
+                0.18013980860409437
+              ],
+              "p_block_permutation": 0.0014,
+              "p_holm": 0.0028
+            }
+          ],
+          "primary_rows_unchanged": true
+        },
+        "cached_tokens_reported": 0,
+        "valid_empty_selections": {
+          "Q0": 2,
+          "Q1": 0,
+          "Q2": 1,
+          "Q3": 1
+        }
+      }
+    },
+    "coverage": {
+      "source": "results/curated/cle_q_coverage_20261019/coverage_summary.json",
+      "data": {
+        "operation": "R zero-API coverage analysis and T learning proposal only",
+        "source_gate": "translation_work\\diagnostics\\20261019\\cle_memory_q\\full_gate_cap3_v4",
+        "source_learning": "translation_work\\diagnostics\\20261018\\cle_memory_q\\unlimited_complete_v2",
+        "bank": {
+          "cards": 1939,
+          "eligible": 1933,
+          "learned": 466,
+          "learned_eligible": 466,
+          "states": {
+            "unlearned": 1473,
+            "positive": 168,
+            "negative": 298
+          },
+          "visit_histogram": {
+            "0": 1473,
+            "3": 64,
+            "1": 208,
+            "2": 121,
+            "4": 28,
+            "7": 10,
+            "9": 3,
+            "15": 1,
+            "8": 6,
+            "5": 12,
+            "6": 8,
+            "11": 1,
+            "12": 2,
+            "10": 1,
+            "23": 1
+          },
+          "family_histogram_learned": {
+            "2": 124,
+            "7": 9,
+            "3": 46,
+            "1": 249,
+            "8": 2,
+            "4": 20,
+            "6": 7,
+            "9": 2,
+            "11": 1,
+            "5": 4,
+            "10": 1,
+            "16": 1
+          },
+          "valid_card_updates": 1090
+        },
+        "D_gate": {
+          "Q0": {
+            "first_selection_learned_count_distribution": {
+              "3": 102,
+              "0": 80,
+              "1": 50,
+              "2": 65
+            },
+            "first_retrieval_quality": {
+              "tasks": 298,
+              "trace_completed": 297,
+              "empty_selected": 12,
+              "nonempty_without_Q": 68,
+              "trace_error": 1
+            },
+            "first_attempt": {
+              "candidates": {
+                "occurrences": 8468,
+                "unique_cards": 1262,
+                "real_history": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                }
+              },
+              "presented": {
+                "occurrences": 8468,
+                "unique_cards": 1262,
+                "real_history": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                }
+              },
+              "presented_first3": {
+                "occurrences": 894,
+                "unique_cards": 328,
+                "real_history": {
+                  "positive": 150,
+                  "negative": 230,
+                  "unlearned": 514,
+                  "learned": 380,
+                  "coverage": 0.4250559284116331,
+                  "unique_learned": 139
+                },
+                "assigned_Q": {
+                  "positive": 150,
+                  "negative": 230,
+                  "unlearned": 514,
+                  "learned": 380,
+                  "coverage": 0.4250559284116331,
+                  "unique_learned": 139
+                }
+              },
+              "selected": {
+                "occurrences": 820,
+                "unique_cards": 415,
+                "real_history": {
+                  "positive": 229,
+                  "negative": 257,
+                  "unlearned": 334,
+                  "learned": 486,
+                  "coverage": 0.5926829268292683,
+                  "unique_learned": 202
+                },
+                "assigned_Q": {
+                  "positive": 229,
+                  "negative": 257,
+                  "unlearned": 334,
+                  "learned": 486,
+                  "coverage": 0.5926829268292683,
+                  "unique_learned": 202
+                }
+              },
+              "adopted": {
+                "occurrences": 584,
+                "unique_cards": 304,
+                "real_history": {
+                  "positive": 191,
+                  "negative": 190,
+                  "unlearned": 203,
+                  "learned": 381,
+                  "coverage": 0.6523972602739726,
+                  "unique_learned": 173
+                },
+                "assigned_Q": {
+                  "positive": 191,
+                  "negative": 190,
+                  "unlearned": 203,
+                  "learned": 381,
+                  "coverage": 0.6523972602739726,
+                  "unique_learned": 173
+                }
+              }
+            },
+            "all_attempts": {
+              "candidates": {
+                "occurrences": 14220,
+                "unique_cards": 1364,
+                "real_history": {
+                  "positive": 2083,
+                  "negative": 3339,
+                  "unlearned": 8798,
+                  "learned": 5422,
+                  "coverage": 0.38129395218002815,
+                  "unique_learned": 435
+                },
+                "assigned_Q": {
+                  "positive": 2083,
+                  "negative": 3339,
+                  "unlearned": 8798,
+                  "learned": 5422,
+                  "coverage": 0.38129395218002815,
+                  "unique_learned": 435
+                }
+              },
+              "presented": {
+                "occurrences": 14220,
+                "unique_cards": 1364,
+                "real_history": {
+                  "positive": 2083,
+                  "negative": 3339,
+                  "unlearned": 8798,
+                  "learned": 5422,
+                  "coverage": 0.38129395218002815,
+                  "unique_learned": 435
+                },
+                "assigned_Q": {
+                  "positive": 2083,
+                  "negative": 3339,
+                  "unlearned": 8798,
+                  "learned": 5422,
+                  "coverage": 0.38129395218002815,
+                  "unique_learned": 435
+                }
+              },
+              "presented_first3": {
+                "occurrences": 1509,
+                "unique_cards": 400,
+                "real_history": {
+                  "positive": 208,
+                  "negative": 409,
+                  "unlearned": 892,
+                  "learned": 617,
+                  "coverage": 0.4088800530152419,
+                  "unique_learned": 166
+                },
+                "assigned_Q": {
+                  "positive": 208,
+                  "negative": 409,
+                  "unlearned": 892,
+                  "learned": 617,
+                  "coverage": 0.4088800530152419,
+                  "unique_learned": 166
+                }
+              },
+              "selected": {
+                "occurrences": 1363,
+                "unique_cards": 560,
+                "real_history": {
+                  "positive": 309,
+                  "negative": 437,
+                  "unlearned": 617,
+                  "learned": 746,
+                  "coverage": 0.5473220836390316,
+                  "unique_learned": 257
+                },
+                "assigned_Q": {
+                  "positive": 309,
+                  "negative": 437,
+                  "unlearned": 617,
+                  "learned": 746,
+                  "coverage": 0.5473220836390316,
+                  "unique_learned": 257
+                }
+              },
+              "adopted": {
+                "occurrences": 882,
+                "unique_cards": 392,
+                "real_history": {
+                  "positive": 246,
+                  "negative": 289,
+                  "unlearned": 347,
+                  "learned": 535,
+                  "coverage": 0.6065759637188208,
+                  "unique_learned": 210
+                },
+                "assigned_Q": {
+                  "positive": 246,
+                  "negative": 289,
+                  "unlearned": 347,
+                  "learned": 535,
+                  "coverage": 0.6065759637188208,
+                  "unique_learned": 210
+                }
+              }
+            }
+          },
+          "Q1": {
+            "first_selection_learned_count_distribution": {
+              "3": 103,
+              "2": 75,
+              "1": 45,
+              "0": 73
+            },
+            "first_retrieval_quality": {
+              "tasks": 298,
+              "trace_completed": 296,
+              "empty_selected": 7,
+              "nonempty_without_Q": 66,
+              "trace_error": 2
+            },
+            "first_attempt": {
+              "candidates": {
+                "occurrences": 8468,
+                "unique_cards": 1262,
+                "real_history": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                }
+              },
+              "presented": {
+                "occurrences": 8468,
+                "unique_cards": 1262,
+                "real_history": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                }
+              },
+              "presented_first3": {
+                "occurrences": 894,
+                "unique_cards": 328,
+                "real_history": {
+                  "positive": 150,
+                  "negative": 230,
+                  "unlearned": 514,
+                  "learned": 380,
+                  "coverage": 0.4250559284116331,
+                  "unique_learned": 139
+                },
+                "assigned_Q": {
+                  "positive": 150,
+                  "negative": 230,
+                  "unlearned": 514,
+                  "learned": 380,
+                  "coverage": 0.4250559284116331,
+                  "unique_learned": 139
+                }
+              },
+              "selected": {
+                "occurrences": 842,
+                "unique_cards": 440,
+                "real_history": {
+                  "positive": 260,
+                  "negative": 244,
+                  "unlearned": 338,
+                  "learned": 504,
+                  "coverage": 0.5985748218527316,
+                  "unique_learned": 220
+                },
+                "assigned_Q": {
+                  "positive": 260,
+                  "negative": 244,
+                  "unlearned": 338,
+                  "learned": 504,
+                  "coverage": 0.5985748218527316,
+                  "unique_learned": 220
+                }
+              },
+              "adopted": {
+                "occurrences": 593,
+                "unique_cards": 341,
+                "real_history": {
+                  "positive": 189,
+                  "negative": 177,
+                  "unlearned": 227,
+                  "learned": 366,
+                  "coverage": 0.6172006745362564,
+                  "unique_learned": 186
+                },
+                "assigned_Q": {
+                  "positive": 189,
+                  "negative": 177,
+                  "unlearned": 227,
+                  "learned": 366,
+                  "coverage": 0.6172006745362564,
+                  "unique_learned": 186
+                }
+              }
+            },
+            "all_attempts": {
+              "candidates": {
+                "occurrences": 13947,
+                "unique_cards": 1363,
+                "real_history": {
+                  "positive": 2029,
+                  "negative": 3291,
+                  "unlearned": 8627,
+                  "learned": 5320,
+                  "coverage": 0.3814440381444038,
+                  "unique_learned": 430
+                },
+                "assigned_Q": {
+                  "positive": 2029,
+                  "negative": 3291,
+                  "unlearned": 8627,
+                  "learned": 5320,
+                  "coverage": 0.3814440381444038,
+                  "unique_learned": 430
+                }
+              },
+              "presented": {
+                "occurrences": 13947,
+                "unique_cards": 1363,
+                "real_history": {
+                  "positive": 2029,
+                  "negative": 3291,
+                  "unlearned": 8627,
+                  "learned": 5320,
+                  "coverage": 0.3814440381444038,
+                  "unique_learned": 430
+                },
+                "assigned_Q": {
+                  "positive": 2029,
+                  "negative": 3291,
+                  "unlearned": 8627,
+                  "learned": 5320,
+                  "coverage": 0.3814440381444038,
+                  "unique_learned": 430
+                }
+              },
+              "presented_first3": {
+                "occurrences": 1482,
+                "unique_cards": 403,
+                "real_history": {
+                  "positive": 193,
+                  "negative": 401,
+                  "unlearned": 888,
+                  "learned": 594,
+                  "coverage": 0.4008097165991903,
+                  "unique_learned": 161
+                },
+                "assigned_Q": {
+                  "positive": 193,
+                  "negative": 401,
+                  "unlearned": 888,
+                  "learned": 594,
+                  "coverage": 0.4008097165991903,
+                  "unique_learned": 161
+                }
+              },
+              "selected": {
+                "occurrences": 1368,
+                "unique_cards": 559,
+                "real_history": {
+                  "positive": 325,
+                  "negative": 426,
+                  "unlearned": 617,
+                  "learned": 751,
+                  "coverage": 0.5489766081871345,
+                  "unique_learned": 259
+                },
+                "assigned_Q": {
+                  "positive": 325,
+                  "negative": 426,
+                  "unlearned": 617,
+                  "learned": 751,
+                  "coverage": 0.5489766081871345,
+                  "unique_learned": 259
+                }
+              },
+              "adopted": {
+                "occurrences": 870,
+                "unique_cards": 424,
+                "real_history": {
+                  "positive": 221,
+                  "negative": 287,
+                  "unlearned": 362,
+                  "learned": 508,
+                  "coverage": 0.5839080459770115,
+                  "unique_learned": 218
+                },
+                "assigned_Q": {
+                  "positive": 221,
+                  "negative": 287,
+                  "unlearned": 362,
+                  "learned": 508,
+                  "coverage": 0.5839080459770115,
+                  "unique_learned": 218
+                }
+              }
+            }
+          },
+          "Q2": {
+            "first_selection_learned_count_distribution": {
+              "3": 114,
+              "0": 74,
+              "2": 71,
+              "1": 37
+            },
+            "first_retrieval_quality": {
+              "tasks": 298,
+              "trace_completed": 296,
+              "empty_selected": 6,
+              "nonempty_without_Q": 68,
+              "trace_error": 2
+            },
+            "first_attempt": {
+              "candidates": {
+                "occurrences": 8468,
+                "unique_cards": 1262,
+                "real_history": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "positive": 1523,
+                  "negative": 1946,
+                  "unlearned": 4999,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                }
+              },
+              "presented": {
+                "occurrences": 8468,
+                "unique_cards": 1262,
+                "real_history": {
+                  "positive": 1523,
+                  "unlearned": 4999,
+                  "negative": 1946,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "positive": 1523,
+                  "unlearned": 4999,
+                  "negative": 1946,
+                  "learned": 3469,
+                  "coverage": 0.4096598960793576,
+                  "unique_learned": 423
+                }
+              },
+              "presented_first3": {
+                "occurrences": 894,
+                "unique_cards": 273,
+                "real_history": {
+                  "positive": 463,
+                  "unlearned": 397,
+                  "negative": 34,
+                  "learned": 497,
+                  "coverage": 0.5559284116331096,
+                  "unique_learned": 114
+                },
+                "assigned_Q": {
+                  "positive": 463,
+                  "unlearned": 397,
+                  "negative": 34,
+                  "learned": 497,
+                  "coverage": 0.5559284116331096,
+                  "unique_learned": 114
+                }
+              },
+              "selected": {
+                "occurrences": 847,
+                "unique_cards": 404,
+                "real_history": {
+                  "positive": 317,
+                  "unlearned": 326,
+                  "negative": 204,
+                  "learned": 521,
+                  "coverage": 0.615112160566706,
+                  "unique_learned": 201
+                },
+                "assigned_Q": {
+                  "positive": 317,
+                  "unlearned": 326,
+                  "negative": 204,
+                  "learned": 521,
+                  "coverage": 0.615112160566706,
+                  "unique_learned": 201
+                }
+              },
+              "adopted": {
+                "occurrences": 612,
+                "unique_cards": 309,
+                "real_history": {
+                  "positive": 262,
+                  "unlearned": 204,
+                  "negative": 146,
+                  "learned": 408,
+                  "coverage": 0.6666666666666666,
+                  "unique_learned": 172
+                },
+                "assigned_Q": {
+                  "positive": 262,
+                  "unlearned": 204,
+                  "negative": 146,
+                  "learned": 408,
+                  "coverage": 0.6666666666666666,
+                  "unique_learned": 172
+                }
+              }
+            },
+            "all_attempts": {
+              "candidates": {
+                "occurrences": 14031,
+                "unique_cards": 1358,
+                "real_history": {
+                  "positive": 2069,
+                  "negative": 3300,
+                  "unlearned": 8662,
+                  "learned": 5369,
+                  "coverage": 0.3826526975981755,
+                  "unique_learned": 432
+                },
+                "assigned_Q": {
+                  "positive": 2069,
+                  "negative": 3300,
+                  "unlearned": 8662,
+                  "learned": 5369,
+                  "coverage": 0.3826526975981755,
+                  "unique_learned": 432
+                }
+              },
+              "presented": {
+                "occurrences": 14031,
+                "unique_cards": 1358,
+                "real_history": {
+                  "positive": 2069,
+                  "unlearned": 8662,
+                  "negative": 3300,
+                  "learned": 5369,
+                  "coverage": 0.3826526975981755,
+                  "unique_learned": 432
+                },
+                "assigned_Q": {
+                  "positive": 2069,
+                  "unlearned": 8662,
+                  "negative": 3300,
+                  "learned": 5369,
+                  "coverage": 0.3826526975981755,
+                  "unique_learned": 432
+                }
+              },
+              "presented_first3": {
+                "occurrences": 1488,
+                "unique_cards": 325,
+                "real_history": {
+                  "positive": 666,
+                  "unlearned": 761,
+                  "negative": 61,
+                  "learned": 727,
+                  "coverage": 0.4885752688172043,
+                  "unique_learned": 124
+                },
+                "assigned_Q": {
+                  "positive": 666,
+                  "unlearned": 761,
+                  "negative": 61,
+                  "learned": 727,
+                  "coverage": 0.4885752688172043,
+                  "unique_learned": 124
+                }
+              },
+              "selected": {
+                "occurrences": 1364,
+                "unique_cards": 538,
+                "real_history": {
+                  "positive": 404,
+                  "unlearned": 606,
+                  "negative": 354,
+                  "learned": 758,
+                  "coverage": 0.5557184750733137,
+                  "unique_learned": 246
+                },
+                "assigned_Q": {
+                  "positive": 404,
+                  "unlearned": 606,
+                  "negative": 354,
+                  "learned": 758,
+                  "coverage": 0.5557184750733137,
+                  "unique_learned": 246
+                },
+                "learning_depth": {
+                  "unique_visits1": 85,
+                  "unique_one_feedback_family": 105,
+                  "occurrences_visits1": 200,
+                  "occurrences_one_feedback_family": 241
+                },
+                "unlearned_overlap_with_recorded_valid_Dgrow": {
+                  "reachable_unique": 201,
+                  "reachable_occurrences": 377,
+                  "not_recorded_reachable_unique": 91,
+                  "not_recorded_reachable_occurrences": 229
+                }
+              },
+              "adopted": {
+                "occurrences": 905,
+                "unique_cards": 395,
+                "real_history": {
+                  "positive": 308,
+                  "unlearned": 351,
+                  "negative": 246,
+                  "learned": 554,
+                  "coverage": 0.6121546961325967,
+                  "unique_learned": 204
+                },
+                "assigned_Q": {
+                  "positive": 308,
+                  "unlearned": 351,
+                  "negative": 246,
+                  "learned": 554,
+                  "coverage": 0.6121546961325967,
+                  "unique_learned": 204
+                },
+                "learning_depth": {
+                  "unique_visits1": 63,
+                  "unique_one_feedback_family": 80,
+                  "occurrences_visits1": 122,
+                  "occurrences_one_feedback_family": 149
+                },
+                "unlearned_overlap_with_recorded_valid_Dgrow": {
+                  "reachable_unique": 121,
+                  "reachable_occurrences": 205,
+                  "not_recorded_reachable_unique": 70,
+                  "not_recorded_reachable_occurrences": 146
+                }
+              }
+            }
+          },
+          "Q3": {
+            "first_selection_learned_count_distribution": {
+              "0": 78,
+              "3": 99,
+              "2": 70,
+              "1": 49
+            },
+            "first_retrieval_quality": {
+              "tasks": 298,
+              "trace_completed": 296,
+              "empty_selected": 7,
+              "nonempty_without_Q": 71,
+              "trace_error": 2
+            },
+            "first_attempt": {
+              "candidates": {
+                "occurrences": 8439,
+                "unique_cards": 1261,
+                "real_history": {
+                  "unlearned": 4989,
+                  "positive": 1523,
+                  "negative": 1927,
+                  "learned": 3450,
+                  "coverage": 0.4088162104514753,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "unlearned": 6576,
+                  "negative": 1114,
+                  "positive": 749,
+                  "learned": 1863,
+                  "coverage": 0.22076075364379666,
+                  "unique_learned": 292
+                }
+              },
+              "presented": {
+                "occurrences": 8439,
+                "unique_cards": 1261,
+                "real_history": {
+                  "positive": 1523,
+                  "unlearned": 4989,
+                  "negative": 1927,
+                  "learned": 3450,
+                  "coverage": 0.4088162104514753,
+                  "unique_learned": 423
+                },
+                "assigned_Q": {
+                  "positive": 749,
+                  "unlearned": 6576,
+                  "negative": 1114,
+                  "learned": 1863,
+                  "coverage": 0.22076075364379666,
+                  "unique_learned": 292
+                }
+              },
+              "presented_first3": {
+                "occurrences": 891,
+                "unique_cards": 275,
+                "real_history": {
+                  "positive": 123,
+                  "unlearned": 532,
+                  "negative": 236,
+                  "learned": 359,
+                  "coverage": 0.40291806958473625,
+                  "unique_learned": 115
+                },
+                "assigned_Q": {
+                  "positive": 422,
+                  "unlearned": 459,
+                  "negative": 10,
+                  "learned": 432,
+                  "coverage": 0.48484848484848486,
+                  "unique_learned": 81
+                }
+              },
+              "selected": {
+                "occurrences": 839,
+                "unique_cards": 416,
+                "real_history": {
+                  "unlearned": 353,
+                  "negative": 252,
+                  "positive": 234,
+                  "learned": 486,
+                  "coverage": 0.5792610250297974,
+                  "unique_learned": 209
+                },
+                "assigned_Q": {
+                  "unlearned": 613,
+                  "positive": 121,
+                  "negative": 105,
+                  "learned": 226,
+                  "coverage": 0.2693682955899881,
+                  "unique_learned": 109
+                }
+              },
+              "adopted": {
+                "occurrences": 560,
+                "unique_cards": 297,
+                "real_history": {
+                  "unlearned": 212,
+                  "negative": 172,
+                  "positive": 176,
+                  "learned": 348,
+                  "coverage": 0.6214285714285714,
+                  "unique_learned": 161
+                },
+                "assigned_Q": {
+                  "unlearned": 424,
+                  "positive": 68,
+                  "negative": 68,
+                  "learned": 136,
+                  "coverage": 0.24285714285714285,
+                  "unique_learned": 74
+                }
+              }
+            },
+            "all_attempts": {
+              "candidates": {
+                "occurrences": 14015,
+                "unique_cards": 1365,
+                "real_history": {
+                  "unlearned": 8688,
+                  "positive": 2029,
+                  "negative": 3298,
+                  "learned": 5327,
+                  "coverage": 0.3800927577595433,
+                  "unique_learned": 439
+                },
+                "assigned_Q": {
+                  "unlearned": 10974,
+                  "negative": 1906,
+                  "positive": 1135,
+                  "learned": 3041,
+                  "coverage": 0.21698180520870497,
+                  "unique_learned": 332
+                }
+              },
+              "presented": {
+                "occurrences": 14015,
+                "unique_cards": 1365,
+                "real_history": {
+                  "positive": 2029,
+                  "unlearned": 8688,
+                  "negative": 3298,
+                  "learned": 5327,
+                  "coverage": 0.3800927577595433,
+                  "unique_learned": 439
+                },
+                "assigned_Q": {
+                  "positive": 1135,
+                  "unlearned": 10974,
+                  "negative": 1906,
+                  "learned": 3041,
+                  "coverage": 0.21698180520870497,
+                  "unique_learned": 332
+                }
+              },
+              "presented_first3": {
+                "occurrences": 1488,
+                "unique_cards": 328,
+                "real_history": {
+                  "positive": 186,
+                  "unlearned": 899,
+                  "negative": 403,
+                  "learned": 589,
+                  "coverage": 0.3958333333333333,
+                  "unique_learned": 129
+                },
+                "assigned_Q": {
+                  "positive": 637,
+                  "unlearned": 836,
+                  "negative": 15,
+                  "learned": 652,
+                  "coverage": 0.4381720430107527,
+                  "unique_learned": 94
+                }
+              },
+              "selected": {
+                "occurrences": 1346,
+                "unique_cards": 546,
+                "real_history": {
+                  "unlearned": 618,
+                  "negative": 432,
+                  "positive": 296,
+                  "learned": 728,
+                  "coverage": 0.5408618127786032,
+                  "unique_learned": 256
+                },
+                "assigned_Q": {
+                  "unlearned": 992,
+                  "positive": 190,
+                  "negative": 164,
+                  "learned": 354,
+                  "coverage": 0.26300148588410105,
+                  "unique_learned": 149
+                }
+              },
+              "adopted": {
+                "occurrences": 829,
+                "unique_cards": 382,
+                "real_history": {
+                  "unlearned": 344,
+                  "negative": 281,
+                  "positive": 204,
+                  "learned": 485,
+                  "coverage": 0.5850422195416164,
+                  "unique_learned": 198
+                },
+                "assigned_Q": {
+                  "unlearned": 638,
+                  "positive": 95,
+                  "negative": 96,
+                  "learned": 191,
+                  "coverage": 0.23039806996381182,
+                  "unique_learned": 97
+                }
+              }
+            }
+          }
+        },
+        "D_grow": {
+          "tasks": 273,
+          "reward_eligible_tasks": 230,
+          "unique_funnel": {
+            "candidates": 1359,
+            "selected": 898,
+            "adopted": 577,
+            "credited": 466
+          },
+          "reward_eligible_task_funnel": {
+            "candidates": 1193,
+            "selected": 751,
+            "adopted": 495
+          },
+          "uncovered_reason_counts": {
+            "not_recalled_in_recorded_grow": 574,
+            "recalled_never_selected": 461,
+            "learned": 466,
+            "adopted_but_no_valid_credit": 111,
+            "selected_never_adopted": 321,
+            "not_eligible": 6
+          },
+          "recorded_recall_learned": 466,
+          "recorded_reward_eligible_recall_learned": 466,
+          "event_skip_counts": {
+            "incomplete_or_technical_measurement": 79,
+            "no_adopted_experiences": 67,
+            "reference_not_joint;placeholder_in_task": 171,
+            "reference_not_joint": 35,
+            "placeholder_in_task": 4
+          },
+          "proposed_12_task_unlearned_candidate_union": 258
+        },
+        "by_cwe": {
+          "74": {
+            "cards": 137,
+            "eligible": 137,
+            "learned": 14,
+            "grow_recalled": 91,
+            "grow_valid_task_recalled": 75,
+            "grow_tasks": 17,
+            "grow_reward_eligible_tasks": 16,
+            "Q2_unlearned_selected_occurrences": 85,
+            "Q2_unlearned_adopted_occurrences": 45
+          },
+          "77": {
+            "cards": 133,
+            "eligible": 133,
+            "learned": 25,
+            "grow_recalled": 100,
+            "grow_valid_task_recalled": 83,
+            "grow_tasks": 12,
+            "grow_reward_eligible_tasks": 7,
+            "Q2_unlearned_selected_occurrences": 42,
+            "Q2_unlearned_adopted_occurrences": 32
+          },
+          "79": {
+            "cards": 125,
+            "eligible": 124,
+            "learned": 32,
+            "grow_recalled": 104,
+            "grow_valid_task_recalled": 104,
+            "grow_tasks": 18,
+            "grow_reward_eligible_tasks": 18,
+            "Q2_unlearned_selected_occurrences": 29,
+            "Q2_unlearned_adopted_occurrences": 20
+          },
+          "94": {
+            "cards": 81,
+            "eligible": 81,
+            "learned": 20,
+            "grow_recalled": 51,
+            "grow_valid_task_recalled": 51,
+            "grow_tasks": 17,
+            "grow_reward_eligible_tasks": 17,
+            "Q2_unlearned_selected_occurrences": 6,
+            "Q2_unlearned_adopted_occurrences": 5
+          },
+          "95": {
+            "cards": 99,
+            "eligible": 98,
+            "learned": 22,
+            "grow_recalled": 53,
+            "grow_valid_task_recalled": 53,
+            "grow_tasks": 14,
+            "grow_reward_eligible_tasks": 14,
+            "Q2_unlearned_selected_occurrences": 4,
+            "Q2_unlearned_adopted_occurrences": 3
+          },
+          "179": {
+            "cards": 89,
+            "eligible": 89,
+            "learned": 25,
+            "grow_recalled": 69,
+            "grow_valid_task_recalled": 68,
+            "grow_tasks": 15,
+            "grow_reward_eligible_tasks": 14,
+            "Q2_unlearned_selected_occurrences": 5,
+            "Q2_unlearned_adopted_occurrences": 1
+          },
+          "200": {
+            "cards": 105,
+            "eligible": 104,
+            "learned": 42,
+            "grow_recalled": 75,
+            "grow_valid_task_recalled": 75,
+            "grow_tasks": 14,
+            "grow_reward_eligible_tasks": 14,
+            "Q2_unlearned_selected_occurrences": 33,
+            "Q2_unlearned_adopted_occurrences": 9
+          },
+          "327": {
+            "cards": 101,
+            "eligible": 101,
+            "learned": 34,
+            "grow_recalled": 64,
+            "grow_valid_task_recalled": 64,
+            "grow_tasks": 17,
+            "grow_reward_eligible_tasks": 17,
+            "Q2_unlearned_selected_occurrences": 9,
+            "Q2_unlearned_adopted_occurrences": 3
+          },
+          "347": {
+            "cards": 115,
+            "eligible": 115,
+            "learned": 41,
+            "grow_recalled": 102,
+            "grow_valid_task_recalled": 93,
+            "grow_tasks": 19,
+            "grow_reward_eligible_tasks": 17,
+            "Q2_unlearned_selected_occurrences": 40,
+            "Q2_unlearned_adopted_occurrences": 17
+          },
+          "352": {
+            "cards": 68,
+            "eligible": 68,
+            "learned": 27,
+            "grow_recalled": 57,
+            "grow_valid_task_recalled": 57,
+            "grow_tasks": 18,
+            "grow_reward_eligible_tasks": 18,
+            "Q2_unlearned_selected_occurrences": 19,
+            "Q2_unlearned_adopted_occurrences": 9
+          },
+          "502": {
+            "cards": 165,
+            "eligible": 164,
+            "learned": 19,
+            "grow_recalled": 86,
+            "grow_valid_task_recalled": 86,
+            "grow_tasks": 8,
+            "grow_reward_eligible_tasks": 8,
+            "Q2_unlearned_selected_occurrences": 58,
+            "Q2_unlearned_adopted_occurrences": 39
+          },
+          "601": {
+            "cards": 162,
+            "eligible": 161,
+            "learned": 0,
+            "grow_recalled": 93,
+            "grow_valid_task_recalled": 30,
+            "grow_tasks": 8,
+            "grow_reward_eligible_tasks": 0,
+            "Q2_unlearned_selected_occurrences": 114,
+            "Q2_unlearned_adopted_occurrences": 80
+          },
+          "770": {
+            "cards": 69,
+            "eligible": 69,
+            "learned": 44,
+            "grow_recalled": 61,
+            "grow_valid_task_recalled": 61,
+            "grow_tasks": 20,
+            "grow_reward_eligible_tasks": 20,
+            "Q2_unlearned_selected_occurrences": 17,
+            "Q2_unlearned_adopted_occurrences": 12
+          },
+          "862": {
+            "cards": 154,
+            "eligible": 153,
+            "learned": 53,
+            "grow_recalled": 106,
+            "grow_valid_task_recalled": 106,
+            "grow_tasks": 16,
+            "grow_reward_eligible_tasks": 16,
+            "Q2_unlearned_selected_occurrences": 7,
+            "Q2_unlearned_adopted_occurrences": 4
+          },
+          "863": {
+            "cards": 98,
+            "eligible": 98,
+            "learned": 33,
+            "grow_recalled": 72,
+            "grow_valid_task_recalled": 72,
+            "grow_tasks": 17,
+            "grow_reward_eligible_tasks": 17,
+            "Q2_unlearned_selected_occurrences": 29,
+            "Q2_unlearned_adopted_occurrences": 20
+          },
+          "915": {
+            "cards": 63,
+            "eligible": 63,
+            "learned": 10,
+            "grow_recalled": 47,
+            "grow_valid_task_recalled": 47,
+            "grow_tasks": 9,
+            "grow_reward_eligible_tasks": 9,
+            "Q2_unlearned_selected_occurrences": 11,
+            "Q2_unlearned_adopted_occurrences": 6
+          },
+          "918": {
+            "cards": 90,
+            "eligible": 90,
+            "learned": 0,
+            "grow_recalled": 63,
+            "grow_valid_task_recalled": 3,
+            "grow_tasks": 24,
+            "grow_reward_eligible_tasks": 0,
+            "Q2_unlearned_selected_occurrences": 75,
+            "Q2_unlearned_adopted_occurrences": 35
+          },
+          "1333": {
+            "cards": 85,
+            "eligible": 85,
+            "learned": 25,
+            "grow_recalled": 65,
+            "grow_valid_task_recalled": 65,
+            "grow_tasks": 10,
+            "grow_reward_eligible_tasks": 8,
+            "Q2_unlearned_selected_occurrences": 23,
+            "Q2_unlearned_adopted_occurrences": 11
+          }
+        },
+        "API_calls": 0,
+        "Q_updates": 0,
+        "caveat": "Q3 assigned visits are permuted labels, not this card actual learning. Recall reachability is historical observed reachability, not a proof that other cards cannot be recalled."
+      }
+    },
+    "coverage_probe": {
+      "source": "results/curated/cle_q_coverage_learning_v2_20261019/summary.json",
+      "data": {
+        "protocol": "cle-q-coverage-learning-cap3-v2-recording-repaired",
+        "status": "technical_stop",
+        "P7_runs": 4,
+        "maximum_P7_runs": 404,
+        "qualified_Dgrow_tasks": 196,
+        "probe_gate": {
+          "passed": false,
+          "reason": "first2_technical_stop",
+          "executed_P7": 4
+        },
+        "round2_gate": null,
+        "stages": {
+          "probe/L0": {
+            "rows": 2,
+            "valid_updates": 3,
+            "learned_cards": 466,
+            "new_cards": 0,
+            "whole_bank_coverage": 0.24033006704486848,
+            "fixed_anchor_learned": 466,
+            "fixed_anchor_coverage": 0.3906119027661358,
+            "positive_Q": 166,
+            "negative_Q": 300,
+            "visit_histogram": {
+              "0": 1473,
+              "3": 62,
+              "1": 208,
+              "2": 121,
+              "4": 29,
+              "7": 10,
+              "9": 3,
+              "15": 1,
+              "8": 6,
+              "5": 13,
+              "6": 8,
+              "11": 1,
+              "12": 2,
+              "10": 1,
+              "23": 1
+            },
+            "cards_two_families": 217,
+            "F": 2,
+            "S": 1,
+            "Joint": 1,
+            "measured": 2,
+            "selected_occurrences": 7,
+            "adopted_occurrences": 3,
+            "cost": {
+              "calls": 13,
+              "prompt_tokens": 121282,
+              "completion_tokens": 8800,
+              "total_tokens": 130082,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            },
+            "technical_issues": [],
+            "new_card_ids": [],
+            "Q_is_model_weight_training": false
+          },
+          "probe/L1": {
+            "rows": 2,
+            "valid_updates": 6,
+            "learned_cards": 470,
+            "new_cards": 4,
+            "whole_bank_coverage": 0.24239298607529655,
+            "fixed_anchor_learned": 470,
+            "fixed_anchor_coverage": 0.393964794635373,
+            "positive_Q": 166,
+            "negative_Q": 304,
+            "visit_histogram": {
+              "0": 1469,
+              "3": 62,
+              "1": 212,
+              "2": 121,
+              "4": 30,
+              "7": 10,
+              "9": 3,
+              "15": 1,
+              "8": 6,
+              "5": 12,
+              "6": 8,
+              "11": 1,
+              "12": 2,
+              "10": 1,
+              "23": 1
+            },
+            "cards_two_families": 217,
+            "F": 1,
+            "S": 1,
+            "Joint": 0,
+            "measured": 2,
+            "selected_occurrences": 11,
+            "adopted_occurrences": 6,
+            "cost": {
+              "calls": 18,
+              "prompt_tokens": 160583,
+              "completion_tokens": 14889,
+              "total_tokens": 175472,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            },
+            "technical_issues": [
+              {
+                "task_id": "1337",
+                "issues": [
+                  "workflow_incomplete"
+                ]
+              }
+            ],
+            "new_card_ids": [
+              "blind-352-1177770183070601471",
+              "blind-502-5175120699393449914",
+              "hint-502-400574190874052502",
+              "seed-870"
+            ],
+            "Q_is_model_weight_training": false
+          }
+        },
+        "costs": {
+          "P7": {
+            "calls": 31,
+            "prompt_tokens": 281865,
+            "completion_tokens": 23689,
+            "total_tokens": 305554,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "new_shared_initials": {
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "known_total": {
+            "calls": 31,
+            "prompt_tokens": 281865,
+            "completion_tokens": 23689,
+            "total_tokens": 305554,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "historical_shared_initials_reused": {
+            "historical_valid_reused": 195,
+            "regenerate_only_prior_errors": [
+              "1133"
+            ],
+            "historical_cost_not_rebilled": true
+          },
+          "embedding_segments": [
+            {
+              "stage": "probe",
+              "calls": 3,
+              "failures": 0,
+              "prompt_tokens": 5180,
+              "total_tokens": 5180,
+              "cache_hits": 1937,
+              "embedded_texts": 3,
+              "usage_missing_calls": 0
+            }
+          ],
+          "currency_paid": null,
+          "prior_recording_incident": {
+            "source_run": "translation_work\\diagnostics\\20261019\\cle_memory_q\\coverage_learning_v1",
+            "reason": "record_result POLICIES supports Q0-Q3, not L0-L1; row lost after native run, usage saved",
+            "lost_native_P7_records": 4,
+            "main_comparison_repeat_all4": true,
+            "exact_same_probe_list_required": true,
+            "known_cost": {
+              "calls": 36,
+              "prompt_tokens": 290170,
+              "completion_tokens": 23562,
+              "total_tokens": 313732,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            },
+            "unknown_usage": false
+          },
+          "total_including_recording_recovery": {
+            "calls": 67,
+            "prompt_tokens": 572035,
+            "completion_tokens": 47251,
+            "total_tokens": 619286,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          }
+        },
+        "qualification": {
+          "former43_recovered": [
+            "1391"
+          ],
+          "former43_remaining": 42,
+          "newly_disqualified_old_tasks": 35,
+          "old_bank_updates_from_newly_disqualified_tasks": 162,
+          "old_bank_affected_cards": 89,
+          "old_bank_cards_supported_only_by_newly_disqualified_tasks": 50
+        },
+        "D_gate_runs": 0,
+        "Base_Plus_runs": 0,
+        "old_results_modified": false,
+        "whole_CLE_training": false,
+        "scope": "fixed-card D_grow Q observation only",
+        "targets": {
+          "whole_bank_learned": 970,
+          "fixed_old_Dgrow_anchor_learned": 955
+        },
+        "planned_probe_tasks": 12,
+        "actual_probe_tasks": 2,
+        "first_common_candidates_verified": true,
+        "actual_P7_runs_including_recovery": 8
+      }
+    },
+    "Dinit": {
+      "source": "results/curated/cle_memory_q_dinit_20261019/summary.json",
+      "data": {
+        "protocol": "cle-q-dinit-observer-cap3-v1",
+        "status": "prepared_no_API",
+        "inventory": {
+          "protocol": "cle-q-dinit-observer-cap3-v1",
+          "cards": 1939,
+          "learned_cards": 466,
+          "origin_pools": {
+            "D_init": 1939
+          },
+          "origin_tasks": 303,
+          "origin_families": 217,
+          "cards_with_unresolved_origins": 67,
+          "pools": {
+            "D_init": 303,
+            "D_grow": 273,
+            "D_gate": 298
+          },
+          "family_overlap": {
+            "D_init|D_grow": 0,
+            "D_init|D_gate": 0,
+            "D_grow|D_gate": 0
+          },
+          "Q_baseline": "M1: prior D_grow unlimited observer, inherited without resetting",
+          "new_API_calls": 0
+        },
+        "new_P7_runs": 0,
+        "Joint": null,
+        "F": null,
+        "S": null,
+        "measured": 0,
+        "technical_issues": [],
+        "credit": {
+          "all_feedback": {
+            "policy": "all_feedback",
+            "learned_cards": 466,
+            "new_cards": 0,
+            "coverage": 0.24033006704486848,
+            "new_card_ids": [],
+            "valid_updates": 0,
+            "credited_relations": {},
+            "cards_with_two_feedback_families": 217
+          },
+          "cross_family": {
+            "policy": "cross_family",
+            "learned_cards": 466,
+            "new_cards": 0,
+            "coverage": 0.24033006704486848,
+            "new_card_ids": [],
+            "valid_updates": 0,
+            "credited_relations": {},
+            "cards_with_two_feedback_families": 217
+          }
+        },
+        "D_gate_execution": false,
+        "qualification": {
+          "qualified": 222,
+          "excluded": 81,
+          "preflight_passed": true,
+          "probe": {
+            "items": 12
+          }
+        },
+        "cost": {
+          "P7": {
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "shared_initial": {
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "embedding": [],
+          "currency": null
+        }
+      }
+    }
+  },
+  "new_API_calls": 0,
+  "new_Q_updates": 0
+}

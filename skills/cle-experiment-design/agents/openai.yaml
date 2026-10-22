@@ -1,0 +1,4 @@
+interface:
+  display_name: "CLE 对照实验设计"
+  short_description: "依据CLE历史案例设计机制对照、样本清单、预算和停止条件"
+  default_prompt: "使用 $cle-experiment-design 完成当前CLE任务，依据本项目记录选择实际入口并保留证据边界。"

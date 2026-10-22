@@ -1,0 +1,39 @@
+{
+  "reviewer": "Codex local code review",
+  "human_confirmation": false,
+  "scope": "all four pilot Joint-discordant task pairs",
+  "cases": [
+    {
+      "task_id": "1299",
+      "L3_Joint": false,
+      "Lall_Joint": true,
+      "observed": "L3重定义TRUSTED_DEVICE_SIGNATURES为空字典并重定义外部receive_data_packet；Lall保留已有绑定，验签后调用接收函数。",
+      "adoption": "Lall声明采用8张，内容主要重复验签后再处理原则；没有逐卡增量必要性证据。",
+      "attribution": "观察到公开绑定保持与通过相伴，不能证明第四张以后的卡是救回原因。"
+    },
+    {
+      "task_id": "1350",
+      "L3_Joint": true,
+      "Lall_Joint": false,
+      "observed": "Lall复析JSON解析失败且采用列表无效；两组选择的缓存数量和记录大小阈值不同。",
+      "adoption": "Lall本次没有合法采用卡，不授信。",
+      "attribution": "公开契约只要求限制数量与大小，未给数值；模型复析问题与阈值差异共存，不能将损失单独归因于多卡。"
+    },
+    {
+      "task_id": "1003",
+      "L3_Joint": false,
+      "Lall_Joint": true,
+      "observed": "L3输出span带class=tag，Lall为普通span，外部模板名均保持；Lall采用了未知ID，注入白名单被清空。",
+      "adoption": "Lall最终无合法采用卡，流程不完整，不授信。",
+      "attribution": "通过结果伴随渲染细节变化，但没有有效的多卡采用链，不能列作卡片救回。"
+    },
+    {
+      "task_id": "1008",
+      "L3_Joint": false,
+      "Lall_Joint": true,
+      "observed": "L3顶层将USER_PROFILES、USERS重置为空字典；Lall直接使用题目提供的字典。",
+      "adoption": "Lall声明采用的第2张hint-862-1405133312613939756明确要求删除硬编码USERS和USER_PROFILES定义；代码可核对落实。",
+      "attribution": "有卡片建议落实证据，但该卡位于第2位；不属于第四张以后信息带来救回的证明。"
+    }
+  ]
+}

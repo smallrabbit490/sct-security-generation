@@ -1,0 +1,62 @@
+{
+  "protocol": "cle-q-full-test-decision-v1",
+  "study_protocol": "cle-retrieval-q-v2-public-contract",
+  "status": "WAIT_HUMAN",
+  "reason": "人工标签或裁决尚未完整，未启动新开发实验",
+  "scientific_failure": false,
+  "full_test_started": false,
+  "full_test_ready": false,
+  "next": "人工完成CSV并导入，随后按门槛运行原8题开发",
+  "calibration": [
+    "1394",
+    "102",
+    "136",
+    "1289",
+    "1298",
+    "1304"
+  ],
+  "development": [
+    "1006",
+    "1017",
+    "1061",
+    "1065",
+    "1066",
+    "1067",
+    "1070",
+    "792"
+  ],
+  "reserved_confirmation_count": 24,
+  "model_labeled": 914,
+  "human_confirmed": 0,
+  "gate_B": {
+    "passed": false,
+    "reason": "complete_retrieval_and_human_labels_required",
+    "missing_human_pairs": 914,
+    "next": "human_review_not_paid_generation"
+  },
+  "gate_D": null,
+  "confirmation_conclusion": "not_executed",
+  "environment": {
+    "docker_daemon_available": true,
+    "required_images": {
+      "safecoder-python-validator:local": false,
+      "porta-bench-runtime-python3:latest": false
+    },
+    "project_drive_free_bytes": 18670354432,
+    "original_validator_positive_control": "not_executed",
+    "frozen_CWE_shuffle_qualification": "not_executed",
+    "watchdog_qualification": "not_executed",
+    "full_environment_qualified": false
+  },
+  "snapshot_new_model_calls": 0,
+  "snapshot_new_embedding_calls": 0,
+  "source_run": "translation_work\\diagnostics\\20261017\\cle_retrieval_q\\public_contract_v2",
+  "source_files": [
+    "run_metadata.json",
+    "manifest.json",
+    "summary.json",
+    "gate_B.json",
+    "model_labels.jsonl"
+  ],
+  "note": "决策快照不启动全量；失败时仍需按模板完成逐题分析和实际成本"
+}

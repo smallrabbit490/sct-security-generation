@@ -1,0 +1,321 @@
+{
+  "protocol": "cle-q-autonomous-v2",
+  "learning": [
+    83,
+    104,
+    149,
+    375,
+    432,
+    480,
+    619,
+    675
+  ],
+  "development": [
+    63,
+    103,
+    172,
+    364,
+    455,
+    1306,
+    606,
+    657,
+    87,
+    130,
+    159,
+    342,
+    430,
+    498,
+    627,
+    1323,
+    1259,
+    125,
+    164,
+    349,
+    443,
+    489,
+    617,
+    666
+  ],
+  "confirmation": [
+    72,
+    129,
+    160,
+    371,
+    439,
+    490,
+    1317,
+    1322,
+    112,
+    141,
+    343,
+    448,
+    492,
+    615,
+    672,
+    133,
+    161,
+    338,
+    428,
+    471,
+    1318,
+    639,
+    119,
+    166
+  ],
+  "excluded_previous_probe_families": [
+    "26e03da64df8",
+    "41b75c30162b",
+    "5311715b9c8c",
+    "97568f7c3ab1",
+    "aa4e8b63e818",
+    "b1be3d02111c"
+  ],
+  "cwes": [
+    "1333",
+    "179",
+    "200",
+    "327",
+    "347",
+    "352",
+    "502",
+    "601"
+  ],
+  "rows": {
+    "83": {
+      "family_id": "a5cb91bac5e2",
+      "cwe": "1333"
+    },
+    "104": {
+      "family_id": "2a2bc9dcbf55",
+      "cwe": "179"
+    },
+    "149": {
+      "family_id": "b1319639d07a",
+      "cwe": "200"
+    },
+    "375": {
+      "family_id": "edc972b9780f",
+      "cwe": "327"
+    },
+    "432": {
+      "family_id": "deb78719c03c",
+      "cwe": "347"
+    },
+    "480": {
+      "family_id": "fb4318f4c3ce",
+      "cwe": "352"
+    },
+    "619": {
+      "family_id": "24aeb959f350",
+      "cwe": "502"
+    },
+    "675": {
+      "family_id": "63c142375d28",
+      "cwe": "601"
+    },
+    "63": {
+      "family_id": "6fbcc772170d",
+      "cwe": "1333"
+    },
+    "103": {
+      "family_id": "ae44044347c3",
+      "cwe": "179"
+    },
+    "172": {
+      "family_id": "4f2d8f9b918d",
+      "cwe": "200"
+    },
+    "364": {
+      "family_id": "f597e4620d22",
+      "cwe": "327"
+    },
+    "455": {
+      "family_id": "4b8cb0f8aff1",
+      "cwe": "347"
+    },
+    "1306": {
+      "family_id": "c491a96333c7",
+      "cwe": "352"
+    },
+    "606": {
+      "family_id": "768266d3cc92",
+      "cwe": "502"
+    },
+    "657": {
+      "family_id": "2b4dc69294a4",
+      "cwe": "601"
+    },
+    "87": {
+      "family_id": "3db7e7372b49",
+      "cwe": "1333"
+    },
+    "130": {
+      "family_id": "5c7bfe257436",
+      "cwe": "179"
+    },
+    "159": {
+      "family_id": "e683b1265cd8",
+      "cwe": "200"
+    },
+    "342": {
+      "family_id": "0b3f7e6e2a7a",
+      "cwe": "327"
+    },
+    "430": {
+      "family_id": "e096886b5f87",
+      "cwe": "347"
+    },
+    "498": {
+      "family_id": "60d85fdd66a2",
+      "cwe": "352"
+    },
+    "627": {
+      "family_id": "7231c95b629d",
+      "cwe": "502"
+    },
+    "1323": {
+      "family_id": "0871c2ec5cd8",
+      "cwe": "601"
+    },
+    "1259": {
+      "family_id": "5aeb6e97473a",
+      "cwe": "1333"
+    },
+    "125": {
+      "family_id": "885e9ab65610",
+      "cwe": "179"
+    },
+    "164": {
+      "family_id": "eae93c4cb8e1",
+      "cwe": "200"
+    },
+    "349": {
+      "family_id": "433aa1a34185",
+      "cwe": "327"
+    },
+    "443": {
+      "family_id": "7e0acd228b50",
+      "cwe": "347"
+    },
+    "489": {
+      "family_id": "cf9e2b4681b9",
+      "cwe": "352"
+    },
+    "617": {
+      "family_id": "89015705883e",
+      "cwe": "502"
+    },
+    "666": {
+      "family_id": "5a6a83dbb919",
+      "cwe": "601"
+    },
+    "72": {
+      "family_id": "298370e14e50",
+      "cwe": "1333"
+    },
+    "129": {
+      "family_id": "a7b1d3b6dcc4",
+      "cwe": "179"
+    },
+    "160": {
+      "family_id": "9bc5c0670533",
+      "cwe": "200"
+    },
+    "371": {
+      "family_id": "67dd968421d7",
+      "cwe": "327"
+    },
+    "439": {
+      "family_id": "21ea8cf62e30",
+      "cwe": "347"
+    },
+    "490": {
+      "family_id": "eea574de5518",
+      "cwe": "352"
+    },
+    "1317": {
+      "family_id": "6254ceb5c539",
+      "cwe": "502"
+    },
+    "1322": {
+      "family_id": "accd39ecb618",
+      "cwe": "601"
+    },
+    "112": {
+      "family_id": "34f83749efdf",
+      "cwe": "179"
+    },
+    "141": {
+      "family_id": "e2474efbbc9c",
+      "cwe": "200"
+    },
+    "343": {
+      "family_id": "7127837d0764",
+      "cwe": "327"
+    },
+    "448": {
+      "family_id": "5026483ed2eb",
+      "cwe": "347"
+    },
+    "492": {
+      "family_id": "e98a6affb7a5",
+      "cwe": "352"
+    },
+    "615": {
+      "family_id": "26fe944112b6",
+      "cwe": "502"
+    },
+    "672": {
+      "family_id": "4934bed46036",
+      "cwe": "601"
+    },
+    "133": {
+      "family_id": "37b419700258",
+      "cwe": "179"
+    },
+    "161": {
+      "family_id": "3ac38515391b",
+      "cwe": "200"
+    },
+    "338": {
+      "family_id": "1f822ff36d2a",
+      "cwe": "327"
+    },
+    "428": {
+      "family_id": "045aba9717ca",
+      "cwe": "347"
+    },
+    "471": {
+      "family_id": "2cdebbea3921",
+      "cwe": "352"
+    },
+    "1318": {
+      "family_id": "167bebe21100",
+      "cwe": "502"
+    },
+    "639": {
+      "family_id": "f8663a5390f0",
+      "cwe": "601"
+    },
+    "119": {
+      "family_id": "c6fd4d93006f",
+      "cwe": "179"
+    },
+    "166": {
+      "family_id": "cdfebd3c6ab6",
+      "cwe": "200"
+    }
+  },
+  "selection": "remote sample_families; one representative per family, CWE rotation; evaluation restricted to learning-covered CWE",
+  "confirmation_gate": "development Q2 Joint > Q1; functional pass count Q2 >= Q1; Q2 measured>=23/24; no higher Q2 workflow error count",
+  "primary": "Q2-Q1 final Joint",
+  "placebo": "Q2-Q3 Q-shuffle seed 20261015",
+  "learning_workers": 1,
+  "comparison_workers": 4,
+  "alpha": 0.3,
+  "lambda_q": 0.5,
+  "model": "deepseek-v3.2",
+  "embedding_model": "text-embedding-3-large",
+  "thinking": "disabled",
+  "max_tokens": 4096
+}

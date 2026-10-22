@@ -1,0 +1,23 @@
+{
+  "API_calls": 0,
+  "checks": [
+    {
+      "command": "python -B -X utf8 -m pytest tests/test_memory_q_dinit_card_cap.py tests/test_memory_q_unlimited.py tests/test_memory_q_dinit.py -q",
+      "passed": 25,
+      "note": "before adding the long-prompt regression; core runner unchanged afterward"
+    },
+    {
+      "command": "python -B -X utf8 -m pytest tests/test_memory_q_dinit_card_cap.py::test_observed_long_candidate_prompt_uses_explicit_budget_without_cutting_cards -q",
+      "passed": 1
+    }
+  ],
+  "passed_total": 26,
+  "coverage": [
+    "six cards enter original generation pipeline",
+    "unlimited D_init feedback and same/cross-family handling",
+    "rejected/unmeasured/out-of-pool not credited",
+    "legacy three-card arm retained",
+    "paired first candidate presentation",
+    "explicit 420k budget retains all long candidates"
+  ]
+}

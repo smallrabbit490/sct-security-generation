@@ -1,0 +1,1395 @@
+{
+  "arms": {
+    "Q1": {
+      "n": 298,
+      "functional": 123,
+      "security": 230,
+      "joint": 104,
+      "measured": 298,
+      "first_joint": 102,
+      "errors": 41,
+      "calls": 2169,
+      "total_tokens": 20638232,
+      "seconds": 25009.09979249996
+    },
+    "Q2": {
+      "n": 298,
+      "functional": 118,
+      "security": 228,
+      "joint": 102,
+      "measured": 296,
+      "first_joint": 99,
+      "errors": 49,
+      "calls": 2179,
+      "total_tokens": 20852563,
+      "seconds": 25075.850176900007
+    },
+    "Q0": {
+      "n": 298,
+      "functional": 120,
+      "security": 227,
+      "joint": 97,
+      "measured": 298,
+      "first_joint": 93,
+      "errors": 48,
+      "calls": 2217,
+      "total_tokens": 21285105,
+      "seconds": 25644.30148809997
+    },
+    "Q3": {
+      "n": 298,
+      "functional": 119,
+      "security": 230,
+      "joint": 100,
+      "measured": 298,
+      "first_joint": 99,
+      "errors": 35,
+      "calls": 2183,
+      "total_tokens": 20765023,
+      "seconds": 25207.97495409998
+    }
+  },
+  "paired": {
+    "Q1": {
+      "pairs": 298,
+      "measured_pairs": 298,
+      "wins": 21,
+      "losses": 14,
+      "p_exact": 0.31050465907901525,
+      "functional_harms": 15,
+      "p_holm": 0.9315139772370458
+    },
+    "Q2": {
+      "pairs": 298,
+      "measured_pairs": 296,
+      "wins": 16,
+      "losses": 10,
+      "p_exact": 0.32693958282470703,
+      "functional_harms": 13,
+      "p_holm": 0.9315139772370458
+    },
+    "Q3": {
+      "pairs": 298,
+      "measured_pairs": 298,
+      "wins": 13,
+      "losses": 10,
+      "p_exact": 0.6776394844055176,
+      "functional_harms": 13,
+      "p_holm": 0.9315139772370458
+    }
+  },
+  "role": "training_development_only",
+  "protocol": "cle-q-full-dgate-four-arm-cap3-v4-environment-repaired",
+  "completed": true,
+  "expected_rows": 1192,
+  "rows": 1192,
+  "planned_tasks": 298,
+  "families": 217,
+  "max_experiences": 3,
+  "shared_initials": 298,
+  "arm_costs": {
+    "Q0": {
+      "calls": 2217,
+      "prompt_tokens": 19475254,
+      "completion_tokens": 1809851,
+      "total_tokens": 21285105,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "Q1": {
+      "calls": 2169,
+      "prompt_tokens": 18855730,
+      "completion_tokens": 1782502,
+      "total_tokens": 20638232,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 4
+    },
+    "Q2": {
+      "calls": 2179,
+      "prompt_tokens": 19095384,
+      "completion_tokens": 1757179,
+      "total_tokens": 20852563,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 1
+    },
+    "Q3": {
+      "calls": 2183,
+      "prompt_tokens": 18998699,
+      "completion_tokens": 1766324,
+      "total_tokens": 20765023,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 2
+    }
+  },
+  "shared_initial_cost": {
+    "calls": 298,
+    "prompt_tokens": 166240,
+    "completion_tokens": 304890,
+    "total_tokens": 471130,
+    "cached_tokens": 0,
+    "usage_missing": 0,
+    "errors": 0
+  },
+  "prior_incident_saved_cost": {
+    "calls": 134,
+    "prompt_tokens": 923589,
+    "completion_tokens": 81896,
+    "total_tokens": 1005485,
+    "cached_tokens": 0,
+    "usage_missing": 0,
+    "errors": 19
+  },
+  "total_llm_cost": {
+    "calls": 9180,
+    "prompt_tokens": 77514896,
+    "completion_tokens": 7502642,
+    "total_tokens": 85017538,
+    "cached_tokens": 0,
+    "usage_missing": 0,
+    "errors": 26
+  },
+  "known_cost_is_lower_bound": true,
+  "unrecorded_prior_P7_usage": 10,
+  "Q_updates": 0,
+  "engineering_errors": [
+    {
+      "task_id": "1341",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1266",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "335",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1306",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1343",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1343",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "generation:ValueError:model_output_truncated"
+    },
+    {
+      "task_id": "1322",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1215",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "1125",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1082",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "103",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "103",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "338",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "1267",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "424",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "471",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "777",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "unmeasured_or_degraded"
+    },
+    {
+      "task_id": "777",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "48",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "106",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "340",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1269",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1269",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "1402",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "472",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1402",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "472",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "639",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "adoption:unknown_applied_experience_ids"
+    },
+    {
+      "task_id": "1347",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "1347",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1016",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1092",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1395",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "1395",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "342",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "428",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "603",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "779",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1360",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1360",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1094",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "50",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "adoption:invalid_rejected_experiences"
+    },
+    {
+      "task_id": "641",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "604",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "783",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1361",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1361",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1361",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1235",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1140",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "141",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "141",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "345",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "645",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "785",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "1400",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1400",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "1141",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1101",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "64",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "125",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "491",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "894",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1105",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "65",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "65",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "65",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:unknown_applied_experience_ids"
+    },
+    {
+      "task_id": "126",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "126",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "126",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "126",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "126",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "126",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "143",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "349",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "443",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "647",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1035",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1265",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "145",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "145",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "1265",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "351",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "351",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "447",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "493",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "896",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "353",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "353",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "448",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "791",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "658",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "1050",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "adoption:unknown_applied_experience_ids"
+    },
+    {
+      "task_id": "971",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "1209",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "1109",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1209",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis;experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1109",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "experience_analysis:ValueError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1209",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "1209",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "129",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "153",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "450",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "experience_analysis:EnglishPolicyError"
+    },
+    {
+      "task_id": "988",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1366",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1368",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "1368",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "adoption:invalid_rejected_experiences"
+    },
+    {
+      "task_id": "1368",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "1368",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "1368",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "1110",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "87",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1151",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1210",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "130",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "130",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "499",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "452",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "660",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "660",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "902",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1155",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "159",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "adoption:invalid_rejected_experiences"
+    },
+    {
+      "task_id": "159",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "adoption:invalid_rejected_experiences"
+    },
+    {
+      "task_id": "454",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "794",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "858",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "995",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1212",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "160",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "455",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "662",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "662",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:ValueError"
+    },
+    {
+      "task_id": "859",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "997",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1121",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "planning:ValueError"
+    },
+    {
+      "task_id": "161",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "161",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "experience_analysis:EnglishPolicyError"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "618",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "808",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError;planning:JSONDecodeError"
+    },
+    {
+      "task_id": "808",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "860",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "860",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "1214",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1124",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError;planning:ValueError"
+    },
+    {
+      "task_id": "627",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:unknown_applied_experience_ids"
+    },
+    {
+      "task_id": "667",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "667",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "667",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:ValueError"
+    },
+    {
+      "task_id": "667",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "667",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError;adoption:invalid_rejected_experiences"
+    },
+    {
+      "task_id": "667",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "810",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "810",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids;planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1383",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "463",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "668",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "811",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "865",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1166",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "165",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1410",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "866",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "97",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "166",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "166",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "retrieval:RuntimeError"
+    },
+    {
+      "task_id": "166",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "169",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "169",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "1377",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "99",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "824",
+      "arm": "Q2",
+      "attempt": 1,
+      "error": "initial_analysis:JSONDecodeError"
+    },
+    {
+      "task_id": "171",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "824",
+      "arm": "Q1",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "824",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "827",
+      "arm": "Q1",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "827",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "experience_analysis:ValueError;adoption:missing_applied_experience_ids"
+    }
+  ],
+  "integrity_issues": [],
+  "native_trace_resolutions": [
+    {
+      "task_id": "1215",
+      "arm": "Q3",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "472",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_TimeoutError"
+      ]
+    },
+    {
+      "task_id": "1395",
+      "arm": "Q2",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "1105",
+      "arm": "Q3",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_TimeoutError"
+      ]
+    },
+    {
+      "task_id": "443",
+      "arm": "Q2",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "1110",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "452",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "808",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_RuntimeError"
+      ]
+    },
+    {
+      "task_id": "808",
+      "arm": "Q3",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_RuntimeError"
+      ]
+    },
+    {
+      "task_id": "866",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_TimeoutError"
+      ]
+    }
+  ],
+  "unverified_first_retrieval": [
+    {
+      "task_id": "1343",
+      "arm": "Q2",
+      "reason": "first_retrieval_not_completed"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q1",
+      "reason": "first_retrieval_not_completed"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q0",
+      "reason": "first_retrieval_not_completed"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q2",
+      "reason": "first_retrieval_not_completed"
+    },
+    {
+      "task_id": "458",
+      "arm": "Q3",
+      "reason": "first_retrieval_not_completed"
+    },
+    {
+      "task_id": "860",
+      "arm": "Q1",
+      "reason": "first_retrieval_not_completed"
+    },
+    {
+      "task_id": "860",
+      "arm": "Q2",
+      "reason": "first_retrieval_not_completed"
+    },
+    {
+      "task_id": "166",
+      "arm": "Q3",
+      "reason": "first_retrieval_not_completed"
+    }
+  ],
+  "currency_actual": null,
+  "independent_final_test": false
+}

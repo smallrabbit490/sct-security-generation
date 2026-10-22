@@ -1,0 +1,67 @@
+{
+  "protocol": "cle-q-equal-k-contract-v1",
+  "tasks": [
+    {
+      "task_id": "1256",
+      "family_id": "26e03da64df8",
+      "cwe": "1333",
+      "K": 6
+    },
+    {
+      "task_id": "1306",
+      "family_id": "c491a96333c7",
+      "cwe": "352",
+      "K": 3
+    },
+    {
+      "task_id": "1317",
+      "family_id": "6254ceb5c539",
+      "cwe": "502",
+      "K": 5
+    },
+    {
+      "task_id": "1341",
+      "family_id": "694af4fba622",
+      "cwe": "74",
+      "K": 6
+    },
+    {
+      "task_id": "1000",
+      "family_id": "8effd9406673",
+      "cwe": "79",
+      "K": 5
+    },
+    {
+      "task_id": "1013",
+      "family_id": "1047f2bc6f3b",
+      "cwe": "862",
+      "K": 3
+    },
+    {
+      "task_id": "1055",
+      "family_id": "b27afdfa4c6d",
+      "cwe": "915",
+      "K": 12
+    },
+    {
+      "task_id": "1259",
+      "family_id": "5aeb6e97473a",
+      "cwe": "1333",
+      "K": 7
+    }
+  ],
+  "arms": [
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "repeats": [
+    1,
+    2
+  ],
+  "expected_rows": 48,
+  "source": "translation_work\\diagnostics\\20261018\\cle_memory_q\\unlimited_complete_v2",
+  "selection": "first eight from prior fixed48 manifest, K=prior Q1 c0 selected count",
+  "development_exposure": true,
+  "independent_confirmation": false
+}

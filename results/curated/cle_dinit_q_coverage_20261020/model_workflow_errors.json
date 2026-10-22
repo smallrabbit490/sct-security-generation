@@ -1,0 +1,35 @@
+[
+  {
+    "arm": "L0",
+    "task_id": "1299",
+    "attempt": 1,
+    "error_type": "planning:ValueError",
+    "degraded_stages": [
+      "planning"
+    ],
+    "F_S_measured": true,
+    "Q_credit_allowed": false
+  },
+  {
+    "arm": "L0",
+    "task_id": "1338",
+    "attempt": 1,
+    "error_type": "initial_analysis:JSONDecodeError",
+    "degraded_stages": [
+      "initial_analysis"
+    ],
+    "F_S_measured": true,
+    "Q_credit_allowed": false
+  },
+  {
+    "arm": "L1",
+    "task_id": "1258",
+    "attempt": 1,
+    "error_type": "planning:JSONDecodeError",
+    "degraded_stages": [
+      "planning"
+    ],
+    "F_S_measured": true,
+    "Q_credit_allowed": false
+  }
+]

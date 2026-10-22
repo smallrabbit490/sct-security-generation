@@ -1,0 +1,62 @@
+{
+  "protocol": "cle-selector-repeat-four-arm-v1",
+  "tasks": [
+    {
+      "task_id": "1256",
+      "family_id": "26e03da64df8",
+      "cwe": "1333",
+      "candidate_count": 25
+    },
+    {
+      "task_id": "1306",
+      "family_id": "c491a96333c7",
+      "cwe": "352",
+      "candidate_count": 30
+    },
+    {
+      "task_id": "1317",
+      "family_id": "6254ceb5c539",
+      "cwe": "502",
+      "candidate_count": 29
+    },
+    {
+      "task_id": "1341",
+      "family_id": "694af4fba622",
+      "cwe": "74",
+      "candidate_count": 30
+    },
+    {
+      "task_id": "1000",
+      "family_id": "8effd9406673",
+      "cwe": "79",
+      "candidate_count": 28
+    },
+    {
+      "task_id": "1013",
+      "family_id": "1047f2bc6f3b",
+      "cwe": "862",
+      "candidate_count": 27
+    },
+    {
+      "task_id": "1055",
+      "family_id": "b27afdfa4c6d",
+      "cwe": "915",
+      "candidate_count": 26
+    },
+    {
+      "task_id": "1259",
+      "family_id": "5aeb6e97473a",
+      "cwe": "1333",
+      "candidate_count": 27
+    }
+  ],
+  "arms": [
+    "Q0",
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "repeats": 5,
+  "expected_rows": 160,
+  "independent_final_test": false
+}

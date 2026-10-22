@@ -39,3 +39,17 @@ Base 与 Plus 的 watchdog 必须串行启动：watchdog 启动清理会删除�
 输出：`rows.jsonl`、`summary.json`、`run_metadata.json`、`report.md`；CodeSecEval 额外保存脱敏 `calibration.json`。汇总区分首次/末次、F/S/Joint、缺测和相对 P0 的完整可测配对。缺测留在总分母但不计成功，配对统计单独排除缺测，不补零。
 
 默认并发为 8（可设 1–16），生成和检索共享 HTTP 在途上限。模型请求器内部可能重试，calls 表示逻辑请求次数；货币成本未测量。全量完成前不得将冒烟结果写入论文主表。
+
+## 固定库记忆Q扩展（2026-10-15）
+
+Q开发对照入口为`python -m methods.cle_ablation.run_memory_q`。该入口直接调用本目录原`runner.run_one(..., 'P7', ...)`，替换选卡模式并增加D_grow采用奖励。`--stage learn`学习后冻结；`--stage compare`在D_gate比较Q0原LLM、Q1相似度、Q2相似度＋Q、Q3打乱Q。各臂共用本轮JSON格式提示修订，原生生成与验证函数保留。
+
+逐题保留原生`attempts/generation/validation/usage`，补充`final/arm/family_id`供远程M/A统计直接消费。运行后用`python -m methods.cle_ablation.audit_memory_q --root <本轮目录>`只读检查记录、重算统计和Q归因。原P0–P7入口、默认值与历史文件保留。
+
+8题学习和24题四臂已完成：Q2 Joint=4/24、Q1=3/24、Q0/Q3均5/24，尚无Q提分证据。开发门未通过，未运行条件确认和正式全量训练。根`run_closed_loop`的Q接线及`run_memory_q_frozen`冻结消费者已实现；Base/Plus尚缺原验证镜像，只完成离线冻结核对。
+
+最新规格、命令、精简结果和分析见[自主执行结果](../../docs/CLE_Q任务书自主执行实验规格与结果_20261015.md)；四题探针及历史机制关系保留在[远程协议对齐与实验方案](../../docs/CLE_Q迁移远程协议对齐与实验方案_20261015.md)。
+
+最新全D_grow学习库的8题三臂已完成（2026-10-16）：比较入口增加`--shuffle-scope cwe`，仅同CWE内置换Q/visits；默认global保留历史行为。Q1/Q2/Q3 Joint=2/8、1/8、1/8。Q2在5题改变集合，3题采用新增卡，未增加Joint。使用`python -m methods.cle_ablation.report_memory_q_probe --root <probe-root> --out <curated-path>`重算原生格式、同查询排序与采用、配对统计及成本。完整规格、命令和逐题结论见[最新Q库8题实验](../../docs/CLE_最新Q库8题三臂实验与逐题分析_20261016.md)，不是完整CLE或Base/Plus结果。
+
+后续[共享首次初析控制实验](../../docs/CLE_Q回放与共享初析8题实验_20261016.md)已完成：新增`--shared-initial`仅复用c0初析，c1仍独立。8题首次query及候选分数完全一致，Q1/Q2/Q3 Joint=2/8、3/8、2/8；唯一额外成功没有经验卡介入，不能归因Q。另发现1015题面/夹具全局变量名不一致，保留主表并单列辅助分析。共享调用计费单列，未启动确认、完整训练或Base/Plus。

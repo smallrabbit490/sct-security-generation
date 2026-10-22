@@ -1,0 +1,5 @@
+﻿stage,arm,task_id,family_id,measured,F,S,Joint,attempts,selected,adopted,tokens,error
+probe,L0,1337,66163c87f907,True,True,True,True,1,3,0,38751,
+probe,L0,501,5e1edea9894f,True,True,False,False,2,4,3,91331,
+probe,L1,501,5e1edea9894f,True,True,False,False,2,5,5,88943,
+probe,L1,1337,66163c87f907,True,False,True,False,2,6,1,86529,planning:JSONDecodeError

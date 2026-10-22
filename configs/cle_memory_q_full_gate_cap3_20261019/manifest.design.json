@@ -1,0 +1,2703 @@
+{
+  "protocol": "cle-q-full-dgate-four-arm-cap3-v1",
+  "status": "DESIGN_ONLY_PENDING_NEW_PREFLIGHT",
+  "task_count": 298,
+  "family_count": 217,
+  "cwe_count": 18,
+  "arms": [
+    "Q0",
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "repeats": 1,
+  "expected_P7_rows": 1192,
+  "selection": "all recovered D_gate; CWE round robin and string ID order; keep family variants",
+  "tasks": [
+    {
+      "task_id": "1256",
+      "family_id": "26e03da64df8",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "100",
+      "family_id": "b1be3d02111c",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1266",
+      "family_id": "796599e07fe5",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "335",
+      "family_id": "2d999c0d0d72",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1409",
+      "family_id": "3ef963e6098d",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1306",
+      "family_id": "c491a96333c7",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1317",
+      "family_id": "6254ceb5c539",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1322",
+      "family_id": "accd39ecb618",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1341",
+      "family_id": "694af4fba622",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1343",
+      "family_id": "f38d18af5ea5",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1352",
+      "family_id": "e1649f0815a6",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1000",
+      "family_id": "8effd9406673",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1013",
+      "family_id": "1047f2bc6f3b",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1215",
+      "family_id": "0202d6a5afe9",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1055",
+      "family_id": "b27afdfa4c6d",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1082",
+      "family_id": "99ac325fbf98",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1125",
+      "family_id": "bb690cb66710",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1170",
+      "family_id": "3c028bc080c8",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1259",
+      "family_id": "5aeb6e97473a",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "103",
+      "family_id": "ae44044347c3",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1267",
+      "family_id": "b4f08ece902e",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "338",
+      "family_id": "1f822ff36d2a",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "424",
+      "family_id": "58ef28b25367",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "471",
+      "family_id": "2cdebbea3921",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1318",
+      "family_id": "167bebe21100",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1323",
+      "family_id": "0871c2ec5cd8",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "777",
+      "family_id": "8ac9f3ea0eb2",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1345",
+      "family_id": "53cce12b61e4",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1397",
+      "family_id": "e1649f0815a6",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1001",
+      "family_id": "bf1c4709bade",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1015",
+      "family_id": "ef36f1232121",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1225",
+      "family_id": "228bf424541f",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1056",
+      "family_id": "d6448e408574",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1086",
+      "family_id": "79f9803495c0",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1126",
+      "family_id": "426b5178e24d",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1171",
+      "family_id": "3c028bc080c8",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "48",
+      "family_id": "aa4e8b63e818",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "106",
+      "family_id": "d0d35d0245f3",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1269",
+      "family_id": "23c8065b0296",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "340",
+      "family_id": "4048652cb877",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "427",
+      "family_id": "b992ac7b2f85",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "472",
+      "family_id": "2cdebbea3921",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1402",
+      "family_id": "46a830a68cb8",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "639",
+      "family_id": "f8663a5390f0",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "778",
+      "family_id": "8ac9f3ea0eb2",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1347",
+      "family_id": "fcfdfb66f77c",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "873",
+      "family_id": "5bd2a1d9722f",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1006",
+      "family_id": "89de5a2d1dc3",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1016",
+      "family_id": "751ebee47d6f",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1229",
+      "family_id": "2489d3a48611",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1061",
+      "family_id": "81a920cff4b5",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1092",
+      "family_id": "527e8d40dea7",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1129",
+      "family_id": "0be7c472dbe6",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1172",
+      "family_id": "3c028bc080c8",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "49",
+      "family_id": "aa4e8b63e818",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "112",
+      "family_id": "34f83749efdf",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1395",
+      "family_id": "14a7a4864b42",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "342",
+      "family_id": "0b3f7e6e2a7a",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "428",
+      "family_id": "045aba9717ca",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "473",
+      "family_id": "2cdebbea3921",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "603",
+      "family_id": "eff3a70e735f",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "640",
+      "family_id": "f8663a5390f0",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "779",
+      "family_id": "8ac9f3ea0eb2",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "837",
+      "family_id": "333bc994a1b9",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "875",
+      "family_id": "444cf0bcfc61",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1360",
+      "family_id": "204bd668a868",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1017",
+      "family_id": "0d08c9270770",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1232",
+      "family_id": "44b9c32548ab",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1065",
+      "family_id": "18f7d074b36b",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1094",
+      "family_id": "fe88e5a6ab48",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1132",
+      "family_id": "cbcdfbbce767",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1179",
+      "family_id": "a5db646d9dbc",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "50",
+      "family_id": "aa4e8b63e818",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "117",
+      "family_id": "d0d35d0245f3",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "140",
+      "family_id": "282b122541bb",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "343",
+      "family_id": "7127837d0764",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "430",
+      "family_id": "e096886b5f87",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "489",
+      "family_id": "cf9e2b4681b9",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "604",
+      "family_id": "eff3a70e735f",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "641",
+      "family_id": "f8663a5390f0",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "783",
+      "family_id": "cd73a94d9e2b",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "838",
+      "family_id": "333bc994a1b9",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "880",
+      "family_id": "e7835fb7c703",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1361",
+      "family_id": "11d27c289a7b",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1029",
+      "family_id": "e411db96e762",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1235",
+      "family_id": "d9794a0a1e21",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1066",
+      "family_id": "daf7048f56de",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1095",
+      "family_id": "41e81defd5d0",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1140",
+      "family_id": "6921bf78de96",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1180",
+      "family_id": "a5db646d9dbc",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "63",
+      "family_id": "6fbcc772170d",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "119",
+      "family_id": "c6fd4d93006f",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "141",
+      "family_id": "e2474efbbc9c",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "345",
+      "family_id": "c368fe2fb12f",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "438",
+      "family_id": "15cd9909f6d8",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "490",
+      "family_id": "eea574de5518",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "605",
+      "family_id": "eff3a70e735f",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "645",
+      "family_id": "54934191cef6",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "785",
+      "family_id": "1728d3aed1f7",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "839",
+      "family_id": "333bc994a1b9",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "886",
+      "family_id": "e7835fb7c703",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1400",
+      "family_id": "47e327cb46d4",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1030",
+      "family_id": "668edbfa5807",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1236",
+      "family_id": "6ed5c0f24dc6",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1067",
+      "family_id": "6e20ff019ae0",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "1101",
+      "family_id": "12a8202a6b51",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1141",
+      "family_id": "8dd493df8377",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1181",
+      "family_id": "a5db646d9dbc",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "64",
+      "family_id": "6fbcc772170d",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "125",
+      "family_id": "885e9ab65610",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "142",
+      "family_id": "e2474efbbc9c",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "347",
+      "family_id": "2584278db614",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "439",
+      "family_id": "21ea8cf62e30",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "491",
+      "family_id": "e4ba9dc1b077",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "606",
+      "family_id": "768266d3cc92",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "646",
+      "family_id": "54934191cef6",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "786",
+      "family_id": "0a4e578617ba",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "843",
+      "family_id": "9fdc3e4679b0",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "894",
+      "family_id": "4dafeb81856f",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "964",
+      "family_id": "c03ebd2578dc",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1031",
+      "family_id": "d2c23ad5ffdd",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1238",
+      "family_id": "b869d82338f5",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1070",
+      "family_id": "3e9a14c5ed1c",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1105",
+      "family_id": "3a8e1db409ad",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1142",
+      "family_id": "90fb04875a37",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1203",
+      "family_id": "6530b2526ab8",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "65",
+      "family_id": "6fbcc772170d",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "126",
+      "family_id": "ff83c3274cf8",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "143",
+      "family_id": "e2474efbbc9c",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "349",
+      "family_id": "433aa1a34185",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "443",
+      "family_id": "7e0acd228b50",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "492",
+      "family_id": "e98a6affb7a5",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "607",
+      "family_id": "768266d3cc92",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "647",
+      "family_id": "54934191cef6",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "787",
+      "family_id": "0a4e578617ba",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "844",
+      "family_id": "9fdc3e4679b0",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "895",
+      "family_id": "4dafeb81856f",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "966",
+      "family_id": "d200555560fd",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1035",
+      "family_id": "9472bc937130",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1239",
+      "family_id": "9d3a7a8b18e2",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1074",
+      "family_id": "312780f2d871",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1106",
+      "family_id": "3d41abf1c393",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1144",
+      "family_id": "f323e4bfde33",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1204",
+      "family_id": "6530b2526ab8",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "72",
+      "family_id": "298370e14e50",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1265",
+      "family_id": "8282de3cc49f",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "145",
+      "family_id": "4c82471a8aef",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "351",
+      "family_id": "93191ec9b848",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "447",
+      "family_id": "b6974f4b6f04",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "493",
+      "family_id": "e98a6affb7a5",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "608",
+      "family_id": "768266d3cc92",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "657",
+      "family_id": "2b4dc69294a4",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "788",
+      "family_id": "0a4e578617ba",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "845",
+      "family_id": "9fdc3e4679b0",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "896",
+      "family_id": "4dafeb81856f",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "968",
+      "family_id": "2478a1a497a0",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1046",
+      "family_id": "cc981fce3373",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1240",
+      "family_id": "ab9a30e787fe",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1076",
+      "family_id": "f159768d885a",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1108",
+      "family_id": "c9f96f693b44",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1147",
+      "family_id": "184d42de8ca5",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1205",
+      "family_id": "6530b2526ab8",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "73",
+      "family_id": "298370e14e50",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "128",
+      "family_id": "8282de3cc49f",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "147",
+      "family_id": "95f4d165fa10",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "353",
+      "family_id": "0de79d0bf92f",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "448",
+      "family_id": "5026483ed2eb",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "494",
+      "family_id": "e98a6affb7a5",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "612",
+      "family_id": "07ac5bd70b75",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "658",
+      "family_id": "2b4dc69294a4",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "791",
+      "family_id": "fb4a8520474e",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "849",
+      "family_id": "0ebbe7d5fc2b",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "897",
+      "family_id": "e7835fb7c703",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "971",
+      "family_id": "3babf87b4eee",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1050",
+      "family_id": "565316328c94",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1388",
+      "family_id": "c65b94555a39",
+      "cwe": "863",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1077",
+      "family_id": "860a6cf7b2b6",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1109",
+      "family_id": "644c5cff01bb",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1149",
+      "family_id": "c5b0ceb7c5ef",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1209",
+      "family_id": "9c7f40854387",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "74",
+      "family_id": "298370e14e50",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "129",
+      "family_id": "a7b1d3b6dcc4",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "153",
+      "family_id": "a97cf683d8ab",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "359",
+      "family_id": "1a92798d1533",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "450",
+      "family_id": "36f88e5bd04b",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "498",
+      "family_id": "60d85fdd66a2",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "613",
+      "family_id": "d3afee6b93a6",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "659",
+      "family_id": "2b4dc69294a4",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "792",
+      "family_id": "1f158c5259f8",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "850",
+      "family_id": "0ebbe7d5fc2b",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "901",
+      "family_id": "a74199f18847",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "988",
+      "family_id": "2c6ab5eb18e8",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1366",
+      "family_id": "d0244ff75e54",
+      "cwe": "862",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1368",
+      "family_id": "9af112eb2d3e",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1110",
+      "family_id": "d85938327026",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1151",
+      "family_id": "735023459329",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1210",
+      "family_id": "9c7f40854387",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "87",
+      "family_id": "3db7e7372b49",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "130",
+      "family_id": "5c7bfe257436",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "154",
+      "family_id": "7c1f5c2a607c",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "362",
+      "family_id": "5f9c7f3d8e66",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "452",
+      "family_id": "6b99963caf0e",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "499",
+      "family_id": "60d85fdd66a2",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "615",
+      "family_id": "26fe944112b6",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "660",
+      "family_id": "ec7a6e10d4cf",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "793",
+      "family_id": "1f158c5259f8",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "851",
+      "family_id": "0ebbe7d5fc2b",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "902",
+      "family_id": "a74199f18847",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "993",
+      "family_id": "f27a2169781f",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1370",
+      "family_id": "b61b253c1c13",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1118",
+      "family_id": "5f2898b0336a",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1155",
+      "family_id": "ce5c76c1230f",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1211",
+      "family_id": "9c7f40854387",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "89",
+      "family_id": "3db7e7372b49",
+      "cwe": "1333",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "133",
+      "family_id": "37b419700258",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "159",
+      "family_id": "e683b1265cd8",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "364",
+      "family_id": "f597e4620d22",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "454",
+      "family_id": "9861f5106665",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "500",
+      "family_id": "60d85fdd66a2",
+      "cwe": "352",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "616",
+      "family_id": "ac3251313637",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "661",
+      "family_id": "ec7a6e10d4cf",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "794",
+      "family_id": "1f158c5259f8",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "858",
+      "family_id": "1b8c2ad51fa5",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "903",
+      "family_id": "a74199f18847",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "995",
+      "family_id": "e6fd92c39fcb",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1393",
+      "family_id": "06b2c6890d99",
+      "cwe": "915",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1119",
+      "family_id": "6300bff0d469",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1156",
+      "family_id": "e3304f05bdaa",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1212",
+      "family_id": "9e127e6a821c",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1392",
+      "family_id": "8282de3cc49f",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "160",
+      "family_id": "9bc5c0670533",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "370",
+      "family_id": "2fb9cba7e80b",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "455",
+      "family_id": "4b8cb0f8aff1",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "617",
+      "family_id": "89015705883e",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "662",
+      "family_id": "ec7a6e10d4cf",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "802",
+      "family_id": "0c2d3b8148fb",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "859",
+      "family_id": "1b8c2ad51fa5",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "908",
+      "family_id": "e1649f0815a6",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "997",
+      "family_id": "85d86e71dcf4",
+      "cwe": "79",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1121",
+      "family_id": "a2d0eb299994",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1163",
+      "family_id": "bc13114bb24d",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1213",
+      "family_id": "9e127e6a821c",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "90",
+      "family_id": "f76fa322da83",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "161",
+      "family_id": "3ac38515391b",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "371",
+      "family_id": "67dd968421d7",
+      "cwe": "327",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "458",
+      "family_id": "b78e87091669",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "618",
+      "family_id": "83f424317027",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "666",
+      "family_id": "5a6a83dbb919",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "808",
+      "family_id": "ed39161f0ca2",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "860",
+      "family_id": "1b8c2ad51fa5",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "915",
+      "family_id": "20c8f9b6caf2",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1124",
+      "family_id": "e5ef85229a5f",
+      "cwe": "918",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1164",
+      "family_id": "f22006f22ceb",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1214",
+      "family_id": "9e127e6a821c",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "91",
+      "family_id": "f76fa322da83",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "162",
+      "family_id": "729b8f7d0224",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "462",
+      "family_id": "b76d1b0c7df0",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "627",
+      "family_id": "7231c95b629d",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "667",
+      "family_id": "5a6a83dbb919",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "810",
+      "family_id": "879c7327aca8",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "864",
+      "family_id": "dc782c8f11d5",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "916",
+      "family_id": "85308b822e45",
+      "cwe": "770",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1165",
+      "family_id": "f688d0846778",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1383",
+      "family_id": "784353cde008",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "92",
+      "family_id": "f76fa322da83",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "164",
+      "family_id": "eae93c4cb8e1",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "463",
+      "family_id": "fdabc1686f53",
+      "cwe": "347",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "628",
+      "family_id": "7231c95b629d",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "668",
+      "family_id": "5a6a83dbb919",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "811",
+      "family_id": "879c7327aca8",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "865",
+      "family_id": "dc782c8f11d5",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1166",
+      "family_id": "396682bede55",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1385",
+      "family_id": "7b4b2efc1c08",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "96",
+      "family_id": "8bdcf5ddbde8",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "165",
+      "family_id": "96cb966db717",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "629",
+      "family_id": "7231c95b629d",
+      "cwe": "502",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "672",
+      "family_id": "4934bed46036",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "812",
+      "family_id": "879c7327aca8",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "866",
+      "family_id": "dc782c8f11d5",
+      "cwe": "77",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1167",
+      "family_id": "f9ba039e9491",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1410",
+      "family_id": "a54c6a59fa34",
+      "cwe": "95",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "97",
+      "family_id": "8bdcf5ddbde8",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "166",
+      "family_id": "cdfebd3c6ab6",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "673",
+      "family_id": "4934bed46036",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "822",
+      "family_id": "df89d1b90a64",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1376",
+      "family_id": "a1bebcd0bb18",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "98",
+      "family_id": "8bdcf5ddbde8",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "169",
+      "family_id": "9756ea20f7a6",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "674",
+      "family_id": "4934bed46036",
+      "cwe": "601",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "823",
+      "family_id": "df89d1b90a64",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "1377",
+      "family_id": "cef9963053a1",
+      "cwe": "94",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "99",
+      "family_id": "d0d35d0245f3",
+      "cwe": "179",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": true,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "171",
+      "family_id": "77ce687db61c",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": true,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "824",
+      "family_id": "df89d1b90a64",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "172",
+      "family_id": "4f2d8f9b918d",
+      "cwe": "200",
+      "historical_reference_public_preflight_passed": false,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": true
+    },
+    {
+      "task_id": "825",
+      "family_id": "b151d8bbf0fa",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "826",
+      "family_id": "b151d8bbf0fa",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    },
+    {
+      "task_id": "827",
+      "family_id": "b151d8bbf0fa",
+      "cwe": "74",
+      "historical_reference_public_preflight_passed": true,
+      "historical_qualified": false,
+      "historically_flagged_contract_family": false,
+      "documented_Q_development_family_exposure": false
+    }
+  ],
+  "independent_final_test": false,
+  "old_generation_rows_reused": false,
+  "Q_updates": false
+}

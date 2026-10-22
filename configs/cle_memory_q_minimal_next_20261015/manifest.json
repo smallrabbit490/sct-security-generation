@@ -1,0 +1,216 @@
+{
+  "protocol": "cle-q-minimal-coverage-proposed-v3",
+  "status": "planned_not_run",
+  "model_calls": 0,
+  "cwes": [
+    "179",
+    "200",
+    "327",
+    "502"
+  ],
+  "learning": [
+    110,
+    157,
+    341,
+    630,
+    163,
+    1289,
+    636,
+    118,
+    144,
+    334,
+    1321,
+    132
+  ],
+  "development": [
+    126,
+    153,
+    345,
+    96,
+    162,
+    370,
+    612,
+    603
+  ],
+  "confirmation": [],
+  "rows": {
+    "110": {
+      "family_id": "8604d9dbabdd",
+      "cwe": "179"
+    },
+    "157": {
+      "family_id": "1354f6803854",
+      "cwe": "200"
+    },
+    "341": {
+      "family_id": "3be8ebe1c142",
+      "cwe": "327"
+    },
+    "630": {
+      "family_id": "79f90b4bc71c",
+      "cwe": "502"
+    },
+    "163": {
+      "family_id": "16d6506e7630",
+      "cwe": "200"
+    },
+    "1289": {
+      "family_id": "d2827522f70f",
+      "cwe": "327"
+    },
+    "636": {
+      "family_id": "4fe977dc966c",
+      "cwe": "502"
+    },
+    "118": {
+      "family_id": "cf7ee8d450bc",
+      "cwe": "179"
+    },
+    "144": {
+      "family_id": "068b85771bc3",
+      "cwe": "200"
+    },
+    "334": {
+      "family_id": "47a7cd96960e",
+      "cwe": "327"
+    },
+    "1321": {
+      "family_id": "7677fd267082",
+      "cwe": "502"
+    },
+    "132": {
+      "family_id": "783700120de6",
+      "cwe": "179"
+    },
+    "126": {
+      "family_id": "ff83c3274cf8",
+      "cwe": "179"
+    },
+    "153": {
+      "family_id": "a97cf683d8ab",
+      "cwe": "200"
+    },
+    "345": {
+      "family_id": "c368fe2fb12f",
+      "cwe": "327"
+    },
+    "96": {
+      "family_id": "8bdcf5ddbde8",
+      "cwe": "179"
+    },
+    "162": {
+      "family_id": "729b8f7d0224",
+      "cwe": "200"
+    },
+    "370": {
+      "family_id": "2fb9cba7e80b",
+      "cwe": "327"
+    },
+    "612": {
+      "family_id": "07ac5bd70b75",
+      "cwe": "502"
+    },
+    "603": {
+      "family_id": "eff3a70e735f",
+      "cwe": "502"
+    }
+  },
+  "parameters": {
+    "model": "deepseek-v3.2",
+    "embedding_model": "text-embedding-3-large",
+    "thinking": "disabled",
+    "max_tokens": 4096,
+    "temperature": 0,
+    "alpha": 0.3,
+    "lambda_q": 0.5,
+    "delta_rule": "D_grow candidate cosine 80th percentile before evaluation",
+    "shuffle_scope": "CWE",
+    "shuffle_seed": 20261015
+  },
+  "arms": [
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "unchanged_pools": "configs/cle_memory_q_autonomous_20261015/pools.recovered.json",
+  "input_memory": "docs/cle_evidence_package_20261015/experience_pool_1939.jsonl",
+  "old_confirmation_preserved": [
+    72,
+    129,
+    160,
+    371,
+    439,
+    490,
+    1317,
+    1322,
+    112,
+    141,
+    343,
+    448,
+    492,
+    615,
+    672,
+    133,
+    161,
+    338,
+    428,
+    471,
+    1318,
+    639,
+    119,
+    166
+  ],
+  "selection": "remote sample_families ordering, skip calibration failures; exclude all old manifest/previous-probe families; no LOCAL_PATH anywhere in task; patched reference passes before model generation",
+  "prerequisites_not_yet_implemented": [
+    "common schema failure fix evaluated for all arms",
+    "CWE-stratified Q permutation option",
+    "manifest-based 8-task gate instead of hard-coded 23/24"
+  ],
+  "activation_gate": {
+    "historical_panel_task_ids": [
+      63,
+      103,
+      172,
+      364,
+      455,
+      1306,
+      606,
+      657,
+      87,
+      130,
+      159,
+      342,
+      430,
+      498,
+      627,
+      1323,
+      1259,
+      125,
+      164,
+      349,
+      443,
+      489,
+      617,
+      666
+    ],
+    "min_changed_tasks": 4,
+    "min_cards_with_independent_family_rewards": 4,
+    "min_distinct_learning_families_per_card": 2
+  },
+  "evaluation_progression_gate": {
+    "measured_each_arm": 8,
+    "min_changed_tasks_Q2": 3,
+    "min_changed_new_card_adopted_tasks_Q2": 2,
+    "workflow_errors_each_arm_max": 0,
+    "Q2_joint_greater_than_Q1": true,
+    "Q2_joint_greater_than_Q3": true,
+    "Q2_functional_at_least_Q1": true
+  },
+  "budgets": {
+    "learning_rollouts_max": 12,
+    "evaluation_rollouts_max": 24,
+    "code_validations_max": 72,
+    "statistical_independent_evaluation_families": 8
+  },
+  "inference_role": "mechanism development probe, not confirmation or Base/Plus result"
+}

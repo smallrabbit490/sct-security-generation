@@ -1,0 +1,13 @@
+{
+  "files": [
+    {
+      "path": "runs_summary.json",
+      "bytes": 3687057,
+      "sha256": "754d43021ce3f7d89e6633b9b1d9367ff2d20fed42635eb8853519e15250fbcd"
+    }
+  ],
+  "source": "translation_work/sct_runs",
+  "run_count": 35,
+  "total_bytes": 4086217751,
+  "dashboard_bytes": 439348742
+}

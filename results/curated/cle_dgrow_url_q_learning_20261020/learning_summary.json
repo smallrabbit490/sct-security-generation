@@ -1,0 +1,218 @@
+{
+  "protocol": "cle-repaired32-observer-cap3-screened-Q-v1",
+  "planned": 32,
+  "executed": 32,
+  "final": {
+    "functional": 25,
+    "security": 31,
+    "joint": 24,
+    "measured": 32
+  },
+  "first": {
+    "functional": 24,
+    "security": 31,
+    "joint": 23,
+    "measured": 32
+  },
+  "repair_joint_rescues": 1,
+  "attempts": 41,
+  "valid_card_updates": 45,
+  "positive_updates": 27,
+  "negative_updates": 18,
+  "changed_cards": 20,
+  "new_cards_learned": 20,
+  "visited_before": 416,
+  "visited_after": 436,
+  "coverage_after": 0.22485817431665808,
+  "positive_Q_after": 175,
+  "negative_Q_after": 261,
+  "total_llm_usage": {
+    "calls": 205,
+    "prompt_tokens": 1748194,
+    "completion_tokens": 202898,
+    "total_tokens": 1951092,
+    "cached_tokens": 0,
+    "usage_missing": 0,
+    "errors": 0
+  },
+  "embedding_segments": [
+    {
+      "stage": "probe",
+      "calls": 3,
+      "failures": 0,
+      "prompt_tokens": 5260,
+      "total_tokens": 5260,
+      "cache_hits": 1933,
+      "embedded_texts": 3,
+      "usage_missing_calls": 0
+    },
+    {
+      "stage": "remaining",
+      "calls": 38,
+      "failures": 0,
+      "prompt_tokens": 54439,
+      "total_tokens": 54439,
+      "cache_hits": 1933,
+      "embedded_texts": 38,
+      "usage_missing_calls": 0
+    }
+  ],
+  "tasks_with_valid_credit": 20,
+  "complete_final_workflows": 30,
+  "complete_final_joint": 22,
+  "completed_workflow_attempts": 38,
+  "by_card_CWE": {
+    "1333": {
+      "cards": 85,
+      "visited_before": 25,
+      "visited_after": 25,
+      "positive_Q_after": 12,
+      "negative_Q_after": 13
+    },
+    "179": {
+      "cards": 89,
+      "visited_before": 5,
+      "visited_after": 5,
+      "positive_Q_after": 5,
+      "negative_Q_after": 0
+    },
+    "200": {
+      "cards": 105,
+      "visited_before": 21,
+      "visited_after": 21,
+      "positive_Q_after": 0,
+      "negative_Q_after": 21
+    },
+    "327": {
+      "cards": 101,
+      "visited_before": 34,
+      "visited_after": 34,
+      "positive_Q_after": 26,
+      "negative_Q_after": 8
+    },
+    "347": {
+      "cards": 115,
+      "visited_before": 41,
+      "visited_after": 41,
+      "positive_Q_after": 0,
+      "negative_Q_after": 41
+    },
+    "352": {
+      "cards": 68,
+      "visited_before": 23,
+      "visited_after": 23,
+      "positive_Q_after": 2,
+      "negative_Q_after": 21
+    },
+    "502": {
+      "cards": 165,
+      "visited_before": 19,
+      "visited_after": 19,
+      "positive_Q_after": 14,
+      "negative_Q_after": 5
+    },
+    "601": {
+      "cards": 162,
+      "visited_before": 0,
+      "visited_after": 10,
+      "positive_Q_after": 5,
+      "negative_Q_after": 5
+    },
+    "74": {
+      "cards": 137,
+      "visited_before": 14,
+      "visited_after": 14,
+      "positive_Q_after": 0,
+      "negative_Q_after": 14
+    },
+    "77": {
+      "cards": 133,
+      "visited_before": 25,
+      "visited_after": 25,
+      "positive_Q_after": 13,
+      "negative_Q_after": 12
+    },
+    "770": {
+      "cards": 69,
+      "visited_before": 43,
+      "visited_after": 43,
+      "positive_Q_after": 14,
+      "negative_Q_after": 29
+    },
+    "79": {
+      "cards": 125,
+      "visited_before": 32,
+      "visited_after": 32,
+      "positive_Q_after": 11,
+      "negative_Q_after": 21
+    },
+    "862": {
+      "cards": 154,
+      "visited_before": 49,
+      "visited_after": 49,
+      "positive_Q_after": 19,
+      "negative_Q_after": 30
+    },
+    "863": {
+      "cards": 98,
+      "visited_before": 33,
+      "visited_after": 33,
+      "positive_Q_after": 3,
+      "negative_Q_after": 30
+    },
+    "915": {
+      "cards": 63,
+      "visited_before": 10,
+      "visited_after": 10,
+      "positive_Q_after": 8,
+      "negative_Q_after": 2
+    },
+    "918": {
+      "cards": 90,
+      "visited_before": 0,
+      "visited_after": 10,
+      "positive_Q_after": 9,
+      "negative_Q_after": 1
+    },
+    "94": {
+      "cards": 81,
+      "visited_before": 20,
+      "visited_after": 20,
+      "positive_Q_after": 13,
+      "negative_Q_after": 7
+    },
+    "95": {
+      "cards": 99,
+      "visited_before": 22,
+      "visited_after": 22,
+      "positive_Q_after": 21,
+      "negative_Q_after": 1
+    }
+  },
+  "money_paid": null,
+  "issues": [
+    {
+      "task_id": "675",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+      "workflow_completed": false,
+      "measured": true
+    },
+    {
+      "task_id": "1098",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+      "workflow_completed": false,
+      "measured": true
+    },
+    {
+      "task_id": "1120",
+      "attempt": 0,
+      "error": "initial_analysis:JSONDecodeError",
+      "workflow_completed": false,
+      "measured": true
+    }
+  ],
+  "new_Dgate_API_calls": 0,
+  "new_Dgate_Joint": null
+}

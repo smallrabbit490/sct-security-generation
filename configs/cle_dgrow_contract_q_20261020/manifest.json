@@ -1,0 +1,396 @@
+{
+  "protocol": "cle-dgrow-contract-versus-q-regeneration-v1",
+  "status": "DESIGNED_NOT_EXECUTED",
+  "pool": "D_grow",
+  "tasks": [
+    {
+      "task_id": "675",
+      "cwe": "601",
+      "family_id": "63c142375d28",
+      "public_changed_fields": [],
+      "contract_changed": false,
+      "stage": "pilot",
+      "merge_A_B": true
+    },
+    {
+      "task_id": "676",
+      "cwe": "601",
+      "family_id": "63c142375d28",
+      "public_changed_fields": [],
+      "contract_changed": false,
+      "stage": "extension",
+      "merge_A_B": true
+    },
+    {
+      "task_id": "677",
+      "cwe": "601",
+      "family_id": "63c142375d28",
+      "public_changed_fields": [],
+      "contract_changed": false,
+      "stage": "extension",
+      "merge_A_B": true
+    },
+    {
+      "task_id": "681",
+      "cwe": "601",
+      "family_id": "706a080d7095",
+      "public_changed_fields": [],
+      "contract_changed": false,
+      "stage": "extension",
+      "merge_A_B": true
+    },
+    {
+      "task_id": "682",
+      "cwe": "601",
+      "family_id": "706a080d7095",
+      "public_changed_fields": [],
+      "contract_changed": false,
+      "stage": "extension",
+      "merge_A_B": true
+    },
+    {
+      "task_id": "683",
+      "cwe": "601",
+      "family_id": "706a080d7095",
+      "public_changed_fields": [],
+      "contract_changed": false,
+      "stage": "extension",
+      "merge_A_B": true
+    },
+    {
+      "task_id": "1080",
+      "cwe": "918",
+      "family_id": "98fff7e31c22",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "pilot",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1081",
+      "cwe": "918",
+      "family_id": "e69fa5595eb6",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "pilot",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1083",
+      "cwe": "918",
+      "family_id": "072dcba32498",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "pilot",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1084",
+      "cwe": "918",
+      "family_id": "22674aca438b",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "pilot",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1085",
+      "cwe": "918",
+      "family_id": "f278dba23af8",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "pilot",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1087",
+      "cwe": "918",
+      "family_id": "016c20460c13",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "pilot",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1088",
+      "cwe": "918",
+      "family_id": "2cc280e83d35",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1091",
+      "cwe": "918",
+      "family_id": "85aa7428e6e6",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1093",
+      "cwe": "918",
+      "family_id": "c2e9cc72223e",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1096",
+      "cwe": "918",
+      "family_id": "2bd860976ef6",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1098",
+      "cwe": "918",
+      "family_id": "9bf0c1d5b59a",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1099",
+      "cwe": "918",
+      "family_id": "3fe24154af70",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1100",
+      "cwe": "918",
+      "family_id": "9b150589ef39",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1102",
+      "cwe": "918",
+      "family_id": "5c01cf3832bf",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1103",
+      "cwe": "918",
+      "family_id": "44978419ed88",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1104",
+      "cwe": "918",
+      "family_id": "69489fcba952",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1112",
+      "cwe": "918",
+      "family_id": "f660ff39555b",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1114",
+      "cwe": "918",
+      "family_id": "21e7141d0e9a",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1115",
+      "cwe": "918",
+      "family_id": "3683eda1b187",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1120",
+      "cwe": "918",
+      "family_id": "43c4263b094c",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1122",
+      "cwe": "918",
+      "family_id": "c869de311289",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1326",
+      "cwe": "601",
+      "family_id": "d014cc829864",
+      "public_changed_fields": [],
+      "contract_changed": false,
+      "stage": "extension",
+      "merge_A_B": true
+    },
+    {
+      "task_id": "1371",
+      "cwe": "918",
+      "family_id": "4338bf571fd6",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1372",
+      "cwe": "918",
+      "family_id": "7ab5aac9a368",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1399",
+      "cwe": "601",
+      "family_id": "1593d4234d4e",
+      "public_changed_fields": [
+        "task_description.security_policy"
+      ],
+      "contract_changed": true,
+      "stage": "pilot",
+      "merge_A_B": false
+    },
+    {
+      "task_id": "1405",
+      "cwe": "918",
+      "family_id": "a6fa649d72ff",
+      "public_changed_fields": [
+        "task_description.context"
+      ],
+      "contract_changed": true,
+      "stage": "extension",
+      "merge_A_B": false
+    }
+  ],
+  "pilot_order": [
+    "675",
+    "1399",
+    "1080",
+    "1081",
+    "1083",
+    "1084",
+    "1085",
+    "1087"
+  ],
+  "technical_probe": [
+    "675",
+    "1080"
+  ],
+  "extension_order": [
+    "676",
+    "677",
+    "681",
+    "682",
+    "683",
+    "1088",
+    "1091",
+    "1093",
+    "1096",
+    "1098",
+    "1099",
+    "1100",
+    "1102",
+    "1103",
+    "1104",
+    "1112",
+    "1114",
+    "1115",
+    "1120",
+    "1122",
+    "1326",
+    "1371",
+    "1372",
+    "1405"
+  ],
+  "selection_rule": "fixed public-change strata and original task ID; no selection by new outcome, no replacement",
+  "counts": {
+    "tasks": 32,
+    "families": 28,
+    "pilot_tasks": 8,
+    "pilot_families": 8,
+    "context_changed": 24,
+    "policy_changed": 1,
+    "public_unchanged": 7
+  },
+  "source_repair_protocol": "cle-dgrow-url-source-restoration-public-contract-v2"
+}

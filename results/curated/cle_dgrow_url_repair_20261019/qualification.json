@@ -1,0 +1,322 @@
+[
+  {
+    "task_id": "675",
+    "cwe": "601",
+    "family_id": "63c142375d28",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "676",
+    "cwe": "601",
+    "family_id": "63c142375d28",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "677",
+    "cwe": "601",
+    "family_id": "63c142375d28",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "681",
+    "cwe": "601",
+    "family_id": "706a080d7095",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "682",
+    "cwe": "601",
+    "family_id": "706a080d7095",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "683",
+    "cwe": "601",
+    "family_id": "706a080d7095",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1080",
+    "cwe": "918",
+    "family_id": "98fff7e31c22",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1081",
+    "cwe": "918",
+    "family_id": "e69fa5595eb6",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1083",
+    "cwe": "918",
+    "family_id": "072dcba32498",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1084",
+    "cwe": "918",
+    "family_id": "22674aca438b",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1085",
+    "cwe": "918",
+    "family_id": "f278dba23af8",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1087",
+    "cwe": "918",
+    "family_id": "016c20460c13",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1088",
+    "cwe": "918",
+    "family_id": "2cc280e83d35",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1091",
+    "cwe": "918",
+    "family_id": "85aa7428e6e6",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1093",
+    "cwe": "918",
+    "family_id": "c2e9cc72223e",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1096",
+    "cwe": "918",
+    "family_id": "2bd860976ef6",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1098",
+    "cwe": "918",
+    "family_id": "9bf0c1d5b59a",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1099",
+    "cwe": "918",
+    "family_id": "3fe24154af70",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1100",
+    "cwe": "918",
+    "family_id": "9b150589ef39",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1102",
+    "cwe": "918",
+    "family_id": "5c01cf3832bf",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1103",
+    "cwe": "918",
+    "family_id": "44978419ed88",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1104",
+    "cwe": "918",
+    "family_id": "69489fcba952",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1112",
+    "cwe": "918",
+    "family_id": "f660ff39555b",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1114",
+    "cwe": "918",
+    "family_id": "21e7141d0e9a",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1115",
+    "cwe": "918",
+    "family_id": "3683eda1b187",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1120",
+    "cwe": "918",
+    "family_id": "43c4263b094c",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1122",
+    "cwe": "918",
+    "family_id": "c869de311289",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1326",
+    "cwe": "601",
+    "family_id": "d014cc829864",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1371",
+    "cwe": "918",
+    "family_id": "4338bf571fd6",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1372",
+    "cwe": "918",
+    "family_id": "7ab5aac9a368",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1399",
+    "cwe": "601",
+    "family_id": "1593d4234d4e",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  },
+  {
+    "task_id": "1405",
+    "cwe": "918",
+    "family_id": "a6fa649d72ff",
+    "previous_reward_eligible": false,
+    "reward_eligible_new_protocol": true,
+    "reference_state": "A",
+    "vulnerable_security_failed": true,
+    "original_qualification_modified": false
+  }
+]

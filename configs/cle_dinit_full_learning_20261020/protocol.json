@@ -1,0 +1,73 @@
+{
+  "protocol": "cle-dinit-full303-user-directed-v4",
+  "status": "READY_FOR_EXECUTION",
+  "scope": "User-directed full D_init one-pass learning, no performance continuation gate",
+  "baseline_memory": "translation_work/diagnostics/20261020/cle_dgrow_url_q_learning_v1/frozen/m_star_q.jsonl",
+  "baseline_family_support": "translation_work/diagnostics/20261020/cle_dgrow_url_q_learning_v1/q_family_support.json",
+  "origins_source": "translation_work\\diagnostics\\20261019\\cle_memory_q\\dinit_learning_v1\\origins.json",
+  "qualification_source": "translation_work/diagnostics/20261020/cle_dinit_full_learning_v4/preflight/",
+  "arms": {
+    "L1": "coverage candidates, unvisited first; native LLM cap3"
+  },
+  "primary_view": "cross_family; all_feedback also frozen separately",
+  "Q_value_in_forward": false,
+  "coverage_mask": "fixed within first12 / next48 / remaining243",
+  "model": "deepseek-v3.2",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 4096,
+  "selector_max_tokens": 256,
+  "embedding_model": "text-embedding-3-large",
+  "max_experiences": 3,
+  "max_code_attempts": 2,
+  "alpha": 0.3,
+  "delta": -1,
+  "workers": 4,
+  "max_rounds": 1,
+  "shuffle_execution_seed": 20261020,
+  "shared_initial": "once per new task; matching historical L1 task records reused",
+  "gates": {
+    "performance": "disabled by current user instruction",
+    "data": "fresh positive/negative controls for303",
+    "runtime": "API, budget, measurement/protocol faults only"
+  },
+  "budget_cumulative": {
+    "full303": {
+      "P7": 303,
+      "code_versions_max": 606,
+      "LLM_token_stop": 20000000,
+      "logical_calls_stop": 3000
+    }
+  },
+  "embedding_input_token_stop": 1000000,
+  "actual_bill_CNY": null,
+  "forbidden_learning_pools": [
+    "D_gate",
+    "Base",
+    "Plus"
+  ],
+  "new_Dgate_generation": false,
+  "proposed_runner": "methods/cle_ablation/run_memory_q_dinit_full.py",
+  "runner_implemented": true,
+  "qualification_evidence": "303 fresh controls required; repaired82 has newly aligned negative control",
+  "data_overlay": "configs/cle_dinit_full_learning_20261020/tasks.json",
+  "public_overlay": "task_description fields in same task overlay",
+  "command_runtime_path": "C:\\Program Files\\Git\\usr\\bin",
+  "command_runtime": "prepend PATH only in learning/validation process; required for native subprocess echo/cat; no mocks or validator changes",
+  "current_delivery": "new full303 protocol",
+  "repaired_task_ids": [
+    "76",
+    "82",
+    "105",
+    "109",
+    "451",
+    "453",
+    "456",
+    "1258",
+    "1288",
+    "1299",
+    "1319",
+    "1003"
+  ],
+  "reuse": "seven unchanged L1 executions from v3, with identical tasks, baseline and coverage mask; no duplicate paid execution"
+}

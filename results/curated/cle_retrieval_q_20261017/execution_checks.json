@@ -1,0 +1,33 @@
+{
+  "gate_checks": [
+    {
+      "action": "retrieve",
+      "blocked_before_clients": true,
+      "exit_code": 1
+    },
+    {
+      "action": "export-review",
+      "blocked_before_clients": true,
+      "exit_code": 1
+    },
+    {
+      "action": "run-development",
+      "blocked_before_clients": true,
+      "exit_code": 1
+    },
+    {
+      "action": "run-confirmation",
+      "blocked_before_clients": true,
+      "exit_code": 1
+    }
+  ],
+  "all_blocked_before_clients": true,
+  "paid_calls": 0,
+  "candidate_pairs": 0,
+  "human_review_started": false,
+  "tests": {
+    "passed": 30,
+    "failed": 0
+  },
+  "test_command": "python -m pytest tests/test_retrieval_q_study.py tests/test_memory_q_shared_initial.py tests/test_cle_ablation_runner.py -q"
+}

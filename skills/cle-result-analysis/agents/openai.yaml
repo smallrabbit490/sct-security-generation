@@ -1,0 +1,4 @@
+interface:
+  display_name: "CLE 逐题结果与失败分析"
+  short_description: "复算CLE同题对照、区分故障和模型错误并完成探索失败报告"
+  default_prompt: "使用 $cle-result-analysis 完成当前CLE任务，依据本项目记录选择实际入口并保留证据边界。"

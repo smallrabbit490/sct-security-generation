@@ -1,0 +1,49 @@
+﻿task_id,cwe,valid_shared_query,q_order_changed,selected_members_changed,adopted_members_changed,q_vs_shuffled_order_changed,q_vs_shuffled_selected_changed,q_vs_shuffled_adopted_changed,new_q_adopted_ids,new_q_adopted_unlearned,new_q_adopted_positive,new_q_adopted_negative,Q1_joint,Q2_joint,Q3_joint
+1256,1333,True,True,True,True,True,True,True,['hint-1333-1889249461378247751'],0,1,0,True,True,True
+1317,502,True,False,True,True,True,True,True,"['blind-502-5175120699393449914', 'guard-502-6387487032192015812', 'guard-502-6772803219417487760', 'hint-502-5980882292082295094', 'pitfall-502-1298662043445647790', 'pitfall-502-5289363153619763752', 'pitfall-502-595046942000985314']",7,0,0,False,False,False
+1306,352,True,True,True,True,True,True,True,"['hint-502-6168753695963253244', 'pitfall-502-5289363153619763752']",2,0,0,False,False,True
+1341,74,True,True,True,True,True,True,True,"['blind-74-1355473372659499046', 'pitfall-74-1858540184280992481', 'pitfall-79-1858540184280992481']",3,0,0,False,False,False
+1000,79,True,True,True,True,True,True,True,"['hint-79-7032416035693903703', 'pitfall-79-4620467470558728342']",2,0,0,False,False,False
+1013,862,True,True,True,True,True,True,True,"['cand-862-639166699180187596', 'hint-862-6294070334361514088', 'pitfall-862-5846273370123312649']",0,2,1,True,True,True
+1259,1333,True,True,True,True,True,True,True,"['pitfall-1333-2993694117336317243', 'pitfall-1333-6475362525226541701']",2,0,0,True,True,True
+1055,915,True,True,True,True,True,True,True,[],0,0,0,False,True,False
+338,327,True,True,True,True,True,True,True,"['cand-327-7628472298527212339', 'hint-327-3012199065129083649', 'pitfall-327-3958700371924071797']",0,2,1,False,False,False
+471,352,True,True,True,True,True,True,True,"['pitfall-352-2266175679171039143', 'pitfall-352-7737164804510555957']",2,0,0,False,False,False
+1318,502,True,True,True,True,True,True,True,[],0,0,0,False,False,False
+777,74,True,True,True,True,True,True,True,[],0,0,0,False,False,False
+1001,79,True,True,True,False,True,True,False,[],0,0,0,False,False,False
+1126,94,True,True,True,True,True,True,True,[],0,0,0,True,True,True
+48,1333,True,True,True,True,True,True,True,['pitfall-1333-5795252323512681018'],1,0,0,True,True,True
+1225,863,True,True,True,True,True,True,True,['blind-863-4902636512247485291'],1,0,0,False,False,False
+340,327,True,True,True,True,True,True,True,"['blind-327-7673803069532548139', 'cand-327-7067616438519360168']",0,2,0,True,True,True
+1006,79,True,True,True,True,True,True,False,['seed-969'],0,1,0,False,False,True
+1347,77,True,False,True,True,True,True,True,"['blind-77-8801828223956122410', 'hint-77-6023508863459853008', 'hint-77-6271716274699200098', 'hint-77-8674039191955472530', 'pitfall-77-2749027245853734162', 'pitfall-77-6429926260745718365']",6,0,0,False,False,False
+1229,863,True,True,True,True,True,True,True,"['guard-863-3110241768952062617', 'hint-863-4420649339396542987', 'pitfall-863-4423682770525396755', 'pitfall-863-6259117618726082419']",0,0,4,False,False,False
+1129,94,True,True,True,True,True,True,True,"['blind-94-1142926097139022260', 'blind-95-3310947641486396151', 'cand-95-5759611299740088557', 'guard-94-5706330444571391665', 'guard-94-5817360842645991498', 'hint-94-5454844056794895603', 'hint-94-6808296919680866298', 'hint-95-5907936575336688135', 'pitfall-94-1119298713768551635', 'pitfall-94-4333502757583149643', 'pitfall-94-4458007205116591892']",8,3,0,True,True,True
+1061,915,True,True,True,True,True,True,True,"['guard-915-5505018417782690758', 'hint-915-2297926868303715964', 'pitfall-915-1988423780206553072']",3,0,0,False,False,False
+342,327,True,True,True,True,True,True,True,"['blind-327-4603067818071552262', 'cand-327-8553196517194194335', 'hint-327-3012199065129083649', 'hint-327-4528130991497775195']",0,4,0,False,False,False
+428,347,True,True,True,True,True,True,True,"['guard-347-3231822083061943581', 'hint-347-7609618031933223128', 'pitfall-347-1909414123642164410', 'pitfall-347-5963499817700234130']",3,0,1,False,False,False
+603,502,True,True,True,True,True,True,True,[],0,0,0,False,False,False
+837,77,True,True,True,True,True,True,True,"['blind-77-4859214707739049497', 'cand-95-7732690237929204893', 'hint-77-8790990326746052971', 'hint-94-7278376456866242101']",1,3,0,True,True,True
+1017,862,True,True,True,True,True,True,True,[],0,0,0,True,True,True
+875,770,True,True,True,True,True,True,True,['seed-910'],0,0,1,False,False,False
+1065,915,True,True,True,False,True,True,True,[],0,0,0,True,False,False
+1132,94,True,True,True,True,True,True,True,"['hint-94-5454844056794895603', 'hint-94-7543446848593092176', 'pitfall-94-4458007205116591892']",3,0,0,True,True,True
+1232,863,True,True,True,True,True,True,True,"['blind-863-4902636512247485291', 'guard-863-3110241768952062617', 'hint-863-4420649339396542987', 'hint-863-5143831357720802719', 'hint-863-7680165389882070274', 'pitfall-863-3374075942278139997', 'pitfall-863-6259117618726082419']",2,0,5,False,False,False
+343,327,True,True,True,True,True,True,True,['blind-327-4603067818071552262'],0,1,0,True,True,True
+1179,95,True,True,True,True,True,True,True,"['cand-95-5194430922141718516', 'cand-95-7732690237929204893', 'cand-95-7882059484291500372', 'hint-95-44902294748858938', 'hint-95-4715285485938227465', 'pitfall-95-3993872653019239786']",0,6,0,True,True,True
+880,770,True,True,True,True,True,True,True,"['cand-770-638199515920934119', 'pitfall-770-5122303506868763287', 'pitfall-770-6424863805472298119', 'pitfall-770-7491605730818130969']",1,2,1,True,True,True
+430,347,True,True,True,True,True,True,True,['seed-459'],1,0,0,False,False,False
+489,352,True,True,True,True,True,True,True,"['blind-352-7441109814994732212', 'guard-352-8861596206022450985', 'hint-352-3354814272575635747', 'pitfall-352-8881367014771358781']",2,0,2,False,False,False
+1361,79,True,True,True,True,True,True,True,[],0,0,0,False,True,False
+1235,863,True,True,True,True,True,True,True,"['blind-863-6029376495306639649', 'blind-863-8539774469001709140', 'cand-862-1661072772299129651', 'hint-862-1405133312613939756', 'hint-863-6222104920350980705', 'pitfall-862-7543635164514332937', 'pitfall-863-8383840434846856043']",2,2,3,False,True,True
+1029,862,True,True,True,True,True,True,True,"['blind-862-4297136031601513649', 'blind-862-5691665084168364812', 'hint-862-1837887519828208470', 'pitfall-862-3218726156925606010']",0,1,3,False,True,False
+1066,915,True,True,True,True,True,True,True,"['blind-915-5628388944922361918', 'blind-915-6482361870127709022', 'hint-915-2231341986919330113']",1,2,0,False,True,True
+1140,94,True,True,True,True,True,True,True,"['guard-94-7073780007200958283', 'hint-94-8117009643626410023', 'pitfall-94-8837922020318398342']",0,0,3,True,False,True
+63,1333,True,True,True,True,True,True,True,"['blind-1333-8703468723568658373', 'hint-1333-8099297659893957850']",1,0,1,False,False,False
+141,200,True,True,True,True,True,True,True,"['blind-200-1141564890726783161', 'blind-200-4012621885868663364', 'hint-200-2544818441187161473', 'hint-200-8201634955047359048']",0,0,4,False,False,False
+345,327,True,True,True,True,True,True,True,"['hint-327-4528130991497775195', 'hint-327-6119233296852092656', 'pitfall-327-9110905060906513995']",0,2,1,False,False,False
+490,352,True,True,True,True,True,True,True,"['seed-1303', 'seed-482', 'seed-483', 'seed-484', 'seed-487']",0,0,5,False,False,False
+1067,915,True,True,True,True,True,True,True,"['blind-915-6482361870127709022', 'hint-915-2231341986919330113', 'hint-915-8901919800919581777', 'pitfall-915-3963284539217860468']",0,4,0,True,True,True
+1030,862,True,True,True,True,True,True,True,"['hint-862-1837887519828208470', 'pitfall-862-40496979137783706', 'pitfall-862-5066281613105553800']",0,1,2,False,True,True
+1236,863,True,True,True,True,True,True,True,[],0,0,0,True,True,False

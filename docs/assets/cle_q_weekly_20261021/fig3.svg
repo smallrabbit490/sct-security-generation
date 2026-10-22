@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1000" height="560" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="560"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-560)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="560" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="40" y="514" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1028) scale(1,-1)">图3 旧298题比较中没有稳定Q收益</text>
+			<text x="40" y="481" style="font-family: Microsoft YaHei; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,962) scale(1,-1)">同一个旧M1状态  最多三张  纵列为四种选卡方式</text>
+			<g transform="">
+				<path d="M 285,130 L 285,440 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 0.6;"/>
+				<path d="M 405,130 L 405,440 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 0.6;"/>
+				<path d="M 525,130 L 525,440 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 0.6;"/>
+				<path d="M 645,130 L 645,440 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 0.6;"/>
+				<path d="M 765,130 L 765,440 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 0.6;"/>
+				<path d="M 885,130 L 885,440 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 0.6;"/>
+				<g transform="">
+					<rect x="285.0" y="142.91666666666666" width="201.34228187919462" height="51.66666666666666" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,49%,63%); fill-rule: evenodd;"/>
+					<rect x="285.0" y="220.41666666666666" width="205.36912751677852" height="51.66666666666666" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,49%,63%); fill-rule: evenodd;"/>
+					<rect x="285.0" y="297.9166666666667" width="209.39597315436242" height="51.666666666666686" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,49%,63%); fill-rule: evenodd;"/>
+					<rect x="285.0" y="375.4166666666667" width="195.3020134228188" height="51.666666666666686" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,49%,63%); fill-rule: evenodd;"/>
+					<g transform=""/>
+				</g>
+				<g transform="">
+					<g transform=""/>
+					<g transform=""/>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,273,168.75)">
+							<text x="-131.72509765625" y="-6.800000000000001" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-13) scale(1,-1)">Q3 同CWE打乱Q</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,273,246.25)">
+							<text x="-76.70751953125" y="-6.800000000000001" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-13) scale(1,-1)">Q2 学习Q</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,273,323.75)">
+							<text x="-96.853515625" y="-6.800000000000001" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-13) scale(1,-1)">Q1 纯相似度</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,273,401.25)">
+							<text x="-143.29638671875" y="-6.800000000000001" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-13) scale(1,-1)">Q0 原CLE模型选卡</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 285,130 L 885,130 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 285,130 L 285,125 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 405,130 L 405,125 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 525,130 L 525,125 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 645,130 L 645,125 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 765,130 L 765,125 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 885,130 L 885,125 Z" style="stroke: rgb(89%,90%,92%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,285,125)">
+							<text x="-3.8117675781250004" y="-13.0" style="font-family: Microsoft YaHei; font-size: 13px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-26) scale(1,-1)">0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,405,125)">
+							<text x="-7.623535156250001" y="-13.0" style="font-family: Microsoft YaHei; font-size: 13px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-26) scale(1,-1)">20</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,525,125)">
+							<text x="-7.623535156250001" y="-13.0" style="font-family: Microsoft YaHei; font-size: 13px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-26) scale(1,-1)">40</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,645,125)">
+							<text x="-7.623535156250001" y="-13.0" style="font-family: Microsoft YaHei; font-size: 13px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-26) scale(1,-1)">60</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,765,125)">
+							<text x="-7.623535156250001" y="-13.0" style="font-family: Microsoft YaHei; font-size: 13px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-26) scale(1,-1)">80</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,885,125)">
+							<text x="-11.435302734375002" y="-13.0" style="font-family: Microsoft YaHei; font-size: 13px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-26) scale(1,-1)">100</text>
+						</g>
+					</g>
+				</g>
+			</g>
+			<text x="496.3422818791946" y="163.75" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,327) scale(1,-1)">100/298  33.56%</text>
+			<text x="500.3691275167786" y="241.25" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,482) scale(1,-1)">102/298  34.23%</text>
+			<text x="504.3959731543624" y="318.75" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,637) scale(1,-1)">104/298  34.90%</text>
+			<text x="490.3020134228188" y="396.25" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,792) scale(1,-1)">97/298  32.55%</text>
+			<text x="40" y="78" style="font-family: Microsoft YaHei; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,156) scale(1,-1)">横轴为Joint率  即功能和安全同时通过的比例</text>
+			<text x="40" y="53" style="font-family: Microsoft YaHei; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,106) scale(1,-1)">Q2仅296题完整测量  统一298分母中缺测不计通过</text>
+			<text x="40" y="28" style="font-family: Microsoft YaHei; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,56) scale(1,-1)">共同完整题的Q收益区间均跨0  仍容许收益或损失</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "checked": 303,
+  "eligible": 303,
+  "failures": [],
+  "non_discriminating_original_safety_tasks": [
+    "75",
+    "78",
+    "77",
+    "79",
+    "80"
+  ],
+  "negative_timeout_tasks": [
+    "1260",
+    "81"
+  ],
+  "API_calls": 0,
+  "fresh_positive_negative_controls": true
+}

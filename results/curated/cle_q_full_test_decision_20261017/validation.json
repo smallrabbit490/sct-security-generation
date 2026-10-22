@@ -1,0 +1,9 @@
+{
+  "decision_state_tests_passed": 11,
+  "decision_state_tests_failed": 0,
+  "new_model_calls": 0,
+  "new_embedding_calls": 0,
+  "new_generation_runs": 0,
+  "human_labels_written": false,
+  "original_study_files_modified": false
+}

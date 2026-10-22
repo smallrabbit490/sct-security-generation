@@ -1,0 +1,103 @@
+{
+  "protocol": "cle-q-shared-initial8-v1",
+  "role": "D_gate_controlled_mechanism_development_only",
+  "development": [
+    1341,
+    1000,
+    1013,
+    1055,
+    340,
+    777,
+    1001,
+    1015
+  ],
+  "confirmation": [],
+  "arms": [
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "rows": {
+    "1341": {
+      "family_id": "694af4fba622",
+      "cwe": "74"
+    },
+    "1000": {
+      "family_id": "8effd9406673",
+      "cwe": "79"
+    },
+    "1013": {
+      "family_id": "1047f2bc6f3b",
+      "cwe": "862"
+    },
+    "1055": {
+      "family_id": "b27afdfa4c6d",
+      "cwe": "915"
+    },
+    "340": {
+      "family_id": "4048652cb877",
+      "cwe": "327"
+    },
+    "777": {
+      "family_id": "8ac9f3ea0eb2",
+      "cwe": "74"
+    },
+    "1001": {
+      "family_id": "bf1c4709bade",
+      "cwe": "79"
+    },
+    "1015": {
+      "family_id": "ef36f1232121",
+      "cwe": "862"
+    }
+  },
+  "input_memory": "translation_work\\diagnostics\\20261016\\cle_memory_q\\full_dgrow\\frozen\\m_star_q.jsonl",
+  "input_pools": "configs\\cle_memory_q_autonomous_20261015\\pools.recovered.json",
+  "old_confirmation_preserved": [
+    72,
+    129,
+    160,
+    371,
+    439,
+    490,
+    1317,
+    1322,
+    112,
+    141,
+    343,
+    448,
+    492,
+    615,
+    672,
+    133,
+    161,
+    338,
+    428,
+    471,
+    1318,
+    639,
+    119,
+    166
+  ],
+  "selection": "First 8 qualified distinct families in native CWE/string-ID rotation, excluding all prior evaluation and reserved confirmation families; no Q/model-outcome screening",
+  "parameters": {
+    "model": "deepseek-v3.2",
+    "thinking": "disabled",
+    "max_tokens": 4096,
+    "embedding_model": "text-embedding-3-large",
+    "delta": 0.7613717780938312,
+    "alpha": 0.3,
+    "lambda_q": 0.5
+  },
+  "shared_initial": true,
+  "shuffle_scope": "cwe",
+  "shuffle_seed": 20261015,
+  "workers": 4,
+  "evaluation_progression_gate": {
+    "min_changed_tasks_Q2": 3,
+    "min_changed_new_card_adopted_tasks_Q2": 2,
+    "workflow_errors_each_arm_max": 0
+  },
+  "scope": "8 shared initial calls, 24 P7 rollouts, max 48 code validations; fixed Q; no automatic escalation",
+  "stopping": "Report measured intervention and paired Joint/F outcomes; no new learning, confirmation, full CLE or Base/Plus regardless of scores"
+}

@@ -1,0 +1,1705 @@
+{
+  "protocol": "cle-q-autonomous-v2",
+  "role": "PLT_development_only",
+  "manifest": {
+    "protocol": "cle-q-autonomous-v2",
+    "learning": [
+      83,
+      104,
+      149,
+      375,
+      432,
+      480,
+      619,
+      675
+    ],
+    "development": [
+      63,
+      103,
+      172,
+      364,
+      455,
+      1306,
+      606,
+      657,
+      87,
+      130,
+      159,
+      342,
+      430,
+      498,
+      627,
+      1323,
+      1259,
+      125,
+      164,
+      349,
+      443,
+      489,
+      617,
+      666
+    ],
+    "confirmation": [
+      72,
+      129,
+      160,
+      371,
+      439,
+      490,
+      1317,
+      1322,
+      112,
+      141,
+      343,
+      448,
+      492,
+      615,
+      672,
+      133,
+      161,
+      338,
+      428,
+      471,
+      1318,
+      639,
+      119,
+      166
+    ],
+    "excluded_previous_probe_families": [
+      "26e03da64df8",
+      "41b75c30162b",
+      "5311715b9c8c",
+      "97568f7c3ab1",
+      "aa4e8b63e818",
+      "b1be3d02111c"
+    ],
+    "cwes": [
+      "1333",
+      "179",
+      "200",
+      "327",
+      "347",
+      "352",
+      "502",
+      "601"
+    ],
+    "rows": {
+      "83": {
+        "family_id": "a5cb91bac5e2",
+        "cwe": "1333"
+      },
+      "104": {
+        "family_id": "2a2bc9dcbf55",
+        "cwe": "179"
+      },
+      "149": {
+        "family_id": "b1319639d07a",
+        "cwe": "200"
+      },
+      "375": {
+        "family_id": "edc972b9780f",
+        "cwe": "327"
+      },
+      "432": {
+        "family_id": "deb78719c03c",
+        "cwe": "347"
+      },
+      "480": {
+        "family_id": "fb4318f4c3ce",
+        "cwe": "352"
+      },
+      "619": {
+        "family_id": "24aeb959f350",
+        "cwe": "502"
+      },
+      "675": {
+        "family_id": "63c142375d28",
+        "cwe": "601"
+      },
+      "63": {
+        "family_id": "6fbcc772170d",
+        "cwe": "1333"
+      },
+      "103": {
+        "family_id": "ae44044347c3",
+        "cwe": "179"
+      },
+      "172": {
+        "family_id": "4f2d8f9b918d",
+        "cwe": "200"
+      },
+      "364": {
+        "family_id": "f597e4620d22",
+        "cwe": "327"
+      },
+      "455": {
+        "family_id": "4b8cb0f8aff1",
+        "cwe": "347"
+      },
+      "1306": {
+        "family_id": "c491a96333c7",
+        "cwe": "352"
+      },
+      "606": {
+        "family_id": "768266d3cc92",
+        "cwe": "502"
+      },
+      "657": {
+        "family_id": "2b4dc69294a4",
+        "cwe": "601"
+      },
+      "87": {
+        "family_id": "3db7e7372b49",
+        "cwe": "1333"
+      },
+      "130": {
+        "family_id": "5c7bfe257436",
+        "cwe": "179"
+      },
+      "159": {
+        "family_id": "e683b1265cd8",
+        "cwe": "200"
+      },
+      "342": {
+        "family_id": "0b3f7e6e2a7a",
+        "cwe": "327"
+      },
+      "430": {
+        "family_id": "e096886b5f87",
+        "cwe": "347"
+      },
+      "498": {
+        "family_id": "60d85fdd66a2",
+        "cwe": "352"
+      },
+      "627": {
+        "family_id": "7231c95b629d",
+        "cwe": "502"
+      },
+      "1323": {
+        "family_id": "0871c2ec5cd8",
+        "cwe": "601"
+      },
+      "1259": {
+        "family_id": "5aeb6e97473a",
+        "cwe": "1333"
+      },
+      "125": {
+        "family_id": "885e9ab65610",
+        "cwe": "179"
+      },
+      "164": {
+        "family_id": "eae93c4cb8e1",
+        "cwe": "200"
+      },
+      "349": {
+        "family_id": "433aa1a34185",
+        "cwe": "327"
+      },
+      "443": {
+        "family_id": "7e0acd228b50",
+        "cwe": "347"
+      },
+      "489": {
+        "family_id": "cf9e2b4681b9",
+        "cwe": "352"
+      },
+      "617": {
+        "family_id": "89015705883e",
+        "cwe": "502"
+      },
+      "666": {
+        "family_id": "5a6a83dbb919",
+        "cwe": "601"
+      },
+      "72": {
+        "family_id": "298370e14e50",
+        "cwe": "1333"
+      },
+      "129": {
+        "family_id": "a7b1d3b6dcc4",
+        "cwe": "179"
+      },
+      "160": {
+        "family_id": "9bc5c0670533",
+        "cwe": "200"
+      },
+      "371": {
+        "family_id": "67dd968421d7",
+        "cwe": "327"
+      },
+      "439": {
+        "family_id": "21ea8cf62e30",
+        "cwe": "347"
+      },
+      "490": {
+        "family_id": "eea574de5518",
+        "cwe": "352"
+      },
+      "1317": {
+        "family_id": "6254ceb5c539",
+        "cwe": "502"
+      },
+      "1322": {
+        "family_id": "accd39ecb618",
+        "cwe": "601"
+      },
+      "112": {
+        "family_id": "34f83749efdf",
+        "cwe": "179"
+      },
+      "141": {
+        "family_id": "e2474efbbc9c",
+        "cwe": "200"
+      },
+      "343": {
+        "family_id": "7127837d0764",
+        "cwe": "327"
+      },
+      "448": {
+        "family_id": "5026483ed2eb",
+        "cwe": "347"
+      },
+      "492": {
+        "family_id": "e98a6affb7a5",
+        "cwe": "352"
+      },
+      "615": {
+        "family_id": "26fe944112b6",
+        "cwe": "502"
+      },
+      "672": {
+        "family_id": "4934bed46036",
+        "cwe": "601"
+      },
+      "133": {
+        "family_id": "37b419700258",
+        "cwe": "179"
+      },
+      "161": {
+        "family_id": "3ac38515391b",
+        "cwe": "200"
+      },
+      "338": {
+        "family_id": "1f822ff36d2a",
+        "cwe": "327"
+      },
+      "428": {
+        "family_id": "045aba9717ca",
+        "cwe": "347"
+      },
+      "471": {
+        "family_id": "2cdebbea3921",
+        "cwe": "352"
+      },
+      "1318": {
+        "family_id": "167bebe21100",
+        "cwe": "502"
+      },
+      "639": {
+        "family_id": "f8663a5390f0",
+        "cwe": "601"
+      },
+      "119": {
+        "family_id": "c6fd4d93006f",
+        "cwe": "179"
+      },
+      "166": {
+        "family_id": "cdfebd3c6ab6",
+        "cwe": "200"
+      }
+    },
+    "selection": "remote sample_families; one representative per family, CWE rotation; evaluation restricted to learning-covered CWE",
+    "confirmation_gate": "development Q2 Joint > Q1; functional pass count Q2 >= Q1; Q2 measured>=23/24; no higher Q2 workflow error count",
+    "primary": "Q2-Q1 final Joint",
+    "placebo": "Q2-Q3 Q-shuffle seed 20261015",
+    "learning_workers": 1,
+    "comparison_workers": 4,
+    "alpha": 0.3,
+    "lambda_q": 0.5,
+    "model": "deepseek-v3.2",
+    "embedding_model": "text-embedding-3-large",
+    "thinking": "disabled",
+    "max_tokens": 4096
+  },
+  "checks": {
+    "learn": {
+      "stage": "learn",
+      "rows": 8,
+      "tasks": 8,
+      "families": 8,
+      "schema": "cle-ablation-p7-with-ma-final-v1",
+      "native_statistics_recomputed": true,
+      "calls_and_tokens_matched": true,
+      "q_event_attribution_checked": true,
+      "status": "pass"
+    },
+    "compare": {
+      "stage": "compare",
+      "rows": 96,
+      "tasks": 24,
+      "families": 24,
+      "schema": "cle-ablation-p7-with-ma-final-v1",
+      "native_statistics_recomputed": true,
+      "calls_and_tokens_matched": true,
+      "q_event_attribution_checked": true,
+      "status": "pass"
+    }
+  },
+  "learning_rows": 8,
+  "comparison_rows": 96,
+  "arms": {
+    "Q3": {
+      "n": 24,
+      "functional": 8,
+      "security": 15,
+      "joint": 5,
+      "measured": 24,
+      "first_joint": 5,
+      "errors": 2,
+      "calls": 172,
+      "total_tokens": 592821,
+      "seconds": 2404.2649504000583
+    },
+    "Q1": {
+      "n": 24,
+      "functional": 6,
+      "security": 18,
+      "joint": 3,
+      "measured": 24,
+      "first_joint": 3,
+      "errors": 2,
+      "calls": 180,
+      "total_tokens": 639597,
+      "seconds": 2380.3501889999898
+    },
+    "Q2": {
+      "n": 24,
+      "functional": 8,
+      "security": 18,
+      "joint": 4,
+      "measured": 24,
+      "first_joint": 3,
+      "errors": 4,
+      "calls": 180,
+      "total_tokens": 658264,
+      "seconds": 2552.0821515999996
+    },
+    "Q0": {
+      "n": 24,
+      "functional": 9,
+      "security": 17,
+      "joint": 5,
+      "measured": 24,
+      "first_joint": 5,
+      "errors": 3,
+      "calls": 215,
+      "total_tokens": 1899940,
+      "seconds": 3033.976195899988
+    }
+  },
+  "paired_complete_measured": {
+    "Q3": {
+      "pairs": 24,
+      "measured_pairs": 24,
+      "wins": 2,
+      "losses": 0,
+      "p_exact": 0.5,
+      "functional_harms": 0,
+      "p_holm": 1
+    },
+    "Q2": {
+      "pairs": 24,
+      "measured_pairs": 24,
+      "wins": 1,
+      "losses": 0,
+      "p_exact": 1,
+      "functional_harms": 0,
+      "p_holm": 1
+    },
+    "Q0": {
+      "pairs": 24,
+      "measured_pairs": 24,
+      "wins": 2,
+      "losses": 0,
+      "p_exact": 0.5,
+      "functional_harms": 0,
+      "p_holm": 1
+    }
+  },
+  "primary_full_denominator_Q2_vs_Q1": {
+    "pairs": 24,
+    "unpaired": 0,
+    "old_only": 0,
+    "new_only": 1,
+    "p_exact_two_sided": 1.0,
+    "delta_percentage_points": 4.166666666666667,
+    "conservative_95_ci_percentage_points": [
+      -16.63617312043707,
+      23.793316215598686
+    ],
+    "functional_rescues": 2,
+    "functional_harms": 0,
+    "p_holm_two_planned": 1.0
+  },
+  "placebo_full_denominator_Q2_vs_Q3": {
+    "pairs": 24,
+    "unpaired": 0,
+    "old_only": 1,
+    "new_only": 0,
+    "p_exact_two_sided": 1.0,
+    "delta_percentage_points": -4.166666666666667,
+    "conservative_95_ci_percentage_points": [
+      -23.793316215598686,
+      16.63617312043707
+    ],
+    "functional_rescues": 1,
+    "functional_harms": 1,
+    "p_holm_two_planned": 1.0
+  },
+  "mechanism": [
+    {
+      "task_id": "63",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "63",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "blind-1333-4902636512247485291",
+        "pitfall-1333-3557470096494656103",
+        "pitfall-1333-3656052749691125700"
+      ],
+      "q_ids_same_query": [
+        "blind-1333-4902636512247485291",
+        "pitfall-1333-3557470096494656103",
+        "pitfall-1333-3656052749691125700"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "103",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "103",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "172",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "blind-200-1620221962012165754"
+      ],
+      "q_ids_same_query": [
+        "blind-200-1620221962012165754"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "172",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "hint-200-4829758864144983666",
+        "pitfall-200-5885687420316519908",
+        "blind-200-1620221962012165754"
+      ],
+      "q_ids_same_query": [
+        "hint-200-4829758864144983666",
+        "pitfall-200-5885687420316519908",
+        "blind-200-1620221962012165754"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "364",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "pitfall-327-1553519005939162205",
+        "blind-327-7716050524753459388",
+        "blind-327-8593650276137647774"
+      ],
+      "q_ids_same_query": [
+        "pitfall-327-1553519005939162205",
+        "blind-327-7716050524753459388",
+        "blind-327-8593650276137647774"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 2
+    },
+    {
+      "task_id": "455",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 3
+    },
+    {
+      "task_id": "455",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "1306",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "1306",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "606",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "seed-611",
+        "seed-633",
+        "cand-502-2884867450348772595"
+      ],
+      "q_ids_same_query": [
+        "seed-633",
+        "cand-502-2884867450348772595",
+        "seed-602"
+      ],
+      "set_changed": true,
+      "order_changed": true,
+      "visited_candidates": 2
+    },
+    {
+      "task_id": "606",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "hint-502-9221828655041060041",
+        "pitfall-502-3788521669358819407",
+        "blind-502-8129900557211162496"
+      ],
+      "q_ids_same_query": [
+        "hint-502-9221828655041060041",
+        "pitfall-502-3788521669358819407",
+        "blind-502-8129900557211162496"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "657",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "657",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "pitfall-601-6347724326266760684",
+        "hint-601-3502719812225164804",
+        "pitfall-601-8894392368790262426"
+      ],
+      "q_ids_same_query": [
+        "pitfall-601-6347724326266760684",
+        "hint-601-3502719812225164804",
+        "pitfall-601-8894392368790262426"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "87",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "hint-1333-2712231484534580811",
+        "hint-1333-1962473956307884958",
+        "pitfall-1333-1465610006318670494"
+      ],
+      "q_ids_same_query": [
+        "pitfall-1333-1465610006318670494",
+        "cand-1333-4003705983803461794",
+        "hint-1333-2712231484534580811"
+      ],
+      "set_changed": true,
+      "order_changed": true,
+      "visited_candidates": 3
+    },
+    {
+      "task_id": "130",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "pitfall-179-5856665165081377012",
+        "hint-179-1624482322512773181",
+        "hint-179-2641057612355738641"
+      ],
+      "q_ids_same_query": [
+        "pitfall-179-5856665165081377012",
+        "hint-179-1624482322512773181",
+        "hint-179-2641057612355738641"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "130",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "159",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "159",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "hint-200-5710611321666430154",
+        "pitfall-200-6571837767319683435",
+        "blind-200-4339336467080920947"
+      ],
+      "q_ids_same_query": [
+        "hint-200-5710611321666430154",
+        "pitfall-200-6571837767319683435",
+        "blind-200-4339336467080920947"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "342",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "pitfall-327-1647608197379019549",
+        "pitfall-327-7977881264306020349"
+      ],
+      "q_ids_same_query": [
+        "pitfall-327-1647608197379019549",
+        "pitfall-327-7977881264306020349"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "342",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "pitfall-327-2516411163311597246",
+        "hint-327-4528130991497775195",
+        "pitfall-327-1647608197379019549"
+      ],
+      "q_ids_same_query": [
+        "hint-327-6119233296852092656",
+        "pitfall-327-2516411163311597246",
+        "hint-327-4528130991497775195"
+      ],
+      "set_changed": true,
+      "order_changed": true,
+      "visited_candidates": 2
+    },
+    {
+      "task_id": "430",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 3
+    },
+    {
+      "task_id": "430",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "hint-347-1080860246723590833",
+        "hint-347-1657187340889295903",
+        "blind-347-7891981125696054376"
+      ],
+      "q_ids_same_query": [
+        "hint-347-1080860246723590833",
+        "hint-347-1657187340889295903",
+        "blind-347-7891981125696054376"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "498",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "498",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "627",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "hint-502-9221828655041060041",
+        "pitfall-502-5373914221790027759",
+        "blind-502-2743438159853928070"
+      ],
+      "q_ids_same_query": [
+        "hint-502-9221828655041060041",
+        "pitfall-502-5373914221790027759",
+        "blind-502-2743438159853928070"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "627",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "blind-502-8476565611246247174",
+        "pitfall-502-5373914221790027759",
+        "hint-502-3523063928316955033"
+      ],
+      "q_ids_same_query": [
+        "blind-502-8476565611246247174",
+        "pitfall-502-5373914221790027759",
+        "hint-502-3523063928316955033"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "1323",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "1323",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "blind-601-7891981125696054376",
+        "guard-601-202859579076163627",
+        "hint-601-3530955298027182176"
+      ],
+      "q_ids_same_query": [
+        "blind-601-7891981125696054376",
+        "guard-601-202859579076163627",
+        "hint-601-3530955298027182176"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "1259",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "cand-1333-4512746645651916414"
+      ],
+      "q_ids_same_query": [
+        "cand-1333-4512746645651916414"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "125",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "125",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "164",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 3
+    },
+    {
+      "task_id": "164",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ],
+      "q_ids_same_query": [
+        "blind-200-140999058858358603",
+        "pitfall-200-8309021425623226576",
+        "pitfall-200-4281592802977813019"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 2
+    },
+    {
+      "task_id": "349",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "pitfall-327-2516411163311597246",
+        "hint-327-4528130991497775195",
+        "hint-327-6329329040533104778"
+      ],
+      "q_ids_same_query": [
+        "cand-327-8553196517194194335",
+        "hint-327-6119233296852092656",
+        "pitfall-327-2516411163311597246"
+      ],
+      "set_changed": true,
+      "order_changed": true,
+      "visited_candidates": 2
+    },
+    {
+      "task_id": "349",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 2
+    },
+    {
+      "task_id": "443",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 3
+    },
+    {
+      "task_id": "443",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "489",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "489",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "blind-352-6703794512294707175",
+        "blind-352-7441109814994732212",
+        "hint-352-3354814272575635747"
+      ],
+      "q_ids_same_query": [
+        "blind-352-6703794512294707175",
+        "blind-352-7441109814994732212",
+        "hint-352-3354814272575635747"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "617",
+      "attempt": 0,
+      "similarity_ids_same_query": [
+        "blind-502-1870086129301104184",
+        "blind-502-2743438159853928070",
+        "hint-502-9221828655041060041"
+      ],
+      "q_ids_same_query": [
+        "blind-502-1870086129301104184",
+        "blind-502-2743438159853928070",
+        "hint-502-9221828655041060041"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "617",
+      "attempt": 1,
+      "similarity_ids_same_query": [
+        "pitfall-502-3788521669358819407",
+        "hint-502-9221828655041060041",
+        "blind-502-1870086129301104184"
+      ],
+      "q_ids_same_query": [
+        "pitfall-502-3788521669358819407",
+        "hint-502-9221828655041060041",
+        "blind-502-1870086129301104184"
+      ],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    },
+    {
+      "task_id": "666",
+      "attempt": 0,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 0
+    },
+    {
+      "task_id": "666",
+      "attempt": 1,
+      "similarity_ids_same_query": [],
+      "q_ids_same_query": [],
+      "set_changed": false,
+      "order_changed": false,
+      "visited_candidates": 1
+    }
+  ],
+  "exposure": {
+    "Q3": {
+      "attempts": 43,
+      "retrieved": 56,
+      "adopted": 21,
+      "adoption_fraction": 0.375,
+      "workflow_incomplete": 2
+    },
+    "Q1": {
+      "attempts": 45,
+      "retrieved": 65,
+      "adopted": 23,
+      "adoption_fraction": 0.35384615384615387,
+      "workflow_incomplete": 2
+    },
+    "Q2": {
+      "attempts": 45,
+      "retrieved": 61,
+      "adopted": 25,
+      "adoption_fraction": 0.4098360655737705,
+      "workflow_incomplete": 4
+    },
+    "Q0": {
+      "attempts": 43,
+      "retrieved": 117,
+      "adopted": 70,
+      "adoption_fraction": 0.5982905982905983,
+      "workflow_incomplete": 3
+    }
+  },
+  "rewards": {
+    "positive": 8,
+    "negative": 13,
+    "skipped": 4,
+    "visited_cards": 20
+  },
+  "confirmation_gate_passed": false,
+  "cost": {
+    "learn": {
+      "llm": {
+        "model": "deepseek-v3.2",
+        "pricing": {
+          "input": 0.0012,
+          "output": 0.0018
+        },
+        "pricing_source": "ChatAnywhere 费用标准 https://chatanywhere.apifox.cn/doc-2694962 (2026-09-18)",
+        "currency": "CA元",
+        "by_label": {
+          "Q0.pipeline": {
+            "calls": 70,
+            "prompt_tokens": 534133,
+            "completion_tokens": 62352,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 596485,
+            "cost_ca": 0.753193
+          }
+        },
+        "total": {
+          "calls": 70,
+          "prompt_tokens": 534133,
+          "completion_tokens": 62352,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 596485,
+          "cost_ca": 0.753193
+        },
+        "note": "usage 缺失的调用计入 usage_missing，未按 0 计费；errors 为调用失败的次数（无 usage）"
+      },
+      "embedding": {
+        "calls": 14,
+        "failures": 0,
+        "prompt_tokens": 20527,
+        "total_tokens": 20527,
+        "cache_hits": 1933,
+        "embedded_texts": 14,
+        "usage_missing_calls": 0
+      },
+      "by_arm": {
+        "Q0": {
+          "embedding": null,
+          "seconds": 992.8454849999835
+        }
+      },
+      "accounting": "LLM calls/tokens are exact per row and arm. Embedding/cache usage is shared; concurrent increments are not assigned to arms. Per-arm seconds sum job latency; wall time is separate. Currency uses old repository estimates, not invoice."
+    },
+    "compare": {
+      "llm": {
+        "model": "deepseek-v3.2",
+        "pricing": {
+          "input": 0.0012,
+          "output": 0.0018
+        },
+        "pricing_source": "ChatAnywhere 费用标准 https://chatanywhere.apifox.cn/doc-2694962 (2026-09-18)",
+        "currency": "CA元",
+        "by_label": {
+          "Q0.pipeline": {
+            "calls": 215,
+            "prompt_tokens": 1711522,
+            "completion_tokens": 188418,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 1899940,
+            "cost_ca": 2.392979
+          },
+          "Q1.pipeline": {
+            "calls": 180,
+            "prompt_tokens": 455282,
+            "completion_tokens": 184315,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 639597,
+            "cost_ca": 0.878105
+          },
+          "Q2.pipeline": {
+            "calls": 180,
+            "prompt_tokens": 464584,
+            "completion_tokens": 193680,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 658264,
+            "cost_ca": 0.906125
+          },
+          "Q3.pipeline": {
+            "calls": 172,
+            "prompt_tokens": 414288,
+            "completion_tokens": 178533,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0,
+            "total_tokens": 592821,
+            "cost_ca": 0.818505
+          }
+        },
+        "total": {
+          "calls": 747,
+          "prompt_tokens": 3045676,
+          "completion_tokens": 744946,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0,
+          "total_tokens": 3790622,
+          "cost_ca": 4.995714
+        },
+        "note": "usage 缺失的调用计入 usage_missing，未按 0 计费；errors 为调用失败的次数（无 usage）"
+      },
+      "embedding": {
+        "calls": 176,
+        "failures": 0,
+        "prompt_tokens": 235340,
+        "total_tokens": 235340,
+        "cache_hits": 1933,
+        "embedded_texts": 176,
+        "usage_missing_calls": 0
+      },
+      "by_arm": {
+        "Q3": {
+          "embedding": null,
+          "seconds": 2404.2649504000583
+        },
+        "Q1": {
+          "embedding": null,
+          "seconds": 2380.3501889999898
+        },
+        "Q2": {
+          "embedding": null,
+          "seconds": 2552.0821515999996
+        },
+        "Q0": {
+          "embedding": null,
+          "seconds": 3033.976195899988
+        }
+      },
+      "accounting": "LLM calls/tokens are exact per row and arm. Embedding/cache usage is shared; concurrent increments are not assigned to arms. Per-arm seconds sum job latency; wall time is separate. Currency uses old repository estimates, not invoice."
+    }
+  },
+  "by_cwe": {
+    "1333": {
+      "Q3": {
+        "n": 3,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 3
+      }
+    },
+    "179": {
+      "Q3": {
+        "n": 3,
+        "functional": 3,
+        "security": 0,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 3,
+        "security": 0,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 3,
+        "security": 0,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 3,
+        "security": 0,
+        "joint": 0,
+        "measured": 3
+      }
+    },
+    "200": {
+      "Q3": {
+        "n": 3,
+        "functional": 0,
+        "security": 2,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      }
+    },
+    "327": {
+      "Q3": {
+        "n": 3,
+        "functional": 1,
+        "security": 3,
+        "joint": 1,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 1,
+        "security": 3,
+        "joint": 1,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 1,
+        "security": 3,
+        "joint": 1,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 1,
+        "security": 3,
+        "joint": 1,
+        "measured": 3
+      }
+    },
+    "347": {
+      "Q3": {
+        "n": 3,
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 0,
+        "security": 2,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 1,
+        "security": 2,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 1,
+        "security": 1,
+        "joint": 0,
+        "measured": 3
+      }
+    },
+    "352": {
+      "Q3": {
+        "n": 3,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 0,
+        "security": 2,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 1,
+        "security": 2,
+        "joint": 1,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 2,
+        "security": 2,
+        "joint": 2,
+        "measured": 3
+      }
+    },
+    "502": {
+      "Q3": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      }
+    },
+    "601": {
+      "Q3": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q1": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q2": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      },
+      "Q0": {
+        "n": 3,
+        "functional": 0,
+        "security": 3,
+        "joint": 0,
+        "measured": 3
+      }
+    }
+  },
+  "mechanism_changed_tasks": 4,
+  "q_added_cards_actually_adopted": [
+    {
+      "task_id": "606",
+      "attempt": 0,
+      "ids": [
+        "seed-602"
+      ]
+    },
+    {
+      "task_id": "87",
+      "attempt": 0,
+      "ids": [
+        "cand-1333-4003705983803461794"
+      ]
+    }
+  ],
+  "q_added_adopted_tasks": 2,
+  "environment": {
+    "Docker": true,
+    "images": {
+      "safecoder-python-validator:local": {
+        "exists": false,
+        "error": "Error response from daemon: No such image: safecoder-python-validator:local"
+      },
+      "porta-bench-runtime-python3:latest": {
+        "exists": false,
+        "error": "Error response from daemon: No such image: porta-bench-runtime-python3:latest"
+      }
+    },
+    "frozen_runtime_ready": false,
+    "expected_definition": "docker/python-validator/Dockerfile; parent not in this repository",
+    "substitute_image_used": false,
+    "plt_python": "3.12.14",
+    "platform": "win32",
+    "numpy": "2.3.5",
+    "pytest": "8.4.2"
+  },
+  "frozen_consumer": {
+    "status": "offline_pass",
+    "memory_entries": 1939,
+    "q_visited": 20,
+    "delta": 0.7578450819762121,
+    "model": "deepseek-v3.2",
+    "embedding_model": "text-embedding-3-large",
+    "Q_modified": false,
+    "model_calls": 0,
+    "Base_Plus_read": false,
+    "runtime_validation": "not performed; original validator and parent images absent"
+  },
+  "source_run_metadata": {
+    "learn": {
+      "args": {
+        "stage": "learn",
+        "memory": "docs\\cle_evidence_package_20261015\\experience_pool_1939.jsonl",
+        "pools": "translation_work\\diagnostics\\20261015\\cle_memory_q\\batch2_inputs\\pools.recovered.json",
+        "out": "translation_work\\diagnostics\\20261015\\cle_memory_q\\autonomous_v2\\learn",
+        "calibration": null,
+        "limit": 2,
+        "manifest": "translation_work\\diagnostics\\20261015\\cle_memory_q\\autonomous_v2\\manifest.json",
+        "split": "learning",
+        "arms": [
+          "Q0",
+          "Q1",
+          "Q2"
+        ],
+        "workers": 1,
+        "shuffle_seed": 20261015,
+        "max_tokens": 4096,
+        "embedding_model": "text-embedding-3-large",
+        "embedding_cache": "D:\\Agent\\sct-security-generation\\translation_work\\cache\\embeddings\\cle.sqlite3",
+        "thinking": "disabled",
+        "alpha": 0.3,
+        "lambda_q": 0.5
+      },
+      "model": "deepseek-v3.2",
+      "temperature": 0,
+      "workers": 1,
+      "timeout": 60,
+      "embedding_timeout": 120,
+      "validation_timeout": 20,
+      "status": "completed",
+      "task_ids": [
+        83,
+        104,
+        149,
+        375,
+        432,
+        480,
+        619,
+        675
+      ],
+      "backend": "local_python_isolated",
+      "workflow_arm": "P7",
+      "pool": "D_grow",
+      "git_commit": "5ca7b98128ca84faef79579d4c49e7b6c4fc3dd6",
+      "source_sha256": {
+        "methods\\cle_ablation\\run_memory_q.py": "7708f627694f624983e083a43b5e068021297080a738492b08416b5d08533e18",
+        "methods\\cle_ablation\\runner.py": "92c129112ec1d2b4aa4d9227efc5a1b7abce135ba6a0f5751e7c60d049bf1740",
+        "methods\\direction_screening\\protocol.py": "707551f7b40b98ad3b3d46cfb894dc06364c9fb5ee6b8dc3e52a0916aad78fd2",
+        "methods\\sct_trajectory\\context_pipeline.py": "f8554fe92231d19f70c2437acab806776c6ea7dff9984b1fa5ec71fb5458fcad",
+        "methods\\sct_trajectory\\agent_pipeline.py": "f99c9ab822fa86ea0c61969b561d4bafd94d2d587e38665a3f726284f12b9684",
+        "methods\\sct_trajectory\\retriever.py": "d5593776ac53f12348151059d4a3a9c9020920d878df6f3ab4d78b612eb081af",
+        "methods\\sct_trajectory\\semantic_retrieval.py": "892544ab2525d4fe787a29df5635863677ef195b2a70f007a5ff1f7179809709",
+        "methods\\sct_trajectory\\closed_loop.py": "e987d13ba03252e9ccfd19d88d5c2a50fcdcb434176a5ba1b219eaf46b5dc74d",
+        "methods\\sct_trajectory\\run_closed_loop.py": "3ef0b271546ec0e59c76b5229cfec8b3898572ed30f5f89eb7849268afcb9b12",
+        "methods\\sct_trajectory\\hsk_tree.py": "8e113f09c36c8a8d903d654623a23d2b76ddef6ce0b4f5056714eeb77753f88c",
+        "methods\\sct_trajectory\\memory_q.py": "e2361761c353bbfbe037c32610e739fe41bc43bb2eeb628213fe86e41ee99eaf"
+      },
+      "dataset_sha256": "4779e09d14fb2a2a1a6912cca9e6403fea02470b9963b7d5a438d371c9416839",
+      "family_manifest_sha256": "6bca9c7eee8a1e93d11256693b24eff73626854bcddcb52ba8bf65008ecf5267",
+      "input_memory_sha256": "a643c07d4b847e4d40cfbef3e8edbd2158d73618077093a70e2bb75b1e7a0dd9",
+      "pools_sha256": "60048e9ef7a4b4c142f21fa5d4c64cce9775506575f9be612f86ad0305813fdb",
+      "output_schema_version": "cle-ablation-p7-with-ma-final-v1",
+      "output_schema": [
+        "input_memory.jsonl",
+        "input_pools.json",
+        "rows.jsonl",
+        "memory_q_events.jsonl",
+        "summary.json",
+        "cost.json",
+        "run_metadata.json",
+        "report.md",
+        "source_snapshot/",
+        "calibration.json",
+        "frozen/m_star_q.jsonl"
+      ],
+      "independent_heldout": false,
+      "final_test_access": false,
+      "q_update_pool": "D_grow only",
+      "selection": "PLT first Joint stop else last attempt, maximum 2",
+      "rows": 8,
+      "memory_content_unchanged": true,
+      "q_unchanged": false,
+      "delta": 0.7578450819762121,
+      "wall_seconds": 993.0678849999967
+    },
+    "compare": {
+      "args": {
+        "stage": "compare",
+        "memory": "translation_work\\diagnostics\\20261015\\cle_memory_q\\autonomous_v2\\learn\\frozen\\m_star_q.jsonl",
+        "pools": "translation_work\\diagnostics\\20261015\\cle_memory_q\\batch2_inputs\\pools.recovered.json",
+        "out": "translation_work\\diagnostics\\20261015\\cle_memory_q\\autonomous_v2\\compare",
+        "calibration": "translation_work\\diagnostics\\20261015\\cle_memory_q\\autonomous_v2\\learn\\calibration.json",
+        "limit": 2,
+        "manifest": "translation_work\\diagnostics\\20261015\\cle_memory_q\\autonomous_v2\\manifest.json",
+        "split": "development",
+        "arms": [
+          "Q0",
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "workers": 4,
+        "shuffle_seed": 20261015,
+        "max_tokens": 4096,
+        "embedding_model": "text-embedding-3-large",
+        "embedding_cache": "D:\\Agent\\sct-security-generation\\translation_work\\cache\\embeddings\\cle.sqlite3",
+        "thinking": "disabled",
+        "alpha": 0.3,
+        "lambda_q": 0.5
+      },
+      "model": "deepseek-v3.2",
+      "temperature": 0,
+      "workers": 4,
+      "timeout": 60,
+      "embedding_timeout": 120,
+      "validation_timeout": 20,
+      "status": "completed",
+      "task_ids": [
+        63,
+        103,
+        172,
+        364,
+        455,
+        1306,
+        606,
+        657,
+        87,
+        130,
+        159,
+        342,
+        430,
+        498,
+        627,
+        1323,
+        1259,
+        125,
+        164,
+        349,
+        443,
+        489,
+        617,
+        666
+      ],
+      "backend": "local_python_isolated",
+      "workflow_arm": "P7",
+      "pool": "D_gate",
+      "git_commit": "5ca7b98128ca84faef79579d4c49e7b6c4fc3dd6",
+      "source_sha256": {
+        "methods\\cle_ablation\\run_memory_q.py": "7708f627694f624983e083a43b5e068021297080a738492b08416b5d08533e18",
+        "methods\\cle_ablation\\runner.py": "92c129112ec1d2b4aa4d9227efc5a1b7abce135ba6a0f5751e7c60d049bf1740",
+        "methods\\direction_screening\\protocol.py": "707551f7b40b98ad3b3d46cfb894dc06364c9fb5ee6b8dc3e52a0916aad78fd2",
+        "methods\\sct_trajectory\\context_pipeline.py": "f8554fe92231d19f70c2437acab806776c6ea7dff9984b1fa5ec71fb5458fcad",
+        "methods\\sct_trajectory\\agent_pipeline.py": "f99c9ab822fa86ea0c61969b561d4bafd94d2d587e38665a3f726284f12b9684",
+        "methods\\sct_trajectory\\retriever.py": "d5593776ac53f12348151059d4a3a9c9020920d878df6f3ab4d78b612eb081af",
+        "methods\\sct_trajectory\\semantic_retrieval.py": "892544ab2525d4fe787a29df5635863677ef195b2a70f007a5ff1f7179809709",
+        "methods\\sct_trajectory\\closed_loop.py": "e987d13ba03252e9ccfd19d88d5c2a50fcdcb434176a5ba1b219eaf46b5dc74d",
+        "methods\\sct_trajectory\\run_closed_loop.py": "3ef0b271546ec0e59c76b5229cfec8b3898572ed30f5f89eb7849268afcb9b12",
+        "methods\\sct_trajectory\\hsk_tree.py": "8e113f09c36c8a8d903d654623a23d2b76ddef6ce0b4f5056714eeb77753f88c",
+        "methods\\sct_trajectory\\memory_q.py": "e2361761c353bbfbe037c32610e739fe41bc43bb2eeb628213fe86e41ee99eaf"
+      },
+      "dataset_sha256": "4779e09d14fb2a2a1a6912cca9e6403fea02470b9963b7d5a438d371c9416839",
+      "family_manifest_sha256": "6bca9c7eee8a1e93d11256693b24eff73626854bcddcb52ba8bf65008ecf5267",
+      "input_memory_sha256": "43c653bb502189a38686826a9be6eeaf49a01d35f03bf9ea5f5a7486156f2fbf",
+      "pools_sha256": "60048e9ef7a4b4c142f21fa5d4c64cce9775506575f9be612f86ad0305813fdb",
+      "output_schema_version": "cle-ablation-p7-with-ma-final-v1",
+      "output_schema": [
+        "input_memory.jsonl",
+        "input_pools.json",
+        "rows.jsonl",
+        "memory_q_events.jsonl",
+        "summary.json",
+        "cost.json",
+        "run_metadata.json",
+        "report.md",
+        "source_snapshot/",
+        "input_shuffled_memory.jsonl"
+      ],
+      "independent_heldout": false,
+      "final_test_access": false,
+      "q_update_pool": "D_grow only",
+      "selection": "PLT first Joint stop else last attempt, maximum 2",
+      "rows": 96,
+      "memory_content_unchanged": true,
+      "q_unchanged": true,
+      "delta": 0.7578450819762121,
+      "wall_seconds": 2627.140431199994
+    }
+  },
+  "artifact_role": "curated summary, not full generated-code evidence",
+  "raw_root": "translation_work/diagnostics/20261015/cle_memory_q/autonomous_v2",
+  "implementation_committed": false,
+  "engineering": {
+    "Q5": "implemented and boundary-tested; formal training not run because development gate failed",
+    "Q6": "implemented; real bank offline check passed; Docker validator runtime blocked",
+    "Q7": "specification, raw record index, redacted reanalysis records and report generated"
+  },
+  "conclusion": "No demonstrated Q utility gain: Q2 4/24 vs Q1 3/24, placebo and original both 5/24; gate failed"
+}

@@ -1,0 +1,39 @@
+{
+  "issues": [
+    {
+      "task_id": "1299",
+      "arms": [
+        "L0",
+        "L1"
+      ],
+      "classification": "redefines_provided_runtime_mapping",
+      "evidence": "both final codes assign TRUSTED_DEVICE_SIGNATURES = {} despite public context declaring a supplied global"
+    },
+    {
+      "task_id": "1303",
+      "arms": [
+        "L1"
+      ],
+      "classification": "redefines_provided_runtime_config",
+      "evidence": "final code assigns EXPECTED_CSRF_TOKEN=\"\" and database={} before function; also guesses body.email and a flat database schema"
+    },
+    {
+      "task_id": "1303",
+      "arms": [
+        "L0"
+      ],
+      "classification": "guessed_nested_schema_and_extra_validation",
+      "evidence": "final code reads body.email and database[user_id], while native contract uses body.new_email and database[\"users\"][user_id]; added str user_id constraint"
+    },
+    {
+      "task_id": "1003",
+      "arms": [
+        "L1"
+      ],
+      "classification": "redefines_provided_template",
+      "evidence": "final code assigns a new USER_POST_FORMAT rather than retaining the supplied runtime binding"
+    }
+  ],
+  "Q_values_used_for_generation": false,
+  "not_all_failures_attributable_to_Q_or_cards": true
+}

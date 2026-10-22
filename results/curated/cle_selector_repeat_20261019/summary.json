@@ -1,0 +1,419 @@
+{
+  "protocol": "cle-selector-repeat-four-arm-v1",
+  "expected": 160,
+  "rows": 160,
+  "valid": 160,
+  "complete_valid": true,
+  "unique_families": 8,
+  "by_arm": {
+    "Q0": {
+      "operations": 40,
+      "valid": 40,
+      "logical_requests": 40,
+      "response_count": 40,
+      "usage_missing_responses": 0,
+      "prompt_tokens": 981940,
+      "completion_tokens": 536,
+      "total_tokens": 982476,
+      "within_jaccard_macro": 0.5750685425685427,
+      "mean_selected": 5.15,
+      "unique_sets_per_task": [
+        3,
+        4,
+        5,
+        4,
+        4,
+        5,
+        4,
+        4
+      ]
+    },
+    "Q1": {
+      "operations": 40,
+      "valid": 40,
+      "logical_requests": 40,
+      "response_count": 40,
+      "usage_missing_responses": 0,
+      "prompt_tokens": 981940,
+      "completion_tokens": 554,
+      "total_tokens": 982494,
+      "within_jaccard_macro": 0.5268166035353535,
+      "mean_selected": 5.425000000000001,
+      "unique_sets_per_task": [
+        5,
+        5,
+        5,
+        4,
+        5,
+        4,
+        3,
+        5
+      ]
+    },
+    "Q2": {
+      "operations": 40,
+      "valid": 40,
+      "logical_requests": 41,
+      "response_count": 41,
+      "usage_missing_responses": 0,
+      "prompt_tokens": 1008645,
+      "completion_tokens": 529,
+      "total_tokens": 1009174,
+      "within_jaccard_macro": 0.5728472222222223,
+      "mean_selected": 4.8,
+      "unique_sets_per_task": [
+        5,
+        5,
+        5,
+        5,
+        4,
+        5,
+        2,
+        4
+      ]
+    },
+    "Q3": {
+      "operations": 40,
+      "valid": 40,
+      "logical_requests": 40,
+      "response_count": 40,
+      "usage_missing_responses": 0,
+      "prompt_tokens": 981940,
+      "completion_tokens": 556,
+      "total_tokens": 982496,
+      "within_jaccard_macro": 0.568220806970807,
+      "mean_selected": 5.425,
+      "unique_sets_per_task": [
+        5,
+        4,
+        5,
+        5,
+        4,
+        5,
+        2,
+        5
+      ]
+    }
+  },
+  "primary_comparisons": [
+    {
+      "test": "Q2",
+      "control": "Q0",
+      "complete_families": 8,
+      "excess_distance": 0.055126418537602744,
+      "between": 0.6290843009329852,
+      "within_test": 0.5728472222222223,
+      "within_control": 0.5750685425685427,
+      "ci95_families": [
+        0.002335653746837918,
+        0.11710444850288601
+      ],
+      "p_block_permutation": 0.0065,
+      "p_holm": 0.0065,
+      "detectable_order_effect": true
+    },
+    {
+      "test": "Q2",
+      "control": "Q1",
+      "complete_families": 8,
+      "excess_distance": 0.09235588281365176,
+      "between": 0.6421877956924397,
+      "within_test": 0.5728472222222223,
+      "within_control": 0.5268166035353535,
+      "ci95_families": [
+        0.033993294287411914,
+        0.15388802400944426
+      ],
+      "p_block_permutation": 0.0002,
+      "p_holm": 0.0006000000000000001,
+      "detectable_order_effect": true
+    },
+    {
+      "test": "Q2",
+      "control": "Q3",
+      "complete_families": 8,
+      "excess_distance": 0.11220849289599291,
+      "between": 0.6827425074925075,
+      "within_test": 0.5728472222222223,
+      "within_control": 0.568220806970807,
+      "ci95_families": [
+        0.018204820266539044,
+        0.22203784054487183
+      ],
+      "p_block_permutation": 0.00025,
+      "p_holm": 0.0006000000000000001,
+      "detectable_order_effect": true
+    }
+  ],
+  "identical_prompt_controls": [
+    {
+      "task_id": "1256",
+      "left": "Q0",
+      "right": "Q1",
+      "left_within": 0.18,
+      "right_within": 0.453452380952381,
+      "left_sets": [
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "cand-1333-6455772803584774934"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "seed-46"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "seed-46"
+        ]
+      ],
+      "right_sets": [
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "pitfall-1333-4233333839735618083",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-6455772803584774934",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "cand-1333-3608707898927210175"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ]
+      ]
+    },
+    {
+      "task_id": "1317",
+      "left": "Q1",
+      "right": "Q2",
+      "left_within": 0.6138888888888889,
+      "right_within": 0.5797222222222222,
+      "left_sets": [
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "guard-502-6772803219417487760",
+          "pitfall-502-1298662043445647790"
+        ],
+        [
+          "pitfall-502-4463873035273598773",
+          "blind-502-8566308265546111808",
+          "hint-502-8411363469143739472",
+          "pitfall-502-5289363153619763752",
+          "hint-502-4118108166954546592",
+          "hint-502-2688312304942497856"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "guard-502-6772803219417487760",
+          "pitfall-502-1298662043445647790",
+          "hint-502-5980882292082295094",
+          "hint-502-2688312304942497856"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "guard-502-6772803219417487760",
+          "hint-502-5980882292082295094"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "hint-502-2688312304942497856"
+        ]
+      ],
+      "right_sets": [
+        [
+          "blind-502-8129900557211162496",
+          "blind-502-2743438159853928070",
+          "hint-502-5550085703477956797",
+          "pitfall-502-7431284674649118922"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "hint-502-5550085703477956797",
+          "pitfall-502-7431284674649118922",
+          "pitfall-502-1318931948765780892",
+          "hint-502-1391038843738024674",
+          "blind-502-8476565611246247174",
+          "blind-502-3091382397090513020",
+          "hint-502-3523063928316955033"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "hint-502-5550085703477956797",
+          "hint-502-2688312304942497856"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "hint-502-5550085703477956797",
+          "hint-502-5980882292082295094"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797"
+        ]
+      ]
+    }
+  ],
+  "code_generation_calls": 0,
+  "validation_calls": 0,
+  "Q_updates": 0,
+  "new_embedding_calls": 0,
+  "currency_actual": null,
+  "errors": {},
+  "Q_reorders_vs_similarity_detectable": true,
+  "Q_assignment_vs_shuffle_detectable": true,
+  "joint_improvement": "not measured; selection-only study",
+  "old_records_preserved": true,
+  "plain_language_conclusion": "在本批固定输入中，学习Q排序造成的选卡集合差异超出了模型自身波动，并且与打乱Q有可检测差异。仍未测量选卡更准确或Joint提高。",
+  "output_order_diagnostics": [
+    {
+      "arm": "Q0",
+      "within_repeat_pairs": 80,
+      "same_members": 8,
+      "same_members_different_output_order": 3
+    },
+    {
+      "arm": "Q1",
+      "within_repeat_pairs": 80,
+      "same_members": 4,
+      "same_members_different_output_order": 3
+    },
+    {
+      "arm": "Q2",
+      "within_repeat_pairs": 80,
+      "same_members": 8,
+      "same_members_different_output_order": 2
+    },
+    {
+      "arm": "Q3",
+      "within_repeat_pairs": 80,
+      "same_members": 8,
+      "same_members_different_output_order": 3
+    }
+  ],
+  "response_identity": {
+    "reported_models": [
+      "deepseek-v3.2"
+    ],
+    "system_fingerprints": [
+      "e72d3c7f663d3e1383b00b3884cb4501"
+    ],
+    "fingerprint_missing_responses": 0
+  },
+  "native_format_retries": {
+    "Q0": 0,
+    "Q1": 0,
+    "Q2": 1,
+    "Q3": 0
+  },
+  "posthoc_retry_task_sensitivity": {
+    "excluded_from_sensitivity_only": [
+      "1317"
+    ],
+    "comparisons": [
+      {
+        "test": "Q2",
+        "control": "Q0",
+        "complete_families": 7,
+        "excess_distance": 0.049660101802958934,
+        "between": 0.6200682650682652,
+        "within_test": 0.5718650793650794,
+        "within_control": 0.5689512471655328,
+        "ci95_families": [
+          -0.007793516007801775,
+          0.12198742527313956
+        ],
+        "p_block_permutation": 0.02595,
+        "p_holm": 0.02595
+      },
+      {
+        "test": "Q2",
+        "control": "Q1",
+        "complete_families": 7,
+        "excess_distance": 0.1009163604038106,
+        "between": 0.6440377529002032,
+        "within_test": 0.5718650793650794,
+        "within_control": 0.5143777056277056,
+        "ci95_families": [
+          0.03235986818970007,
+          0.1652689651618223
+        ],
+        "p_block_permutation": 0.00025,
+        "p_holm": 0.00075
+      },
+      {
+        "test": "Q2",
+        "control": "Q3",
+        "complete_families": 7,
+        "excess_distance": 0.07802329416615132,
+        "between": 0.6413150024578597,
+        "within_test": 0.5718650793650794,
+        "within_control": 0.5547183372183372,
+        "ci95_families": [
+          0.0026701829916116076,
+          0.18013980860409437
+        ],
+        "p_block_permutation": 0.0014,
+        "p_holm": 0.0028
+      }
+    ],
+    "primary_rows_unchanged": true
+  },
+  "cached_tokens_reported": 0,
+  "valid_empty_selections": {
+    "Q0": 2,
+    "Q1": 0,
+    "Q2": 1,
+    "Q3": 1
+  }
+}

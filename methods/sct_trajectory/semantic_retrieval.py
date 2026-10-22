@@ -353,63 +353,91 @@ def _tokens(text):
     return set(re.findall(r"[a-z_][a-z_0-9.]*", text.lower()))
 
 
-def semantic_select(task, nodes, requester, embedding_client, limit=3):
+def recall_semantic_candidates(task, nodes, embedding_client, limit, trace):
+    """共用语言/状态/正文过滤与24+8召回；输出全体余弦供训练阈值校准，不写经验。"""
+    query = query_embedding_text(task)
+    trace["query_hash"] = _digest(query)
+    language = task.get("language", "python")
+    eligible = {}
+    for node in nodes:
+        identifier = str(node.invariant_id)
+        if node.status not in {"active", "provisional", "consolidated"} or language not in (node.language_leaves or {}):
+            continue
+        content = card_embedding_text(node)
+        if identifier in eligible and eligible[identifier][1] != content:
+            raise ValueError("duplicate_id_content_conflict")
+        if len(content) > MAX_CARD_CHARS:
+            trace["excluded"].append({"id": identifier, "reason": "card_budget_exceeded", "content_hash": _digest(content)})
+            continue
+        eligible[identifier] = (node, content)
+    trace["eligible_count"] = len(eligible)
+    if not eligible or not limit:
+        trace["status"] = "completed"
+        return eligible, query, []
+    items = sorted(eligible.items())
+    card_texts = [entry[1][1] for entry in items]
+    if hasattr(embedding_client, "cosine_scores"):
+        similarities = embedding_client.cosine_scores(query, card_texts)
+    else:
+        vectors = embedding_client.embed([query] + card_texts)
+        if not isinstance(vectors, list) or len(vectors) != len(items) + 1:
+            raise EmbeddingError("embedding_vector_count")
+        similarities = [_cosine(vectors[0], vector) for vector in vectors[1:]]
+    if len(similarities) != len(items):
+        raise EmbeddingError("embedding_score_count")
+    if any(not isinstance(score, (int, float)) or not math.isfinite(score) for score in similarities):
+        raise EmbeddingError("embedding_score_nonfinite")
+    query_tokens = _tokens(query)
+    scores = []
+    for (identifier, (_, content)), similarity in zip(items, similarities):
+        tokens = _tokens(content)
+        scores.append({"id": identifier, "cosine": similarity,
+                       "lexical": len(query_tokens & tokens) / max(1, len(query_tokens | tokens)),
+                       "content_hash": _digest(content)})
+    vector_ids = [s["id"] for s in sorted(scores, key=lambda s: (-s["cosine"], s["id"]))[:24]]
+    lexical_ids = [s["id"] for s in sorted(scores, key=lambda s: (-s["lexical"], s["id"]))[:8] if s["lexical"] > 0]
+    candidate_ids = list(dict.fromkeys(vector_ids + lexical_ids))
+    trace["candidate_ids"] = candidate_ids
+    trace["scores"] = [s for s in scores if s["id"] in candidate_ids]
+    trace["local_id_map"] = {str(i): identifier for i, identifier in enumerate(candidate_ids, 1)}
+    return eligible, query, scores
+
+
+def semantic_select(task, nodes, requester, embedding_client, limit=3, *,
+                    candidate_order=None, lambda_q=0.5, delta=-1.0):
     """检索阶段以真实余弦 top24 和词重叠 top8 联集比较适用性，输出 0–3 条。
 
     不按 CWE/类型截断或钉选同任务卡；仅过滤语言和可检索状态。模型应引用完整任务、
     不可信输入、敏感操作及条件，明确建议而非测量证明。API/解析/预算失败返回空并留痕，
     不执行测试、无规则兜底注入、不修改长期库；最终 Plus 反馈不得传入此训练调用。
     """
-    limit = max(0, min(int(limit), 3))
+    unlimited = limit is None
+    limit = None if unlimited else max(0, min(int(limit), 3))
     trace = {"retrieval_mode": "semantic", "embedding_model": embedding_client.model,
              "cache_version": CACHE_VERSION, "status": "pending", "errors": [], "candidate_ids": [],
              "selected_ids": [], "excluded": [], "scores": [], "selector_version": "compact-selection-v2"}
     try:
-        query = query_embedding_text(task)
-        trace["query_hash"] = _digest(query)
-        language = task.get("language", "python")
-        eligible = {}
-        for node in nodes:
-            identifier = str(node.invariant_id)
-            if node.status not in {"active", "provisional", "consolidated"} or language not in (node.language_leaves or {}):
-                continue
-            content = card_embedding_text(node)
-            if identifier in eligible and eligible[identifier][1] != content:
-                raise ValueError("duplicate_id_content_conflict")
-            if len(content) > MAX_CARD_CHARS:
-                trace["excluded"].append({"id": identifier, "reason": "card_budget_exceeded", "content_hash": _digest(content)})
-                continue
-            eligible[identifier] = (node, content)
-        trace["eligible_count"] = len(eligible)
-        if not eligible or not limit:
+        eligible, query, _ = recall_semantic_candidates(task, nodes, embedding_client, 1 if unlimited else limit, trace)
+        candidate_ids = trace["candidate_ids"]
+        if candidate_order is not None:
+            from .memory_q import rank_candidates, rank_coverage_candidates
+            if candidate_order not in ("similarity", "q", "coverage"):
+                raise ValueError("unknown_candidate_order")
+            if candidate_order == 'coverage':
+                # 新学习消融只改变呈现顺序；原LLM仍负责最多三张选择和后续采用。
+                ranked = rank_coverage_candidates(trace['scores'], {i:n.q_visits for i,(n,_) in eligible.items()}, delta=delta)
+            else:
+                ranked = rank_candidates(trace['scores'], {i: n.q_value for i, (n, _) in eligible.items()},
+                                         delta=delta, lambda_q=0 if candidate_order == 'similarity' else lambda_q,
+                                         limit=None)
+            candidate_ids = [item['id'] for item in ranked]
+            trace.update(presented_candidate_ids=candidate_ids, candidate_order=candidate_order,
+                         value_ranking=ranked, delta=delta, lambda_q=lambda_q)
+        trace['selection_limit'] = limit
+        trace['local_id_map'] = {str(i): identifier for i, identifier in enumerate(candidate_ids, 1)}
+        if not candidate_ids:
             trace["status"] = "completed"
             return [], trace
-        items = sorted(eligible.items())
-        card_texts = [entry[1][1] for entry in items]
-        if hasattr(embedding_client, "cosine_scores"):
-            similarities = embedding_client.cosine_scores(query, card_texts)
-        else:
-            vectors = embedding_client.embed([query] + card_texts)
-            if not isinstance(vectors, list) or len(vectors) != len(items) + 1:
-                raise EmbeddingError("embedding_vector_count")
-            similarities = [_cosine(vectors[0], vector) for vector in vectors[1:]]
-        if len(similarities) != len(items):
-            raise EmbeddingError("embedding_score_count")
-        if any(not isinstance(score, (int, float)) or not math.isfinite(score) for score in similarities):
-            raise EmbeddingError("embedding_score_nonfinite")
-        query_tokens = _tokens(query)
-        scores = []
-        for (identifier, (_, content)), similarity in zip(items, similarities):
-            tokens = _tokens(content)
-            scores.append({"id": identifier, "cosine": similarity,
-                           "lexical": len(query_tokens & tokens) / max(1, len(query_tokens | tokens)),
-                           "content_hash": _digest(content)})
-        vector_ids = [s["id"] for s in sorted(scores, key=lambda s: (-s["cosine"], s["id"]))[:24]]
-        lexical_ids = [s["id"] for s in sorted(scores, key=lambda s: (-s["lexical"], s["id"]))[:8] if s["lexical"] > 0]
-        candidate_ids = list(dict.fromkeys(vector_ids + lexical_ids))
-        trace["candidate_ids"] = candidate_ids
-        trace["scores"] = [s for s in scores if s["id"] in candidate_ids]
-        trace["local_id_map"] = {str(i): identifier for i, identifier in enumerate(candidate_ids, 1)}
         cards = [{"id": i, "status": eligible[identifier][0].status, "content": json.loads(eligible[identifier][1])}
                  for i, identifier in enumerate(candidate_ids, 1)]
         prompt = (
@@ -419,7 +447,9 @@ def semantic_select(task, nodes, requester, embedding_client, limit=3):
             "API semantics, data representation, preserved behavior, and observed failure evidence. "
             "Never select merely because CWE labels, source tasks, or keywords match. Reject irrelevant, conflicting, redundant, "
             "unsupported or over-defensive advice. Select zero cards if none are useful. Do not invent validation evidence. "
-            f"Select at most {limit} unique integer candidate IDs, ordered by practical usefulness. "
+            + ("Select any number of applicable unique integer candidate IDs, ordered by practical usefulness; "
+             "there is no fixed maximum number of selected cards. " if unlimited else
+             f"Select at most {limit} unique integer candidate IDs, ordered by practical usefulness. ") +
             'Return exactly {"selected":[1,2]} using only applicable candidate IDs, or {"selected":[]} if none apply. '
             "Return no explanations, rejection list, extra keys, Markdown or duplicate IDs. "
             "Required adaptations will be examined in the subsequent experience-conditioned analysis.\nPUBLIC_QUERY:\n"
@@ -427,7 +457,7 @@ def semantic_select(task, nodes, requester, embedding_client, limit=3):
         if len(prompt) > MAX_SELECTOR_CHARS:
             raise ValueError("selector_prompt_budget_exceeded")
         from .selector_protocol import select_with_retry
-        local_ids = select_with_retry(prompt, requester, len(candidate_ids), limit, trace)
+        local_ids = select_with_retry(prompt, requester, len(candidate_ids), len(candidate_ids) if unlimited else limit, trace)
         chosen_ids = [candidate_ids[i - 1] for i in local_ids]
         # 未选中只是集合差，不伪造模型的拒绝理由；后续复析仍可拒绝或适配选中卡。
         trace.update(status="completed", selected_ids=chosen_ids,
@@ -444,4 +474,26 @@ def semantic_select(task, nodes, requester, embedding_client, limit=3):
         if isinstance(exc, ValueError) and str(exc) in {"duplicate_id_content_conflict", "selector_prompt_budget_exceeded", "selector_output_truncated", "invalid_selection_count", "invalid_selection_id", "selection_explanation_not_english", "invalid_rejection_list", "invalid_rejection_id"}:
             category = str(exc)
         trace.update(status="error", errors=[category])
+        return [], trace
+
+
+def semantic_value_select(task, nodes, embedding_client, *, delta, lambda_q=0.5, limit=3):
+    """固定库的相似度/Q对照：共同召回后排序，不额外调用选卡LLM，不强迫下游采用。"""
+    from .memory_q import rank_candidates
+    limit = max(0, min(int(limit), 3))
+    trace = {"retrieval_mode": "semantic_sim" if lambda_q == 0 else "semantic_q",
+             "embedding_model": embedding_client.model, "cache_version": CACHE_VERSION,
+             "status": "pending", "errors": [], "candidate_ids": [], "selected_ids": [],
+             "excluded": [], "scores": [], "selector_version": "memory-q-v1",
+             "delta": delta, "lambda_q": lambda_q}
+    try:
+        eligible, _, _ = recall_semantic_candidates(task, nodes, embedding_client, limit, trace)
+        ranked = rank_candidates(trace["scores"], {i: n.q_value for i, (n, _) in eligible.items()},
+                                 delta=delta, lambda_q=lambda_q, limit=limit)
+        chosen = [s["id"] for s in ranked]
+        trace.update(status="completed", selected_ids=chosen, value_ranking=ranked,
+                     above_threshold_count=sum(s["cosine"] > delta for s in trace["scores"]))
+        return [eligible[i][0] for i in chosen], trace
+    except (EmbeddingError, ValueError) as exc:
+        trace.update(status="error", errors=[str(exc)])
         return [], trace

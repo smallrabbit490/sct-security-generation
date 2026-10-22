@@ -1,0 +1,113 @@
+{
+  "arms": {
+    "Q0": {
+      "workflow_error_runs": 11,
+      "error_attempts": 13,
+      "error_types": {
+        "planning:JSONDecodeError": 5,
+        "initial_analysis:invalid_reused_analysis": 1,
+        "planning:EnglishPolicyError": 1,
+        "initial_analysis:ValueError": 1,
+        "adoption:missing_applied_experience_ids": 2,
+        "adoption:invalid_rejected_experiences": 1,
+        "adoption:unknown_applied_experience_ids": 1,
+        "planning:ValueError": 1
+      },
+      "first_joint": 17,
+      "any_attempt_joint": 18,
+      "final_joint": 18,
+      "first_selection_empty": 0
+    },
+    "Q1": {
+      "workflow_error_runs": 8,
+      "error_attempts": 8,
+      "error_types": {
+        "initial_analysis:invalid_reused_analysis": 1,
+        "adoption:unknown_applied_experience_ids": 2,
+        "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids": 1,
+        "adoption:missing_applied_experience_ids": 1,
+        "adoption:invalid_rejected_experiences": 1,
+        "planning:EnglishPolicyError": 1,
+        "planning:JSONDecodeError": 1
+      },
+      "first_joint": 17,
+      "any_attempt_joint": 17,
+      "final_joint": 17,
+      "first_selection_empty": 1
+    },
+    "Q2": {
+      "workflow_error_runs": 6,
+      "error_attempts": 6,
+      "error_types": {
+        "adoption:unknown_applied_experience_ids": 2,
+        "initial_analysis:invalid_reused_analysis": 1,
+        "retrieval:RuntimeError": 1,
+        "initial_analysis:JSONDecodeError": 1,
+        "experience_analysis:ValueError": 1
+      },
+      "first_joint": 21,
+      "any_attempt_joint": 21,
+      "final_joint": 21,
+      "first_selection_empty": 0
+    },
+    "Q3": {
+      "workflow_error_runs": 2,
+      "error_attempts": 3,
+      "error_types": {
+        "initial_analysis:invalid_reused_analysis": 1,
+        "planning:EnglishPolicyError": 1,
+        "retrieval:RuntimeError": 1
+      },
+      "first_joint": 20,
+      "any_attempt_joint": 20,
+      "final_joint": 20,
+      "first_selection_empty": 1
+    }
+  },
+  "mechanisms": {
+    "Q1": {
+      "first_selected_changed": 44,
+      "first_adopted_changed": 44,
+      "rescued_ids": [
+        "1140",
+        "1067"
+      ],
+      "lost_ids": [
+        "1235",
+        "1066",
+        "1030"
+      ]
+    },
+    "Q2": {
+      "first_selected_changed": 47,
+      "first_adopted_changed": 45,
+      "rescued_ids": [
+        "1055",
+        "1361",
+        "1029",
+        "1067"
+      ],
+      "lost_ids": [
+        "1065"
+      ]
+    },
+    "Q3": {
+      "first_selected_changed": 44,
+      "first_adopted_changed": 43,
+      "rescued_ids": [
+        "1306",
+        "1006",
+        "1140",
+        "1067"
+      ],
+      "lost_ids": [
+        "1065",
+        "1236"
+      ]
+    }
+  },
+  "unverified_failed_retrieval_attempts": [],
+  "new_API_calls": 0,
+  "raw_rows_preserved": true,
+  "dates_differ_between_Q0_and_parent": true
+}

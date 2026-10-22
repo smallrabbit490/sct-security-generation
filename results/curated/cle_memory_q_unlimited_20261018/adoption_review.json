@@ -1,0 +1,25 @@
+{
+  "reviewer_type": "AI code inspection, not human confirmation",
+  "tasks": [
+    {
+      "task_id": "1394",
+      "declared_cards": 11,
+      "observed_implementation": [
+        "precompiled anchored negated-character-class regex",
+        "string type check",
+        "input length bound 100000"
+      ],
+      "limits": "Overlapping suggestions; not every specific bounded-quantifier recommendation is implemented. Planning workflow degraded; no Q credit."
+    },
+    {
+      "task_id": "102",
+      "declared_cards": 5,
+      "observed_implementation": [
+        "uses supplied unquote and valid_key_pattern",
+        "checks full match coverage",
+        "preserves external bindings"
+      ],
+      "limits": "Overlapping advice; final tests cannot establish individual-card causal contribution."
+    }
+  ]
+}

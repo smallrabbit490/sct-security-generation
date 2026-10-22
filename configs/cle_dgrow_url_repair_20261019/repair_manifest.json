@@ -1,0 +1,684 @@
+{
+  "protocol": "cle-dgrow-url-source-restoration-public-contract-v2",
+  "task_ids": [
+    "675",
+    "676",
+    "677",
+    "681",
+    "682",
+    "683",
+    "1080",
+    "1081",
+    "1083",
+    "1084",
+    "1085",
+    "1087",
+    "1088",
+    "1091",
+    "1093",
+    "1096",
+    "1098",
+    "1099",
+    "1100",
+    "1102",
+    "1103",
+    "1104",
+    "1112",
+    "1114",
+    "1115",
+    "1120",
+    "1122",
+    "1326",
+    "1371",
+    "1372",
+    "1399",
+    "1405"
+  ],
+  "source_url": "https://raw.githubusercontent.com/ucsb-mlsec/SeCodePLT/1f3da9ee48e0046359903cba0cc48d03665f96d5/virtue_code_eval/data/safety/secodeplt/data.json",
+  "upstream_revision": "1f3da9ee48e0046359903cba0cc48d03665f96d5",
+  "source_blob": "70bb25ff204e61f36d447d5787cc2869d9be0649",
+  "original_dataset_sha256": "4779e09d14fb2a2a1a6912cca9e6403fea02470b9963b7d5a438d371c9416839",
+  "branch": "fjy/cle-q-exploration-20261018",
+  "commit": "155a4c10bd72f8d4a7df1be11409fa0b7f209fc0",
+  "runner": "configs/cle_dgrow_url_repair_20261019/repair_and_retest.py",
+  "python_executable": "D:\\Agent\\sct-security-generation\\translation_work\\temp\\cle_memory_q_env\\Scripts\\python.exe",
+  "backend": "original validate_and_state / local python -I",
+  "retest": [
+    "upstream_secure_reference",
+    "upstream_vulnerable_control",
+    "historical_observe_final_code",
+    "historical_retest_final_code"
+  ],
+  "new_generation": false,
+  "API_calls": 0,
+  "Q_updates": 0,
+  "old_results_modified": false,
+  "status": "prepared",
+  "changes": [
+    {
+      "task_id": "675",
+      "cwe": "601",
+      "family_id": "63c142375d28",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "676",
+      "cwe": "601",
+      "family_id": "63c142375d28",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "677",
+      "cwe": "601",
+      "family_id": "63c142375d28",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "681",
+      "cwe": "601",
+      "family_id": "706a080d7095",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "682",
+      "cwe": "601",
+      "family_id": "706a080d7095",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "683",
+      "cwe": "601",
+      "family_id": "706a080d7095",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1080",
+      "cwe": "918",
+      "family_id": "98fff7e31c22",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_DOMAINS": "list[str]: allowed URL hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1081",
+      "cwe": "918",
+      "family_id": "e69fa5595eb6",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "SAFE_REDIRECT_DOMAINS": "list[str]: allowed redirect hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1083",
+      "cwe": "918",
+      "family_id": "072dcba32498",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_REDIRECT_DOMAINS": "list[str]: allowed redirect hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1084",
+      "cwe": "918",
+      "family_id": "22674aca438b",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_REDIRECT_DOMAINS": "list[str]: allowed redirect hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1085",
+      "cwe": "918",
+      "family_id": "f278dba23af8",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_REDIRECT_DOMAINS": "list[str]: allowed redirect hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1087",
+      "cwe": "918",
+      "family_id": "016c20460c13",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "TRUSTED_DOMAIN_LIST": "list[str]: allowed redirect hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1088",
+      "cwe": "918",
+      "family_id": "2cc280e83d35",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "VALID_REDIRECT_DOMAINS": "list[str]: allowed redirect hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1091",
+      "cwe": "918",
+      "family_id": "85aa7428e6e6",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "TRUSTED_IMAGE_HOSTS": "list[str]: allowed image hostnames",
+        "ALLOWED_SCHEMES": "list[str]: allowed URL schemes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1093",
+      "cwe": "918",
+      "family_id": "c2e9cc72223e",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "TRUSTED_IMAGE_HOSTS": "list[str]: allowed image hostnames",
+        "ALLOWED_SCHEMES": "list[str]: allowed URL schemes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1096",
+      "cwe": "918",
+      "family_id": "2bd860976ef6",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "TRUSTED_IMAGE_HOSTS": "list[str]: allowed image hostnames",
+        "ALLOWED_SCHEMES": "list[str]: allowed URL schemes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1098",
+      "cwe": "918",
+      "family_id": "9bf0c1d5b59a",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "APPROVED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_RANGES": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1099",
+      "cwe": "918",
+      "family_id": "3fe24154af70",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "APPROVED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_RANGES": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1100",
+      "cwe": "918",
+      "family_id": "9b150589ef39",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "APPROVED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_RANGES": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1102",
+      "cwe": "918",
+      "family_id": "5c01cf3832bf",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "APPROVED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_RANGES": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1103",
+      "cwe": "918",
+      "family_id": "44978419ed88",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "APPROVED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_RANGES": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1104",
+      "cwe": "918",
+      "family_id": "69489fcba952",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "APPROVED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_RANGES": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1112",
+      "cwe": "918",
+      "family_id": "f660ff39555b",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_PATTERNS": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1114",
+      "cwe": "918",
+      "family_id": "21e7141d0e9a",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_PATTERNS": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1115",
+      "cwe": "918",
+      "family_id": "3683eda1b187",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_API_DOMAINS": "list[str]: allowed API hostnames",
+        "INTERNAL_IP_PATTERNS": "list[str]: blocked hostname or IP address prefixes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1120",
+      "cwe": "918",
+      "family_id": "43c4263b094c",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "imported from urllib.parse.urlparse",
+        "TRUSTED_RSS_PROVIDERS": "list[str]: allowed RSS feed hostnames",
+        "INTERNAL_IP_PATTERNS": "list[str]: blocked hostname or IP address prefixes",
+        "ALLOWED_SCHEMES": "list[str]: allowed URL schemes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1122",
+      "cwe": "918",
+      "family_id": "c869de311289",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "imported from urllib.parse.urlparse",
+        "TRUSTED_RSS_PROVIDERS": "list[str]: allowed RSS feed hostnames",
+        "INTERNAL_IP_PATTERNS": "list[str]: blocked hostname or IP address prefixes",
+        "ALLOWED_SCHEMES": "list[str]: allowed URL schemes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1326",
+      "cwe": "601",
+      "family_id": "d014cc829864",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1371",
+      "cwe": "918",
+      "family_id": "4338bf571fd6",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_REDIRECT_DOMAINS": "list[str]: allowed redirect hostnames"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1372",
+      "cwe": "918",
+      "family_id": "7ab5aac9a368",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "imported from urllib.parse.urlparse",
+        "TRUSTED_IMAGE_HOSTS": "list[str]: allowed image hostnames",
+        "ALLOWED_SCHEMES": "list[str]: allowed URL schemes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1399",
+      "cwe": "601",
+      "family_id": "1593d4234d4e",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.security_policy"
+      ],
+      "declared_bindings": {},
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    },
+    {
+      "task_id": "1405",
+      "cwe": "918",
+      "family_id": "a6fa649d72ff",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "requests": "module requests",
+        "urlparse": "imported from urllib.parse.urlparse",
+        "ALLOWED_DOMAINS": "list[str]: allowed URL hostnames",
+        "ALLOWED_SCHEMES": "list[str]: allowed URL schemes"
+      },
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "source_reference_unchanged": true,
+      "test_setup_unchanged": true
+    }
+  ]
+}

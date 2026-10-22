@@ -1,0 +1,72 @@
+{
+  "protocol": "cle-q-full-dgate-four-arm-cap3-v1",
+  "status": "AUTHORIZED_IMPLEMENTED_PENDING_PREFLIGHT",
+  "scope": "A: frozen-bank full D_gate development evaluation",
+  "task_count": 298,
+  "family_count": 217,
+  "cwe_count": 18,
+  "arms": [
+    "Q0",
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "repeats": 1,
+  "expected_P7_rows": 1192,
+  "max_code_attempts_per_P7": 2,
+  "max_code_versions_total": 2384,
+  "model": "deepseek-v3.2",
+  "temperature": 0,
+  "thinking": "disabled",
+  "max_tokens_general": 4096,
+  "max_tokens_native_selector": 256,
+  "embedding_model": "text-embedding-3-large",
+  "max_experiences_all_arms": 3,
+  "cap_scope": "per retrieval/attempt; c0 and c1 may use different cards; do not force filling 3",
+  "selection": "all arms native semantic_llm; Q ordering reorders full candidate list with rank limit=None; then LLM chooses up to 3",
+  "candidate_recall": "same vector Top24 union lexical Top8",
+  "delta": -1,
+  "lambda_q": 0.5,
+  "shuffle_scope": "cwe",
+  "shuffle_seed": 20261015,
+  "memory_state": "state_sources.json",
+  "Q_updates": false,
+  "new_Q_learning": false,
+  "new_card_generation": false,
+  "first_initial": "298 newly generated once per task, shared by 4 arms; no outcome-based regeneration",
+  "first_candidates": "shared first query and shared native embedding cache; native recall per arm, verify exact IDs/bodies/cosines",
+  "repair": "native P7 arm-specific code and permitted feedback; at most one repair; first Joint early stop; deliver last",
+  "runner": "methods.cle_ablation.run_memory_q_full_gate calling parent source_snapshot P7 runner",
+  "source_trap": "do not reuse run_memory_q_unlimited Q0 mapping: it means similarity order there; true Q0 passes candidate_order=None",
+  "contract": "original native public contract, existing source overlays only; no new interface hint, return/raise query fix, hidden fixture values or per-arm additions",
+  "preflight": "new full298 reference/environment/known-contract review before new calls; freeze reason masks before outcomes; preserve all298 manifest entries",
+  "primary_metric": "confirmed final Joint passes / planned298; unresolved measurements separately null, not measured failures",
+  "primary_comparisons": [
+    [
+      "Q2",
+      "Q0"
+    ],
+    [
+      "Q2",
+      "Q1"
+    ],
+    [
+      "Q2",
+      "Q3"
+    ]
+  ],
+  "inference": "task-weighted paired differences; family-cluster bootstrap CI and family-level paired arm-label swaps; Holm over 3 primary comparisons; native task McNemar supplemental",
+  "old_generation_rows_reused": false,
+  "old_results": "read-only historical references, no mixed-time full table",
+  "execution": "CWE-round-robin task order; randomized four-arm order per task, shared initial; balanced task workers<=8",
+  "probe": "first4 newly preflight-qualified tasks without known contract-family issues, 16 P7 included in1192",
+  "technical_stop": "source/input mismatch, shared-first mismatch, cap violation, validation environment or auth/quota error; retain native formatting errors and scores, no result-based stopping",
+  "report_cohorts": "all298 primary plus pre-outcome data-quality and historical-exposure masks; no post-outcome exclusions",
+  "independent_final_test": false,
+  "Base_Plus": false,
+  "full_CLE_evolution": false,
+  "new_labels": false,
+  "current_repetition_evidence": "160 unlimited selections only; does not establish Q influence or Joint gains under cap3",
+  "paid_execution_authorized_in_this_turn": true,
+  "authorization": "User: 不仅是限三张，完整按照CLE实验的要求来做这次Dgate四臂测试"
+}

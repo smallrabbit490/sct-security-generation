@@ -99,6 +99,9 @@ def build_distillation_prompt(
     让 agent 能说出"具体哪一步失败、失败输出是什么"，从而产出可执行的修复指引。
     task_contract：该任务的函数契约（要求做什么），用于判断"是否引入了契约外的约束"。
     """
+    # Q检索诊断供研究记录使用，不能把数值分数作为蒸馏模型的新经验内容。
+    retrieved_cards = [{k: v for k, v in card.items() if k not in ('retrieval_audit', 'q_value', 'q_visits')}
+                       for card in (retrieved_cards or [])]
     target = distill_target(kind)
     lines = [
         "You are the experience distillation agent. Analyze the observed code-generation trajectory and extract "

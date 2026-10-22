@@ -107,6 +107,17 @@ def build(monkeypatch, fake, **kwargs):
         retry_backoff=0, circuit_cooldown=0.08, **kwargs)
 
 
+def test_explicit_thinking_control_preserves_other_callers_default(monkeypatch):
+    bodies = []
+    def fake(request, timeout):
+        bodies.append(json.loads(request.data))
+        return Response()
+    build(monkeypatch, fake)('Return JSON')
+    build(monkeypatch, fake, thinking='disabled')('Return JSON')
+    assert 'thinking' not in bodies[0]
+    assert bodies[1]['thinking'] == {'type': 'disabled'}
+
+
 def test_late_error_does_not_poison_successful_retry(monkeypatch):
     calls = []
     def fake(*args, **kwargs):

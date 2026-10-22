@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1000" height="560" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="560"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-560)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="560" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="40" y="514" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1028) scale(1,-1)">图5 换了很多卡  最后只净多通过2题</text>
+			<text x="40" y="481" style="font-family: Microsoft YaHei; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,962) scale(1,-1)">左边看机制是否介入  右边看最终成绩如何变化</text>
+			<rect x="45" y="350" width="400" height="80" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,89%,93%); fill-rule: evenodd;"/>
+			<text x="65" y="397" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,794) scale(1,-1)">296题</text>
+			<text x="65" y="369" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,738) scale(1,-1)">首次查询与候选可配对</text>
+			<text x="240" y="325" style="font-family: Microsoft YaHei; font-size: 24px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,650) scale(1,-1)">↓</text>
+			<rect x="45" y="240" width="400" height="80" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,89%,93%); fill-rule: evenodd;"/>
+			<text x="65" y="287" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,574) scale(1,-1)">281题  94.93%</text>
+			<text x="65" y="259" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,518) scale(1,-1)">选入的卡片成员改变</text>
+			<text x="240" y="215" style="font-family: Microsoft YaHei; font-size: 24px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,430) scale(1,-1)">↓</text>
+			<rect x="45" y="130" width="400" height="80" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,89%,93%); fill-rule: evenodd;"/>
+			<text x="65" y="177" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,354) scale(1,-1)">225题  80.07%</text>
+			<text x="65" y="149" style="font-family: Microsoft YaHei; font-size: 17px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,298) scale(1,-1)">在281题中声明采用新增卡</text>
+			<text x="540" y="349" style="font-family: Microsoft YaHei; font-size: 22px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,698) scale(1,-1)">救回</text>
+			<rect x="620" y="340" width="240" height="35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(42%,60%,51%); fill-rule: evenodd;"/>
+			<text x="870" y="348" style="font-family: Microsoft YaHei; font-size: 22px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,696) scale(1,-1)">20</text>
+			<text x="540" y="249" style="font-family: Microsoft YaHei; font-size: 22px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,498) scale(1,-1)">损失</text>
+			<rect x="620" y="240" width="216" height="35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(74%,46%,46%); fill-rule: evenodd;"/>
+			<text x="846" y="248" style="font-family: Microsoft YaHei; font-size: 22px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,496) scale(1,-1)">18</text>
+			<text x="540" y="150" style="font-family: Microsoft YaHei; font-size: 24px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,300) scale(1,-1)">净变化  +2 / 303题</text>
+			<text x="40" y="70" style="font-family: Microsoft YaHei; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,140) scale(1,-1)">声明采用不等于代码落实  225题中有20题仍核实出现共享配置重定义</text>
+			<text x="40" y="42" style="font-family: Microsoft YaHei; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,84) scale(1,-1)">救回和损失按全303题比较  两边分母不同  不把这些数字当成连续转化率</text>
+		</g>
+	</g>
+</svg>

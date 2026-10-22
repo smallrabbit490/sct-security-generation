@@ -1,0 +1,35 @@
+{
+  "protocol": "cle-retrieval-q-v1",
+  "status": {
+    "stage": "qualification_failed",
+    "next": "stop_no_API"
+  },
+  "calibration": [
+    "1394",
+    "102",
+    "136",
+    "1289",
+    "1298",
+    "1304"
+  ],
+  "development": [
+    "1006",
+    "1017",
+    "1061",
+    "1065",
+    "1066",
+    "1067",
+    "1070",
+    "792"
+  ],
+  "confirmation_count": 24,
+  "candidate_pairs": 0,
+  "model_labeled": 0,
+  "model_errors": 0,
+  "human_confirmed": 0,
+  "whole_library_recall": "unmeasured",
+  "Q_relearning": false,
+  "Base_Plus_run": false,
+  "P7_development_run": false,
+  "confirmation_run": false
+}

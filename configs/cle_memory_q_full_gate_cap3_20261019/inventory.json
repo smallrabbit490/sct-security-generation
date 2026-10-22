@@ -1,0 +1,26 @@
+{
+  "actual_API_calls_this_design": 0,
+  "pool_sizes": {
+    "D_init": 303,
+    "D_grow": 273,
+    "D_gate": 298
+  },
+  "historical_gate_preflight": {
+    "tasks": 298,
+    "qualified": 207,
+    "not_qualified": 91,
+    "qualified_and_not_in_known_bad_families": 177,
+    "placeholder_tasks": 46,
+    "reference_not_joint_tasks": 46,
+    "undeclared_binding_tasks": 54,
+    "known_bad_families": 33,
+    "known_bad_family_tasks": 43,
+    "counts_overlap_and_are_not_current_full_contract_validation": true
+  },
+  "documented_Q_development_exposure": {
+    "families": 73,
+    "tasks": 104,
+    "scope": "union of four named prior Q development manifests; absence is not never exposed to CLE"
+  },
+  "Dgrow_Dgate_family_overlap": 0
+}

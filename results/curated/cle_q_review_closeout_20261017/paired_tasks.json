@@ -1,0 +1,1441 @@
+[
+  {
+    "run": "autonomous24",
+    "task_id": "63",
+    "family_id": "6fbcc772170d",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 16,
+    "all_arms_adopted_card_exposures": 5,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "103",
+    "family_id": "ae44044347c3",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 8,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "172",
+    "family_id": "4f2d8f9b918d",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 15,
+    "all_arms_adopted_card_exposures": 9,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "364",
+    "family_id": "f597e4620d22",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 6,
+    "all_arms_adopted_card_exposures": 4,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "455",
+    "family_id": "4b8cb0f8aff1",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 7,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "1306",
+    "family_id": "c491a96333c7",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 0,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "606",
+    "family_id": "768266d3cc92",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [
+      "seed-602"
+    ],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 21,
+    "all_arms_adopted_card_exposures": 10,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "657",
+    "family_id": "2b4dc69294a4",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 18,
+    "all_arms_adopted_card_exposures": 7,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "87",
+    "family_id": "3db7e7372b49",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [
+      "cand-1333-4003705983803461794"
+    ],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 6,
+    "all_arms_adopted_card_exposures": 1,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "130",
+    "family_id": "5c7bfe257436",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 15,
+    "all_arms_adopted_card_exposures": 9,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "159",
+    "family_id": "e683b1265cd8",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 14,
+    "all_arms_adopted_card_exposures": 5,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "342",
+    "family_id": "0b3f7e6e2a7a",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 17,
+    "all_arms_adopted_card_exposures": 12,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "430",
+    "family_id": "e096886b5f87",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 8,
+    "all_arms_adopted_card_exposures": 3,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "498",
+    "family_id": "60d85fdd66a2",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": true,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 0,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "627",
+    "family_id": "7231c95b629d",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 21,
+    "all_arms_adopted_card_exposures": 7,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "1323",
+    "family_id": "0871c2ec5cd8",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 19,
+    "all_arms_adopted_card_exposures": 9,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "1259",
+    "family_id": "5aeb6e97473a",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 10,
+    "all_arms_adopted_card_exposures": 8,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "125",
+    "family_id": "885e9ab65610",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 7,
+    "all_arms_adopted_card_exposures": 4,
+    "outcomes": {
+      "Q3": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "164",
+    "family_id": "eae93c4cb8e1",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 15,
+    "all_arms_adopted_card_exposures": 8,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "349",
+    "family_id": "433aa1a34185",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 12,
+    "all_arms_adopted_card_exposures": 8,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "443",
+    "family_id": "7e0acd228b50",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 9,
+    "all_arms_adopted_card_exposures": 7,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "489",
+    "family_id": "cf9e2b4681b9",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 15,
+    "all_arms_adopted_card_exposures": 5,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "617",
+    "family_id": "89015705883e",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 24,
+    "all_arms_adopted_card_exposures": 9,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "autonomous24",
+    "task_id": "666",
+    "family_id": "5a6a83dbb919",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 16,
+    "all_arms_adopted_card_exposures": 9,
+    "outcomes": {
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q0": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "126",
+    "family_id": "ff83c3274cf8",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 11,
+    "all_arms_adopted_card_exposures": 5,
+    "outcomes": {
+      "Q2": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "153",
+    "family_id": "a97cf683d8ab",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 3,
+    "all_arms_adopted_card_exposures": 2,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "345",
+    "family_id": "c368fe2fb12f",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 9,
+    "all_arms_adopted_card_exposures": 4,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "96",
+    "family_id": "8bdcf5ddbde8",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": true,
+    "all_arms_selected_card_exposures": 9,
+    "all_arms_adopted_card_exposures": 2,
+    "outcomes": {
+      "Q2": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q3": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "162",
+    "family_id": "729b8f7d0224",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 12,
+    "all_arms_adopted_card_exposures": 6,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "370",
+    "family_id": "2fb9cba7e80b",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [
+      "hint-327-2192871425371349296",
+      "pitfall-327-3958700371924071797"
+    ],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 9,
+    "all_arms_adopted_card_exposures": 9,
+    "outcomes": {
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "612",
+    "family_id": "07ac5bd70b75",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [
+      "seed-611"
+    ],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 9,
+    "all_arms_adopted_card_exposures": 4,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "probe8",
+    "task_id": "603",
+    "family_id": "eff3a70e735f",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [
+      "seed-611"
+    ],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 12,
+    "all_arms_adopted_card_exposures": 6,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "1341",
+    "family_id": "694af4fba622",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 3,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "1000",
+    "family_id": "8effd9406673",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 0,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "1013",
+    "family_id": "1047f2bc6f3b",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": true,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 0,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "1055",
+    "family_id": "b27afdfa4c6d",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 15,
+    "all_arms_adopted_card_exposures": 2,
+    "outcomes": {
+      "Q2": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": false,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "340",
+    "family_id": "4048652cb877",
+    "Q2_set_changed": false,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 9,
+    "all_arms_adopted_card_exposures": 4,
+    "outcomes": {
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "777",
+    "family_id": "8ac9f3ea0eb2",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [
+      "blind-74-7891981125696054376"
+    ],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 12,
+    "all_arms_adopted_card_exposures": 1,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "1001",
+    "family_id": "bf1c4709bade",
+    "Q2_set_changed": false,
+    "Q2_order_changed": false,
+    "new_card_ids_adopted": [],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 0,
+    "all_arms_adopted_card_exposures": 0,
+    "outcomes": {
+      "Q2": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q3": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      },
+      "Q1": {
+        "functional": true,
+        "security": true,
+        "joint": true,
+        "measured": true
+      }
+    }
+  },
+  {
+    "run": "shared8",
+    "task_id": "1015",
+    "family_id": "ef36f1232121",
+    "Q2_set_changed": true,
+    "Q2_order_changed": true,
+    "new_card_ids_adopted": [
+      "pitfall-862-8413160066841834279"
+    ],
+    "Q2_rescue_vs_Q1": false,
+    "Q2_harm_vs_Q1": false,
+    "all_arms_selected_card_exposures": 5,
+    "all_arms_adopted_card_exposures": 4,
+    "outcomes": {
+      "Q2": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q3": {
+        "functional": false,
+        "security": false,
+        "joint": false,
+        "measured": true
+      },
+      "Q1": {
+        "functional": false,
+        "security": true,
+        "joint": false,
+        "measured": true
+      }
+    }
+  }
+]

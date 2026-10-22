@@ -1,0 +1,75 @@
+{
+  "reason": "observed_selector_prompt_budget_exceeded",
+  "old_limit_chars": 180000,
+  "new_limit_chars": 420000,
+  "retained_complete_records": [
+    [
+      "L3",
+      "1258"
+    ],
+    [
+      "L3",
+      "1288"
+    ],
+    [
+      "L3",
+      "1299"
+    ],
+    [
+      "L3",
+      "1303"
+    ],
+    [
+      "L3",
+      "1319"
+    ],
+    [
+      "L3",
+      "1338"
+    ],
+    [
+      "L3",
+      "831"
+    ],
+    [
+      "Lall",
+      "1258"
+    ],
+    [
+      "Lall",
+      "1288"
+    ],
+    [
+      "Lall",
+      "1299"
+    ],
+    [
+      "Lall",
+      "1303"
+    ],
+    [
+      "Lall",
+      "1319"
+    ],
+    [
+      "Lall",
+      "1338"
+    ],
+    [
+      "Lall",
+      "1350"
+    ],
+    [
+      "Lall",
+      "831"
+    ]
+  ],
+  "discarded_primary_record": [
+    "L3",
+    "1350"
+  ],
+  "old_record_preserved": true,
+  "same_actual_prompts_for_retained_records": true,
+  "cumulative_cost": true,
+  "additional_physical_P7_due_technical_recovery": 1
+}

@@ -1,0 +1,9 @@
+﻿task_id,family_id,K,Q1_repeat1,Q1_repeat2,Q2_repeat1,Q2_repeat2,Q3_repeat1,Q3_repeat2,Q2_members_changed,Q2_added_ids
+1256,26e03da64df8,6,True,True,True,True,True,True,True,['hint-1333-7952593739990058655']
+1306,c491a96333c7,3,False,False,False,False,False,False,True,['hint-352-5629701447724784240']
+1317,6254ceb5c539,5,False,False,False,False,False,False,False,[]
+1341,694af4fba622,6,True,False,False,True,False,False,True,"['pitfall-77-5172092033421997615', 'pitfall-79-1961459209968241977', 'pitfall-79-7008056801941720012']"
+1000,8effd9406673,5,False,True,False,False,True,True,True,"['hint-79-6066578642865576742', 'hint-79-895508645598659977', 'pitfall-79-7008056801941720012', 'pitfall-79-7309952539139862464']"
+1013,1047f2bc6f3b,3,True,True,True,True,True,True,True,"['cand-862-5033292903860531435', 'hint-862-853884444582854629']"
+1055,b27afdfa4c6d,12,True,True,True,True,True,True,True,['guard-915-1851254758089417513']
+1259,5aeb6e97473a,7,True,True,True,True,True,True,True,['hint-1333-8153697007201238305']

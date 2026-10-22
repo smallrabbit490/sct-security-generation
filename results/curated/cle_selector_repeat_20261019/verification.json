@@ -1,0 +1,31 @@
+{
+  "input_sources_unchanged": true,
+  "unique_identities": 160,
+  "common_candidates_and_bodies": true,
+  "same_CWE_shuffle_verified_at_prepare": true,
+  "Q_frozen": true,
+  "code_generation": false,
+  "validation": false,
+  "new_embeddings": false,
+  "native_selector_protocol": true,
+  "all_operations_valid": true,
+  "independent_scalar_effect_recalculation": [
+    {
+      "comparison": "Q2-Q0",
+      "manual_excess": 0.055126418537602764,
+      "positive_task_families": 6
+    },
+    {
+      "comparison": "Q2-Q1",
+      "manual_excess": 0.09235588281365179,
+      "positive_task_families": 6
+    },
+    {
+      "comparison": "Q2-Q3",
+      "manual_excess": 0.11220849289599288,
+      "positive_task_families": 6
+    }
+  ],
+  "all_160_valid": true,
+  "old_Q0_and_parent_input_hashes_unchanged": true
+}

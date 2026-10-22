@@ -1,0 +1,133 @@
+{
+  "protocol": "cle-dgrow-contract-versus-q-regeneration-v1",
+  "status": "DESIGNED_NOT_EXECUTED",
+  "date": "2026-10-20",
+  "operation": "A frozen-bank D_grow development evaluation",
+  "scope": "design only; no paid experiment launch",
+  "data": "configs/cle_dgrow_url_repair_20261019/repaired_tasks.json",
+  "original_data": "data/external/secodeplt/secodeplt/data.json",
+  "memory": "translation_work/diagnostics/20261019/cle_memory_q/pro_closeout/qualification_replay/diagnostic_qualification_screened_Q.jsonl",
+  "memory_cards": 1939,
+  "memory_visited_cards": 416,
+  "Q_updates": false,
+  "new_Q_learning": false,
+  "new_cards": false,
+  "run_Dgate": false,
+  "run_BasePlus": false,
+  "arms": {
+    "A": {
+      "public": "original",
+      "candidate_order": "similarity",
+      "bank": "screened"
+    },
+    "B": {
+      "public": "repaired",
+      "candidate_order": "similarity",
+      "bank": "screened"
+    },
+    "C": {
+      "public": "repaired",
+      "candidate_order": "q",
+      "bank": "screened",
+      "conditional": "G1"
+    },
+    "D": {
+      "public": "repaired",
+      "candidate_order": "q",
+      "bank": "same_CWE_shuffled_screened",
+      "conditional": "G1"
+    }
+  },
+  "model": "deepseek-v3.2",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 4096,
+  "selector_max_tokens": 256,
+  "embedding_model": "text-embedding-3-large",
+  "delta": -1,
+  "lambda_q": 0.5,
+  "max_experiences": 3,
+  "selector": "native LLM selects 0-3 after presentation ranking",
+  "workflow": "P7 first Joint early stop; at most one repair; deliver last code",
+  "validator": "validate_and_state with repaired unittest and setup for every arm; python -I; 20s",
+  "python": "translation_work/temp/cle_memory_q_env/Scripts/python.exe",
+  "shared_initial": "key=(task_id,public_version); B/C/D share repaired, A separate; identical public versions merged",
+  "first_candidates": "same repaired public+initial, exact candidate IDs/body/cosines across B/C/D",
+  "repair": "own code and native permitted feedback",
+  "shuffle_scope": "cwe",
+  "shuffle_seed": 20261015,
+  "arm_schedule_seed": 20261020,
+  "workers": 1,
+  "gates": {
+    "G0": "matching repaired preflight, correct context/validation wiring; two technical probes without process fault",
+    "G1": "at least 3 of 8 with nonconstant learned candidate Q and C/B full presentation changes; at least 3 C/D changes; otherwise skip C/D",
+    "G2": "7 changed-public pilot pairs: B/A F net>=2, Joint net>=1, S not lower; >=2 contract correction chains",
+    "G3": "C vs B and D each Joint net>=2, F>=B; >=2 families with adopted new member; >=1 rescue chain; complete measurements",
+    "G4_contract": "changed-public paired F/Joint positive and config errors reduced; context24 separate from policy1399",
+    "G4_Q": "32 tasks: C vs B and D each Joint net>=3; F not lower; >=2 family rescue chains; development signal only"
+  },
+  "budget_cumulative": {
+    "pilot_contract": {
+      "P7": 15,
+      "initials": 15,
+      "code_versions_max": 30,
+      "LLM_tokens_stop": 1500000,
+      "HTTP_attempts_stop": 250
+    },
+    "pilot_all": {
+      "P7": 31,
+      "initials": 15,
+      "code_versions_max": 62,
+      "LLM_tokens_stop": 3200000,
+      "HTTP_attempts_stop": 500
+    },
+    "all32_contract": {
+      "P7": 57,
+      "initials": 57,
+      "code_versions_max": 114,
+      "LLM_tokens_stop": 6000000,
+      "HTTP_attempts_stop": 1000
+    },
+    "all32_Q_only_after_pilot": {
+      "P7": 103,
+      "initials": 39,
+      "code_versions_max": 206,
+      "LLM_tokens_stop": 10500000,
+      "HTTP_attempts_stop": 1700
+    },
+    "all32_all": {
+      "P7": 121,
+      "initials": 57,
+      "code_versions_max": 242,
+      "LLM_tokens_stop": 12000000,
+      "HTTP_attempts_stop": 2000
+    }
+  },
+  "embedding_input_tokens_stop": 500000,
+  "card_vectors": "reuse existing cache; no automatic full bank cold embedding",
+  "budget_semantics": "stop new requests at either threshold; in-flight last request may exceed, report overrun; count all failures/retries",
+  "price_CNY": null,
+  "price_reason": "no verified current provider bill/rates",
+  "statistics": "paired final F/S/Joint, first reported separately; contract primary context24 B-A, policy1399 case; Q C-B/C-D family-paired permutation Holm across two, family cluster CI; adaptive development only",
+  "proposed_runner": "methods/cle_ablation/run_dgrow_contract_q.py",
+  "runner_implemented": false,
+  "future_raw": "translation_work/diagnostics/<execution-date>/cle_dgrow_contract_q_v1/",
+  "report": "docs/CLE_修订32题契约与Q最小再生成实验规格_20261020.md",
+  "historical_only_findings": {
+    "same_CWE_601": {
+      "cards": 162,
+      "visited": 0,
+      "nonzero_Q": 0
+    },
+    "same_CWE_918": {
+      "cards": 90,
+      "visited": 0,
+      "nonzero_Q": 0
+    },
+    "old_first_queries": 32,
+    "old_first_queries_with_nonzero_screened_Q": 1,
+    "old_first_query_nonzero_task": "676",
+    "old_first_query_learned_occurrences": 1,
+    "not_repaired_query_evidence": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "by_arm": {
+    "L3": {
+      "calls": 96,
+      "prompt_tokens": 763026,
+      "completion_tokens": 70967,
+      "total_tokens": 833993,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    },
+    "Lall": {
+      "calls": 2048,
+      "prompt_tokens": 20982313,
+      "completion_tokens": 1690176,
+      "total_tokens": 22672489,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    },
+    "shared_initial": {
+      "calls": 3,
+      "prompt_tokens": 1853,
+      "completion_tokens": 3681,
+      "total_tokens": 5534,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    }
+  },
+  "by_phase": {
+    "pilot": {
+      "calls": 169,
+      "prompt_tokens": 1455430,
+      "completion_tokens": 127752,
+      "total_tokens": 1583182,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    },
+    "full": {
+      "calls": 1978,
+      "prompt_tokens": 20291762,
+      "completion_tokens": 1637072,
+      "total_tokens": 21928834,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    }
+  },
+  "LLM": {
+    "calls": 2147,
+    "prompt_tokens": 21747192,
+    "completion_tokens": 1764824,
+    "total_tokens": 23512016,
+    "errors": 0,
+    "usage_missing": 0,
+    "unfinished": 0
+  },
+  "embedding": {
+    "calls": 179,
+    "total_tokens": 290859,
+    "failures": 0,
+    "usage_missing_calls": 0
+  },
+  "actual_bill_CNY": null,
+  "reused_initials": 300,
+  "primary_rows_by_arm": {
+    "L3": {
+      "calls": 88,
+      "prompt_tokens": 718220,
+      "completion_tokens": 63370,
+      "total_tokens": 781590
+    },
+    "Lall": {
+      "calls": 2048,
+      "prompt_tokens": 20982313,
+      "completion_tokens": 1690176,
+      "total_tokens": 22672489
+    }
+  },
+  "technical_recovery_overhead_by_arm": {
+    "L3": {
+      "calls": 8,
+      "prompt_tokens": 44806,
+      "completion_tokens": 7597,
+      "total_tokens": 52403
+    },
+    "Lall": {
+      "calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    }
+  }
+}

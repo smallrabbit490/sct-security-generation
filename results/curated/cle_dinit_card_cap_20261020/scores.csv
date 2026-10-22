@@ -1,0 +1,17 @@
+﻿arm,task_id,family_id,measured,functional,security,joint,workflow_completed,attempts,tokens
+L3,1258,19e7fa87a01d,True,True,True,True,True,1,36264
+L3,1288,b1811164f7de,True,True,True,True,True,1,36558
+L3,1299,91421efc45a3,True,False,True,False,True,2,65161
+L3,1303,240f45dd9159,True,False,True,False,True,2,89021
+L3,1319,4d3ee957bdfa,True,True,True,True,True,2,87211
+L3,1338,74597a7be2b8,True,False,False,False,True,2,62431
+L3,831,a75b7241dcda,True,True,True,True,True,1,49322
+L3,1350,a567bd506ace,True,True,False,False,False,2,52403
+Lall,1258,19e7fa87a01d,True,True,True,True,False,1,38487
+Lall,1288,b1811164f7de,True,True,True,True,True,1,43444
+Lall,1299,91421efc45a3,True,True,True,True,True,1,31697
+Lall,1303,240f45dd9159,True,False,True,False,False,2,90122
+Lall,1319,4d3ee957bdfa,True,True,True,True,True,1,40258
+Lall,1338,74597a7be2b8,True,False,False,False,True,2,61707
+Lall,831,a75b7241dcda,True,True,True,True,True,1,71679
+Lall,1350,a567bd506ace,True,True,False,False,False,2,109398

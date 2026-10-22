@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "tasks": [
+    1394,
+    102
+  ],
+  "errors": [
+    {
+      "task_id": "1394",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    }
+  ],
+  "joint": 2,
+  "rule": "2 complete native P7 tasks, measured F/S, no pipeline/technical errors; Joint need not pass"
+}

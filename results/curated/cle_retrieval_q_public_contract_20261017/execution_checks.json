@@ -1,0 +1,31 @@
+{
+  "protocol": "cle-retrieval-q-v2-public-contract",
+  "original_dataset_unchanged": true,
+  "memory_Q_unchanged": true,
+  "original_context_rows_unchanged": [
+    "102",
+    "136"
+  ],
+  "qualified": true,
+  "tasks": 14,
+  "pairs": 914,
+  "label_records": 914,
+  "labels_by_source": {
+    "new_blind_model_estimate": 892,
+    "reused_exact_public_pair_v3": 22
+  },
+  "labels_by_class": {
+    "irrelevant": 285,
+    "conflict": 153,
+    "conditional": 385,
+    "insufficient": 2,
+    "direct": 89
+  },
+  "all_human_fields_blank": true,
+  "human_confirmed": 0,
+  "P7_development_started": false,
+  "confirmation_started": false,
+  "tests_passed": 34,
+  "tests_failed": 0,
+  "label_authority": "model_estimate_pending_human_review"
+}
