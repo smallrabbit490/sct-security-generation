@@ -1,0 +1,1487 @@
+{
+  "protocol": "cle-dinit-source-restoration-public-contract-v1",
+  "source_url": "https://raw.githubusercontent.com/ucsb-mlsec/SeCodePLT/1f3da9ee48e0046359903cba0cc48d03665f96d5/virtue_code_eval/data/safety/secodeplt/data.json",
+  "upstream_revision": "1f3da9ee48e0046359903cba0cc48d03665f96d5",
+  "original_dataset_sha256": "4779e09d14fb2a2a1a6912cca9e6403fea02470b9963b7d5a438d371c9416839",
+  "old_qualification_sha256": "6503338d0b8cd184c25953c92044b0b4265631a8db8ba6f27e37fd183c6ace93",
+  "upstream_sha256": "3e655b3c8abe4d2e0240f75c021360763b70e4e0698e39913710ff4d575188ad",
+  "status": "prepared",
+  "branch": "fjy/cle-q-exploration-20261018",
+  "commit": "155a4c10bd72f8d4a7df1be11409fa0b7f209fc0",
+  "python_executable": "D:\\Agent\\sct-security-generation\\translation_work\\temp\\cle_memory_q_env\\Scripts\\python.exe",
+  "API_calls": 0,
+  "Q_updates": 0,
+  "runner": "configs\\cle_dinit_repair_20261020\\repair_and_preflight.py",
+  "backend": "original validate_and_state / local python -I",
+  "scope": "81 old excluded D_init only; 222 prior qualifications inherited without rerun",
+  "changes": [
+    {
+      "task_id": "76",
+      "cwe": "1333",
+      "family_id": "7bd2304d926b",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "82",
+      "cwe": "1333",
+      "family_id": "33a4347d8a9a",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "101",
+      "cwe": "179",
+      "family_id": "42746763a08e",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_username_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "105",
+      "cwe": "179",
+      "family_id": "c5db424ace81",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "unicodedata": "module unicodedata",
+        "valid_username_pattern": "re.Pattern[str]",
+        "reserved_words": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "107",
+      "cwe": "179",
+      "family_id": "c51270b2626b",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote_plus": "import from urllib.parse.unquote_plus",
+        "safe_query_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "109",
+      "cwe": "179",
+      "family_id": "8b8e3c8581a7",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "unescape": "import from html.unescape",
+        "script_pattern": "re.Pattern[str]",
+        "on_event_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "113",
+      "cwe": "179",
+      "family_id": "cbf03b4bea88",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "regex_query_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "114",
+      "cwe": "179",
+      "family_id": "1ab1dc7b3b3a",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_query_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "116",
+      "cwe": "179",
+      "family_id": "5de702a7429d",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_query_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "120",
+      "cwe": "179",
+      "family_id": "169eaff17e7d",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_url_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "121",
+      "cwe": "179",
+      "family_id": "3ee72226446f",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_name_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "122",
+      "cwe": "179",
+      "family_id": "79d9fca44924",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_uname_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "124",
+      "cwe": "179",
+      "family_id": "887d35b12bde",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_username_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "127",
+      "cwe": "179",
+      "family_id": "14cd13601b8a",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_input_text_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "131",
+      "cwe": "179",
+      "family_id": "89f78a73b22c",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "key_pattern": "re.Pattern[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "135",
+      "cwe": "200",
+      "family_id": "c18d2c3035e5",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "patients": "dict[str, Patient]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "137",
+      "cwe": "200",
+      "family_id": "2027e7307904",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "patients": "dict[str, Patient]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "139",
+      "cwe": "200",
+      "family_id": "bc5766947204",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "patients_data": "dict[str, Patient]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "152",
+      "cwe": "200",
+      "family_id": "fdb0e9b09089",
+      "restored_fields": [
+        "task_description.description",
+        "task_description.security_policy",
+        "task_description.context",
+        "task_description.raise"
+      ],
+      "declared_bindings": {
+        "staff": "list[Employee]"
+      },
+      "contract_corrections": [
+        "Employee属性名与实际类接口一致：role/dept/wage/email"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "168",
+      "cwe": "200",
+      "family_id": "72edf3368140",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "performances": "dict[str, Performance]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "170",
+      "cwe": "200",
+      "family_id": "2234d26e4c54",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "performances": "dict[str, Performance]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "174",
+      "cwe": "200",
+      "family_id": "ff2d71add24d",
+      "restored_fields": [
+        "task_description.security_policy",
+        "task_description.context",
+        "task_description.raise"
+      ],
+      "declared_bindings": {
+        "students": "dict[str, Student]"
+      },
+      "contract_corrections": [
+        "Student的GPA字段拼写统一为实际接口gpa"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "175",
+      "cwe": "200",
+      "family_id": "ff2d71add24d",
+      "restored_fields": [
+        "task_description.security_policy",
+        "task_description.context",
+        "task_description.raise"
+      ],
+      "declared_bindings": {
+        "students": "dict[str, Student]"
+      },
+      "contract_corrections": [
+        "Student的GPA字段拼写统一为实际接口gpa"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "176",
+      "cwe": "200",
+      "family_id": "ff2d71add24d",
+      "restored_fields": [
+        "task_description.security_policy",
+        "task_description.context",
+        "task_description.raise"
+      ],
+      "declared_bindings": {
+        "students": "dict[str, Student]"
+      },
+      "contract_corrections": [
+        "Student的GPA字段拼写统一为实际接口gpa"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "451",
+      "cwe": "347",
+      "family_id": "0b8278609f9b",
+      "restored_fields": [
+        "unittest.setup",
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "retrieve_document": "callable(url)"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [
+        "public_IOError_requirement_conflicts_with_reference_return_False"
+      ],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "453",
+      "cwe": "347",
+      "family_id": "41fc34a2f456",
+      "restored_fields": [
+        "unittest.setup",
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "fetch_data": "callable(url)"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [
+        "public_IOError_requirement_conflicts_with_reference_return_False"
+      ],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "456",
+      "cwe": "347",
+      "family_id": "f283066d3145",
+      "restored_fields": [
+        "unittest.setup",
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "fetch_document_content": "callable(url)"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [
+        "public_IOError_requirement_conflicts_with_reference_return_False"
+      ],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "481",
+      "cwe": "352",
+      "family_id": "a84a552c8f29",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [
+        "公开database别名改为实际数据库绑定名称"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "482",
+      "cwe": "352",
+      "family_id": "e51e1f981952",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [
+        "公开database别名改为实际数据库绑定名称"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "487",
+      "cwe": "352",
+      "family_id": "2c9e0cc3f66f",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [
+        "公开database别名改为实际数据库绑定名称"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "488",
+      "cwe": "352",
+      "family_id": "2c9e0cc3f66f",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [
+        "公开database别名改为实际数据库绑定名称"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "642",
+      "cwe": "601",
+      "family_id": "846a3996759b",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "643",
+      "cwe": "601",
+      "family_id": "846a3996759b",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "644",
+      "cwe": "601",
+      "family_id": "846a3996759b",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "648",
+      "cwe": "601",
+      "family_id": "f1a295572f9d",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "649",
+      "cwe": "601",
+      "family_id": "f1a295572f9d",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "650",
+      "cwe": "601",
+      "family_id": "f1a295572f9d",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "651",
+      "cwe": "601",
+      "family_id": "8969a4389110",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "652",
+      "cwe": "601",
+      "family_id": "8969a4389110",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "653",
+      "cwe": "601",
+      "family_id": "8969a4389110",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "654",
+      "cwe": "601",
+      "family_id": "3a187b544b93",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "655",
+      "cwe": "601",
+      "family_id": "3a187b544b93",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "656",
+      "cwe": "601",
+      "family_id": "3a187b544b93",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "663",
+      "cwe": "601",
+      "family_id": "b7701062bd5b",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "664",
+      "cwe": "601",
+      "family_id": "b7701062bd5b",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "665",
+      "cwe": "601",
+      "family_id": "b7701062bd5b",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "669",
+      "cwe": "601",
+      "family_id": "7faf82503dd7",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "670",
+      "cwe": "601",
+      "family_id": "7faf82503dd7",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "671",
+      "cwe": "601",
+      "family_id": "7faf82503dd7",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "678",
+      "cwe": "601",
+      "family_id": "af247e493690",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "679",
+      "cwe": "601",
+      "family_id": "7ab1fcad03f6",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "680",
+      "cwe": "601",
+      "family_id": "ed64e4bf6ee5",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "780",
+      "cwe": "74",
+      "family_id": "6880cc901434",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "TRUSTED_COMMANDS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "781",
+      "cwe": "74",
+      "family_id": "6880cc901434",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "TRUSTED_COMMANDS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "782",
+      "cwe": "74",
+      "family_id": "6880cc901434",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "APPROVED_COMMANDS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "819",
+      "cwe": "74",
+      "family_id": "027384703a40",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "820",
+      "cwe": "74",
+      "family_id": "027384703a40",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "821",
+      "cwe": "74",
+      "family_id": "027384703a40",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "855",
+      "cwe": "77",
+      "family_id": "e7a41dc8a7fb",
+      "restored_fields": [],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "856",
+      "cwe": "77",
+      "family_id": "e7a41dc8a7fb",
+      "restored_fields": [],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "857",
+      "cwe": "77",
+      "family_id": "e7a41dc8a7fb",
+      "restored_fields": [],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1042",
+      "cwe": "862",
+      "family_id": "8ce9694a69bc",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "subscription_hierarchy": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1043",
+      "cwe": "862",
+      "family_id": "3d80dfdec0bb",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "subscription_hierarchy": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1089",
+      "cwe": "918",
+      "family_id": "412aa01cba1e",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "import from urllib.parse.urlparse",
+        "TRUSTED_IMAGE_HOSTS": "list[str]",
+        "ALLOWED_SCHEMES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1090",
+      "cwe": "918",
+      "family_id": "46fc4f820f4e",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "import from urllib.parse.urlparse",
+        "TRUSTED_IMAGE_HOSTS": "list[str]",
+        "ALLOWED_SCHEMES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1097",
+      "cwe": "918",
+      "family_id": "434adecfff3c",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "import from urllib.parse.urlparse",
+        "TRUSTED_IMAGE_HOSTS": "list[str]",
+        "ALLOWED_SCHEMES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1107",
+      "cwe": "918",
+      "family_id": "ef50f318a969",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "ALLOWED_API_DOMAINS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1111",
+      "cwe": "918",
+      "family_id": "81cdaa957a56",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "ALLOWED_API_DOMAINS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1113",
+      "cwe": "918",
+      "family_id": "2674ec4a44f3",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "ALLOWED_API_DOMAINS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1116",
+      "cwe": "918",
+      "family_id": "b51dc9061a19",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "TRUSTED_RSS_PROVIDERS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]",
+        "ALLOWED_SCHEMES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1117",
+      "cwe": "918",
+      "family_id": "545be5bdd896",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "TRUSTED_RSS_PROVIDERS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]",
+        "ALLOWED_SCHEMES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1123",
+      "cwe": "918",
+      "family_id": "3bd31b40db32",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "TRUSTED_RSS_PROVIDERS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]",
+        "ALLOWED_SCHEMES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1261",
+      "cwe": "179",
+      "family_id": "bb356d0dd312",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_email_pattern": "re.Pattern[str]",
+        "RISKY_DOMAINS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1262",
+      "cwe": "179",
+      "family_id": "2085bad3e591",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "unquote": "import from urllib.parse.unquote",
+        "valid_email_pattern": "re.Pattern[str]",
+        "RISKY_DOMAINS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1268",
+      "cwe": "200",
+      "family_id": "e282cc258b36",
+      "restored_fields": [
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "orders": "dict[str, Order]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1270",
+      "cwe": "200",
+      "family_id": "71981e31bda6",
+      "restored_fields": [
+        "task_description.security_policy",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "students": "dict[str, Student]"
+      },
+      "contract_corrections": [
+        "Student的GPA字段拼写统一为实际接口gpa"
+      ],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1324",
+      "cwe": "601",
+      "family_id": "a63f97975b88",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1325",
+      "cwe": "601",
+      "family_id": "65325f479a7e",
+      "restored_fields": [
+        "unittest.testcases"
+      ],
+      "declared_bindings": {},
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1373",
+      "cwe": "918",
+      "family_id": "f77188b86c12",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "urlparse": "import from urllib.parse.urlparse",
+        "APPROVED_API_DOMAINS": "list[str]",
+        "INTERNAL_IP_RANGES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1374",
+      "cwe": "918",
+      "family_id": "cfd6d46fe31e",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "ALLOWED_API_DOMAINS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    },
+    {
+      "task_id": "1375",
+      "cwe": "918",
+      "family_id": "ab9e475a1161",
+      "restored_fields": [
+        "unittest.testcases",
+        "task_description.context"
+      ],
+      "declared_bindings": {
+        "re": "module re",
+        "urlparse": "import from urllib.parse.urlparse",
+        "TRUSTED_RSS_PROVIDERS": "list[str]",
+        "INTERNAL_IP_PATTERNS": "list[str]",
+        "ALLOWED_SCHEMES": "list[str]"
+      },
+      "contract_corrections": [],
+      "unresolved_contract": [],
+      "old_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "reference_unchanged": true
+    }
+  ]
+}

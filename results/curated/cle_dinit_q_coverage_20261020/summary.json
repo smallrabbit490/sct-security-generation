@@ -1,0 +1,608 @@
+{
+  "protocol": "cle-dinit-coverage-cross-family-design-v3",
+  "status": "stopped_probe_gate",
+  "baseline_visited": 436,
+  "cards": 1939,
+  "P7_runs": 24,
+  "arms": {
+    "L0": {
+      "executed": 12,
+      "measured": 12,
+      "functional": 4,
+      "security": 8,
+      "joint": 3,
+      "final_workflows": 10,
+      "selected_unique": 48,
+      "adopted_unique": 30,
+      "adopted_occurrences": 31,
+      "cost": {
+        "calls": 93,
+        "prompt_tokens": 763178,
+        "completion_tokens": 69730,
+        "total_tokens": 832908,
+        "errors": 0,
+        "usage_missing": 0,
+        "unfinished": 0
+      },
+      "credit": {
+        "all_feedback": {
+          "policy": "all_feedback",
+          "learned_cards": 441,
+          "new_cards": 5,
+          "coverage": 0.22743682310469315,
+          "new_card_ids": [
+            "blind-79-5966254412872916129",
+            "blind-863-8088684451811391920",
+            "blind-915-4314305093846659757",
+            "hint-502-4263120956699496651",
+            "hint-863-2665491201146380755"
+          ],
+          "valid_updates": 28,
+          "credited_relations": {
+            "unknown": 3,
+            "cross_family": 13,
+            "same_family": 12
+          },
+          "positive_Q": 171,
+          "negative_Q": 270,
+          "zero_Q": 1498,
+          "new_anchor_cards": 5,
+          "anchor_queries_touched": 22,
+          "anchor_unique_covered": 436,
+          "new_feedback_family_counts": {
+            "seed-874": 1,
+            "hint-347-534356073684544857": 1,
+            "blind-79-5966254412872916129": 1,
+            "blind-347-435091515231303867": 1,
+            "blind-915-4314305093846659757": 1,
+            "hint-79-5381193779325474553": 1,
+            "guard-915-1851254758089417513": 1,
+            "hint-352-6968976870347731261": 1,
+            "seed-790": 1,
+            "hint-862-6294070334361514088": 1,
+            "blind-863-8088684451811391920": 1,
+            "pitfall-1333-3557470096494656103": 1,
+            "hint-863-2665491201146380755": 1,
+            "hint-79-4223192076816222301": 1,
+            "hint-77-1308507374633588249": 1,
+            "hint-1333-7149508835909224135": 1,
+            "hint-79-4142691317997540576": 1,
+            "hint-863-5427687073637847282": 1,
+            "hint-502-4263120956699496651": 1,
+            "blind-347-2178107697605400695": 1,
+            "hint-327-4528130991497775195": 1,
+            "hint-770-5014484374352035747": 1,
+            "cand-327-8553196517194194335": 1,
+            "cand-770-5275147467336335582": 1,
+            "blind-863-7891981125696054376": 1,
+            "pitfall-327-2516411163311597246": 1,
+            "cand-77-2035088974679404547": 1
+          },
+          "implementation_reviews": [],
+          "implementation_joint_families": 0
+        },
+        "cross_family": {
+          "policy": "cross_family",
+          "learned_cards": 439,
+          "new_cards": 3,
+          "coverage": 0.2264053635894791,
+          "new_card_ids": [
+            "blind-915-4314305093846659757",
+            "hint-502-4263120956699496651",
+            "hint-863-2665491201146380755"
+          ],
+          "valid_updates": 13,
+          "credited_relations": {
+            "cross_family": 13
+          },
+          "positive_Q": 173,
+          "negative_Q": 266,
+          "zero_Q": 1500,
+          "new_anchor_cards": 3,
+          "anchor_queries_touched": 15,
+          "anchor_unique_covered": 434,
+          "new_feedback_family_counts": {
+            "hint-77-1308507374633588249": 1,
+            "seed-874": 1,
+            "hint-863-2665491201146380755": 1,
+            "blind-915-4314305093846659757": 1,
+            "guard-915-1851254758089417513": 1,
+            "hint-1333-7149508835909224135": 1,
+            "hint-79-4142691317997540576": 1,
+            "hint-347-534356073684544857": 1,
+            "cand-327-8553196517194194335": 1,
+            "blind-863-7891981125696054376": 1,
+            "hint-502-4263120956699496651": 1,
+            "blind-347-2178107697605400695": 1,
+            "blind-347-435091515231303867": 1
+          },
+          "implementation_reviews": [],
+          "implementation_joint_families": 0
+        }
+      },
+      "probe_allocated_tokens": 841341.5
+    },
+    "L1": {
+      "executed": 12,
+      "measured": 12,
+      "functional": 5,
+      "security": 7,
+      "joint": 3,
+      "final_workflows": 11,
+      "selected_unique": 47,
+      "adopted_unique": 31,
+      "adopted_occurrences": 35,
+      "cost": {
+        "calls": 93,
+        "prompt_tokens": 746573,
+        "completion_tokens": 63973,
+        "total_tokens": 810546,
+        "errors": 0,
+        "usage_missing": 0,
+        "unfinished": 0
+      },
+      "credit": {
+        "all_feedback": {
+          "policy": "all_feedback",
+          "learned_cards": 447,
+          "new_cards": 11,
+          "coverage": 0.23053120165033522,
+          "new_card_ids": [
+            "blind-1333-3449998408741070429",
+            "blind-1333-8703468723568658373",
+            "blind-1333-9148890510890030073",
+            "guard-74-7793362990548184397",
+            "guard-863-5004425121286820553",
+            "hint-502-4263120956699496651",
+            "hint-79-3803396337429303372",
+            "hint-79-7938435316517382081",
+            "hint-863-5324637914215124338",
+            "pitfall-502-205608610009184081",
+            "pitfall-862-5846273370123312649"
+          ],
+          "valid_updates": 33,
+          "credited_relations": {
+            "cross_family": 12,
+            "same_family": 16,
+            "unknown": 5
+          },
+          "positive_Q": 174,
+          "negative_Q": 273,
+          "zero_Q": 1492,
+          "new_anchor_cards": 11,
+          "anchor_queries_touched": 50,
+          "anchor_unique_covered": 442,
+          "new_feedback_family_counts": {
+            "blind-863-515290983181693286": 1,
+            "guard-74-7793362990548184397": 1,
+            "hint-77-3679424343564818818": 1,
+            "seed-484": 1,
+            "cand-770-1372887621317302545": 1,
+            "blind-347-435091515231303867": 1,
+            "blind-1333-9148890510890030073": 1,
+            "hint-79-7938435316517382081": 1,
+            "guard-863-5004425121286820553": 1,
+            "blind-863-7529151384849917386": 1,
+            "cand-862-639166699180187596": 1,
+            "blind-1333-8703468723568658373": 1,
+            "seed-790": 1,
+            "pitfall-77-3219081811540845227": 1,
+            "seed-483": 1,
+            "hint-79-4223192076816222301": 1,
+            "blind-1333-3449998408741070429": 1,
+            "hint-862-1405133312613939756": 1,
+            "hint-502-4263120956699496651": 1,
+            "pitfall-862-5846273370123312649": 1,
+            "hint-863-5324637914215124338": 1,
+            "seed-486": 1,
+            "cand-327-8553196517194194335": 1,
+            "cand-770-5275147467336335582": 1,
+            "blind-863-7891981125696054376": 1,
+            "pitfall-327-2516411163311597246": 1,
+            "cand-77-2035088974679404547": 1,
+            "hint-79-3803396337429303372": 1,
+            "pitfall-502-205608610009184081": 1
+          },
+          "implementation_reviews": [],
+          "implementation_joint_families": 0
+        },
+        "cross_family": {
+          "policy": "cross_family",
+          "learned_cards": 440,
+          "new_cards": 4,
+          "coverage": 0.22692109334708613,
+          "new_card_ids": [
+            "blind-1333-3449998408741070429",
+            "blind-1333-8703468723568658373",
+            "hint-502-4263120956699496651",
+            "hint-79-7938435316517382081"
+          ],
+          "valid_updates": 12,
+          "credited_relations": {
+            "cross_family": 12
+          },
+          "positive_Q": 174,
+          "negative_Q": 266,
+          "zero_Q": 1499,
+          "new_anchor_cards": 4,
+          "anchor_queries_touched": 35,
+          "anchor_unique_covered": 435,
+          "new_feedback_family_counts": {
+            "seed-486": 1,
+            "blind-863-515290983181693286": 1,
+            "blind-1333-8703468723568658373": 1,
+            "seed-484": 1,
+            "blind-1333-3449998408741070429": 1,
+            "cand-327-8553196517194194335": 1,
+            "blind-863-7891981125696054376": 1,
+            "seed-483": 1,
+            "hint-502-4263120956699496651": 1,
+            "blind-347-435091515231303867": 1,
+            "hint-79-7938435316517382081": 1
+          },
+          "implementation_reviews": [],
+          "implementation_joint_families": 0
+        }
+      },
+      "probe_allocated_tokens": 818979.5
+    }
+  },
+  "new_Dgate_generation": false,
+  "cost": {
+    "LLM": {
+      "calls": 198,
+      "prompt_tokens": 1516386,
+      "completion_tokens": 143935,
+      "total_tokens": 1660321,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    },
+    "shared_initial": {
+      "calls": 12,
+      "prompt_tokens": 6635,
+      "completion_tokens": 10232,
+      "total_tokens": 16867,
+      "errors": 0,
+      "usage_missing": 0,
+      "unfinished": 0
+    },
+    "embedding": [
+      {
+        "stage": "smoke",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 726,
+        "prompt_tokens": 726,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "smoke",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 721,
+        "prompt_tokens": 721,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "smoke",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1166,
+        "prompt_tokens": 1166,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "smoke",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 881,
+        "prompt_tokens": 881,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "smoke",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1469,
+        "prompt_tokens": 1469,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "smoke",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1801,
+        "prompt_tokens": 1801,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1011,
+        "prompt_tokens": 1011,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1512,
+        "prompt_tokens": 1512,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1334,
+        "prompt_tokens": 1334,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 829,
+        "prompt_tokens": 829,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1446,
+        "prompt_tokens": 1446,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1420,
+        "prompt_tokens": 1420,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1121,
+        "prompt_tokens": 1121,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1370,
+        "prompt_tokens": 1370,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1676,
+        "prompt_tokens": 1676,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 570,
+        "prompt_tokens": 570,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 933,
+        "prompt_tokens": 933,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 297,
+        "prompt_tokens": 297,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1035,
+        "prompt_tokens": 1035,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 845,
+        "prompt_tokens": 845,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 740,
+        "prompt_tokens": 740,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1093,
+        "prompt_tokens": 1093,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1486,
+        "prompt_tokens": 1486,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 715,
+        "prompt_tokens": 715,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1052,
+        "prompt_tokens": 1052,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1113,
+        "prompt_tokens": 1113,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1614,
+        "prompt_tokens": 1614,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1043,
+        "prompt_tokens": 1043,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1111,
+        "prompt_tokens": 1111,
+        "failures": 0,
+        "usage_missing_calls": 0
+      },
+      {
+        "stage": "probe",
+        "texts": 1,
+        "calls": 1,
+        "total_tokens": 1109,
+        "prompt_tokens": 1109,
+        "failures": 0,
+        "usage_missing_calls": 0
+      }
+    ],
+    "actual_currency": null,
+    "physical_HTTP_retries": "not fully observed by native requester"
+  },
+  "shared_candidates": [
+    {
+      "task_id": "1003",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1008",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1053",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1216",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1258",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1288",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1299",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1303",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1319",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1338",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "1350",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    },
+    {
+      "task_id": "831",
+      "same_first_candidates": true,
+      "both_retrieval_completed": true
+    }
+  ],
+  "fatal_issues": []
+}

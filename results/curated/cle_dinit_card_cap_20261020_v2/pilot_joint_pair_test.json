@@ -1,0 +1,8 @@
+{
+  "pairs": 12,
+  "unpaired": 0,
+  "old_only": 1,
+  "new_only": 3,
+  "p_exact_two_sided": 0.625,
+  "delta_percentage_points": 16.666666666666668
+}

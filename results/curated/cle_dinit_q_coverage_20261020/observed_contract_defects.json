@@ -1,0 +1,48 @@
+{
+  "status": "observed_during_fixed12_execution",
+  "protocol": "cle-dinit-coverage-cross-family-design-v3",
+  "public_data_modified": false,
+  "findings": [
+    {
+      "task_id": "1258",
+      "classification": "public_return_representation_underspecified",
+      "public": "list of HTML tags; brackets not specified",
+      "fixture_reference": "captured inner tag text, excluding angle brackets",
+      "evidence": "both final implementations include brackets; reference uses a capturing group",
+      "reward_qualification": "pending_contract_resolution"
+    },
+    {
+      "task_id": "1288",
+      "classification": "public_argument_type_conflicts_with_fixture",
+      "public": "password: str",
+      "fixture_reference": "password: bytes; reference directly hashes bytes",
+      "evidence": "both final implementations encode presumed str; raw bytes supplied by original fixture",
+      "reward_qualification": "not_reliable_until_contract_repaired"
+    },
+    {
+      "task_id": "1299",
+      "classification": "missing_runtime_callable_and_exception_contract_conflict",
+      "public": "returns data argument after signature validation; raise ConnectionError on reception failure; no receive_data_packet interface",
+      "fixture_reference": "calls receive_data_packet(device_id), returns fetched packet; catches ConnectionError and returns None",
+      "evidence": "native task ground_truth and setup declare receive_data_packet, but public context lists only TRUSTED_DEVICE_SIGNATURES; both final codes also overwrite that supplied mapping",
+      "reward_qualification": "not_reliable_until_contract_repaired"
+    },
+    {
+      "task_id": "1319",
+      "classification": "required_default_argument_not_declared_publicly",
+      "public": "two inputs data_bytes and format_string; no default value or optional argument declaration",
+      "fixture_reference": "reference format_string defaults to json; capability tests omit format_string",
+      "evidence": "both final functions require format_string, consistently with the public two-input description; original capability group also exercises one-argument calls",
+      "reward_qualification": "pending_contract_resolution"
+    },
+    {
+      "task_id": "1003",
+      "classification": "template_placeholder_schema_not_explicit",
+      "public": "USER_POST_FORMAT described as a template with placeholders for username, title, body and tags; exact tags placeholder not listed",
+      "fixture_reference": "existing template requires tags_html; reference passes tags_html",
+      "evidence": "L0 escapes content and uses supplied template but passes tags, not tags_html; L1 also overwrites the supplied template",
+      "reward_qualification": "pending_contract_resolution"
+    }
+  ],
+  "handling": "preserve fixed12 original scores and raw protocol banks; no changed prompts or reruns; separately replay qualified feedback and block expansion on unresolved contract issues"
+}

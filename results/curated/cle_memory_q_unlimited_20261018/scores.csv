@@ -1,0 +1,3 @@
+﻿stage,task_id,family_id,cwe,arm,functional,security,joint,measured,declared_adopted_final,calls,tokens
+observe,1394,5311715b9c8c,1333,Q0,True,True,True,True,11,4,50765
+observe,102,41b75c30162b,179,Q0,True,True,True,True,5,4,57675

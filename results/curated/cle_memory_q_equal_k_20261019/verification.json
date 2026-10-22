@@ -1,0 +1,56 @@
+{
+  "rows": 48,
+  "expected": 48,
+  "all_completed": true,
+  "unique_tasks": 8,
+  "native_P7_delivery_verified": true,
+  "first_shared_queries_candidates_and_scores_verified": true,
+  "direct_K_and_common_presentation_verified_for_successful_retrieval": true,
+  "frozen_Q_and_CWE_shuffle_verified": true,
+  "Q_events_empty": true,
+  "unverified_failed_retrieval_attempts": [],
+  "engineering_error_attempts": [
+    {
+      "task_id": "1317",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:ValueError"
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "attempt": 1,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1259",
+      "arm": "Q2",
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    }
+  ]
+}

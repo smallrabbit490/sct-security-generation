@@ -1,0 +1,41 @@
+{
+  "protocol": "cle-dinit-source-restoration-public-contract-v1",
+  "version": "commands_v2",
+  "API_calls": 0,
+  "Q_updates": 0,
+  "local_validations": 162,
+  "command_runtime_path": "C:\\Program Files\\Git\\usr\\bin",
+  "repaired81_eligible": 74,
+  "inherited_eligible": 222,
+  "total_eligible": 296,
+  "still_excluded": [
+    "76",
+    "82",
+    "105",
+    "109",
+    "451",
+    "453",
+    "456"
+  ],
+  "reason_counts": {
+    "reference_not_joint": 4,
+    "vulnerable_control_not_security_rejected": 1,
+    "public_IOError_requirement_conflicts_with_reference_return_False": 3
+  },
+  "cohorts": {
+    "secure_reference": {
+      "measured": 81,
+      "functional": 79,
+      "security": 78,
+      "joint": 77
+    },
+    "vulnerable_control": {
+      "measured": 81,
+      "functional": 79,
+      "security": 1,
+      "joint": 0
+    }
+  },
+  "original_dataset_unchanged": true,
+  "old_qualification_unchanged": true
+}

@@ -1,0 +1,17 @@
+﻿arm,scope,stage,records,card_occurrences,changed_Q_occurrences,visited_before_occurrences,visited_after_occurrences,records_with_changed_Q
+Q0,all_attempts,adopted,503,882,33,480,513,21
+Q0,all_attempts,selected,503,1363,51,647,698,32
+Q0,first_attempt,adopted,298,584,25,346,371,16
+Q0,first_attempt,selected,298,820,29,429,458,17
+Q1,all_attempts,adopted,494,870,29,453,482,20
+Q1,all_attempts,selected,494,1368,44,640,684,28
+Q1,first_attempt,adopted,298,593,18,333,351,13
+Q1,first_attempt,selected,298,842,20,442,462,15
+Q2,all_attempts,adopted,496,905,37,495,532,24
+Q2,all_attempts,selected,496,1364,57,668,725,34
+Q2,first_attempt,adopted,298,612,22,362,384,14
+Q2,first_attempt,selected,298,847,30,456,486,18
+Q3,all_attempts,adopted,497,829,32,438,470,21
+Q3,all_attempts,selected,497,1346,42,613,655,27
+Q3,first_attempt,adopted,298,560,19,315,334,13
+Q3,first_attempt,selected,298,839,26,417,443,16

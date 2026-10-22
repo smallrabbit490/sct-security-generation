@@ -1,0 +1,38 @@
+{
+  "reviews": [
+    {
+      "task_id": "834",
+      "original_reason": "generation:ValueError:model_output_truncated",
+      "static_code_review": null,
+      "primary_score_unchanged": true,
+      "new_generation_API_calls": 0
+    },
+    {
+      "task_id": "150",
+      "original_reason": null,
+      "static_code_review": {
+        "type": "SyntaxError",
+        "message": "'(' was never closed",
+        "line": 24
+      },
+      "primary_score_unchanged": true,
+      "new_generation_API_calls": 0
+    },
+    {
+      "task_id": "835",
+      "original_reason": "generation:ValueError:model_output_truncated",
+      "static_code_review": null,
+      "primary_score_unchanged": true,
+      "new_generation_API_calls": 0
+    },
+    {
+      "task_id": "836",
+      "original_reason": "generation:ValueError:model_output_truncated",
+      "static_code_review": null,
+      "primary_score_unchanged": true,
+      "new_generation_API_calls": 0
+    }
+  ],
+  "API_calls": 0,
+  "note": "static review supplements missing diagnostic details; does not replace original validation or scores"
+}

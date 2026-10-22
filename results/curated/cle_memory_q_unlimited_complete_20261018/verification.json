@@ -1,0 +1,30 @@
+{
+  "protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+  "verification": "pass",
+  "total_P7_rows": 690,
+  "Q_coverage": {
+    "cards": 1939,
+    "visited": 466,
+    "positive_q": 168,
+    "negative_q": 298,
+    "one_visit": 208,
+    "two_family": 217,
+    "three_family": 93,
+    "fraction": 0.24033006704486848
+  },
+  "gate_mechanism_counts": {
+    "valid_shared_query": 48,
+    "q_order_changed": 46,
+    "selected_members_changed": 48,
+    "adopted_members_changed": 46,
+    "q_vs_shuffled_order_changed": 48,
+    "q_vs_shuffled_selected_changed": 48,
+    "q_vs_shuffled_adopted_changed": 46
+  },
+  "declaration_is_not_implementation": true,
+  "inherited_probe_identical": true,
+  "Q_event_replay_exact": true,
+  "memory_body_unchanged": true,
+  "frozen_Q_used_exactly": true,
+  "learning_gate_families_disjoint": true
+}

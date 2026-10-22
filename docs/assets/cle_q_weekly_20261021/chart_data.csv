@@ -1,0 +1,15 @@
+﻿series,item,count,denominator,note
+old_D_gate,Q0,97,298,complete_measurement=298
+old_D_gate,Q1,104,298,complete_measurement=298
+old_D_gate,Q2,102,298,complete_measurement=296
+old_D_gate,Q3,100,298,complete_measurement=298
+Q_coverage,0,466,1939,at_least_one_valid_feedback
+Q_coverage,1,416,1939,at_least_one_valid_feedback
+Q_coverage,2,436,1939,at_least_one_valid_feedback
+Q_coverage,3,669,1939,at_least_one_valid_feedback
+Q_coverage,4,926,1939,at_least_one_valid_feedback
+Q_coverage,5,967,1939,at_least_one_valid_feedback
+Q_coverage,6,972,1939,at_least_one_valid_feedback
+D_init_history,0,138,303,different_state_online_trajectory
+D_init_history,1,140,303,different_state_online_trajectory
+D_init_history,2,140,303,different_state_online_trajectory

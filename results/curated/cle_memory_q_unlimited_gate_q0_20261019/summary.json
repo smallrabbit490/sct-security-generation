@@ -1,0 +1,301 @@
+{
+  "arms": {
+    "Q2": {
+      "n": 48,
+      "functional": 25,
+      "security": 36,
+      "joint": 21,
+      "measured": 48,
+      "first_joint": 21,
+      "errors": 6,
+      "calls": 328,
+      "total_tokens": 3591400,
+      "seconds": 4145.499167000045
+    },
+    "Q1": {
+      "n": 48,
+      "functional": 23,
+      "security": 35,
+      "joint": 17,
+      "measured": 48,
+      "first_joint": 17,
+      "errors": 8,
+      "calls": 347,
+      "total_tokens": 3510978,
+      "seconds": 4243.140007999973
+    },
+    "Q3": {
+      "n": 48,
+      "functional": 25,
+      "security": 36,
+      "joint": 20,
+      "measured": 48,
+      "first_joint": 20,
+      "errors": 2,
+      "calls": 332,
+      "total_tokens": 3511848,
+      "seconds": 4043.3271351000003
+    },
+    "Q0": {
+      "n": 48,
+      "functional": 24,
+      "security": 34,
+      "joint": 18,
+      "measured": 48,
+      "first_joint": 17,
+      "errors": 11,
+      "calls": 349,
+      "total_tokens": 3700783,
+      "seconds": 4919.412361699999
+    }
+  },
+  "paired": {
+    "Q2": {
+      "pairs": 48,
+      "measured_pairs": 48,
+      "wins": 4,
+      "losses": 1,
+      "p_exact": 0.375,
+      "functional_harms": 1,
+      "p_holm": 1,
+      "delta_joint": 0.0625,
+      "ci95_paired_tasks": [
+        -0.020833333333333332,
+        0.16666666666666666
+      ]
+    },
+    "Q1": {
+      "pairs": 48,
+      "measured_pairs": 48,
+      "wins": 2,
+      "losses": 3,
+      "p_exact": 1,
+      "functional_harms": 2,
+      "p_holm": 1,
+      "delta_joint": -0.020833333333333332,
+      "ci95_paired_tasks": [
+        -0.10416666666666667,
+        0.0625
+      ]
+    },
+    "Q3": {
+      "pairs": 48,
+      "measured_pairs": 48,
+      "wins": 4,
+      "losses": 2,
+      "p_exact": 0.6875,
+      "functional_harms": 2,
+      "p_holm": 1,
+      "delta_joint": 0.041666666666666664,
+      "ci95_paired_tasks": [
+        -0.0625,
+        0.14583333333333334
+      ]
+    }
+  },
+  "role": "training_development_only",
+  "protocol": "cle-q-unlimited-gate-q0-addendum-v1",
+  "added_rows": 48,
+  "reused_rows": 144,
+  "completed": true,
+  "expected_combined_rows": 192,
+  "unique_tasks": 48,
+  "original_parent_protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+  "adoption": {
+    "Q0": {
+      "attempts": 79,
+      "selected": 536,
+      "declared_adopted": 279,
+      "over_three_selected": 57,
+      "over_three_adopted": 35
+    },
+    "Q1": {
+      "attempts": 79,
+      "selected": 503,
+      "declared_adopted": 249,
+      "over_three_selected": 58,
+      "over_three_adopted": 28
+    },
+    "Q2": {
+      "attempts": 75,
+      "selected": 557,
+      "declared_adopted": 308,
+      "over_three_selected": 61,
+      "over_three_adopted": 43
+    },
+    "Q3": {
+      "attempts": 76,
+      "selected": 480,
+      "declared_adopted": 285,
+      "over_three_selected": 58,
+      "over_three_adopted": 37
+    }
+  },
+  "Q_frozen": true,
+  "new_Q_updates": 0,
+  "new_cost": {
+    "Q0": {
+      "calls": 349,
+      "prompt_tokens": 3426732,
+      "completion_tokens": 274051,
+      "total_tokens": 3700783,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "embedding": {
+      "calls": 31,
+      "total_tokens": 46971,
+      "failures": 0,
+      "usage_missing_calls": 0
+    },
+    "shared_initial_new_calls": 0,
+    "currency_actual": null
+  },
+  "parent_cost": {
+    "llm": {
+      "total": {
+        "calls": 1055,
+        "prompt_tokens": 9866680,
+        "completion_tokens": 823468,
+        "total_tokens": 10690148,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 1
+      },
+      "by_arm": {
+        "Q1": {
+          "calls": 347,
+          "prompt_tokens": 3246807,
+          "completion_tokens": 264171,
+          "total_tokens": 3510978,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0
+        },
+        "Q2": {
+          "calls": 328,
+          "prompt_tokens": 3330332,
+          "completion_tokens": 261068,
+          "total_tokens": 3591400,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 1
+        },
+        "Q3": {
+          "calls": 332,
+          "prompt_tokens": 3262703,
+          "completion_tokens": 249145,
+          "total_tokens": 3511848,
+          "cached_tokens": 0,
+          "usage_missing": 0,
+          "errors": 0
+        }
+      },
+      "shared_initial": {
+        "calls": 48,
+        "prompt_tokens": 26838,
+        "completion_tokens": 49084,
+        "total_tokens": 75922,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0
+      }
+    },
+    "embedding": {
+      "calls": 134,
+      "failures": 0,
+      "total_tokens": 174234,
+      "cache_hits": 2017,
+      "embedded_texts": 134,
+      "usage_missing_calls": 0
+    },
+    "currency_actual": null,
+    "note": "Logical requests; no invoice/old price estimate. Shared initial counted once."
+  },
+  "engineering_errors": [
+    {
+      "task_id": "1000",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1318",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "initial_analysis:invalid_reused_analysis"
+    },
+    {
+      "task_id": "1001",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1001",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "initial_analysis:ValueError"
+    },
+    {
+      "task_id": "1006",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1347",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1132",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1179",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "1361",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "planning:JSONDecodeError"
+    },
+    {
+      "task_id": "342",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1067",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:invalid_rejected_experiences"
+    },
+    {
+      "task_id": "141",
+      "arm": "Q0",
+      "attempt": 0,
+      "error": "adoption:unknown_applied_experience_ids"
+    },
+    {
+      "task_id": "141",
+      "arm": "Q0",
+      "attempt": 1,
+      "error": "planning:ValueError"
+    }
+  ],
+  "unverified_failed_retrieval_attempts": [],
+  "comparison_scope": "late_added_development_control",
+  "full_library_recall": "unmeasured",
+  "formal_retrieval_labels": "not_added",
+  "claim": "exploratory_comparison_complete"
+}

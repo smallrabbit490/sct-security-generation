@@ -1,0 +1,961 @@
+{
+  "protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+  "status": "gate_completed",
+  "stages": {
+    "observe": {
+      "summary": {
+        "arms": {
+          "Q0": {
+            "n": 273,
+            "functional": 128,
+            "security": 208,
+            "joint": 109,
+            "measured": 271,
+            "first_joint": 103,
+            "errors": 36,
+            "calls": 1934,
+            "total_tokens": 20600613,
+            "seconds": 24599.7348049
+          }
+        },
+        "paired": {},
+        "role": "training fit",
+        "protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+        "stage": "observe",
+        "rows": 273,
+        "technical_errors": [
+          {
+            "task_id": "1394",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "1344",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "136",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "1290",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "1128",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "144",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "1391",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1133",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "initial_analysis:invalid_reused_analysis"
+          },
+          {
+            "task_id": "110",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError;planning:JSONDecodeError"
+          },
+          {
+            "task_id": "774",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "unmeasured_or_degraded"
+          },
+          {
+            "task_id": "1084",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "334",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "789",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "123",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "initial_analysis:JSONDecodeError"
+          },
+          {
+            "task_id": "158",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "970",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "477",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "974",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "974",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "977",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "initial_analysis:JSONDecodeError"
+          },
+          {
+            "task_id": "173",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "planning:ValueError"
+          },
+          {
+            "task_id": "809",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1242",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "1098",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "904",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "adoption:invalid_rejected_experiences"
+          },
+          {
+            "task_id": "983",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "814",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1381",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "366",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "179",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "95",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "initial_analysis:invalid_reused_analysis;planning:JSONDecodeError"
+          },
+          {
+            "task_id": "816",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "planning:EnglishPolicyError"
+          },
+          {
+            "task_id": "1386",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "818",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "994",
+            "arm": "Q0",
+            "attempt": 0,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1390",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1114",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1122",
+            "arm": "Q0",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          }
+        ],
+        "adoption": {
+          "attempts": 442,
+          "retrieved_cards": 2714,
+          "declared_adopted_cards": 1356,
+          "retrieved_above_three": 316,
+          "adopted_above_three": 156,
+          "code_implementation_review": "not automatically verified; declaration is not implementation"
+        },
+        "Q_learning": {
+          "visited_cards": 466,
+          "total_cards": 1939,
+          "coverage": 0.24033006704486848,
+          "updates": 1090,
+          "positive_updates": 421,
+          "negative_updates": 669,
+          "two_family_cards": 217,
+          "visit_distribution": {
+            "3": 64,
+            "1": 208,
+            "2": 121,
+            "4": 28,
+            "7": 10,
+            "9": 3,
+            "15": 1,
+            "8": 6,
+            "5": 12,
+            "6": 8,
+            "11": 1,
+            "12": 2,
+            "10": 1,
+            "23": 1
+          }
+        }
+      },
+      "cost": {
+        "llm": {
+          "total": {
+            "calls": 2207,
+            "prompt_tokens": 19184499,
+            "completion_tokens": 1834469,
+            "total_tokens": 21018968,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          },
+          "by_arm": {
+            "Q0": {
+              "calls": 1934,
+              "prompt_tokens": 19032450,
+              "completion_tokens": 1568163,
+              "total_tokens": 20600613,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            }
+          },
+          "shared_initial": {
+            "calls": 273,
+            "prompt_tokens": 152049,
+            "completion_tokens": 266306,
+            "total_tokens": 418355,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          }
+        },
+        "embedding": {
+          "calls": 418,
+          "failures": 0,
+          "total_tokens": 525690,
+          "cache_hits": 5835,
+          "embedded_texts": 417,
+          "usage_missing_calls": 0
+        },
+        "currency_actual": null,
+        "note": "Logical requests; no invoice/old price estimate. Shared initial counted once."
+      }
+    },
+    "retest": {
+      "summary": {
+        "arms": {
+          "Q2": {
+            "n": 273,
+            "functional": 124,
+            "security": 201,
+            "joint": 100,
+            "measured": 273,
+            "first_joint": 97,
+            "errors": 42,
+            "calls": 1970,
+            "total_tokens": 21262438,
+            "seconds": 25140.584388599964
+          }
+        },
+        "paired": {},
+        "role": "training fit",
+        "protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+        "stage": "retest",
+        "rows": 273,
+        "technical_errors": [
+          {
+            "task_id": "1394",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "1304",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "1127",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1080",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "adoption:invalid_rejected_experiences"
+          },
+          {
+            "task_id": "1399",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1218",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "468",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "675",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "1342",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "1133",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "initial_analysis:invalid_reused_analysis"
+          },
+          {
+            "task_id": "1220",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1292",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "828",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "681",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "830",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "965",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "1190",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "1087",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "967",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:JSONDecodeError"
+          },
+          {
+            "task_id": "433",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1231",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "adoption:invalid_rejected_experiences"
+          },
+          {
+            "task_id": "163",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1152",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "350",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "1153",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "479",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          },
+          {
+            "task_id": "134",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "904",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:ValueError"
+          },
+          {
+            "task_id": "93",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1099",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "814",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:EnglishPolicyError"
+          },
+          {
+            "task_id": "1381",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1246",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1100",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "986",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "95",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "initial_analysis:invalid_reused_analysis"
+          },
+          {
+            "task_id": "457",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "816",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:EnglishPolicyError"
+          },
+          {
+            "task_id": "1367",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1103",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "817",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "1371",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "planning:JSONDecodeError"
+          }
+        ],
+        "adoption": {
+          "attempts": 449,
+          "retrieved_cards": 2834,
+          "declared_adopted_cards": 1411,
+          "retrieved_above_three": 345,
+          "adopted_above_three": 178,
+          "code_implementation_review": "not automatically verified; declaration is not implementation"
+        },
+        "q_frozen": true
+      },
+      "cost": {
+        "llm": {
+          "total": {
+            "calls": 1970,
+            "prompt_tokens": 19621974,
+            "completion_tokens": 1640464,
+            "total_tokens": 21262438,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 2
+          },
+          "by_arm": {
+            "Q2": {
+              "calls": 1970,
+              "prompt_tokens": 19621974,
+              "completion_tokens": 1640464,
+              "total_tokens": 21262438,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 2
+            }
+          },
+          "shared_initial": {
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          }
+        },
+        "embedding": {
+          "calls": 176,
+          "failures": 0,
+          "total_tokens": 295620,
+          "cache_hits": 2206,
+          "embedded_texts": 176,
+          "usage_missing_calls": 0
+        },
+        "currency_actual": null,
+        "note": "Logical requests; no invoice/old price estimate. Shared initial counted once."
+      }
+    },
+    "gate": {
+      "summary": {
+        "arms": {
+          "Q2": {
+            "n": 48,
+            "functional": 25,
+            "security": 36,
+            "joint": 21,
+            "measured": 48,
+            "first_joint": 21,
+            "errors": 6,
+            "calls": 328,
+            "total_tokens": 3591400,
+            "seconds": 4145.499167000045
+          },
+          "Q1": {
+            "n": 48,
+            "functional": 23,
+            "security": 35,
+            "joint": 17,
+            "measured": 48,
+            "first_joint": 17,
+            "errors": 8,
+            "calls": 347,
+            "total_tokens": 3510978,
+            "seconds": 4243.140007999973
+          },
+          "Q3": {
+            "n": 48,
+            "functional": 25,
+            "security": 36,
+            "joint": 20,
+            "measured": 48,
+            "first_joint": 20,
+            "errors": 2,
+            "calls": 332,
+            "total_tokens": 3511848,
+            "seconds": 4043.3271351000003
+          }
+        },
+        "paired": {
+          "Q2": {
+            "pairs": 48,
+            "measured_pairs": 48,
+            "wins": 6,
+            "losses": 2,
+            "p_exact": 0.2890625,
+            "functional_harms": 2,
+            "p_holm": 0.578125
+          },
+          "Q3": {
+            "pairs": 48,
+            "measured_pairs": 48,
+            "wins": 5,
+            "losses": 2,
+            "p_exact": 0.453125,
+            "functional_harms": 2,
+            "p_holm": 0.578125
+          }
+        },
+        "role": "D_gate development transfer",
+        "protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+        "stage": "gate",
+        "rows": 144,
+        "technical_errors": [
+          {
+            "task_id": "1317",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "1318",
+            "arm": "Q2",
+            "attempt": 0,
+            "error": "initial_analysis:invalid_reused_analysis"
+          },
+          {
+            "task_id": "1318",
+            "arm": "Q3",
+            "attempt": 0,
+            "error": "initial_analysis:invalid_reused_analysis"
+          },
+          {
+            "task_id": "1318",
+            "arm": "Q1",
+            "attempt": 0,
+            "error": "initial_analysis:invalid_reused_analysis"
+          },
+          {
+            "task_id": "1001",
+            "arm": "Q3",
+            "attempt": 0,
+            "error": "planning:EnglishPolicyError"
+          },
+          {
+            "task_id": "1001",
+            "arm": "Q3",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1006",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "retrieval:RuntimeError"
+          },
+          {
+            "task_id": "1229",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "1229",
+            "arm": "Q1",
+            "attempt": 0,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "1061",
+            "arm": "Q1",
+            "attempt": 1,
+            "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "603",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "initial_analysis:JSONDecodeError"
+          },
+          {
+            "task_id": "1232",
+            "arm": "Q2",
+            "attempt": 1,
+            "error": "experience_analysis:ValueError"
+          },
+          {
+            "task_id": "1179",
+            "arm": "Q1",
+            "attempt": 0,
+            "error": "adoption:missing_applied_experience_ids"
+          },
+          {
+            "task_id": "489",
+            "arm": "Q1",
+            "attempt": 0,
+            "error": "adoption:invalid_rejected_experiences"
+          },
+          {
+            "task_id": "1361",
+            "arm": "Q1",
+            "attempt": 0,
+            "error": "planning:EnglishPolicyError"
+          },
+          {
+            "task_id": "141",
+            "arm": "Q1",
+            "attempt": 0,
+            "error": "adoption:unknown_applied_experience_ids"
+          },
+          {
+            "task_id": "490",
+            "arm": "Q1",
+            "attempt": 1,
+            "error": "planning:JSONDecodeError"
+          }
+        ],
+        "adoption": {
+          "attempts": 230,
+          "retrieved_cards": 1540,
+          "declared_adopted_cards": 842,
+          "retrieved_above_three": 177,
+          "adopted_above_three": 108,
+          "code_implementation_review": "not automatically verified; declaration is not implementation"
+        },
+        "q_frozen": true
+      },
+      "cost": {
+        "llm": {
+          "total": {
+            "calls": 1055,
+            "prompt_tokens": 9866680,
+            "completion_tokens": 823468,
+            "total_tokens": 10690148,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 1
+          },
+          "by_arm": {
+            "Q1": {
+              "calls": 347,
+              "prompt_tokens": 3246807,
+              "completion_tokens": 264171,
+              "total_tokens": 3510978,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            },
+            "Q2": {
+              "calls": 328,
+              "prompt_tokens": 3330332,
+              "completion_tokens": 261068,
+              "total_tokens": 3591400,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 1
+            },
+            "Q3": {
+              "calls": 332,
+              "prompt_tokens": 3262703,
+              "completion_tokens": 249145,
+              "total_tokens": 3511848,
+              "cached_tokens": 0,
+              "usage_missing": 0,
+              "errors": 0
+            }
+          },
+          "shared_initial": {
+            "calls": 48,
+            "prompt_tokens": 26838,
+            "completion_tokens": 49084,
+            "total_tokens": 75922,
+            "cached_tokens": 0,
+            "usage_missing": 0,
+            "errors": 0
+          }
+        },
+        "embedding": {
+          "calls": 134,
+          "failures": 0,
+          "total_tokens": 174234,
+          "cache_hits": 2017,
+          "embedded_texts": 134,
+          "usage_missing_calls": 0
+        },
+        "currency_actual": null,
+        "note": "Logical requests; no invoice/old price estimate. Shared initial counted once."
+      }
+    }
+  },
+  "training_fit_comparison": {
+    "arms": {
+      "Q1": {
+        "n": 273,
+        "functional": 128,
+        "security": 208,
+        "joint": 109,
+        "measured": 271,
+        "first_joint": 103,
+        "errors": 36,
+        "calls": 1934,
+        "total_tokens": 20600613,
+        "seconds": 24599.7348049
+      },
+      "Q2": {
+        "n": 273,
+        "functional": 124,
+        "security": 201,
+        "joint": 100,
+        "measured": 273,
+        "first_joint": 97,
+        "errors": 42,
+        "calls": 1970,
+        "total_tokens": 21262438,
+        "seconds": 25140.584388599964
+      }
+    },
+    "paired": {
+      "Q2": {
+        "pairs": 273,
+        "measured_pairs": 271,
+        "wins": 11,
+        "losses": 21,
+        "p_exact": 0.11018416518345475,
+        "functional_harms": 18,
+        "p_holm": 0.11018416518345475
+      }
+    },
+    "role": "training_development_only"
+  },
+  "probe_gate": {
+    "passed": false,
+    "tasks": [
+      1394,
+      102
+    ],
+    "errors": [
+      {
+        "task_id": "1394",
+        "arm": "Q0",
+        "attempt": 0,
+        "error": "planning:JSONDecodeError"
+      }
+    ],
+    "joint": 2,
+    "rule": "2 complete native P7 tasks, measured F/S, no pipeline/technical errors; Joint need not pass"
+  }
+}

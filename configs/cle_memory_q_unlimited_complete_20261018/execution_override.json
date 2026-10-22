@@ -1,0 +1,9 @@
+{
+  "protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+  "probe_gate_override": true,
+  "override_authority": "2026-10-18 direct user: complete plan regardless of gates",
+  "inherited_probe_source": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261018\\cle_memory_q\\unlimited_v1",
+  "inherited_probe_rows": 2,
+  "curated_dir": "results/curated/cle_memory_q_unlimited_complete_20261018",
+  "report_file": "docs/CLE_不限三张Q完整执行结果_20261018.md"
+}

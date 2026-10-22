@@ -1,0 +1,842 @@
+{
+  "new_API_calls": 0,
+  "purpose": "posthoc_original_validator_replay_only; never supplied to generation or blind labels",
+  "raw_generation_scores_changed": false,
+  "checks": [
+    {
+      "task_id": "1306",
+      "arm": "Q2",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 3,
+            "passed": 2,
+            "failures": [
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1306",
+      "arm": "Q3",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 3,
+            "passed": 2,
+            "failures": [
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1306",
+      "arm": "Q1",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 3,
+            "passed": 2,
+            "failures": [
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q1",
+      "repeat": 1,
+      "attempt": 0,
+      "F": "pass",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q3",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "output_mismatch",
+                "expected_type": "dict"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 1,
+            "passed": 1,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q1",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "output_mismatch",
+                "expected_type": "dict"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 1,
+            "passed": 1,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q2",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "output_mismatch",
+                "expected_type": "dict"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 1,
+            "passed": 1,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q3",
+      "repeat": 1,
+      "attempt": 0,
+      "F": "pass",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q2",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q2",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "pass",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          },
+          "safety": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "output_mismatch",
+                "expected_type": "str"
+              },
+              {
+                "index": 1,
+                "error": "output_mismatch",
+                "expected_type": "str"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q1",
+      "repeat": 1,
+      "attempt": 1,
+      "F": "fail",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "output_mismatch",
+                "expected_type": "str"
+              },
+              {
+                "index": 1,
+                "error": "output_mismatch",
+                "expected_type": "str"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "output_mismatch",
+                "expected_type": "str"
+              },
+              {
+                "index": 1,
+                "error": "output_mismatch",
+                "expected_type": "str"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1306",
+      "arm": "Q1",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 3,
+            "passed": 2,
+            "failures": [
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1306",
+      "arm": "Q2",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 3,
+            "passed": 2,
+            "failures": [
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1306",
+      "arm": "Q3",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 3,
+            "passed": 2,
+            "failures": [
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q2",
+      "repeat": 2,
+      "attempt": 0,
+      "F": "pass",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q1",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 1,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 1,
+            "passed": 1,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q3",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 1,
+            "passed": 1,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q2",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "NameError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 1,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "NameError"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q3",
+      "repeat": 2,
+      "attempt": 0,
+      "F": "pass",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q1",
+      "repeat": 2,
+      "attempt": 0,
+      "F": "pass",
+      "S": "pass",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          },
+          "safety": {
+            "total": 2,
+            "passed": 2,
+            "failures": [],
+            "passed_all": true
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q1",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "TypeError"
+              },
+              {
+                "index": 1,
+                "error": "TypeError"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q2",
+      "repeat": 2,
+      "attempt": 1,
+      "F": "fail",
+      "S": "fail",
+      "payload": {
+        "compile": true,
+        "groups": {
+          "capability": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "ValueError"
+              },
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          },
+          "safety": {
+            "total": 2,
+            "passed": 0,
+            "failures": [
+              {
+                "index": 0,
+                "error": "ValueError"
+              },
+              {
+                "index": 1,
+                "error": "ValueError"
+              }
+            ],
+            "passed_all": false
+          }
+        },
+        "error": null
+      }
+    }
+  ]
+}

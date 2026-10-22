@@ -1,0 +1,1111 @@
+{
+  "protocol": "cle-q-coverage-learning-v1",
+  "API_calls": 0,
+  "former_excluded_checked": 43,
+  "reward_eligible_tasks": 196,
+  "former_excluded_recovered": [
+    "1391"
+  ],
+  "reason_counts": {
+    "reference_not_joint": 41,
+    "placeholder_in_task": 35,
+    "undeclared_public_binding": 60
+  },
+  "public_contract_overlays": "inherited102/136 only; no new public hints yet",
+  "excluded43": [
+    {
+      "task_id": "1080",
+      "family_id": "98fff7e31c22",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_DOMAINS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1081",
+      "family_id": "e69fa5595eb6",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "SAFE_REDIRECT_DOMAINS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1083",
+      "family_id": "072dcba32498",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_REDIRECT_DOMAINS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1084",
+      "family_id": "22674aca438b",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_REDIRECT_DOMAINS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1085",
+      "family_id": "f278dba23af8",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_REDIRECT_DOMAINS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1087",
+      "family_id": "016c20460c13",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "TRUSTED_DOMAIN_LIST"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1088",
+      "family_id": "2cc280e83d35",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "VALID_REDIRECT_DOMAINS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1091",
+      "family_id": "85aa7428e6e6",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_SCHEMES",
+        "TRUSTED_IMAGE_HOSTS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1093",
+      "family_id": "c2e9cc72223e",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_SCHEMES",
+        "TRUSTED_IMAGE_HOSTS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1096",
+      "family_id": "2bd860976ef6",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_SCHEMES",
+        "TRUSTED_IMAGE_HOSTS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1098",
+      "family_id": "9bf0c1d5b59a",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "APPROVED_API_DOMAINS",
+        "INTERNAL_IP_RANGES"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1099",
+      "family_id": "3fe24154af70",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "APPROVED_API_DOMAINS",
+        "INTERNAL_IP_RANGES"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1100",
+      "family_id": "9b150589ef39",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "APPROVED_API_DOMAINS",
+        "INTERNAL_IP_RANGES"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1102",
+      "family_id": "5c01cf3832bf",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "APPROVED_API_DOMAINS",
+        "INTERNAL_IP_RANGES"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1103",
+      "family_id": "44978419ed88",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "APPROVED_API_DOMAINS",
+        "INTERNAL_IP_RANGES"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1104",
+      "family_id": "69489fcba952",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "APPROVED_API_DOMAINS",
+        "INTERNAL_IP_RANGES"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1112",
+      "family_id": "f660ff39555b",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_API_DOMAINS",
+        "INTERNAL_IP_PATTERNS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1114",
+      "family_id": "21e7141d0e9a",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_API_DOMAINS",
+        "INTERNAL_IP_PATTERNS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1115",
+      "family_id": "3683eda1b187",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_API_DOMAINS",
+        "INTERNAL_IP_PATTERNS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1120",
+      "family_id": "43c4263b094c",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_SCHEMES",
+        "INTERNAL_IP_PATTERNS",
+        "TRUSTED_RSS_PROVIDERS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1122",
+      "family_id": "c869de311289",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_SCHEMES",
+        "INTERNAL_IP_PATTERNS",
+        "TRUSTED_RSS_PROVIDERS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1326",
+      "family_id": "d014cc829864",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1371",
+      "family_id": "4338bf571fd6",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_REDIRECT_DOMAINS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1372",
+      "family_id": "7ab5aac9a368",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_SCHEMES",
+        "TRUSTED_IMAGE_HOSTS"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1399",
+      "family_id": "1593d4234d4e",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "D",
+      "placeholder_paths": [
+        ".task_description.security_policy",
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [
+        ".task_description.security_policy"
+      ],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1405",
+      "family_id": "a6fa649d72ff",
+      "cwe": "918",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "ALLOWED_DOMAINS",
+        "ALLOWED_SCHEMES"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "675",
+      "family_id": "63c142375d28",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "676",
+      "family_id": "63c142375d28",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "677",
+      "family_id": "63c142375d28",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "681",
+      "family_id": "706a080d7095",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "682",
+      "family_id": "706a080d7095",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "683",
+      "family_id": "706a080d7095",
+      "cwe": "601",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "cwe": "179",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "B",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [
+        "email_pattern"
+      ],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "undeclared_public_binding"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1301",
+      "family_id": "a1357c38b620",
+      "cwe": "347",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "D",
+      "placeholder_paths": [
+        ".unittest.setup",
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1342",
+      "family_id": "a22c3c13b7c5",
+      "cwe": "74",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "placeholder_in_task"
+      ],
+      "reference_state": "A",
+      "placeholder_paths": [
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1346",
+      "family_id": "1a1d1e4238e6",
+      "cwe": "77",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "1391",
+      "family_id": "420b1636c2cd",
+      "cwe": "77",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "A",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": true,
+      "exclusion_reasons": [],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "457",
+      "family_id": "ae400ab34776",
+      "cwe": "347",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "reference_state": "D",
+      "placeholder_paths": [
+        ".unittest.setup",
+        ".unittest.testcases"
+      ],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "84",
+      "family_id": "3a2854b359b3",
+      "cwe": "1333",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "85",
+      "family_id": "3a2854b359b3",
+      "cwe": "1333",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "861",
+      "family_id": "9667c33baddf",
+      "cwe": "77",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "862",
+      "family_id": "9667c33baddf",
+      "cwe": "77",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    },
+    {
+      "task_id": "863",
+      "family_id": "9667c33baddf",
+      "cwe": "77",
+      "previous_reward_eligible": false,
+      "previous_exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "reference_state": "C",
+      "placeholder_paths": [],
+      "public_placeholder_paths": [],
+      "undeclared_setup_bindings": [],
+      "parse_error": null,
+      "reward_eligible": false,
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ],
+      "original_data_modified": false,
+      "API_calls": 0
+    }
+  ]
+}

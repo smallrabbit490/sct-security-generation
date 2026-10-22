@@ -1,0 +1,203 @@
+{
+  "protocol": "cle-q-coverage-learning-cap3-v1",
+  "status": "technical_stop",
+  "P7_runs": 4,
+  "maximum_P7_runs": 404,
+  "qualified_Dgrow_tasks": 196,
+  "probe_gate": {
+    "passed": false,
+    "reason": "first2_technical_stop",
+    "executed_P7": 4
+  },
+  "round2_gate": null,
+  "stages": {
+    "probe/L0": {
+      "rows": 2,
+      "valid_updates": 0,
+      "learned_cards": 466,
+      "new_cards": 0,
+      "whole_bank_coverage": 0.24033006704486848,
+      "fixed_anchor_learned": 466,
+      "fixed_anchor_coverage": 0.3906119027661358,
+      "positive_Q": 168,
+      "negative_Q": 298,
+      "visit_histogram": {
+        "0": 1473,
+        "3": 64,
+        "1": 208,
+        "2": 121,
+        "4": 28,
+        "7": 10,
+        "9": 3,
+        "15": 1,
+        "8": 6,
+        "5": 12,
+        "6": 8,
+        "11": 1,
+        "12": 2,
+        "10": 1,
+        "23": 1
+      },
+      "cards_two_families": 217,
+      "F": 0,
+      "S": 0,
+      "Joint": 0,
+      "measured": 0,
+      "selected_occurrences": 0,
+      "adopted_occurrences": 0,
+      "cost": {
+        "calls": 18,
+        "prompt_tokens": 136335,
+        "completion_tokens": 10533,
+        "total_tokens": 146868,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0
+      },
+      "technical_issues": [
+        {
+          "task_id": "1337",
+          "issues": [
+            "worker_error"
+          ]
+        },
+        {
+          "task_id": "501",
+          "issues": [
+            "worker_error"
+          ]
+        }
+      ],
+      "new_card_ids": [],
+      "Q_is_model_weight_training": false
+    },
+    "probe/L1": {
+      "rows": 2,
+      "valid_updates": 0,
+      "learned_cards": 466,
+      "new_cards": 0,
+      "whole_bank_coverage": 0.24033006704486848,
+      "fixed_anchor_learned": 466,
+      "fixed_anchor_coverage": 0.3906119027661358,
+      "positive_Q": 168,
+      "negative_Q": 298,
+      "visit_histogram": {
+        "0": 1473,
+        "3": 64,
+        "1": 208,
+        "2": 121,
+        "4": 28,
+        "7": 10,
+        "9": 3,
+        "15": 1,
+        "8": 6,
+        "5": 12,
+        "6": 8,
+        "11": 1,
+        "12": 2,
+        "10": 1,
+        "23": 1
+      },
+      "cards_two_families": 217,
+      "F": 0,
+      "S": 0,
+      "Joint": 0,
+      "measured": 0,
+      "selected_occurrences": 0,
+      "adopted_occurrences": 0,
+      "cost": {
+        "calls": 18,
+        "prompt_tokens": 153835,
+        "completion_tokens": 13029,
+        "total_tokens": 166864,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0
+      },
+      "technical_issues": [
+        {
+          "task_id": "501",
+          "issues": [
+            "worker_error"
+          ]
+        },
+        {
+          "task_id": "1337",
+          "issues": [
+            "worker_error"
+          ]
+        }
+      ],
+      "new_card_ids": [],
+      "Q_is_model_weight_training": false
+    }
+  },
+  "costs": {
+    "P7": {
+      "calls": 36,
+      "prompt_tokens": 290170,
+      "completion_tokens": 23562,
+      "total_tokens": 313732,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "new_shared_initials": {
+      "calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "known_total": {
+      "calls": 36,
+      "prompt_tokens": 290170,
+      "completion_tokens": 23562,
+      "total_tokens": 313732,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "historical_shared_initials_reused": {
+      "historical_valid_reused": 195,
+      "regenerate_only_prior_errors": [
+        "1133"
+      ],
+      "historical_cost_not_rebilled": true
+    },
+    "embedding_segments": [
+      {
+        "stage": "probe",
+        "calls": 4,
+        "failures": 0,
+        "prompt_tokens": 5173,
+        "total_tokens": 5173,
+        "cache_hits": 1937,
+        "embedded_texts": 4,
+        "usage_missing_calls": 0
+      }
+    ],
+    "currency_paid": null
+  },
+  "qualification": {
+    "former43_recovered": [
+      "1391"
+    ],
+    "former43_remaining": 42,
+    "newly_disqualified_old_tasks": 35,
+    "old_bank_updates_from_newly_disqualified_tasks": 162,
+    "old_bank_affected_cards": 89,
+    "old_bank_cards_supported_only_by_newly_disqualified_tasks": 50
+  },
+  "D_gate_runs": 0,
+  "Base_Plus_runs": 0,
+  "old_results_modified": false,
+  "whole_CLE_training": false,
+  "scope": "fixed-card D_grow Q observation only",
+  "targets": {
+    "whole_bank_learned": 970,
+    "fixed_old_Dgrow_anchor_learned": 955
+  }
+}

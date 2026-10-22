@@ -1,0 +1,33 @@
+﻿task_id,arm,repeat,first_members_changed,new_first_adopted_ids,base_final_joint,test_final_joint,rescue,loss
+1256,Q2,1,True,['hint-1333-7952593739990058655'],True,True,False,False
+1256,Q2,2,True,['hint-1333-7952593739990058655'],True,True,False,False
+1256,Q3,1,True,[],True,True,False,False
+1256,Q3,2,True,[],True,True,False,False
+1306,Q2,1,True,[],False,False,False,False
+1306,Q2,2,True,['hint-352-5629701447724784240'],False,False,False,False
+1306,Q3,1,True,[],False,False,False,False
+1306,Q3,2,True,[],False,False,False,False
+1317,Q2,1,False,[],False,False,False,False
+1317,Q2,2,False,[],False,False,False,False
+1317,Q3,1,True,[],False,False,False,False
+1317,Q3,2,True,[],False,False,False,False
+1341,Q2,1,True,[],True,False,False,True
+1341,Q2,2,True,[],False,True,True,False
+1341,Q3,1,True,[],True,False,False,True
+1341,Q3,2,True,[],False,False,False,False
+1000,Q2,1,True,"['hint-79-6066578642865576742', 'pitfall-79-7309952539139862464']",False,False,False,False
+1000,Q2,2,True,['hint-79-6066578642865576742'],True,False,False,True
+1000,Q3,1,True,[],False,True,True,False
+1000,Q3,2,True,[],True,True,False,False
+1013,Q2,1,True,['cand-862-5033292903860531435'],True,True,False,False
+1013,Q2,2,True,['cand-862-5033292903860531435'],True,True,False,False
+1013,Q3,1,False,[],True,True,False,False
+1013,Q3,2,False,[],True,True,False,False
+1055,Q2,1,True,[],True,True,False,False
+1055,Q2,2,True,[],True,True,False,False
+1055,Q3,1,True,"['pitfall-915-5639088720549517938', 'seed-1057', 'seed-1063']",True,True,False,False
+1055,Q3,2,True,"['seed-1057', 'seed-1063']",True,True,False,False
+1259,Q2,1,True,[],True,True,False,False
+1259,Q2,2,True,[],True,True,False,False
+1259,Q3,1,True,"['cand-1333-4512746645651916414', 'pitfall-1333-6475362525226541701']",True,True,False,False
+1259,Q3,2,True,"['cand-1333-4512746645651916414', 'pitfall-1333-6475362525226541701']",True,True,False,False

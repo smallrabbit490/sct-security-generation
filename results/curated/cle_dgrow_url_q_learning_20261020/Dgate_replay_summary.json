@@ -1,0 +1,401 @@
+{
+  "protocol": "cle-repaired32-observer-cap3-screened-Q-v1",
+  "Dgate_new_API_calls": 0,
+  "new_selection": null,
+  "new_adoption": null,
+  "new_code": null,
+  "new_Joint": null,
+  "original_Q2_presentation_reproduced": 496,
+  "first_queries": {
+    "queries": 298,
+    "order_changed": 54,
+    "top3_set_changed": 33,
+    "with_changed_Q_candidates": 54,
+    "with_historical_selected_changed_Q": 18,
+    "with_historical_adopted_changed_Q": 14,
+    "candidate_visited_occurrences_before": 3036,
+    "candidate_visited_occurrences_after": 3255
+  },
+  "historical_first_queries_selector_not_completed": [
+    "458",
+    "860"
+  ],
+  "all_historical_attempt_queries": {
+    "queries": 496,
+    "order_changed": 98,
+    "top3_set_changed": 70,
+    "with_changed_Q_candidates": 98,
+    "with_historical_selected_changed_Q": 34,
+    "with_historical_adopted_changed_Q": 24,
+    "candidate_visited_occurrences_before": 4641,
+    "candidate_visited_occurrences_after": 5040
+  },
+  "skipped": [],
+  "by_task_CWE_first": {
+    "1333": {
+      "queries": 13,
+      "order_changed": 1,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 1,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 114,
+      "candidate_visited_occurrences_after": 115
+    },
+    "179": {
+      "queries": 21,
+      "order_changed": 13,
+      "top3_set_changed": 3,
+      "with_changed_Q_candidates": 13,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 80,
+      "candidate_visited_occurrences_after": 105
+    },
+    "200": {
+      "queries": 22,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 235,
+      "candidate_visited_occurrences_after": 235
+    },
+    "327": {
+      "queries": 15,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 268,
+      "candidate_visited_occurrences_after": 268
+    },
+    "347": {
+      "queries": 17,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 208,
+      "candidate_visited_occurrences_after": 208
+    },
+    "352": {
+      "queries": 13,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 150,
+      "candidate_visited_occurrences_after": 150
+    },
+    "502": {
+      "queries": 18,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 124,
+      "candidate_visited_occurrences_after": 124
+    },
+    "601": {
+      "queries": 20,
+      "order_changed": 20,
+      "top3_set_changed": 10,
+      "with_changed_Q_candidates": 20,
+      "with_historical_selected_changed_Q": 8,
+      "with_historical_adopted_changed_Q": 8,
+      "candidate_visited_occurrences_before": 0,
+      "candidate_visited_occurrences_after": 80
+    },
+    "74": {
+      "queries": 24,
+      "order_changed": 5,
+      "top3_set_changed": 5,
+      "with_changed_Q_candidates": 5,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 159,
+      "candidate_visited_occurrences_after": 166
+    },
+    "77": {
+      "queries": 18,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 183,
+      "candidate_visited_occurrences_after": 183
+    },
+    "770": {
+      "queries": 16,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 269,
+      "candidate_visited_occurrences_after": 269
+    },
+    "79": {
+      "queries": 14,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 159,
+      "candidate_visited_occurrences_after": 159
+    },
+    "862": {
+      "queries": 11,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 192,
+      "candidate_visited_occurrences_after": 192
+    },
+    "863": {
+      "queries": 10,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 165,
+      "candidate_visited_occurrences_after": 165
+    },
+    "915": {
+      "queries": 13,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 116,
+      "candidate_visited_occurrences_after": 116
+    },
+    "918": {
+      "queries": 15,
+      "order_changed": 15,
+      "top3_set_changed": 15,
+      "with_changed_Q_candidates": 15,
+      "with_historical_selected_changed_Q": 10,
+      "with_historical_adopted_changed_Q": 6,
+      "candidate_visited_occurrences_before": 3,
+      "candidate_visited_occurrences_after": 109
+    },
+    "94": {
+      "queries": 20,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 300,
+      "candidate_visited_occurrences_after": 300
+    },
+    "95": {
+      "queries": 18,
+      "order_changed": 0,
+      "top3_set_changed": 0,
+      "with_changed_Q_candidates": 0,
+      "with_historical_selected_changed_Q": 0,
+      "with_historical_adopted_changed_Q": 0,
+      "candidate_visited_occurrences_before": 311,
+      "candidate_visited_occurrences_after": 311
+    }
+  },
+  "changed_card_CWEs": {
+    "601": 10,
+    "918": 10
+  },
+  "historical_selection_exposure": [
+    {
+      "arm": "Q0",
+      "scope": "all_attempts",
+      "stage": "adopted",
+      "records": 503,
+      "card_occurrences": 882,
+      "changed_Q_occurrences": 33,
+      "visited_before_occurrences": 480,
+      "visited_after_occurrences": 513,
+      "records_with_changed_Q": 21
+    },
+    {
+      "arm": "Q0",
+      "scope": "all_attempts",
+      "stage": "selected",
+      "records": 503,
+      "card_occurrences": 1363,
+      "changed_Q_occurrences": 51,
+      "visited_before_occurrences": 647,
+      "visited_after_occurrences": 698,
+      "records_with_changed_Q": 32
+    },
+    {
+      "arm": "Q0",
+      "scope": "first_attempt",
+      "stage": "adopted",
+      "records": 298,
+      "card_occurrences": 584,
+      "changed_Q_occurrences": 25,
+      "visited_before_occurrences": 346,
+      "visited_after_occurrences": 371,
+      "records_with_changed_Q": 16
+    },
+    {
+      "arm": "Q0",
+      "scope": "first_attempt",
+      "stage": "selected",
+      "records": 298,
+      "card_occurrences": 820,
+      "changed_Q_occurrences": 29,
+      "visited_before_occurrences": 429,
+      "visited_after_occurrences": 458,
+      "records_with_changed_Q": 17
+    },
+    {
+      "arm": "Q1",
+      "scope": "all_attempts",
+      "stage": "adopted",
+      "records": 494,
+      "card_occurrences": 870,
+      "changed_Q_occurrences": 29,
+      "visited_before_occurrences": 453,
+      "visited_after_occurrences": 482,
+      "records_with_changed_Q": 20
+    },
+    {
+      "arm": "Q1",
+      "scope": "all_attempts",
+      "stage": "selected",
+      "records": 494,
+      "card_occurrences": 1368,
+      "changed_Q_occurrences": 44,
+      "visited_before_occurrences": 640,
+      "visited_after_occurrences": 684,
+      "records_with_changed_Q": 28
+    },
+    {
+      "arm": "Q1",
+      "scope": "first_attempt",
+      "stage": "adopted",
+      "records": 298,
+      "card_occurrences": 593,
+      "changed_Q_occurrences": 18,
+      "visited_before_occurrences": 333,
+      "visited_after_occurrences": 351,
+      "records_with_changed_Q": 13
+    },
+    {
+      "arm": "Q1",
+      "scope": "first_attempt",
+      "stage": "selected",
+      "records": 298,
+      "card_occurrences": 842,
+      "changed_Q_occurrences": 20,
+      "visited_before_occurrences": 442,
+      "visited_after_occurrences": 462,
+      "records_with_changed_Q": 15
+    },
+    {
+      "arm": "Q2",
+      "scope": "all_attempts",
+      "stage": "adopted",
+      "records": 496,
+      "card_occurrences": 905,
+      "changed_Q_occurrences": 37,
+      "visited_before_occurrences": 495,
+      "visited_after_occurrences": 532,
+      "records_with_changed_Q": 24
+    },
+    {
+      "arm": "Q2",
+      "scope": "all_attempts",
+      "stage": "selected",
+      "records": 496,
+      "card_occurrences": 1364,
+      "changed_Q_occurrences": 57,
+      "visited_before_occurrences": 668,
+      "visited_after_occurrences": 725,
+      "records_with_changed_Q": 34
+    },
+    {
+      "arm": "Q2",
+      "scope": "first_attempt",
+      "stage": "adopted",
+      "records": 298,
+      "card_occurrences": 612,
+      "changed_Q_occurrences": 22,
+      "visited_before_occurrences": 362,
+      "visited_after_occurrences": 384,
+      "records_with_changed_Q": 14
+    },
+    {
+      "arm": "Q2",
+      "scope": "first_attempt",
+      "stage": "selected",
+      "records": 298,
+      "card_occurrences": 847,
+      "changed_Q_occurrences": 30,
+      "visited_before_occurrences": 456,
+      "visited_after_occurrences": 486,
+      "records_with_changed_Q": 18
+    },
+    {
+      "arm": "Q3",
+      "scope": "all_attempts",
+      "stage": "adopted",
+      "records": 497,
+      "card_occurrences": 829,
+      "changed_Q_occurrences": 32,
+      "visited_before_occurrences": 438,
+      "visited_after_occurrences": 470,
+      "records_with_changed_Q": 21
+    },
+    {
+      "arm": "Q3",
+      "scope": "all_attempts",
+      "stage": "selected",
+      "records": 497,
+      "card_occurrences": 1346,
+      "changed_Q_occurrences": 42,
+      "visited_before_occurrences": 613,
+      "visited_after_occurrences": 655,
+      "records_with_changed_Q": 27
+    },
+    {
+      "arm": "Q3",
+      "scope": "first_attempt",
+      "stage": "adopted",
+      "records": 298,
+      "card_occurrences": 560,
+      "changed_Q_occurrences": 19,
+      "visited_before_occurrences": 315,
+      "visited_after_occurrences": 334,
+      "records_with_changed_Q": 13
+    },
+    {
+      "arm": "Q3",
+      "scope": "first_attempt",
+      "stage": "selected",
+      "records": 298,
+      "card_occurrences": 839,
+      "changed_Q_occurrences": 26,
+      "visited_before_occurrences": 417,
+      "visited_after_occurrences": 443,
+      "records_with_changed_Q": 16
+    }
+  ],
+  "qualification_only_first_order_changed": 127,
+  "M1_to_after32_first_order_changed": 159,
+  "limitation": "Repair queries are anchored to old arm code/feedback. Numeric top3 is not native LLM selection. No new policy Joint measured."
+}

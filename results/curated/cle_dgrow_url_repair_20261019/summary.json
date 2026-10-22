@@ -1,0 +1,64 @@
+{
+  "protocol": "cle-dgrow-url-source-restoration-public-contract-v2",
+  "planned_tasks": 32,
+  "new_generation": false,
+  "API_calls": 0,
+  "Q_updates": 0,
+  "historical_missing": [],
+  "cohorts": {
+    "secure_reference": {
+      "planned": 32,
+      "executed": 32,
+      "measured": 32,
+      "unmeasured": 0,
+      "functional": 32,
+      "security": 32,
+      "joint": 32,
+      "states": {
+        "A": 32
+      }
+    },
+    "vulnerable_control": {
+      "planned": 32,
+      "executed": 32,
+      "measured": 32,
+      "unmeasured": 0,
+      "functional": 32,
+      "security": 0,
+      "joint": 0,
+      "states": {
+        "B": 32
+      }
+    },
+    "observe": {
+      "planned": 32,
+      "executed": 32,
+      "measured": 32,
+      "unmeasured": 0,
+      "functional": 2,
+      "security": 31,
+      "joint": 1,
+      "states": {
+        "C": 30,
+        "B": 1,
+        "A": 1
+      }
+    },
+    "retest": {
+      "planned": 32,
+      "executed": 32,
+      "measured": 32,
+      "unmeasured": 0,
+      "functional": 2,
+      "security": 30,
+      "joint": 0,
+      "states": {
+        "C": 30,
+        "B": 2
+      }
+    }
+  },
+  "reward_eligible_new_protocol": 32,
+  "negative_control_security_rejected": 32,
+  "original_dataset_unchanged": true
+}

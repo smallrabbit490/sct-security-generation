@@ -1,0 +1,451 @@
+[
+  {
+    "task_id": "1256",
+    "type": "identical_prompt_negative_control",
+    "arms": {
+      "Q0": [
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "cand-1333-6455772803584774934"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "seed-46"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "seed-46"
+        ]
+      ],
+      "Q1": [
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "pitfall-1333-4233333839735618083",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-6455772803584774934",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773",
+          "cand-1333-3608707898927210175"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ],
+        [
+          "hint-1333-8153697007201238305",
+          "seed-46",
+          "cand-1333-3426898155253259203",
+          "hint-1333-7952593739990058655",
+          "cand-1333-7879173211493331773"
+        ]
+      ]
+    }
+  },
+  {
+    "task_id": "1317",
+    "type": "identical_prompt_negative_control",
+    "arms": {
+      "Q1": [
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "guard-502-6772803219417487760",
+          "pitfall-502-1298662043445647790"
+        ],
+        [
+          "pitfall-502-4463873035273598773",
+          "blind-502-8566308265546111808",
+          "hint-502-8411363469143739472",
+          "pitfall-502-5289363153619763752",
+          "hint-502-4118108166954546592",
+          "hint-502-2688312304942497856"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "guard-502-6772803219417487760",
+          "pitfall-502-1298662043445647790",
+          "hint-502-5980882292082295094",
+          "hint-502-2688312304942497856"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "guard-502-6772803219417487760",
+          "hint-502-5980882292082295094"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797",
+          "hint-502-2688312304942497856"
+        ]
+      ],
+      "Q2": [
+        [
+          "blind-502-8129900557211162496",
+          "blind-502-2743438159853928070",
+          "hint-502-5550085703477956797",
+          "pitfall-502-7431284674649118922"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "hint-502-5550085703477956797",
+          "pitfall-502-7431284674649118922",
+          "pitfall-502-1318931948765780892",
+          "hint-502-1391038843738024674",
+          "blind-502-8476565611246247174",
+          "blind-502-3091382397090513020",
+          "hint-502-3523063928316955033"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "hint-502-5550085703477956797",
+          "hint-502-2688312304942497856"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "hint-502-5550085703477956797",
+          "hint-502-5980882292082295094"
+        ],
+        [
+          "blind-502-8129900557211162496",
+          "pitfall-502-7431284674649118922",
+          "hint-502-5550085703477956797"
+        ]
+      ]
+    }
+  },
+  {
+    "task_id": "1341",
+    "type": "超额差异最大",
+    "metrics": {
+      "task_id": "1341",
+      "test": "Q2",
+      "control": "Q1",
+      "between": "0.835053391053391",
+      "within_test": "0.8992424242424242",
+      "within_control": "0.3529761904761905",
+      "excess_distance": "0.20894408369408368"
+    },
+    "cards": {
+      "cand-77-2602055048707870030": {
+        "Q1": {
+          "task_id": "1341",
+          "arm": "Q1",
+          "card_id": "cand-77-2602055048707870030",
+          "selected_times": "5",
+          "valid_repeats": "5",
+          "selection_frequency": "1.0",
+          "learned_Q": "-0.13410000000000005",
+          "presentation_rank": "8"
+        },
+        "Q2": {
+          "task_id": "1341",
+          "arm": "Q2",
+          "card_id": "cand-77-2602055048707870030",
+          "selected_times": "1",
+          "valid_repeats": "5",
+          "selection_frequency": "0.2",
+          "learned_Q": "-0.13410000000000005",
+          "presentation_rank": "18"
+        }
+      },
+      "hint-77-5315000625461798532": {
+        "Q1": {
+          "task_id": "1341",
+          "arm": "Q1",
+          "card_id": "hint-77-5315000625461798532",
+          "selected_times": "5",
+          "valid_repeats": "5",
+          "selection_frequency": "1.0",
+          "learned_Q": "-0.09000000000000002",
+          "presentation_rank": "24"
+        },
+        "Q2": {
+          "task_id": "1341",
+          "arm": "Q2",
+          "card_id": "hint-77-5315000625461798532",
+          "selected_times": "1",
+          "valid_repeats": "5",
+          "selection_frequency": "0.2",
+          "learned_Q": "-0.09000000000000002",
+          "presentation_rank": "23"
+        }
+      },
+      "hint-77-7379208722696672118": {
+        "Q1": {
+          "task_id": "1341",
+          "arm": "Q1",
+          "card_id": "hint-77-7379208722696672118",
+          "selected_times": "5",
+          "valid_repeats": "5",
+          "selection_frequency": "1.0",
+          "learned_Q": "-0.09000000000000002",
+          "presentation_rank": "30"
+        },
+        "Q2": {
+          "task_id": "1341",
+          "arm": "Q2",
+          "card_id": "hint-77-7379208722696672118",
+          "selected_times": "1",
+          "valid_repeats": "5",
+          "selection_frequency": "0.2",
+          "learned_Q": "-0.09000000000000002",
+          "presentation_rank": "29"
+        }
+      },
+      "guard-79-4138217916680722761": {
+        "Q1": {
+          "task_id": "1341",
+          "arm": "Q1",
+          "card_id": "guard-79-4138217916680722761",
+          "selected_times": "0",
+          "valid_repeats": "5",
+          "selection_frequency": "0.0",
+          "learned_Q": "0.0",
+          "presentation_rank": "26"
+        },
+        "Q2": {
+          "task_id": "1341",
+          "arm": "Q2",
+          "card_id": "guard-79-4138217916680722761",
+          "selected_times": "3",
+          "valid_repeats": "5",
+          "selection_frequency": "0.6",
+          "learned_Q": "0.0",
+          "presentation_rank": "25"
+        }
+      },
+      "blind-74-1657140894613605732": {
+        "Q1": {
+          "task_id": "1341",
+          "arm": "Q1",
+          "card_id": "blind-74-1657140894613605732",
+          "selected_times": "0",
+          "valid_repeats": "5",
+          "selection_frequency": "0.0",
+          "learned_Q": "0.0",
+          "presentation_rank": "25"
+        },
+        "Q2": {
+          "task_id": "1341",
+          "arm": "Q2",
+          "card_id": "blind-74-1657140894613605732",
+          "selected_times": "2",
+          "valid_repeats": "5",
+          "selection_frequency": "0.4",
+          "learned_Q": "0.0",
+          "presentation_rank": "22"
+        }
+      },
+      "cand-77-1719531174312373036": {
+        "Q1": {
+          "task_id": "1341",
+          "arm": "Q1",
+          "card_id": "cand-77-1719531174312373036",
+          "selected_times": "4",
+          "valid_repeats": "5",
+          "selection_frequency": "0.8",
+          "learned_Q": "0.41193",
+          "presentation_rank": "4"
+        },
+        "Q2": {
+          "task_id": "1341",
+          "arm": "Q2",
+          "card_id": "cand-77-1719531174312373036",
+          "selected_times": "2",
+          "valid_repeats": "5",
+          "selection_frequency": "0.4",
+          "learned_Q": "0.41193",
+          "presentation_rank": "2"
+        }
+      }
+    }
+  },
+  {
+    "task_id": "1256",
+    "type": "超额差异最小",
+    "metrics": {
+      "task_id": "1256",
+      "test": "Q2",
+      "control": "Q1",
+      "between": "0.5092683982683983",
+      "within_test": "0.5839826839826839",
+      "within_control": "0.453452380952381",
+      "excess_distance": "-0.00944913419913418"
+    },
+    "cards": {
+      "cand-1333-7879173211493331773": {
+        "Q1": {
+          "task_id": "1256",
+          "arm": "Q1",
+          "card_id": "cand-1333-7879173211493331773",
+          "selected_times": "5",
+          "valid_repeats": "5",
+          "selection_frequency": "1.0",
+          "learned_Q": "0.15990000000000004",
+          "presentation_rank": "15"
+        },
+        "Q2": {
+          "task_id": "1256",
+          "arm": "Q2",
+          "card_id": "cand-1333-7879173211493331773",
+          "selected_times": "3",
+          "valid_repeats": "5",
+          "selection_frequency": "0.6",
+          "learned_Q": "0.15990000000000004",
+          "presentation_rank": "10"
+        }
+      },
+      "hint-1333-1889249461378247751": {
+        "Q1": {
+          "task_id": "1256",
+          "arm": "Q1",
+          "card_id": "hint-1333-1889249461378247751",
+          "selected_times": "0",
+          "valid_repeats": "5",
+          "selection_frequency": "0.0",
+          "learned_Q": "0.3",
+          "presentation_rank": "6"
+        },
+        "Q2": {
+          "task_id": "1256",
+          "arm": "Q2",
+          "card_id": "hint-1333-1889249461378247751",
+          "selected_times": "2",
+          "valid_repeats": "5",
+          "selection_frequency": "0.4",
+          "learned_Q": "0.3",
+          "presentation_rank": "4"
+        }
+      },
+      "pitfall-1333-1896728170510816027": {
+        "Q1": {
+          "task_id": "1256",
+          "arm": "Q1",
+          "card_id": "pitfall-1333-1896728170510816027",
+          "selected_times": "0",
+          "valid_repeats": "5",
+          "selection_frequency": "0.0",
+          "learned_Q": "0.3",
+          "presentation_rank": "8"
+        },
+        "Q2": {
+          "task_id": "1256",
+          "arm": "Q2",
+          "card_id": "pitfall-1333-1896728170510816027",
+          "selected_times": "2",
+          "valid_repeats": "5",
+          "selection_frequency": "0.4",
+          "learned_Q": "0.3",
+          "presentation_rank": "8"
+        }
+      },
+      "cand-1333-3426898155253259203": {
+        "Q1": {
+          "task_id": "1256",
+          "arm": "Q1",
+          "card_id": "cand-1333-3426898155253259203",
+          "selected_times": "3",
+          "valid_repeats": "5",
+          "selection_frequency": "0.6",
+          "learned_Q": "0.05700000000000005",
+          "presentation_rank": "5"
+        },
+        "Q2": {
+          "task_id": "1256",
+          "arm": "Q2",
+          "card_id": "cand-1333-3426898155253259203",
+          "selected_times": "4",
+          "valid_repeats": "5",
+          "selection_frequency": "0.8",
+          "learned_Q": "0.05700000000000005",
+          "presentation_rank": "6"
+        }
+      },
+      "cand-1333-6455772803584774934": {
+        "Q1": {
+          "task_id": "1256",
+          "arm": "Q1",
+          "card_id": "cand-1333-6455772803584774934",
+          "selected_times": "1",
+          "valid_repeats": "5",
+          "selection_frequency": "0.2",
+          "learned_Q": "0.05700000000000005",
+          "presentation_rank": "10"
+        },
+        "Q2": {
+          "task_id": "1256",
+          "arm": "Q2",
+          "card_id": "cand-1333-6455772803584774934",
+          "selected_times": "2",
+          "valid_repeats": "5",
+          "selection_frequency": "0.4",
+          "learned_Q": "0.05700000000000005",
+          "presentation_rank": "9"
+        }
+      },
+      "pitfall-1333-5795252323512681018": {
+        "Q1": {
+          "task_id": "1256",
+          "arm": "Q1",
+          "card_id": "pitfall-1333-5795252323512681018",
+          "selected_times": "0",
+          "valid_repeats": "5",
+          "selection_frequency": "0.0",
+          "learned_Q": "0.0",
+          "presentation_rank": "2"
+        },
+        "Q2": {
+          "task_id": "1256",
+          "arm": "Q2",
+          "card_id": "pitfall-1333-5795252323512681018",
+          "selected_times": "1",
+          "valid_repeats": "5",
+          "selection_frequency": "0.2",
+          "learned_Q": "0.0",
+          "presentation_rank": "5"
+        }
+      }
+    }
+  }
+]

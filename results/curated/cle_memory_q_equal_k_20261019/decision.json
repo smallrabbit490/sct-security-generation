@@ -1,0 +1,11 @@
+{
+  "status": "STOP_INCONCLUSIVE",
+  "generation": "COMPLETE_48_OF_48",
+  "formal_retrieval_metrics": "WAIT_HUMAN",
+  "positive_signal_gate_passed": false,
+  "reason": "Q2 Joint below both controls; no new-card-mediated rescue established",
+  "Q_training_added": false,
+  "automatic_confirmation_or_full_test": false,
+  "human_confirmed": 0,
+  "label_pairs": 222
+}

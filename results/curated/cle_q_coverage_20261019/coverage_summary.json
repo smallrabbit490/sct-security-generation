@@ -1,0 +1,1186 @@
+{
+  "operation": "R zero-API coverage analysis and T learning proposal only",
+  "source_gate": "translation_work\\diagnostics\\20261019\\cle_memory_q\\full_gate_cap3_v4",
+  "source_learning": "translation_work\\diagnostics\\20261018\\cle_memory_q\\unlimited_complete_v2",
+  "bank": {
+    "cards": 1939,
+    "eligible": 1933,
+    "learned": 466,
+    "learned_eligible": 466,
+    "states": {
+      "unlearned": 1473,
+      "positive": 168,
+      "negative": 298
+    },
+    "visit_histogram": {
+      "0": 1473,
+      "3": 64,
+      "1": 208,
+      "2": 121,
+      "4": 28,
+      "7": 10,
+      "9": 3,
+      "15": 1,
+      "8": 6,
+      "5": 12,
+      "6": 8,
+      "11": 1,
+      "12": 2,
+      "10": 1,
+      "23": 1
+    },
+    "family_histogram_learned": {
+      "2": 124,
+      "7": 9,
+      "3": 46,
+      "1": 249,
+      "8": 2,
+      "4": 20,
+      "6": 7,
+      "9": 2,
+      "11": 1,
+      "5": 4,
+      "10": 1,
+      "16": 1
+    },
+    "valid_card_updates": 1090
+  },
+  "D_gate": {
+    "Q0": {
+      "first_selection_learned_count_distribution": {
+        "3": 102,
+        "0": 80,
+        "1": 50,
+        "2": 65
+      },
+      "first_retrieval_quality": {
+        "tasks": 298,
+        "trace_completed": 297,
+        "empty_selected": 12,
+        "nonempty_without_Q": 68,
+        "trace_error": 1
+      },
+      "first_attempt": {
+        "candidates": {
+          "occurrences": 8468,
+          "unique_cards": 1262,
+          "real_history": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          }
+        },
+        "presented": {
+          "occurrences": 8468,
+          "unique_cards": 1262,
+          "real_history": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          }
+        },
+        "presented_first3": {
+          "occurrences": 894,
+          "unique_cards": 328,
+          "real_history": {
+            "positive": 150,
+            "negative": 230,
+            "unlearned": 514,
+            "learned": 380,
+            "coverage": 0.4250559284116331,
+            "unique_learned": 139
+          },
+          "assigned_Q": {
+            "positive": 150,
+            "negative": 230,
+            "unlearned": 514,
+            "learned": 380,
+            "coverage": 0.4250559284116331,
+            "unique_learned": 139
+          }
+        },
+        "selected": {
+          "occurrences": 820,
+          "unique_cards": 415,
+          "real_history": {
+            "positive": 229,
+            "negative": 257,
+            "unlearned": 334,
+            "learned": 486,
+            "coverage": 0.5926829268292683,
+            "unique_learned": 202
+          },
+          "assigned_Q": {
+            "positive": 229,
+            "negative": 257,
+            "unlearned": 334,
+            "learned": 486,
+            "coverage": 0.5926829268292683,
+            "unique_learned": 202
+          }
+        },
+        "adopted": {
+          "occurrences": 584,
+          "unique_cards": 304,
+          "real_history": {
+            "positive": 191,
+            "negative": 190,
+            "unlearned": 203,
+            "learned": 381,
+            "coverage": 0.6523972602739726,
+            "unique_learned": 173
+          },
+          "assigned_Q": {
+            "positive": 191,
+            "negative": 190,
+            "unlearned": 203,
+            "learned": 381,
+            "coverage": 0.6523972602739726,
+            "unique_learned": 173
+          }
+        }
+      },
+      "all_attempts": {
+        "candidates": {
+          "occurrences": 14220,
+          "unique_cards": 1364,
+          "real_history": {
+            "positive": 2083,
+            "negative": 3339,
+            "unlearned": 8798,
+            "learned": 5422,
+            "coverage": 0.38129395218002815,
+            "unique_learned": 435
+          },
+          "assigned_Q": {
+            "positive": 2083,
+            "negative": 3339,
+            "unlearned": 8798,
+            "learned": 5422,
+            "coverage": 0.38129395218002815,
+            "unique_learned": 435
+          }
+        },
+        "presented": {
+          "occurrences": 14220,
+          "unique_cards": 1364,
+          "real_history": {
+            "positive": 2083,
+            "negative": 3339,
+            "unlearned": 8798,
+            "learned": 5422,
+            "coverage": 0.38129395218002815,
+            "unique_learned": 435
+          },
+          "assigned_Q": {
+            "positive": 2083,
+            "negative": 3339,
+            "unlearned": 8798,
+            "learned": 5422,
+            "coverage": 0.38129395218002815,
+            "unique_learned": 435
+          }
+        },
+        "presented_first3": {
+          "occurrences": 1509,
+          "unique_cards": 400,
+          "real_history": {
+            "positive": 208,
+            "negative": 409,
+            "unlearned": 892,
+            "learned": 617,
+            "coverage": 0.4088800530152419,
+            "unique_learned": 166
+          },
+          "assigned_Q": {
+            "positive": 208,
+            "negative": 409,
+            "unlearned": 892,
+            "learned": 617,
+            "coverage": 0.4088800530152419,
+            "unique_learned": 166
+          }
+        },
+        "selected": {
+          "occurrences": 1363,
+          "unique_cards": 560,
+          "real_history": {
+            "positive": 309,
+            "negative": 437,
+            "unlearned": 617,
+            "learned": 746,
+            "coverage": 0.5473220836390316,
+            "unique_learned": 257
+          },
+          "assigned_Q": {
+            "positive": 309,
+            "negative": 437,
+            "unlearned": 617,
+            "learned": 746,
+            "coverage": 0.5473220836390316,
+            "unique_learned": 257
+          }
+        },
+        "adopted": {
+          "occurrences": 882,
+          "unique_cards": 392,
+          "real_history": {
+            "positive": 246,
+            "negative": 289,
+            "unlearned": 347,
+            "learned": 535,
+            "coverage": 0.6065759637188208,
+            "unique_learned": 210
+          },
+          "assigned_Q": {
+            "positive": 246,
+            "negative": 289,
+            "unlearned": 347,
+            "learned": 535,
+            "coverage": 0.6065759637188208,
+            "unique_learned": 210
+          }
+        }
+      }
+    },
+    "Q1": {
+      "first_selection_learned_count_distribution": {
+        "3": 103,
+        "2": 75,
+        "1": 45,
+        "0": 73
+      },
+      "first_retrieval_quality": {
+        "tasks": 298,
+        "trace_completed": 296,
+        "empty_selected": 7,
+        "nonempty_without_Q": 66,
+        "trace_error": 2
+      },
+      "first_attempt": {
+        "candidates": {
+          "occurrences": 8468,
+          "unique_cards": 1262,
+          "real_history": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          }
+        },
+        "presented": {
+          "occurrences": 8468,
+          "unique_cards": 1262,
+          "real_history": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          }
+        },
+        "presented_first3": {
+          "occurrences": 894,
+          "unique_cards": 328,
+          "real_history": {
+            "positive": 150,
+            "negative": 230,
+            "unlearned": 514,
+            "learned": 380,
+            "coverage": 0.4250559284116331,
+            "unique_learned": 139
+          },
+          "assigned_Q": {
+            "positive": 150,
+            "negative": 230,
+            "unlearned": 514,
+            "learned": 380,
+            "coverage": 0.4250559284116331,
+            "unique_learned": 139
+          }
+        },
+        "selected": {
+          "occurrences": 842,
+          "unique_cards": 440,
+          "real_history": {
+            "positive": 260,
+            "negative": 244,
+            "unlearned": 338,
+            "learned": 504,
+            "coverage": 0.5985748218527316,
+            "unique_learned": 220
+          },
+          "assigned_Q": {
+            "positive": 260,
+            "negative": 244,
+            "unlearned": 338,
+            "learned": 504,
+            "coverage": 0.5985748218527316,
+            "unique_learned": 220
+          }
+        },
+        "adopted": {
+          "occurrences": 593,
+          "unique_cards": 341,
+          "real_history": {
+            "positive": 189,
+            "negative": 177,
+            "unlearned": 227,
+            "learned": 366,
+            "coverage": 0.6172006745362564,
+            "unique_learned": 186
+          },
+          "assigned_Q": {
+            "positive": 189,
+            "negative": 177,
+            "unlearned": 227,
+            "learned": 366,
+            "coverage": 0.6172006745362564,
+            "unique_learned": 186
+          }
+        }
+      },
+      "all_attempts": {
+        "candidates": {
+          "occurrences": 13947,
+          "unique_cards": 1363,
+          "real_history": {
+            "positive": 2029,
+            "negative": 3291,
+            "unlearned": 8627,
+            "learned": 5320,
+            "coverage": 0.3814440381444038,
+            "unique_learned": 430
+          },
+          "assigned_Q": {
+            "positive": 2029,
+            "negative": 3291,
+            "unlearned": 8627,
+            "learned": 5320,
+            "coverage": 0.3814440381444038,
+            "unique_learned": 430
+          }
+        },
+        "presented": {
+          "occurrences": 13947,
+          "unique_cards": 1363,
+          "real_history": {
+            "positive": 2029,
+            "negative": 3291,
+            "unlearned": 8627,
+            "learned": 5320,
+            "coverage": 0.3814440381444038,
+            "unique_learned": 430
+          },
+          "assigned_Q": {
+            "positive": 2029,
+            "negative": 3291,
+            "unlearned": 8627,
+            "learned": 5320,
+            "coverage": 0.3814440381444038,
+            "unique_learned": 430
+          }
+        },
+        "presented_first3": {
+          "occurrences": 1482,
+          "unique_cards": 403,
+          "real_history": {
+            "positive": 193,
+            "negative": 401,
+            "unlearned": 888,
+            "learned": 594,
+            "coverage": 0.4008097165991903,
+            "unique_learned": 161
+          },
+          "assigned_Q": {
+            "positive": 193,
+            "negative": 401,
+            "unlearned": 888,
+            "learned": 594,
+            "coverage": 0.4008097165991903,
+            "unique_learned": 161
+          }
+        },
+        "selected": {
+          "occurrences": 1368,
+          "unique_cards": 559,
+          "real_history": {
+            "positive": 325,
+            "negative": 426,
+            "unlearned": 617,
+            "learned": 751,
+            "coverage": 0.5489766081871345,
+            "unique_learned": 259
+          },
+          "assigned_Q": {
+            "positive": 325,
+            "negative": 426,
+            "unlearned": 617,
+            "learned": 751,
+            "coverage": 0.5489766081871345,
+            "unique_learned": 259
+          }
+        },
+        "adopted": {
+          "occurrences": 870,
+          "unique_cards": 424,
+          "real_history": {
+            "positive": 221,
+            "negative": 287,
+            "unlearned": 362,
+            "learned": 508,
+            "coverage": 0.5839080459770115,
+            "unique_learned": 218
+          },
+          "assigned_Q": {
+            "positive": 221,
+            "negative": 287,
+            "unlearned": 362,
+            "learned": 508,
+            "coverage": 0.5839080459770115,
+            "unique_learned": 218
+          }
+        }
+      }
+    },
+    "Q2": {
+      "first_selection_learned_count_distribution": {
+        "3": 114,
+        "0": 74,
+        "2": 71,
+        "1": 37
+      },
+      "first_retrieval_quality": {
+        "tasks": 298,
+        "trace_completed": 296,
+        "empty_selected": 6,
+        "nonempty_without_Q": 68,
+        "trace_error": 2
+      },
+      "first_attempt": {
+        "candidates": {
+          "occurrences": 8468,
+          "unique_cards": 1262,
+          "real_history": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "positive": 1523,
+            "negative": 1946,
+            "unlearned": 4999,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          }
+        },
+        "presented": {
+          "occurrences": 8468,
+          "unique_cards": 1262,
+          "real_history": {
+            "positive": 1523,
+            "unlearned": 4999,
+            "negative": 1946,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "positive": 1523,
+            "unlearned": 4999,
+            "negative": 1946,
+            "learned": 3469,
+            "coverage": 0.4096598960793576,
+            "unique_learned": 423
+          }
+        },
+        "presented_first3": {
+          "occurrences": 894,
+          "unique_cards": 273,
+          "real_history": {
+            "positive": 463,
+            "unlearned": 397,
+            "negative": 34,
+            "learned": 497,
+            "coverage": 0.5559284116331096,
+            "unique_learned": 114
+          },
+          "assigned_Q": {
+            "positive": 463,
+            "unlearned": 397,
+            "negative": 34,
+            "learned": 497,
+            "coverage": 0.5559284116331096,
+            "unique_learned": 114
+          }
+        },
+        "selected": {
+          "occurrences": 847,
+          "unique_cards": 404,
+          "real_history": {
+            "positive": 317,
+            "unlearned": 326,
+            "negative": 204,
+            "learned": 521,
+            "coverage": 0.615112160566706,
+            "unique_learned": 201
+          },
+          "assigned_Q": {
+            "positive": 317,
+            "unlearned": 326,
+            "negative": 204,
+            "learned": 521,
+            "coverage": 0.615112160566706,
+            "unique_learned": 201
+          }
+        },
+        "adopted": {
+          "occurrences": 612,
+          "unique_cards": 309,
+          "real_history": {
+            "positive": 262,
+            "unlearned": 204,
+            "negative": 146,
+            "learned": 408,
+            "coverage": 0.6666666666666666,
+            "unique_learned": 172
+          },
+          "assigned_Q": {
+            "positive": 262,
+            "unlearned": 204,
+            "negative": 146,
+            "learned": 408,
+            "coverage": 0.6666666666666666,
+            "unique_learned": 172
+          }
+        }
+      },
+      "all_attempts": {
+        "candidates": {
+          "occurrences": 14031,
+          "unique_cards": 1358,
+          "real_history": {
+            "positive": 2069,
+            "negative": 3300,
+            "unlearned": 8662,
+            "learned": 5369,
+            "coverage": 0.3826526975981755,
+            "unique_learned": 432
+          },
+          "assigned_Q": {
+            "positive": 2069,
+            "negative": 3300,
+            "unlearned": 8662,
+            "learned": 5369,
+            "coverage": 0.3826526975981755,
+            "unique_learned": 432
+          }
+        },
+        "presented": {
+          "occurrences": 14031,
+          "unique_cards": 1358,
+          "real_history": {
+            "positive": 2069,
+            "unlearned": 8662,
+            "negative": 3300,
+            "learned": 5369,
+            "coverage": 0.3826526975981755,
+            "unique_learned": 432
+          },
+          "assigned_Q": {
+            "positive": 2069,
+            "unlearned": 8662,
+            "negative": 3300,
+            "learned": 5369,
+            "coverage": 0.3826526975981755,
+            "unique_learned": 432
+          }
+        },
+        "presented_first3": {
+          "occurrences": 1488,
+          "unique_cards": 325,
+          "real_history": {
+            "positive": 666,
+            "unlearned": 761,
+            "negative": 61,
+            "learned": 727,
+            "coverage": 0.4885752688172043,
+            "unique_learned": 124
+          },
+          "assigned_Q": {
+            "positive": 666,
+            "unlearned": 761,
+            "negative": 61,
+            "learned": 727,
+            "coverage": 0.4885752688172043,
+            "unique_learned": 124
+          }
+        },
+        "selected": {
+          "occurrences": 1364,
+          "unique_cards": 538,
+          "real_history": {
+            "positive": 404,
+            "unlearned": 606,
+            "negative": 354,
+            "learned": 758,
+            "coverage": 0.5557184750733137,
+            "unique_learned": 246
+          },
+          "assigned_Q": {
+            "positive": 404,
+            "unlearned": 606,
+            "negative": 354,
+            "learned": 758,
+            "coverage": 0.5557184750733137,
+            "unique_learned": 246
+          },
+          "learning_depth": {
+            "unique_visits1": 85,
+            "unique_one_feedback_family": 105,
+            "occurrences_visits1": 200,
+            "occurrences_one_feedback_family": 241
+          },
+          "unlearned_overlap_with_recorded_valid_Dgrow": {
+            "reachable_unique": 201,
+            "reachable_occurrences": 377,
+            "not_recorded_reachable_unique": 91,
+            "not_recorded_reachable_occurrences": 229
+          }
+        },
+        "adopted": {
+          "occurrences": 905,
+          "unique_cards": 395,
+          "real_history": {
+            "positive": 308,
+            "unlearned": 351,
+            "negative": 246,
+            "learned": 554,
+            "coverage": 0.6121546961325967,
+            "unique_learned": 204
+          },
+          "assigned_Q": {
+            "positive": 308,
+            "unlearned": 351,
+            "negative": 246,
+            "learned": 554,
+            "coverage": 0.6121546961325967,
+            "unique_learned": 204
+          },
+          "learning_depth": {
+            "unique_visits1": 63,
+            "unique_one_feedback_family": 80,
+            "occurrences_visits1": 122,
+            "occurrences_one_feedback_family": 149
+          },
+          "unlearned_overlap_with_recorded_valid_Dgrow": {
+            "reachable_unique": 121,
+            "reachable_occurrences": 205,
+            "not_recorded_reachable_unique": 70,
+            "not_recorded_reachable_occurrences": 146
+          }
+        }
+      }
+    },
+    "Q3": {
+      "first_selection_learned_count_distribution": {
+        "0": 78,
+        "3": 99,
+        "2": 70,
+        "1": 49
+      },
+      "first_retrieval_quality": {
+        "tasks": 298,
+        "trace_completed": 296,
+        "empty_selected": 7,
+        "nonempty_without_Q": 71,
+        "trace_error": 2
+      },
+      "first_attempt": {
+        "candidates": {
+          "occurrences": 8439,
+          "unique_cards": 1261,
+          "real_history": {
+            "unlearned": 4989,
+            "positive": 1523,
+            "negative": 1927,
+            "learned": 3450,
+            "coverage": 0.4088162104514753,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "unlearned": 6576,
+            "negative": 1114,
+            "positive": 749,
+            "learned": 1863,
+            "coverage": 0.22076075364379666,
+            "unique_learned": 292
+          }
+        },
+        "presented": {
+          "occurrences": 8439,
+          "unique_cards": 1261,
+          "real_history": {
+            "positive": 1523,
+            "unlearned": 4989,
+            "negative": 1927,
+            "learned": 3450,
+            "coverage": 0.4088162104514753,
+            "unique_learned": 423
+          },
+          "assigned_Q": {
+            "positive": 749,
+            "unlearned": 6576,
+            "negative": 1114,
+            "learned": 1863,
+            "coverage": 0.22076075364379666,
+            "unique_learned": 292
+          }
+        },
+        "presented_first3": {
+          "occurrences": 891,
+          "unique_cards": 275,
+          "real_history": {
+            "positive": 123,
+            "unlearned": 532,
+            "negative": 236,
+            "learned": 359,
+            "coverage": 0.40291806958473625,
+            "unique_learned": 115
+          },
+          "assigned_Q": {
+            "positive": 422,
+            "unlearned": 459,
+            "negative": 10,
+            "learned": 432,
+            "coverage": 0.48484848484848486,
+            "unique_learned": 81
+          }
+        },
+        "selected": {
+          "occurrences": 839,
+          "unique_cards": 416,
+          "real_history": {
+            "unlearned": 353,
+            "negative": 252,
+            "positive": 234,
+            "learned": 486,
+            "coverage": 0.5792610250297974,
+            "unique_learned": 209
+          },
+          "assigned_Q": {
+            "unlearned": 613,
+            "positive": 121,
+            "negative": 105,
+            "learned": 226,
+            "coverage": 0.2693682955899881,
+            "unique_learned": 109
+          }
+        },
+        "adopted": {
+          "occurrences": 560,
+          "unique_cards": 297,
+          "real_history": {
+            "unlearned": 212,
+            "negative": 172,
+            "positive": 176,
+            "learned": 348,
+            "coverage": 0.6214285714285714,
+            "unique_learned": 161
+          },
+          "assigned_Q": {
+            "unlearned": 424,
+            "positive": 68,
+            "negative": 68,
+            "learned": 136,
+            "coverage": 0.24285714285714285,
+            "unique_learned": 74
+          }
+        }
+      },
+      "all_attempts": {
+        "candidates": {
+          "occurrences": 14015,
+          "unique_cards": 1365,
+          "real_history": {
+            "unlearned": 8688,
+            "positive": 2029,
+            "negative": 3298,
+            "learned": 5327,
+            "coverage": 0.3800927577595433,
+            "unique_learned": 439
+          },
+          "assigned_Q": {
+            "unlearned": 10974,
+            "negative": 1906,
+            "positive": 1135,
+            "learned": 3041,
+            "coverage": 0.21698180520870497,
+            "unique_learned": 332
+          }
+        },
+        "presented": {
+          "occurrences": 14015,
+          "unique_cards": 1365,
+          "real_history": {
+            "positive": 2029,
+            "unlearned": 8688,
+            "negative": 3298,
+            "learned": 5327,
+            "coverage": 0.3800927577595433,
+            "unique_learned": 439
+          },
+          "assigned_Q": {
+            "positive": 1135,
+            "unlearned": 10974,
+            "negative": 1906,
+            "learned": 3041,
+            "coverage": 0.21698180520870497,
+            "unique_learned": 332
+          }
+        },
+        "presented_first3": {
+          "occurrences": 1488,
+          "unique_cards": 328,
+          "real_history": {
+            "positive": 186,
+            "unlearned": 899,
+            "negative": 403,
+            "learned": 589,
+            "coverage": 0.3958333333333333,
+            "unique_learned": 129
+          },
+          "assigned_Q": {
+            "positive": 637,
+            "unlearned": 836,
+            "negative": 15,
+            "learned": 652,
+            "coverage": 0.4381720430107527,
+            "unique_learned": 94
+          }
+        },
+        "selected": {
+          "occurrences": 1346,
+          "unique_cards": 546,
+          "real_history": {
+            "unlearned": 618,
+            "negative": 432,
+            "positive": 296,
+            "learned": 728,
+            "coverage": 0.5408618127786032,
+            "unique_learned": 256
+          },
+          "assigned_Q": {
+            "unlearned": 992,
+            "positive": 190,
+            "negative": 164,
+            "learned": 354,
+            "coverage": 0.26300148588410105,
+            "unique_learned": 149
+          }
+        },
+        "adopted": {
+          "occurrences": 829,
+          "unique_cards": 382,
+          "real_history": {
+            "unlearned": 344,
+            "negative": 281,
+            "positive": 204,
+            "learned": 485,
+            "coverage": 0.5850422195416164,
+            "unique_learned": 198
+          },
+          "assigned_Q": {
+            "unlearned": 638,
+            "positive": 95,
+            "negative": 96,
+            "learned": 191,
+            "coverage": 0.23039806996381182,
+            "unique_learned": 97
+          }
+        }
+      }
+    }
+  },
+  "D_grow": {
+    "tasks": 273,
+    "reward_eligible_tasks": 230,
+    "unique_funnel": {
+      "candidates": 1359,
+      "selected": 898,
+      "adopted": 577,
+      "credited": 466
+    },
+    "reward_eligible_task_funnel": {
+      "candidates": 1193,
+      "selected": 751,
+      "adopted": 495
+    },
+    "uncovered_reason_counts": {
+      "not_recalled_in_recorded_grow": 574,
+      "recalled_never_selected": 461,
+      "learned": 466,
+      "adopted_but_no_valid_credit": 111,
+      "selected_never_adopted": 321,
+      "not_eligible": 6
+    },
+    "recorded_recall_learned": 466,
+    "recorded_reward_eligible_recall_learned": 466,
+    "event_skip_counts": {
+      "incomplete_or_technical_measurement": 79,
+      "no_adopted_experiences": 67,
+      "reference_not_joint;placeholder_in_task": 171,
+      "reference_not_joint": 35,
+      "placeholder_in_task": 4
+    },
+    "proposed_12_task_unlearned_candidate_union": 258
+  },
+  "by_cwe": {
+    "74": {
+      "cards": 137,
+      "eligible": 137,
+      "learned": 14,
+      "grow_recalled": 91,
+      "grow_valid_task_recalled": 75,
+      "grow_tasks": 17,
+      "grow_reward_eligible_tasks": 16,
+      "Q2_unlearned_selected_occurrences": 85,
+      "Q2_unlearned_adopted_occurrences": 45
+    },
+    "77": {
+      "cards": 133,
+      "eligible": 133,
+      "learned": 25,
+      "grow_recalled": 100,
+      "grow_valid_task_recalled": 83,
+      "grow_tasks": 12,
+      "grow_reward_eligible_tasks": 7,
+      "Q2_unlearned_selected_occurrences": 42,
+      "Q2_unlearned_adopted_occurrences": 32
+    },
+    "79": {
+      "cards": 125,
+      "eligible": 124,
+      "learned": 32,
+      "grow_recalled": 104,
+      "grow_valid_task_recalled": 104,
+      "grow_tasks": 18,
+      "grow_reward_eligible_tasks": 18,
+      "Q2_unlearned_selected_occurrences": 29,
+      "Q2_unlearned_adopted_occurrences": 20
+    },
+    "94": {
+      "cards": 81,
+      "eligible": 81,
+      "learned": 20,
+      "grow_recalled": 51,
+      "grow_valid_task_recalled": 51,
+      "grow_tasks": 17,
+      "grow_reward_eligible_tasks": 17,
+      "Q2_unlearned_selected_occurrences": 6,
+      "Q2_unlearned_adopted_occurrences": 5
+    },
+    "95": {
+      "cards": 99,
+      "eligible": 98,
+      "learned": 22,
+      "grow_recalled": 53,
+      "grow_valid_task_recalled": 53,
+      "grow_tasks": 14,
+      "grow_reward_eligible_tasks": 14,
+      "Q2_unlearned_selected_occurrences": 4,
+      "Q2_unlearned_adopted_occurrences": 3
+    },
+    "179": {
+      "cards": 89,
+      "eligible": 89,
+      "learned": 25,
+      "grow_recalled": 69,
+      "grow_valid_task_recalled": 68,
+      "grow_tasks": 15,
+      "grow_reward_eligible_tasks": 14,
+      "Q2_unlearned_selected_occurrences": 5,
+      "Q2_unlearned_adopted_occurrences": 1
+    },
+    "200": {
+      "cards": 105,
+      "eligible": 104,
+      "learned": 42,
+      "grow_recalled": 75,
+      "grow_valid_task_recalled": 75,
+      "grow_tasks": 14,
+      "grow_reward_eligible_tasks": 14,
+      "Q2_unlearned_selected_occurrences": 33,
+      "Q2_unlearned_adopted_occurrences": 9
+    },
+    "327": {
+      "cards": 101,
+      "eligible": 101,
+      "learned": 34,
+      "grow_recalled": 64,
+      "grow_valid_task_recalled": 64,
+      "grow_tasks": 17,
+      "grow_reward_eligible_tasks": 17,
+      "Q2_unlearned_selected_occurrences": 9,
+      "Q2_unlearned_adopted_occurrences": 3
+    },
+    "347": {
+      "cards": 115,
+      "eligible": 115,
+      "learned": 41,
+      "grow_recalled": 102,
+      "grow_valid_task_recalled": 93,
+      "grow_tasks": 19,
+      "grow_reward_eligible_tasks": 17,
+      "Q2_unlearned_selected_occurrences": 40,
+      "Q2_unlearned_adopted_occurrences": 17
+    },
+    "352": {
+      "cards": 68,
+      "eligible": 68,
+      "learned": 27,
+      "grow_recalled": 57,
+      "grow_valid_task_recalled": 57,
+      "grow_tasks": 18,
+      "grow_reward_eligible_tasks": 18,
+      "Q2_unlearned_selected_occurrences": 19,
+      "Q2_unlearned_adopted_occurrences": 9
+    },
+    "502": {
+      "cards": 165,
+      "eligible": 164,
+      "learned": 19,
+      "grow_recalled": 86,
+      "grow_valid_task_recalled": 86,
+      "grow_tasks": 8,
+      "grow_reward_eligible_tasks": 8,
+      "Q2_unlearned_selected_occurrences": 58,
+      "Q2_unlearned_adopted_occurrences": 39
+    },
+    "601": {
+      "cards": 162,
+      "eligible": 161,
+      "learned": 0,
+      "grow_recalled": 93,
+      "grow_valid_task_recalled": 30,
+      "grow_tasks": 8,
+      "grow_reward_eligible_tasks": 0,
+      "Q2_unlearned_selected_occurrences": 114,
+      "Q2_unlearned_adopted_occurrences": 80
+    },
+    "770": {
+      "cards": 69,
+      "eligible": 69,
+      "learned": 44,
+      "grow_recalled": 61,
+      "grow_valid_task_recalled": 61,
+      "grow_tasks": 20,
+      "grow_reward_eligible_tasks": 20,
+      "Q2_unlearned_selected_occurrences": 17,
+      "Q2_unlearned_adopted_occurrences": 12
+    },
+    "862": {
+      "cards": 154,
+      "eligible": 153,
+      "learned": 53,
+      "grow_recalled": 106,
+      "grow_valid_task_recalled": 106,
+      "grow_tasks": 16,
+      "grow_reward_eligible_tasks": 16,
+      "Q2_unlearned_selected_occurrences": 7,
+      "Q2_unlearned_adopted_occurrences": 4
+    },
+    "863": {
+      "cards": 98,
+      "eligible": 98,
+      "learned": 33,
+      "grow_recalled": 72,
+      "grow_valid_task_recalled": 72,
+      "grow_tasks": 17,
+      "grow_reward_eligible_tasks": 17,
+      "Q2_unlearned_selected_occurrences": 29,
+      "Q2_unlearned_adopted_occurrences": 20
+    },
+    "915": {
+      "cards": 63,
+      "eligible": 63,
+      "learned": 10,
+      "grow_recalled": 47,
+      "grow_valid_task_recalled": 47,
+      "grow_tasks": 9,
+      "grow_reward_eligible_tasks": 9,
+      "Q2_unlearned_selected_occurrences": 11,
+      "Q2_unlearned_adopted_occurrences": 6
+    },
+    "918": {
+      "cards": 90,
+      "eligible": 90,
+      "learned": 0,
+      "grow_recalled": 63,
+      "grow_valid_task_recalled": 3,
+      "grow_tasks": 24,
+      "grow_reward_eligible_tasks": 0,
+      "Q2_unlearned_selected_occurrences": 75,
+      "Q2_unlearned_adopted_occurrences": 35
+    },
+    "1333": {
+      "cards": 85,
+      "eligible": 85,
+      "learned": 25,
+      "grow_recalled": 65,
+      "grow_valid_task_recalled": 65,
+      "grow_tasks": 10,
+      "grow_reward_eligible_tasks": 8,
+      "Q2_unlearned_selected_occurrences": 23,
+      "Q2_unlearned_adopted_occurrences": 11
+    }
+  },
+  "API_calls": 0,
+  "Q_updates": 0,
+  "caveat": "Q3 assigned visits are permuted labels, not this card actual learning. Recall reachability is historical observed reachability, not a proof that other cards cannot be recalled."
+}

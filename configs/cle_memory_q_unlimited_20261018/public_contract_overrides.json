@@ -1,0 +1,24 @@
+[
+  {
+    "task_id": "102",
+    "original_context": "Valid key patterns include alphanumeric characters, underscores, and percent-encoded characters.",
+    "append_context": "Additional public runtime context: re (the Python regular-expression module), unquote (urllib.parse.unquote), and valid_key_pattern (a supplied compiled re.Pattern[str]) are available in the execution namespace. valid_key_pattern.match(text) applies the key-name character policy described above. These are external runtime dependencies; use the supplied bindings rather than replacing them with locally invented values.",
+    "source_evidence": [
+      "original task_description",
+      "ground_truth dependency names",
+      "unittest.setup binding schema only"
+    ],
+    "disclosure": "Dependency interfaces only; no fixture instances, test inputs, expected outputs, compiled pattern value or reference patch is copied."
+  },
+  {
+    "task_id": "136",
+    "original_context": "A Patient class is available, containing fields like name, age, gender, diagnosis, and treatment_plan, which represent various patient details.",
+    "append_context": "Additional public runtime context: patients is a supplied mapping from patient identifier strings to existing Patient objects. It is available in the execution namespace alongside Patient. Resolve the requested patient through this mapping; the caller supplies the records. Do not create a replacement registry, instantiate substitute records, or overwrite the supplied patients binding. The existing public return, exception, template and confidentiality requirements remain in effect.",
+    "source_evidence": [
+      "original task_description",
+      "ground_truth dependency names",
+      "unittest.setup binding schema only"
+    ],
+    "disclosure": "Dependency interfaces only; no fixture instances, test inputs, expected outputs, compiled pattern value or reference patch is copied."
+  }
+]

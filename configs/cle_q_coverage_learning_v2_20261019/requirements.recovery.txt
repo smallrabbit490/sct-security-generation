@@ -1,0 +1,8 @@
+# 本轮零API参考预检已观测缺失；requests为原镜像依赖，sympy为1391原任务依赖。
+requests==2.34.2
+sympy==1.14.0
+idna==3.20
+certifi==2026.10.18
+charset-normalizer==3.5.2
+mpmath==1.3.0
+urllib3==2.8.0

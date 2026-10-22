@@ -1,0 +1,120 @@
+{
+  "status": "STOP_COVERAGE_GATE_NOT_MET",
+  "P7_runs": 24,
+  "unique_tasks": 12,
+  "code_attempts": 42,
+  "first_selected_set_changed": 11,
+  "first_adopted_set_changed": 10,
+  "L1_joint_rescues": 0,
+  "L1_joint_losses": 0,
+  "new_card_rewards": {
+    "L0": {
+      "all_feedback": {
+        "new_cards": 5,
+        "positive_new_cards": 0,
+        "negative_new_cards": 5,
+        "new_card_reward_events": {
+          "negative": 5
+        }
+      },
+      "cross_family": {
+        "new_cards": 3,
+        "positive_new_cards": 0,
+        "negative_new_cards": 3,
+        "new_card_reward_events": {
+          "negative": 3
+        }
+      }
+    },
+    "L1": {
+      "all_feedback": {
+        "new_cards": 11,
+        "positive_new_cards": 1,
+        "negative_new_cards": 10,
+        "new_card_reward_events": {
+          "negative": 11,
+          "positive": 1
+        }
+      },
+      "cross_family": {
+        "new_cards": 4,
+        "positive_new_cards": 0,
+        "negative_new_cards": 4,
+        "new_card_reward_events": {
+          "negative": 4
+        }
+      }
+    }
+  },
+  "model_workflow_errors": [
+    {
+      "arm": "L0",
+      "task_id": "1299",
+      "attempt": 1,
+      "error_type": "planning:ValueError",
+      "degraded_stages": [
+        "planning"
+      ],
+      "F_S_measured": true,
+      "Q_credit_allowed": false
+    },
+    {
+      "arm": "L0",
+      "task_id": "1338",
+      "attempt": 1,
+      "error_type": "initial_analysis:JSONDecodeError",
+      "degraded_stages": [
+        "initial_analysis"
+      ],
+      "F_S_measured": true,
+      "Q_credit_allowed": false
+    },
+    {
+      "arm": "L1",
+      "task_id": "1258",
+      "attempt": 1,
+      "error_type": "planning:JSONDecodeError",
+      "degraded_stages": [
+        "planning"
+      ],
+      "F_S_measured": true,
+      "Q_credit_allowed": false
+    }
+  ],
+  "LLM_usage": {
+    "calls": 198,
+    "prompt_tokens": 1516386,
+    "completion_tokens": 143935,
+    "total_tokens": 1660321,
+    "errors": 0,
+    "usage_missing": 0,
+    "unfinished": 0
+  },
+  "embedding": {
+    "calls": 30,
+    "total_tokens": 33239,
+    "failures": 0,
+    "usage_missing_calls": 0
+  },
+  "segments": [
+    {
+      "stage": "smoke",
+      "seconds": 180.15277340000011,
+      "fatal": []
+    },
+    {
+      "stage": "probe",
+      "seconds": 926.6622072,
+      "fatal": []
+    }
+  ],
+  "actual_CNY": null,
+  "next60_dispatch_block_verified_no_new_API": true,
+  "not_executed": [
+    "60task_extension",
+    "296task_extension",
+    "new_Dgate",
+    "Base/Plus"
+  ],
+  "interpretation": "L1 expands raw visits more, but new cross-family coverage below6, gain1 below3, and zero new-cross Joint families. Does not establish Q benefit or universal ineffectiveness."
+}

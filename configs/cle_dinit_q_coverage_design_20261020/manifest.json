@@ -1,0 +1,2432 @@
+{
+  "protocol": "cle-dinit-coverage-cross-family-design-v2",
+  "status": "DESIGNED_NOT_EXECUTED",
+  "pool": "D_init",
+  "probe": [
+    "1258",
+    "1288",
+    "1299",
+    "1303",
+    "1319",
+    "1338",
+    "831",
+    "1350",
+    "1003",
+    "1008",
+    "1216",
+    "1053"
+  ],
+  "technical_probe": [
+    "1258",
+    "1288"
+  ],
+  "learning": [
+    "1258",
+    "1288",
+    "1299",
+    "1303",
+    "1319",
+    "1338",
+    "831",
+    "1350",
+    "1003",
+    "1008",
+    "1216",
+    "1053",
+    "1130",
+    "1173",
+    "1260",
+    "336",
+    "423",
+    "1320",
+    "775",
+    "1004",
+    "1009",
+    "1219",
+    "1054",
+    "1131",
+    "45",
+    "337",
+    "426",
+    "594",
+    "874",
+    "1007",
+    "1010",
+    "1223",
+    "1057",
+    "1136",
+    "344",
+    "431",
+    "483",
+    "834",
+    "1362",
+    "1018",
+    "1227",
+    "1058",
+    "1138",
+    "1176",
+    "348",
+    "437",
+    "877",
+    "969",
+    "1020",
+    "1228",
+    "1063",
+    "1143",
+    "66",
+    "146",
+    "352",
+    "440",
+    "597",
+    "790",
+    "972",
+    "1021",
+    "1230",
+    "1071",
+    "1145",
+    "148",
+    "354",
+    "442",
+    "486",
+    "795",
+    "840",
+    "973",
+    "1022",
+    "1234",
+    "1072",
+    "1148",
+    "1185",
+    "150",
+    "355",
+    "446",
+    "884",
+    "975",
+    "1024",
+    "1241",
+    "1073",
+    "1150",
+    "75",
+    "356",
+    "449",
+    "600",
+    "976",
+    "1025",
+    "1244",
+    "1075",
+    "1154",
+    "361",
+    "798",
+    "852",
+    "978",
+    "1027",
+    "1245",
+    "1158",
+    "1191",
+    "363",
+    "888",
+    "979",
+    "1033",
+    "1247",
+    "1162",
+    "78",
+    "365",
+    "609",
+    "981",
+    "1034",
+    "1249",
+    "1378",
+    "367",
+    "459",
+    "801",
+    "984",
+    "1036",
+    "1250",
+    "1380",
+    "1197",
+    "369",
+    "464",
+    "804",
+    "907",
+    "987",
+    "1037",
+    "1387",
+    "1401",
+    "81",
+    "372",
+    "467",
+    "614",
+    "805",
+    "989",
+    "1040",
+    "373",
+    "620",
+    "867",
+    "990",
+    "1041",
+    "1200",
+    "86",
+    "374",
+    "621",
+    "992",
+    "88",
+    "377",
+    "996",
+    "870",
+    "999",
+    "1044",
+    "1382",
+    "624",
+    "1049",
+    "1051",
+    "1363",
+    "633",
+    "1364",
+    "1365",
+    "832",
+    "1351",
+    "1174",
+    "833",
+    "1175",
+    "46",
+    "595",
+    "876",
+    "47",
+    "484",
+    "596",
+    "835",
+    "1177",
+    "485",
+    "836",
+    "878",
+    "1178",
+    "67",
+    "598",
+    "879",
+    "68",
+    "599",
+    "796",
+    "841",
+    "1186",
+    "151",
+    "797",
+    "842",
+    "885",
+    "1187",
+    "601",
+    "887",
+    "77",
+    "602",
+    "799",
+    "853",
+    "1192",
+    "800",
+    "854",
+    "889",
+    "1193",
+    "79",
+    "610",
+    "890",
+    "80",
+    "611",
+    "1198",
+    "910",
+    "1199",
+    "868",
+    "1201",
+    "622",
+    "869",
+    "1202",
+    "623",
+    "871",
+    "625",
+    "872",
+    "626",
+    "634",
+    "635"
+  ],
+  "at60": [
+    "1258",
+    "1288",
+    "1299",
+    "1303",
+    "1319",
+    "1338",
+    "831",
+    "1350",
+    "1003",
+    "1008",
+    "1216",
+    "1053",
+    "1130",
+    "1173",
+    "1260",
+    "336",
+    "423",
+    "1320",
+    "775",
+    "1004",
+    "1009",
+    "1219",
+    "1054",
+    "1131",
+    "45",
+    "337",
+    "426",
+    "594",
+    "874",
+    "1007",
+    "1010",
+    "1223",
+    "1057",
+    "1136",
+    "344",
+    "431",
+    "483",
+    "834",
+    "1362",
+    "1018",
+    "1227",
+    "1058",
+    "1138",
+    "1176",
+    "348",
+    "437",
+    "877",
+    "969",
+    "1020",
+    "1228",
+    "1063",
+    "1143",
+    "66",
+    "146",
+    "352",
+    "440",
+    "597",
+    "790",
+    "972",
+    "1021"
+  ],
+  "extension_after60": [
+    "1230",
+    "1071",
+    "1145",
+    "148",
+    "354",
+    "442",
+    "486",
+    "795",
+    "840",
+    "973",
+    "1022",
+    "1234",
+    "1072",
+    "1148",
+    "1185",
+    "150",
+    "355",
+    "446",
+    "884",
+    "975",
+    "1024",
+    "1241",
+    "1073",
+    "1150",
+    "75",
+    "356",
+    "449",
+    "600",
+    "976",
+    "1025",
+    "1244",
+    "1075",
+    "1154",
+    "361",
+    "798",
+    "852",
+    "978",
+    "1027",
+    "1245",
+    "1158",
+    "1191",
+    "363",
+    "888",
+    "979",
+    "1033",
+    "1247",
+    "1162",
+    "78",
+    "365",
+    "609",
+    "981",
+    "1034",
+    "1249",
+    "1378",
+    "367",
+    "459",
+    "801",
+    "984",
+    "1036",
+    "1250",
+    "1380",
+    "1197",
+    "369",
+    "464",
+    "804",
+    "907",
+    "987",
+    "1037",
+    "1387",
+    "1401",
+    "81",
+    "372",
+    "467",
+    "614",
+    "805",
+    "989",
+    "1040",
+    "373",
+    "620",
+    "867",
+    "990",
+    "1041",
+    "1200",
+    "86",
+    "374",
+    "621",
+    "992",
+    "88",
+    "377",
+    "996",
+    "870",
+    "999",
+    "1044",
+    "1382",
+    "624",
+    "1049",
+    "1051",
+    "1363",
+    "633",
+    "1364",
+    "1365",
+    "832",
+    "1351",
+    "1174",
+    "833",
+    "1175",
+    "46",
+    "595",
+    "876",
+    "47",
+    "484",
+    "596",
+    "835",
+    "1177",
+    "485",
+    "836",
+    "878",
+    "1178",
+    "67",
+    "598",
+    "879",
+    "68",
+    "599",
+    "796",
+    "841",
+    "1186",
+    "151",
+    "797",
+    "842",
+    "885",
+    "1187",
+    "601",
+    "887",
+    "77",
+    "602",
+    "799",
+    "853",
+    "1192",
+    "800",
+    "854",
+    "889",
+    "1193",
+    "79",
+    "610",
+    "890",
+    "80",
+    "611",
+    "1198",
+    "910",
+    "1199",
+    "868",
+    "1201",
+    "622",
+    "869",
+    "1202",
+    "623",
+    "871",
+    "625",
+    "872",
+    "626",
+    "634",
+    "635"
+  ],
+  "task_families": {
+    "1258": "19e7fa87a01d",
+    "1288": "b1811164f7de",
+    "1299": "91421efc45a3",
+    "1303": "240f45dd9159",
+    "1319": "4d3ee957bdfa",
+    "1338": "74597a7be2b8",
+    "831": "a75b7241dcda",
+    "1350": "a567bd506ace",
+    "1003": "b8891a885e22",
+    "1008": "ca9c1ef5cb1f",
+    "1216": "4450eb28f932",
+    "1053": "da8112acfd9f",
+    "1130": "96d23faca2db",
+    "1173": "d303ac21177a",
+    "1260": "f6a2ea8d65db",
+    "336": "0d45abdda5e9",
+    "423": "49ab5d84588c",
+    "1320": "f33c1f1d608f",
+    "775": "bf4acf2947af",
+    "1004": "d08cced3916b",
+    "1009": "1f59b43b3cb0",
+    "1219": "52a2a70018d9",
+    "1054": "b1f0fc77e903",
+    "1131": "b6509ece3013",
+    "45": "eee82387ae89",
+    "337": "76526ed7e4c1",
+    "426": "353ee24ec07c",
+    "594": "0c3f1b6e9c82",
+    "874": "625d18e60e11",
+    "1007": "66fd03085bb2",
+    "1010": "e69881bb7432",
+    "1223": "e619ce6ba66c",
+    "1057": "fd4a0f2d7c30",
+    "1136": "9e631a693afd",
+    "344": "dbfa2eea7045",
+    "431": "e349f622c6d3",
+    "483": "fb2557acb2a8",
+    "834": "3fb60898b5a6",
+    "1362": "8558dac07cde",
+    "1018": "31429830735f",
+    "1227": "24a6543add06",
+    "1058": "57f81cc5b8bf",
+    "1138": "055defa06bf2",
+    "1176": "9afc0708b75a",
+    "348": "0bf0dff0f83f",
+    "437": "862c2ee3a805",
+    "877": "aa6b00f2c702",
+    "969": "c68cdbf12064",
+    "1020": "1c5ff22f1289",
+    "1228": "5bef8b6a51ab",
+    "1063": "f89cbf24f300",
+    "1143": "15d1d66ae6f3",
+    "66": "3e80bb0f39a0",
+    "146": "5a8d085433af",
+    "352": "6e242197f629",
+    "440": "694602f580f9",
+    "597": "386003a008e5",
+    "790": "3a91f0e18aca",
+    "972": "9bd647e563b8",
+    "1021": "a20306ea7d4b",
+    "1230": "0ec3b26431db",
+    "1071": "6f19c6b6dd78",
+    "1145": "70089e5c7aec",
+    "148": "64be938e89a0",
+    "354": "aa38daf2e200",
+    "442": "5b7704eee9cb",
+    "486": "2c9e0cc3f66f",
+    "795": "965caf4a4e69",
+    "840": "f5b20eaecd81",
+    "973": "e0d61b6d5420",
+    "1022": "b3fa21a554ee",
+    "1234": "acb3a530e0b5",
+    "1072": "723db5fcae31",
+    "1148": "fbf0a98c92ee",
+    "1185": "593db185dfe0",
+    "150": "fdb0e9b09089",
+    "355": "4fcad70526ac",
+    "446": "ad443859484d",
+    "884": "608db806f245",
+    "975": "54f48784f0c7",
+    "1024": "98b544a0a8d0",
+    "1241": "9cb97d7a2381",
+    "1073": "76ae8a2d4738",
+    "1150": "634efdb58c78",
+    "75": "7bd2304d926b",
+    "356": "e711eef9a5c8",
+    "449": "450cd56d6dfb",
+    "600": "d922af748fe9",
+    "976": "dcd4b24c95d0",
+    "1025": "ccc79e651fc2",
+    "1244": "12e86a21c923",
+    "1075": "bb6961b35fa0",
+    "1154": "860050d3d78a",
+    "361": "97bc946e7b96",
+    "798": "001a27498c0e",
+    "852": "3c84bf094e1d",
+    "978": "2cfe9d66d118",
+    "1027": "b6a04223f093",
+    "1245": "1871db569b4c",
+    "1158": "c45cdec3016c",
+    "1191": "f3d4d7a49f99",
+    "363": "d201e0bbe5c0",
+    "888": "935e08fac959",
+    "979": "48ad23189f5b",
+    "1033": "8fd1c2bc7b73",
+    "1247": "e16b3d1f2333",
+    "1162": "4e3f8547d488",
+    "78": "06b6f0713a53",
+    "365": "307c53aebe4a",
+    "609": "5f4e93c4e2d6",
+    "981": "247f5b560c4a",
+    "1034": "28e2f7301f15",
+    "1249": "9481f2bd06ec",
+    "1378": "88372cdf14a5",
+    "367": "9d533da89f60",
+    "459": "26fedbb8a8f8",
+    "801": "781eba4de215",
+    "984": "d4de8c8dcc3f",
+    "1036": "a39cda91d0b8",
+    "1250": "0dfcd8d747cf",
+    "1380": "2166d66475d2",
+    "1197": "4ba186b210c5",
+    "369": "126a6d599ea8",
+    "464": "c83ede8f86d8",
+    "804": "509a1773add9",
+    "907": "6c037ecb922f",
+    "987": "a101c9e1e155",
+    "1037": "8df9e9390a75",
+    "1387": "7c9e33969eba",
+    "1401": "d0d8257f7689",
+    "81": "33a4347d8a9a",
+    "372": "69fc42467897",
+    "467": "eaeb299d9f33",
+    "614": "07cd52b0e959",
+    "805": "d766ef14ac09",
+    "989": "cf2b75b4672e",
+    "1040": "ec88e08286f4",
+    "373": "b7cb522415ee",
+    "620": "1112d0526e1a",
+    "867": "f02a49b0b230",
+    "990": "7910de404900",
+    "1041": "17db4be66c3f",
+    "1200": "82fadf221458",
+    "86": "26e8bd870a46",
+    "374": "ea0dae4c0b8e",
+    "621": "375934a2a12d",
+    "992": "6148ea4c6306",
+    "88": "2ba22cb7334b",
+    "377": "f273f3391bae",
+    "996": "22a95591dc91",
+    "870": "cdb130486d9e",
+    "999": "0aa59b2aaabc",
+    "1044": "ce7ee5d34cee",
+    "1382": "e42757de8ef0",
+    "624": "9a336dabcd3a",
+    "1049": "2a04af2656e5",
+    "1051": "087b52f2ae7e",
+    "1363": "2da802e9a8aa",
+    "633": "ce269b03268d",
+    "1364": "dfa05de15f87",
+    "1365": "3b15525c3dc7",
+    "832": "a75b7241dcda",
+    "1351": "a567bd506ace",
+    "1174": "d303ac21177a",
+    "833": "a75b7241dcda",
+    "1175": "d303ac21177a",
+    "46": "eee82387ae89",
+    "595": "0c3f1b6e9c82",
+    "876": "a567bd506ace",
+    "47": "eee82387ae89",
+    "484": "fb2557acb2a8",
+    "596": "0c3f1b6e9c82",
+    "835": "3fb60898b5a6",
+    "1177": "9afc0708b75a",
+    "485": "fb2557acb2a8",
+    "836": "3fb60898b5a6",
+    "878": "aa6b00f2c702",
+    "1178": "9afc0708b75a",
+    "67": "3e80bb0f39a0",
+    "598": "386003a008e5",
+    "879": "aa6b00f2c702",
+    "68": "3e80bb0f39a0",
+    "599": "386003a008e5",
+    "796": "965caf4a4e69",
+    "841": "f5b20eaecd81",
+    "1186": "593db185dfe0",
+    "151": "fdb0e9b09089",
+    "797": "965caf4a4e69",
+    "842": "f5b20eaecd81",
+    "885": "608db806f245",
+    "1187": "593db185dfe0",
+    "601": "d922af748fe9",
+    "887": "608db806f245",
+    "77": "7bd2304d926b",
+    "602": "d922af748fe9",
+    "799": "001a27498c0e",
+    "853": "3c84bf094e1d",
+    "1192": "f3d4d7a49f99",
+    "800": "001a27498c0e",
+    "854": "3c84bf094e1d",
+    "889": "935e08fac959",
+    "1193": "f3d4d7a49f99",
+    "79": "06b6f0713a53",
+    "610": "5f4e93c4e2d6",
+    "890": "935e08fac959",
+    "80": "06b6f0713a53",
+    "611": "5f4e93c4e2d6",
+    "1198": "4ba186b210c5",
+    "910": "6c037ecb922f",
+    "1199": "4ba186b210c5",
+    "868": "f02a49b0b230",
+    "1201": "82fadf221458",
+    "622": "375934a2a12d",
+    "869": "f02a49b0b230",
+    "1202": "82fadf221458",
+    "623": "375934a2a12d",
+    "871": "cdb130486d9e",
+    "625": "9a336dabcd3a",
+    "872": "cdb130486d9e",
+    "626": "9a336dabcd3a",
+    "634": "ce269b03268d",
+    "635": "ce269b03268d"
+  },
+  "tasks": [
+    {
+      "task_id": "1258",
+      "cwe": "1333",
+      "family_id": "19e7fa87a01d"
+    },
+    {
+      "task_id": "1288",
+      "cwe": "327",
+      "family_id": "b1811164f7de"
+    },
+    {
+      "task_id": "1299",
+      "cwe": "347",
+      "family_id": "91421efc45a3"
+    },
+    {
+      "task_id": "1303",
+      "cwe": "352",
+      "family_id": "240f45dd9159"
+    },
+    {
+      "task_id": "1319",
+      "cwe": "502",
+      "family_id": "4d3ee957bdfa"
+    },
+    {
+      "task_id": "1338",
+      "cwe": "74",
+      "family_id": "74597a7be2b8"
+    },
+    {
+      "task_id": "831",
+      "cwe": "77",
+      "family_id": "a75b7241dcda"
+    },
+    {
+      "task_id": "1350",
+      "cwe": "770",
+      "family_id": "a567bd506ace"
+    },
+    {
+      "task_id": "1003",
+      "cwe": "79",
+      "family_id": "b8891a885e22"
+    },
+    {
+      "task_id": "1008",
+      "cwe": "862",
+      "family_id": "ca9c1ef5cb1f"
+    },
+    {
+      "task_id": "1216",
+      "cwe": "863",
+      "family_id": "4450eb28f932"
+    },
+    {
+      "task_id": "1053",
+      "cwe": "915",
+      "family_id": "da8112acfd9f"
+    },
+    {
+      "task_id": "1130",
+      "cwe": "94",
+      "family_id": "96d23faca2db"
+    },
+    {
+      "task_id": "1173",
+      "cwe": "95",
+      "family_id": "d303ac21177a"
+    },
+    {
+      "task_id": "1260",
+      "cwe": "1333",
+      "family_id": "f6a2ea8d65db"
+    },
+    {
+      "task_id": "336",
+      "cwe": "327",
+      "family_id": "0d45abdda5e9"
+    },
+    {
+      "task_id": "423",
+      "cwe": "347",
+      "family_id": "49ab5d84588c"
+    },
+    {
+      "task_id": "1320",
+      "cwe": "502",
+      "family_id": "f33c1f1d608f"
+    },
+    {
+      "task_id": "775",
+      "cwe": "74",
+      "family_id": "bf4acf2947af"
+    },
+    {
+      "task_id": "1004",
+      "cwe": "79",
+      "family_id": "d08cced3916b"
+    },
+    {
+      "task_id": "1009",
+      "cwe": "862",
+      "family_id": "1f59b43b3cb0"
+    },
+    {
+      "task_id": "1219",
+      "cwe": "863",
+      "family_id": "52a2a70018d9"
+    },
+    {
+      "task_id": "1054",
+      "cwe": "915",
+      "family_id": "b1f0fc77e903"
+    },
+    {
+      "task_id": "1131",
+      "cwe": "94",
+      "family_id": "b6509ece3013"
+    },
+    {
+      "task_id": "45",
+      "cwe": "1333",
+      "family_id": "eee82387ae89"
+    },
+    {
+      "task_id": "337",
+      "cwe": "327",
+      "family_id": "76526ed7e4c1"
+    },
+    {
+      "task_id": "426",
+      "cwe": "347",
+      "family_id": "353ee24ec07c"
+    },
+    {
+      "task_id": "594",
+      "cwe": "502",
+      "family_id": "0c3f1b6e9c82"
+    },
+    {
+      "task_id": "874",
+      "cwe": "770",
+      "family_id": "625d18e60e11"
+    },
+    {
+      "task_id": "1007",
+      "cwe": "79",
+      "family_id": "66fd03085bb2"
+    },
+    {
+      "task_id": "1010",
+      "cwe": "862",
+      "family_id": "e69881bb7432"
+    },
+    {
+      "task_id": "1223",
+      "cwe": "863",
+      "family_id": "e619ce6ba66c"
+    },
+    {
+      "task_id": "1057",
+      "cwe": "915",
+      "family_id": "fd4a0f2d7c30"
+    },
+    {
+      "task_id": "1136",
+      "cwe": "94",
+      "family_id": "9e631a693afd"
+    },
+    {
+      "task_id": "344",
+      "cwe": "327",
+      "family_id": "dbfa2eea7045"
+    },
+    {
+      "task_id": "431",
+      "cwe": "347",
+      "family_id": "e349f622c6d3"
+    },
+    {
+      "task_id": "483",
+      "cwe": "352",
+      "family_id": "fb2557acb2a8"
+    },
+    {
+      "task_id": "834",
+      "cwe": "77",
+      "family_id": "3fb60898b5a6"
+    },
+    {
+      "task_id": "1362",
+      "cwe": "79",
+      "family_id": "8558dac07cde"
+    },
+    {
+      "task_id": "1018",
+      "cwe": "862",
+      "family_id": "31429830735f"
+    },
+    {
+      "task_id": "1227",
+      "cwe": "863",
+      "family_id": "24a6543add06"
+    },
+    {
+      "task_id": "1058",
+      "cwe": "915",
+      "family_id": "57f81cc5b8bf"
+    },
+    {
+      "task_id": "1138",
+      "cwe": "94",
+      "family_id": "055defa06bf2"
+    },
+    {
+      "task_id": "1176",
+      "cwe": "95",
+      "family_id": "9afc0708b75a"
+    },
+    {
+      "task_id": "348",
+      "cwe": "327",
+      "family_id": "0bf0dff0f83f"
+    },
+    {
+      "task_id": "437",
+      "cwe": "347",
+      "family_id": "862c2ee3a805"
+    },
+    {
+      "task_id": "877",
+      "cwe": "770",
+      "family_id": "aa6b00f2c702"
+    },
+    {
+      "task_id": "969",
+      "cwe": "79",
+      "family_id": "c68cdbf12064"
+    },
+    {
+      "task_id": "1020",
+      "cwe": "862",
+      "family_id": "1c5ff22f1289"
+    },
+    {
+      "task_id": "1228",
+      "cwe": "863",
+      "family_id": "5bef8b6a51ab"
+    },
+    {
+      "task_id": "1063",
+      "cwe": "915",
+      "family_id": "f89cbf24f300"
+    },
+    {
+      "task_id": "1143",
+      "cwe": "94",
+      "family_id": "15d1d66ae6f3"
+    },
+    {
+      "task_id": "66",
+      "cwe": "1333",
+      "family_id": "3e80bb0f39a0"
+    },
+    {
+      "task_id": "146",
+      "cwe": "200",
+      "family_id": "5a8d085433af"
+    },
+    {
+      "task_id": "352",
+      "cwe": "327",
+      "family_id": "6e242197f629"
+    },
+    {
+      "task_id": "440",
+      "cwe": "347",
+      "family_id": "694602f580f9"
+    },
+    {
+      "task_id": "597",
+      "cwe": "502",
+      "family_id": "386003a008e5"
+    },
+    {
+      "task_id": "790",
+      "cwe": "74",
+      "family_id": "3a91f0e18aca"
+    },
+    {
+      "task_id": "972",
+      "cwe": "79",
+      "family_id": "9bd647e563b8"
+    },
+    {
+      "task_id": "1021",
+      "cwe": "862",
+      "family_id": "a20306ea7d4b"
+    },
+    {
+      "task_id": "1230",
+      "cwe": "863",
+      "family_id": "0ec3b26431db"
+    },
+    {
+      "task_id": "1071",
+      "cwe": "915",
+      "family_id": "6f19c6b6dd78"
+    },
+    {
+      "task_id": "1145",
+      "cwe": "94",
+      "family_id": "70089e5c7aec"
+    },
+    {
+      "task_id": "148",
+      "cwe": "200",
+      "family_id": "64be938e89a0"
+    },
+    {
+      "task_id": "354",
+      "cwe": "327",
+      "family_id": "aa38daf2e200"
+    },
+    {
+      "task_id": "442",
+      "cwe": "347",
+      "family_id": "5b7704eee9cb"
+    },
+    {
+      "task_id": "486",
+      "cwe": "352",
+      "family_id": "2c9e0cc3f66f"
+    },
+    {
+      "task_id": "795",
+      "cwe": "74",
+      "family_id": "965caf4a4e69"
+    },
+    {
+      "task_id": "840",
+      "cwe": "77",
+      "family_id": "f5b20eaecd81"
+    },
+    {
+      "task_id": "973",
+      "cwe": "79",
+      "family_id": "e0d61b6d5420"
+    },
+    {
+      "task_id": "1022",
+      "cwe": "862",
+      "family_id": "b3fa21a554ee"
+    },
+    {
+      "task_id": "1234",
+      "cwe": "863",
+      "family_id": "acb3a530e0b5"
+    },
+    {
+      "task_id": "1072",
+      "cwe": "915",
+      "family_id": "723db5fcae31"
+    },
+    {
+      "task_id": "1148",
+      "cwe": "94",
+      "family_id": "fbf0a98c92ee"
+    },
+    {
+      "task_id": "1185",
+      "cwe": "95",
+      "family_id": "593db185dfe0"
+    },
+    {
+      "task_id": "150",
+      "cwe": "200",
+      "family_id": "fdb0e9b09089"
+    },
+    {
+      "task_id": "355",
+      "cwe": "327",
+      "family_id": "4fcad70526ac"
+    },
+    {
+      "task_id": "446",
+      "cwe": "347",
+      "family_id": "ad443859484d"
+    },
+    {
+      "task_id": "884",
+      "cwe": "770",
+      "family_id": "608db806f245"
+    },
+    {
+      "task_id": "975",
+      "cwe": "79",
+      "family_id": "54f48784f0c7"
+    },
+    {
+      "task_id": "1024",
+      "cwe": "862",
+      "family_id": "98b544a0a8d0"
+    },
+    {
+      "task_id": "1241",
+      "cwe": "863",
+      "family_id": "9cb97d7a2381"
+    },
+    {
+      "task_id": "1073",
+      "cwe": "915",
+      "family_id": "76ae8a2d4738"
+    },
+    {
+      "task_id": "1150",
+      "cwe": "94",
+      "family_id": "634efdb58c78"
+    },
+    {
+      "task_id": "75",
+      "cwe": "1333",
+      "family_id": "7bd2304d926b"
+    },
+    {
+      "task_id": "356",
+      "cwe": "327",
+      "family_id": "e711eef9a5c8"
+    },
+    {
+      "task_id": "449",
+      "cwe": "347",
+      "family_id": "450cd56d6dfb"
+    },
+    {
+      "task_id": "600",
+      "cwe": "502",
+      "family_id": "d922af748fe9"
+    },
+    {
+      "task_id": "976",
+      "cwe": "79",
+      "family_id": "dcd4b24c95d0"
+    },
+    {
+      "task_id": "1025",
+      "cwe": "862",
+      "family_id": "ccc79e651fc2"
+    },
+    {
+      "task_id": "1244",
+      "cwe": "863",
+      "family_id": "12e86a21c923"
+    },
+    {
+      "task_id": "1075",
+      "cwe": "915",
+      "family_id": "bb6961b35fa0"
+    },
+    {
+      "task_id": "1154",
+      "cwe": "94",
+      "family_id": "860050d3d78a"
+    },
+    {
+      "task_id": "361",
+      "cwe": "327",
+      "family_id": "97bc946e7b96"
+    },
+    {
+      "task_id": "798",
+      "cwe": "74",
+      "family_id": "001a27498c0e"
+    },
+    {
+      "task_id": "852",
+      "cwe": "77",
+      "family_id": "3c84bf094e1d"
+    },
+    {
+      "task_id": "978",
+      "cwe": "79",
+      "family_id": "2cfe9d66d118"
+    },
+    {
+      "task_id": "1027",
+      "cwe": "862",
+      "family_id": "b6a04223f093"
+    },
+    {
+      "task_id": "1245",
+      "cwe": "863",
+      "family_id": "1871db569b4c"
+    },
+    {
+      "task_id": "1158",
+      "cwe": "94",
+      "family_id": "c45cdec3016c"
+    },
+    {
+      "task_id": "1191",
+      "cwe": "95",
+      "family_id": "f3d4d7a49f99"
+    },
+    {
+      "task_id": "363",
+      "cwe": "327",
+      "family_id": "d201e0bbe5c0"
+    },
+    {
+      "task_id": "888",
+      "cwe": "770",
+      "family_id": "935e08fac959"
+    },
+    {
+      "task_id": "979",
+      "cwe": "79",
+      "family_id": "48ad23189f5b"
+    },
+    {
+      "task_id": "1033",
+      "cwe": "862",
+      "family_id": "8fd1c2bc7b73"
+    },
+    {
+      "task_id": "1247",
+      "cwe": "863",
+      "family_id": "e16b3d1f2333"
+    },
+    {
+      "task_id": "1162",
+      "cwe": "94",
+      "family_id": "4e3f8547d488"
+    },
+    {
+      "task_id": "78",
+      "cwe": "1333",
+      "family_id": "06b6f0713a53"
+    },
+    {
+      "task_id": "365",
+      "cwe": "327",
+      "family_id": "307c53aebe4a"
+    },
+    {
+      "task_id": "609",
+      "cwe": "502",
+      "family_id": "5f4e93c4e2d6"
+    },
+    {
+      "task_id": "981",
+      "cwe": "79",
+      "family_id": "247f5b560c4a"
+    },
+    {
+      "task_id": "1034",
+      "cwe": "862",
+      "family_id": "28e2f7301f15"
+    },
+    {
+      "task_id": "1249",
+      "cwe": "863",
+      "family_id": "9481f2bd06ec"
+    },
+    {
+      "task_id": "1378",
+      "cwe": "94",
+      "family_id": "88372cdf14a5"
+    },
+    {
+      "task_id": "367",
+      "cwe": "327",
+      "family_id": "9d533da89f60"
+    },
+    {
+      "task_id": "459",
+      "cwe": "347",
+      "family_id": "26fedbb8a8f8"
+    },
+    {
+      "task_id": "801",
+      "cwe": "74",
+      "family_id": "781eba4de215"
+    },
+    {
+      "task_id": "984",
+      "cwe": "79",
+      "family_id": "d4de8c8dcc3f"
+    },
+    {
+      "task_id": "1036",
+      "cwe": "862",
+      "family_id": "a39cda91d0b8"
+    },
+    {
+      "task_id": "1250",
+      "cwe": "863",
+      "family_id": "0dfcd8d747cf"
+    },
+    {
+      "task_id": "1380",
+      "cwe": "94",
+      "family_id": "2166d66475d2"
+    },
+    {
+      "task_id": "1197",
+      "cwe": "95",
+      "family_id": "4ba186b210c5"
+    },
+    {
+      "task_id": "369",
+      "cwe": "327",
+      "family_id": "126a6d599ea8"
+    },
+    {
+      "task_id": "464",
+      "cwe": "347",
+      "family_id": "c83ede8f86d8"
+    },
+    {
+      "task_id": "804",
+      "cwe": "74",
+      "family_id": "509a1773add9"
+    },
+    {
+      "task_id": "907",
+      "cwe": "770",
+      "family_id": "6c037ecb922f"
+    },
+    {
+      "task_id": "987",
+      "cwe": "79",
+      "family_id": "a101c9e1e155"
+    },
+    {
+      "task_id": "1037",
+      "cwe": "862",
+      "family_id": "8df9e9390a75"
+    },
+    {
+      "task_id": "1387",
+      "cwe": "863",
+      "family_id": "7c9e33969eba"
+    },
+    {
+      "task_id": "1401",
+      "cwe": "94",
+      "family_id": "d0d8257f7689"
+    },
+    {
+      "task_id": "81",
+      "cwe": "1333",
+      "family_id": "33a4347d8a9a"
+    },
+    {
+      "task_id": "372",
+      "cwe": "327",
+      "family_id": "69fc42467897"
+    },
+    {
+      "task_id": "467",
+      "cwe": "347",
+      "family_id": "eaeb299d9f33"
+    },
+    {
+      "task_id": "614",
+      "cwe": "502",
+      "family_id": "07cd52b0e959"
+    },
+    {
+      "task_id": "805",
+      "cwe": "74",
+      "family_id": "d766ef14ac09"
+    },
+    {
+      "task_id": "989",
+      "cwe": "79",
+      "family_id": "cf2b75b4672e"
+    },
+    {
+      "task_id": "1040",
+      "cwe": "862",
+      "family_id": "ec88e08286f4"
+    },
+    {
+      "task_id": "373",
+      "cwe": "327",
+      "family_id": "b7cb522415ee"
+    },
+    {
+      "task_id": "620",
+      "cwe": "502",
+      "family_id": "1112d0526e1a"
+    },
+    {
+      "task_id": "867",
+      "cwe": "77",
+      "family_id": "f02a49b0b230"
+    },
+    {
+      "task_id": "990",
+      "cwe": "79",
+      "family_id": "7910de404900"
+    },
+    {
+      "task_id": "1041",
+      "cwe": "862",
+      "family_id": "17db4be66c3f"
+    },
+    {
+      "task_id": "1200",
+      "cwe": "95",
+      "family_id": "82fadf221458"
+    },
+    {
+      "task_id": "86",
+      "cwe": "1333",
+      "family_id": "26e8bd870a46"
+    },
+    {
+      "task_id": "374",
+      "cwe": "327",
+      "family_id": "ea0dae4c0b8e"
+    },
+    {
+      "task_id": "621",
+      "cwe": "502",
+      "family_id": "375934a2a12d"
+    },
+    {
+      "task_id": "992",
+      "cwe": "79",
+      "family_id": "6148ea4c6306"
+    },
+    {
+      "task_id": "88",
+      "cwe": "1333",
+      "family_id": "2ba22cb7334b"
+    },
+    {
+      "task_id": "377",
+      "cwe": "327",
+      "family_id": "f273f3391bae"
+    },
+    {
+      "task_id": "996",
+      "cwe": "79",
+      "family_id": "22a95591dc91"
+    },
+    {
+      "task_id": "870",
+      "cwe": "77",
+      "family_id": "cdb130486d9e"
+    },
+    {
+      "task_id": "999",
+      "cwe": "79",
+      "family_id": "0aa59b2aaabc"
+    },
+    {
+      "task_id": "1044",
+      "cwe": "862",
+      "family_id": "ce7ee5d34cee"
+    },
+    {
+      "task_id": "1382",
+      "cwe": "95",
+      "family_id": "e42757de8ef0"
+    },
+    {
+      "task_id": "624",
+      "cwe": "502",
+      "family_id": "9a336dabcd3a"
+    },
+    {
+      "task_id": "1049",
+      "cwe": "862",
+      "family_id": "2a04af2656e5"
+    },
+    {
+      "task_id": "1051",
+      "cwe": "862",
+      "family_id": "087b52f2ae7e"
+    },
+    {
+      "task_id": "1363",
+      "cwe": "862",
+      "family_id": "2da802e9a8aa"
+    },
+    {
+      "task_id": "633",
+      "cwe": "502",
+      "family_id": "ce269b03268d"
+    },
+    {
+      "task_id": "1364",
+      "cwe": "862",
+      "family_id": "dfa05de15f87"
+    },
+    {
+      "task_id": "1365",
+      "cwe": "862",
+      "family_id": "3b15525c3dc7"
+    },
+    {
+      "task_id": "832",
+      "cwe": "77",
+      "family_id": "a75b7241dcda"
+    },
+    {
+      "task_id": "1351",
+      "cwe": "770",
+      "family_id": "a567bd506ace"
+    },
+    {
+      "task_id": "1174",
+      "cwe": "95",
+      "family_id": "d303ac21177a"
+    },
+    {
+      "task_id": "833",
+      "cwe": "77",
+      "family_id": "a75b7241dcda"
+    },
+    {
+      "task_id": "1175",
+      "cwe": "95",
+      "family_id": "d303ac21177a"
+    },
+    {
+      "task_id": "46",
+      "cwe": "1333",
+      "family_id": "eee82387ae89"
+    },
+    {
+      "task_id": "595",
+      "cwe": "502",
+      "family_id": "0c3f1b6e9c82"
+    },
+    {
+      "task_id": "876",
+      "cwe": "770",
+      "family_id": "a567bd506ace"
+    },
+    {
+      "task_id": "47",
+      "cwe": "1333",
+      "family_id": "eee82387ae89"
+    },
+    {
+      "task_id": "484",
+      "cwe": "352",
+      "family_id": "fb2557acb2a8"
+    },
+    {
+      "task_id": "596",
+      "cwe": "502",
+      "family_id": "0c3f1b6e9c82"
+    },
+    {
+      "task_id": "835",
+      "cwe": "77",
+      "family_id": "3fb60898b5a6"
+    },
+    {
+      "task_id": "1177",
+      "cwe": "95",
+      "family_id": "9afc0708b75a"
+    },
+    {
+      "task_id": "485",
+      "cwe": "352",
+      "family_id": "fb2557acb2a8"
+    },
+    {
+      "task_id": "836",
+      "cwe": "77",
+      "family_id": "3fb60898b5a6"
+    },
+    {
+      "task_id": "878",
+      "cwe": "770",
+      "family_id": "aa6b00f2c702"
+    },
+    {
+      "task_id": "1178",
+      "cwe": "95",
+      "family_id": "9afc0708b75a"
+    },
+    {
+      "task_id": "67",
+      "cwe": "1333",
+      "family_id": "3e80bb0f39a0"
+    },
+    {
+      "task_id": "598",
+      "cwe": "502",
+      "family_id": "386003a008e5"
+    },
+    {
+      "task_id": "879",
+      "cwe": "770",
+      "family_id": "aa6b00f2c702"
+    },
+    {
+      "task_id": "68",
+      "cwe": "1333",
+      "family_id": "3e80bb0f39a0"
+    },
+    {
+      "task_id": "599",
+      "cwe": "502",
+      "family_id": "386003a008e5"
+    },
+    {
+      "task_id": "796",
+      "cwe": "74",
+      "family_id": "965caf4a4e69"
+    },
+    {
+      "task_id": "841",
+      "cwe": "77",
+      "family_id": "f5b20eaecd81"
+    },
+    {
+      "task_id": "1186",
+      "cwe": "95",
+      "family_id": "593db185dfe0"
+    },
+    {
+      "task_id": "151",
+      "cwe": "200",
+      "family_id": "fdb0e9b09089"
+    },
+    {
+      "task_id": "797",
+      "cwe": "74",
+      "family_id": "965caf4a4e69"
+    },
+    {
+      "task_id": "842",
+      "cwe": "77",
+      "family_id": "f5b20eaecd81"
+    },
+    {
+      "task_id": "885",
+      "cwe": "770",
+      "family_id": "608db806f245"
+    },
+    {
+      "task_id": "1187",
+      "cwe": "95",
+      "family_id": "593db185dfe0"
+    },
+    {
+      "task_id": "601",
+      "cwe": "502",
+      "family_id": "d922af748fe9"
+    },
+    {
+      "task_id": "887",
+      "cwe": "770",
+      "family_id": "608db806f245"
+    },
+    {
+      "task_id": "77",
+      "cwe": "1333",
+      "family_id": "7bd2304d926b"
+    },
+    {
+      "task_id": "602",
+      "cwe": "502",
+      "family_id": "d922af748fe9"
+    },
+    {
+      "task_id": "799",
+      "cwe": "74",
+      "family_id": "001a27498c0e"
+    },
+    {
+      "task_id": "853",
+      "cwe": "77",
+      "family_id": "3c84bf094e1d"
+    },
+    {
+      "task_id": "1192",
+      "cwe": "95",
+      "family_id": "f3d4d7a49f99"
+    },
+    {
+      "task_id": "800",
+      "cwe": "74",
+      "family_id": "001a27498c0e"
+    },
+    {
+      "task_id": "854",
+      "cwe": "77",
+      "family_id": "3c84bf094e1d"
+    },
+    {
+      "task_id": "889",
+      "cwe": "770",
+      "family_id": "935e08fac959"
+    },
+    {
+      "task_id": "1193",
+      "cwe": "95",
+      "family_id": "f3d4d7a49f99"
+    },
+    {
+      "task_id": "79",
+      "cwe": "1333",
+      "family_id": "06b6f0713a53"
+    },
+    {
+      "task_id": "610",
+      "cwe": "502",
+      "family_id": "5f4e93c4e2d6"
+    },
+    {
+      "task_id": "890",
+      "cwe": "770",
+      "family_id": "935e08fac959"
+    },
+    {
+      "task_id": "80",
+      "cwe": "1333",
+      "family_id": "06b6f0713a53"
+    },
+    {
+      "task_id": "611",
+      "cwe": "502",
+      "family_id": "5f4e93c4e2d6"
+    },
+    {
+      "task_id": "1198",
+      "cwe": "95",
+      "family_id": "4ba186b210c5"
+    },
+    {
+      "task_id": "910",
+      "cwe": "770",
+      "family_id": "6c037ecb922f"
+    },
+    {
+      "task_id": "1199",
+      "cwe": "95",
+      "family_id": "4ba186b210c5"
+    },
+    {
+      "task_id": "868",
+      "cwe": "77",
+      "family_id": "f02a49b0b230"
+    },
+    {
+      "task_id": "1201",
+      "cwe": "95",
+      "family_id": "82fadf221458"
+    },
+    {
+      "task_id": "622",
+      "cwe": "502",
+      "family_id": "375934a2a12d"
+    },
+    {
+      "task_id": "869",
+      "cwe": "77",
+      "family_id": "f02a49b0b230"
+    },
+    {
+      "task_id": "1202",
+      "cwe": "95",
+      "family_id": "82fadf221458"
+    },
+    {
+      "task_id": "623",
+      "cwe": "502",
+      "family_id": "375934a2a12d"
+    },
+    {
+      "task_id": "871",
+      "cwe": "77",
+      "family_id": "cdb130486d9e"
+    },
+    {
+      "task_id": "625",
+      "cwe": "502",
+      "family_id": "9a336dabcd3a"
+    },
+    {
+      "task_id": "872",
+      "cwe": "77",
+      "family_id": "cdb130486d9e"
+    },
+    {
+      "task_id": "626",
+      "cwe": "502",
+      "family_id": "9a336dabcd3a"
+    },
+    {
+      "task_id": "634",
+      "cwe": "502",
+      "family_id": "ce269b03268d"
+    },
+    {
+      "task_id": "635",
+      "cwe": "502",
+      "family_id": "ce269b03268d"
+    }
+  ],
+  "excluded": [
+    {
+      "task_id": "101",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1268",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1324",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1089",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "105",
+      "cwe": "179",
+      "reasons": [
+        "reference_not_joint",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1270",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "481",
+      "cwe": "352",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1325",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1090",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "107",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "135",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "482",
+      "cwe": "352",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "642",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "780",
+      "cwe": "74",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1097",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "109",
+      "cwe": "179",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "137",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "643",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "781",
+      "cwe": "74",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1107",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "113",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "139",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "644",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "782",
+      "cwe": "74",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1111",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "114",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "648",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1113",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "116",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "649",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1116",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "120",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "487",
+      "cwe": "352",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "650",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1117",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "121",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "488",
+      "cwe": "352",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "651",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1123",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "76",
+      "cwe": "1333",
+      "reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "122",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "152",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "451",
+      "cwe": "347",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "652",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1373",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "124",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "168",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "453",
+      "cwe": "347",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "653",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1374",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1261",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "170",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "456",
+      "cwe": "347",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "654",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1375",
+      "cwe": "918",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1262",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "174",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "655",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "855",
+      "cwe": "77",
+      "reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "127",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "175",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "656",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "856",
+      "cwe": "77",
+      "reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "131",
+      "cwe": "179",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "176",
+      "cwe": "200",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "663",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "857",
+      "cwe": "77",
+      "reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "82",
+      "cwe": "1333",
+      "reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "664",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "819",
+      "cwe": "74",
+      "reasons": [
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "665",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "820",
+      "cwe": "74",
+      "reasons": [
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1042",
+      "cwe": "862",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "669",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "821",
+      "cwe": "74",
+      "reasons": [
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1043",
+      "cwe": "862",
+      "reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "670",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "671",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "678",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "679",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "680",
+      "cwe": "601",
+      "reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    }
+  ],
+  "order_rule": "old locked 12 probe; then first task of unseen family in old qualified order; then same-family variants; no Dgate selection feedback"
+}

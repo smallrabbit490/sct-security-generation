@@ -54,13 +54,19 @@ def _z_scores(values: list[float]) -> list[float]:
     return [(value - mean) / deviation for value in values]
 
 
+def rank_coverage_candidates(scores: list[dict], visits: dict[str, int], *, delta: float = -1) -> list[dict]:
+    """D_grow覆盖探针：仅将未学习卡提前，同组按余弦排序；不赋分、不截断、不写卡库。"""
+    eligible = [dict(s, q_visits=visits[s['id']]) for s in scores if s['cosine'] > delta]
+    return sorted(eligible, key=lambda s: (s['q_visits'] > 0, -s['cosine'], s['id']))
+
+
 def rank_candidates(scores: list[dict], q_values: dict[str, float], *, delta: float,
-                    lambda_q: float = 0.5, limit: int = 3) -> list[dict]:
+                    lambda_q: float = 0.5, limit: int | None = 3) -> list[dict]:
     """同一召回集先过语义门槛，再在余下候选内组合z(sim)/z(Q)；不写经验。"""
     if not math.isfinite(delta) or not -1 <= delta <= 1 or not 0 <= lambda_q <= 1:
         raise ValueError("invalid_memory_q_selection_parameters")
     eligible = [dict(s, q_value=q_values[s["id"]]) for s in scores if s["cosine"] > delta]
-    if not eligible or limit <= 0:
+    if not eligible or (limit is not None and limit <= 0):
         return []
     if any(not math.isfinite(s["cosine"]) or not math.isfinite(s["q_value"]) for s in eligible):
         raise ValueError("nonfinite_memory_q_score")
@@ -68,4 +74,6 @@ def rank_candidates(scores: list[dict], q_values: dict[str, float], *, delta: fl
     utilities = _z_scores([s["q_value"] for s in eligible])
     for row, similarity, utility in zip(eligible, similarities, utilities):
         row.update(sim_z=similarity, q_z=utility, score=(1-lambda_q)*similarity + lambda_q*utility)
-    return sorted(eligible, key=lambda s: (-s["score"], -s["cosine"], s["id"]))[:min(limit, 3)]
+    ranked = sorted(eligible, key=lambda s: (-s["score"], -s["cosine"], s["id"]))
+    # 新协议显式传None仅改变候选顺序；历史数值选卡仍保留最多三张。
+    return ranked if limit is None else ranked[:min(limit, 3)]

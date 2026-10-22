@@ -1,0 +1,13 @@
+{
+  "passed": false,
+  "P7_runs": 16,
+  "performance_gate": false,
+  "unlimited_over3_attempts": 8,
+  "fatal": [
+    {
+      "arm": "L3",
+      "task_id": "1350",
+      "issue": "retrieval_infrastructure_or_budget"
+    }
+  ]
+}

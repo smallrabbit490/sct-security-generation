@@ -1,0 +1,122 @@
+[
+  {
+    "task_id": "76",
+    "cwe": "1333",
+    "family_id": "7bd2304d926b",
+    "previous_reward_eligible": false,
+    "reward_eligible": false,
+    "reference_measured": true,
+    "reference_state": "B",
+    "vulnerable_measured": true,
+    "vulnerable_state": "B",
+    "vulnerable_security_failed": true,
+    "exclusion_reasons": [
+      "reference_not_joint"
+    ],
+    "reason_zh": "公开密码构成规则与安全用例的拒绝要求不一致",
+    "evidence_and_next_action": "参考功能4/4通过，安全0/1；该安全输入满足公开构成规则，未用耗时断言检验回溯。先确定额外拒绝条件或时间评价契约。"
+  },
+  {
+    "task_id": "82",
+    "cwe": "1333",
+    "family_id": "33a4347d8a9a",
+    "previous_reward_eligible": false,
+    "reward_eligible": false,
+    "reference_measured": true,
+    "reference_state": "C",
+    "vulnerable_measured": true,
+    "vulnerable_state": "C",
+    "vulnerable_security_failed": false,
+    "exclusion_reasons": [
+      "reference_not_joint",
+      "vulnerable_control_not_security_rejected"
+    ],
+    "reason_zh": "参考日志格式与题面、功能测试格式不一致，负对照也未被安全组区分",
+    "evidence_and_next_action": "参考功能1/3、安全1/1；漏洞实现功能1/3、安全1/1。需统一日志格式并修复参考后重新确认安全区分能力。"
+  },
+  {
+    "task_id": "105",
+    "cwe": "179",
+    "family_id": "c5db424ace81",
+    "previous_reward_eligible": false,
+    "reward_eligible": false,
+    "reference_measured": true,
+    "reference_state": "B",
+    "vulnerable_measured": true,
+    "vulnerable_state": "B",
+    "vulnerable_security_failed": true,
+    "exclusion_reasons": [
+      "reference_not_joint"
+    ],
+    "reason_zh": "保留词的完全匹配与包含关系没有统一",
+    "evidence_and_next_action": "参考功能2/2、安全7/8；参考只对完整保留词拒绝，测试还要求拒绝包含保留词的组合。需确认边界，不能凭测试反推隐藏词表加入题面。"
+  },
+  {
+    "task_id": "109",
+    "cwe": "179",
+    "family_id": "8b8e3c8581a7",
+    "previous_reward_eligible": false,
+    "reward_eligible": false,
+    "reference_measured": true,
+    "reference_state": "D",
+    "vulnerable_measured": true,
+    "vulnerable_state": "D",
+    "vulnerable_security_failed": true,
+    "exclusion_reasons": [
+      "reference_not_joint"
+    ],
+    "reason_zh": "HTML属性清理参考未覆盖测试要求",
+    "evidence_and_next_action": "参考功能1/2、安全2/6；单引号属性和事件属性值未完整移除。涉及参考算法修订，不属于恢复原始文件。"
+  },
+  {
+    "task_id": "451",
+    "cwe": "347",
+    "family_id": "0b8278609f9b",
+    "previous_reward_eligible": false,
+    "reward_eligible": false,
+    "reference_measured": true,
+    "reference_state": "A",
+    "vulnerable_measured": true,
+    "vulnerable_state": "B",
+    "vulnerable_security_failed": true,
+    "exclusion_reasons": [
+      "public_IOError_requirement_conflicts_with_reference_return_False"
+    ],
+    "reason_zh": "公开要求不可访问资源抛IOError，参考却捕获并返回False",
+    "evidence_and_next_action": "已有测试参考Joint通过，但不可访问资源分支未覆盖；缺少统一异常契约，暂不授予学习资格。"
+  },
+  {
+    "task_id": "453",
+    "cwe": "347",
+    "family_id": "41fc34a2f456",
+    "previous_reward_eligible": false,
+    "reward_eligible": false,
+    "reference_measured": true,
+    "reference_state": "A",
+    "vulnerable_measured": true,
+    "vulnerable_state": "B",
+    "vulnerable_security_failed": true,
+    "exclusion_reasons": [
+      "public_IOError_requirement_conflicts_with_reference_return_False"
+    ],
+    "reason_zh": "公开要求不可访问资源抛IOError，参考却捕获并返回False",
+    "evidence_and_next_action": "已有测试参考Joint通过，但不可访问资源分支未覆盖；缺少统一异常契约，暂不授予学习资格。"
+  },
+  {
+    "task_id": "456",
+    "cwe": "347",
+    "family_id": "f283066d3145",
+    "previous_reward_eligible": false,
+    "reward_eligible": false,
+    "reference_measured": true,
+    "reference_state": "A",
+    "vulnerable_measured": true,
+    "vulnerable_state": "B",
+    "vulnerable_security_failed": true,
+    "exclusion_reasons": [
+      "public_IOError_requirement_conflicts_with_reference_return_False"
+    ],
+    "reason_zh": "公开要求不可访问资源抛IOError，参考却捕获并返回False",
+    "evidence_and_next_action": "已有测试参考Joint通过，但不可访问资源分支未覆盖；缺少统一异常契约，暂不授予学习资格。"
+  }
+]

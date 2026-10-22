@@ -1,0 +1,970 @@
+{
+  "protocol": "cle-q-full-dgate-four-arm-cap3-v4-environment-repaired",
+  "completed": true,
+  "rows": 1192,
+  "tasks": 298,
+  "families": 217,
+  "analysis_code_path": "configs\\cle_memory_q_full_gate_cap3_20261019\\analyze.py",
+  "analysis_source_sha256": "0b34fefb54dba81bc628b94127b079216810000dee47a27b5703d460b34a718d",
+  "statistical_gate_passed": false,
+  "decision": {
+    "status": "exploration_gate_not_passed",
+    "start_full_CLE_training": false,
+    "start_Base_Plus": false,
+    "automatic_extra_trials": false
+  },
+  "primary": [
+    {
+      "target": "Q2",
+      "control": "Q0",
+      "pairs": 298,
+      "measured_pairs": 296,
+      "missing_pairs": 2,
+      "families": 216,
+      "wins": 16,
+      "losses": 10,
+      "rescue_tasks": [
+        "1006",
+        "1030",
+        "1066",
+        "1067",
+        "1147",
+        "1155",
+        "1171",
+        "1210",
+        "1235",
+        "1360",
+        "1409",
+        "142",
+        "342",
+        "843",
+        "916",
+        "99"
+      ],
+      "loss_tasks": [
+        "1017",
+        "1029",
+        "1074",
+        "1140",
+        "1170",
+        "1239",
+        "1361",
+        "359",
+        "810",
+        "971"
+      ],
+      "net": 6,
+      "difference": 0.02027027027027027,
+      "ci95_family_bootstrap": [
+        -0.012821543408360126,
+        0.052980132450331126
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.31355,
+      "permutation": "19999 family sign swaps plus observed",
+      "p_mcnemar_supplement": 0.32693958282470703,
+      "functional_gains": 12,
+      "functional_losses": 13,
+      "p_holm": 0.94065
+    },
+    {
+      "target": "Q2",
+      "control": "Q1",
+      "pairs": 298,
+      "measured_pairs": 296,
+      "missing_pairs": 2,
+      "families": 216,
+      "wins": 13,
+      "losses": 14,
+      "rescue_tasks": [
+        "1066",
+        "1149",
+        "1164",
+        "1172",
+        "1236",
+        "1383",
+        "1392",
+        "1409",
+        "1410",
+        "142",
+        "342",
+        "364",
+        "880"
+      ],
+      "loss_tasks": [
+        "1017",
+        "1074",
+        "1140",
+        "1170",
+        "1240",
+        "1265",
+        "1370",
+        "1377",
+        "335",
+        "345",
+        "498",
+        "779",
+        "971",
+        "997"
+      ],
+      "net": -1,
+      "difference": -0.0033783783783783786,
+      "ci95_family_bootstrap": [
+        -0.03558718861209965,
+        0.028125
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 1.0,
+      "permutation": "19999 family sign swaps plus observed",
+      "p_mcnemar_supplement": 1.0,
+      "functional_gains": 12,
+      "functional_losses": 16,
+      "p_holm": 1.0
+    },
+    {
+      "target": "Q2",
+      "control": "Q3",
+      "pairs": 298,
+      "measured_pairs": 296,
+      "missing_pairs": 2,
+      "families": 216,
+      "wins": 14,
+      "losses": 12,
+      "rescue_tasks": [
+        "1006",
+        "1030",
+        "1066",
+        "1125",
+        "1144",
+        "1147",
+        "1210",
+        "1238",
+        "1392",
+        "1409",
+        "142",
+        "342",
+        "90",
+        "99"
+      ],
+      "loss_tasks": [
+        "1017",
+        "1074",
+        "1140",
+        "1151",
+        "1170",
+        "1341",
+        "1361",
+        "1370",
+        "1377",
+        "359",
+        "498",
+        "988"
+      ],
+      "net": 2,
+      "difference": 0.006756756756756757,
+      "ci95_family_bootstrap": [
+        -0.027306091916405626,
+        0.04037345504736808
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.84665,
+      "permutation": "19999 family sign swaps plus observed",
+      "p_mcnemar_supplement": 0.8450189828872681,
+      "functional_gains": 15,
+      "functional_losses": 16,
+      "p_holm": 1.0
+    }
+  ],
+  "adoption": {
+    "Q0": {
+      "attempts": 503,
+      "successful_retrievals": 502,
+      "selected": 1363,
+      "declared_adopted": 882,
+      "empty_successful_retrievals": 27,
+      "workflow_complete": 454,
+      "first_joint": 93,
+      "final_joint": 97,
+      "Q_updates": 0,
+      "retrieved_cards_Q_states": {
+        "positive": 309,
+        "negative": 437,
+        "unlearned": 617
+      },
+      "cards_Q_states": {
+        "positive": 246,
+        "negative": 289,
+        "unlearned": 347
+      }
+    },
+    "Q1": {
+      "attempts": 494,
+      "successful_retrievals": 487,
+      "selected": 1368,
+      "declared_adopted": 870,
+      "empty_successful_retrievals": 11,
+      "workflow_complete": 450,
+      "first_joint": 102,
+      "final_joint": 104,
+      "Q_updates": 0,
+      "retrieved_cards_Q_states": {
+        "positive": 325,
+        "negative": 426,
+        "unlearned": 617
+      },
+      "cards_Q_states": {
+        "positive": 221,
+        "negative": 287,
+        "unlearned": 362
+      }
+    },
+    "Q2": {
+      "attempts": 496,
+      "successful_retrievals": 492,
+      "selected": 1364,
+      "declared_adopted": 905,
+      "empty_successful_retrievals": 17,
+      "workflow_complete": 444,
+      "first_joint": 99,
+      "final_joint": 102,
+      "Q_updates": 0,
+      "retrieved_cards_Q_states": {
+        "positive": 404,
+        "unlearned": 606,
+        "negative": 354
+      },
+      "cards_Q_states": {
+        "positive": 308,
+        "unlearned": 351,
+        "negative": 246
+      }
+    },
+    "Q3": {
+      "attempts": 497,
+      "successful_retrievals": 491,
+      "selected": 1346,
+      "declared_adopted": 829,
+      "empty_successful_retrievals": 22,
+      "workflow_complete": 460,
+      "first_joint": 99,
+      "final_joint": 100,
+      "Q_updates": 0,
+      "retrieved_cards_Q_states": {
+        "unlearned": 992,
+        "positive": 190,
+        "negative": 164
+      },
+      "cards_Q_states": {
+        "unlearned": 638,
+        "positive": 95,
+        "negative": 96
+      }
+    }
+  },
+  "stage_status": {
+    "Q0": {
+      "initial_analysis:reused": 294,
+      "retrieval:completed": 502,
+      "experience_analysis:completed": 493,
+      "adoption:completed": 485,
+      "planning:completed": 489,
+      "generation:completed": 503,
+      "initial_analysis:completed": 194,
+      "experience_analysis:degraded": 10,
+      "adoption:degraded": 18,
+      "planning:degraded": 14,
+      "initial_analysis:degraded": 15,
+      "retrieval:degraded": 1
+    },
+    "Q1": {
+      "initial_analysis:reused": 294,
+      "retrieval:completed": 487,
+      "experience_analysis:completed": 487,
+      "adoption:completed": 481,
+      "planning:completed": 480,
+      "generation:completed": 494,
+      "planning:degraded": 14,
+      "initial_analysis:completed": 185,
+      "initial_analysis:degraded": 15,
+      "adoption:degraded": 13,
+      "retrieval:degraded": 7,
+      "experience_analysis:degraded": 7
+    },
+    "Q2": {
+      "initial_analysis:reused": 294,
+      "retrieval:completed": 492,
+      "experience_analysis:completed": 484,
+      "adoption:completed": 481,
+      "planning:completed": 481,
+      "generation:completed": 495,
+      "initial_analysis:completed": 186,
+      "generation:failed": 1,
+      "experience_analysis:degraded": 12,
+      "adoption:degraded": 15,
+      "planning:degraded": 15,
+      "retrieval:degraded": 4,
+      "initial_analysis:degraded": 16
+    },
+    "Q3": {
+      "initial_analysis:reused": 294,
+      "retrieval:completed": 491,
+      "experience_analysis:completed": 491,
+      "adoption:completed": 483,
+      "planning:completed": 487,
+      "generation:completed": 497,
+      "initial_analysis:completed": 195,
+      "experience_analysis:degraded": 6,
+      "adoption:degraded": 14,
+      "retrieval:degraded": 6,
+      "planning:degraded": 10,
+      "initial_analysis:degraded": 8
+    }
+  },
+  "first_selection_effects": {
+    "Q0": {
+      "both_retrieval_complete": 296,
+      "same_first_candidates": 296,
+      "presented_order_changed": 282,
+      "selected_order_changed": 290,
+      "selected_members_changed": 282,
+      "adopted_members_changed": 267,
+      "tasks_newly_selected_declared_adopted": 214,
+      "new_members_Q_states": {
+        "positive": 186,
+        "negative": 122,
+        "unlearned": 207
+      }
+    },
+    "Q1": {
+      "both_retrieval_complete": 296,
+      "same_first_candidates": 296,
+      "presented_order_changed": 255,
+      "selected_order_changed": 290,
+      "selected_members_changed": 279,
+      "adopted_members_changed": 272,
+      "tasks_newly_selected_declared_adopted": 207,
+      "new_members_Q_states": {
+        "positive": 170,
+        "negative": 123,
+        "unlearned": 209
+      }
+    },
+    "Q3": {
+      "both_retrieval_complete": 295,
+      "same_first_candidates": 295,
+      "presented_order_changed": 260,
+      "selected_order_changed": 286,
+      "selected_members_changed": 278,
+      "adopted_members_changed": 268,
+      "tasks_newly_selected_declared_adopted": 215,
+      "new_members_Q_states": {
+        "positive": 194,
+        "negative": 114,
+        "unlearned": 205
+      }
+    }
+  },
+  "identical_first_input_negative_controls": [
+    {
+      "arms": [
+        "Q0",
+        "Q1"
+      ],
+      "identical_first_selector_inputs": 59,
+      "selected_members_differ": 58,
+      "selected_sequence_differ": 58,
+      "both_first_try_success": 59,
+      "first_try_selected_members_differ": 58,
+      "role": "descriptive first-selector negative control, immutable body/query/order; no extra significance test or full-pipeline identity claim"
+    },
+    {
+      "arms": [
+        "Q1",
+        "Q2"
+      ],
+      "identical_first_selector_inputs": 41,
+      "selected_members_differ": 38,
+      "selected_sequence_differ": 41,
+      "both_first_try_success": 41,
+      "first_try_selected_members_differ": 38,
+      "role": "descriptive first-selector negative control, immutable body/query/order; no extra significance test or full-pipeline identity claim"
+    },
+    {
+      "arms": [
+        "Q2",
+        "Q3"
+      ],
+      "identical_first_selector_inputs": 35,
+      "selected_members_differ": 34,
+      "selected_sequence_differ": 34,
+      "both_first_try_success": 35,
+      "first_try_selected_members_differ": 34,
+      "role": "descriptive first-selector negative control, immutable body/query/order; no extra significance test or full-pipeline identity claim"
+    }
+  ],
+  "first_candidate_audit": {
+    "tasks_with_any_verifiable_trace": 298,
+    "tasks_with_all4_verifiable": 297,
+    "verified_rows": 1191,
+    "unavailable_rows": [
+      {
+        "task_id": "166",
+        "arm": "Q3"
+      }
+    ],
+    "compares_failed_selectors_when_recall_present": true
+  },
+  "retrieval_failure_sensitivity": [
+    {
+      "target": "Q2",
+      "control": "Q0",
+      "pairs": 297,
+      "measured_pairs": 295,
+      "missing_pairs": 2,
+      "families": 215,
+      "wins": 16,
+      "losses": 10,
+      "rescue_tasks": [
+        "1006",
+        "1030",
+        "1066",
+        "1067",
+        "1147",
+        "1155",
+        "1171",
+        "1210",
+        "1235",
+        "1360",
+        "1409",
+        "142",
+        "342",
+        "843",
+        "916",
+        "99"
+      ],
+      "loss_tasks": [
+        "1017",
+        "1029",
+        "1074",
+        "1140",
+        "1170",
+        "1239",
+        "1361",
+        "359",
+        "810",
+        "971"
+      ],
+      "net": 6,
+      "difference": 0.020338983050847456,
+      "ci95_family_bootstrap": [
+        -0.011074256809983826,
+        0.052980132450331126
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.30725,
+      "permutation": "19999 family sign swaps plus observed",
+      "p_mcnemar_supplement": 0.32693958282470703,
+      "functional_gains": 12,
+      "functional_losses": 13,
+      "p_holm": 0.9217500000000001
+    },
+    {
+      "target": "Q2",
+      "control": "Q1",
+      "pairs": 297,
+      "measured_pairs": 295,
+      "missing_pairs": 2,
+      "families": 215,
+      "wins": 13,
+      "losses": 14,
+      "rescue_tasks": [
+        "1066",
+        "1149",
+        "1164",
+        "1172",
+        "1236",
+        "1383",
+        "1392",
+        "1409",
+        "1410",
+        "142",
+        "342",
+        "364",
+        "880"
+      ],
+      "loss_tasks": [
+        "1017",
+        "1074",
+        "1140",
+        "1170",
+        "1240",
+        "1265",
+        "1370",
+        "1377",
+        "335",
+        "345",
+        "498",
+        "779",
+        "971",
+        "997"
+      ],
+      "net": -1,
+      "difference": -0.003389830508474576,
+      "ci95_family_bootstrap": [
+        -0.03496503496503497,
+        0.02922077922077922
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 1.0,
+      "permutation": "19999 family sign swaps plus observed",
+      "p_mcnemar_supplement": 1.0,
+      "functional_gains": 12,
+      "functional_losses": 16,
+      "p_holm": 1.0
+    },
+    {
+      "target": "Q2",
+      "control": "Q3",
+      "pairs": 297,
+      "measured_pairs": 295,
+      "missing_pairs": 2,
+      "families": 215,
+      "wins": 14,
+      "losses": 12,
+      "rescue_tasks": [
+        "1006",
+        "1030",
+        "1066",
+        "1125",
+        "1144",
+        "1147",
+        "1210",
+        "1238",
+        "1392",
+        "1409",
+        "142",
+        "342",
+        "90",
+        "99"
+      ],
+      "loss_tasks": [
+        "1017",
+        "1074",
+        "1140",
+        "1151",
+        "1170",
+        "1341",
+        "1361",
+        "1370",
+        "1377",
+        "359",
+        "498",
+        "988"
+      ],
+      "net": 2,
+      "difference": 0.006779661016949152,
+      "ci95_family_bootstrap": [
+        -0.026847897317695973,
+        0.04040404040404041
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.84355,
+      "permutation": "19999 family sign swaps plus observed",
+      "p_mcnemar_supplement": 0.8450189828872681,
+      "functional_gains": 15,
+      "functional_losses": 16,
+      "p_holm": 1.0
+    }
+  ],
+  "shared_initial_errors": [
+    {
+      "task_id": "126",
+      "error_type": "ValueError"
+    },
+    {
+      "task_id": "1209",
+      "error_type": "JSONDecodeError"
+    },
+    {
+      "task_id": "1368",
+      "error_type": "JSONDecodeError"
+    },
+    {
+      "task_id": "667",
+      "error_type": "JSONDecodeError"
+    }
+  ],
+  "costs": {
+    "arm_costs": {
+      "Q0": {
+        "calls": 2217,
+        "prompt_tokens": 19475254,
+        "completion_tokens": 1809851,
+        "total_tokens": 21285105,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 0
+      },
+      "Q1": {
+        "calls": 2169,
+        "prompt_tokens": 18855730,
+        "completion_tokens": 1782502,
+        "total_tokens": 20638232,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 4
+      },
+      "Q2": {
+        "calls": 2179,
+        "prompt_tokens": 19095384,
+        "completion_tokens": 1757179,
+        "total_tokens": 20852563,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 1
+      },
+      "Q3": {
+        "calls": 2183,
+        "prompt_tokens": 18998699,
+        "completion_tokens": 1766324,
+        "total_tokens": 20765023,
+        "cached_tokens": 0,
+        "usage_missing": 0,
+        "errors": 2
+      }
+    },
+    "shared_initial_cost": {
+      "calls": 298,
+      "prompt_tokens": 166240,
+      "completion_tokens": 304890,
+      "total_tokens": 471130,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 0
+    },
+    "prior_incident_saved_cost": {
+      "calls": 134,
+      "prompt_tokens": 923589,
+      "completion_tokens": 81896,
+      "total_tokens": 1005485,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 19
+    },
+    "total_llm_cost": {
+      "calls": 9180,
+      "prompt_tokens": 77514896,
+      "completion_tokens": 7502642,
+      "total_tokens": 85017538,
+      "cached_tokens": 0,
+      "usage_missing": 0,
+      "errors": 26
+    }
+  },
+  "known_cost_is_lower_bound": true,
+  "unrecorded_prior_P7_usage": 10,
+  "native_trace_resolutions": [
+    {
+      "task_id": "1215",
+      "arm": "Q3",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "472",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_TimeoutError"
+      ]
+    },
+    {
+      "task_id": "1395",
+      "arm": "Q2",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "1105",
+      "arm": "Q3",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_TimeoutError"
+      ]
+    },
+    {
+      "task_id": "443",
+      "arm": "Q2",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "1110",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "452",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_prompt_budget_exceeded"
+      ]
+    },
+    {
+      "task_id": "808",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_RuntimeError"
+      ]
+    },
+    {
+      "task_id": "808",
+      "arm": "Q3",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_RuntimeError"
+      ]
+    },
+    {
+      "task_id": "866",
+      "arm": "Q1",
+      "attempt": 1,
+      "reason": "native_prior_attempt_trace_after_current_retrieval_error",
+      "effective_errors": [
+        "selector_transport_TimeoutError"
+      ]
+    }
+  ],
+  "execution_segments": [
+    {
+      "run": "translation_work\\diagnostics\\20261019\\cle_memory_q\\full_gate_cap3_v1",
+      "segments": [
+        {
+          "wall_seconds": 296.2587662999995,
+          "rows_total": 16,
+          "probe": true
+        },
+        {
+          "wall_seconds": 685.3518722999997,
+          "rows_total": 29,
+          "probe": false
+        }
+      ]
+    },
+    {
+      "run": "translation_work\\diagnostics\\20261019\\cle_memory_q\\full_gate_cap3_v2",
+      "segments": [
+        {
+          "wall_seconds": 98.8563279,
+          "rows_total": 32,
+          "recovery_probe": true
+        },
+        {
+          "wall_seconds": 535.9258863999994,
+          "rows_total": 80,
+          "recovery_probe": false
+        }
+      ]
+    },
+    {
+      "run": "translation_work\\diagnostics\\20261019\\cle_memory_q\\full_gate_cap3_v3",
+      "segments": [
+        {
+          "wall_seconds": 156.97314219999862,
+          "rows_total": 88,
+          "recovery_probe": true
+        },
+        {
+          "wall_seconds": 746.9708731999999,
+          "rows_total": 175,
+          "recovery_probe": false
+        }
+      ]
+    },
+    {
+      "run": "translation_work\\diagnostics\\20261019\\cle_memory_q\\full_gate_cap3_v4",
+      "segments": [
+        {
+          "wall_seconds": 185.5870474000003,
+          "rows_total": 176,
+          "recovery_probe": true
+        },
+        {
+          "wall_seconds": 11060.7529794,
+          "rows_total": 1192,
+          "recovery_probe": false
+        }
+      ]
+    }
+  ],
+  "active_wall_seconds": 13766.676895099998,
+  "environment_reuse_certificate": {
+    "new_API_calls": 0,
+    "old_rows": 175,
+    "revalidated_code_attempts": 280,
+    "dependency": "PyYAML==6.0.3",
+    "source": "docker/python-validator/Dockerfile",
+    "module": "D:\\Agent\\sct-security-generation\\translation_work\\temp\\cle_memory_q_env\\Lib\\site-packages\\yaml\\__init__.py",
+    "changed_feedback_tasks": [
+      "1402"
+    ],
+    "remaining_infrastructure_tasks": [],
+    "possibly_stop_censored_tasks": [
+      "1402",
+      "472",
+      "639"
+    ],
+    "incomplete_tasks": [
+      "639"
+    ],
+    "reusable_task_ids": [
+      "100",
+      "1000",
+      "1001",
+      "1013",
+      "1015",
+      "103",
+      "1055",
+      "1056",
+      "106",
+      "1082",
+      "1086",
+      "1125",
+      "1126",
+      "1170",
+      "1171",
+      "1215",
+      "1225",
+      "1256",
+      "1259",
+      "1266",
+      "1267",
+      "1269",
+      "1306",
+      "1317",
+      "1318",
+      "1322",
+      "1323",
+      "1341",
+      "1343",
+      "1345",
+      "1352",
+      "1397",
+      "1409",
+      "335",
+      "338",
+      "340",
+      "424",
+      "427",
+      "471",
+      "48",
+      "777"
+    ],
+    "reusable_rows": 164,
+    "repeat_all4_task_ids": [
+      "1402",
+      "472",
+      "639"
+    ],
+    "rule": "Reuse only complete tasks with all recorded native feedback unchanged and no stop censoring; changed tasks repeat all4, no choice by grade direction",
+    "original_preoutcome_174_mask": "preserved; new reference results do not select performance cohort"
+  },
+  "embedding_segments": [
+    {
+      "calls": 12,
+      "failures": 0,
+      "prompt_tokens": 12962,
+      "total_tokens": 12962,
+      "cache_hits": 1933,
+      "embedded_texts": 12,
+      "usage_missing_calls": 0
+    },
+    {
+      "calls": 15,
+      "failures": 0,
+      "prompt_tokens": 22414,
+      "total_tokens": 22414,
+      "cache_hits": 1933,
+      "embedded_texts": 15,
+      "usage_missing_calls": 0
+    },
+    {
+      "calls": 6,
+      "failures": 0,
+      "prompt_tokens": 7440,
+      "total_tokens": 7440,
+      "cache_hits": 1941,
+      "embedded_texts": 6,
+      "usage_missing_calls": 0
+    },
+    {
+      "calls": 52,
+      "failures": 0,
+      "prompt_tokens": 85395,
+      "total_tokens": 85395,
+      "cache_hits": 1958,
+      "embedded_texts": 52,
+      "usage_missing_calls": 0
+    },
+    {
+      "calls": 8,
+      "failures": 0,
+      "prompt_tokens": 12766,
+      "total_tokens": 12766,
+      "cache_hits": 1941,
+      "embedded_texts": 8,
+      "usage_missing_calls": 0
+    },
+    {
+      "calls": 77,
+      "failures": 0,
+      "prompt_tokens": 97585,
+      "total_tokens": 97585,
+      "cache_hits": 1978,
+      "embedded_texts": 77,
+      "usage_missing_calls": 0
+    },
+    {
+      "calls": 12,
+      "failures": 0,
+      "prompt_tokens": 20246,
+      "total_tokens": 20246,
+      "cache_hits": 1945,
+      "embedded_texts": 12,
+      "usage_missing_calls": 0
+    },
+    {
+      "calls": 939,
+      "failures": 1,
+      "prompt_tokens": 1421299,
+      "total_tokens": 1421299,
+      "cache_hits": 2590,
+      "embedded_texts": 938,
+      "usage_missing_calls": 0
+    }
+  ],
+  "Q_updates": 0,
+  "inference": "paired measured tasks, task weighted, family clustered; missing outcomes not verified failures",
+  "retrieval_precision_recall": "not measured; no new human relevance labels",
+  "independent_final_test": false
+}

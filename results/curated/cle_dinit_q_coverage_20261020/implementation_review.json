@@ -1,0 +1,139 @@
+{
+  "reviewer": "Codex",
+  "scope": "all observed Joint-success attempts inspected for new cross-family actual adoptions; zero eligible new-cross candidates",
+  "reviews": [],
+  "joint_adoption_audit": [
+    {
+      "arm": "L0",
+      "task_id": "1008",
+      "attempt": 0,
+      "adopted_cards": [
+        {
+          "invariant_id": "hint-862-6294070334361514088",
+          "visited_before": 2,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        }
+      ],
+      "new_cross_candidates": 0
+    },
+    {
+      "arm": "L0",
+      "task_id": "1350",
+      "attempt": 0,
+      "adopted_cards": [
+        {
+          "invariant_id": "hint-770-5014484374352035747",
+          "visited_before": 5,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "cand-770-5275147467336335582",
+          "visited_before": 5,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "seed-874",
+          "visited_before": 3,
+          "relation": "cross_family",
+          "new_cross_candidate": false
+        }
+      ],
+      "new_cross_candidates": 0
+    },
+    {
+      "arm": "L0",
+      "task_id": "831",
+      "attempt": 0,
+      "adopted_cards": [
+        {
+          "invariant_id": "cand-77-2035088974679404547",
+          "visited_before": 4,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "hint-77-1308507374633588249",
+          "visited_before": 1,
+          "relation": "cross_family",
+          "new_cross_candidate": false
+        }
+      ],
+      "new_cross_candidates": 0
+    },
+    {
+      "arm": "L1",
+      "task_id": "1008",
+      "attempt": 0,
+      "adopted_cards": [
+        {
+          "invariant_id": "pitfall-862-5846273370123312649",
+          "visited_before": 0,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "hint-862-1405133312613939756",
+          "visited_before": 9,
+          "relation": "unknown",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "cand-862-639166699180187596",
+          "visited_before": 3,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        }
+      ],
+      "new_cross_candidates": 0
+    },
+    {
+      "arm": "L1",
+      "task_id": "1350",
+      "attempt": 0,
+      "adopted_cards": [
+        {
+          "invariant_id": "cand-770-1372887621317302545",
+          "visited_before": 3,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "cand-770-5275147467336335582",
+          "visited_before": 5,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        }
+      ],
+      "new_cross_candidates": 0
+    },
+    {
+      "arm": "L1",
+      "task_id": "831",
+      "attempt": 0,
+      "adopted_cards": [
+        {
+          "invariant_id": "pitfall-77-3219081811540845227",
+          "visited_before": 3,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "cand-77-2035088974679404547",
+          "visited_before": 4,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        },
+        {
+          "invariant_id": "hint-77-3679424343564818818",
+          "visited_before": 3,
+          "relation": "same_family",
+          "new_cross_candidate": false
+        }
+      ],
+      "new_cross_candidates": 0
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "smoke_gate.json": {
+    "passed": true,
+    "checks": {
+      "4_runs": true,
+      "4_measured": true,
+      "no_system_fault": true,
+      "2_equal_candidate_pairs": true,
+      "budget": true
+    }
+  },
+  "probe_gate.json": {
+    "stage": "probe",
+    "passed": false,
+    "winner": null,
+    "absolute": {
+      "L0": {
+        "12_measured": true,
+        "10_final_workflows": true,
+        "6_new_cross_cards": false,
+        "4_new_anchor_cards": false,
+        "8_anchor_queries": true,
+        "2_implementation_Joint_families": false,
+        "no_system_fault": true,
+        "budget": true
+      },
+      "L1": {
+        "12_measured": true,
+        "10_final_workflows": true,
+        "6_new_cross_cards": false,
+        "4_new_anchor_cards": true,
+        "8_anchor_queries": true,
+        "2_implementation_Joint_families": false,
+        "no_system_fault": true,
+        "budget": true
+      }
+    },
+    "relative_L1": {
+      "3_more_cross_cards": false,
+      "F_not_lower": true,
+      "Joint_not_lower": true,
+      "token_ratio": true
+    },
+    "interpretation": "coverage/exposure engineering gate, not evidence of Q generation benefit"
+  }
+}

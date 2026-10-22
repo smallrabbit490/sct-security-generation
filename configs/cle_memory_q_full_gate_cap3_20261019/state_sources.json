@@ -1,0 +1,42 @@
+{
+  "shared_memory_path": "translation_work/diagnostics/20261018/cle_memory_q/unlimited_complete_v2/observe/frozen/m_star_q.jsonl",
+  "shared_memory_sha256": "136a03b3960b4d62f368ff60fb81719f4a1a3612ae5dc287a61c7a307fed6552",
+  "source_protocol": "cle-q-unlimited-observer-participant-v2-complete-authorized",
+  "learning_stage": "2026-10-18 observe: one full pass over 273 D_grow tasks, unlimited LLM selection, Q ignored by generation",
+  "cards": 1939,
+  "visited_cards": 466,
+  "coverage": 0.24033006704486848,
+  "valid_card_updates": 1090,
+  "positive_Q": 168,
+  "negative_Q": 298,
+  "body_and_lifecycle_equal_M0": true,
+  "later_Dgrow_retest_Dgate_equalK_repeat_selection_did_not_update_Q": true,
+  "arms": {
+    "Q0": {
+      "same_bank": true,
+      "reads_Q_for_selection": false,
+      "candidate_order": null,
+      "max_experiences": 3
+    },
+    "Q1": {
+      "same_bank": true,
+      "reads_Q_for_selection": false,
+      "candidate_order": "similarity",
+      "max_experiences": 3
+    },
+    "Q2": {
+      "same_bank": true,
+      "reads_Q_for_selection": true,
+      "candidate_order": "q",
+      "max_experiences": 3
+    },
+    "Q3": {
+      "body_lifecycle_same_bank": true,
+      "Q_and_visits": "single same-CWE permutation of this shared bank before evaluation",
+      "shuffle_seed": 20261015,
+      "candidate_order": "q",
+      "max_experiences": 3
+    }
+  },
+  "not_used": "2026-10-16 capped learning bank with 297 visited cards; no new multi-round learning checkpoint exists"
+}

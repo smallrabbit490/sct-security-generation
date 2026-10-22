@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "offline_tests": 83,
+  "native_rows": 2,
+  "native_statistics_recomputed": true,
+  "q_event_replay_exact": true,
+  "failed_pipeline_no_credit": true,
+  "Q_visited": 5,
+  "selected_and_declared_adopted_counts": {
+    "1394": 11,
+    "102": 5
+  },
+  "gate48_fixed": true,
+  "known_bad_families_excluded": 33,
+  "gate48_historical_q_development": 15,
+  "gate48_old_reserved": 8,
+  "full_frozen_not_published": true,
+  "downstream_paid_stages_not_started": true,
+  "old_run_directories_not_written": true,
+  "offline_tests_before_probe": 83,
+  "offline_tests_final": 84,
+  "preflight_known_exclusions_regression_passed": true
+}

@@ -1,0 +1,65 @@
+{
+  "pool_tasks": {
+    "D_init": 303,
+    "D_grow": 273,
+    "D_gate": 298
+  },
+  "coverage": [
+    466,
+    416,
+    436,
+    669,
+    926,
+    967,
+    972
+  ],
+  "card_count": 1939,
+  "old_gate_joint": {
+    "Q0": 97,
+    "Q1": 104,
+    "Q2": 102,
+    "Q3": 100
+  },
+  "old_gate_denominator": 298,
+  "old_gate_measured": {
+    "Q0": 298,
+    "Q1": 298,
+    "Q2": 296,
+    "Q3": 298
+  },
+  "dinit_joint": [
+    138,
+    140,
+    140
+  ],
+  "dinit_denominator": 303,
+  "selection": {
+    "comparable": 296,
+    "changed": 281,
+    "adopted_new": 225
+  },
+  "dinit_outcomes": {
+    "both_pass": 120,
+    "rescue": 20,
+    "loss": 18,
+    "both_fail": 145
+  },
+  "loss_categories": [
+    13,
+    2,
+    2,
+    1
+  ],
+  "case1003_q": [
+    -0.564804393,
+    -0.6953630751,
+    -0.78675415257
+  ],
+  "sources": [
+    "docs/CLE_Q探索6Pro综合分析报告_20261021.md#最终补充裁决",
+    "results/curated/cle_q_dinit_selection_joint_20261021/summary.json",
+    "results/curated/cle_q_dinit_loss_analysis_20261021/summary.json",
+    "translation_work/diagnostics/20261019/cle_memory_q/full_gate_cap3_v4/summary.json",
+    "translation_work/diagnostics/20261020/cle_q_online_v1/pause_by_user_20261021.json"
+  ]
+}

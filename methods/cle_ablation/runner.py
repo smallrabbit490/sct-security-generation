@@ -138,13 +138,17 @@ def generate(arm, contract, request, provider, *, reference='', feedback=None, i
 
 def run_one(subset, task, arm, requester, memory, embedding_client=None, *,
             retrieval_mode='semantic_llm', delta=None, lambda_q=0.5, initial_analysis=None,
-            retrieval_query_mode='combined'):
+            retrieval_query_mode='combined', max_experiences=3, candidate_order=None,
+            retrieval_provider=None, implementation_constraints=None):
     """复用既有逐题流程；可共享c0初析，c1仍独立分析本臂代码和反馈。"""
     from methods.sct_trajectory.ablation import get_config
     from methods.sct_trajectory.context_pipeline import safe_feedback
     from methods.sct_trajectory.hsk_tree import HskTree
     from methods.sct_trajectory.retriever import HskTreeRetriever
     contract = plt_contract(task) if subset == 'PLT' else public_contract(subset, task)
+    if implementation_constraints is not None:
+        # 专项开发共用公开实现约束；不改数据/验证器，检索白名单不序列化此字段。
+        contract['implementation_constraints'] = implementation_constraints
     spec = arm_spec(arm)
     row = {'task_id': contract['task_id'], 'subset': subset, 'arm': arm, 'attempts': [], 'usage': {'calls': 0,
            'failed_calls': 0, 'prompt_tokens': 0, 'completion_tokens': 0, 'total_tokens': 0}}
@@ -172,10 +176,17 @@ def run_one(subset, task, arm, requester, memory, embedding_client=None, *,
             query = {key: value for key, value in query.items() if key != 'threat_analysis'}
         elif retrieval_query_mode != 'combined':
             raise ValueError('unknown_retrieval_query_mode')
+        if retrieval_provider is not None:
+            # 固定库专项只替换选卡，不复制P7修复/验证/交付流程；回调须返回原生卡与轨迹。
+            found, trace = retrieval_provider(query)
+            traces.append(trace)
+            if not spec.negative:
+                found = [{**card, 'negative_guardrail': ''} for card in found]
+            return found
         retriever = HskTreeRetriever(HskTree(), requester=request, ablation=get_config('A7'),
                                      retrieval_mode=retrieval_mode, embedding_client=embedding_client,
-                                     semantic_delta=delta, lambda_q=lambda_q)
-        found = retriever.search(query, limit=3, pool_nodes=memory[spec.memory])
+                                     semantic_delta=delta, lambda_q=lambda_q, candidate_order=candidate_order)
+        found = retriever.search(query, limit=max_experiences, pool_nodes=memory[spec.memory])
         traces.append(getattr(retriever, 'last_hier_trace', None))
         if not spec.negative:
             found = [{**card, 'negative_guardrail': ''} for card in found]

@@ -1,0 +1,2 @@
+﻿stage,arm,tasks,attempts,completed_workflow_attempts,selected_occurrences,selected_unique,adopted_occurrences,adopted_unique,adoption_occurrence_fraction,true_learned_selected_occurrences,true_learned_adopted_occurrences
+D_init,Q2_online,129,200,194,567,342,377,243,0.6649029982363316,546,377

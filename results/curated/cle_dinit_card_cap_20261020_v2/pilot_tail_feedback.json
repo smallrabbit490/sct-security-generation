@@ -1,0 +1,9 @@
+{
+  "pilot_tasks": 12,
+  "new_feedback_cards": 8,
+  "tail_feedback_cards": 17,
+  "new_tail_only_cards": [
+    "blind-77-7891981125696054376"
+  ],
+  "interpretation": "tail positions within actual unrestricted trajectories, not a counterfactual capped generation"
+}

@@ -1,0 +1,39 @@
+{
+  "D_init": {
+    "calls": 2030,
+    "completed": 2027,
+    "errors": 2,
+    "tokens": 19164080,
+    "embedding": {
+      "calls": 15,
+      "failures": 0,
+      "prompt_tokens": 27230,
+      "total_tokens": 27230,
+      "cache_hits": 1960,
+      "embedded_texts": 15,
+      "usage_missing_calls": 0
+    }
+  },
+  "D_grow": {
+    "calls": 363,
+    "completed": 362,
+    "errors": 0,
+    "tokens": 1203795,
+    "embedding": {
+      "calls": 0,
+      "failures": 0,
+      "prompt_tokens": 0,
+      "total_tokens": 0,
+      "cache_hits": 0,
+      "embedded_texts": 0,
+      "usage_missing_calls": 0
+    }
+  },
+  "D_gate": {
+    "calls": 0,
+    "completed": 0,
+    "errors": 0,
+    "tokens": 0,
+    "embedding": null
+  }
+}

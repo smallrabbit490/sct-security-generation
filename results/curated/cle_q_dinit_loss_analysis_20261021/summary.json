@@ -1,0 +1,36 @@
+{
+  "comparison": "current D_init Q2 vs historical L1 coverage-first cap3; not original CLE Q0",
+  "tasks": 303,
+  "old_joint": 138,
+  "new_joint": 140,
+  "wins": 20,
+  "losses": 18,
+  "same_public_contract_losses": 18,
+  "same_shared_initial_losses": 18,
+  "primary_categories": {
+    "global_redefinition": 13,
+    "missing_public_schema_or_placeholder": 2,
+    "unspecified_resource_budget": 2,
+    "network_failure": 1
+  },
+  "zero_API_revalidation": {
+    "original_old_pass_reproduced": 18,
+    "new_generated_code_failures_reproduced": 17,
+    "no_new_code": 1,
+    "global_removal_rescues": 13,
+    "schema_patch_rescues": 2,
+    "formal_results_changed": false,
+    "Q_changed": false,
+    "additional_API_calls": 0
+  },
+  "Q_credit_case": {
+    "task_id": "1003",
+    "card_id": "hint-79-4223192076816222301",
+    "advice": "remove hardcoded USER_POST_FORMAT; preserve external template",
+    "q_before": -0.564804393,
+    "q_after_two_attempts": -0.7867541525699999,
+    "reward_each_attempt": -1,
+    "code_did_not_follow_advice": true
+  },
+  "causal_boundary": "Does not isolate Q against same-state same-query Q0/Q1. Diagnostics locate proximate code failures, not proof that Q caused all regressions."
+}

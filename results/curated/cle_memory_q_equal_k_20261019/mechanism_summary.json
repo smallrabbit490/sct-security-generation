@@ -1,0 +1,198 @@
+{
+  "summary": {
+    "Q2": {
+      "first_members_changed_runs": 14,
+      "first_new_members_declared_adopted_runs": 7,
+      "first_new_members_declared_adopted_tasks": 4,
+      "rescues_vs_Q1": 1,
+      "losses_vs_Q1": 2
+    },
+    "Q3": {
+      "first_members_changed_runs": 14,
+      "first_new_members_declared_adopted_runs": 4,
+      "first_new_members_declared_adopted_tasks": 2,
+      "rescues_vs_Q1": 1,
+      "losses_vs_Q1": 1
+    }
+  },
+  "first_selection_Q_coverage": {
+    "Q1": {
+      "selected": 47,
+      "learned": 16
+    },
+    "Q2": {
+      "selected": 47,
+      "learned": 20
+    }
+  },
+  "Q2_added_first_cards": [
+    {
+      "task_id": "1256",
+      "card_id": "hint-1333-7952593739990058655",
+      "Q": 0.51,
+      "visits": 2,
+      "AI_label": "direct",
+      "principle": "The key to a secure implementation in this task is: adding the length check `if len(mail_id) > 254: return None` before regex matching. This does not break functionality because RFC stipulates that a legal email length is ≤254 characters; anything longer is invalid input and should return None.",
+      "guardrail": "1) Indiscriminately rejecting non-string inputs (e.g., integers) — should be maintained, as the contract requires handling strings; 2) Setting the length limit too narrowly (e.g., <100) — would reject legitimate long emails; 3) Adding extra format validation (e.g., domain suffix whitelist) — exceeds the contract scope; 4) Throwing exceptions for invalid input — violates the 'no exceptions' requirement."
+    },
+    {
+      "task_id": "1306",
+      "card_id": "hint-352-5629701447724784240",
+      "Q": 0.237,
+      "visits": 3,
+      "AI_label": "conditional",
+      "principle": "Minimal modification approach: Only relax the type check for headers and body from exact dict to collections.abc.Mapping. This modification does not break functionality because the contract requires data to be dict but does not prohibit its values from being mapping subtypes, and security validations (CSRF comparison, user ID format) remain effective for mapping types, not introducing security vulnerabilities.",
+      "guardrail": "Overly defensive pitfalls: 1) Requiring headers and body to be exactly of type dict, rejecting dict subclasses or other mapping types, leading to legitimate inputs being rejected; 2) Neglecting functional failures because security tests pass, mistakenly believing strict typing is a security necessity; 3) Adding exact type checks not required by the contract, increasing coupling and reducing code generality."
+    },
+    {
+      "task_id": "1341",
+      "card_id": "pitfall-77-5172092033421997615",
+      "Q": 0.3,
+      "visits": 1,
+      "AI_label": "conflict",
+      "principle": "",
+      "guardrail": "1) Prohibit escaping or deleting the placeholder pattern itself (such as {{, }}), as this would break template syntax; 2) Prohibit over-escaping all user input without distinguishing context (e.g., escaping already-safe numbers); 3) Prohibit returning an empty string or removing entire template paragraphs due to missing value checks; a clear ValueError should be thrown; 4) Prohibit adding unnecessary input type restrictions (e.g., allowing only strings); non-string types should be allowed and automatically converted."
+    },
+    {
+      "task_id": "1341",
+      "card_id": "pitfall-79-1961459209968241977",
+      "Q": 0.51,
+      "visits": 2,
+      "AI_label": "conflict",
+      "principle": "",
+      "guardrail": "Over-defensive pitfalls: 1) Hardcoding template structure may appear 'secure' (ensuring correct format), but actually violates the interface contract, leading to functional failure; III) Adding unrequired input validation for security (e.g., checking date format, limiting input length) narrows the scope of legitimate input; 3) Over-escaping (e.g., double escaping) disrupts the display of legitimate HTML content; 4) Assuming all external templates are untrusted and refusing to use them leads to inability to implement functionality; 5) Adding an extra type conversion layer (e.g., converting non-string input to string) is redundant when the contract explicitly requires string input."
+    },
+    {
+      "task_id": "1341",
+      "card_id": "pitfall-79-7008056801941720012",
+      "Q": 0.3,
+      "visits": 1,
+      "AI_label": "conflict",
+      "principle": "",
+      "guardrail": "1. Mistaking hardcoded templates for a security measure (actually violates the contract); 2. Double-escaping already escaped content causing HTML tags to be corrupted; 3. Rejecting legitimate input due to security concerns (e.g., mathematical expressions containing '<')."
+    },
+    {
+      "task_id": "1000",
+      "card_id": "hint-79-6066578642865576742",
+      "Q": 0.3,
+      "visits": 1,
+      "AI_label": "conditional",
+      "principle": "Minimal modification approach: only replace multiple str.replace() calls with a single INVITATION_FORMAT.format() call. The reasons this modification does not break functionality: 1. str.format() is the standard replacement method for template placeholders {placeholder}, ensuring all placeholders are correctly replaced; 2. The replacement occurs after escaping, so the security semantics remain unchanged; 3. It does not alter input validation, escaping logic, or function signatures, only improves replacement reliability.",
+      "guardrail": "Over-defensive pitfalls: 1. Removing type checks required by the contract for 'security' (this task requires parameters to be strings, removing checks will accept illegal input); 2. Adding extra input validation layers (such as length limits, content filtering) but not handling fallback solutions for validation failures; 3. Repeatedly encoding the same content causing display anomalies; 4. Modifying the structure or placeholder names of the predefined template INVITATION_FORMAT; 5. Introducing unrequested HTML tags or styles that break the output format."
+    },
+    {
+      "task_id": "1000",
+      "card_id": "hint-79-895508645598659977",
+      "Q": 0.657,
+      "visits": 3,
+      "AI_label": "conflict",
+      "principle": "Minimal changes: 1. Delete the FORUM_POST_FORMAT constant definition; 2. Add a forum_post_format parameter; 3. Use this parameter for formatting. Do not modify the html.escape logic and the list construction logic.",
+      "guardrail": "1. Mistaking hardcoded templates for a security measure (actually violates the contract); 2. Double-escaping already escaped content causing HTML tags to be corrupted; 3. Rejecting legitimate input (e.g., mathematical expressions containing '<') due to security concerns."
+    },
+    {
+      "task_id": "1000",
+      "card_id": "pitfall-79-7008056801941720012",
+      "Q": 0.3,
+      "visits": 1,
+      "AI_label": "conflict",
+      "principle": "",
+      "guardrail": "1. Mistaking hardcoded templates for a security measure (actually violates the contract); 2. Double-escaping already escaped content causing HTML tags to be corrupted; 3. Rejecting legitimate input due to security concerns (e.g., mathematical expressions containing '<')."
+    },
+    {
+      "task_id": "1000",
+      "card_id": "pitfall-79-7309952539139862464",
+      "Q": 0.09000000000000002,
+      "visits": 2,
+      "AI_label": "conditional",
+      "principle": "",
+      "guardrail": "Over-Defensiveness Pitfalls: 1. Removing type checks required by the contract for the sake of 'security' (this task requires parameters to be strings; removing checks would accept illegal input); 2. Adding an extra layer of input validation (e.g., length limits, content filtering) without handling the fallback for validation failure; 3. Repeatedly encoding the same content causing display anomalies; 4. Modifying the structure or placeholder names of the predefined template INVITATION_FORMAT; 5. Introducing unrequested HTML tags or styles that disrupt the output format."
+    },
+    {
+      "task_id": "1013",
+      "card_id": "cand-862-5033292903860531435",
+      "Q": 0.1880699999999999,
+      "visits": 5,
+      "AI_label": "conditional",
+      "principle": "Security functions should directly use externally provided shared data sources, avoiding internal redefinition or hardcoding. While maintaining functional integrity, authorization checks must be executed based on real, accessible external data sources.",
+      "guardrail": "Avoid hardcoding or redefining shared data sources (e.g., global dictionaries, database connections) that should be externally provided within security functions. This leads to: 1) Complete functional failure; 2) Security tests may pass but are meaningless; 3) Masking genuine security logic defects."
+    },
+    {
+      "task_id": "1013",
+      "card_id": "hint-862-853884444582854629",
+      "Q": 0.0,
+      "visits": 0,
+      "AI_label": "conflict",
+      "principle": "Minimal modification approach: Only remove the checks for whether logged_user_id and view_user_id exist in the dictionaries (Step 1 and Step 2). The reason this modification does not break functionality is: The contract assumes input is always valid; after removing these checks, legitimate input (IDs that exist in the dictionaries) can pass through the authorization logic normally and return a dictionary; invalid input will trigger a KeyError caught by exception handling, still returning 'Unauthorized', which meets security requirements.",
+      "guardrail": "Over-defensiveness pitfalls: 1) Adding irrelevant validation for ID existence before authorization logic may reject legitimate input (e.g., test cases assume input is valid); 2) Generalizing 'Unauthorized' as the response for all error cases, including invalid input, may cause the function interface return type to not match expectations; 3) Adding unnecessary validation layers (existence check + role check + ID match check + exception handling) makes the logic complex and prone to breaking the function contract."
+    },
+    {
+      "task_id": "1055",
+      "card_id": "guard-915-1851254758089417513",
+      "Q": 0.217449,
+      "visits": 6,
+      "AI_label": "conditional",
+      "principle": "",
+      "guardrail": "1. Avoid using different key representations for checking and for the operation (e.g., checking str(key) but assigning using the original key). 2. Avoid introducing additional conversions or mappings after the permission check. 3. Avoid rejecting legitimate string key inputs due to defending against non-string keys. 4. Avoid adding unspecified exceptions or assertions."
+    },
+    {
+      "task_id": "1259",
+      "card_id": "hint-1333-8153697007201238305",
+      "Q": 0.657,
+      "visits": 3,
+      "AI_label": "irrelevant",
+      "principle": "Minimal modification approach: Add an input length check before regex matching (`if len(email_str) > 254: return None`) and optimize the regex pattern to `r'^[^@]+@([^@]+)$'`. This does not break functionality because the length limit is based on RFC standards, and legitimate email addresses will not exceed this length; the optimized pattern can still accurately match email addresses containing a single '@' and extract the domain name, while avoiding backtracking attacks.",
+      "guardrail": "1. Indiscriminately reject all non-string inputs (e.g., returning None directly for `None` or numbers instead of attempting conversion first). 2. Performing additional format validation on the extracted domain name after regex matching (e.g., requiring it to contain only alphanumeric characters), which would break legitimate domain names containing special characters. 3. Setting the length limit too low (e.g., 100), rejecting compliant long email addresses. 4. Using multi-layer validation (e.g., first checking for the existence of '@' then using regex), increasing complexity and potentially introducing inconsistencies. 5. Returning an empty string instead of None for invalid inputs, confusing errors with legitimate empty values."
+    }
+  ],
+  "workflow_errors": [
+    {
+      "task_id": "1317",
+      "arm": "Q3",
+      "repeat": 1,
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1317",
+      "arm": "Q3",
+      "repeat": 1,
+      "attempt": 1,
+      "error": "planning:ValueError"
+    },
+    {
+      "task_id": "1000",
+      "arm": "Q3",
+      "repeat": 1,
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "repeat": 2,
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1341",
+      "arm": "Q3",
+      "repeat": 2,
+      "attempt": 1,
+      "error": "planning:EnglishPolicyError"
+    },
+    {
+      "task_id": "1055",
+      "arm": "Q2",
+      "repeat": 2,
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    },
+    {
+      "task_id": "1259",
+      "arm": "Q2",
+      "repeat": 2,
+      "attempt": 0,
+      "error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids"
+    }
+  ]
+}

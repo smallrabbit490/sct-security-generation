@@ -1,0 +1,1137 @@
+{
+  "protocol": "cle-q-coverage-learning-cap3-v2-recording-repaired",
+  "learning": [
+    "1394",
+    "102",
+    "136",
+    "1289",
+    "1298",
+    "1304",
+    "1321",
+    "1337",
+    "1344",
+    "1348",
+    "1002",
+    "1011",
+    "1217",
+    "1059",
+    "1127",
+    "1182",
+    "51",
+    "1290",
+    "1300",
+    "1305",
+    "619",
+    "1339",
+    "1349",
+    "1005",
+    "1012",
+    "1218",
+    "1060",
+    "1128",
+    "1183",
+    "52",
+    "144",
+    "1291",
+    "630",
+    "1391",
+    "881",
+    "1358",
+    "1220",
+    "1062",
+    "1133",
+    "1184",
+    "53",
+    "149",
+    "1292",
+    "1302",
+    "631",
+    "774",
+    "828",
+    "882",
+    "1359",
+    "1019",
+    "1221",
+    "1064",
+    "1134",
+    "1188",
+    "69",
+    "333",
+    "425",
+    "632",
+    "776",
+    "829",
+    "883",
+    "963",
+    "1023",
+    "1222",
+    "1068",
+    "1135",
+    "1189",
+    "70",
+    "334",
+    "429",
+    "474",
+    "636",
+    "784",
+    "830",
+    "891",
+    "965",
+    "1026",
+    "1224",
+    "1069",
+    "1137",
+    "1190",
+    "71",
+    "339",
+    "432",
+    "475",
+    "637",
+    "789",
+    "846",
+    "892",
+    "967",
+    "1028",
+    "1226",
+    "1078",
+    "1139",
+    "1194",
+    "83",
+    "341",
+    "433",
+    "638",
+    "803",
+    "847",
+    "893",
+    "970",
+    "1032",
+    "1231",
+    "1079",
+    "1146",
+    "1195",
+    "346",
+    "434",
+    "477",
+    "806",
+    "848",
+    "898",
+    "974",
+    "1038",
+    "1233",
+    "1369",
+    "1152",
+    "1196",
+    "350",
+    "435",
+    "807",
+    "899",
+    "977",
+    "1039",
+    "1237",
+    "1153",
+    "1206",
+    "357",
+    "436",
+    "809",
+    "900",
+    "980",
+    "1045",
+    "1242",
+    "1157",
+    "1207",
+    "358",
+    "441",
+    "813",
+    "904",
+    "982",
+    "1047",
+    "1243",
+    "1159",
+    "1208",
+    "360",
+    "444",
+    "495",
+    "814",
+    "905",
+    "983",
+    "1048",
+    "1246",
+    "1160",
+    "1381",
+    "366",
+    "445",
+    "496",
+    "815",
+    "906",
+    "985",
+    "1052",
+    "1248",
+    "1161",
+    "1384",
+    "368",
+    "497",
+    "816",
+    "909",
+    "986",
+    "1367",
+    "1386",
+    "1168",
+    "375",
+    "460",
+    "501",
+    "817",
+    "991",
+    "1404",
+    "1389",
+    "1169",
+    "376",
+    "461",
+    "502",
+    "818",
+    "994",
+    "1390",
+    "1379",
+    "465",
+    "503",
+    "998",
+    "466",
+    "914",
+    "917"
+  ],
+  "probe": [
+    "1337",
+    "501",
+    "1133",
+    "1339",
+    "1064",
+    "69",
+    "444",
+    "806",
+    "828",
+    "784",
+    "994",
+    "1128"
+  ],
+  "probe_families": [
+    "66163c87f907",
+    "5e1edea9894f",
+    "59cadc20bc3a",
+    "0c5cbe6aa153",
+    "3ef45078d6da",
+    "72203a681f20",
+    "e642084c68cc",
+    "ce3be41b9445",
+    "6f5f905886fe",
+    "ea7979072bb7",
+    "e3034af71c66",
+    "cb08416449ab"
+  ],
+  "all_Dgrow": [
+    "1394",
+    "102",
+    "136",
+    "1289",
+    "1298",
+    "1304",
+    "1321",
+    "1326",
+    "1337",
+    "1344",
+    "1348",
+    "1002",
+    "1011",
+    "1217",
+    "1059",
+    "1080",
+    "1127",
+    "1182",
+    "51",
+    "104",
+    "138",
+    "1290",
+    "1300",
+    "1305",
+    "619",
+    "1399",
+    "1339",
+    "1346",
+    "1349",
+    "1005",
+    "1012",
+    "1218",
+    "1060",
+    "1081",
+    "1128",
+    "1183",
+    "52",
+    "108",
+    "144",
+    "1291",
+    "1301",
+    "468",
+    "630",
+    "675",
+    "1342",
+    "1391",
+    "881",
+    "1358",
+    "1014",
+    "1220",
+    "1062",
+    "1083",
+    "1133",
+    "1184",
+    "53",
+    "110",
+    "149",
+    "1292",
+    "1302",
+    "469",
+    "631",
+    "676",
+    "774",
+    "828",
+    "882",
+    "1359",
+    "1019",
+    "1221",
+    "1064",
+    "1084",
+    "1134",
+    "1188",
+    "69",
+    "111",
+    "155",
+    "333",
+    "425",
+    "470",
+    "632",
+    "677",
+    "776",
+    "829",
+    "883",
+    "963",
+    "1023",
+    "1222",
+    "1068",
+    "1085",
+    "1135",
+    "1189",
+    "70",
+    "115",
+    "156",
+    "334",
+    "429",
+    "474",
+    "636",
+    "681",
+    "784",
+    "830",
+    "891",
+    "965",
+    "1026",
+    "1224",
+    "1069",
+    "1087",
+    "1137",
+    "1190",
+    "71",
+    "118",
+    "157",
+    "339",
+    "432",
+    "475",
+    "637",
+    "682",
+    "789",
+    "846",
+    "892",
+    "967",
+    "1028",
+    "1226",
+    "1078",
+    "1088",
+    "1139",
+    "1194",
+    "83",
+    "123",
+    "158",
+    "341",
+    "433",
+    "476",
+    "638",
+    "683",
+    "803",
+    "847",
+    "893",
+    "970",
+    "1032",
+    "1231",
+    "1079",
+    "1091",
+    "1146",
+    "1195",
+    "84",
+    "1263",
+    "163",
+    "346",
+    "434",
+    "477",
+    "806",
+    "848",
+    "898",
+    "974",
+    "1038",
+    "1233",
+    "1369",
+    "1093",
+    "1152",
+    "1196",
+    "85",
+    "1264",
+    "167",
+    "350",
+    "435",
+    "478",
+    "807",
+    "861",
+    "899",
+    "977",
+    "1039",
+    "1237",
+    "1096",
+    "1153",
+    "1206",
+    "132",
+    "173",
+    "357",
+    "436",
+    "479",
+    "809",
+    "862",
+    "900",
+    "980",
+    "1045",
+    "1242",
+    "1098",
+    "1157",
+    "1207",
+    "134",
+    "177",
+    "358",
+    "441",
+    "480",
+    "813",
+    "863",
+    "904",
+    "982",
+    "1047",
+    "1243",
+    "1099",
+    "1159",
+    "1208",
+    "93",
+    "178",
+    "360",
+    "444",
+    "495",
+    "814",
+    "905",
+    "983",
+    "1048",
+    "1246",
+    "1100",
+    "1160",
+    "1381",
+    "94",
+    "179",
+    "366",
+    "445",
+    "496",
+    "815",
+    "906",
+    "985",
+    "1052",
+    "1248",
+    "1102",
+    "1161",
+    "1384",
+    "95",
+    "368",
+    "457",
+    "497",
+    "816",
+    "909",
+    "986",
+    "1367",
+    "1386",
+    "1103",
+    "1168",
+    "375",
+    "460",
+    "501",
+    "817",
+    "911",
+    "991",
+    "1404",
+    "1389",
+    "1104",
+    "1169",
+    "376",
+    "461",
+    "502",
+    "818",
+    "912",
+    "994",
+    "1390",
+    "1112",
+    "1379",
+    "465",
+    "503",
+    "913",
+    "998",
+    "1114",
+    "466",
+    "914",
+    "1115",
+    "917",
+    "1120",
+    "1122",
+    "1371",
+    "1372",
+    "1405"
+  ],
+  "skipped": [
+    {
+      "task_id": "1080",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1081",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1083",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1084",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1085",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1087",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1088",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1091",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1093",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1096",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1098",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1099",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1100",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1102",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1103",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1104",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1112",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1114",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1115",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1120",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1122",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1326",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1371",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1372",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1399",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1405",
+      "cwe": "918",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "675",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "676",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "677",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "681",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "682",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "683",
+      "cwe": "601",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "108",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1301",
+      "cwe": "347",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1342",
+      "cwe": "74",
+      "exclusion_reasons": [
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "1346",
+      "cwe": "77",
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "457",
+      "cwe": "347",
+      "exclusion_reasons": [
+        "reference_not_joint",
+        "placeholder_in_task"
+      ]
+    },
+    {
+      "task_id": "84",
+      "cwe": "1333",
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "85",
+      "cwe": "1333",
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "861",
+      "cwe": "77",
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "862",
+      "cwe": "77",
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "863",
+      "cwe": "77",
+      "exclusion_reasons": [
+        "reference_not_joint"
+      ]
+    },
+    {
+      "task_id": "93",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "94",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "95",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "104",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "110",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "111",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "115",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "118",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "123",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "132",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "134",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "138",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "155",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "156",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "157",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "158",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "163",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "167",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "173",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "177",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "178",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "179",
+      "cwe": "200",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "468",
+      "cwe": "352",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "469",
+      "cwe": "352",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "470",
+      "cwe": "352",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "476",
+      "cwe": "352",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "478",
+      "cwe": "352",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "479",
+      "cwe": "352",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "480",
+      "cwe": "352",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "911",
+      "cwe": "770",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "912",
+      "cwe": "770",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "913",
+      "cwe": "770",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1014",
+      "cwe": "862",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1263",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    },
+    {
+      "task_id": "1264",
+      "cwe": "179",
+      "exclusion_reasons": [
+        "undeclared_public_binding"
+      ]
+    }
+  ],
+  "N": 196,
+  "maximum_P7_runs": 404,
+  "probe_P7_runs": 24,
+  "probe_selection": "D_grow first-query unlearned candidate incremental coverage, unique family, string ID tie",
+  "D_gate_access": false,
+  "reward": "actual adopted complete-workflow measured attempts only, Joint +1 else -1, alpha .3",
+  "coverage_targets": {
+    "whole_bank_learned": 970,
+    "fixed_old_Dgrow_anchor_learned": 955
+  },
+  "probe_gates": {
+    "minimum_L1_new_cards": 12,
+    "minimum_gain_over_L0": 6,
+    "maximum_token_ratio": 1.25
+  },
+  "round2_minimum_round1_new_cards": 30,
+  "max_rounds": 2,
+  "max_experiences": 3,
+  "parameters": {
+    "model": "deepseek-v3.2",
+    "embedding_model": "text-embedding-3-large",
+    "temperature": 0,
+    "thinking": "disabled",
+    "max_tokens": 4096,
+    "selector_max_tokens": 256,
+    "delta": -1,
+    "lambda_q": 0.5,
+    "max_code_attempts": 2,
+    "L0_candidate_order": null,
+    "L1_candidate_order": "coverage",
+    "backend": "native local python -I, timeout20"
+  },
+  "recording_repair": "v1 four native records lost after POLICIES arm label KeyError; repeat all4, preserve known costs"
+}

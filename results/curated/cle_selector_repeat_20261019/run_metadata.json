@@ -1,0 +1,95 @@
+{
+  "protocol": "cle-selector-repeat-four-arm-v1",
+  "status": "completed",
+  "identity": {
+    "methods\\cle_ablation\\run_selector_repeat.py": "2cb68f6efd911783b3dc83b251acfa84b3db22f902e8edb2ef3bc91d5276e9c9",
+    "configs\\cle_selector_repeat_20261019\\protocol.json": "8b66fd159b5fcc49e031223a80555e784ebb505d792d3ddbed60961cf9a06e50",
+    "translation_work\\diagnostics\\20261019\\cle_memory_q\\equal_k_v1\\reused_inputs.json": "c98f7c7b36f8c98f78046ca064470644c43c399d2d6262a30084caeb1869fc3d",
+    "translation_work\\diagnostics\\20261018\\cle_memory_q\\unlimited_complete_v2\\manifest.json": "b7d4c25e9cc29cfbe288e3ac7f66df72003327598f06598d6c7bbbc6e18bdef8",
+    "translation_work\\diagnostics\\20261018\\cle_memory_q\\unlimited_complete_v2\\observe\\frozen\\m_star_q.jsonl": "136a03b3960b4d62f368ff60fb81719f4a1a3612ae5dc287a61c7a307fed6552",
+    "translation_work\\diagnostics\\20261018\\cle_memory_q\\unlimited_complete_v2\\gate\\shared_initial.jsonl": "8f43110c0649c28ce4f47da71329d96f358c409e64eb2d91068eddc8670bcf10",
+    "configs\\cle_memory_q_unlimited_20261018\\public_contract_overrides.json": "3bacec97dff1c680dbbdc64a58cbc0a398bb4032c7d1935ca866b33bfcbf01c9",
+    "methods\\sct_trajectory\\semantic_retrieval.py": "970f7206ddfbff6816e57839ddbf0d363e414760d0c5628014d241ba3266e67a",
+    "methods\\sct_trajectory\\memory_q.py": "2ffb7dfa293f999b5443e8de05ea6933fe64145575ce3e068e6a39023a5b9389",
+    "methods\\sct_trajectory\\selector_protocol.py": "928fc7e6d23e855626794807c9b8d44c2c46ece6690d804df238fff2cc6ffac1",
+    "methods\\sct_trajectory\\run_closed_loop.py": "3ef0b271546ec0e59c76b5229cfec8b3898572ed30f5f89eb7849268afcb9b12",
+    "methods\\cle_ablation\\runner.py": "4087a224f6dd46045ebbc88952226e15780fe424ff192e2b3053414da88a1e99",
+    "methods\\cle_ablation\\run_memory_q.py": "4d5d3eb1c764276320fa2c9c8e5abb220de4b80469bbeb175de859f25b3cda42",
+    "data\\external\\secodeplt\\secodeplt\\data.json": "4779e09d14fb2a2a1a6912cca9e6403fea02470b9963b7d5a438d371c9416839",
+    "data\\external\\secodeplt\\derived_metadata\\family_manifest.json": "6bca9c7eee8a1e93d11256693b24eff73626854bcddcb52ba8bf65008ecf5267",
+    "configs\\cle_memory_q_autonomous_20261015\\pools.recovered.json": "2b746ac1e7090783cac65e5d51f09c9191ea75a942f1fa9297937812217a9408"
+  },
+  "parameters": {
+    "protocol": "cle-selector-repeat-four-arm-v1",
+    "status": "locked_before_new_calls",
+    "scope": "selection-only fixed-input development diagnostic",
+    "tasks": "first 8 entries of existing fixed48 D_gate manifest; no selection by new outcomes or Q changes",
+    "arms": {
+      "Q0": "original vector24 union lexical8 candidate order",
+      "Q1": "cosine descending, then ID",
+      "Q2": "existing z(similarity)/z(learned Q) blend, lambda=0.5",
+      "Q3": "same-CWE shuffled (Q,visits), same blend"
+    },
+    "selection_limit": null,
+    "repeats": 5,
+    "expected_selection_operations": 160,
+    "model": "deepseek-v3.2",
+    "temperature": 0,
+    "thinking": "disabled",
+    "selector_max_tokens": 256,
+    "delta": -1,
+    "lambda_q": 0.5,
+    "shuffle_seed": 20261015,
+    "schedule_seed": 20261019,
+    "schedule": "5 repeat blocks; every task has 4 randomly ordered serial arm calls in each block; 4 task workers; finish each block before next",
+    "prompt": "unchanged native semantic_select; only recall replaced by a function-local replay of recorded query/candidates/scores; native short integer protocol and retries",
+    "first_input": "reuse historical public contract plus shared initial analysis, no new analysis or embedding",
+    "primary_comparisons": [
+      [
+        "Q2",
+        "Q0"
+      ],
+      [
+        "Q2",
+        "Q1"
+      ],
+      [
+        "Q2",
+        "Q3"
+      ]
+    ],
+    "distance": "Jaccard set distance; two empty valid sets have distance 0; failed calls never treated as empty",
+    "effect": "between-arm mean pair distance minus half the two within-arm mean pair distances; macro average by task family",
+    "inference": "10000 paired task-family bootstrap; 19999 random repeat-block arm-label swaps within task; one-sided separation test; Holm over 3 primary comparisons",
+    "decision": "complete valid 160 operations required for affirmative conclusion; positive effect with CI lower>0 and Holm p<=0.05 supports detectable order effect; otherwise inconclusive, not equivalence",
+    "Q_specific_interpretation": "Q2-Q1 tests learned-Q reordering versus similarity; Q2-Q3 tests assignment of learned values versus its permutation; neither tests usefulness or Joint",
+    "retries": "original selector at most 2 format responses; original transport requester retained; no extra experiment reruns",
+    "code_generation": false,
+    "validation": false,
+    "Q_updates": false,
+    "new_embeddings": false,
+    "new_labels": false,
+    "Base_Plus": false,
+    "scope_expansion": false
+  },
+  "branch": "fjy/cle-q-exploration-20261018",
+  "commit": "feff42e91ec04b0e276204c508e98fe9e8b9f833",
+  "prepared_utc": "2026-10-19T03:56:15.802328+00:00",
+  "code_generation_calls": 0,
+  "Q_updates": 0,
+  "new_embedding_calls": 0,
+  "validation_calls": 0,
+  "offline_prompt_capture": "synthetic empty response, not experimental rows",
+  "saved_rows": 160,
+  "valid_rows": 160,
+  "segments": [
+    {
+      "wall_seconds": 78.97736210000039,
+      "saved_total": 32
+    },
+    {
+      "wall_seconds": 330.278953,
+      "saved_total": 160
+    }
+  ]
+}

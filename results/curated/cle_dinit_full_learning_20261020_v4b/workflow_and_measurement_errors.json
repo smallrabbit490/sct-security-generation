@@ -1,0 +1,275 @@
+[
+  {
+    "task_id": "1324",
+    "attempt": 0,
+    "error_type": "planning:JSONDecodeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1130",
+    "attempt": 0,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1054",
+    "attempt": 0,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "874",
+    "attempt": 0,
+    "error_type": "adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "834",
+    "attempt": 1,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1176",
+    "attempt": 0,
+    "error_type": "adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "66",
+    "attempt": 0,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "486",
+    "attempt": 0,
+    "error_type": "planning:JSONDecodeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "795",
+    "attempt": 1,
+    "error_type": "planning:EnglishPolicyError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "973",
+    "attempt": 1,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "355",
+    "attempt": 0,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "446",
+    "attempt": 0,
+    "error_type": "retrieval:RuntimeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1150",
+    "attempt": 1,
+    "error_type": "generation:ValueError:model_output_truncated",
+    "measured": false,
+    "worker_error": null
+  },
+  {
+    "task_id": "449",
+    "attempt": 1,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "651",
+    "attempt": 1,
+    "error_type": "adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1244",
+    "attempt": 1,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "978",
+    "attempt": 0,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "78",
+    "attempt": 0,
+    "error_type": "planning:EnglishPolicyError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "981",
+    "attempt": 1,
+    "error_type": "planning:JSONDecodeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1249",
+    "attempt": 0,
+    "error_type": "retrieval:RuntimeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "127",
+    "attempt": 0,
+    "error_type": "initial_analysis:invalid_reused_analysis",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "369",
+    "attempt": 0,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "907",
+    "attempt": 1,
+    "error_type": "planning:JSONDecodeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "987",
+    "attempt": 1,
+    "error_type": "initial_analysis:JSONDecodeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1351",
+    "attempt": 1,
+    "error_type": "retrieval:RuntimeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "1174",
+    "attempt": 1,
+    "error_type": "initial_analysis:ValueError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "836",
+    "attempt": 0,
+    "error_type": "generation:ValueError:model_output_truncated",
+    "measured": false,
+    "worker_error": null
+  },
+  {
+    "task_id": "650",
+    "attempt": 1,
+    "error_type": "adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "796",
+    "attempt": 0,
+    "error_type": "planning:JSONDecodeError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "796",
+    "attempt": 1,
+    "error_type": "planning:EnglishPolicyError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "797",
+    "attempt": 0,
+    "error_type": "planning:EnglishPolicyError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "665",
+    "attempt": 0,
+    "error_type": null,
+    "measured": false,
+    "worker_error": null
+  },
+  {
+    "task_id": "622",
+    "attempt": 1,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "671",
+    "attempt": 0,
+    "error_type": "initial_analysis:invalid_reused_analysis;experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "625",
+    "attempt": 0,
+    "error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "872",
+    "attempt": 0,
+    "error_type": "adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "626",
+    "attempt": 1,
+    "error_type": "initial_analysis:ValueError",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "76",
+    "attempt": 0,
+    "error_type": "experience_analysis:EnglishPolicyError;adoption:missing_applied_experience_ids",
+    "measured": true,
+    "worker_error": null
+  },
+  {
+    "task_id": "105",
+    "attempt": 0,
+    "error_type": "initial_analysis:invalid_reused_analysis",
+    "measured": true,
+    "worker_error": null
+  }
+]

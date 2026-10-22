@@ -1,0 +1,172 @@
+{
+  "task_ids": [
+    "76",
+    "82",
+    "105",
+    "109",
+    "451",
+    "453",
+    "456",
+    "1258",
+    "1288",
+    "1299",
+    "1319",
+    "1003"
+  ],
+  "remaining7": [
+    "76",
+    "82",
+    "105",
+    "109",
+    "451",
+    "453",
+    "456"
+  ],
+  "changed_fields": [
+    {
+      "task_id": "76",
+      "field": "task_description.description"
+    },
+    {
+      "task_id": "76",
+      "field": "ground_truth.patched_code"
+    },
+    {
+      "task_id": "76",
+      "field": "unittest.testcases"
+    },
+    {
+      "task_id": "82",
+      "field": "task_description.description"
+    },
+    {
+      "task_id": "82",
+      "field": "ground_truth.vulnerable_code"
+    },
+    {
+      "task_id": "82",
+      "field": "ground_truth.patched_code"
+    },
+    {
+      "task_id": "82",
+      "field": "unittest.testcases"
+    },
+    {
+      "task_id": "105",
+      "field": "task_description.security_policy"
+    },
+    {
+      "task_id": "105",
+      "field": "task_description.context"
+    },
+    {
+      "task_id": "105",
+      "field": "ground_truth.patched_code"
+    },
+    {
+      "task_id": "105",
+      "field": "unittest.setup"
+    },
+    {
+      "task_id": "109",
+      "field": "task_description.security_policy"
+    },
+    {
+      "task_id": "109",
+      "field": "ground_truth.patched_code"
+    },
+    {
+      "task_id": "109",
+      "field": "unittest.testcases"
+    },
+    {
+      "task_id": "451",
+      "field": "task_description.return"
+    },
+    {
+      "task_id": "451",
+      "field": "ground_truth.code_after"
+    },
+    {
+      "task_id": "451",
+      "field": "unittest.setup"
+    },
+    {
+      "task_id": "451",
+      "field": "unittest.testcases"
+    },
+    {
+      "task_id": "453",
+      "field": "task_description.return"
+    },
+    {
+      "task_id": "453",
+      "field": "ground_truth.code_after"
+    },
+    {
+      "task_id": "453",
+      "field": "unittest.setup"
+    },
+    {
+      "task_id": "453",
+      "field": "unittest.testcases"
+    },
+    {
+      "task_id": "456",
+      "field": "task_description.return"
+    },
+    {
+      "task_id": "456",
+      "field": "ground_truth.code_after"
+    },
+    {
+      "task_id": "456",
+      "field": "unittest.setup"
+    },
+    {
+      "task_id": "456",
+      "field": "unittest.testcases"
+    },
+    {
+      "task_id": "1258",
+      "field": "task_description.return"
+    },
+    {
+      "task_id": "1288",
+      "field": "task_description.arguments"
+    },
+    {
+      "task_id": "1299",
+      "field": "task_description.context"
+    },
+    {
+      "task_id": "1299",
+      "field": "task_description.return"
+    },
+    {
+      "task_id": "1299",
+      "field": "task_description.raise"
+    },
+    {
+      "task_id": "1299",
+      "field": "ground_truth.code_after"
+    },
+    {
+      "task_id": "1299",
+      "field": "unittest.setup"
+    },
+    {
+      "task_id": "1299",
+      "field": "unittest.testcases"
+    },
+    {
+      "task_id": "1319",
+      "field": "task_description.arguments"
+    },
+    {
+      "task_id": "1003",
+      "field": "task_description.context"
+    }
+  ],
+  "interpretation": "new benchmark contract version; reference, negative control and tests explicitly repaired; not upstream-original scores"
+}

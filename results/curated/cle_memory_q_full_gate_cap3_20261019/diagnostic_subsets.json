@@ -1,0 +1,545 @@
+{
+  "preoutcome_diagnostic": {
+    "tasks": 174,
+    "arms": {
+      "Q1": {
+        "n": 174,
+        "functional": 90,
+        "security": 131,
+        "joint": 78,
+        "measured": 174,
+        "first_joint": 77,
+        "errors": 18,
+        "calls": 1181,
+        "total_tokens": 10864958,
+        "seconds": 13453.037171399967
+      },
+      "Q2": {
+        "n": 174,
+        "functional": 85,
+        "security": 131,
+        "joint": 77,
+        "measured": 173,
+        "first_joint": 74,
+        "errors": 22,
+        "calls": 1195,
+        "total_tokens": 11058699,
+        "seconds": 13112.649394400007
+      },
+      "Q0": {
+        "n": 174,
+        "functional": 88,
+        "security": 131,
+        "joint": 74,
+        "measured": 174,
+        "first_joint": 72,
+        "errors": 19,
+        "calls": 1206,
+        "total_tokens": 11200912,
+        "seconds": 13621.045486399984
+      },
+      "Q3": {
+        "n": 174,
+        "functional": 91,
+        "security": 136,
+        "joint": 79,
+        "measured": 174,
+        "first_joint": 78,
+        "errors": 20,
+        "calls": 1176,
+        "total_tokens": 10792854,
+        "seconds": 13147.743670299997
+      }
+    },
+    "paired": [
+      {
+        "target": "Q2",
+        "control": "Q0",
+        "pairs": 174,
+        "measured_pairs": 173,
+        "missing_pairs": 1,
+        "families": 126,
+        "wins": 12,
+        "losses": 9,
+        "rescue_tasks": [
+          "1006",
+          "1030",
+          "1066",
+          "1067",
+          "1147",
+          "1155",
+          "1210",
+          "1235",
+          "142",
+          "342",
+          "843",
+          "916"
+        ],
+        "loss_tasks": [
+          "1017",
+          "1029",
+          "1074",
+          "1140",
+          "1239",
+          "1361",
+          "359",
+          "810",
+          "971"
+        ],
+        "net": 3,
+        "difference": 0.017341040462427744,
+        "ci95_family_bootstrap": [
+          -0.03529411764705882,
+          0.07017543859649122
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 0.66515,
+        "permutation": "19999 family sign swaps plus observed",
+        "p_mcnemar_supplement": 0.6636238098144531,
+        "functional_gains": 9,
+        "functional_losses": 12
+      },
+      {
+        "target": "Q2",
+        "control": "Q1",
+        "pairs": 174,
+        "measured_pairs": 173,
+        "missing_pairs": 1,
+        "families": 126,
+        "wins": 10,
+        "losses": 11,
+        "rescue_tasks": [
+          "1066",
+          "1149",
+          "1164",
+          "1236",
+          "1383",
+          "1410",
+          "142",
+          "342",
+          "364",
+          "880"
+        ],
+        "loss_tasks": [
+          "1017",
+          "1074",
+          "1140",
+          "1240",
+          "1370",
+          "1377",
+          "345",
+          "498",
+          "779",
+          "971",
+          "997"
+        ],
+        "net": -1,
+        "difference": -0.005780346820809248,
+        "ci95_family_bootstrap": [
+          -0.05814107296665436,
+          0.045714285714285714
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 1.0,
+        "permutation": "19999 family sign swaps plus observed",
+        "p_mcnemar_supplement": 1.0,
+        "functional_gains": 8,
+        "functional_losses": 13
+      },
+      {
+        "target": "Q2",
+        "control": "Q3",
+        "pairs": 174,
+        "measured_pairs": 173,
+        "missing_pairs": 1,
+        "families": 126,
+        "wins": 9,
+        "losses": 11,
+        "rescue_tasks": [
+          "1006",
+          "1030",
+          "1066",
+          "1144",
+          "1147",
+          "1210",
+          "1238",
+          "142",
+          "342"
+        ],
+        "loss_tasks": [
+          "1017",
+          "1074",
+          "1140",
+          "1151",
+          "1341",
+          "1361",
+          "1370",
+          "1377",
+          "359",
+          "498",
+          "988"
+        ],
+        "net": -2,
+        "difference": -0.011560693641618497,
+        "ci95_family_bootstrap": [
+          -0.06321839080459771,
+          0.03954802259887006
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 0.82545,
+        "permutation": "19999 family sign swaps plus observed",
+        "p_mcnemar_supplement": 0.8238029479980469,
+        "functional_gains": 8,
+        "functional_losses": 14
+      }
+    ],
+    "role": "diagnostic only; no additional confirmatory claims"
+  },
+  "documented_Q_development_exposure": {
+    "tasks": 104,
+    "arms": {
+      "Q1": {
+        "n": 104,
+        "functional": 47,
+        "security": 82,
+        "joint": 38,
+        "measured": 104,
+        "first_joint": 36,
+        "errors": 11,
+        "calls": 756,
+        "total_tokens": 7068134,
+        "seconds": 8052.115786199987
+      },
+      "Q2": {
+        "n": 104,
+        "functional": 45,
+        "security": 80,
+        "joint": 39,
+        "measured": 103,
+        "first_joint": 38,
+        "errors": 18,
+        "calls": 745,
+        "total_tokens": 6948238,
+        "seconds": 7923.299273899997
+      },
+      "Q0": {
+        "n": 104,
+        "functional": 46,
+        "security": 82,
+        "joint": 36,
+        "measured": 104,
+        "first_joint": 35,
+        "errors": 18,
+        "calls": 762,
+        "total_tokens": 7152031,
+        "seconds": 8493.310074399982
+      },
+      "Q3": {
+        "n": 104,
+        "functional": 47,
+        "security": 86,
+        "joint": 39,
+        "measured": 104,
+        "first_joint": 38,
+        "errors": 10,
+        "calls": 746,
+        "total_tokens": 6877107,
+        "seconds": 8008.929305899998
+      }
+    },
+    "paired": [
+      {
+        "target": "Q2",
+        "control": "Q0",
+        "pairs": 104,
+        "measured_pairs": 103,
+        "missing_pairs": 1,
+        "families": 73,
+        "wins": 7,
+        "losses": 4,
+        "rescue_tasks": [
+          "1006",
+          "1030",
+          "1066",
+          "1067",
+          "1235",
+          "142",
+          "342"
+        ],
+        "loss_tasks": [
+          "1017",
+          "1029",
+          "1140",
+          "1361"
+        ],
+        "net": 3,
+        "difference": 0.02912621359223301,
+        "ci95_family_bootstrap": [
+          -0.031914893617021274,
+          0.09278350515463918
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 0.548828125,
+        "permutation": "exact family sign swaps",
+        "p_mcnemar_supplement": 0.548828125,
+        "functional_gains": 5,
+        "functional_losses": 6
+      },
+      {
+        "target": "Q2",
+        "control": "Q1",
+        "pairs": 104,
+        "measured_pairs": 103,
+        "missing_pairs": 1,
+        "families": 73,
+        "wins": 6,
+        "losses": 5,
+        "rescue_tasks": [
+          "1066",
+          "1236",
+          "142",
+          "342",
+          "364",
+          "880"
+        ],
+        "loss_tasks": [
+          "1017",
+          "1140",
+          "345",
+          "498",
+          "779"
+        ],
+        "net": 1,
+        "difference": 0.009708737864077669,
+        "ci95_family_bootstrap": [
+          -0.05319148936170213,
+          0.07272727272727272
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 1.0,
+        "permutation": "exact family sign swaps",
+        "p_mcnemar_supplement": 1.0,
+        "functional_gains": 4,
+        "functional_losses": 6
+      },
+      {
+        "target": "Q2",
+        "control": "Q3",
+        "pairs": 104,
+        "measured_pairs": 103,
+        "missing_pairs": 1,
+        "families": 73,
+        "wins": 5,
+        "losses": 5,
+        "rescue_tasks": [
+          "1006",
+          "1030",
+          "1066",
+          "142",
+          "342"
+        ],
+        "loss_tasks": [
+          "1017",
+          "1140",
+          "1341",
+          "1361",
+          "498"
+        ],
+        "net": 0,
+        "difference": 0.0,
+        "ci95_family_bootstrap": [
+          -0.059420792079207904,
+          0.059408887317303115
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 1.0,
+        "permutation": "exact family sign swaps",
+        "p_mcnemar_supplement": 1.0,
+        "functional_gains": 5,
+        "functional_losses": 7
+      }
+    ],
+    "role": "diagnostic only; no additional confirmatory claims"
+  },
+  "not_found_in_four_prior_Q_manifests": {
+    "tasks": 194,
+    "arms": {
+      "Q3": {
+        "n": 194,
+        "functional": 72,
+        "security": 144,
+        "joint": 61,
+        "measured": 194,
+        "first_joint": 61,
+        "errors": 25,
+        "calls": 1437,
+        "total_tokens": 13887916,
+        "seconds": 17199.04564819998
+      },
+      "Q1": {
+        "n": 194,
+        "functional": 76,
+        "security": 148,
+        "joint": 66,
+        "measured": 194,
+        "first_joint": 66,
+        "errors": 30,
+        "calls": 1413,
+        "total_tokens": 13570098,
+        "seconds": 16956.984006299976
+      },
+      "Q0": {
+        "n": 194,
+        "functional": 74,
+        "security": 145,
+        "joint": 61,
+        "measured": 194,
+        "first_joint": 58,
+        "errors": 30,
+        "calls": 1455,
+        "total_tokens": 14133074,
+        "seconds": 17150.991413699987
+      },
+      "Q2": {
+        "n": 194,
+        "functional": 73,
+        "security": 148,
+        "joint": 63,
+        "measured": 193,
+        "first_joint": 61,
+        "errors": 31,
+        "calls": 1434,
+        "total_tokens": 13904325,
+        "seconds": 17152.55090300001
+      }
+    },
+    "paired": [
+      {
+        "target": "Q2",
+        "control": "Q0",
+        "pairs": 194,
+        "measured_pairs": 193,
+        "missing_pairs": 1,
+        "families": 143,
+        "wins": 9,
+        "losses": 6,
+        "rescue_tasks": [
+          "1147",
+          "1155",
+          "1171",
+          "1210",
+          "1360",
+          "1409",
+          "843",
+          "916",
+          "99"
+        ],
+        "loss_tasks": [
+          "1074",
+          "1170",
+          "1239",
+          "359",
+          "810",
+          "971"
+        ],
+        "net": 3,
+        "difference": 0.015544041450777202,
+        "ci95_family_bootstrap": [
+          -0.020512820512820513,
+          0.05291005291005291
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 0.5810546875,
+        "permutation": "exact family sign swaps",
+        "p_mcnemar_supplement": 0.60723876953125,
+        "functional_gains": 7,
+        "functional_losses": 7
+      },
+      {
+        "target": "Q2",
+        "control": "Q1",
+        "pairs": 194,
+        "measured_pairs": 193,
+        "missing_pairs": 1,
+        "families": 143,
+        "wins": 7,
+        "losses": 9,
+        "rescue_tasks": [
+          "1149",
+          "1164",
+          "1172",
+          "1383",
+          "1392",
+          "1409",
+          "1410"
+        ],
+        "loss_tasks": [
+          "1074",
+          "1170",
+          "1240",
+          "1265",
+          "1370",
+          "1377",
+          "335",
+          "971",
+          "997"
+        ],
+        "net": -2,
+        "difference": -0.010362694300518135,
+        "ci95_family_bootstrap": [
+          -0.04651464031811061,
+          0.024630541871921183
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 0.7744140625,
+        "permutation": "exact family sign swaps",
+        "p_mcnemar_supplement": 0.803619384765625,
+        "functional_gains": 8,
+        "functional_losses": 10
+      },
+      {
+        "target": "Q2",
+        "control": "Q3",
+        "pairs": 194,
+        "measured_pairs": 193,
+        "missing_pairs": 1,
+        "families": 143,
+        "wins": 9,
+        "losses": 7,
+        "rescue_tasks": [
+          "1125",
+          "1144",
+          "1147",
+          "1210",
+          "1238",
+          "1392",
+          "1409",
+          "90",
+          "99"
+        ],
+        "loss_tasks": [
+          "1074",
+          "1151",
+          "1170",
+          "1370",
+          "1377",
+          "359",
+          "988"
+        ],
+        "net": 2,
+        "difference": 0.010362694300518135,
+        "ci95_family_bootstrap": [
+          -0.029852980605952272,
+          0.05027932960893855
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 0.803619384765625,
+        "permutation": "exact family sign swaps",
+        "p_mcnemar_supplement": 0.803619384765625,
+        "functional_gains": 10,
+        "functional_losses": 9
+      }
+    ],
+    "role": "diagnostic only; no additional confirmatory claims"
+  }
+}

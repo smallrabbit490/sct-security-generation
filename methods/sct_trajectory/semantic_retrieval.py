@@ -403,20 +403,38 @@ def recall_semantic_candidates(task, nodes, embedding_client, limit, trace):
     return eligible, query, scores
 
 
-def semantic_select(task, nodes, requester, embedding_client, limit=3):
+def semantic_select(task, nodes, requester, embedding_client, limit=3, *,
+                    candidate_order=None, lambda_q=0.5, delta=-1.0):
     """检索阶段以真实余弦 top24 和词重叠 top8 联集比较适用性，输出 0–3 条。
 
     不按 CWE/类型截断或钉选同任务卡；仅过滤语言和可检索状态。模型应引用完整任务、
     不可信输入、敏感操作及条件，明确建议而非测量证明。API/解析/预算失败返回空并留痕，
     不执行测试、无规则兜底注入、不修改长期库；最终 Plus 反馈不得传入此训练调用。
     """
-    limit = max(0, min(int(limit), 3))
+    unlimited = limit is None
+    limit = None if unlimited else max(0, min(int(limit), 3))
     trace = {"retrieval_mode": "semantic", "embedding_model": embedding_client.model,
              "cache_version": CACHE_VERSION, "status": "pending", "errors": [], "candidate_ids": [],
              "selected_ids": [], "excluded": [], "scores": [], "selector_version": "compact-selection-v2"}
     try:
-        eligible, query, _ = recall_semantic_candidates(task, nodes, embedding_client, limit, trace)
+        eligible, query, _ = recall_semantic_candidates(task, nodes, embedding_client, 1 if unlimited else limit, trace)
         candidate_ids = trace["candidate_ids"]
+        if candidate_order is not None:
+            from .memory_q import rank_candidates, rank_coverage_candidates
+            if candidate_order not in ("similarity", "q", "coverage"):
+                raise ValueError("unknown_candidate_order")
+            if candidate_order == 'coverage':
+                # 新学习消融只改变呈现顺序；原LLM仍负责最多三张选择和后续采用。
+                ranked = rank_coverage_candidates(trace['scores'], {i:n.q_visits for i,(n,_) in eligible.items()}, delta=delta)
+            else:
+                ranked = rank_candidates(trace['scores'], {i: n.q_value for i, (n, _) in eligible.items()},
+                                         delta=delta, lambda_q=0 if candidate_order == 'similarity' else lambda_q,
+                                         limit=None)
+            candidate_ids = [item['id'] for item in ranked]
+            trace.update(presented_candidate_ids=candidate_ids, candidate_order=candidate_order,
+                         value_ranking=ranked, delta=delta, lambda_q=lambda_q)
+        trace['selection_limit'] = limit
+        trace['local_id_map'] = {str(i): identifier for i, identifier in enumerate(candidate_ids, 1)}
         if not candidate_ids:
             trace["status"] = "completed"
             return [], trace
@@ -429,7 +447,9 @@ def semantic_select(task, nodes, requester, embedding_client, limit=3):
             "API semantics, data representation, preserved behavior, and observed failure evidence. "
             "Never select merely because CWE labels, source tasks, or keywords match. Reject irrelevant, conflicting, redundant, "
             "unsupported or over-defensive advice. Select zero cards if none are useful. Do not invent validation evidence. "
-            f"Select at most {limit} unique integer candidate IDs, ordered by practical usefulness. "
+            + ("Select any number of applicable unique integer candidate IDs, ordered by practical usefulness; "
+             "there is no fixed maximum number of selected cards. " if unlimited else
+             f"Select at most {limit} unique integer candidate IDs, ordered by practical usefulness. ") +
             'Return exactly {"selected":[1,2]} using only applicable candidate IDs, or {"selected":[]} if none apply. '
             "Return no explanations, rejection list, extra keys, Markdown or duplicate IDs. "
             "Required adaptations will be examined in the subsequent experience-conditioned analysis.\nPUBLIC_QUERY:\n"
@@ -437,7 +457,7 @@ def semantic_select(task, nodes, requester, embedding_client, limit=3):
         if len(prompt) > MAX_SELECTOR_CHARS:
             raise ValueError("selector_prompt_budget_exceeded")
         from .selector_protocol import select_with_retry
-        local_ids = select_with_retry(prompt, requester, len(candidate_ids), limit, trace)
+        local_ids = select_with_retry(prompt, requester, len(candidate_ids), len(candidate_ids) if unlimited else limit, trace)
         chosen_ids = [candidate_ids[i - 1] for i in local_ids]
         # 未选中只是集合差，不伪造模型的拒绝理由；后续复析仍可拒绝或适配选中卡。
         trace.update(status="completed", selected_ids=chosen_ids,

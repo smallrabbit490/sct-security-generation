@@ -1,0 +1,22 @@
+{
+  "protocol": "cle-q-full-dgate-four-arm-cap3-v3-durable-records",
+  "parent_protocol": "cle-q-full-dgate-four-arm-cap3-v2-recorder",
+  "native_P7_and_all_method_parameters": "unchanged; frozen protocol.json and protocol.v2.json",
+  "observed_incident": "read_rows used str.splitlines and split U+2028 inside task103 Q1 JSON string; all80 physical JSONL records valid",
+  "reader_fix": "iterate physical file lines, preserve U+2028 inside JSON strings",
+  "durability_fix": "worker atomically saves each completed native result before returning to coordinator; resume merges saved orphan rows without API",
+  "methodological_change": false,
+  "recovery": "reuse all80 complete records; repeat all4 arms of1267 and338, 7 previously submitted outputs unavailable and 1 arm not previously submitted",
+  "reused_rows": 80,
+  "new_P7_rows": 1112,
+  "expected_main_rows": 1192,
+  "maximum_extra_P7_due_to_both_incidents": 15,
+  "expected_actual_P7_invocations_total": 1207,
+  "unrecorded_prior_P7_usage": 10,
+  "known_prior_excluded_rows_cost": "5 v1 saved rows already in metadata ledger",
+  "initial_analyses": "reuse same original298 including4 degraded; no new initial calls",
+  "Q_updates": false,
+  "max_experiences": 3,
+  "execution": "same prescheduled arm order, bounded8; recovery probe1267/338 included in1192",
+  "stop": "genuine common-candidate, card-cap, source, validation-environment, authentication, quota or circuit faults; retain native model output failures"
+}

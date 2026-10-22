@@ -1,0 +1,632 @@
+[
+  {
+    "task_id": "1326",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1080",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1399",
+    "cohort": "observe",
+    "config_name_writes": [
+      "SCHEME_RE"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "B"
+  },
+  {
+    "task_id": "1081",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "675",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1083",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "676",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1084",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "new_state": "C"
+  },
+  {
+    "task_id": "677",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1085",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "681",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1087",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "682",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1088",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "683",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1091",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "A"
+  },
+  {
+    "task_id": "1093",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1096",
+    "cohort": "observe",
+    "config_name_writes": [
+      "TRUSTED_IMAGE_HOSTS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1098",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1099",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1100",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1102",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1103",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1104",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1112",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1114",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "retrieval:RuntimeError",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1115",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1122",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1371",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1120",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1372",
+    "cohort": "observe",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1405",
+    "cohort": "observe",
+    "config_name_writes": [
+      "ALLOWED_DOMAINS",
+      "ALLOWED_SCHEMES"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1326",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1080",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "adoption:invalid_rejected_experiences",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1399",
+    "cohort": "retest",
+    "config_name_writes": [
+      "SCHEME_RE"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "B"
+  },
+  {
+    "task_id": "1081",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "675",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "initial_analysis:ValueError",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1083",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "676",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1084",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "677",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1085",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "681",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "planning:JSONDecodeError",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1087",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "initial_analysis:ValueError",
+    "new_state": "C"
+  },
+  {
+    "task_id": "682",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "B"
+  },
+  {
+    "task_id": "1088",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "683",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_ENDPOINTS",
+      "APPROVED_API_DOMAINS"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1091",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1093",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1096",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1098",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1099",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "retrieval:RuntimeError",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1100",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1102",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1103",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": false,
+    "old_generation_error": "retrieval:RuntimeError",
+    "new_state": "C"
+  },
+  {
+    "task_id": "1104",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1112",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1114",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1122",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1115",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1371",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1120",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1405",
+    "cohort": "retest",
+    "config_name_writes": [
+      "ALLOWED_DOMAINS",
+      "ALLOWED_SCHEMES"
+    ],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  },
+  {
+    "task_id": "1372",
+    "cohort": "retest",
+    "config_name_writes": [],
+    "interpretation": "same-name assignment is a structural warning, not by itself a proven failure cause",
+    "old_workflow_completed": true,
+    "old_generation_error": null,
+    "new_state": "C"
+  }
+]

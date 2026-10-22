@@ -1,0 +1,29 @@
+{
+  "protocol": "cle-q-online-dinit-grow-cap3-v1",
+  "pool": "D_grow",
+  "planned": 273,
+  "executed": 23,
+  "final": {
+    "functional": 14,
+    "security": 18,
+    "joint": 11,
+    "measured": 23
+  },
+  "visited_before": 967,
+  "visited_after": 972,
+  "coverage": 0.5012893243940175,
+  "valid_updates": 66,
+  "positive_updates": 21,
+  "negative_updates": 45,
+  "attempts": 36,
+  "new_cards": false,
+  "cost": {
+    "calls": 157,
+    "prompt_tokens": 1323949,
+    "completion_tokens": 105918,
+    "total_tokens": 1429867,
+    "cached_tokens": 0,
+    "usage_missing": 0,
+    "errors": 0
+  }
+}

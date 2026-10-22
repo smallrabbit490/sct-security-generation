@@ -1,0 +1,17 @@
+{
+  "complete": true,
+  "unique_task_arm_rows": 315,
+  "expected_P7_runs": 315,
+  "actual_P7_runs": 315,
+  "Lall_tasks": 303,
+  "physical_P7_runs": 316,
+  "all_first_candidate_pairs_equal": true,
+  "fatal_issues": [],
+  "new_Dgate_generation": false,
+  "source_identity_verified": true,
+  "performance_continuation_gate": false,
+  "memory_body_unchanged": true,
+  "visit_increments_match_credit_events": true,
+  "final_measured": 299,
+  "final_unmeasured": 4
+}

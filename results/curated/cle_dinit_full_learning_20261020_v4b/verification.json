@@ -1,0 +1,28 @@
+{
+  "completed_tasks": 303,
+  "distinct_tasks": 303,
+  "all_inputs_match_lock": true,
+  "experience_body_unchanged": true,
+  "old_results_untouched": true,
+  "new_Dgate_generation": false,
+  "all_final_codes_are_last_attempt": true,
+  "early_stopping_preserved": true,
+  "technical_issues": [],
+  "performance_gate_disabled": true,
+  "Q_visit_deltas_match_updates": {
+    "all_feedback": 765,
+    "cross_family": 430
+  },
+  "original_safety_non_discriminating": [
+    "75",
+    "78",
+    "77",
+    "79",
+    "80"
+  ],
+  "old_v3_inputs_and_runner_unchanged": true,
+  "old_v4_inputs_and_runner_unchanged": true,
+  "same_recovery_masks": true,
+  "historical_API_errors": 1,
+  "technical_interrupted_records_retained": 2
+}

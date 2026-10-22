@@ -1,0 +1,15 @@
+{
+  "execution": "COMPLETE_48_ADDED_144_REUSED",
+  "comparison": "Q2-Q0",
+  "Q2_minus_Q0_Joint": 3,
+  "p_exact": 0.375,
+  "p_holm_vs_Q0_family": 1,
+  "statistical_positive_signal": false,
+  "automatic_full_test_started": false,
+  "classification": "exploratory_addendum_no_automatic_full_test",
+  "mechanism_causal_benefit": "requires_code_review_not_inferred_from_ID_changes",
+  "frozen_Q_covered_cards": 466,
+  "total_cards": 1939,
+  "new_training": false,
+  "new_Base_Plus": false
+}

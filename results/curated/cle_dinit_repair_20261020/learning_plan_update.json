@@ -1,0 +1,12 @@
+{
+  "tasks": 296,
+  "families": 212,
+  "probe_unchanged": true,
+  "first60_distinct_families": 60,
+  "new_P7_runs": 0,
+  "Q_updates": 0,
+  "baseline_visited": 436,
+  "max_P7": 308,
+  "max_code_versions": 616,
+  "unvisited_qualified_primary_origin": 1459
+}

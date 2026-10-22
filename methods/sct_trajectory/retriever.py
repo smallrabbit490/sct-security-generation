@@ -99,6 +99,7 @@ class HskTreeRetriever:
         embedding_client=None,
         semantic_delta: float | None = None,
         lambda_q: float = 0.5,
+        candidate_order: str | None = None,
     ) -> None:
         self.tree = tree
         self.requester = requester
@@ -128,6 +129,7 @@ class HskTreeRetriever:
             raise ValueError("semantic_delta_required_for_value_selection")
         self.semantic_delta = semantic_delta
         self.lambda_q = lambda_q
+        self.candidate_order = candidate_order
         # 层次化检索的决策轨迹（供消融实验核对每层选了谁、是否回退）
         self._trace_local = threading.local()
 
@@ -398,7 +400,10 @@ class HskTreeRetriever:
             if self.embedding_client is None:
                 raise ValueError("semantic_retrieval_requires_embedding_client")
             if self.retrieval_mode == "semantic_llm":
-                chosen, trace = semantic_select(task, nodes, self.requester, self.embedding_client, limit=limit)
+                options = {} if self.candidate_order is None else {
+                    'candidate_order': self.candidate_order, 'lambda_q': self.lambda_q,
+                    'delta': self.semantic_delta if self.semantic_delta is not None else -1.0}
+                chosen, trace = semantic_select(task, nodes, self.requester, self.embedding_client, limit=limit, **options)
             else:
                 chosen, trace = semantic_value_select(task, nodes, self.embedding_client,
                     delta=self.semantic_delta, lambda_q=self.lambda_q if self.retrieval_mode == "semantic_q" else 0,

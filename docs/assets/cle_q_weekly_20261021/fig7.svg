@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1000" height="560" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="560"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-560)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="560" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="40" y="514" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1028) scale(1,-1)">图7 1003题  建议正确却没有落实</text>
+			<text x="40" y="481" style="font-family: Microsoft YaHei; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,962) scale(1,-1)">核心建议是保留外部模板  该卡其他旧字段细节并非都适用</text>
+			<rect x="40" y="245" width="285" height="180" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,89%,93%); fill-rule: evenodd;"/>
+			<text x="58" y="385" style="font-family: Microsoft YaHei; font-size: 24px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,770) scale(1,-1)">卡片建议</text>
+			<text x="58" y="337" style="font-family: Microsoft YaHei; font-size: 19px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,674) scale(1,-1)">删除硬编码模板</text>
+			<text x="58" y="300" style="font-family: Microsoft YaHei; font-size: 16px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,600) scale(1,-1)">保留外部USER_POST_FORMAT</text>
+			<text x="337" y="330" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,660) scale(1,-1)">→</text>
+			<rect x="365" y="245" width="285" height="180" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,89%,93%); fill-rule: evenodd;"/>
+			<text x="383" y="385" style="font-family: Microsoft YaHei; font-size: 24px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,770) scale(1,-1)">模型回答</text>
+			<text x="383" y="337" style="font-family: Microsoft YaHei; font-size: 19px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,674) scale(1,-1)">两次声明采用</text>
+			<text x="383" y="300" style="font-family: Microsoft YaHei; font-size: 16px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,600) scale(1,-1)">代码仍重定义模板</text>
+			<text x="662" y="330" style="font-family: Microsoft YaHei; font-size: 25px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,660) scale(1,-1)">→</text>
+			<rect x="690" y="245" width="285" height="180" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,89%,93%); fill-rule: evenodd;"/>
+			<text x="708" y="385" style="font-family: Microsoft YaHei; font-size: 24px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,770) scale(1,-1)">系统记分</text>
+			<text x="708" y="337" style="font-family: Microsoft YaHei; font-size: 19px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,674) scale(1,-1)">两次代码失败</text>
+			<text x="708" y="300" style="font-family: Microsoft YaHei; font-size: 16px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,600) scale(1,-1)">两次给采用卡负奖励</text>
+			<text x="40" y="180" style="font-family: Microsoft YaHei; font-size: 26px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,360) scale(1,-1)">Q约  −0.565  →  −0.695  →  −0.787</text>
+			<text x="40" y="115" style="font-family: Microsoft YaHei; font-size: 21px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,230) scale(1,-1)">整段代码失败的惩罚落到了没有被正确执行的建议上</text>
+			<text x="40" y="62" style="font-family: Microsoft YaHei; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,124) scale(1,-1)">这说明反馈归因有问题  不等于该卡整张正确  也不证明所有负Q都被误伤</text>
+		</g>
+	</g>
+</svg>
