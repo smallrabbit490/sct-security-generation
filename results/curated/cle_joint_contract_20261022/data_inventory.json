@@ -1,0 +1,711 @@
+{
+  "schema_version": "cle-input-inventory-v1",
+  "created_utc": "2026-10-22T11:19:44.592903+00:00",
+  "git_commit": "556e1b4fd8cc45074962bb2a662e05091b943659",
+  "scope": {
+    "mode": "read_only_input_and_environment_diagnostic",
+    "API_calls": 0,
+    "candidate_executions": 0,
+    "official_scores_generated": false,
+    "credential_values_read": false,
+    "score_boundary": "Fixture/schema existence is not a measured F/S/Joint result."
+  },
+  "plt": {
+    "path": "data/external/secodeplt/secodeplt/data.json",
+    "exists": true,
+    "bytes": 3887816,
+    "sha256": "e3cfe69921be7f2d3947d59a7a922b51ee92a4c14c70bb1206031a645b4239f9",
+    "raw_rows": 1411,
+    "nonempty_testcase_rows": 885,
+    "runtime_loader_rows": 874,
+    "static_has_tests_rows": 874,
+    "validator_structural_eligibility_raw": 885,
+    "validator_structural_eligibility_loaded": 874,
+    "nonempty_but_loader_ineligible_task_ids": [
+      "54",
+      "55",
+      "56",
+      "57",
+      "58",
+      "59",
+      "60",
+      "61",
+      "62",
+      "1257",
+      "1340"
+    ],
+    "runtime_cwe_counts": {
+      "1333": 41,
+      "179": 51,
+      "200": 51,
+      "327": 50,
+      "347": 51,
+      "352": 40,
+      "502": 51,
+      "601": 51,
+      "74": 59,
+      "77": 51,
+      "770": 51,
+      "79": 51,
+      "862": 51,
+      "863": 41,
+      "915": 31,
+      "918": 51,
+      "94": 51,
+      "95": 51
+    },
+    "public_task_description_keys": [
+      "arguments",
+      "context",
+      "description",
+      "function_name",
+      "raise",
+      "return",
+      "security_policy"
+    ],
+    "plt_contract_preserves_all_available_task_description_fields": true,
+    "query_embedding_omits_nonempty_public_fields": {
+      "raise": 650,
+      "return": 874
+    },
+    "query_embedding_omission_probe": {
+      "input": {
+        "function_name": "f",
+        "return": "public return",
+        "raise": "public exception"
+      },
+      "output_keys": [
+        "function_name"
+      ],
+      "synthetic_probe_not_experiment": true
+    },
+    "declared_install_requires_counts": {
+      "[\"numpy\", \"sympy\"]": 1,
+      "[\"pyyaml\"]": 1,
+      "[\"re\", \"html\"]": 10,
+      "[\"re\", \"operator\", \"ast\"]": 10,
+      "[\"re\", \"operator\", \"functools\"]": 10,
+      "[\"requests\"]": 1,
+      "[]": 841
+    },
+    "formal_cle_development_gate_denominator": 298,
+    "raw_external_rows_are_not_1411_independent_final_test_tasks": true
+  },
+  "family_manifest": {
+    "path": "data/external/secodeplt/derived_metadata/family_manifest.json",
+    "exists": true,
+    "bytes": 450340,
+    "sha256": "05519aa0a33cf205d394b82c14d1d0ed1e63d49310507bfab3eec9cf74c25553",
+    "classification_version": "cwe_family_v1_seed_family_inferred_v1",
+    "seed_family_basis": "sha1(CWE_ID + normalized task semantics)[:12]; inferred from released fields because PLT data.json has no official seed lineage",
+    "classification_count": 1411,
+    "official_source_family_labels": false
+  },
+  "pools": {
+    "source": {
+      "path": "configs/cle_memory_q_autonomous_20261015/pools.recovered.json",
+      "exists": true,
+      "bytes": 261168,
+      "sha256": "2b746ac1e7090783cac65e5d51f09c9191ea75a942f1fa9297937812217a9408"
+    },
+    "online_manifest": {
+      "path": "configs/cle_q_online_20261020/manifest.json",
+      "exists": true,
+      "bytes": 13210,
+      "sha256": "3078ca28f05d428ce5b39ee2ebd5859a85faaa66caf3122e035ba523c9044442"
+    },
+    "sets": {
+      "D_init": {
+        "historic_pool_name": "source",
+        "rows": 303,
+        "unique_task_ids": 303,
+        "inferred_seed_families": 217,
+        "missing_from_current_loader": [],
+        "matches_online_manifest_task_set": true,
+        "family_mapping_mismatches": 0
+      },
+      "D_grow": {
+        "historic_pool_name": "replay",
+        "rows": 273,
+        "unique_task_ids": 273,
+        "inferred_seed_families": 217,
+        "missing_from_current_loader": [],
+        "matches_online_manifest_task_set": true,
+        "family_mapping_mismatches": 0
+      },
+      "D_gate": {
+        "historic_pool_name": "audit",
+        "rows": 298,
+        "unique_task_ids": 298,
+        "inferred_seed_families": 217,
+        "missing_from_current_loader": [],
+        "matches_online_manifest_task_set": true,
+        "family_mapping_mismatches": 0
+      }
+    },
+    "overlap": [
+      {
+        "pools": [
+          "D_init",
+          "D_grow"
+        ],
+        "task_overlap": 0,
+        "inferred_family_overlap": 0
+      },
+      {
+        "pools": [
+          "D_init",
+          "D_gate"
+        ],
+        "task_overlap": 0,
+        "inferred_family_overlap": 0
+      },
+      {
+        "pools": [
+          "D_grow",
+          "D_gate"
+        ],
+        "task_overlap": 0,
+        "inferred_family_overlap": 0
+      }
+    ],
+    "union_equals_loader": true,
+    "D_grow_reward_eligible": 228,
+    "D_grow_reward_ineligible": 45
+  },
+  "datasets": {
+    "Base/Cpp_Base": {
+      "path": "data/SecEvoBasePlus/Base/Cpp_Base.json",
+      "exists": true,
+      "bytes": 1119518,
+      "sha256": "1afa310d2c09c268d45062c4cf28452d5730567adb777751cf9c8578d89491f7",
+      "rows": 115,
+      "unique_ids": 115,
+      "keys": [
+        "Entry_Point",
+        "ID",
+        "Insecure Code",
+        "Insecure Code Behavior Result",
+        "Problem",
+        "Secure Code",
+        "Secure Code Test Result",
+        "Source Insecure Code Python",
+        "Source Secure Code Python",
+        "Test",
+        "Test-FP",
+        "Test-SP"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Base/Go_Base": {
+      "path": "data/SecEvoBasePlus/Base/Go_Base.json",
+      "exists": true,
+      "bytes": 833236,
+      "sha256": "bb8f17a2a404d9e65a648dc1414fb60a8c28ec8422700c4b99aacb43ba534076",
+      "rows": 115,
+      "unique_ids": 115,
+      "keys": [
+        "Entry_Point",
+        "ID",
+        "Insecure Code",
+        "Insecure Code Behavior Result",
+        "Problem",
+        "Secure Code",
+        "Secure Code Test Result",
+        "Source Insecure Code Python",
+        "Source Secure Code Python",
+        "Test",
+        "Test-FP",
+        "Test-SP"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Base/JS_Base": {
+      "path": "data/SecEvoBasePlus/Base/JS_Base.json",
+      "exists": true,
+      "bytes": 808244,
+      "sha256": "eb41b7729b5ef19448976e8eb144c1d0939353deaf0772d581a703cb85f279e5",
+      "rows": 116,
+      "unique_ids": 116,
+      "keys": [
+        "Entry_Point",
+        "Function Test",
+        "ID",
+        "Insecure Code",
+        "Problem",
+        "Secure Code",
+        "Secure Test"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Base/Java_Base": {
+      "path": "data/SecEvoBasePlus/Base/Java_Base.json",
+      "exists": true,
+      "bytes": 1532123,
+      "sha256": "607c51611209de567e68c490222e222fb3eb64e0260f735c96dc62d2f4267d26",
+      "rows": 116,
+      "unique_ids": 116,
+      "keys": [
+        "Entry_Point",
+        "Function Test",
+        "ID",
+        "Insecure Code",
+        "Problem",
+        "Secure Code",
+        "Secure Test"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Base/Python_Base": {
+      "path": "data/SecEvoBasePlus/Base/Python_Base.json",
+      "exists": true,
+      "bytes": 476773,
+      "sha256": "679342646d53b580b39b3d40aa7b13ec293395625de4877dce3e2215bce8c8f2",
+      "rows": 115,
+      "unique_ids": 115,
+      "keys": [
+        "Entry_Point",
+        "ID",
+        "Insecure Code",
+        "Problem",
+        "Secure Code",
+        "Test",
+        "Test-FP",
+        "Test-SP"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      },
+      "public_contract_keys": [
+        "CWE_ID",
+        "contract",
+        "description",
+        "entry_point",
+        "language",
+        "task_id"
+      ],
+      "description_preserved_all": true,
+      "entry_point_preserved_all": true,
+      "hidden_field_present_count": {
+        "Secure Code": 115,
+        "Test": 115,
+        "Test-FP": 115,
+        "Test-SP": 115
+      },
+      "cwe_label_counts": {
+        "020": 6,
+        "022": 4,
+        "078": 2,
+        "079": 2,
+        "080": 1,
+        "089": 2,
+        "090": 2,
+        "094": 3,
+        "095": 1,
+        "099": 1,
+        "113": 2,
+        "116": 2,
+        "117": 3,
+        "1204": 1,
+        "193": 1,
+        "200": 1,
+        "209": 1,
+        "250": 1,
+        "252": 1,
+        "259": 2,
+        "269": 1,
+        "283": 1,
+        "295": 2,
+        "306": 1,
+        "319": 2,
+        "321": 2,
+        "327": 4,
+        "329": 1,
+        "330": 1,
+        "331": 1,
+        "339": 1,
+        "347": 3,
+        "367": 1,
+        "377": 1,
+        "379": 1,
+        "385": 1,
+        "400": 1,
+        "406": 1,
+        "414": 1,
+        "425": 1,
+        "434": 2,
+        "454": 1,
+        "462": 1,
+        "477": 1,
+        "502": 4,
+        "521": 2,
+        "522": 2,
+        "595": 1,
+        "601": 5,
+        "605": 1,
+        "611": 6,
+        "641": 1,
+        "643": 2,
+        "703": 3,
+        "730": 3,
+        "732": 1,
+        "759": 1,
+        "760": 1,
+        "776": 1,
+        "798": 2,
+        "827": 1,
+        "835": 1,
+        "841": 1,
+        "918": 2,
+        "941": 1,
+        "943": 1
+      },
+      "cwe_leading_zero_rows": 24,
+      "cwe_multi_label_rows": 0
+    },
+    "Plus/Cpp_Plus": {
+      "path": "data/SecEvoBasePlus/Plus/Cpp_Plus.json",
+      "exists": true,
+      "bytes": 1408192,
+      "sha256": "73d0b050709b8603b9ad6c22b71e34ab7e0c21bdaafd1e5353c32bff77427c33",
+      "rows": 140,
+      "unique_ids": 140,
+      "keys": [
+        "Entry_Point",
+        "ID",
+        "Insecure Code",
+        "Insecure Code Behavior Result",
+        "Problem",
+        "Secure Code",
+        "Secure Code Test Result",
+        "Source Insecure Code Python",
+        "Source Secure Code Python",
+        "Test",
+        "Test-FP",
+        "Test-SP",
+        "update"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Plus/Go_Plus": {
+      "path": "data/SecEvoBasePlus/Plus/Go_Plus.json",
+      "exists": true,
+      "bytes": 1176176,
+      "sha256": "d9401d9fef3b163f6e828c5c7c6243ebbf65058d6521d6555de8c57dad85d95e",
+      "rows": 140,
+      "unique_ids": 140,
+      "keys": [
+        "Entry_Point",
+        "ID",
+        "Insecure Code",
+        "Insecure Code Behavior Result",
+        "Problem",
+        "Secure Code",
+        "Secure Code Test Result",
+        "Source Insecure Code Python",
+        "Source Secure Code Python",
+        "Test",
+        "Test-FP",
+        "Test-SP",
+        "update"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Plus/JS_Plus": {
+      "path": "data/SecEvoBasePlus/Plus/JS_Plus.json",
+      "exists": true,
+      "bytes": 700521,
+      "sha256": "b3e3a1745e3ef5b43a00b4a8a65a5d86f6a12391d49fbb17f4a3a088953399bc",
+      "rows": 140,
+      "unique_ids": 140,
+      "keys": [
+        "Entry_Point",
+        "Function Test",
+        "ID",
+        "Insecure Code",
+        "Problem",
+        "Secure Code",
+        "Secure Test",
+        "update"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Plus/Java_Plus": {
+      "path": "data/SecEvoBasePlus/Plus/Java_Plus.json",
+      "exists": true,
+      "bytes": 1314964,
+      "sha256": "44accadbb1b556179822ceac6455795f73ca742d47788a368aeae40b516d5ab1",
+      "rows": 140,
+      "unique_ids": 140,
+      "keys": [
+        "Entry_Point",
+        "Function Test",
+        "ID",
+        "Insecure Code",
+        "Problem",
+        "Secure Code",
+        "Secure Test",
+        "update"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      }
+    },
+    "Plus/Python_Plus": {
+      "path": "data/SecEvoBasePlus/Plus/Python_Plus.json",
+      "exists": true,
+      "bytes": 656597,
+      "sha256": "fa83634a4d5421db10d47053ba8e081fdc144f09662e677382977020af933c4e",
+      "rows": 140,
+      "unique_ids": 140,
+      "keys": [
+        "Entry_Point",
+        "ID",
+        "Insecure Code",
+        "Problem",
+        "Secure Code",
+        "Test",
+        "Test-FP",
+        "Test-SP",
+        "update"
+      ],
+      "public_fields_missing_or_empty": {
+        "ID": 0,
+        "Problem": 0,
+        "Entry_Point": 0
+      },
+      "public_contract_keys": [
+        "CWE_ID",
+        "contract",
+        "description",
+        "entry_point",
+        "language",
+        "task_id"
+      ],
+      "description_preserved_all": true,
+      "entry_point_preserved_all": true,
+      "hidden_field_present_count": {
+        "Secure Code": 140,
+        "Test": 140,
+        "Test-FP": 140,
+        "Test-SP": 140
+      },
+      "cwe_label_counts": {
+        "125": 10,
+        "20": 10,
+        "22": 10,
+        "269": 10,
+        "276": 10,
+        "434": 10,
+        "502": 10,
+        "77": 10,
+        "78": 10,
+        "787": 10,
+        "79": 10,
+        "862/287/306/863": 10,
+        "89": 10,
+        "94": 10
+      },
+      "cwe_leading_zero_rows": 0,
+      "cwe_multi_label_rows": 10
+    }
+  },
+  "versioned_task_snapshots": [
+    {
+      "path": "configs/cle_dinit_full_learning_20261020_v4b/tasks.json",
+      "exists": true,
+      "bytes": 942382,
+      "sha256": "fdc407229f4b5038b44a310626fe57275b8f2964423b7079d6e688fc0492e0d4",
+      "entries": 303,
+      "unique_task_ids": 303,
+      "task_descriptions_differ_from_raw": 57,
+      "fixtures_differ_from_raw": 46,
+      "reference_code_fields_differ_from_raw": 8,
+      "static_loader_eligible": 303
+    },
+    {
+      "path": "configs/cle_dgrow_url_repair_20261019/repaired_tasks.json",
+      "exists": true,
+      "bytes": 95417,
+      "sha256": "e1b72ce695a1f5b7ea8711d6d677327d16978f266d316b77c1fe181e4db8f54c",
+      "entries": 32,
+      "unique_task_ids": 32,
+      "task_descriptions_differ_from_raw": 25,
+      "fixtures_differ_from_raw": 32,
+      "reference_code_fields_differ_from_raw": 0,
+      "static_loader_eligible": 32
+    },
+    {
+      "path": "configs/cle_memory_q_unlimited_20261018/public_contract_overrides.json",
+      "exists": true,
+      "bytes": 1924,
+      "sha256": "e3dda2029d8d03b3285ab56f1c95a821531035a518a47dc117d4a1bcfd217f35",
+      "entries": 2
+    },
+    {
+      "path": "translation_work/diagnostics/20261020/cle_q_online_v1/tasks_D_init.json",
+      "exists": true,
+      "bytes": 950003,
+      "sha256": "67a3c2797c2bcc6d198afcfc2757dae265e67da6ef75300a74367e9d8bb4e60e",
+      "entries": 303,
+      "unique_task_ids": 303,
+      "task_descriptions_differ_from_raw": 57,
+      "fixtures_differ_from_raw": 46,
+      "reference_code_fields_differ_from_raw": 8,
+      "static_loader_eligible": 303
+    },
+    {
+      "path": "translation_work/diagnostics/20261020/cle_q_online_v1/tasks_D_grow.json",
+      "exists": true,
+      "bytes": 823855,
+      "sha256": "e8cfcc2cea141ccba5d746b7d0b649322d8c5d71822221c3b2787a4824914680",
+      "entries": 273,
+      "unique_task_ids": 273,
+      "task_descriptions_differ_from_raw": 27,
+      "fixtures_differ_from_raw": 32,
+      "reference_code_fields_differ_from_raw": 0,
+      "static_loader_eligible": 273
+    },
+    {
+      "path": "translation_work/diagnostics/20261020/cle_q_online_v1/tasks_D_gate.json",
+      "exists": true,
+      "bytes": 881119,
+      "sha256": "016e2a8303afb566db40cadee2843749454f4affb016e62b9699ee0bdd82462f",
+      "entries": 298,
+      "unique_task_ids": 298,
+      "task_descriptions_differ_from_raw": 0,
+      "fixtures_differ_from_raw": 0,
+      "reference_code_fields_differ_from_raw": 0,
+      "static_loader_eligible": 298
+    }
+  ],
+  "snapshot_inheritance": {
+    "online_D_init_equals_committed_v4b_tasks": true,
+    "online_D_grow_repaired32_equals_committed_repair": true,
+    "D_init_and_partial_D_grow_bank_non_Q_fields_identical": true,
+    "Q_values_changed_between_stage_snapshots": 58
+  },
+  "historical_bank_snapshots": {
+    "D_init": {
+      "path": "translation_work/diagnostics/20261020/cle_q_online_v1/D_init/frozen/m_star_q.jsonl",
+      "exists": true,
+      "bytes": 7648651,
+      "sha256": "b05dd7da521817b62eeebbee135b87f8c6debd73b4b8fb98e88c9b15c6d11f8f",
+      "card_count": 1939,
+      "unique_card_ids": 1939,
+      "cards_with_q_visits": 967,
+      "q_visits_total": 4162,
+      "status_counts": {
+        "provisional": 1939
+      }
+    },
+    "D_grow": {
+      "path": "translation_work/diagnostics/20261020/cle_q_online_v1/D_grow/frozen/m_star_q.jsonl",
+      "exists": true,
+      "bytes": 7648738,
+      "sha256": "a92f06389a27386a50795f45fd8c0da8ad8394397cd08ea408a9e2c37fa4c711",
+      "card_count": 1939,
+      "unique_card_ids": 1939,
+      "cards_with_q_visits": 972,
+      "q_visits_total": 4228,
+      "status_counts": {
+        "provisional": 1939
+      }
+    },
+    "historical_run_metadata": {
+      "path": "translation_work/diagnostics/20261020/cle_q_online_v1/run_metadata.json",
+      "exists": true,
+      "bytes": 3627,
+      "sha256": "7a0ab2f6afd9026ea594d628b1f1f7e56495a8e9fb3232a53f8686c83cd9928d",
+      "protocol": "cle-q-online-dinit-grow-cap3-v1",
+      "status": "paused_by_user",
+      "completed_stages": [
+        "D_init"
+      ],
+      "commit": "155a4c10bd72f8d4a7df1be11409fa0b7f209fc0"
+    }
+  },
+  "environment": {
+    "python_version": "3.12.14",
+    "commands_present": {
+      "python": true,
+      "python3": true,
+      "docker": false,
+      "git": true,
+      "pytest": false,
+      "gh": false
+    },
+    "packages_present": {
+      "numpy": true,
+      "sympy": false,
+      "yaml": true,
+      "requests": true,
+      "openai": true,
+      "pytest": true,
+      "scipy": true
+    },
+    "credential_environment_presence_only": {
+      "CHATANYWHERE_API_KEY": false,
+      "OPENAI_API_KEY": false,
+      "INFRAMIG_API_KEY": false
+    },
+    "credential_files_presence_only": {
+      "local_secrets/chatanywhereapi使用/apikey.txt": false,
+      "local_secrets/chatanywhereapi使用/chatanywhere_test.env": false
+    },
+    "current_native_requester_credential_sources": [
+      "CHATANYWHERE_API_KEY",
+      "local_secrets/chatanywhereapi使用/apikey.txt"
+    ],
+    "current_native_requester_uses_openai_env_fallback": false,
+    "github_workflows_directory_present": false,
+    "PLT_native_validator": "methods.sct_agent.validation_evidence.validate_plt_row(row, code, backend='local')",
+    "PLT_execution_boundary": "Original local python -I worker; no Docker required; run only isolated saved candidates or controls.",
+    "Base_Plus_native_validator": "translation_pipeline.python_validator.validate_python_secure",
+    "Base_Plus_docker_image": "safecoder-python-validator:local",
+    "Base_Plus_parent_image": "porta-bench-runtime-python3:latest",
+    "Base_Plus_missing_Docker_is_unmeasured_not_failure": true,
+    "model_generation_requires_credentials": true
+  },
+  "limitations": [
+    "Raw dataset counts do not establish correctness of reference code or test fixtures.",
+    "Public task descriptions may be underspecified despite lossless field extraction.",
+    "Semantic query currently omits native return/raise fields, though generation receives them.",
+    "Current semantic candidate recall uses all permitted language/status cards; CWE text formatting does not hard-filter that path.",
+    "Historical dynamic results and new candidate generation are not recomputed by this inventory.",
+    "No entire online-Q trajectory certification follows from snapshot identity.",
+    "No hidden Base/Plus feedback may inform generation, candidate selection, stopping, or memory updates."
+  ]
+}

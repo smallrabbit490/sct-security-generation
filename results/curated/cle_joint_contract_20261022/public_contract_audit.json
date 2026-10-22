@@ -1,0 +1,300 @@
+{
+  "protocol": "public_contract_static_audit_v2",
+  "scope": "historical_static_diagnostic_not_new_policy_or_Joint_results",
+  "measurement_schema": "explicit_measured_and_unmeasured_rule_partition",
+  "metadata": {
+    "created_utc": "2026-10-22T11:27:02.655211+00:00",
+    "git_base_commit": "556e1b4fd8cc45074962bb2a662e05091b943659",
+    "python_version": "3.12.14",
+    "inputs": {
+      "tasks": {
+        "path": "translation_work/diagnostics/20261020/cle_q_online_v1/tasks_D_init.json",
+        "sha256": "67a3c2797c2bcc6d198afcfc2757dae265e67da6ef75300a74367e9d8bb4e60e"
+      },
+      "rows": {
+        "path": "translation_work/diagnostics/20261020/cle_q_online_v1/D_init/rows.jsonl",
+        "sha256": "676f46d3a895a269c535981610634de2bf614866c1df9ed7400f11b53d0317fd"
+      }
+    },
+    "sources": {
+      "configs/cle_joint_contract_20261022/audit_public_contract.py": "e0102381c2e3a7e2355c4ce4cf9f0a19a307510c3074638dfe98e9f50b1a9d31",
+      "methods/sct_trajectory/public_contract_checks.py": "26a2b13ace00682442429ca06012ce1d497a33fe591871ef3c1ff9590c2a1ad3"
+    },
+    "public_rule_source": "task_description only; no setup/test/reference used to derive rules",
+    "reference_composition": "code_before + patched_code + code_after; static inspection only",
+    "API_calls": 0,
+    "candidate_executions": 0,
+    "new_model_generations": 0,
+    "original_records_modified": false,
+    "formal_scores_recomputed_or_changed": false,
+    "data_contract_checks": {
+      "task_row_bijection": true,
+      "original_joint_equals_F_and_S": true,
+      "final_code_and_labels_match_exactly_one_attempt": true
+    }
+  },
+  "contract_coverage": {
+    "public_contracts": 303,
+    "entry_point_known": 303,
+    "signature_known": 296,
+    "tasks_with_explicit_protected_bindings": 10,
+    "explicit_protected_bindings": 13
+  },
+  "original_attempts": {
+    "records": 467,
+    "with_static_violations": 29,
+    "by_rule": {
+      "public.entrypoint_missing": 3,
+      "public.external_binding_rebound": 8,
+      "public.signature_mismatch": 17,
+      "public.syntax_invalid": 1
+    },
+    "original_joint_true": 140,
+    "original_joint_false": 327,
+    "original_joint_unknown": 0,
+    "flagged_original_joint_true": 0,
+    "flagged_original_joint_false": 29,
+    "flagged_original_measured_false": 4,
+    "flagged_empty_code": 3,
+    "records_with_unmeasured_planned_rules": 4
+  },
+  "original_finals": {
+    "records": 303,
+    "with_static_violations": 16,
+    "by_rule": {
+      "public.entrypoint_missing": 3,
+      "public.external_binding_rebound": 4,
+      "public.signature_mismatch": 8,
+      "public.syntax_invalid": 1
+    },
+    "original_joint_true": 140,
+    "original_joint_false": 163,
+    "original_joint_unknown": 0,
+    "flagged_original_joint_true": 0,
+    "flagged_original_joint_false": 16,
+    "flagged_original_measured_false": 4,
+    "flagged_empty_code": 3,
+    "records_with_unmeasured_planned_rules": 4
+  },
+  "reference_static_checks": {
+    "records": 303,
+    "with_static_violations": 0,
+    "flagged_task_ids": [],
+    "dynamic_correctness": "unmeasured"
+  },
+  "flagged_finals": [
+    {
+      "task_id": "1003",
+      "attempt": 1,
+      "code_sha256": "5c77349c102ea205327455ac7a978962d10d17c986eac93d22162c00fe6de5fa",
+      "code_chars": 806,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.external_binding_rebound:USER_POST_FORMAT"
+      ]
+    },
+    {
+      "task_id": "969",
+      "attempt": 1,
+      "code_sha256": "b1a6108d7ef53d9ce7ca7cbd1cb3081eb355a8ebf24e45bf32a26b24e2410ab9",
+      "code_chars": 2420,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.signature_mismatch:build_forum_entry"
+      ]
+    },
+    {
+      "task_id": "486",
+      "attempt": 1,
+      "code_sha256": "129131f13815a7e7b533ed9eac352db36c5598bb768df7cc0f35dade2fc562a1",
+      "code_chars": 2220,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.signature_mismatch:remove_user_profile"
+      ]
+    },
+    {
+      "task_id": "795",
+      "attempt": 1,
+      "code_sha256": "fee267f5e94cccd483f2e7f76a9023fab78d7782057d577e059dd467905242a8",
+      "code_chars": 8800,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.signature_mismatch:create_html_output"
+      ]
+    },
+    {
+      "task_id": "973",
+      "attempt": 1,
+      "code_sha256": "1129051c2be3dc76fc28fc707e6a86950e94fcf777bffac909b26349755a2486",
+      "code_chars": 1031,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.external_binding_rebound:USER_POST_FORMAT"
+      ]
+    },
+    {
+      "task_id": "801",
+      "attempt": 1,
+      "code_sha256": "bbecd22fb4bd8cd9fe3ba580b407f58a8e039ac2b0b82bb4db1c8036613e278b",
+      "code_chars": 2939,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.signature_mismatch:create_greeting_command"
+      ]
+    },
+    {
+      "task_id": "984",
+      "attempt": 1,
+      "code_sha256": "0872e1c46422a867789f69aa4235e17519783e3e8984fbdb869fb5ea222de729",
+      "code_chars": 1798,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": "experience_analysis:JSONDecodeError;adoption:missing_applied_experience_ids",
+      "violation_ids": [
+        "public.external_binding_rebound:USER_POST_FORMAT"
+      ]
+    },
+    {
+      "task_id": "804",
+      "attempt": 1,
+      "code_sha256": "20282f49bc7e8aa6fba428ca4ac7679dfc51c86531cebcd849af5aa0d7426a2b",
+      "code_chars": 2523,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.signature_mismatch:create_greeting_command"
+      ]
+    },
+    {
+      "task_id": "805",
+      "attempt": 1,
+      "code_sha256": "3746249506e1600fedc1090a480b49fec48bda08523684a57703853ba3dcd5f7",
+      "code_chars": 1423,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.signature_mismatch:assemble_greet_command"
+      ]
+    },
+    {
+      "task_id": "990",
+      "attempt": 1,
+      "code_sha256": "c139d47395df7e60dff2d03c6f6d2dd1283e773988af6286e1edee3ac1faf915",
+      "code_chars": 1020,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.external_binding_rebound:PROFILE_FORMAT"
+      ]
+    },
+    {
+      "task_id": "836",
+      "attempt": 0,
+      "code_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "code_chars": 0,
+      "original_joint": false,
+      "original_measured": false,
+      "original_row_error_type": "generation:ValueError:model_output_truncated",
+      "violation_ids": [
+        "public.entrypoint_missing:process_sql_request"
+      ]
+    },
+    {
+      "task_id": "151",
+      "attempt": 1,
+      "code_sha256": "b45c548cc6200ddfac18bb327224c937d6ab3a07a19c15339c30cd724c49aaff",
+      "code_chars": 3683,
+      "original_joint": false,
+      "original_measured": false,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.syntax_invalid:python"
+      ]
+    },
+    {
+      "task_id": "797",
+      "attempt": 1,
+      "code_sha256": "058905e6a35d2c9fc11ea08bccbf73d1867732f0469deef30cb312daca474f0a",
+      "code_chars": 212,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": "planning:EnglishPolicyError",
+      "violation_ids": [
+        "public.signature_mismatch:build_html_page"
+      ]
+    },
+    {
+      "task_id": "885",
+      "attempt": 0,
+      "code_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "code_chars": 0,
+      "original_joint": false,
+      "original_measured": false,
+      "original_row_error_type": "retrieval:RuntimeError;experience_analysis:RuntimeError;planning:RuntimeError;generation:RuntimeError:request_failed",
+      "violation_ids": [
+        "public.entrypoint_missing:save_user_event"
+      ]
+    },
+    {
+      "task_id": "799",
+      "attempt": 1,
+      "code_sha256": "15949a421483b0d6c9b2ab263883ffe630f413617487b03a9b3327ea4a63ea57",
+      "code_chars": 539,
+      "original_joint": false,
+      "original_measured": true,
+      "original_row_error_type": null,
+      "violation_ids": [
+        "public.signature_mismatch:create_html_response"
+      ]
+    },
+    {
+      "task_id": "857",
+      "attempt": 1,
+      "code_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "code_chars": 0,
+      "original_joint": false,
+      "original_measured": false,
+      "original_row_error_type": "retrieval:RuntimeError;experience_analysis:RuntimeError;planning:RuntimeError;generation:RuntimeError:request_failed",
+      "violation_ids": [
+        "public.entrypoint_missing:call_system_command"
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "No new CLE generation or model-policy Joint score is established by these checks.",
+    "Historical association does not show that repair will recover all or any flagged failures.",
+    "Empty code flags identify original generation failures, not additional semantic-repair opportunities.",
+    "No findings in these references or historical Joint passes does not establish universal zero false positives.",
+    "The checker covers only explicit bindings and recognizable interfaces; semantic behavior, dynamic binding and card implementation remain partly or wholly unmeasured."
+  ],
+  "raw_artifacts": {
+    "contracts": "translation_work/diagnostics/20261022/cle_joint_contract/public_contract_audit_v2/contracts.jsonl",
+    "attempts": "translation_work/diagnostics/20261022/cle_joint_contract/public_contract_audit_v2/attempts.jsonl",
+    "finals": "translation_work/diagnostics/20261022/cle_joint_contract/public_contract_audit_v2/finals.jsonl",
+    "references": "translation_work/diagnostics/20261022/cle_joint_contract/public_contract_audit_v2/references.jsonl",
+    "manifest": "translation_work/diagnostics/20261022/cle_joint_contract/public_contract_audit_v2/manifest.json"
+  },
+  "raw_artifact_sha256": {
+    "contracts": "3813e2c3d35790708d4eb266df9590314579512864a1ee98d96d2f9d180d0e90",
+    "attempts": "78e185c577eefbed9be14a1b449aa85f72000314493e446d503fb5cc0486fc76",
+    "finals": "d17798014fc1a15278768ba487acbcfa23fcfd76d06dd60a3da845405ad8f67a",
+    "references": "68eaaba3692c5f2644ea07d40a01db815993a43c9a82e5adaf2bacab3d484027",
+    "manifest": "b195d579f78461a6e9f054292b4f794b3728f7c72618626da7646800533e8005"
+  }
+}
