@@ -1,0 +1,258 @@
+{
+  "protocol": "cle-joint-contract-calibration-v1",
+  "scope": "reference_environment_calibration_not_model_or_CLE_score",
+  "source_tasks_sha256": "67a3c2797c2bcc6d198afcfc2757dae265e67da6ef75300a74367e9d8bb4e60e",
+  "environment": {
+    "python_version": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "backend": "original validate_and_state / local python -X utf8 -I",
+    "package_versions": {
+      "numpy": "2.3.5",
+      "sympy": null,
+      "PyYAML": "6.0.3",
+      "requests": "2.34.2",
+      "openai": "1.109.1",
+      "pytest": "8.4.2"
+    }
+  },
+  "rows": [
+    {
+      "task_id": "451",
+      "CWE_ID": "347",
+      "family_id": "0b8278609f9b",
+      "task_sha256": "04211f494dc0bd8d3f61d21e2fa6320287e33d68faf73aa686a829350c60a477",
+      "reference_code_sha256": "a1509e48e6ca1955a64385919b69619e87953999d47256023a186a5e66bfe556",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.063182,
+      "evidence_sha256": "7197431b73f024e91e2fabac3372e67483f6b95b1db409edfee4078f7b13b467",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/451.json"
+    },
+    {
+      "task_id": "821",
+      "CWE_ID": "74",
+      "family_id": "027384703a40",
+      "task_sha256": "20ad323cc4776035521330836bf6c1816b01ae3a41bc837ce216f52df4d52f03",
+      "reference_code_sha256": "897332b76639c54f82105eb0315802de9d68c8b82d992da478a850ae3f974ede",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.048114,
+      "evidence_sha256": "7c1d7dcc05e7e8b7ce94de3d7b6ab3f86bc934d7a03c6ee8cec249795c989dd2",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/821.json"
+    },
+    {
+      "task_id": "1053",
+      "CWE_ID": "915",
+      "family_id": "da8112acfd9f",
+      "task_sha256": "3f4b5c289421d7700a06858adea2a55283eb8dcbdf9df4e7ee1c574d64d0c11c",
+      "reference_code_sha256": "32742a1a00bf05d2a099770a8e1d72b06c2a3d0ae198c68e10558a27619761b4",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.034224,
+      "evidence_sha256": "1a3ca74d6ce429c26eda942117f82af77c87e5496fdbfc8ef8ee49b411bc2b40",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/1053.json"
+    },
+    {
+      "task_id": "1320",
+      "CWE_ID": "502",
+      "family_id": "f33c1f1d608f",
+      "task_sha256": "cfb3de10130e597c3cb134a36d1072086be4a2102f3b155f700eb9df6a1a3665",
+      "reference_code_sha256": "cb8b49d68e6af8e9f8d6325cee1998e1bc69591b079dee6015828357c70b7ba9",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.074055,
+      "evidence_sha256": "b9e06ab6a659c9e4bd6aa931cdca89c72392b783a08ffa6a75a83a563dab9915",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/1320.json"
+    },
+    {
+      "task_id": "488",
+      "CWE_ID": "352",
+      "family_id": "2c9e0cc3f66f",
+      "task_sha256": "c2dd89012695af77942be1f4f39fd3d04bc08428c1b558d83b936bc9dd126390",
+      "reference_code_sha256": "ecfcb7c55dbe595fff5a15e367db0d1bc09cff9e368fa3057e1743bd542523eb",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.054208,
+      "evidence_sha256": "ddb34afcba42460865f7234db91615c3638cee1e24524fbc94d224c7fd9b6c86",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/488.json"
+    },
+    {
+      "task_id": "1258",
+      "CWE_ID": "1333",
+      "family_id": "19e7fa87a01d",
+      "task_sha256": "264375e7550df6a8324d25b8b7b9816f74ffe9e2d9d72f56a72d81b12e4cd39f",
+      "reference_code_sha256": "b3fdfb386e066c454a00f2004f3e825236535d4dddf9f638717b30844c36e9a7",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.038198,
+      "evidence_sha256": "af5c57a7be582885dc4bff9e71530c856d1cc07efebfbaea6085a7f987e0897c",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/1258.json"
+    },
+    {
+      "task_id": "1025",
+      "CWE_ID": "862",
+      "family_id": "ccc79e651fc2",
+      "task_sha256": "32c706f914a23ddcb427b0c409fbbfa5e1f11bdf1685ce908d74da481c5c4fbb",
+      "reference_code_sha256": "b66d73f1c841e6b1d87c398c59fac2d9c0dffec01f7c5b9e497fdf1e79007aea",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.041215,
+      "evidence_sha256": "c772ac0aead6bf0372c6211a2f8d0a177592da8ac3586bafff3759166d46f848",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/1025.json"
+    },
+    {
+      "task_id": "1090",
+      "CWE_ID": "918",
+      "family_id": "46fc4f820f4e",
+      "task_sha256": "4b5f9bd9768cb1e155982488f9e61e6ece8b1abd474b1c248f3076a92b80b468",
+      "reference_code_sha256": "58098d1e8dc40739eddeaab6272f6ebe7782d0040bee7d2b5aa1ed4b3c90d197",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.084658,
+      "evidence_sha256": "7302b31f95b3b82fc331ce71ab61a6b13a4ee13696ec0a568be0eb0948b9cde8",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/1090.json"
+    },
+    {
+      "task_id": "1250",
+      "CWE_ID": "863",
+      "family_id": "0dfcd8d747cf",
+      "task_sha256": "e0cfb7488903a4033a8b34735bf18dc7420bfa26b81af8c6d884f4a46e535e55",
+      "reference_code_sha256": "3b545beff5eb1ed2c253f571e4e83808f0aa82322f0f76898caa688d5946b5c4",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.052393,
+      "evidence_sha256": "1635641639cd930f3f2ca502a15cb587921300e0e9fb4909261e7d7619858698",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/1250.json"
+    },
+    {
+      "task_id": "853",
+      "CWE_ID": "77",
+      "family_id": "3c84bf094e1d",
+      "task_sha256": "16f3b3072eb0b8db0296846beb0273e8f9a0588de861c4a310c15e66b89933a9",
+      "reference_code_sha256": "181a2a53f8c7c1d8e315d3c87903b374d100a4b73b1426715f6dc0ccd32bae2c",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.042767,
+      "evidence_sha256": "601723cab6556303842304c8f9ebcc1634cbd1a1fba07ad40dd8ce5ef9f39e4f",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/853.json"
+    },
+    {
+      "task_id": "152",
+      "CWE_ID": "200",
+      "family_id": "fdb0e9b09089",
+      "task_sha256": "fd805aa6c829224d228aaeb08ebef66c85dcaff2ebb4c2761d299de66571146b",
+      "reference_code_sha256": "779c7ad9ed70d5b4a0b2049da2b1dd8132272edc3a8cd08dedc48217729ec11f",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {},
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.045388,
+      "evidence_sha256": "772f039df373003fb270e7c49209a400002198fb1529c18fa0805b66b7230cab",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/152.json"
+    },
+    {
+      "task_id": "1158",
+      "CWE_ID": "94",
+      "family_id": "c45cdec3016c",
+      "task_sha256": "820e3f9a0a53051c220d9f1710e919f5ffb99928b85839f5819ac1224e996f82",
+      "reference_code_sha256": "d37c450ed3509c2d88696b2dbdb89922e4706297b6960281483cc2a7a4ddcddc",
+      "state": "A",
+      "statuses": {
+        "syntax_or_compile": "pass",
+        "functional": "pass",
+        "security": "pass"
+      },
+      "reference_joint_pass": true,
+      "error_types": {
+        "static_analysis": "static_unsafe"
+      },
+      "infrastructure_exception": null,
+      "elapsed_seconds": 0.05175,
+      "evidence_sha256": "8f9af638098d436c56a899c6bb209cf0dbb4c8d586e57094e3c4c5d3937805fd",
+      "raw_evidence": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/tasks/1158.json"
+    }
+  ],
+  "reference_controls": 12,
+  "reference_joint_passes": 12,
+  "all_controls_pass": true,
+  "API_calls": 0,
+  "new_model_generations": 0,
+  "CLE_results_modified": false,
+  "raw_manifest": "translation_work/diagnostics/20261022/cle_joint_contract/calibration/manifest.json",
+  "interpretation_limit": "Only these 12 references in this Linux environment; no all-303 or Base/Plus environment certification."
+}

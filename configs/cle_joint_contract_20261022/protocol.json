@@ -1,0 +1,64 @@
+{
+  "protocol": "cle-joint-public-contract-v1",
+  "operation": "fixed_memory_consumer_comparison",
+  "status": "implemented_runtime_blocked",
+  "goal": [
+    "PLT_delivered_joint",
+    "Base_delivered_joint",
+    "Plus_delivered_joint"
+  ],
+  "baseline": "P7",
+  "variant": "P7_public_contract_v1",
+  "default_retrieval": "semantic_llm",
+  "q_learning": false,
+  "memory_bodies_and_lifecycle": "frozen_1939",
+  "model": "deepseek-v3.2",
+  "temperature": 0,
+  "thinking": "disabled",
+  "max_tokens": 4096,
+  "selector_max_tokens": 256,
+  "delta": -1.0,
+  "max_experiences": 3,
+  "candidate_budget_per_row_max": 2,
+  "public_suite_cases_max": 6,
+  "public_suite_model_calls_max": 2,
+  "initial_smoke": {
+    "PLT_families": 2,
+    "arms": 2,
+    "repeats": 1,
+    "included_in_later_development": true
+  },
+  "development_limit": {
+    "PLT_families": 48,
+    "arms": 2,
+    "repeats": 2,
+    "rows_max": 192,
+    "codes_max": 384
+  },
+  "run_budget": {
+    "http_attempts_including_retry_upper_bound": 2500,
+    "conservative_token_upper_bound": 20000000,
+    "halt_at_first_bound": true
+  },
+  "future_development_threshold_proposal": {
+    "continue_to_frozen_evaluation_if_complete_and_delta_joint_pp_at_least": 5.0,
+    "stop_paid_mainline_if_delta_joint_pp_at_most": 0.0,
+    "between_0_and_5": "uncertain_development_signal_no_automatic_expansion",
+    "not_retroactive_preregistration": true
+  },
+  "official_evaluation": {
+    "PLT": 298,
+    "Base": 115,
+    "Plus": 140,
+    "automatic_launch": false,
+    "claim_each_dataset_separately": true,
+    "PLT_gate_previously_exposed": true
+  },
+  "evidence_boundaries": {
+    "new_model_generations": 0,
+    "new_model_joint_scores": 0,
+    "human_relevance_reviews": 0,
+    "old_results_recomputed_as_new_policy": false,
+    "positive_controls_are_model_results": false
+  }
+}

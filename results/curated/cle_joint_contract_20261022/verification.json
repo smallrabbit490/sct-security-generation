@@ -1,0 +1,26 @@
+{
+  "type": "offline_engineering_tests_not_model_performance",
+  "tests": 201,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "junit_sha256": "66aeb4e0aad3ae4df12cdcee9cc4d553ff7f1df022d94d627ae379e20ef5a3d4",
+  "model_API_calls": 0,
+  "coverage": [
+    "public_contract_AST_rules",
+    "fixed_public_suite_code_binding",
+    "case_level_non_regression_selection",
+    "measurement_coverage_regression",
+    "public_pipeline_integration",
+    "request_budget_and_unknown_usage",
+    "original_P7_context_retrieval_validator_regressions"
+  ],
+  "command": "python -m pytest -q tests/test_joint_contract_runner.py tests/test_public_contract_checks.py tests/test_public_repair_policy.py tests/test_internal_checks.py tests/test_context_pipeline.py tests/test_cle_ablation_runner.py tests/test_semantic_retrieval.py tests/test_sct_validation_evidence.py tests/test_plus_frozen_comparison.py",
+  "junit_path": "translation_work/diagnostics/20261022/cle_joint_contract/final_verified_tests.xml",
+  "verified_source_sha256": {
+    "methods/cle_ablation/joint_contract.py": "cef1d01c1977554f435445c83b24aae4b9601cee3f225e900ed654904841301c",
+    "methods/cle_ablation/run_joint_contract.py": "66d0c7bec61581eb795d2fae97650a5d357661bd0e54fecb65fd09bd7a3890e1",
+    "methods/sct_trajectory/public_contract_checks.py": "26a2b13ace00682442429ca06012ce1d497a33fe591871ef3c1ff9590c2a1ad3",
+    "methods/sct_trajectory/public_repair_policy.py": "69e14af79f96f8836b73d61cca407fd413be8e2d40b647b19850a99703a6de41"
+  }
+}
