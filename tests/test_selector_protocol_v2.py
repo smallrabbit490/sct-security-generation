@@ -135,3 +135,9 @@ def test_malformed_external_diagnostics_cannot_mask_original_failure():
     _, trace, _ = run([exc])
     assert trace['errors'] == ['selector_transport_TimeoutError']
     assert trace['selector_attempts'][0]['request_diagnostics'] == [{'category': 'network_error'}]
+
+
+def test_selector_fallback_only_keeps_high_confidence_top1():
+    from methods.sct_trajectory.selector_protocol import deterministic_top1_fallback
+    assert deterministic_top1_fallback([{"id": "a", "rrf": .04, "mechanism_overlap": 2}], limit=1) == ["a"]
+    assert deterministic_top1_fallback([{"id": "a", "rrf": .01, "mechanism_overlap": 0}], limit=1) == []

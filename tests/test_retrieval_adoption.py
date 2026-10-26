@@ -62,6 +62,22 @@ def test_semantic_error_cannot_be_silent_empty_memory(monkeypatch):
     assert r.last_hier_trace['errors'] == ['http_timeout']
 
 
+def test_hybrid_mode_requires_embedding_and_preserves_trace(monkeypatch):
+    node = SecurityInvariantNode('n', '22', 'check path', language_leaves={'python': LanguageLeaf('python')})
+    r = HskTreeRetriever(HskTree(), requester=lambda p: {}, retrieval_mode='semantic_hybrid_v2')
+    import pytest
+    with pytest.raises(ValueError, match='semantic_hybrid_v2_requires_embedding_client'):
+        r.search({'language': 'python'}, pool_nodes=[node])
+
+    from methods.sct_trajectory import semantic_retrieval
+    monkeypatch.setattr(semantic_retrieval, 'hybrid_select', lambda *a, **k: ([], {
+        'status': 'error', 'errors': ['embedding_timeout'], 'retrieval_mode': 'semantic_hybrid_v2'}))
+    r = HskTreeRetriever(HskTree(), requester=lambda p: {}, retrieval_mode='semantic_hybrid_v2', embedding_client=object())
+    with pytest.raises(RuntimeError, match='semantic_hybrid_v2_failed'):
+        r.search({'language': 'python'}, pool_nodes=[node])
+    assert r.last_hier_trace['retrieval_mode'] == 'semantic_hybrid_v2'
+
+
 def test_non_english_analysis_and_plan_fail_closed():
     initial = {'vulnerability_hypothesis':['risk'],'functional_invariants':['result']}
     replies=[initial,{**initial,'safe_actions':['拒绝所有输入'],'applied_experience_ids':['n']},

@@ -83,6 +83,39 @@ def test_query_excludes_private_fields():
     assert "SECRET" not in query and "request" in query
 
 
+def test_hybrid_preserves_real_plt_contract_and_does_not_invent_failure():
+    from methods.sct_trajectory.semantic_retrieval import hybrid_query_text
+    text = hybrid_query_text({'description': 'format directory', 'return': 'directory string',
+                              'raise': 'ValueError on private access', 'context': 'provided Employee class',
+                              'current_code': 'def format_directory(): pass', 'ground_truth': 'SECRET'})
+    assert 'directory string' in text
+    assert 'ValueError on private access' in text
+    assert 'provided Employee class' in text
+    assert 'def format_directory(): pass' in text
+    assert 'CURRENT_FAILURE: UNKNOWN' in text
+    assert 'SECRET' not in text
+
+
+def test_hybrid_selector_sees_late_guardrails_and_fix_directive():
+    from methods.sct_trajectory.semantic_retrieval import hybrid_select
+    card = node('anon', source={'root_cause': 'untrusted SQL input ' * 80,
+                               'fix_directive': 'USE_BOUND_PARAMETERS',
+                               'exclusion_conditions': 'PRESERVE_ALLOWED_EXPRESSION'},
+                negative_guardrail='DO_NOT_REDEFINE_PROVIDED_CLASS')
+    prompts = []
+    def request(prompt):
+        prompts.append(str(prompt))
+        return {'choices': [{'message': {'content': '{"selected":[1]}'}, 'finish_reason': 'stop'}]}
+    _, trace = hybrid_select({'language': 'python', 'description': 'untrusted SQL input'},
+                            [card], request, FakeEmbeddings())
+    assert 'USE_BOUND_PARAMETERS' in prompts[0]
+    assert 'DO_NOT_REDEFINE_PROVIDED_CLASS' in prompts[0]
+    assert 'PRESERVE_ALLOWED_EXPRESSION' in prompts[0]
+    assert trace['selector_view'] == 'full'
+    assert trace['embedding_ids'] == ['anon']
+    assert trace['recall_union_ids'] == ['anon']
+
+
 def test_query_preserves_entry_point_and_full_parameter_contract():
     public = {"function_name": "lookup", "signature": "lookup(user_id: str) -> dict",
               "arguments": [{"name": "user_id", "type": "str", "description": "Untrusted value"}],
@@ -255,3 +288,87 @@ def test_missing_vectors_trace_classified():
     embeddings.embed = lambda _: []
     cards, trace = semantic_select({"language": "python", "description": "SQL"}, [node("x")], lambda _: select_payload([]), embeddings)
     assert not cards and trace["errors"] == ["embedding_vector_count"]
+
+
+def test_hybrid_text_is_structured_and_public_only():
+    from methods.sct_trajectory.semantic_retrieval import hybrid_query_text, hybrid_card_text
+
+    task = {"language": "python", "CWE_ID": "CWE-89",
+            "description": "validate a user value before a database query",
+            "unit_test": "SECRET"}
+    text = hybrid_query_text(task)
+    assert "SENSITIVE_OPERATION:" in text
+    assert "SECRET" not in text
+    card = hybrid_card_text(node("x", source={"root_cause": "untrusted value reaches SQL execution"}))
+    assert "SECURITY_INVARIANT:" in card
+    assert "invariant_id" not in card and "SOURCE_TASK_ID:" not in card
+
+
+def test_hybrid_card_keeps_both_experience_tracks():
+    from methods.sct_trajectory.semantic_retrieval import hybrid_card_text
+
+    card = node("track-card", positive_principle="Use a parameterized query",
+                negative_guardrail="Do not concatenate user input into SQL")
+    text = hybrid_card_text(card)
+    assert "POSITIVE_PRINCIPLE: Use a parameterized query" in text
+    assert "NEGATIVE_GUARDRAIL: Do not concatenate user input into SQL" in text
+
+
+def test_hybrid_fused_order_uses_mechanism_tiebreakers():
+    from methods.sct_trajectory.semantic_retrieval import hybrid_select
+
+    class SameEmbedding:
+        model = "same"
+        def cosine_scores(self, _query, cards):
+            return [1.0 for _ in cards]
+
+    weak = node("weak", source={"root_cause": "unrelated text"})
+    strong = node("strong", source={"root_cause": "SQL injection user input reaches SQL execution"})
+    _, trace = hybrid_select({"language": "python", "description": "SQL injection user input reaches SQL execution"},
+                             [weak, strong], None, SameEmbedding(), limit=2)
+    assert trace["candidate_ids"][0] == "strong"
+
+
+def test_rrf_prefers_consistent_rank_and_is_deterministic():
+    from methods.sct_trajectory.semantic_retrieval import reciprocal_rank_fusion
+
+    assert reciprocal_rank_fusion([["a", "b"], ["b", "c"]], limit=3)[0]["id"] == "b"
+    assert reciprocal_rank_fusion([["a", "b"], ["b", "c"]], limit=3) == reciprocal_rank_fusion([["a", "b"], ["b", "c"]], limit=3)
+
+
+def test_hybrid_filters_language_and_retired_cards():
+    from methods.sct_trajectory.semantic_retrieval import hybrid_select
+    go = SecurityInvariantNode("go", "89", "Use parameterized SQL", applicability="SQL values",
+                               language_leaves={"go": LanguageLeaf("go")}, source={"root_cause": "SQL"})
+    cards = [node("py", source={"root_cause": "SQL"}), go,
+             node("old", status="retired", source={"root_cause": "SQL"})]
+    chosen, trace = hybrid_select({"language": "python", "description": "SQL"}, cards, None, FakeEmbeddings(), limit=1)
+    assert "go" not in trace["eligible_ids"] and "old" not in trace["eligible_ids"]
+    assert trace["retrieval_mode"] == "semantic_hybrid_v2"
+
+
+def test_hybrid_embedding_failure_records_lexical_degradation():
+    from methods.sct_trajectory.semantic_retrieval import hybrid_select, EmbeddingError
+    class Broken:
+        model = "broken"
+        def cosine_scores(self, *_):
+            raise EmbeddingError("network_timeout")
+    chosen, trace = hybrid_select({"language": "python", "description": "SQL"}, [node("x")], None, Broken(), limit=1)
+    assert trace["degraded_to_lexical"] is True
+    assert trace["status"] == "completed"
+def test_section_tokens_keeps_colons_inside_public_context():
+    from methods.sct_trajectory.semantic_retrieval import _section_tokens
+    assert 'sqlite3.connect' in _section_tokens(
+        'UNTRUSTED_INPUTS: database arguments\nconnection: sqlite3.connect\nSECURITY_OBLIGATION: prevent SQL',
+        ['untrusted_inputs'])
+
+
+def test_hybrid_passes_texts_to_real_embedding_client(tmp_path, monkeypatch):
+    """候选召回必须走真实客户端的文本校验，不能由宽松假向量掩盖元组输入错误。"""
+    from methods.sct_trajectory.semantic_retrieval import hybrid_select
+    calls = endpoint(monkeypatch)
+    _, trace = hybrid_select({'language': 'python', 'description': 'SQL values'},
+                             [node('a'), node('b')], None, client(tmp_path))
+    assert not trace['degraded_to_lexical']
+    assert len(trace['embedding_ids']) == 2
+    assert calls and all(isinstance(t, str) for call in calls for t in call['input'])

@@ -397,7 +397,7 @@ def main() -> None:
                              "默认 48——门控是唯一的质量过滤器，覆盖面越大筛得越准；"
                              "用户要求增加被挑选的例子数量")
     parser.add_argument("--retrieval-mode", type=str, default="flat_llm",
-                        choices=["flat_llm", "flat_rule", "hier_llm", "hier_rule", "semantic_llm"],
+                        choices=["flat_llm", "flat_rule", "hier_llm", "hier_rule", "semantic_llm", "semantic_hybrid_v2"],
                         help="检索机制（用户 2026-09-22）。flat_llm=旧机制逐候选打 LLM 分；"
                              "hier_llm=层次化自顶向下检索（LLM 看树骨架后逐层下探）；"
                              "flat_rule/hier_rule 为无 LLM 消融对照臂")
@@ -595,7 +595,7 @@ def main() -> None:
     _inflight = args.max_inflight if args.max_inflight > 0 else args.workers
     shared_requests = threading.BoundedSemaphore(_inflight)
     embedding_client = None
-    if args.retrieval_mode == 'semantic_llm':
+    if args.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2'):
         from methods.sct_trajectory.semantic_retrieval import EmbeddingClient
         embedding_client = EmbeddingClient(model=args.embedding_model, cache_path=args.embedding_cache,
                                            key_loader=load_key, semaphore=shared_requests, timeout=args.timeout)

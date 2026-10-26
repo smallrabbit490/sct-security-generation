@@ -20,6 +20,35 @@ class SelectorProtocolError(ValueError):
     """选择输出不符合封闭协议；消息仅含内部类别，无模型原文。"""
 
 
+def deterministic_top1_fallback(candidates, limit=1):
+    """选择器协议失败后的保守回退，最多接受一张高置信候选。
+
+    所属阶段：``semantic_hybrid_v2`` 选择器故障处理。输入已经经过语言、状态、
+    RRF 和预算过滤的候选摘要，输出候选的稳定字符串 ID；没有正向机制重叠时
+    返回空列表。该规则只使用前向检索特征，不读取验证结果、不修改长期经验库，
+    也不会把所有候选在协议失败时注入生成上下文。
+    """
+    if int(limit) < 1 or not candidates:
+        return []
+    first = candidates[0]
+    if not isinstance(first, dict):
+        return []
+    identifier = first.get("id")
+    mechanism_overlap = first.get("mechanism_overlap", 0)
+    sensitive_overlap = first.get("sensitive_overlap", 0)
+    rrf = first.get("rrf", 0.0)
+    margin = rrf - float(candidates[1].get("rrf", 0.0)) if len(candidates) > 1 else rrf
+    same_cwe = bool(first.get("same_cwe"))
+    try:
+        confident = (int(mechanism_overlap) > 0 and
+                     (float(rrf) >= 0.03 or (margin >= 0.01 and (same_cwe or int(sensitive_overlap) > 0))))
+    except (TypeError, ValueError):
+        confident = False
+    if not isinstance(identifier, str) or not confident:
+        return []
+    return [identifier]
+
+
 def safe_request_diagnostics(exc):
     """筛选错误审计仅复制白名单数字/枚举；拒绝第三方原文、URL、非有限时间。"""
     result = []

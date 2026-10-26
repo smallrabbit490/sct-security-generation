@@ -377,7 +377,7 @@ class HskTreeRetriever:
         # "先看全树再下探"就退化成"只能选自己"。
         # 因此层次化模式一律用全量候选池，由 L1 的 LLM 决定是否跨 CWE——
         # 这正是它相对 flat 的额外能力（实测 flat 的跨 CWE 注入率恒为 0%）。
-        if self.retrieval_mode in ("hier_llm", "hier_rule", "semantic_llm"):
+        if self.retrieval_mode in ("hier_llm", "hier_rule", "semantic_llm", "semantic_hybrid_v2"):
             nodes = _cross_pool()
             scorer = lambda n, mu: self._base_for_hier(task, n, max_utility=mu)  # noqa: E731
 
@@ -395,6 +395,24 @@ class HskTreeRetriever:
             self.last_hier_trace = trace
             if trace.get('status') == 'error':
                 error = RuntimeError('semantic_retrieval_failed:' + ','.join(trace.get('errors') or ['unknown']))
+                error.retrieval_trace = trace
+                raise error
+            cards = [self._to_card(task, n, base=scorer(n, max_utility), llm=None) for n in chosen]
+            for card in cards:
+                card["retrieval_audit"] = trace
+            return cards
+
+        if self.retrieval_mode == "semantic_hybrid_v2":
+            # semantic_hybrid_v2：结构化公开查询 + embedding/机制词面 RRF + 严格选择协议。
+            # 所属阶段：前向检索；输入只读候选节点，输出经验卡和脱敏 trace；不执行验证，
+            # 不用 Base/Plus 结果更新规则，也不改变旧 semantic_llm 的历史回放行为。
+            from .semantic_retrieval import hybrid_select
+            if self.embedding_client is None:
+                raise ValueError("semantic_hybrid_v2_requires_embedding_client")
+            chosen, trace = hybrid_select(task, nodes, self.requester, self.embedding_client, limit=limit)
+            self.last_hier_trace = trace
+            if trace.get("status") == "error":
+                error = RuntimeError("semantic_hybrid_v2_failed:" + ",".join(trace.get("errors") or ["unknown"]))
                 error.retrieval_trace = trace
                 raise error
             cards = [self._to_card(task, n, base=scorer(n, max_utility), llm=None) for n in chosen]

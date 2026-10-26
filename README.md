@@ -206,6 +206,9 @@
 
 **sct_trajectory/**（CLE 轨迹对比、检索和门控实验）
 
+`semantic_hybrid_v2` 的启用参数、召回流程、缓存和失败记录见
+[CLE semantic_hybrid_v2 使用说明](docs/semantic_hybrid_v2_usage.md)。默认检索模式仍为 `flat_llm`。
+
 | 入口 | 说明 |
 |---|---|
 | [run_closed_loop.py](methods/sct_trajectory/run_closed_loop.py) | 经验初始化、轨迹回放、候选蒸馏与门控的闭环训练 |

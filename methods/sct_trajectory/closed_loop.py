@@ -1986,19 +1986,19 @@ class CleRunner:
                                             cards_provider=(lambda q: cards_provider({**query, **q}))
                                             if self.context_pipeline else None)
                     code = (pipeline.get("code") or "").strip()
-                    if self.retrieval_mode == 'semantic_llm' and pipeline.get('error_type'):
+                    if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2') and pipeline.get('error_type'):
                         raise RuntimeError('unmeasured_gate_pipeline:' + pipeline['error_type'])
                     if not code:
                         sample_flags.append(False)
                         continue
                     evidence, label = validate_and_state(row, code, timeout=self.timeout)
-                    if self.retrieval_mode == 'semantic_llm':
+                    if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2'):
                         from .global_gate import evidence_is_measured
                         if not evidence_is_measured(evidence):
                             raise RuntimeError('unmeasured_gate_validation')
                     sample_flags.append(label == "A")
                 except Exception:
-                    if self.retrieval_mode == 'semantic_llm':
+                    if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2'):
                         raise
                     # 该次采样失败 → 视为未通过（保守），但不影响其它任务
                     sample_flags.append(False)
@@ -2047,19 +2047,19 @@ class CleRunner:
                                         cards_provider=(lambda q: cards_provider({**query, **q}))
                                         if self.context_pipeline else None)
                 code = (pipeline.get("code") or "").strip()
-                if self.retrieval_mode == 'semantic_llm' and pipeline.get('error_type'):
+                if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2') and pipeline.get('error_type'):
                     raise RuntimeError('unmeasured_regression_pipeline:' + pipeline['error_type'])
                 if not code:
                     return True, True
                 evidence, _ = validate_and_state(row, code, timeout=self.timeout)
-                if self.retrieval_mode == 'semantic_llm':
+                if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2'):
                     from .global_gate import evidence_is_measured
                     if not evidence_is_measured(evidence):
                         raise RuntimeError('unmeasured_regression_validation')
                 return (_ev_status(evidence, "security") == "fail",
                         _ev_status(evidence, "functional") == "fail")
             except Exception:
-                if self.retrieval_mode == 'semantic_llm':
+                if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2'):
                     raise
                 return True, True
 
@@ -2124,10 +2124,10 @@ class CleRunner:
                                     retrieval_mode=("hier_rule"
                                                     if self.retrieval_mode in ("hier_llm", "hier_rule")
                                                     else "flat_rule"))
-        if self.retrieval_mode == 'semantic_llm':
+        if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2'):
             # Gate1召回探针与Gate2/3基线使用部署检索，不能用旧词面规则冒充向量召回。
             retriever = HskTreeRetriever(self.tree, requester=self.req_score, ablation=self.ablation,
-                retrieval_mode='semantic_llm', embedding_client=self.embedding_client)
+                retrieval_mode=self.retrieval_mode, embedding_client=self.embedding_client)
         records: list[dict] = []
         audit_detail: list[dict] = []
         targets = entries if entries is not None else self.experience_pool
@@ -2448,7 +2448,7 @@ class CleRunner:
             detail["reasons"] = rec.reasons
         except Exception as exc:      # 单条失败不拖垮整批
             # 向量/生成/测试基础设施缺测不能归因为候选有害，也不能据此晋升。
-            detail["decision"] = "unmeasured" if self.retrieval_mode == 'semantic_llm' else "revised"
+            detail["decision"] = "unmeasured" if self.retrieval_mode in ('semantic_llm', 'semantic_hybrid_v2') else "revised"
             detail["reasons"] = [f"audit_error:{type(exc).__name__}"]
             rec = GateRecord(candidate_id=cand.invariant_id, delta_joint_pass=0.0)
             rec.decision = detail['decision']
