@@ -1,0 +1,143 @@
+{
+  "protocol": "cle-v41-public-binding-diagnostic-v2",
+  "engineering_gate": "passed",
+  "mechanism_gate": "not_passed",
+  "comparison_gates": {
+    "C-A": {
+      "passed_on_this_posthoc_sample": true,
+      "complete_pairs": 4,
+      "net_Joint": 2,
+      "required_net": 2,
+      "new_S_losses": 0,
+      "both_family_binding_Joint": {
+        "1322": true,
+        "1409": true
+      }
+    },
+    "D-B": {
+      "passed_on_this_posthoc_sample": false,
+      "complete_pairs": 4,
+      "net_Joint": 1,
+      "required_net": 2,
+      "new_S_losses": 1,
+      "both_family_binding_Joint": {
+        "1322": true,
+        "1409": true
+      }
+    }
+  },
+  "final_code_review": {
+    "review_type": "Codex posthoc code and native validation review, not human retrieval labels",
+    "1322": "All A/B final codes clear ALLOWED_DOMAINS; C/D preserve and use it. Both repeats show rescue under each memory condition.",
+    "1409": "A/B pass both repeats. C fixes an initial safety error in its permitted repair. D-r1 keeps VALID_SIGNATURES but flattens dictionary values, losing file identity, and still fails both safety cases after repair. D-r2 passes with all cards rejected after adoption-format degradation.",
+    "D_r1_plan_code_gap": "Plan explicitly requires per-file binding, but _iter_records yields unrelated values, _parse_record loses their original key, and comparison may accept a different file signature. Correct plan text did not enforce correct code.",
+    "binding_preservation": "C/D final code preserves provided objects in all8 cells; preserving an object does not ensure correct use of relationships within it.",
+    "not_proven": "A single D safety loss does not prove universal harm from memory, the prompt, seed442, or Q. Q was never enabled."
+  },
+  "audit": {
+    "status": "passed",
+    "frozen_inputs_and_old_S1_unchanged": true,
+    "source_bundle_unchanged": true,
+    "native_P7_max2_max3_empty_controls_verified": true,
+    "BD_first_selection": [
+      {
+        "task_id": "1322",
+        "repeat": 1,
+        "BD_first_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-6150411928759305315",
+          "hint-601-706879167458623732"
+        ],
+        "identical_order": true
+      },
+      {
+        "task_id": "1322",
+        "repeat": 2,
+        "BD_first_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-8003044894777238839",
+          "seed-650"
+        ],
+        "identical_order": true
+      },
+      {
+        "task_id": "1409",
+        "repeat": 1,
+        "BD_first_ids": [
+          "hint-347-2235550156700228859",
+          "blind-77-4626890306821307923",
+          "seed-442"
+        ],
+        "identical_order": true
+      },
+      {
+        "task_id": "1409",
+        "repeat": 2,
+        "BD_first_ids": [
+          "pitfall-347-8852856027972637597",
+          "hint-347-2235550156700228859"
+        ],
+        "identical_order": true
+      }
+    ],
+    "exact_stage_prompt_counts": {
+      "unchanged_other": 53,
+      "protected_target": 30
+    },
+    "actual_model_and_message_checks": true,
+    "logical_records_completed": 90,
+    "unresolved_logical_requests": 0,
+    "validation_events": 22,
+    "native_rows": 16,
+    "code_attempts": 22,
+    "replay": {
+      "status": "passed",
+      "rows": 16,
+      "different_cells": [],
+      "API_calls": 0,
+      "credentials_reads": 0,
+      "comparison": "all native row fields except selector elapsed_seconds; exact saved requests and vectors"
+    }
+  },
+  "per_model_cost_authority": {
+    "deepseek-v4.1-flash-1017": {
+      "physical_attempts": 90,
+      "reported": 83,
+      "unknown": 7,
+      "prompt_tokens": 389303,
+      "completion_tokens": 78524,
+      "total_tokens": 467827
+    },
+    "text-embedding-3-large": {
+      "physical_attempts": 7,
+      "reported": 7,
+      "unknown": 0,
+      "prompt_tokens": 8939,
+      "completion_tokens": 0,
+      "total_tokens": 8939
+    }
+  },
+  "transport_errors_unknown_usage": {
+    "URLError": 6,
+    "ValueError": 1
+  },
+  "degradations": [
+    {
+      "cell_id": "1409_r2_D",
+      "attempt": 0,
+      "error": "adoption:missing_applied_experience_ids"
+    }
+  ],
+  "wallclock_seconds": 586.489455,
+  "started_UTC": "2026-10-25T14:58:07.655261+00:00",
+  "finished_UTC": "2026-10-25T15:07:54.144716+00:00",
+  "budget": {
+    "cap_tokens": 2000000,
+    "cap_HTTP": 300,
+    "cap_embedding_HTTP": 60,
+    "charged_tokens_including_unknown_and_inflight_bounds": 628031,
+    "known_reported_tokens": 476766,
+    "transport_attempts_including_prior": 97
+  },
+  "decision": "Stop at16. Retain empty+binding C as a diagnostic candidate; no automatic expansion/Q/classifier/BasePlus."
+}

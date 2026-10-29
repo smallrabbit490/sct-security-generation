@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "pages": 1,
+  "fonts": "SimSun and Times New Roman",
+  "link_target_exists": true,
+  "renderer": "native Word PDF then canonical render_docx PNG",
+  "API_calls": 0,
+  "visual_review": "all pages inspected; one page; no clipping; no title border; simple prose and chart"
+}

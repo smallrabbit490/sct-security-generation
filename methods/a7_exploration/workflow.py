@@ -121,7 +121,7 @@ def inspect(code,contract,suite=None):
             'checks':execute(code,contract['function_name'],suite) if suite else {'cases':[],'measured':False}}
 
 
-def repair_loop(task,contract,memory,session,candidate,suite=None):
+def repair_loop(task,contract,memory,session,candidate,suite=None,max_repairs=None):
     """具体公开违约→修复→同组证据重验；严格改善才继续，重复/停滞停止而无调用配额。"""
     attempts=[candidate]
     seen={hashlib.sha256(candidate['code'].encode()).hexdigest()}
@@ -129,6 +129,8 @@ def repair_loop(task,contract,memory,session,candidate,suite=None):
         issues=candidate['issues']
         failures=[c for c in candidate['checks'].get('cases',[]) if c.get('status')=='fail' and c.get('measured')]
         if not issues and not failures: return candidate,attempts,'no_confirmed_public_problem'
+        if max_repairs is not None and len(attempts)-1>=max_repairs:
+            return candidate,attempts,'predeclared_repair_limit'
         feedback={'ast_contract_violations':issues,'public_test_failures':failures}
         try:
             code,extraction=generate(task,contract,memory,session,candidate['code'],feedback)
@@ -145,7 +147,7 @@ def repair_loop(task,contract,memory,session,candidate,suite=None):
         candidate=after
 
 
-def run_one(task,arm,bank,requesters,suite=None,score=True):
+def run_one(task,arm,bank,requesters,suite=None,score=True,max_repairs=None):
     """公开任务驱动三个流程；先公开选择，后官方训练测量。记忆只读，无长期库写权限。"""
     start=time.monotonic()
     architecture,kind=arm.split('_')
@@ -165,7 +167,7 @@ def run_one(task,arm,bank,requesters,suite=None,score=True):
                 candidate=inspect(code,contract)
                 candidate['extraction']=extraction
                 selected=candidate if selected is None else selected
-                candidate,attempts,reason=repair_loop(task,contract,branch_memory,session,candidate)
+                candidate,attempts,reason=repair_loop(task,contract,branch_memory,session,candidate,max_repairs=max_repairs)
                 candidate=inspect(candidate['code'],contract,suite)
                 row['candidates'].append(candidate)
                 selected=row['candidates'][choose(row['candidates'])]
@@ -180,7 +182,7 @@ def run_one(task,arm,bank,requesters,suite=None,score=True):
             selected['extraction']=extraction
             row['first_code']=code
             selected,attempts,reason=repair_loop(task,contract,memory,session,selected,
-                                               suite if architecture=='check' else None)
+                                               suite if architecture=='check' else None,max_repairs=max_repairs)
             row['public_attempts']=attempts
             row['stops']=[reason]
             row['candidates']=[selected]

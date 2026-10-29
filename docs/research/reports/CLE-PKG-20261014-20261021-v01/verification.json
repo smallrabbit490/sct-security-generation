@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "documents": {
+    "10月14日-10月21日本周结论与下一步.docx": {
+      "bookmarks": 0,
+      "hyperlinks": 4,
+      "rendered_pages": 1
+    },
+    "10月14日-10月21日思路脉络图.docx": {
+      "bookmarks": 4,
+      "hyperlinks": 20,
+      "rendered_pages": 4
+    },
+    "10月14日-10月21日实验探索报告.docx": {
+      "bookmarks": 16,
+      "hyperlinks": 59,
+      "rendered_pages": 9
+    },
+    "CLE-TPL-weekly-summary-v02.docx": {
+      "bookmarks": 0,
+      "hyperlinks": 0,
+      "rendered_pages": 1
+    },
+    "CLE-TPL-weekly-idea-map-v01.docx": {
+      "bookmarks": 0,
+      "hyperlinks": 0,
+      "rendered_pages": 1
+    },
+    "CLE-TPL-weekly-experiment-report-v04.docx": {
+      "bookmarks": 6,
+      "hyperlinks": 12,
+      "rendered_pages": 2
+    }
+  },
+  "errors": [],
+  "visual_review": {
+    "status": "passed",
+    "package_pages_reviewed": 14,
+    "template_pages_reviewed": 4,
+    "checked": [
+      "pagination",
+      "tables",
+      "charts",
+      "fonts",
+      "clipping",
+      "heading_flow"
+    ]
+  },
+  "summary_visible_characters": 354
+}

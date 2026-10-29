@@ -1,0 +1,285 @@
+{
+  "protocol": "cle-experiment-design-review-20261028-v1",
+  "current_checklist": "docs/research/CLE-TODO-20261022-20261028-v05.md",
+  "keep_completed_and_active": true,
+  "additional_paid_units": 0,
+  "additional_repeats": 0,
+  "model_or_P7_rules_changed": false,
+  "prefix_in_formal_total": true,
+  "performance_stop": false,
+  "probe_plan": [
+    {
+      "experiment": "C02",
+      "task": "Q.retest",
+      "package": "FQ_RETEST",
+      "tasks": 2,
+      "units": 20,
+      "total": 1416,
+      "conditions": 5,
+      "repeats": 2,
+      "selection": "from_fixed_Q_intermediate_54",
+      "checks": [
+        "五条件同题同重复共用首次初析及候选",
+        "Q与卡正文冻结不变",
+        "两重复各自生成并保留完整轨迹"
+      ],
+      "existing_evidence": [
+        "A04",
+        "A16",
+        "A17"
+      ],
+      "gap": "新Q快照与修订公开契约的联合贯通",
+      "task_ids": [
+        "468",
+        "914"
+      ],
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C03",
+      "task": "Q.gate",
+      "package": "FQ_GATE",
+      "tasks": 2,
+      "units": 16,
+      "total": 2384,
+      "conditions": 4,
+      "repeats": 2,
+      "selection": "from_fixed_gate_298",
+      "checks": [
+        "Q1/Q2/Q3共同候选",
+        "Q3只在同CWE内置换Q及visits",
+        "Q0原路径单列",
+        "冻结Q和无反馈回流"
+      ],
+      "existing_evidence": [
+        "A03",
+        "A16",
+        "A17"
+      ],
+      "gap": "新K3与修订D_gate的实际接线",
+      "task_ids": [
+        "1368",
+        "1141"
+      ],
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C04",
+      "task": "GR.labels",
+      "package": "FG_LABELS",
+      "tasks": 2,
+      "units": 20,
+      "total": 820,
+      "conditions": 5,
+      "repeats": 2,
+      "selection": "from_fixed_GR_first_82",
+      "checks": [
+        "L0始终无卡",
+        "五档共同来源卡编号",
+        "L3使用目标模板而L4使用来源示例",
+        "同题族用途不交叉"
+      ],
+      "existing_evidence": [
+        "A14",
+        "A15"
+      ],
+      "gap": "新82题与实际来源材料的贯通",
+      "task_ids": [
+        "1389",
+        "965"
+      ],
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C06",
+      "task": "GR.gate",
+      "package": "FG_GATE",
+      "tasks": 6,
+      "units": 36,
+      "total": 1788,
+      "conditions": 3,
+      "repeats": 2,
+      "selection": "from_fixed_gate_298",
+      "checks": [
+        "只读本轮冻结分类器",
+        "路由只用公开特征",
+        "固定档仅按训练标签确定",
+        "同题同重复同档精确复用而跨重复独立"
+      ],
+      "existing_evidence": [
+        "A15"
+      ],
+      "gap": "新分类器的真实路由与复用链路",
+      "task_ids": [
+        "349",
+        "845",
+        "1055",
+        "783",
+        "454",
+        "50"
+      ],
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C07",
+      "task": "FR.run",
+      "package": "FR",
+      "tasks": 2,
+      "units": null,
+      "total": 57,
+      "conditions": 3,
+      "repeats": null,
+      "selection": "one_fixed_grow_and_one_fixed_gate",
+      "checks": [
+        "两题逐卡完整共同池",
+        "三查询加随机16",
+        "去重与匿名",
+        "每对AI最多一次，标签错误保留",
+        "人审签名保持空白"
+      ],
+      "existing_evidence": [
+        "A06"
+      ],
+      "gap": "新公开契约、候选池与一次盲标的完整输出",
+      "task_ids": [
+        "1184",
+        "500"
+      ],
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C09",
+      "task": "BUILD.run",
+      "package": "BUILD_C41",
+      "tasks": 2,
+      "units": null,
+      "total": 303,
+      "conditions": 1,
+      "repeats": 1,
+      "selection": "native_source_pool_first_two",
+      "checks": [
+        "从空库开始",
+        "原生题目与请求顺序不改",
+        "解题到提卡及验证事件完整落盘",
+        "精确前缀续跑不重发成功响应"
+      ],
+      "existing_evidence": [
+        "BUILD.prepare:offline_only"
+      ],
+      "gap": "v4.1从空库提卡的真实前缀，已有封网接线不算真实探针",
+      "later_check": "进入主动回放时再核对原生首2题；保留三轮和全局门控。",
+      "task_ids": [
+        "798",
+        "799"
+      ],
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C10",
+      "task": "CROSS.v41",
+      "package": "FX_GATE",
+      "tasks": 12,
+      "units": 72,
+      "total": 1788,
+      "conditions": 3,
+      "repeats": 2,
+      "selection": "from_fixed_gate_298",
+      "new_C41_units": 24,
+      "FFS_reused_units": 48,
+      "checks": [
+        "真实冻结C41来源",
+        "旧库与无卡48格逐格精确复用FFS",
+        "新库24格独立生成",
+        "正文冻结",
+        "三条件同P7预算"
+      ],
+      "existing_evidence": [
+        "A08",
+        "CROSS.prepare:offline_only"
+      ],
+      "gap": "新库实际被检索、呈现和采用的比较",
+      "task_ids": [
+        "779",
+        "472",
+        "1259",
+        "1180",
+        "1151",
+        "159",
+        "657",
+        "92",
+        "995",
+        "454",
+        "1082",
+        "1046"
+      ],
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C11",
+      "task": "EXTERNAL.v41",
+      "package": "FX_EXTERNAL",
+      "tasks": 4,
+      "units": 24,
+      "total": 1530,
+      "conditions": 3,
+      "repeats": 2,
+      "selection": "two_Base_two_Plus_when_original_manifests_ready",
+      "checks": [
+        "原验证镜像及官方正向校准",
+        "Base和Plus分别前2题",
+        "隐藏反馈不回传",
+        "记忆及Q不变",
+        "固定两次前向交付末次"
+      ],
+      "existing_evidence": [],
+      "gap": "真实外部验证环境与三库消费尚未贯通",
+      "task_ids": [],
+      "binding": "原镜像到位后绑定已冻结Base/Plus名单各前2题，不能按成绩选题。",
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    },
+    {
+      "experiment": "C12",
+      "task": "P3.external",
+      "package": "P3_EXTERNAL",
+      "tasks": 4,
+      "units": 4,
+      "total": 255,
+      "conditions": 1,
+      "repeats": 1,
+      "selection": "two_Base_two_Plus_when_original_manifests_ready",
+      "checks": [
+        "原验证环境",
+        "全程无卡且不提卡",
+        "隐藏反馈不回传",
+        "两次前向且交付末次"
+      ],
+      "existing_evidence": [
+        "A07:PLT_only"
+      ],
+      "gap": "原FirstTwoGate只挂PLT，Base/Plus仍需各2题前缀",
+      "task_ids": [],
+      "binding": "原镜像到位后绑定已冻结Base/Plus名单各前2题，不能按成绩选题。",
+      "status": "planned_not_executed",
+      "extra_paid_units": 0
+    }
+  ],
+  "retest_public_contract": {
+    "task_count": 273,
+    "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\inputs_contract_v2\\tasks.json",
+    "old_inputs": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\design_review_20261028\\original_retest_inputs"
+  },
+  "FR_dependencies": [
+    "GR.labels.analysis",
+    "FS.analysis"
+  ],
+  "C41_gate_exposure": "原CLE全局门控使用D_gate；C10只作同审计集三库比较，外部泛化由C11验证。",
+  "CROSS_question": "同v4.1的无卡、旧库、新库比较；不再声称已完成双模型交互实验。"
+}

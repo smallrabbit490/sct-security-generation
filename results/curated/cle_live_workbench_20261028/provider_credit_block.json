@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-28T09:41:44.610903+08:00",
+  "snapshot_time": "2026-10-28T09:41:32+08:00",
+  "monitor_error": null,
+  "guardian_enabled": true,
+  "workers": 0,
+  "completed": {
+    "FQ_LEARN": 743,
+    "FFS": 1660
+  },
+  "unfunded_retry_disabled": true,
+  "paid_nodes_blocked": true,
+  "offline_tests_passed": 29,
+  "recovery_fixture_checks_passed": 3,
+  "diagnostic_known_tokens": 8
+}

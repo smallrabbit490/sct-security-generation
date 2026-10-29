@@ -1,0 +1,217 @@
+{
+  "as_of": "2026-10-28T16:02:09.469229+08:00",
+  "scope": "20261027_full_requirements Q learning plus FFS cumulative physical ledgers",
+  "rates": {
+    "deepseek-v4.1-flash-1017": {
+      "ratio": 0.8,
+      "prompt": 1e-06,
+      "completion": 4e-06,
+      "time_period_prices": [
+        {
+          "name": "高峰时段",
+          "timezone": "Asia/Shanghai",
+          "price": {
+            "prompt": 2e-06,
+            "completion": 8e-06,
+            "cache_price": 4e-08,
+            "anthropic_cache_price": 4e-08
+          },
+          "time_ranges": [
+            {
+              "start_time": "09:00",
+              "end_time": "12:00",
+              "days_of_week": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "start_time": "14:00",
+              "end_time": "18:00",
+              "days_of_week": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            }
+          ]
+        }
+      ],
+      "cache_price": 2e-08,
+      "anthropic_cache_price": 2e-08
+    },
+    "text-embedding-3-large": {
+      "ratio": 7,
+      "prompt": 1.3e-07
+    }
+  },
+  "packages": {
+    "FQ_LEARN_K0": {
+      "budget": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K0\\segment_014\\budget.json",
+      "known": {
+        "total_tokens": 20055303,
+        "input_tokens": 18177619,
+        "output_tokens": 1877684,
+        "cached_input_tokens": 169856,
+        "embedding_tokens": 554329
+      },
+      "physical_http": 2809,
+      "unknown_usage_http": 44,
+      "unknown_by_model": {
+        "deepseek-v4.1-flash-1017": 44
+      },
+      "known_tokens_check": true,
+      "estimated_CA": 20.478493,
+      "peak_known_requests": 0,
+      "offpeak_known_requests": 2305,
+      "unclassified_known_model_request_times": 0,
+      "entries_without_source": 439,
+      "current_wire_count": 439,
+      "models": {
+        "deepseek-v4.1-flash-1017": 2349,
+        "text-embedding-3-large": 460
+      }
+    },
+    "FQ_LEARN_K1": {
+      "budget": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K1\\segment_010\\budget.json",
+      "known": {
+        "total_tokens": 18378470,
+        "input_tokens": 16713503,
+        "output_tokens": 1664967,
+        "cached_input_tokens": 262528,
+        "embedding_tokens": 504665
+      },
+      "physical_http": 2530,
+      "unknown_usage_http": 28,
+      "unknown_by_model": {
+        "deepseek-v4.1-flash-1017": 25,
+        "text-embedding-3-large": 3
+      },
+      "known_tokens_check": true,
+      "estimated_CA": 18.548388,
+      "peak_known_requests": 0,
+      "offpeak_known_requests": 2086,
+      "unclassified_known_model_request_times": 0,
+      "entries_without_source": 107,
+      "current_wire_count": 107,
+      "models": {
+        "deepseek-v4.1-flash-1017": 2111,
+        "text-embedding-3-large": 419
+      }
+    },
+    "FQ_LEARN_K2": {
+      "budget": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K2\\segment_019\\budget.json",
+      "known": {
+        "total_tokens": 18639471,
+        "input_tokens": 16936879,
+        "output_tokens": 1702592,
+        "cached_input_tokens": 296960,
+        "embedding_tokens": 517796
+      },
+      "physical_http": 2616,
+      "unknown_usage_http": 79,
+      "unknown_by_model": {
+        "deepseek-v4.1-flash-1017": 76,
+        "text-embedding-3-large": 3
+      },
+      "known_tokens_check": true,
+      "estimated_CA": 20.202904,
+      "peak_known_requests": 166,
+      "offpeak_known_requests": 1949,
+      "unclassified_known_model_request_times": 0,
+      "entries_without_source": 13,
+      "current_wire_count": 13,
+      "models": {
+        "deepseek-v4.1-flash-1017": 2191,
+        "text-embedding-3-large": 425
+      }
+    },
+    "FQ_LEARN_K3": {
+      "budget": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K3\\segment_009\\budget.json",
+      "known": {
+        "total_tokens": 606383,
+        "input_tokens": 551566,
+        "output_tokens": 54817,
+        "cached_input_tokens": 35456,
+        "embedding_tokens": 19141
+      },
+      "physical_http": 124,
+      "unknown_usage_http": 38,
+      "unknown_by_model": {
+        "deepseek-v4.1-flash-1017": 38
+      },
+      "known_tokens_check": true,
+      "estimated_CA": 1.164532,
+      "peak_known_requests": 71,
+      "offpeak_known_requests": 0,
+      "unclassified_known_model_request_times": 0,
+      "entries_without_source": 1,
+      "current_wire_count": 1,
+      "models": {
+        "deepseek-v4.1-flash-1017": 109,
+        "text-embedding-3-large": 15
+      }
+    },
+    "FFS": {
+      "budget": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FFS\\segment_042\\budget.json",
+      "known": {
+        "total_tokens": 82970636,
+        "input_tokens": 71282605,
+        "output_tokens": 11688031,
+        "cached_input_tokens": 2945536,
+        "embedding_tokens": 1909989
+      },
+      "physical_http": 14368,
+      "unknown_usage_http": 288,
+      "unknown_by_model": {
+        "deepseek-v4.1-flash-1017": 279,
+        "text-embedding-3-large": 9
+      },
+      "known_tokens_check": true,
+      "estimated_CA": 93.956784,
+      "peak_known_requests": 232,
+      "offpeak_known_requests": 12556,
+      "unclassified_known_model_request_times": 0,
+      "entries_without_source": 3,
+      "current_wire_count": 3,
+      "models": {
+        "deepseek-v4.1-flash-1017": 13067,
+        "text-embedding-3-large": 1301
+      }
+    }
+  },
+  "money_kind": "estimate_at_current_published_prices_not_settled_invoice",
+  "source": "https://chatanywhere.tech/pricing",
+  "cross_package_reused_physical_sources": 0,
+  "totals": {
+    "known_tokens": 140650263,
+    "physical_http": 22447,
+    "unknown_usage_http": 477,
+    "estimated_CA": 154.351101,
+    "Q_learning_estimated_CA": 60.394317,
+    "FFS_estimated_CA": 93.956784,
+    "observed_llm_prompt_cache_hit_fraction": 0.030879258783804275,
+    "llm_prompt_tokens": 120156252,
+    "cached_llm_prompt_tokens": 3710336
+  },
+  "accounting_query": {
+    "checked_at": "2026-10-28T16:03:37.587538+08:00",
+    "endpoint": "https://api.chatanywhere.org/v1/query/balance",
+    "http_status": 200,
+    "account_balance_total_CA": 8296.63521594,
+    "account_balance_used_CA": 7331.08981157,
+    "account_remaining_CA": 965.5454043699992,
+    "key_quota_CA": 1300.0,
+    "key_used_CA": 936.41107697,
+    "key_remaining_CA": 363.58892303000005,
+    "key_used_at_1056_CA": 914.1360184,
+    "key_consumption_since_1056_CA": 22.275058569999942,
+    "scope": "key and account history not project-specific",
+    "model_generation_calls": 0
+  }
+}

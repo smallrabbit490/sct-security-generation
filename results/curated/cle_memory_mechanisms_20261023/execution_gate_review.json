@@ -1,0 +1,97 @@
+{
+  "protocol": "cle-memory-execution-gate-review-v1",
+  "checked_at": "2026-10-23T23:27:04.694214+08:00",
+  "branch": "fjy/cle-contract-conditional-q-20261023",
+  "git_head": "21d21c0",
+  "status": "blocked_provider_code_controls_failed",
+  "new_API_calls": 0,
+  "new_embedding_calls": 0,
+  "new_Q_updates": 0,
+  "local_wire_checks": {
+    "targeted_tests_passed": 2,
+    "mock_request_assemblies": 8,
+    "real_HTTP_requests": 0,
+    "credentials_read": false,
+    "exact_single_user_message_only": true,
+    "scope": "local _requester assembly only; remote processing and backend identity unknown"
+  },
+  "provider_status": "stopped_provider_code_controls_failed",
+  "current_paid_execution_enabled": false,
+  "related_python_processes_at_20261023_232411_Asia_Shanghai": 0,
+  "B_qualified_P7": 0,
+  "B_terminal_rows": 1,
+  "C_real_P7": 0,
+  "C1_evaluated": false,
+  "human_confirmed": 0,
+  "human_pairs": 914,
+  "known_total_tokens_unchanged": 196291,
+  "unknown_usage_operations_unchanged": 6,
+  "gates": [
+    {
+      "operation": "B_two_task_technical",
+      "state": "blocked",
+      "direct_blocker": "provider_code_control",
+      "not_required_for_this_control": [
+        "914_human_labels",
+        "Notion_raw_pairs",
+        "task1348_policy"
+      ]
+    },
+    {
+      "operation": "B_full_12",
+      "state": "not_ready",
+      "dependencies": [
+        "B_two_task_technical",
+        "task1348_public_policy",
+        "actual_selected_card_partitions"
+      ]
+    },
+    {
+      "operation": "C_pilot_12",
+      "state": "not_ready",
+      "dependencies": [
+        "provider_code_control",
+        "frozen_consumer_and_templates",
+        "selected_card_materials",
+        "paid_cost_orchestration",
+        "scoped_C_budget"
+      ],
+      "B_gain_required": false,
+      "C_paid_orchestrator_implemented": false
+    },
+    {
+      "operation": "C_expand_classifier",
+      "state": "not_assessed",
+      "dependencies": [
+        "real_C1_results_pass"
+      ]
+    },
+    {
+      "operation": "retrieval_formal_metrics",
+      "state": "waiting_human",
+      "dependencies": [
+        "914_confirmed_labels",
+        "insufficient_resolved"
+      ]
+    },
+    {
+      "operation": "Notion_formal_replay",
+      "state": "waiting_raw_source",
+      "dependencies": [
+        "5817_native_pairs",
+        "106_denominator_difference_resolved"
+      ]
+    },
+    {
+      "operation": "new_Q_confirmation",
+      "state": "conditional_not_started",
+      "dependencies": [
+        "effective_frozen_consumer",
+        "independent_new_evidence",
+        "scoped_execution_specification"
+      ]
+    }
+  ],
+  "scientific_failure_claim": false,
+  "goal_complete": false
+}

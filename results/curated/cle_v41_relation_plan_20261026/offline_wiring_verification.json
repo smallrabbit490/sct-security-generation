@@ -1,0 +1,113 @@
+{
+  "status": "passed",
+  "scope": "offline wiring; all model responses and validation outcomes synthetic",
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "evidence": {
+    "evidence_kind": "synthetic_wiring_only_not_model_results",
+    "comparisons": [
+      {
+        "repeat": 1,
+        "stratum": "E",
+        "c0_fields_identical": [
+          "initial_analysis",
+          "analysis",
+          "analysis_parsed",
+          "experience_analysis",
+          "plan",
+          "plan_parsed",
+          "adoption",
+          "cards",
+          "retrieved_cards",
+          "stages"
+        ],
+        "c0_generation_diff_only_reminder": true,
+        "status": "passed"
+      },
+      {
+        "repeat": 1,
+        "stratum": "K",
+        "c0_fields_identical": [
+          "initial_analysis",
+          "analysis",
+          "analysis_parsed",
+          "experience_analysis",
+          "plan",
+          "plan_parsed",
+          "adoption",
+          "cards",
+          "retrieved_cards",
+          "stages"
+        ],
+        "c0_generation_diff_only_reminder": true,
+        "status": "passed"
+      },
+      {
+        "repeat": 2,
+        "stratum": "E",
+        "c0_fields_identical": [
+          "initial_analysis",
+          "analysis",
+          "analysis_parsed",
+          "experience_analysis",
+          "plan",
+          "plan_parsed",
+          "adoption",
+          "cards",
+          "retrieved_cards",
+          "stages"
+        ],
+        "c0_generation_diff_only_reminder": true,
+        "status": "passed"
+      },
+      {
+        "repeat": 2,
+        "stratum": "K",
+        "c0_fields_identical": [
+          "initial_analysis",
+          "analysis",
+          "analysis_parsed",
+          "experience_analysis",
+          "plan",
+          "plan_parsed",
+          "adoption",
+          "cards",
+          "retrieved_cards",
+          "stages"
+        ],
+        "c0_generation_diff_only_reminder": true,
+        "status": "passed"
+      }
+    ],
+    "checks": {
+      "synthetic_P7_cells": 8,
+      "synthetic_code_attempts": 16,
+      "shared_initials": 2,
+      "shared_c0_prefixes": 4,
+      "shared_pair_comparisons": 4,
+      "synthetic_source_requests": 56,
+      "synthetic_selection_calls": 6,
+      "shared_source_requests_counted_once": 12,
+      "branch_source_requests": 44,
+      "model_API_calls": 0,
+      "embedding_API_calls": 0,
+      "credentials_reads": 0,
+      "saved_response_replay_cells_identical": 8
+    }
+  },
+  "protected_files_unchanged": true,
+  "protected_files": [
+    "methods/cle_ablation/runner.py",
+    "methods/sct_trajectory/context_pipeline.py",
+    "methods/sct_trajectory/closed_loop.py",
+    "data/external/secodeplt/secodeplt/data.json",
+    "translation_work/diagnostics/20261025/cle_v41_public_binding_v2/inputs/tasks.json",
+    "translation_work/diagnostics/20261025/cle_v41_public_binding_v2/inputs/memory.jsonl",
+    "translation_work/diagnostics/20261025/cle_v41_public_binding_v2/rows.jsonl"
+  ],
+  "raw_evidence": "translation_work/diagnostics/20261026/cle_v41_relation_offline_v1/20261026_105516_655589",
+  "paid_execution_enabled": false,
+  "actual_experiment_P7_completed": 0,
+  "next_step": "review offline wiring; paid launcher/time-budget integration and execution remain unstarted"
+}

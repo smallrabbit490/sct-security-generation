@@ -1,0 +1,38 @@
+{
+  "protocol": "cle-weekly-full-requirements-20261027-v1",
+  "currency_cost": null,
+  "cache_hit_assumption": null,
+  "basis": {
+    "historical_tokens": 65186659,
+    "historical_code_cells": 1376,
+    "tokens_per_P7_cap": 150000,
+    "physical_HTTP_per_P7_cap": 40,
+    "embedding_HTTP_per_P7_cap": 16
+  },
+  "stages": {
+    "K0": {
+      "tokens": 45450000,
+      "HTTP": 12120,
+      "embedding_HTTP": 4848
+    },
+    "K1": {
+      "tokens": 40950000,
+      "HTTP": 10920,
+      "embedding_HTTP": 4368
+    },
+    "K2": {
+      "tokens": 40950000,
+      "HTTP": 10920,
+      "embedding_HTTP": 4368
+    },
+    "K3": {
+      "tokens": 40950000,
+      "HTTP": 10920,
+      "embedding_HTTP": 4368
+    }
+  },
+  "not_transferable_between_stages": true,
+  "reset_on_resume": false,
+  "unknown_usage": "reserve conservative request budget, never zero",
+  "other_packages": "pending native bound and runnable wiring; cannot dispatch using learning budget"
+}

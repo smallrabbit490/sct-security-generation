@@ -1,0 +1,10 @@
+﻿experiment,model,completed_tasks,valid_update_events,covered_cards_at_end,events_per_covered_card,updated_distinct_cards,updated_distinct_share,newly_covered_cards,source
+10-16 D_grow限三张观察学习,v3.2,273,543,297,1.8282828282828283,297,1.0,297,D:\Agent\sct-security-generation\results\curated\cle_memory_q_full_dgrow_20261016\summary.json
+10-18 D_grow不限三张观察学习,v3.2,273,1090,466,2.3390557939914163,466,1.0,466,D:\Agent\sct-security-generation\results\curated\cle_memory_q_unlimited_complete_20261018\summary.json
+10-20 修复32题补学习,v3.2,32,45,436,0.10321100917431193,20,0.045871559633027525,20,D:\Agent\sct-security-generation\results\curated\cle_dgrow_url_q_learning_20261020\learning_summary.json
+10-20 D_init完整303题限三张学习,v3.2,303,765,669,1.1434977578475336,,,233,D:\Agent\sct-security-generation\results\curated\cle_dinit_full_learning_20261020_v4b\summary.json
+10-20 D_init限三张12题对照,v3.2,12,28,674,0.04154302670623145,,,5,D:\Agent\sct-security-generation\results\curated\cle_dinit_card_cap_20261020_v2\summary.json
+10-20 D_init不限三张完整303题学习,v3.2,303,1588,926,1.714902807775378,,,257,D:\Agent\sct-security-generation\results\curated\cle_dinit_card_cap_20261020_v2\summary.json
+10-21 D_init Q参与排序在线学习,v3.2,303,836,967,0.8645294725956567,,,41,D:\Agent\sct-security-generation\results\curated\cle_q_online_20261020\D_init_summary.json
+10-27/28 K0 D_init,v4.1-1017,303,837,445,1.8808988764044945,445,1.0,445,E:\ResearchRuns\CLE\20261027_full_requirements\analysis\K0\summary.json
+10-27/28 K1 D_grow,v4.1-1017,273,646,610,1.0590163934426229,346,0.5672131147540984,165,E:\ResearchRuns\CLE\20261027_full_requirements\analysis\K1\summary.json

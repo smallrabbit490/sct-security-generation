@@ -1,0 +1,1373 @@
+[
+  {
+    "cell_id": "1322_r1_A",
+    "task_id": "1322",
+    "arm": "A",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            44
+          ],
+          "write_lines": [
+            5
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            37
+          ],
+          "write_lines": [
+            5
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1322_r1_B",
+    "task_id": "1322",
+    "arm": "B",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            56
+          ],
+          "write_lines": [
+            3
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-6150411928759305315",
+          "hint-601-706879167458623732"
+        ],
+        "adopted_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-6150411928759305315",
+          "hint-601-706879167458623732"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-6150411928759305315",
+              "hint-601-706879167458623732"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-6150411928759305315",
+              "hint-601-706879167458623732"
+            ],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            101
+          ],
+          "write_lines": [
+            3
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "blind-601-268110750694030275",
+          "pitfall-601-1758275731820026636",
+          "blind-601-2748704544889141072"
+        ],
+        "adopted_ids": [
+          "blind-601-268110750694030275",
+          "pitfall-601-1758275731820026636",
+          "blind-601-2748704544889141072"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "blind-601-268110750694030275",
+              "pitfall-601-1758275731820026636",
+              "blind-601-2748704544889141072"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "blind-601-268110750694030275",
+              "pitfall-601-1758275731820026636",
+              "blind-601-2748704544889141072"
+            ],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1322_r1_C",
+    "task_id": "1322",
+    "arm": "C",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            31
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1322_r1_D",
+    "task_id": "1322",
+    "arm": "D",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            88,
+            88
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-6150411928759305315",
+          "hint-601-706879167458623732"
+        ],
+        "adopted_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-6150411928759305315"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-6150411928759305315",
+              "hint-601-706879167458623732"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-6150411928759305315"
+            ],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1322_r2_A",
+    "task_id": "1322",
+    "arm": "A",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            65
+          ],
+          "write_lines": [
+            3
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            65
+          ],
+          "write_lines": [
+            3
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1322_r2_B",
+    "task_id": "1322",
+    "arm": "B",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            48
+          ],
+          "write_lines": [
+            4
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-8003044894777238839",
+          "seed-650"
+        ],
+        "adopted_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-8003044894777238839",
+          "seed-650"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-8003044894777238839",
+              "seed-650"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-8003044894777238839",
+              "seed-650"
+            ],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "measured": true,
+        "F": false,
+        "S": true,
+        "Joint": false,
+        "binding": {
+          "status": "violated",
+          "read_lines": [
+            52
+          ],
+          "write_lines": [
+            4
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-8003044894777238839"
+        ],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-8003044894777238839"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [
+              "hint-601-8003044894777238839",
+              "pitfall-601-3611919690530987921"
+            ],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1322_r2_C",
+    "task_id": "1322",
+    "arm": "C",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            57
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1322_r2_D",
+    "task_id": "1322",
+    "arm": "D",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            57
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-8003044894777238839",
+          "seed-650"
+        ],
+        "adopted_ids": [
+          "pitfall-601-3611919690530987921",
+          "hint-601-8003044894777238839",
+          "seed-650"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-8003044894777238839",
+              "seed-650"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "pitfall-601-3611919690530987921",
+              "hint-601-8003044894777238839",
+              "seed-650"
+            ],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r1_A",
+    "task_id": "1409",
+    "arm": "A",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "unmeasured",
+          "read_lines": [],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r1_B",
+    "task_id": "1409",
+    "arm": "B",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "unmeasured",
+          "read_lines": [],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "hint-347-2235550156700228859",
+          "blind-77-4626890306821307923",
+          "seed-442"
+        ],
+        "adopted_ids": [
+          "hint-347-2235550156700228859",
+          "seed-442"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "hint-347-2235550156700228859",
+              "blind-77-4626890306821307923",
+              "seed-442"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "hint-347-2235550156700228859",
+              "seed-442"
+            ],
+            "rejected_ids": [
+              "blind-77-4626890306821307923"
+            ],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r1_C",
+    "task_id": "1409",
+    "arm": "C",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": false,
+        "Joint": false,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            6
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            7
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r1_D",
+    "task_id": "1409",
+    "arm": "D",
+    "repeat": 1,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": false,
+        "Joint": false,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            23
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "hint-347-2235550156700228859",
+          "blind-77-4626890306821307923",
+          "seed-442"
+        ],
+        "adopted_ids": [
+          "seed-442"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "hint-347-2235550156700228859",
+              "blind-77-4626890306821307923",
+              "seed-442"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "seed-442"
+            ],
+            "rejected_ids": [
+              "blind-77-4626890306821307923",
+              "hint-347-2235550156700228859"
+            ],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "measured": true,
+        "F": true,
+        "S": false,
+        "Joint": false,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            32
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "seed-442",
+          "seed-467",
+          "blind-347-2200572731205078597"
+        ],
+        "adopted_ids": [
+          "seed-442",
+          "seed-467"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "seed-442",
+              "seed-467",
+              "blind-347-2200572731205078597"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "seed-442",
+              "seed-467"
+            ],
+            "rejected_ids": [
+              "blind-347-2200572731205078597"
+            ],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r2_A",
+    "task_id": "1409",
+    "arm": "A",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "violated",
+          "read_lines": [],
+          "write_lines": [
+            5
+          ],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r2_B",
+    "task_id": "1409",
+    "arm": "B",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            12
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "pitfall-347-8852856027972637597",
+          "hint-347-2235550156700228859"
+        ],
+        "adopted_ids": [
+          "pitfall-347-8852856027972637597",
+          "hint-347-2235550156700228859"
+        ],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "pitfall-347-8852856027972637597",
+              "hint-347-2235550156700228859"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [
+              "pitfall-347-8852856027972637597",
+              "hint-347-2235550156700228859"
+            ],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r2_C",
+    "task_id": "1409",
+    "arm": "C",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            9
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": []
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "completed",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": null
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cell_id": "1409_r2_D",
+    "task_id": "1409",
+    "arm": "D",
+    "repeat": 2,
+    "attempts": [
+      {
+        "attempt": 0,
+        "measured": true,
+        "F": true,
+        "S": true,
+        "Joint": true,
+        "binding": {
+          "status": "consistent",
+          "read_lines": [
+            15
+          ],
+          "write_lines": [],
+          "mutation_lines": [],
+          "scope": "static direct-name signal; aliases/dynamic effects require code review"
+        },
+        "selected_ids": [
+          "pitfall-347-8852856027972637597",
+          "hint-347-2235550156700228859"
+        ],
+        "adopted_ids": [],
+        "stages": [
+          {
+            "stage": "initial_analysis",
+            "status": "reused"
+          },
+          {
+            "stage": "retrieval",
+            "status": "completed",
+            "ids": [
+              "pitfall-347-8852856027972637597",
+              "hint-347-2235550156700228859"
+            ]
+          },
+          {
+            "stage": "experience_analysis",
+            "status": "completed"
+          },
+          {
+            "stage": "adoption",
+            "status": "degraded",
+            "applied_ids": [],
+            "rejected_ids": [],
+            "unknown_ids": [],
+            "error": "missing_applied_experience_ids"
+          },
+          {
+            "stage": "planning",
+            "status": "completed"
+          },
+          {
+            "stage": "generation",
+            "status": "completed"
+          }
+        ]
+      }
+    ]
+  }
+]

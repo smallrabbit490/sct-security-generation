@@ -1,0 +1,79 @@
+{
+  "protocol": "cle-memory-view-two-task-shared-starts-v1",
+  "scope": "initial_analysis_and_original_CLE_selection_only",
+  "completed_shared_starts": 4,
+  "task_ids": [
+    "1394",
+    "102"
+  ],
+  "repeats": 2,
+  "parts": {
+    "chat": {
+      "logical_operations": 4,
+      "input_tokens": 6810,
+      "output_tokens": 3282,
+      "total_tokens": 10092
+    },
+    "embedding": {
+      "logical_operations": 2,
+      "input_tokens": 1191,
+      "output_tokens": 0,
+      "total_tokens": 1191
+    },
+    "selector": {
+      "logical_operations": 6,
+      "input_tokens": 171896,
+      "output_tokens": 52,
+      "total_tokens": 171948
+    }
+  },
+  "known_total_tokens": 183231,
+  "unknown_usage_operations": 0,
+  "reserved_http_attempts": 20,
+  "reserved_token_bound": 741479,
+  "billing_complete": false,
+  "real_P7_runs": 0,
+  "new_generated_code": 0,
+  "Q_updates": 0,
+  "selected_cards": [
+    {
+      "task_id": "1394",
+      "repeat": 1,
+      "candidates": 30,
+      "selected_ids": [
+        "cand-1333-7972143074757284700"
+      ]
+    },
+    {
+      "task_id": "102",
+      "repeat": 1,
+      "candidates": 29,
+      "selected_ids": [
+        "pitfall-915-8144612929088593380"
+      ]
+    },
+    {
+      "task_id": "1394",
+      "repeat": 2,
+      "candidates": 30,
+      "selected_ids": [
+        "cand-1333-7972143074757284700"
+      ]
+    },
+    {
+      "task_id": "102",
+      "repeat": 2,
+      "candidates": 29,
+      "selected_ids": [
+        "pitfall-915-8144612929088593380"
+      ]
+    }
+  ],
+  "view_review": {
+    "completed_shared_starts_reviewed": 4,
+    "unique_card_partitions": 2,
+    "review_type": "Agent source-content partition, not human task-card relevance confirmation",
+    "new_generated_code_outcomes_seen": false,
+    "API_calls": 0
+  }
+}

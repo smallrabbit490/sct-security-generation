@@ -1,0 +1,170 @@
+{
+  "protocol": "cle-functional-security-memory-view-v2-ds41flash1017-offpeak-v1",
+  "status": "stopped_provider_code_controls_failed_local_adaptation_preserved",
+  "arms": [
+    "B0",
+    "BF",
+    "BS",
+    "BFS",
+    "BM"
+  ],
+  "primary_comparison": "BFS-BM",
+  "secondary_incremental_comparisons": [
+    "BFS-BS",
+    "BFS-BF"
+  ],
+  "shared_context": [
+    "applicability prerequisites",
+    "source verification information"
+  ],
+  "pure_factorial_interaction_claim": false,
+  "source_rule": "exact complete character partitions of original serialized card; no new facts",
+  "max_selected_cards": 3,
+  "real_probe_completed": false,
+  "paid_execution_enabled": false,
+  "provider_org_control_v5": {
+    "enabled": false,
+    "endpoint": "https://api.chatanywhere.org/v1/chat/completions",
+    "max_HTTP_attempts": 2,
+    "scope": "code_then_arithmetic_controls_only_no_P7",
+    "authorization": "Existing user request to adapt to ChatAnywhere and resumed execution goal; same B02 budget, no model or experimental prompt changes.",
+    "new_basis": "Provider public documentation lists tech and org as official access points; all previous controls used tech.",
+    "status": "stopped_HTTP_403_first_code_control_second_not_sent"
+  },
+  "scope_of_existing_pause": "All formal experiments remain paused after model replacement; only model selection and offline time-policy validation performed. Old D_grow, D_gate, D02 and C stages are not resumed.",
+  "unresolved_contract_task_ids": [
+    "1348"
+  ],
+  "paid_authorized_scope": "two_task_P7_only",
+  "shared_start_execution": {
+    "enabled": false,
+    "scope": "two_task_shared_starts_only",
+    "source": "current user-provided active goal: 按照划分好的顺序和任务内容持续推进实验和总结",
+    "task_ids": [
+      "1394",
+      "102"
+    ],
+    "repeats": 2,
+    "max_http_attempts": 120,
+    "max_embedding_attempts": 80,
+    "max_conservative_tokens": 4000000,
+    "code_generation": false,
+    "Q_updates": false,
+    "status": "disabled_pending_new_model_shared_starts",
+    "previous_v32_status": "completed_four_starts_no_reexecution"
+  },
+  "two_task_P7_execution": {
+    "enabled": false,
+    "scope": "two_task_P7_only",
+    "task_ids": [
+      "1394",
+      "102"
+    ],
+    "repeats": 2,
+    "planned_P7": 20,
+    "max_generated_code": 40,
+    "max_http_attempts": 700,
+    "max_embedding_attempts": 120,
+    "max_conservative_tokens": 16000000,
+    "Q_updates": false,
+    "source": "Current active user goal: 按照划分好的顺序和任务内容持续推进实验和总结",
+    "includes_within_B02_total_P7": 120,
+    "status": "disabled_pending_new_model_control_and_shared_starts",
+    "previous_v32_status": "v1_stopped_technical_error_do_not_reexecute"
+  },
+  "provider_adaptation_v2": {
+    "enabled": false,
+    "status": "stopped_control_failure_first_request_181_second_not_sent",
+    "source": "User: 更改不了ChatAntwhere，适应问题",
+    "changes": [
+      "one_HTTP_attempt_socket180_hard210",
+      "merge_adjacent_disjoint_JSON_in_analysis_planning_only"
+    ],
+    "unchanged": [
+      "model",
+      "P7_prompts",
+      "three_card_cap",
+      "one_repair",
+      "last_delivery",
+      "validator",
+      "frozen_memory"
+    ],
+    "same_aggregate_budget_as_v1": true,
+    "scope": "two_task_P7_only"
+  },
+  "provider_adaptation_v3_stream": {
+    "enabled": false,
+    "status": "stopped_control_failure_arithmetic_passed_code_refused",
+    "source": "User: 更改不了ChatAntwhere，适应问题",
+    "changes": [
+      "streaming_HTTP_single_attempt_socket180_hard300",
+      "merge_adjacent_disjoint_JSON_in_analysis_planning_only"
+    ],
+    "unchanged": [
+      "model",
+      "P7_prompts",
+      "three_card_cap",
+      "one_repair",
+      "last_delivery",
+      "validator",
+      "frozen_memory",
+      "selector_120_second_budget"
+    ],
+    "same_aggregate_budget_as_v1": true,
+    "scope": "two_task_P7_only"
+  },
+  "provider_user_agent_control_v6": {
+    "enabled": false,
+    "status": "completed_single_request_returned_identity_refusal_no_code",
+    "endpoint": "https://api.chatanywhere.org/v1/chat/completions",
+    "user_agent": "CLE-HTTP-Diagnostic/1.0",
+    "max_HTTP_attempts": 1,
+    "scope": "single_minimal_code_control_only_no_P7",
+    "authorization": "2026-10-24 user authorized one minimal code test after client identification fix; formal experiments remain paused",
+    "output": "translation_work/diagnostics/20261023/cle_memory_mechanisms_v1/B02_provider_user_agent_code_control_v6"
+  },
+  "provider_prompt_route_v7": {
+    "enabled": false,
+    "status": "completed_three_raw_HTTP_diagnostics_neutral_system_code_passed2of2",
+    "scope": "diagnostic_only_no_formal_protocol_change",
+    "max_HTTP_attempts": 3,
+    "output": "translation_work/diagnostics/20261023/cle_memory_mechanisms_v1/provider_prompt_route_investigation_20261024"
+  },
+  "previous_protocol": "cle-functional-security-memory-view-v1",
+  "model": "deepseek-v4.1-flash-1017",
+  "shared_start_run": "B02_shared_starts_ds41flash1017-offpeak-v1",
+  "model_transition": {
+    "from": "deepseek-v3.2",
+    "to": "deepseek-v4.1-flash-1017",
+    "authority": "2026-10-24 user model replacement and off-peak-only restriction",
+    "new_model_control_passed": false,
+    "historical_v32_records_unchanged": true,
+    "v32_shared_starts_reusable": false,
+    "formal_experiments_paused": true,
+    "message_roles_unchanged": true
+  },
+  "usage_schedule": {
+    "timezone": "Asia/Shanghai",
+    "blocked_iso_weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "blocked_intervals": [
+      [
+        "09:00",
+        "12:00"
+      ],
+      [
+        "14:00",
+        "18:00"
+      ]
+    ],
+    "interval_boundary": "start inclusive; end exclusive",
+    "time_basis": "each HTTP dispatch; rechecked after queuing",
+    "action_when_blocked": "raise ModelTimeWindowError; no HTTP, no automatic retry or waiting",
+    "weekends": "all hours allowed"
+  }
+}

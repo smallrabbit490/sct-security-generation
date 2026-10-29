@@ -1,0 +1,238 @@
+{
+  "protocol": "cle-v41-complete-base-migration-v1",
+  "authorization": "User 2026-10-26: 本项目的防御性实验风格允许转化为批准基础实验的完整执行，可以调整但是请不要暂停。先完成前期规划好的v4.1转化的完整实验清单",
+  "paid_execution_enabled": true,
+  "user_policy": "Complete preplanned bounded base comparisons even when benefit gates fail; fix recoverable technical issues and continue; never fabricate missing data or human approval.",
+  "model": "deepseek-v4.1-flash-1017",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 4096,
+  "message_roles": [
+    "user"
+  ],
+  "max_experiences": 3,
+  "max_repairs": 1,
+  "workers_max": 4,
+  "time_policy": "Asia/Shanghai weekdays [09,12) and [14,18) no dispatch; automatic wait, weekends allowed",
+  "reuse_completed": [
+    "P3_PLT_298",
+    "S0",
+    "S1_48",
+    "B03_16"
+  ],
+  "stages": [
+    {
+      "id": "B03R",
+      "name": "文件—签名关系提醒",
+      "kind": "relation",
+      "planned_runs": 8,
+      "status": "running",
+      "budget": {
+        "tokens": 1000000,
+        "HTTP": 150,
+        "embedding_HTTP": 30
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "B02",
+      "name": "功能/安全分区五臂",
+      "kind": "views",
+      "planned_runs": 120,
+      "status": "planned",
+      "budget": {
+        "tokens": 16000000,
+        "HTTP": 4500,
+        "embedding_HTTP": 500
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "S2_M1",
+      "name": "接口保护与同族外来源示例",
+      "kind": "m1",
+      "planned_runs": 48,
+      "status": "planned",
+      "budget": {
+        "tokens": 8000000,
+        "HTTP": 2000,
+        "embedding_HTTP": 200
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "S2_P13_P22",
+      "name": "功能保持与最小修订提示",
+      "kind": "profiles",
+      "planned_runs": 72,
+      "status": "planned",
+      "budget": {
+        "tokens": 12000000,
+        "HTTP": 3000,
+        "embedding_HTTP": 300
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "D02",
+      "name": "原P7与公开契约消费者",
+      "kind": "contract",
+      "planned_runs": 192,
+      "status": "planned",
+      "budget": {
+        "tokens": 40000000,
+        "HTTP": 4500,
+        "embedding_HTTP": 500
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "C02",
+      "name": "固定L0至L4、48题两重复",
+      "kind": "granularity",
+      "planned_runs": 480,
+      "status": "planned",
+      "budget": {
+        "tokens": 64000000,
+        "HTTP": 18000,
+        "embedding_HTTP": 2000
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "C03_C04a",
+      "name": "分类器与固定档及简单公开规则的训练侧复算",
+      "kind": "classifier",
+      "planned_runs": 0,
+      "status": "planned",
+      "budget": {
+        "tokens": 0,
+        "HTTP": 0,
+        "embedding_HTTP": 0
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "C04b",
+      "name": "24题三策略两重复",
+      "kind": "granularity_confirmation",
+      "planned_runs": 144,
+      "status": "planned",
+      "budget": {
+        "tokens": 24000000,
+        "HTTP": 6000,
+        "embedding_HTTP": 600
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "D03a",
+      "name": "八题四臂五重复只选卡",
+      "kind": "q_selection",
+      "planned_runs": 160,
+      "status": "planned",
+      "budget": {
+        "tokens": 8000000,
+        "HTTP": 2000,
+        "embedding_HTTP": 300
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "D03b",
+      "name": "24题四臂两重复冻结旧Q迁移",
+      "kind": "q_compare",
+      "planned_runs": 192,
+      "status": "planned",
+      "budget": {
+        "tokens": 32000000,
+        "HTTP": 8000,
+        "embedding_HTTP": 800
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "B05",
+      "name": "24次共享起点反事实编辑",
+      "kind": "counterfactual",
+      "planned_runs": 24,
+      "status": "planned",
+      "budget": {
+        "tokens": 4000000,
+        "HTTP": 1000,
+        "embedding_HTTP": 100
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "S4",
+      "name": "24题最佳候选与匹配基线两重复",
+      "kind": "validation",
+      "planned_runs": 96,
+      "status": "planned",
+      "budget": {
+        "tokens": 16000000,
+        "HTTP": 4000,
+        "embedding_HTTP": 400
+      },
+      "performance_gate_stops_execution": false
+    },
+    {
+      "id": "CLOSEOUT",
+      "name": "逐包统计、回放和迁移全清单报告",
+      "kind": "report",
+      "planned_runs": 0,
+      "status": "planned",
+      "budget": {
+        "tokens": 0,
+        "HTTP": 0,
+        "embedding_HTTP": 0
+      },
+      "performance_gate_stops_execution": false
+    }
+  ],
+  "new_code_run_count_max": 1376,
+  "selector_only_count": 160,
+  "material_adjustments": {
+    "C02_L4": "If source episodes cannot be recovered, exclude those cards from ALL L0-L4 candidate pools before new selection; never fill with target reference. Preserve full1939 original.",
+    "1348": "Retain original public task and measurements; unresolved public resource-policy ambiguity is reported as a validity stratum, not a reason to discard other tasks or cherry-pick replacements.",
+    "source_views": "Source-only AI partition with exact character-coverage checks; annotation method is recorded; not human retrieval gold labels.",
+    "classifier": "Fit only with genuine v4.1 train-side level outcomes; if labels degenerate use explicit constant classifier baseline, no invented preferred labels."
+  },
+  "excluded_from_fast_migration": [
+    "restart full CLE three rounds",
+    "old v3.2 Dgrow remaining250",
+    "new Q learning",
+    "full298 Q matrix",
+    "unlimited-card ablation",
+    "MASE"
+  ],
+  "external_constraints": {
+    "Base_Plus": "Original validator images still required; record unavailability and keep other packages moving.",
+    "Notion_original_pairs": "Do not invent absent5817 original pair records.",
+    "human_retrieval_gold": "914 AI labels may be analyzed as estimates; never sign human labels on behalf of user."
+  },
+  "automatic_expansion": false,
+  "new_results_must_be_real": true,
+  "Q_interpretation_gate": {
+    "source": "docs/cle_memory_mechanisms_20261023/04_Q接续与执行总规.md",
+    "major_comparisons": [
+      "Q2-Q1",
+      "Q2-Q3"
+    ],
+    "engineering_net_joint_minimum_per_48_pairs": 3,
+    "each_repeat_positive": true,
+    "F_and_S_non_decreasing": true,
+    "verified_rescue_families_minimum": 2,
+    "family_block_permutation": true,
+    "Holm_two_primary_p_max": 0.05,
+    "controls_dispatch": false
+  },
+  "core_phase_mapping": {
+    "D_init": "read-only source library and legal examples; no new distillation",
+    "D_grow": "frozen-memory method development and small local classifier only",
+    "D_gate": "held-out project-internal audit/confirmation, no Q feedback",
+    "Base_Plus": "external final evaluation excluded while original environment absent"
+  },
+  "same_level_policy_outputs": "Exact reuse within task/repeat when C04b/S4 choose identical level; logical planned counts are not extra paid or independent samples."
+}

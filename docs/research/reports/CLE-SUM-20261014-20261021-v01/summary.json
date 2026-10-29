@@ -1,0 +1,39 @@
+{
+  "period": "20261014-20261021",
+  "title": "10月14日-10月21日实验探索总结",
+  "paragraphs": [
+    "本周围绕“给经验打分，能否帮助模型写出正确且安全的代码”开展探索。结果表明，评分能够改变模型选用的经验，扩大反馈范围也让更多经验获得评分，但这些变化没有带来稳定的正确率提升。",
+    "这说明，选到经验只是第一步，关键还在于经验是否适用于当前任务，以及模型能否正确落实。增加经验的使用机会，并不等于增加正确解题的机会。",
+    "下一步将继续检查经验与题目的匹配、代码使用经验的方式，并在完成学习后，通过固定对照检验效果。"
+  ],
+  "question": "经验评分能否帮助模型写出正确且安全的代码？",
+  "cards": [
+    [
+      "经验选择",
+      "评分已改变选择"
+    ],
+    [
+      "反馈范围",
+      "更多经验获得评分"
+    ],
+    [
+      "代码正确率",
+      "未见稳定提升"
+    ]
+  ],
+  "next_figure": "下一步：检查经验适用性、代码落实与学习后的效果",
+  "report_md": "docs/research/reports/CLE-RPT-20261014-20261021-weekly-v06/CLE-RPT-20261014-20261021-weekly-v06.md",
+  "report_docx": "10月14日-10月21日实验探索报告.docx",
+  "evidence": [
+    "docs/research/reports/CLE-RPT-20261014-20261021-weekly-v06/CLE-RPT-20261014-20261021-weekly-v06.md"
+  ],
+  "scope": "10月14日至21日历史周期；保留该周期完成与待做状态，不回填后续成果",
+  "visible_characters_including_figure": 317,
+  "limit": 500,
+  "API_calls": 0,
+  "output_md": "docs\\research\\reports\\CLE-SUM-20261014-20261021-v01\\10月14日-10月21日实验探索总结.md",
+  "output_docx": "docs\\research\\reports\\CLE-SUM-20261014-20261021-v01\\10月14日-10月21日实验探索总结.docx",
+  "full_reports_modified": false,
+  "word_and_markdown_same_text": true,
+  "chart_kind": "qualitative_research_judgment_not_numeric_effect"
+}

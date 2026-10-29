@@ -1,0 +1,73 @@
+{
+  "protocol": "cle-paired-code-footprint-v3-external-reference-forms",
+  "scope": "historical L1 vs Q2, both use memory; not no-memory counterfactual",
+  "tasks": 303,
+  "by_transition": {
+    "loss": {
+      "tasks": 18,
+      "nonempty_parsed_pairs": 17,
+      "external_rebinding_flags": 13,
+      "historically_verified_binding_defects": 13,
+      "mean_statement_change_ratio": 0.7928399214698598
+    },
+    "rescue": {
+      "tasks": 20,
+      "nonempty_parsed_pairs": 19,
+      "external_rebinding_flags": 0,
+      "historically_verified_binding_defects": 0,
+      "mean_statement_change_ratio": 0.8638344584359582
+    },
+    "both_pass": {
+      "tasks": 120,
+      "nonempty_parsed_pairs": 120,
+      "external_rebinding_flags": 0,
+      "historically_verified_binding_defects": 0,
+      "mean_statement_change_ratio": 0.7584578466124055
+    },
+    "both_fail": {
+      "tasks": 145,
+      "nonempty_parsed_pairs": 141,
+      "external_rebinding_flags": 9,
+      "historically_verified_binding_defects": 18,
+      "mean_statement_change_ratio": 0.8273311531202256
+    }
+  },
+  "external_rebinding_flag_ids": [
+    "1299",
+    "1003",
+    "642",
+    "1223",
+    "352",
+    "1230",
+    "148",
+    "442",
+    "150",
+    "446",
+    "1241",
+    "1245",
+    "464",
+    "1387",
+    "1044",
+    "1363",
+    "1364",
+    "487",
+    "488",
+    "652",
+    "664",
+    "670"
+  ],
+  "feature_not_a_defect_ground_truth": true,
+  "formula": "unmatched old plus unmatched new AST statement dumps / total statements; nested parent dumps included",
+  "notion_AST_method_reproduced": false,
+  "threshold_calibration_done": false,
+  "B04_promotion_gate_evaluated": false,
+  "Q_route_enabled": false,
+  "API_calls": 0,
+  "new_generation_scores": 0,
+  "limitations": [
+    "Old/new histories and timing differ.",
+    "Paired code feature needs two available candidates.",
+    "Static binding flags can reflect legitimate edits.",
+    "Missing/invalid code is separate from zero change."
+  ]
+}

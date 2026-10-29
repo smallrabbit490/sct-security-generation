@@ -1,0 +1,66 @@
+{
+  "protocol": "cle-historical-rescue-implementation-review-v1",
+  "historical_delivery_rescues": 20,
+  "both_final_measured_rescues": 19,
+  "old_unmeasured_ids": [
+    "1150"
+  ],
+  "primary_categories": {
+    "external_binding_restored": 7,
+    "query_parser_reimplementation": 1,
+    "residual_external_configuration_defect": 2,
+    "authorization_field_handling": 1,
+    "no_declared_adoption_in_success": 1,
+    "provided_key_used": 1,
+    "technical_delivery_recovery": 1,
+    "arithmetic_rewrite_with_incomplete_workflow": 1,
+    "numeric_grammar_expansion": 1,
+    "record_schema_expansion": 1,
+    "regex_contract_restored_with_new_boundary": 1,
+    "AST_operator_validation_fixed": 1,
+    "isinstance_type_set_bug_fixed": 1
+  },
+  "new_final_no_adoption_ids": [
+    "1113"
+  ],
+  "new_final_incomplete_workflow_ids": [
+    "1158"
+  ],
+  "new_final_adopted_and_workflow_complete": 18,
+  "both_measured_adopted_and_workflow_complete": 17,
+  "old_pipeline_degradation_ids": [
+    "834",
+    "1150",
+    "981",
+    "1174"
+  ],
+  "new_local_diagnostic_executions": 44,
+  "new_local_measured": 44,
+  "diagnostic_kinds": {
+    "public_contract": 21,
+    "template_schema_and_binding": 4,
+    "record_schema_and_binding": 4,
+    "residual_public_binding": 4,
+    "record_schema_sensitivity": 4,
+    "unspecified_boundary_sensitivity": 4,
+    "numeric_grammar_sensitivity": 2,
+    "observed_failure_localization": 1
+  },
+  "saved_public_contracts_equal": 20,
+  "all_new_final_measured_Joint": true,
+  "API_calls": 0,
+  "embedding_calls": 0,
+  "Q_updates": 0,
+  "official_scores_changed": false,
+  "isolated_Q_rescues_identified": null,
+  "causal_Q_gate_evaluated": false,
+  "classifier_trained": false,
+  "new_B_or_C_gate_triggered": false,
+  "localization_check_executions": 1,
+  "new_obligation_paths": 4,
+  "initial_summary_retained": true,
+  "reviewed_residual_defects_unflagged_ids": [
+    "1063",
+    "999"
+  ]
+}

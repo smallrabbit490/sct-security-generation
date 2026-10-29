@@ -1,0 +1,14 @@
+{
+  "pairs": 914,
+  "human_confirmed": 0,
+  "AI_label_counts": {
+    "conditional": 385,
+    "irrelevant": 285,
+    "conflict": 153,
+    "insufficient": 2,
+    "direct": 89
+  },
+  "formal_metrics_gate": false,
+  "AI_columns_hidden_in_blind_export": true,
+  "API_calls": 0
+}

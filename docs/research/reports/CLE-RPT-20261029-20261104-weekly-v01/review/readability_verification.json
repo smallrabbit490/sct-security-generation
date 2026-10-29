@@ -1,0 +1,23 @@
+{
+  "reviewer": "local dsh-tui headless",
+  "session_id": "session-36709579-6a80-43c8-b177-085e528a6148",
+  "tools_called": 0,
+  "network_search_calls": 0,
+  "model_file_read_calls": 0,
+  "input": "review_input.txt",
+  "raw_output": "dsh_readability_original.md",
+  "full_session_export": "dsh_session_full.md",
+  "issue_count": 40,
+  "dispositions": 40,
+  "review_scope": "provided prose, chart captions and data tables; rendered layouts checked by Codex",
+  "usage": [
+    {
+      "inputTokens": 21079,
+      "outputTokens": 61782,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0,
+      "totalTokens": 82861
+    }
+  ],
+  "experiment_calls_in_this_task": 0
+}

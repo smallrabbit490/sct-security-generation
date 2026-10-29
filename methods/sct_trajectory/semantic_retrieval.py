@@ -177,6 +177,10 @@ class EmbeddingClient:
                         usage = payload.get("usage") if isinstance(payload, dict) else None
                         with self._lock:
                             if isinstance(usage, dict):
+                                # C02逐格成本不能把缺字段/非法字段当成免费；已报告合法字段仍累计。
+                                if not all(type(usage.get(k)) is int and usage[k] >= 0
+                                           for k in ('prompt_tokens', 'total_tokens')):
+                                    self._usage['usage_missing_calls'] += 1
                                 for field_name in ("prompt_tokens", "total_tokens"):
                                     value = usage.get(field_name, 0)
                                     if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
@@ -285,7 +289,8 @@ class EmbeddingClient:
                         self._pending.pop(key, None)
                         flight.event.set()
                     self._usage["embedded_texts"] += len(vectors)
-        except Exception as exc:
+        except BaseException as exc:
+            # 请求日志的ReplayStop属于控制异常；也须清理并唤醒共享等待者，原异常继续上抛。
             category = str(exc) if isinstance(exc, EmbeddingError) else "embedding_cache_" + type(exc).__name__
             with self._lock:
                 for key, _, flight in owned:
@@ -293,6 +298,8 @@ class EmbeddingClient:
                         flight.error = category
                         self._pending.pop(key, None)
                         flight.event.set()
+            if not isinstance(exc, Exception):
+                raise
             raise EmbeddingError(category) from None
         for _, flight in waiting:
             if not flight.event.wait(max(0., waiting_deadline - time.monotonic())):
@@ -419,6 +426,13 @@ def semantic_select(task, nodes, requester, embedding_client, limit=3, *,
     try:
         eligible, query, _ = recall_semantic_candidates(task, nodes, embedding_client, 1 if unlimited else limit, trace)
         candidate_ids = trace["candidate_ids"]
+        if callable(candidate_order):
+            # 条件Q只读取当前公开查询、候选相似度与冻结Q/visits；保留原LLM终选。
+            decision = candidate_order(task, trace['scores'], {i: n for i, (n, _) in eligible.items()})
+            if decision['candidate_order'] not in ('similarity', 'q'):
+                raise ValueError('invalid_conditional_Q_route')
+            trace['q_routing'] = decision
+            candidate_order = decision['candidate_order']
         if candidate_order is not None:
             from .memory_q import rank_candidates, rank_coverage_candidates
             if candidate_order not in ("similarity", "q", "coverage"):

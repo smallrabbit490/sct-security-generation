@@ -19,6 +19,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from methods.cle_ablation.runner import run_one, plt_contract
 from methods.direction_screening.protocol import summarize
 from methods.sct_trajectory.memory_q import rank_candidates, update_adopted
+from methods.sct_trajectory.provider_policy import CURRENT_MODEL
 from methods.sct_trajectory.run_artifacts import write_json_atomic as write
 from methods.sct_trajectory.run_branch_gate_study import stratified_tasks, file_digest
 from methods.sct_trajectory.run_memory_q_study import load_inputs, _write_memory
@@ -144,6 +145,7 @@ def main(argv=None):
     parser.add_argument('--shuffle-scope', choices=('global', 'cwe'), default='global',
                         help='Q3置换范围；global保留历史行为，cwe仅在同CWE卡片内置换')
     parser.add_argument('--max-tokens', type=int, default=4096)
+    parser.add_argument('--model', default=CURRENT_MODEL)
     parser.add_argument('--embedding-model', default='text-embedding-3-large')
     parser.add_argument('--embedding-cache', type=Path, default=ROOT/'translation_work/cache/embeddings/cle.sqlite3')
     parser.add_argument('--thinking', choices=('provider_default', 'disabled'), default='provider_default')
@@ -208,7 +210,7 @@ def main(argv=None):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(path, target)
     metadata = {'args': {k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
-                'model': 'deepseek-v3.2', 'temperature': 0, 'workers': args.workers,
+                'model': args.model, 'temperature': 0, 'workers': args.workers,
                 'timeout': 60, 'embedding_timeout': 120, 'validation_timeout': 20,
                 'status': 'running', 'task_ids': [t['index'] for t in tasks],
                 'backend': 'local_python_isolated', 'workflow_arm': 'P7', 'pool': pool,
@@ -227,10 +229,10 @@ def main(argv=None):
     from methods.sct_trajectory.run_closed_loop import _requester, load_key
     from methods.sct_trajectory.semantic_retrieval import EmbeddingClient
     from methods.sct_trajectory.cost_tracker import CostTracker
-    requester = _requester('deepseek-v3.2', 60, max_tokens=args.max_tokens, max_inflight=args.workers,
+    requester = _requester(args.model, 60, max_tokens=args.max_tokens, max_inflight=args.workers,
                            thinking=None if args.thinking == 'provider_default' else args.thinking)
     embedding = EmbeddingClient(model=args.embedding_model, cache_path=args.embedding_cache, key_loader=load_key, timeout=120)
-    tracker, costs, rows, events = CostTracker('deepseek-v3.2'), {}, [], []
+    tracker, costs, rows, events = CostTracker(args.model), {}, [], []
     node_map = {n.invariant_id: n for n in nodes}
     placebo = shuffled_memory(nodes, args.shuffle_seed, args.shuffle_scope) if 'Q3' in args.arms else None
     placebo_before = [n.to_dict() for n in placebo] if placebo is not None else None
@@ -315,7 +317,7 @@ def main(argv=None):
                 frozen = args.out/'frozen/m_star_q.jsonl'
                 _write_memory(frozen, nodes)
                 write(args.out/'calibration.json', {
-                    'model': 'deepseek-v3.2', 'embedding_model': args.embedding_model, 'thinking': args.thinking,
+                    'model': args.model, 'embedding_model': args.embedding_model, 'thinking': args.thinking,
                     'max_tokens': args.max_tokens, 'lambda_q': args.lambda_q, 'alpha': args.alpha, 'delta': delta,
                     'threshold_basis': '80th percentile of D_grow recalled candidates; no D_gate scores',
                     'learning_ids': [t['index'] for t in tasks], 'memory_sha256': file_digest(frozen),

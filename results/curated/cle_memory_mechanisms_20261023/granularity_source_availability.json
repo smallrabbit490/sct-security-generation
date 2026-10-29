@@ -1,0 +1,67 @@
+{
+  "protocol": "cle-L4-source-availability-audit-v1",
+  "source_tasks": 303,
+  "saved_code_slots": 553,
+  "nonempty_generated_codes": 546,
+  "empty_code_slots": [
+    {
+      "source_task_id": "109",
+      "attempt": 0
+    },
+    {
+      "source_task_id": "150",
+      "attempt": 1
+    },
+    {
+      "source_task_id": "831",
+      "attempt": 0
+    },
+    {
+      "source_task_id": "835",
+      "attempt": 0
+    },
+    {
+      "source_task_id": "1130",
+      "attempt": 0
+    },
+    {
+      "source_task_id": "1150",
+      "attempt": 0
+    },
+    {
+      "source_task_id": "1176",
+      "attempt": 1
+    }
+  ],
+  "source_tasks_with_no_generated_code": [
+    "109",
+    "831",
+    "835",
+    "1130",
+    "1150"
+  ],
+  "L4_source_payload_available_cards": 1924,
+  "L4_unavailable_cards": [
+    "blind-179-2446443036555924793",
+    "hint-179-7792227484954356632",
+    "pitfall-179-5059794843119567120",
+    "blind-77-5717743275863718263",
+    "hint-77-9164532300715282658",
+    "pitfall-77-6458955575120344459",
+    "blind-77-8355088390001508794",
+    "hint-77-2971384504734294246",
+    "pitfall-77-2180334272976650406",
+    "blind-94-1142926097139022260",
+    "hint-94-5454844056794895603",
+    "pitfall-94-4333502757583149643",
+    "blind-94-800306583421884687",
+    "hint-94-6761579744562329204",
+    "pitfall-94-1567647395004934490"
+  ],
+  "reference_seed_substitution_for_nonseed": false,
+  "content_review_certified_by_this_audit": false,
+  "API_calls": 0,
+  "Q_updates": 0,
+  "is_experiment_score": false,
+  "correction": "553 counts saved output slots, including 7 empty; nonempty generated code count is 546"
+}

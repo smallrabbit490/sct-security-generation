@@ -1,0 +1,5680 @@
+{
+  "protocol": "cle-weekly-full-requirements-20261027-v1",
+  "pools": {
+    "D_init": [
+      "1258",
+      "1288",
+      "1299",
+      "1303",
+      "1319",
+      "1338",
+      "831",
+      "1350",
+      "1003",
+      "1008",
+      "1216",
+      "1053",
+      "101",
+      "1268",
+      "1324",
+      "1089",
+      "1130",
+      "1173",
+      "1260",
+      "1270",
+      "336",
+      "423",
+      "481",
+      "1320",
+      "1325",
+      "775",
+      "1004",
+      "1009",
+      "1219",
+      "1054",
+      "1090",
+      "1131",
+      "45",
+      "107",
+      "135",
+      "337",
+      "426",
+      "482",
+      "594",
+      "642",
+      "780",
+      "874",
+      "1007",
+      "1010",
+      "1223",
+      "1057",
+      "1097",
+      "1136",
+      "137",
+      "344",
+      "431",
+      "483",
+      "834",
+      "1362",
+      "1018",
+      "1227",
+      "1058",
+      "1107",
+      "1138",
+      "1176",
+      "113",
+      "139",
+      "348",
+      "437",
+      "877",
+      "969",
+      "1020",
+      "1228",
+      "1063",
+      "1111",
+      "1143",
+      "66",
+      "114",
+      "146",
+      "352",
+      "440",
+      "597",
+      "648",
+      "790",
+      "972",
+      "1021",
+      "1230",
+      "1071",
+      "1113",
+      "1145",
+      "116",
+      "148",
+      "354",
+      "442",
+      "486",
+      "795",
+      "840",
+      "973",
+      "1022",
+      "1234",
+      "1072",
+      "1116",
+      "1148",
+      "1185",
+      "120",
+      "150",
+      "355",
+      "446",
+      "884",
+      "975",
+      "1024",
+      "1241",
+      "1073",
+      "1117",
+      "1150",
+      "75",
+      "121",
+      "356",
+      "449",
+      "600",
+      "651",
+      "976",
+      "1025",
+      "1244",
+      "1075",
+      "1123",
+      "1154",
+      "122",
+      "361",
+      "798",
+      "852",
+      "978",
+      "1027",
+      "1245",
+      "1373",
+      "1158",
+      "1191",
+      "124",
+      "168",
+      "363",
+      "888",
+      "979",
+      "1033",
+      "1247",
+      "1374",
+      "1162",
+      "78",
+      "1261",
+      "170",
+      "365",
+      "609",
+      "654",
+      "981",
+      "1034",
+      "1249",
+      "1375",
+      "1378",
+      "1262",
+      "174",
+      "367",
+      "459",
+      "801",
+      "855",
+      "984",
+      "1036",
+      "1250",
+      "1380",
+      "1197",
+      "127",
+      "369",
+      "464",
+      "804",
+      "907",
+      "987",
+      "1037",
+      "1387",
+      "1401",
+      "81",
+      "131",
+      "372",
+      "467",
+      "614",
+      "663",
+      "805",
+      "989",
+      "1040",
+      "373",
+      "620",
+      "819",
+      "867",
+      "990",
+      "1041",
+      "1200",
+      "86",
+      "374",
+      "621",
+      "992",
+      "1042",
+      "88",
+      "377",
+      "669",
+      "996",
+      "1043",
+      "870",
+      "999",
+      "1044",
+      "1382",
+      "624",
+      "1049",
+      "678",
+      "1051",
+      "679",
+      "1363",
+      "633",
+      "680",
+      "1364",
+      "1365",
+      "832",
+      "1351",
+      "1174",
+      "833",
+      "1175",
+      "46",
+      "595",
+      "643",
+      "781",
+      "876",
+      "47",
+      "484",
+      "596",
+      "644",
+      "782",
+      "835",
+      "1177",
+      "485",
+      "836",
+      "878",
+      "1178",
+      "67",
+      "598",
+      "649",
+      "879",
+      "68",
+      "487",
+      "599",
+      "650",
+      "796",
+      "841",
+      "1186",
+      "151",
+      "488",
+      "797",
+      "842",
+      "885",
+      "1187",
+      "152",
+      "601",
+      "652",
+      "887",
+      "77",
+      "602",
+      "653",
+      "799",
+      "853",
+      "1192",
+      "800",
+      "854",
+      "889",
+      "1193",
+      "79",
+      "610",
+      "655",
+      "890",
+      "80",
+      "175",
+      "611",
+      "656",
+      "856",
+      "1198",
+      "176",
+      "857",
+      "910",
+      "1199",
+      "664",
+      "665",
+      "820",
+      "868",
+      "1201",
+      "622",
+      "821",
+      "869",
+      "1202",
+      "623",
+      "670",
+      "671",
+      "871",
+      "625",
+      "872",
+      "626",
+      "634",
+      "635",
+      "76",
+      "82",
+      "105",
+      "109",
+      "451",
+      "453",
+      "456"
+    ],
+    "D_grow": [
+      "1394",
+      "102",
+      "136",
+      "1289",
+      "1298",
+      "1304",
+      "1321",
+      "1326",
+      "1337",
+      "1344",
+      "1348",
+      "1002",
+      "1011",
+      "1217",
+      "1059",
+      "1080",
+      "1127",
+      "1182",
+      "51",
+      "104",
+      "138",
+      "1290",
+      "1300",
+      "1305",
+      "619",
+      "1399",
+      "1339",
+      "1346",
+      "1349",
+      "1005",
+      "1012",
+      "1218",
+      "1060",
+      "1081",
+      "1128",
+      "1183",
+      "52",
+      "108",
+      "144",
+      "1291",
+      "1301",
+      "468",
+      "630",
+      "675",
+      "1342",
+      "1391",
+      "881",
+      "1358",
+      "1014",
+      "1220",
+      "1062",
+      "1083",
+      "1133",
+      "1184",
+      "53",
+      "110",
+      "149",
+      "1292",
+      "1302",
+      "469",
+      "631",
+      "676",
+      "774",
+      "828",
+      "882",
+      "1359",
+      "1019",
+      "1221",
+      "1064",
+      "1084",
+      "1134",
+      "1188",
+      "69",
+      "111",
+      "155",
+      "333",
+      "425",
+      "470",
+      "632",
+      "677",
+      "776",
+      "829",
+      "883",
+      "963",
+      "1023",
+      "1222",
+      "1068",
+      "1085",
+      "1135",
+      "1189",
+      "70",
+      "115",
+      "156",
+      "334",
+      "429",
+      "474",
+      "636",
+      "681",
+      "784",
+      "830",
+      "891",
+      "965",
+      "1026",
+      "1224",
+      "1069",
+      "1087",
+      "1137",
+      "1190",
+      "71",
+      "118",
+      "157",
+      "339",
+      "432",
+      "475",
+      "637",
+      "682",
+      "789",
+      "846",
+      "892",
+      "967",
+      "1028",
+      "1226",
+      "1078",
+      "1088",
+      "1139",
+      "1194",
+      "83",
+      "123",
+      "158",
+      "341",
+      "433",
+      "476",
+      "638",
+      "683",
+      "803",
+      "847",
+      "893",
+      "970",
+      "1032",
+      "1231",
+      "1079",
+      "1091",
+      "1146",
+      "1195",
+      "84",
+      "1263",
+      "163",
+      "346",
+      "434",
+      "477",
+      "806",
+      "848",
+      "898",
+      "974",
+      "1038",
+      "1233",
+      "1369",
+      "1093",
+      "1152",
+      "1196",
+      "85",
+      "1264",
+      "167",
+      "350",
+      "435",
+      "478",
+      "807",
+      "861",
+      "899",
+      "977",
+      "1039",
+      "1237",
+      "1096",
+      "1153",
+      "1206",
+      "132",
+      "173",
+      "357",
+      "436",
+      "479",
+      "809",
+      "862",
+      "900",
+      "980",
+      "1045",
+      "1242",
+      "1098",
+      "1157",
+      "1207",
+      "134",
+      "177",
+      "358",
+      "441",
+      "480",
+      "813",
+      "863",
+      "904",
+      "982",
+      "1047",
+      "1243",
+      "1099",
+      "1159",
+      "1208",
+      "93",
+      "178",
+      "360",
+      "444",
+      "495",
+      "814",
+      "905",
+      "983",
+      "1048",
+      "1246",
+      "1100",
+      "1160",
+      "1381",
+      "94",
+      "179",
+      "366",
+      "445",
+      "496",
+      "815",
+      "906",
+      "985",
+      "1052",
+      "1248",
+      "1102",
+      "1161",
+      "1384",
+      "95",
+      "368",
+      "457",
+      "497",
+      "816",
+      "909",
+      "986",
+      "1367",
+      "1386",
+      "1103",
+      "1168",
+      "375",
+      "460",
+      "501",
+      "817",
+      "911",
+      "991",
+      "1404",
+      "1389",
+      "1104",
+      "1169",
+      "376",
+      "461",
+      "502",
+      "818",
+      "912",
+      "994",
+      "1390",
+      "1112",
+      "1379",
+      "465",
+      "503",
+      "913",
+      "998",
+      "1114",
+      "466",
+      "914",
+      "1115",
+      "917",
+      "1120",
+      "1122",
+      "1371",
+      "1372",
+      "1405"
+    ],
+    "D_gate": [
+      "1256",
+      "100",
+      "1266",
+      "335",
+      "1409",
+      "1306",
+      "1317",
+      "1322",
+      "1341",
+      "1343",
+      "1352",
+      "1000",
+      "1013",
+      "1215",
+      "1055",
+      "1082",
+      "1125",
+      "1170",
+      "1259",
+      "103",
+      "1267",
+      "338",
+      "424",
+      "471",
+      "1318",
+      "1323",
+      "777",
+      "1345",
+      "1397",
+      "1001",
+      "1015",
+      "1225",
+      "1056",
+      "1086",
+      "1126",
+      "1171",
+      "48",
+      "106",
+      "1269",
+      "340",
+      "427",
+      "472",
+      "1402",
+      "639",
+      "778",
+      "1347",
+      "873",
+      "1006",
+      "1016",
+      "1229",
+      "1061",
+      "1092",
+      "1129",
+      "1172",
+      "49",
+      "112",
+      "1395",
+      "342",
+      "428",
+      "473",
+      "603",
+      "640",
+      "779",
+      "837",
+      "875",
+      "1360",
+      "1017",
+      "1232",
+      "1065",
+      "1094",
+      "1132",
+      "1179",
+      "50",
+      "117",
+      "140",
+      "343",
+      "430",
+      "489",
+      "604",
+      "641",
+      "783",
+      "838",
+      "880",
+      "1361",
+      "1029",
+      "1235",
+      "1066",
+      "1095",
+      "1140",
+      "1180",
+      "63",
+      "119",
+      "141",
+      "345",
+      "438",
+      "490",
+      "605",
+      "645",
+      "785",
+      "839",
+      "886",
+      "1400",
+      "1030",
+      "1236",
+      "1067",
+      "1101",
+      "1141",
+      "1181",
+      "64",
+      "125",
+      "142",
+      "347",
+      "439",
+      "491",
+      "606",
+      "646",
+      "786",
+      "843",
+      "894",
+      "964",
+      "1031",
+      "1238",
+      "1070",
+      "1105",
+      "1142",
+      "1203",
+      "65",
+      "126",
+      "143",
+      "349",
+      "443",
+      "492",
+      "607",
+      "647",
+      "787",
+      "844",
+      "895",
+      "966",
+      "1035",
+      "1239",
+      "1074",
+      "1106",
+      "1144",
+      "1204",
+      "72",
+      "1265",
+      "145",
+      "351",
+      "447",
+      "493",
+      "608",
+      "657",
+      "788",
+      "845",
+      "896",
+      "968",
+      "1046",
+      "1240",
+      "1076",
+      "1108",
+      "1147",
+      "1205",
+      "73",
+      "128",
+      "147",
+      "353",
+      "448",
+      "494",
+      "612",
+      "658",
+      "791",
+      "849",
+      "897",
+      "971",
+      "1050",
+      "1388",
+      "1077",
+      "1109",
+      "1149",
+      "1209",
+      "74",
+      "129",
+      "153",
+      "359",
+      "450",
+      "498",
+      "613",
+      "659",
+      "792",
+      "850",
+      "901",
+      "988",
+      "1366",
+      "1368",
+      "1110",
+      "1151",
+      "1210",
+      "87",
+      "130",
+      "154",
+      "362",
+      "452",
+      "499",
+      "615",
+      "660",
+      "793",
+      "851",
+      "902",
+      "993",
+      "1370",
+      "1118",
+      "1155",
+      "1211",
+      "89",
+      "133",
+      "159",
+      "364",
+      "454",
+      "500",
+      "616",
+      "661",
+      "794",
+      "858",
+      "903",
+      "995",
+      "1393",
+      "1119",
+      "1156",
+      "1212",
+      "1392",
+      "160",
+      "370",
+      "455",
+      "617",
+      "662",
+      "802",
+      "859",
+      "908",
+      "997",
+      "1121",
+      "1163",
+      "1213",
+      "90",
+      "161",
+      "371",
+      "458",
+      "618",
+      "666",
+      "808",
+      "860",
+      "915",
+      "1124",
+      "1164",
+      "1214",
+      "91",
+      "162",
+      "462",
+      "627",
+      "667",
+      "810",
+      "864",
+      "916",
+      "1165",
+      "1383",
+      "92",
+      "164",
+      "463",
+      "628",
+      "668",
+      "811",
+      "865",
+      "1166",
+      "1385",
+      "96",
+      "165",
+      "629",
+      "672",
+      "812",
+      "866",
+      "1167",
+      "1410",
+      "97",
+      "166",
+      "673",
+      "822",
+      "1376",
+      "98",
+      "169",
+      "674",
+      "823",
+      "1377",
+      "99",
+      "171",
+      "824",
+      "172",
+      "825",
+      "826",
+      "827"
+    ]
+  },
+  "family_overlap": {
+    "D_init__D_grow": [],
+    "D_init__D_gate": [],
+    "D_grow__D_gate": []
+  },
+  "task_overlap": {
+    "D_init__D_grow": [],
+    "D_init__D_gate": [],
+    "D_grow__D_gate": []
+  },
+  "task_sources": {
+    "1258": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1288": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1299": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1303": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1319": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1338": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "831": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1350": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1003": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1008": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1216": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1053": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "101": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1268": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1324": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1089": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1130": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1173": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1260": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1270": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "336": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "423": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "481": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1320": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1325": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "775": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1004": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1009": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1219": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1054": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1090": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1131": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "45": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "107": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "135": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "337": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "426": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "482": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "594": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "642": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "780": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "874": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1007": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1010": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1223": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1057": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1097": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1136": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "137": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "344": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "431": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "483": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "834": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1362": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1018": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1227": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1058": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1107": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1138": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1176": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "113": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "139": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "348": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "437": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "877": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "969": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1020": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1228": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1063": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1111": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1143": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "66": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "114": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "146": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "352": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "440": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "597": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "648": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "790": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "972": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1021": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1230": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1071": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1113": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1145": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "116": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "148": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "354": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "442": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "486": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "795": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "840": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "973": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1022": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1234": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1072": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1116": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1148": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1185": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "120": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "150": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "355": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "446": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "884": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "975": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1024": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1241": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1073": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1117": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1150": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "75": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "121": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "356": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "449": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "600": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "651": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "976": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1025": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1244": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1075": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1123": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1154": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "122": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "361": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "798": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "852": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "978": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1027": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1245": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1373": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1158": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1191": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "124": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "168": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "363": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "888": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "979": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1033": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1247": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1374": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1162": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "78": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1261": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "170": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "365": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "609": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "654": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "981": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1034": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1249": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1375": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1378": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1262": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "174": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "367": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "459": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "801": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "855": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "984": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1036": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1250": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1380": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1197": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "127": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "369": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "464": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "804": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "907": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "987": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1037": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1387": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1401": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "81": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "131": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "372": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "467": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "614": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "663": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "805": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "989": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1040": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "373": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "620": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "819": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "867": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "990": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1041": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1200": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "86": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "374": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "621": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "992": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1042": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "88": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "377": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "669": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "996": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1043": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "870": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "999": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1044": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1382": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "624": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1049": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "678": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1051": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "679": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1363": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "633": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "680": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1364": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1365": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "832": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1351": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1174": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "833": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1175": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "46": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "595": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "643": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "781": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "876": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "47": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "484": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "596": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "644": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "782": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "835": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1177": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "485": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "836": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "878": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1178": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "67": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "598": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "649": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "879": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "68": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "487": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "599": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "650": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "796": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "841": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1186": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "151": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "488": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "797": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "842": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "885": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1187": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "152": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "601": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "652": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "887": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "77": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "602": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "653": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "799": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "853": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1192": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "800": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "854": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "889": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1193": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "79": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "610": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "655": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "890": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "80": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "175": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "611": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "656": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "856": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1198": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "176": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "857": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "910": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1199": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "664": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "665": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "820": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "868": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1201": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "622": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "821": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "869": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1202": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "623": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "670": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "671": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "871": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "625": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "872": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "626": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "634": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "635": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "76": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "82": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "105": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "109": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "451": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "453": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "456": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dinit_full_learning_20261020_v4b\\tasks.json"
+    ],
+    "1394": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "102": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "136": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1289": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1298": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1304": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1321": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1326": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1337": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1344": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1348": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1002": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1011": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1217": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1059": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1080": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1127": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1182": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "51": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "104": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "138": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1290": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1300": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1305": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "619": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1399": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1339": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1346": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1349": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1005": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1012": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1218": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1060": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1081": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1128": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1183": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "52": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "108": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "144": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1291": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1301": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "468": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "630": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "675": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1342": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1391": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "881": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1358": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1014": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1220": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1062": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1083": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1133": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1184": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "53": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "110": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "149": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1292": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1302": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "469": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "631": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "676": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "774": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "828": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "882": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1359": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1019": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1221": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1064": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1084": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1134": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1188": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "69": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "111": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "155": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "333": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "425": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "470": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "632": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "677": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "776": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "829": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "883": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "963": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1023": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1222": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1068": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1085": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1135": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1189": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "70": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "115": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "156": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "334": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "429": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "474": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "636": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "681": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "784": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "830": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "891": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "965": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1026": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1224": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1069": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1087": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1137": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1190": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "71": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "118": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "157": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "339": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "432": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "475": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "637": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "682": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "789": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "846": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "892": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "967": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1028": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1226": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1078": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1088": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1139": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1194": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "83": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "123": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "158": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "341": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "433": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "476": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "638": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "683": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "803": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "847": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "893": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "970": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1032": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1231": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1079": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1091": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1146": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1195": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "84": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1263": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "163": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "346": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "434": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "477": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "806": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "848": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "898": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "974": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1038": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1233": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1369": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1093": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1152": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1196": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "85": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1264": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "167": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "350": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "435": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "478": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "807": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "861": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "899": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "977": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1039": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1237": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1096": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1153": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1206": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "132": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "173": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "357": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "436": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "479": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "809": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "862": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "900": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "980": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1045": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1242": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1098": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1157": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1207": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "134": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "177": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "358": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "441": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "480": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "813": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "863": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "904": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "982": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1047": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1243": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1099": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1159": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1208": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "93": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "178": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "360": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "444": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "495": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "814": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "905": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "983": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1048": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1246": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1100": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1160": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1381": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "94": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "179": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "366": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "445": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "496": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "815": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "906": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "985": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1052": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1248": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1102": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1161": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1384": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "95": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "368": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "457": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "497": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "816": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "909": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "986": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1367": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1386": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1103": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1168": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "375": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "460": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "501": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "817": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "911": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "991": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1404": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1389": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1104": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1169": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "376": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "461": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "502": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "818": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "912": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "994": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1390": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1112": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1379": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "465": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "503": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "913": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "998": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1114": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "466": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "914": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1115": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "917": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1120": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1122": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1371": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1372": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1405": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "configs\\cle_dgrow_url_repair_20261019\\repaired_tasks.json"
+    ],
+    "1256": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "100": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1266": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "335": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1409": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1306": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1317": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1322": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1341": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1343": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1352": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1000": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1013": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1215": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1055": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1082": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1125": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1170": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1259": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "103": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1267": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "338": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "424": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "471": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1318": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1323": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "777": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1345": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1397": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1001": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1015": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1225": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1056": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1086": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1126": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1171": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "48": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "106": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1269": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "340": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "427": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "472": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1402": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "639": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "778": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1347": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "873": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1006": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1016": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1229": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1061": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1092": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1129": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1172": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "49": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "112": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1395": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "342": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "428": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "473": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "603": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "640": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "779": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "837": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "875": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "1360": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1017": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1232": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1065": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1094": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1132": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1179": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "50": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "117": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "140": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "343": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "430": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "489": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "604": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "641": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "783": [
+      "original_PLT_and_existing_public_contract_overrides",
+      "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+    ],
+    "838": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "880": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1361": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1029": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1235": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1066": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1095": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1140": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1180": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "63": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "119": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "141": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "345": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "438": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "490": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "605": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "645": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "785": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "839": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "886": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1400": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1030": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1236": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1067": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1101": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1141": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1181": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "64": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "125": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "142": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "347": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "439": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "491": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "606": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "646": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "786": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "843": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "894": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "964": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1031": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1238": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1070": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1105": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1142": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1203": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "65": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "126": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "143": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "349": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "443": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "492": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "607": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "647": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "787": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "844": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "895": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "966": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1035": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1239": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1074": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1106": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1144": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1204": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "72": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1265": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "145": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "351": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "447": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "493": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "608": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "657": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "788": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "845": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "896": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "968": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1046": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1240": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1076": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1108": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1147": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1205": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "73": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "128": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "147": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "353": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "448": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "494": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "612": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "658": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "791": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "849": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "897": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "971": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1050": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1388": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1077": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1109": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1149": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1209": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "74": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "129": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "153": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "359": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "450": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "498": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "613": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "659": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "792": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "850": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "901": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "988": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1366": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1368": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1110": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1151": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1210": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "87": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "130": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "154": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "362": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "452": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "499": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "615": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "660": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "793": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "851": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "902": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "993": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1370": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1118": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1155": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1211": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "89": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "133": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "159": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "364": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "454": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "500": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "616": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "661": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "794": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "858": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "903": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "995": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1393": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1119": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1156": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1212": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1392": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "160": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "370": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "455": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "617": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "662": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "802": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "859": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "908": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "997": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1121": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1163": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1213": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "90": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "161": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "371": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "458": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "618": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "666": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "808": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "860": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "915": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1124": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1164": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1214": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "91": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "162": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "462": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "627": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "667": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "810": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "864": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "916": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1165": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1383": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "92": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "164": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "463": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "628": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "668": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "811": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "865": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1166": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1385": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "96": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "165": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "629": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "672": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "812": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "866": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1167": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1410": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "97": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "166": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "673": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "822": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1376": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "98": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "169": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "674": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "823": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "1377": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "99": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "171": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "824": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "172": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "825": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "826": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ],
+    "827": [
+      "original_PLT_and_existing_public_contract_overrides"
+    ]
+  },
+  "family_by_task": {
+    "1258": "19e7fa87a01d",
+    "1288": "b1811164f7de",
+    "1299": "91421efc45a3",
+    "1303": "240f45dd9159",
+    "1319": "4d3ee957bdfa",
+    "1338": "74597a7be2b8",
+    "831": "a75b7241dcda",
+    "1350": "a567bd506ace",
+    "1003": "b8891a885e22",
+    "1008": "ca9c1ef5cb1f",
+    "1216": "4450eb28f932",
+    "1053": "da8112acfd9f",
+    "101": "42746763a08e",
+    "1268": "e282cc258b36",
+    "1324": "a63f97975b88",
+    "1089": "412aa01cba1e",
+    "1130": "96d23faca2db",
+    "1173": "d303ac21177a",
+    "1260": "f6a2ea8d65db",
+    "1270": "71981e31bda6",
+    "336": "0d45abdda5e9",
+    "423": "49ab5d84588c",
+    "481": "a84a552c8f29",
+    "1320": "f33c1f1d608f",
+    "1325": "65325f479a7e",
+    "775": "bf4acf2947af",
+    "1004": "d08cced3916b",
+    "1009": "1f59b43b3cb0",
+    "1219": "52a2a70018d9",
+    "1054": "b1f0fc77e903",
+    "1090": "46fc4f820f4e",
+    "1131": "b6509ece3013",
+    "45": "eee82387ae89",
+    "107": "c51270b2626b",
+    "135": "c18d2c3035e5",
+    "337": "76526ed7e4c1",
+    "426": "353ee24ec07c",
+    "482": "e51e1f981952",
+    "594": "0c3f1b6e9c82",
+    "642": "846a3996759b",
+    "780": "6880cc901434",
+    "874": "625d18e60e11",
+    "1007": "66fd03085bb2",
+    "1010": "e69881bb7432",
+    "1223": "e619ce6ba66c",
+    "1057": "fd4a0f2d7c30",
+    "1097": "434adecfff3c",
+    "1136": "9e631a693afd",
+    "137": "2027e7307904",
+    "344": "dbfa2eea7045",
+    "431": "e349f622c6d3",
+    "483": "fb2557acb2a8",
+    "834": "3fb60898b5a6",
+    "1362": "8558dac07cde",
+    "1018": "31429830735f",
+    "1227": "24a6543add06",
+    "1058": "57f81cc5b8bf",
+    "1107": "ef50f318a969",
+    "1138": "055defa06bf2",
+    "1176": "9afc0708b75a",
+    "113": "cbf03b4bea88",
+    "139": "bc5766947204",
+    "348": "0bf0dff0f83f",
+    "437": "862c2ee3a805",
+    "877": "aa6b00f2c702",
+    "969": "c68cdbf12064",
+    "1020": "1c5ff22f1289",
+    "1228": "5bef8b6a51ab",
+    "1063": "f89cbf24f300",
+    "1111": "81cdaa957a56",
+    "1143": "15d1d66ae6f3",
+    "66": "3e80bb0f39a0",
+    "114": "1ab1dc7b3b3a",
+    "146": "5a8d085433af",
+    "352": "6e242197f629",
+    "440": "694602f580f9",
+    "597": "386003a008e5",
+    "648": "f1a295572f9d",
+    "790": "3a91f0e18aca",
+    "972": "9bd647e563b8",
+    "1021": "a20306ea7d4b",
+    "1230": "0ec3b26431db",
+    "1071": "6f19c6b6dd78",
+    "1113": "2674ec4a44f3",
+    "1145": "70089e5c7aec",
+    "116": "5de702a7429d",
+    "148": "64be938e89a0",
+    "354": "aa38daf2e200",
+    "442": "5b7704eee9cb",
+    "486": "2c9e0cc3f66f",
+    "795": "965caf4a4e69",
+    "840": "f5b20eaecd81",
+    "973": "e0d61b6d5420",
+    "1022": "b3fa21a554ee",
+    "1234": "acb3a530e0b5",
+    "1072": "723db5fcae31",
+    "1116": "b51dc9061a19",
+    "1148": "fbf0a98c92ee",
+    "1185": "593db185dfe0",
+    "120": "169eaff17e7d",
+    "150": "fdb0e9b09089",
+    "355": "4fcad70526ac",
+    "446": "ad443859484d",
+    "884": "608db806f245",
+    "975": "54f48784f0c7",
+    "1024": "98b544a0a8d0",
+    "1241": "9cb97d7a2381",
+    "1073": "76ae8a2d4738",
+    "1117": "545be5bdd896",
+    "1150": "634efdb58c78",
+    "75": "7bd2304d926b",
+    "121": "3ee72226446f",
+    "356": "e711eef9a5c8",
+    "449": "450cd56d6dfb",
+    "600": "d922af748fe9",
+    "651": "8969a4389110",
+    "976": "dcd4b24c95d0",
+    "1025": "ccc79e651fc2",
+    "1244": "12e86a21c923",
+    "1075": "bb6961b35fa0",
+    "1123": "3bd31b40db32",
+    "1154": "860050d3d78a",
+    "122": "79d9fca44924",
+    "361": "97bc946e7b96",
+    "798": "001a27498c0e",
+    "852": "3c84bf094e1d",
+    "978": "2cfe9d66d118",
+    "1027": "b6a04223f093",
+    "1245": "1871db569b4c",
+    "1373": "f77188b86c12",
+    "1158": "c45cdec3016c",
+    "1191": "f3d4d7a49f99",
+    "124": "887d35b12bde",
+    "168": "72edf3368140",
+    "363": "d201e0bbe5c0",
+    "888": "935e08fac959",
+    "979": "48ad23189f5b",
+    "1033": "8fd1c2bc7b73",
+    "1247": "e16b3d1f2333",
+    "1374": "cfd6d46fe31e",
+    "1162": "4e3f8547d488",
+    "78": "06b6f0713a53",
+    "1261": "bb356d0dd312",
+    "170": "2234d26e4c54",
+    "365": "307c53aebe4a",
+    "609": "5f4e93c4e2d6",
+    "654": "3a187b544b93",
+    "981": "247f5b560c4a",
+    "1034": "28e2f7301f15",
+    "1249": "9481f2bd06ec",
+    "1375": "ab9e475a1161",
+    "1378": "88372cdf14a5",
+    "1262": "2085bad3e591",
+    "174": "ff2d71add24d",
+    "367": "9d533da89f60",
+    "459": "26fedbb8a8f8",
+    "801": "781eba4de215",
+    "855": "e7a41dc8a7fb",
+    "984": "d4de8c8dcc3f",
+    "1036": "a39cda91d0b8",
+    "1250": "0dfcd8d747cf",
+    "1380": "2166d66475d2",
+    "1197": "4ba186b210c5",
+    "127": "14cd13601b8a",
+    "369": "126a6d599ea8",
+    "464": "c83ede8f86d8",
+    "804": "509a1773add9",
+    "907": "6c037ecb922f",
+    "987": "a101c9e1e155",
+    "1037": "8df9e9390a75",
+    "1387": "7c9e33969eba",
+    "1401": "d0d8257f7689",
+    "81": "33a4347d8a9a",
+    "131": "89f78a73b22c",
+    "372": "69fc42467897",
+    "467": "eaeb299d9f33",
+    "614": "07cd52b0e959",
+    "663": "b7701062bd5b",
+    "805": "d766ef14ac09",
+    "989": "cf2b75b4672e",
+    "1040": "ec88e08286f4",
+    "373": "b7cb522415ee",
+    "620": "1112d0526e1a",
+    "819": "027384703a40",
+    "867": "f02a49b0b230",
+    "990": "7910de404900",
+    "1041": "17db4be66c3f",
+    "1200": "82fadf221458",
+    "86": "26e8bd870a46",
+    "374": "ea0dae4c0b8e",
+    "621": "375934a2a12d",
+    "992": "6148ea4c6306",
+    "1042": "8ce9694a69bc",
+    "88": "2ba22cb7334b",
+    "377": "f273f3391bae",
+    "669": "7faf82503dd7",
+    "996": "22a95591dc91",
+    "1043": "3d80dfdec0bb",
+    "870": "cdb130486d9e",
+    "999": "0aa59b2aaabc",
+    "1044": "ce7ee5d34cee",
+    "1382": "e42757de8ef0",
+    "624": "9a336dabcd3a",
+    "1049": "2a04af2656e5",
+    "678": "af247e493690",
+    "1051": "087b52f2ae7e",
+    "679": "7ab1fcad03f6",
+    "1363": "2da802e9a8aa",
+    "633": "ce269b03268d",
+    "680": "ed64e4bf6ee5",
+    "1364": "dfa05de15f87",
+    "1365": "3b15525c3dc7",
+    "832": "a75b7241dcda",
+    "1351": "a567bd506ace",
+    "1174": "d303ac21177a",
+    "833": "a75b7241dcda",
+    "1175": "d303ac21177a",
+    "46": "eee82387ae89",
+    "595": "0c3f1b6e9c82",
+    "643": "846a3996759b",
+    "781": "6880cc901434",
+    "876": "a567bd506ace",
+    "47": "eee82387ae89",
+    "484": "fb2557acb2a8",
+    "596": "0c3f1b6e9c82",
+    "644": "846a3996759b",
+    "782": "6880cc901434",
+    "835": "3fb60898b5a6",
+    "1177": "9afc0708b75a",
+    "485": "fb2557acb2a8",
+    "836": "3fb60898b5a6",
+    "878": "aa6b00f2c702",
+    "1178": "9afc0708b75a",
+    "67": "3e80bb0f39a0",
+    "598": "386003a008e5",
+    "649": "f1a295572f9d",
+    "879": "aa6b00f2c702",
+    "68": "3e80bb0f39a0",
+    "487": "2c9e0cc3f66f",
+    "599": "386003a008e5",
+    "650": "f1a295572f9d",
+    "796": "965caf4a4e69",
+    "841": "f5b20eaecd81",
+    "1186": "593db185dfe0",
+    "151": "fdb0e9b09089",
+    "488": "2c9e0cc3f66f",
+    "797": "965caf4a4e69",
+    "842": "f5b20eaecd81",
+    "885": "608db806f245",
+    "1187": "593db185dfe0",
+    "152": "fdb0e9b09089",
+    "601": "d922af748fe9",
+    "652": "8969a4389110",
+    "887": "608db806f245",
+    "77": "7bd2304d926b",
+    "602": "d922af748fe9",
+    "653": "8969a4389110",
+    "799": "001a27498c0e",
+    "853": "3c84bf094e1d",
+    "1192": "f3d4d7a49f99",
+    "800": "001a27498c0e",
+    "854": "3c84bf094e1d",
+    "889": "935e08fac959",
+    "1193": "f3d4d7a49f99",
+    "79": "06b6f0713a53",
+    "610": "5f4e93c4e2d6",
+    "655": "3a187b544b93",
+    "890": "935e08fac959",
+    "80": "06b6f0713a53",
+    "175": "ff2d71add24d",
+    "611": "5f4e93c4e2d6",
+    "656": "3a187b544b93",
+    "856": "e7a41dc8a7fb",
+    "1198": "4ba186b210c5",
+    "176": "ff2d71add24d",
+    "857": "e7a41dc8a7fb",
+    "910": "6c037ecb922f",
+    "1199": "4ba186b210c5",
+    "664": "b7701062bd5b",
+    "665": "b7701062bd5b",
+    "820": "027384703a40",
+    "868": "f02a49b0b230",
+    "1201": "82fadf221458",
+    "622": "375934a2a12d",
+    "821": "027384703a40",
+    "869": "f02a49b0b230",
+    "1202": "82fadf221458",
+    "623": "375934a2a12d",
+    "670": "7faf82503dd7",
+    "671": "7faf82503dd7",
+    "871": "cdb130486d9e",
+    "625": "9a336dabcd3a",
+    "872": "cdb130486d9e",
+    "626": "9a336dabcd3a",
+    "634": "ce269b03268d",
+    "635": "ce269b03268d",
+    "76": "7bd2304d926b",
+    "82": "33a4347d8a9a",
+    "105": "c5db424ace81",
+    "109": "8b8e3c8581a7",
+    "451": "0b8278609f9b",
+    "453": "41fc34a2f456",
+    "456": "f283066d3145",
+    "1394": "5311715b9c8c",
+    "102": "41b75c30162b",
+    "136": "26e9e66798f4",
+    "1289": "d2827522f70f",
+    "1298": "64c183a947f4",
+    "1304": "22bbefde6332",
+    "1321": "7677fd267082",
+    "1326": "d014cc829864",
+    "1337": "66163c87f907",
+    "1344": "cdb834680eb8",
+    "1348": "f9981582e237",
+    "1002": "4b14aeda782f",
+    "1011": "bb5c1883becc",
+    "1217": "32922faf57e5",
+    "1059": "295c4c539986",
+    "1080": "98fff7e31c22",
+    "1127": "12a428ed1b37",
+    "1182": "1b3435917851",
+    "51": "97568f7c3ab1",
+    "104": "2a2bc9dcbf55",
+    "138": "bbcf7275840e",
+    "1290": "bf50a27a46ed",
+    "1300": "d0986563f1d6",
+    "1305": "9ded89e32dec",
+    "619": "24aeb959f350",
+    "1399": "1593d4234d4e",
+    "1339": "0c5cbe6aa153",
+    "1346": "1a1d1e4238e6",
+    "1349": "f9981582e237",
+    "1005": "89779d5b2741",
+    "1012": "cec457a9d10a",
+    "1218": "daeacd356a85",
+    "1060": "0d4b62501ff2",
+    "1081": "e69fa5595eb6",
+    "1128": "cb08416449ab",
+    "1183": "1b3435917851",
+    "52": "97568f7c3ab1",
+    "108": "5f56787cfcbe",
+    "144": "068b85771bc3",
+    "1291": "b75fc01aa11a",
+    "1301": "a1357c38b620",
+    "468": "8e45e94fce9b",
+    "630": "79f90b4bc71c",
+    "675": "63c142375d28",
+    "1342": "a22c3c13b7c5",
+    "1391": "420b1636c2cd",
+    "881": "0bb1481ade78",
+    "1358": "792095e43cd0",
+    "1014": "6a3d2c951305",
+    "1220": "3cb3820aec99",
+    "1062": "a896cada1f98",
+    "1083": "072dcba32498",
+    "1133": "59cadc20bc3a",
+    "1184": "1b3435917851",
+    "53": "97568f7c3ab1",
+    "110": "8604d9dbabdd",
+    "149": "b1319639d07a",
+    "1292": "fe64dd59b605",
+    "1302": "d19df64ce132",
+    "469": "8e45e94fce9b",
+    "631": "79f90b4bc71c",
+    "676": "63c142375d28",
+    "774": "08aad092c2b2",
+    "828": "6f5f905886fe",
+    "882": "0bb1481ade78",
+    "1359": "b88d0e43b990",
+    "1019": "51da7a4bf431",
+    "1221": "88576b2abce9",
+    "1064": "3ef45078d6da",
+    "1084": "22674aca438b",
+    "1134": "e4acf979b372",
+    "1188": "dfee4aed0104",
+    "69": "72203a681f20",
+    "111": "1f75a2ecc266",
+    "155": "fc20b1b8149b",
+    "333": "acbf2abc2ae0",
+    "425": "c62e5232340e",
+    "470": "8e45e94fce9b",
+    "632": "79f90b4bc71c",
+    "677": "63c142375d28",
+    "776": "0404514f31d4",
+    "829": "6f5f905886fe",
+    "883": "0bb1481ade78",
+    "963": "247fd0adfff2",
+    "1023": "6272044fa239",
+    "1222": "3e850301dc50",
+    "1068": "f2f7791aab7a",
+    "1085": "f278dba23af8",
+    "1135": "f374ee63b3ed",
+    "1189": "dfee4aed0104",
+    "70": "72203a681f20",
+    "115": "f85dd9039c30",
+    "156": "9f77b0b03bb0",
+    "334": "47a7cd96960e",
+    "429": "e3db4f29a78b",
+    "474": "91e12af2f6c5",
+    "636": "4fe977dc966c",
+    "681": "706a080d7095",
+    "784": "ea7979072bb7",
+    "830": "6f5f905886fe",
+    "891": "b1a458d2535f",
+    "965": "3d891d7d9446",
+    "1026": "58d80266e427",
+    "1224": "74abd0698983",
+    "1069": "a5345172a499",
+    "1087": "016c20460c13",
+    "1137": "8098cf86c365",
+    "1190": "dfee4aed0104",
+    "71": "72203a681f20",
+    "118": "cf7ee8d450bc",
+    "157": "1354f6803854",
+    "339": "274ed1b03d60",
+    "432": "deb78719c03c",
+    "475": "91e12af2f6c5",
+    "637": "4fe977dc966c",
+    "682": "706a080d7095",
+    "789": "7c0ce3869d9c",
+    "846": "4d50365ffe3d",
+    "892": "b1a458d2535f",
+    "967": "8244336d354f",
+    "1028": "0fd60000b05b",
+    "1226": "d334d3e1d267",
+    "1078": "e14a82d13639",
+    "1088": "2cc280e83d35",
+    "1139": "8d5f4545514b",
+    "1194": "eeff2fcc9bef",
+    "83": "a5cb91bac5e2",
+    "123": "7246e692141d",
+    "158": "347374e81b42",
+    "341": "3be8ebe1c142",
+    "433": "fd93db355cc7",
+    "476": "91e12af2f6c5",
+    "638": "4fe977dc966c",
+    "683": "706a080d7095",
+    "803": "ab3fa60dea4f",
+    "847": "4d50365ffe3d",
+    "893": "b1a458d2535f",
+    "970": "9560927f46a8",
+    "1032": "b7e26b1d6538",
+    "1231": "f06b242d1ae5",
+    "1079": "2e223e485ce0",
+    "1091": "85aa7428e6e6",
+    "1146": "6e815a69a0b0",
+    "1195": "eeff2fcc9bef",
+    "84": "3a2854b359b3",
+    "1263": "9816230af2bc",
+    "163": "16d6506e7630",
+    "346": "5bcb5250f4f5",
+    "434": "f51fba86fce1",
+    "477": "112a27f46058",
+    "806": "ce3be41b9445",
+    "848": "4d50365ffe3d",
+    "898": "2d5d8b7394a2",
+    "974": "e5be03617660",
+    "1038": "7cb89d7c7ec8",
+    "1233": "b4acd20e1c34",
+    "1369": "ff4d70918950",
+    "1093": "c2e9cc72223e",
+    "1152": "851d3879d3a7",
+    "1196": "eeff2fcc9bef",
+    "85": "3a2854b359b3",
+    "1264": "2439876ecdcc",
+    "167": "d567aabb7b8b",
+    "350": "879460ad14c7",
+    "435": "c6e2b8dc5c48",
+    "478": "112a27f46058",
+    "807": "2040e5797b14",
+    "861": "9667c33baddf",
+    "899": "2d5d8b7394a2",
+    "977": "d94fc847f6fd",
+    "1039": "30aad3f8d8b1",
+    "1237": "4c125dc21561",
+    "1096": "2bd860976ef6",
+    "1153": "48bd6adff716",
+    "1206": "15d6b116648b",
+    "132": "783700120de6",
+    "173": "38f76a80eb65",
+    "357": "9acee70efd58",
+    "436": "b23be2b27b60",
+    "479": "112a27f46058",
+    "809": "93dd38eac78f",
+    "862": "9667c33baddf",
+    "900": "2d5d8b7394a2",
+    "980": "688a03b7a8b8",
+    "1045": "ec8cbd96dbdf",
+    "1242": "76fa92b32f8b",
+    "1098": "9bf0c1d5b59a",
+    "1157": "18b87e96aa04",
+    "1207": "15d6b116648b",
+    "134": "081123b7c446",
+    "177": "60c3535883a7",
+    "358": "cd3ba4dc877e",
+    "441": "b589775e5f3d",
+    "480": "fb4318f4c3ce",
+    "813": "1edd65c460ee",
+    "863": "9667c33baddf",
+    "904": "ac0d30126e04",
+    "982": "0e1a652bae97",
+    "1047": "181105a107ea",
+    "1243": "8bc5cee1ec29",
+    "1099": "3fe24154af70",
+    "1159": "45e8ce4f6556",
+    "1208": "15d6b116648b",
+    "93": "6715259c3adc",
+    "178": "60c3535883a7",
+    "360": "8a82a7e91535",
+    "444": "e642084c68cc",
+    "495": "d79ba36fc42b",
+    "814": "1edd65c460ee",
+    "905": "ac0d30126e04",
+    "983": "f7319824ef63",
+    "1048": "cc77b1f488a4",
+    "1246": "aa4a1933f6e3",
+    "1100": "9b150589ef39",
+    "1160": "bccb7589ec6b",
+    "1381": "4e758d3cd2fb",
+    "94": "6715259c3adc",
+    "179": "60c3535883a7",
+    "366": "54858c95cb29",
+    "445": "e937ee38e1b3",
+    "496": "d79ba36fc42b",
+    "815": "1edd65c460ee",
+    "906": "ac0d30126e04",
+    "985": "5525ab29fd0d",
+    "1052": "0c2094a34f49",
+    "1248": "ebe51c54ced1",
+    "1102": "5c01cf3832bf",
+    "1161": "f1eef0f11d4f",
+    "1384": "dc2322e9325b",
+    "95": "c46421ed77a2",
+    "368": "8ffd9f0c6b2f",
+    "457": "ae400ab34776",
+    "497": "d79ba36fc42b",
+    "816": "61b40e50a91c",
+    "909": "a76e89ae38c0",
+    "986": "0b3a7131c6f9",
+    "1367": "209cce159229",
+    "1386": "3b735154846d",
+    "1103": "44978419ed88",
+    "1168": "830f2b355a61",
+    "375": "edc972b9780f",
+    "460": "6c20ddaeb048",
+    "501": "5e1edea9894f",
+    "817": "61b40e50a91c",
+    "911": "ef9eea417f12",
+    "991": "9ccf017b1042",
+    "1404": "e77ebd96a32e",
+    "1389": "e19ec484bf16",
+    "1104": "69489fcba952",
+    "1169": "c58773151c02",
+    "376": "5aab387029a0",
+    "461": "b789e8df82ba",
+    "502": "5e1edea9894f",
+    "818": "61b40e50a91c",
+    "912": "ef9eea417f12",
+    "994": "e3034af71c66",
+    "1390": "376ff0090b92",
+    "1112": "f660ff39555b",
+    "1379": "73146c820b50",
+    "465": "88b751a0a969",
+    "503": "5e1edea9894f",
+    "913": "ef9eea417f12",
+    "998": "3aa386c28740",
+    "1114": "21e7141d0e9a",
+    "466": "268b2ca2f39e",
+    "914": "f9981582e237",
+    "1115": "3683eda1b187",
+    "917": "b67b534d6f6c",
+    "1120": "43c4263b094c",
+    "1122": "c869de311289",
+    "1371": "4338bf571fd6",
+    "1372": "7ab5aac9a368",
+    "1405": "a6fa649d72ff",
+    "1256": "26e03da64df8",
+    "100": "b1be3d02111c",
+    "1266": "796599e07fe5",
+    "335": "2d999c0d0d72",
+    "1409": "3ef963e6098d",
+    "1306": "c491a96333c7",
+    "1317": "6254ceb5c539",
+    "1322": "accd39ecb618",
+    "1341": "694af4fba622",
+    "1343": "f38d18af5ea5",
+    "1352": "e1649f0815a6",
+    "1000": "8effd9406673",
+    "1013": "1047f2bc6f3b",
+    "1215": "0202d6a5afe9",
+    "1055": "b27afdfa4c6d",
+    "1082": "99ac325fbf98",
+    "1125": "bb690cb66710",
+    "1170": "3c028bc080c8",
+    "1259": "5aeb6e97473a",
+    "103": "ae44044347c3",
+    "1267": "b4f08ece902e",
+    "338": "1f822ff36d2a",
+    "424": "58ef28b25367",
+    "471": "2cdebbea3921",
+    "1318": "167bebe21100",
+    "1323": "0871c2ec5cd8",
+    "777": "8ac9f3ea0eb2",
+    "1345": "53cce12b61e4",
+    "1397": "e1649f0815a6",
+    "1001": "bf1c4709bade",
+    "1015": "ef36f1232121",
+    "1225": "228bf424541f",
+    "1056": "d6448e408574",
+    "1086": "79f9803495c0",
+    "1126": "426b5178e24d",
+    "1171": "3c028bc080c8",
+    "48": "aa4e8b63e818",
+    "106": "d0d35d0245f3",
+    "1269": "23c8065b0296",
+    "340": "4048652cb877",
+    "427": "b992ac7b2f85",
+    "472": "2cdebbea3921",
+    "1402": "46a830a68cb8",
+    "639": "f8663a5390f0",
+    "778": "8ac9f3ea0eb2",
+    "1347": "fcfdfb66f77c",
+    "873": "5bd2a1d9722f",
+    "1006": "89de5a2d1dc3",
+    "1016": "751ebee47d6f",
+    "1229": "2489d3a48611",
+    "1061": "81a920cff4b5",
+    "1092": "527e8d40dea7",
+    "1129": "0be7c472dbe6",
+    "1172": "3c028bc080c8",
+    "49": "aa4e8b63e818",
+    "112": "34f83749efdf",
+    "1395": "14a7a4864b42",
+    "342": "0b3f7e6e2a7a",
+    "428": "045aba9717ca",
+    "473": "2cdebbea3921",
+    "603": "eff3a70e735f",
+    "640": "f8663a5390f0",
+    "779": "8ac9f3ea0eb2",
+    "837": "333bc994a1b9",
+    "875": "444cf0bcfc61",
+    "1360": "204bd668a868",
+    "1017": "0d08c9270770",
+    "1232": "44b9c32548ab",
+    "1065": "18f7d074b36b",
+    "1094": "fe88e5a6ab48",
+    "1132": "cbcdfbbce767",
+    "1179": "a5db646d9dbc",
+    "50": "aa4e8b63e818",
+    "117": "d0d35d0245f3",
+    "140": "282b122541bb",
+    "343": "7127837d0764",
+    "430": "e096886b5f87",
+    "489": "cf9e2b4681b9",
+    "604": "eff3a70e735f",
+    "641": "f8663a5390f0",
+    "783": "cd73a94d9e2b",
+    "838": "333bc994a1b9",
+    "880": "e7835fb7c703",
+    "1361": "11d27c289a7b",
+    "1029": "e411db96e762",
+    "1235": "d9794a0a1e21",
+    "1066": "daf7048f56de",
+    "1095": "41e81defd5d0",
+    "1140": "6921bf78de96",
+    "1180": "a5db646d9dbc",
+    "63": "6fbcc772170d",
+    "119": "c6fd4d93006f",
+    "141": "e2474efbbc9c",
+    "345": "c368fe2fb12f",
+    "438": "15cd9909f6d8",
+    "490": "eea574de5518",
+    "605": "eff3a70e735f",
+    "645": "54934191cef6",
+    "785": "1728d3aed1f7",
+    "839": "333bc994a1b9",
+    "886": "e7835fb7c703",
+    "1400": "47e327cb46d4",
+    "1030": "668edbfa5807",
+    "1236": "6ed5c0f24dc6",
+    "1067": "6e20ff019ae0",
+    "1101": "12a8202a6b51",
+    "1141": "8dd493df8377",
+    "1181": "a5db646d9dbc",
+    "64": "6fbcc772170d",
+    "125": "885e9ab65610",
+    "142": "e2474efbbc9c",
+    "347": "2584278db614",
+    "439": "21ea8cf62e30",
+    "491": "e4ba9dc1b077",
+    "606": "768266d3cc92",
+    "646": "54934191cef6",
+    "786": "0a4e578617ba",
+    "843": "9fdc3e4679b0",
+    "894": "4dafeb81856f",
+    "964": "c03ebd2578dc",
+    "1031": "d2c23ad5ffdd",
+    "1238": "b869d82338f5",
+    "1070": "3e9a14c5ed1c",
+    "1105": "3a8e1db409ad",
+    "1142": "90fb04875a37",
+    "1203": "6530b2526ab8",
+    "65": "6fbcc772170d",
+    "126": "ff83c3274cf8",
+    "143": "e2474efbbc9c",
+    "349": "433aa1a34185",
+    "443": "7e0acd228b50",
+    "492": "e98a6affb7a5",
+    "607": "768266d3cc92",
+    "647": "54934191cef6",
+    "787": "0a4e578617ba",
+    "844": "9fdc3e4679b0",
+    "895": "4dafeb81856f",
+    "966": "d200555560fd",
+    "1035": "9472bc937130",
+    "1239": "9d3a7a8b18e2",
+    "1074": "312780f2d871",
+    "1106": "3d41abf1c393",
+    "1144": "f323e4bfde33",
+    "1204": "6530b2526ab8",
+    "72": "298370e14e50",
+    "1265": "8282de3cc49f",
+    "145": "4c82471a8aef",
+    "351": "93191ec9b848",
+    "447": "b6974f4b6f04",
+    "493": "e98a6affb7a5",
+    "608": "768266d3cc92",
+    "657": "2b4dc69294a4",
+    "788": "0a4e578617ba",
+    "845": "9fdc3e4679b0",
+    "896": "4dafeb81856f",
+    "968": "2478a1a497a0",
+    "1046": "cc981fce3373",
+    "1240": "ab9a30e787fe",
+    "1076": "f159768d885a",
+    "1108": "c9f96f693b44",
+    "1147": "184d42de8ca5",
+    "1205": "6530b2526ab8",
+    "73": "298370e14e50",
+    "128": "8282de3cc49f",
+    "147": "95f4d165fa10",
+    "353": "0de79d0bf92f",
+    "448": "5026483ed2eb",
+    "494": "e98a6affb7a5",
+    "612": "07ac5bd70b75",
+    "658": "2b4dc69294a4",
+    "791": "fb4a8520474e",
+    "849": "0ebbe7d5fc2b",
+    "897": "e7835fb7c703",
+    "971": "3babf87b4eee",
+    "1050": "565316328c94",
+    "1388": "c65b94555a39",
+    "1077": "860a6cf7b2b6",
+    "1109": "644c5cff01bb",
+    "1149": "c5b0ceb7c5ef",
+    "1209": "9c7f40854387",
+    "74": "298370e14e50",
+    "129": "a7b1d3b6dcc4",
+    "153": "a97cf683d8ab",
+    "359": "1a92798d1533",
+    "450": "36f88e5bd04b",
+    "498": "60d85fdd66a2",
+    "613": "d3afee6b93a6",
+    "659": "2b4dc69294a4",
+    "792": "1f158c5259f8",
+    "850": "0ebbe7d5fc2b",
+    "901": "a74199f18847",
+    "988": "2c6ab5eb18e8",
+    "1366": "d0244ff75e54",
+    "1368": "9af112eb2d3e",
+    "1110": "d85938327026",
+    "1151": "735023459329",
+    "1210": "9c7f40854387",
+    "87": "3db7e7372b49",
+    "130": "5c7bfe257436",
+    "154": "7c1f5c2a607c",
+    "362": "5f9c7f3d8e66",
+    "452": "6b99963caf0e",
+    "499": "60d85fdd66a2",
+    "615": "26fe944112b6",
+    "660": "ec7a6e10d4cf",
+    "793": "1f158c5259f8",
+    "851": "0ebbe7d5fc2b",
+    "902": "a74199f18847",
+    "993": "f27a2169781f",
+    "1370": "b61b253c1c13",
+    "1118": "5f2898b0336a",
+    "1155": "ce5c76c1230f",
+    "1211": "9c7f40854387",
+    "89": "3db7e7372b49",
+    "133": "37b419700258",
+    "159": "e683b1265cd8",
+    "364": "f597e4620d22",
+    "454": "9861f5106665",
+    "500": "60d85fdd66a2",
+    "616": "ac3251313637",
+    "661": "ec7a6e10d4cf",
+    "794": "1f158c5259f8",
+    "858": "1b8c2ad51fa5",
+    "903": "a74199f18847",
+    "995": "e6fd92c39fcb",
+    "1393": "06b2c6890d99",
+    "1119": "6300bff0d469",
+    "1156": "e3304f05bdaa",
+    "1212": "9e127e6a821c",
+    "1392": "8282de3cc49f",
+    "160": "9bc5c0670533",
+    "370": "2fb9cba7e80b",
+    "455": "4b8cb0f8aff1",
+    "617": "89015705883e",
+    "662": "ec7a6e10d4cf",
+    "802": "0c2d3b8148fb",
+    "859": "1b8c2ad51fa5",
+    "908": "e1649f0815a6",
+    "997": "85d86e71dcf4",
+    "1121": "a2d0eb299994",
+    "1163": "bc13114bb24d",
+    "1213": "9e127e6a821c",
+    "90": "f76fa322da83",
+    "161": "3ac38515391b",
+    "371": "67dd968421d7",
+    "458": "b78e87091669",
+    "618": "83f424317027",
+    "666": "5a6a83dbb919",
+    "808": "ed39161f0ca2",
+    "860": "1b8c2ad51fa5",
+    "915": "20c8f9b6caf2",
+    "1124": "e5ef85229a5f",
+    "1164": "f22006f22ceb",
+    "1214": "9e127e6a821c",
+    "91": "f76fa322da83",
+    "162": "729b8f7d0224",
+    "462": "b76d1b0c7df0",
+    "627": "7231c95b629d",
+    "667": "5a6a83dbb919",
+    "810": "879c7327aca8",
+    "864": "dc782c8f11d5",
+    "916": "85308b822e45",
+    "1165": "f688d0846778",
+    "1383": "784353cde008",
+    "92": "f76fa322da83",
+    "164": "eae93c4cb8e1",
+    "463": "fdabc1686f53",
+    "628": "7231c95b629d",
+    "668": "5a6a83dbb919",
+    "811": "879c7327aca8",
+    "865": "dc782c8f11d5",
+    "1166": "396682bede55",
+    "1385": "7b4b2efc1c08",
+    "96": "8bdcf5ddbde8",
+    "165": "96cb966db717",
+    "629": "7231c95b629d",
+    "672": "4934bed46036",
+    "812": "879c7327aca8",
+    "866": "dc782c8f11d5",
+    "1167": "f9ba039e9491",
+    "1410": "a54c6a59fa34",
+    "97": "8bdcf5ddbde8",
+    "166": "cdfebd3c6ab6",
+    "673": "4934bed46036",
+    "822": "df89d1b90a64",
+    "1376": "a1bebcd0bb18",
+    "98": "8bdcf5ddbde8",
+    "169": "9756ea20f7a6",
+    "674": "4934bed46036",
+    "823": "df89d1b90a64",
+    "1377": "cef9963053a1",
+    "99": "d0d35d0245f3",
+    "171": "77ce687db61c",
+    "824": "df89d1b90a64",
+    "172": "4f2d8f9b918d",
+    "825": "b151d8bbf0fa",
+    "826": "b151d8bbf0fa",
+    "827": "b151d8bbf0fa"
+  },
+  "cwe_by_task": {
+    "1258": "1333",
+    "1288": "327",
+    "1299": "347",
+    "1303": "352",
+    "1319": "502",
+    "1338": "74",
+    "831": "77",
+    "1350": "770",
+    "1003": "79",
+    "1008": "862",
+    "1216": "863",
+    "1053": "915",
+    "101": "179",
+    "1268": "200",
+    "1324": "601",
+    "1089": "918",
+    "1130": "94",
+    "1173": "95",
+    "1260": "1333",
+    "1270": "200",
+    "336": "327",
+    "423": "347",
+    "481": "352",
+    "1320": "502",
+    "1325": "601",
+    "775": "74",
+    "1004": "79",
+    "1009": "862",
+    "1219": "863",
+    "1054": "915",
+    "1090": "918",
+    "1131": "94",
+    "45": "1333",
+    "107": "179",
+    "135": "200",
+    "337": "327",
+    "426": "347",
+    "482": "352",
+    "594": "502",
+    "642": "601",
+    "780": "74",
+    "874": "770",
+    "1007": "79",
+    "1010": "862",
+    "1223": "863",
+    "1057": "915",
+    "1097": "918",
+    "1136": "94",
+    "137": "200",
+    "344": "327",
+    "431": "347",
+    "483": "352",
+    "834": "77",
+    "1362": "79",
+    "1018": "862",
+    "1227": "863",
+    "1058": "915",
+    "1107": "918",
+    "1138": "94",
+    "1176": "95",
+    "113": "179",
+    "139": "200",
+    "348": "327",
+    "437": "347",
+    "877": "770",
+    "969": "79",
+    "1020": "862",
+    "1228": "863",
+    "1063": "915",
+    "1111": "918",
+    "1143": "94",
+    "66": "1333",
+    "114": "179",
+    "146": "200",
+    "352": "327",
+    "440": "347",
+    "597": "502",
+    "648": "601",
+    "790": "74",
+    "972": "79",
+    "1021": "862",
+    "1230": "863",
+    "1071": "915",
+    "1113": "918",
+    "1145": "94",
+    "116": "179",
+    "148": "200",
+    "354": "327",
+    "442": "347",
+    "486": "352",
+    "795": "74",
+    "840": "77",
+    "973": "79",
+    "1022": "862",
+    "1234": "863",
+    "1072": "915",
+    "1116": "918",
+    "1148": "94",
+    "1185": "95",
+    "120": "179",
+    "150": "200",
+    "355": "327",
+    "446": "347",
+    "884": "770",
+    "975": "79",
+    "1024": "862",
+    "1241": "863",
+    "1073": "915",
+    "1117": "918",
+    "1150": "94",
+    "75": "1333",
+    "121": "179",
+    "356": "327",
+    "449": "347",
+    "600": "502",
+    "651": "601",
+    "976": "79",
+    "1025": "862",
+    "1244": "863",
+    "1075": "915",
+    "1123": "918",
+    "1154": "94",
+    "122": "179",
+    "361": "327",
+    "798": "74",
+    "852": "77",
+    "978": "79",
+    "1027": "862",
+    "1245": "863",
+    "1373": "918",
+    "1158": "94",
+    "1191": "95",
+    "124": "179",
+    "168": "200",
+    "363": "327",
+    "888": "770",
+    "979": "79",
+    "1033": "862",
+    "1247": "863",
+    "1374": "918",
+    "1162": "94",
+    "78": "1333",
+    "1261": "179",
+    "170": "200",
+    "365": "327",
+    "609": "502",
+    "654": "601",
+    "981": "79",
+    "1034": "862",
+    "1249": "863",
+    "1375": "918",
+    "1378": "94",
+    "1262": "179",
+    "174": "200",
+    "367": "327",
+    "459": "347",
+    "801": "74",
+    "855": "77",
+    "984": "79",
+    "1036": "862",
+    "1250": "863",
+    "1380": "94",
+    "1197": "95",
+    "127": "179",
+    "369": "327",
+    "464": "347",
+    "804": "74",
+    "907": "770",
+    "987": "79",
+    "1037": "862",
+    "1387": "863",
+    "1401": "94",
+    "81": "1333",
+    "131": "179",
+    "372": "327",
+    "467": "347",
+    "614": "502",
+    "663": "601",
+    "805": "74",
+    "989": "79",
+    "1040": "862",
+    "373": "327",
+    "620": "502",
+    "819": "74",
+    "867": "77",
+    "990": "79",
+    "1041": "862",
+    "1200": "95",
+    "86": "1333",
+    "374": "327",
+    "621": "502",
+    "992": "79",
+    "1042": "862",
+    "88": "1333",
+    "377": "327",
+    "669": "601",
+    "996": "79",
+    "1043": "862",
+    "870": "77",
+    "999": "79",
+    "1044": "862",
+    "1382": "95",
+    "624": "502",
+    "1049": "862",
+    "678": "601",
+    "1051": "862",
+    "679": "601",
+    "1363": "862",
+    "633": "502",
+    "680": "601",
+    "1364": "862",
+    "1365": "862",
+    "832": "77",
+    "1351": "770",
+    "1174": "95",
+    "833": "77",
+    "1175": "95",
+    "46": "1333",
+    "595": "502",
+    "643": "601",
+    "781": "74",
+    "876": "770",
+    "47": "1333",
+    "484": "352",
+    "596": "502",
+    "644": "601",
+    "782": "74",
+    "835": "77",
+    "1177": "95",
+    "485": "352",
+    "836": "77",
+    "878": "770",
+    "1178": "95",
+    "67": "1333",
+    "598": "502",
+    "649": "601",
+    "879": "770",
+    "68": "1333",
+    "487": "352",
+    "599": "502",
+    "650": "601",
+    "796": "74",
+    "841": "77",
+    "1186": "95",
+    "151": "200",
+    "488": "352",
+    "797": "74",
+    "842": "77",
+    "885": "770",
+    "1187": "95",
+    "152": "200",
+    "601": "502",
+    "652": "601",
+    "887": "770",
+    "77": "1333",
+    "602": "502",
+    "653": "601",
+    "799": "74",
+    "853": "77",
+    "1192": "95",
+    "800": "74",
+    "854": "77",
+    "889": "770",
+    "1193": "95",
+    "79": "1333",
+    "610": "502",
+    "655": "601",
+    "890": "770",
+    "80": "1333",
+    "175": "200",
+    "611": "502",
+    "656": "601",
+    "856": "77",
+    "1198": "95",
+    "176": "200",
+    "857": "77",
+    "910": "770",
+    "1199": "95",
+    "664": "601",
+    "665": "601",
+    "820": "74",
+    "868": "77",
+    "1201": "95",
+    "622": "502",
+    "821": "74",
+    "869": "77",
+    "1202": "95",
+    "623": "502",
+    "670": "601",
+    "671": "601",
+    "871": "77",
+    "625": "502",
+    "872": "77",
+    "626": "502",
+    "634": "502",
+    "635": "502",
+    "76": "1333",
+    "82": "1333",
+    "105": "179",
+    "109": "179",
+    "451": "347",
+    "453": "347",
+    "456": "347",
+    "1394": "1333",
+    "102": "179",
+    "136": "200",
+    "1289": "327",
+    "1298": "347",
+    "1304": "352",
+    "1321": "502",
+    "1326": "601",
+    "1337": "74",
+    "1344": "77",
+    "1348": "770",
+    "1002": "79",
+    "1011": "862",
+    "1217": "863",
+    "1059": "915",
+    "1080": "918",
+    "1127": "94",
+    "1182": "95",
+    "51": "1333",
+    "104": "179",
+    "138": "200",
+    "1290": "327",
+    "1300": "347",
+    "1305": "352",
+    "619": "502",
+    "1399": "601",
+    "1339": "74",
+    "1346": "77",
+    "1349": "770",
+    "1005": "79",
+    "1012": "862",
+    "1218": "863",
+    "1060": "915",
+    "1081": "918",
+    "1128": "94",
+    "1183": "95",
+    "52": "1333",
+    "108": "179",
+    "144": "200",
+    "1291": "327",
+    "1301": "347",
+    "468": "352",
+    "630": "502",
+    "675": "601",
+    "1342": "74",
+    "1391": "77",
+    "881": "770",
+    "1358": "79",
+    "1014": "862",
+    "1220": "863",
+    "1062": "915",
+    "1083": "918",
+    "1133": "94",
+    "1184": "95",
+    "53": "1333",
+    "110": "179",
+    "149": "200",
+    "1292": "327",
+    "1302": "347",
+    "469": "352",
+    "631": "502",
+    "676": "601",
+    "774": "74",
+    "828": "77",
+    "882": "770",
+    "1359": "79",
+    "1019": "862",
+    "1221": "863",
+    "1064": "915",
+    "1084": "918",
+    "1134": "94",
+    "1188": "95",
+    "69": "1333",
+    "111": "179",
+    "155": "200",
+    "333": "327",
+    "425": "347",
+    "470": "352",
+    "632": "502",
+    "677": "601",
+    "776": "74",
+    "829": "77",
+    "883": "770",
+    "963": "79",
+    "1023": "862",
+    "1222": "863",
+    "1068": "915",
+    "1085": "918",
+    "1135": "94",
+    "1189": "95",
+    "70": "1333",
+    "115": "179",
+    "156": "200",
+    "334": "327",
+    "429": "347",
+    "474": "352",
+    "636": "502",
+    "681": "601",
+    "784": "74",
+    "830": "77",
+    "891": "770",
+    "965": "79",
+    "1026": "862",
+    "1224": "863",
+    "1069": "915",
+    "1087": "918",
+    "1137": "94",
+    "1190": "95",
+    "71": "1333",
+    "118": "179",
+    "157": "200",
+    "339": "327",
+    "432": "347",
+    "475": "352",
+    "637": "502",
+    "682": "601",
+    "789": "74",
+    "846": "77",
+    "892": "770",
+    "967": "79",
+    "1028": "862",
+    "1226": "863",
+    "1078": "915",
+    "1088": "918",
+    "1139": "94",
+    "1194": "95",
+    "83": "1333",
+    "123": "179",
+    "158": "200",
+    "341": "327",
+    "433": "347",
+    "476": "352",
+    "638": "502",
+    "683": "601",
+    "803": "74",
+    "847": "77",
+    "893": "770",
+    "970": "79",
+    "1032": "862",
+    "1231": "863",
+    "1079": "915",
+    "1091": "918",
+    "1146": "94",
+    "1195": "95",
+    "84": "1333",
+    "1263": "179",
+    "163": "200",
+    "346": "327",
+    "434": "347",
+    "477": "352",
+    "806": "74",
+    "848": "77",
+    "898": "770",
+    "974": "79",
+    "1038": "862",
+    "1233": "863",
+    "1369": "915",
+    "1093": "918",
+    "1152": "94",
+    "1196": "95",
+    "85": "1333",
+    "1264": "179",
+    "167": "200",
+    "350": "327",
+    "435": "347",
+    "478": "352",
+    "807": "74",
+    "861": "77",
+    "899": "770",
+    "977": "79",
+    "1039": "862",
+    "1237": "863",
+    "1096": "918",
+    "1153": "94",
+    "1206": "95",
+    "132": "179",
+    "173": "200",
+    "357": "327",
+    "436": "347",
+    "479": "352",
+    "809": "74",
+    "862": "77",
+    "900": "770",
+    "980": "79",
+    "1045": "862",
+    "1242": "863",
+    "1098": "918",
+    "1157": "94",
+    "1207": "95",
+    "134": "179",
+    "177": "200",
+    "358": "327",
+    "441": "347",
+    "480": "352",
+    "813": "74",
+    "863": "77",
+    "904": "770",
+    "982": "79",
+    "1047": "862",
+    "1243": "863",
+    "1099": "918",
+    "1159": "94",
+    "1208": "95",
+    "93": "179",
+    "178": "200",
+    "360": "327",
+    "444": "347",
+    "495": "352",
+    "814": "74",
+    "905": "770",
+    "983": "79",
+    "1048": "862",
+    "1246": "863",
+    "1100": "918",
+    "1160": "94",
+    "1381": "95",
+    "94": "179",
+    "179": "200",
+    "366": "327",
+    "445": "347",
+    "496": "352",
+    "815": "74",
+    "906": "770",
+    "985": "79",
+    "1052": "862",
+    "1248": "863",
+    "1102": "918",
+    "1161": "94",
+    "1384": "95",
+    "95": "179",
+    "368": "327",
+    "457": "347",
+    "497": "352",
+    "816": "74",
+    "909": "770",
+    "986": "79",
+    "1367": "862",
+    "1386": "863",
+    "1103": "918",
+    "1168": "94",
+    "375": "327",
+    "460": "347",
+    "501": "352",
+    "817": "74",
+    "911": "770",
+    "991": "79",
+    "1404": "862",
+    "1389": "863",
+    "1104": "918",
+    "1169": "94",
+    "376": "327",
+    "461": "347",
+    "502": "352",
+    "818": "74",
+    "912": "770",
+    "994": "79",
+    "1390": "863",
+    "1112": "918",
+    "1379": "94",
+    "465": "347",
+    "503": "352",
+    "913": "770",
+    "998": "79",
+    "1114": "918",
+    "466": "347",
+    "914": "770",
+    "1115": "918",
+    "917": "770",
+    "1120": "918",
+    "1122": "918",
+    "1371": "918",
+    "1372": "918",
+    "1405": "918",
+    "1256": "1333",
+    "100": "179",
+    "1266": "200",
+    "335": "327",
+    "1409": "347",
+    "1306": "352",
+    "1317": "502",
+    "1322": "601",
+    "1341": "74",
+    "1343": "77",
+    "1352": "770",
+    "1000": "79",
+    "1013": "862",
+    "1215": "863",
+    "1055": "915",
+    "1082": "918",
+    "1125": "94",
+    "1170": "95",
+    "1259": "1333",
+    "103": "179",
+    "1267": "200",
+    "338": "327",
+    "424": "347",
+    "471": "352",
+    "1318": "502",
+    "1323": "601",
+    "777": "74",
+    "1345": "77",
+    "1397": "770",
+    "1001": "79",
+    "1015": "862",
+    "1225": "863",
+    "1056": "915",
+    "1086": "918",
+    "1126": "94",
+    "1171": "95",
+    "48": "1333",
+    "106": "179",
+    "1269": "200",
+    "340": "327",
+    "427": "347",
+    "472": "352",
+    "1402": "502",
+    "639": "601",
+    "778": "74",
+    "1347": "77",
+    "873": "770",
+    "1006": "79",
+    "1016": "862",
+    "1229": "863",
+    "1061": "915",
+    "1092": "918",
+    "1129": "94",
+    "1172": "95",
+    "49": "1333",
+    "112": "179",
+    "1395": "200",
+    "342": "327",
+    "428": "347",
+    "473": "352",
+    "603": "502",
+    "640": "601",
+    "779": "74",
+    "837": "77",
+    "875": "770",
+    "1360": "79",
+    "1017": "862",
+    "1232": "863",
+    "1065": "915",
+    "1094": "918",
+    "1132": "94",
+    "1179": "95",
+    "50": "1333",
+    "117": "179",
+    "140": "200",
+    "343": "327",
+    "430": "347",
+    "489": "352",
+    "604": "502",
+    "641": "601",
+    "783": "74",
+    "838": "77",
+    "880": "770",
+    "1361": "79",
+    "1029": "862",
+    "1235": "863",
+    "1066": "915",
+    "1095": "918",
+    "1140": "94",
+    "1180": "95",
+    "63": "1333",
+    "119": "179",
+    "141": "200",
+    "345": "327",
+    "438": "347",
+    "490": "352",
+    "605": "502",
+    "645": "601",
+    "785": "74",
+    "839": "77",
+    "886": "770",
+    "1400": "79",
+    "1030": "862",
+    "1236": "863",
+    "1067": "915",
+    "1101": "918",
+    "1141": "94",
+    "1181": "95",
+    "64": "1333",
+    "125": "179",
+    "142": "200",
+    "347": "327",
+    "439": "347",
+    "491": "352",
+    "606": "502",
+    "646": "601",
+    "786": "74",
+    "843": "77",
+    "894": "770",
+    "964": "79",
+    "1031": "862",
+    "1238": "863",
+    "1070": "915",
+    "1105": "918",
+    "1142": "94",
+    "1203": "95",
+    "65": "1333",
+    "126": "179",
+    "143": "200",
+    "349": "327",
+    "443": "347",
+    "492": "352",
+    "607": "502",
+    "647": "601",
+    "787": "74",
+    "844": "77",
+    "895": "770",
+    "966": "79",
+    "1035": "862",
+    "1239": "863",
+    "1074": "915",
+    "1106": "918",
+    "1144": "94",
+    "1204": "95",
+    "72": "1333",
+    "1265": "179",
+    "145": "200",
+    "351": "327",
+    "447": "347",
+    "493": "352",
+    "608": "502",
+    "657": "601",
+    "788": "74",
+    "845": "77",
+    "896": "770",
+    "968": "79",
+    "1046": "862",
+    "1240": "863",
+    "1076": "915",
+    "1108": "918",
+    "1147": "94",
+    "1205": "95",
+    "73": "1333",
+    "128": "179",
+    "147": "200",
+    "353": "327",
+    "448": "347",
+    "494": "352",
+    "612": "502",
+    "658": "601",
+    "791": "74",
+    "849": "77",
+    "897": "770",
+    "971": "79",
+    "1050": "862",
+    "1388": "863",
+    "1077": "915",
+    "1109": "918",
+    "1149": "94",
+    "1209": "95",
+    "74": "1333",
+    "129": "179",
+    "153": "200",
+    "359": "327",
+    "450": "347",
+    "498": "352",
+    "613": "502",
+    "659": "601",
+    "792": "74",
+    "850": "77",
+    "901": "770",
+    "988": "79",
+    "1366": "862",
+    "1368": "915",
+    "1110": "918",
+    "1151": "94",
+    "1210": "95",
+    "87": "1333",
+    "130": "179",
+    "154": "200",
+    "362": "327",
+    "452": "347",
+    "499": "352",
+    "615": "502",
+    "660": "601",
+    "793": "74",
+    "851": "77",
+    "902": "770",
+    "993": "79",
+    "1370": "915",
+    "1118": "918",
+    "1155": "94",
+    "1211": "95",
+    "89": "1333",
+    "133": "179",
+    "159": "200",
+    "364": "327",
+    "454": "347",
+    "500": "352",
+    "616": "502",
+    "661": "601",
+    "794": "74",
+    "858": "77",
+    "903": "770",
+    "995": "79",
+    "1393": "915",
+    "1119": "918",
+    "1156": "94",
+    "1212": "95",
+    "1392": "179",
+    "160": "200",
+    "370": "327",
+    "455": "347",
+    "617": "502",
+    "662": "601",
+    "802": "74",
+    "859": "77",
+    "908": "770",
+    "997": "79",
+    "1121": "918",
+    "1163": "94",
+    "1213": "95",
+    "90": "179",
+    "161": "200",
+    "371": "327",
+    "458": "347",
+    "618": "502",
+    "666": "601",
+    "808": "74",
+    "860": "77",
+    "915": "770",
+    "1124": "918",
+    "1164": "94",
+    "1214": "95",
+    "91": "179",
+    "162": "200",
+    "462": "347",
+    "627": "502",
+    "667": "601",
+    "810": "74",
+    "864": "77",
+    "916": "770",
+    "1165": "94",
+    "1383": "95",
+    "92": "179",
+    "164": "200",
+    "463": "347",
+    "628": "502",
+    "668": "601",
+    "811": "74",
+    "865": "77",
+    "1166": "94",
+    "1385": "95",
+    "96": "179",
+    "165": "200",
+    "629": "502",
+    "672": "601",
+    "812": "74",
+    "866": "77",
+    "1167": "94",
+    "1410": "95",
+    "97": "179",
+    "166": "200",
+    "673": "601",
+    "822": "74",
+    "1376": "94",
+    "98": "179",
+    "169": "200",
+    "674": "601",
+    "823": "74",
+    "1377": "94",
+    "99": "179",
+    "171": "200",
+    "824": "74",
+    "172": "200",
+    "825": "74",
+    "826": "74",
+    "827": "74"
+  },
+  "card_count": 1939,
+  "original_card_source": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\shared_inputs\\memory1939.jsonl",
+  "Q_initial": 0,
+  "visits_initial": 0,
+  "stages": [
+    {
+      "id": "K0",
+      "pool": "D_init",
+      "count": 303
+    },
+    {
+      "id": "K1",
+      "pool": "D_grow",
+      "count": 273
+    },
+    {
+      "id": "K2",
+      "pool": "D_grow",
+      "count": 273
+    },
+    {
+      "id": "K3",
+      "pool": "D_grow",
+      "count": 273
+    }
+  ]
+}

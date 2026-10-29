@@ -1,0 +1,67 @@
+{
+  "K0": {
+    "tasks": 303,
+    "counts": {
+      "first_attempts": 303,
+      "first_selected": 878,
+      "first_adopted": 627,
+      "first_updates": 605,
+      "repair_attempts": 158,
+      "repair_selected": 435,
+      "repair_adopted": 251,
+      "repair_updates": 232
+    },
+    "selection_distribution": {
+      "first_selected_3": 278,
+      "repair_selected_3": 132,
+      "first_selected_2": 20,
+      "repair_selected_1": 3,
+      "repair_selected_2": 18,
+      "repair_selected_0": 5,
+      "first_selected_1": 4,
+      "first_selected_0": 1
+    },
+    "actual_card_skips": {
+      "incomplete_or_technical_measurement": 41
+    },
+    "total_attempts": 461,
+    "three_slots_per_attempt": 1383,
+    "not_selected_slots": 70,
+    "selected_not_adopted_positions": 435,
+    "adopted_not_credited": 41,
+    "updates": 837
+  },
+  "K1": {
+    "tasks": 273,
+    "counts": {
+      "first_attempts": 273,
+      "first_selected": 783,
+      "first_adopted": 565,
+      "repair_attempts": 144,
+      "repair_selected": 395,
+      "repair_adopted": 205,
+      "first_updates": 485,
+      "repair_updates": 161
+    },
+    "selection_distribution": {
+      "first_selected_1": 3,
+      "repair_selected_3": 122,
+      "first_selected_3": 246,
+      "repair_selected_2": 13,
+      "repair_selected_0": 6,
+      "first_selected_2": 21,
+      "repair_selected_1": 3,
+      "first_selected_0": 3
+    },
+    "actual_card_skips": {
+      "source_task_reward_ineligible": 112,
+      "incomplete_or_technical_measurement": 12
+    },
+    "total_attempts": 417,
+    "three_slots_per_attempt": 1251,
+    "not_selected_slots": 73,
+    "selected_not_adopted_positions": 408,
+    "adopted_not_credited": 124,
+    "updates": 646
+  }
+}

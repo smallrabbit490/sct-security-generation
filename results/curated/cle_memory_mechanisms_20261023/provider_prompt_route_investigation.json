@@ -1,0 +1,269 @@
+{
+  "protocol": "cle-provider-prompt-route-diagnosis-v7",
+  "authorization": "2026-10-24 user requested investigation of upstream prompt injection or mapping; formal experiments paused",
+  "status": "completed_diagnostics",
+  "started_utc": "2026-10-24T03:10:39.406958+00:00",
+  "finished_utc": "2026-10-24T03:11:07.480696+00:00",
+  "max_HTTP_attempts": 3,
+  "new_HTTP_attempts": 3,
+  "new_known_returned_tokens": 3073,
+  "model": "deepseek-v3.2",
+  "endpoint": "https://api.chatanywhere.org/v1/chat/completions",
+  "user_agent": "CLE-HTTP-Diagnostic/1.0",
+  "P7_started": false,
+  "Q_updates": 0,
+  "automatic_retries": 0,
+  "raw_summary": "translation_work/diagnostics/20261023/cle_memory_mechanisms_v1/provider_prompt_route_investigation_20261024/summary.json",
+  "metadata_query_HTTP_requests": 2,
+  "formal_experiments_resumed": false,
+  "formal_message_protocol_changed": false,
+  "account_group_verified": false,
+  "actual_backend_mapping_verified": false,
+  "controls": [
+    {
+      "number": 1,
+      "name": "fresh_code_user",
+      "status": "returned",
+      "started_utc": "2026-10-24T03:10:39.453508+00:00",
+      "message_roles": [
+        "user"
+      ],
+      "public_content_characters": 79,
+      "http_status": 200,
+      "headers": {
+        "Content-Type": "text/event-stream",
+        "Server": "cloudflare",
+        "Date": "Sat, 24 Oct 2026 03:10:47 GMT",
+        "CF-Ray": "a4f5ca17dca59810-LAX",
+        "CF-Cache-Status": "DYNAMIC"
+      },
+      "tls_issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Google Trust Services"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "WE1"
+          ]
+        ]
+      ],
+      "tls_subject": [
+        [
+          [
+            "commonName",
+            "chatanywhere.org"
+          ]
+        ]
+      ],
+      "response": {
+        "content": "我是 DeepSeek-V3.2，擅长复杂推理、代码编写、深入分析与高质量长文写作等任务。",
+        "usage": {
+          "prompt_tokens": 991,
+          "completion_tokens": 54,
+          "total_tokens": 1045,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "id": "chatcmpl-5e88e791c1347db9807c4947",
+        "created": 1792811439,
+        "model": "deepseek-v3.2"
+      },
+      "stream_chunks": 5,
+      "code_validation": {
+        "measured_count": 2,
+        "passed": 0
+      },
+      "elapsed_seconds": 11.782
+    },
+    {
+      "number": 2,
+      "name": "system_then_original_code",
+      "status": "returned",
+      "started_utc": "2026-10-24T03:10:51.245806+00:00",
+      "message_roles": [
+        "system",
+        "user"
+      ],
+      "public_content_characters": 112,
+      "http_status": 200,
+      "headers": {
+        "Content-Type": "text/event-stream",
+        "Server": "cloudflare",
+        "Date": "Sat, 24 Oct 2026 03:10:54 GMT",
+        "CF-Ray": "a4f5ca68080512ad-LAX",
+        "CF-Cache-Status": "DYNAMIC"
+      },
+      "tls_issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Google Trust Services"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "WE1"
+          ]
+        ]
+      ],
+      "tls_subject": [
+        [
+          [
+            "commonName",
+            "chatanywhere.org"
+          ]
+        ]
+      ],
+      "response": {
+        "content": "```python\ndef add(a, b):\n    return a + b\n```",
+        "usage": {
+          "prompt_tokens": 1003,
+          "completion_tokens": 11,
+          "total_tokens": 1014,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "id": "chatcmpl-1a8bf2e06f0a3c8e7a59918f",
+        "created": 1792811452,
+        "model": "deepseek-v3.2"
+      },
+      "stream_chunks": 5,
+      "code_validation": {
+        "measured_count": 2,
+        "passed": 2
+      },
+      "elapsed_seconds": 6.906
+    },
+    {
+      "number": 3,
+      "name": "plain_arithmetic_user",
+      "status": "returned",
+      "started_utc": "2026-10-24T03:10:58.154729+00:00",
+      "message_roles": [
+        "user"
+      ],
+      "public_content_characters": 16,
+      "http_status": 200,
+      "headers": {
+        "Content-Type": "text/event-stream",
+        "Server": "cloudflare",
+        "Date": "Sat, 24 Oct 2026 03:11:04 GMT",
+        "CF-Ray": "a4f5ca8caa7a8ca5-LAX",
+        "CF-Cache-Status": "DYNAMIC"
+      },
+      "tls_issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Google Trust Services"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "WE1"
+          ]
+        ]
+      ],
+      "tls_subject": [
+        [
+          [
+            "commonName",
+            "chatanywhere.org"
+          ]
+        ]
+      ],
+      "response": {
+        "content": "**17 + 25 = 42**\n\n这是简单的加法运算结果，符合基础数学规则。",
+        "usage": {
+          "prompt_tokens": 976,
+          "completion_tokens": 38,
+          "total_tokens": 1014,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "id": "chatcmpl-af6dfd88c902d6fbd409692e",
+        "created": 1792811459,
+        "model": "deepseek-v3.2"
+      },
+      "stream_chunks": 5,
+      "elapsed_seconds": 9.313
+    }
+  ],
+  "claims": {
+    "local_injected_identity_instruction": "not present in recorded request bodies",
+    "new_system_message": "one explicit neutral system message in control2 only",
+    "upstream_first_message_or_role_handling": "best-supported working explanation, not server-source proof",
+    "hidden_upstream_prefix": "suggested by high reported prompt tokens, not independently proved",
+    "actual_model_mapping": "unverified; provider returns model name and owned_by=ca only",
+    "stability": "one new observation per condition; no repeatability guarantee",
+    "cached_refusal_only": "insufficient explanation; fresh non-cache-prefixed control also failed",
+    "formal_experiments_resumed": false
+  },
+  "deepseek_v32_public_groups": [
+    {
+      "group": "默认分组",
+      "remark": "该模型将于10月中旬下架"
+    },
+    {
+      "group": "优惠分组",
+      "remark": "该模型将于10月中旬下架"
+    },
+    {
+      "group": "免费分组",
+      "remark": "该模型将于10月中旬下架"
+    }
+  ],
+  "sources": [
+    "https://docs.chatanywhere.tech/api-92222076",
+    "https://docs.chatanywhere.tech/doc-5547696",
+    "https://chatanywhere.tech/pricing"
+  ]
+}

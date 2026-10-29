@@ -1,0 +1,31 @@
+{
+  "protocol": "cle-weekly-full-requirements-20261027-v1",
+  "stage": "K3",
+  "pool": "D_grow",
+  "status": "running",
+  "planned": 273,
+  "completed": 248,
+  "first": {
+    "functional": 126,
+    "security": 181,
+    "joint": 105,
+    "measured": 248
+  },
+  "final": {
+    "functional": 128,
+    "security": 184,
+    "joint": 111,
+    "measured": 248
+  },
+  "Q_covered_cards": 766,
+  "card_count": 1939,
+  "Q_coverage": 0.39504899432697266,
+  "credited_events": 676,
+  "adopted_positions": 855,
+  "known_reported_tokens": 16704537,
+  "physical_HTTP": 2427,
+  "unknown_or_inflight_HTTP": 81,
+  "currency_cost": null,
+  "no_performance_stop": true,
+  "updated_utc": "2026-10-28T15:06:59.135680+00:00"
+}

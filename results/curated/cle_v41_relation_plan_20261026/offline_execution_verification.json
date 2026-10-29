@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "tests_run": 36,
+  "failures": 0,
+  "errors": 0,
+  "evidence_kind": "offline_synthetic_not_model_results",
+  "real_model_API_calls": 0,
+  "real_embedding_API_calls": 0,
+  "real_credential_reads": 0,
+  "real_P7_completed": 0,
+  "paid_execution_enabled": false,
+  "raw_evidence": "translation_work/diagnostics/20261026/cle_v41_relation_execution_offline_v1/113031_212666",
+  "complete_cells": 8,
+  "synthetic_code_attempts": 16,
+  "shared_reviews": 4,
+  "first4_gate": {
+    "status": "passed",
+    "completed_cells": 4,
+    "score_used_for_progression": false
+  },
+  "final8_gate": {
+    "status": "passed",
+    "completed_cells": 8,
+    "score_used_for_progression": false
+  },
+  "saved_request_replay_identical": "8/8",
+  "replay_new_physical_attempts": 0,
+  "replay_comparison_exclusion": "selector elapsed_seconds only; all exact request matching retained",
+  "synthetic_physical_attempts": 62,
+  "stop_examples": {
+    "waiting_review": {
+      "state": {
+        "status": "waiting_plan_review",
+        "completed_P7": 0,
+        "actual_paid_P7": 0,
+        "evidence_kind": "offline_synthetic",
+        "paid_enabled": false,
+        "reason": "waiting_plan_review",
+        "inputs_unchanged": true,
+        "new_physical_attempts_simulated": 5,
+        "source_costs_reused_not_recharged": false
+      },
+      "simulated_attempts": 5
+    },
+    "budget_stop": {
+      "state": {
+        "status": "stopped_integration",
+        "completed_P7": 0,
+        "actual_paid_P7": 0,
+        "evidence_kind": "offline_synthetic",
+        "paid_enabled": false,
+        "reason": "physical_budget_exhausted",
+        "inputs_unchanged": true,
+        "new_physical_attempts_simulated": 0,
+        "source_costs_reused_not_recharged": false
+      },
+      "simulated_attempts": 0
+    },
+    "unresolved": {
+      "state": {
+        "status": "stopped_integration",
+        "completed_P7": 1,
+        "actual_paid_P7": 0,
+        "evidence_kind": "offline_synthetic",
+        "paid_enabled": false,
+        "reason": "logical_request_failed_or_unresolved",
+        "inputs_unchanged": true,
+        "new_physical_attempts_simulated": 15,
+        "source_costs_reused_not_recharged": false
+      },
+      "simulated_attempts": 15
+    },
+    "low_scores_complete8": {
+      "state": {
+        "status": "completed_offline_integration",
+        "completed_P7": 8,
+        "actual_paid_P7": 0,
+        "evidence_kind": "offline_synthetic",
+        "paid_enabled": false,
+        "inputs_unchanged": true,
+        "new_physical_attempts_simulated": 62,
+        "source_costs_reused_not_recharged": false
+      },
+      "simulated_attempts": 62
+    }
+  },
+  "protected_files_unchanged": true,
+  "protected_files": [
+    "methods/cle_ablation/runner.py",
+    "methods/sct_trajectory/context_pipeline.py",
+    "methods/sct_trajectory/closed_loop.py",
+    "data/external/secodeplt/secodeplt/data.json",
+    "translation_work/diagnostics/20261025/cle_v41_public_binding_v2/inputs/tasks.json",
+    "translation_work/diagnostics/20261025/cle_v41_public_binding_v2/inputs/memory.jsonl",
+    "translation_work/diagnostics/20261025/cle_v41_public_binding_v2/rows.jsonl"
+  ],
+  "journal_regression": {
+    "command": "python -B -X utf8 -m pytest tests/test_cle_baseline_replay.py -q -p no:cacheprovider",
+    "passed": 5,
+    "failed": 0,
+    "evidence": "translation_work/diagnostics/20261026/cle_v41_relation_execution_offline_v1/113031_212666/journal_regression.txt"
+  }
+}

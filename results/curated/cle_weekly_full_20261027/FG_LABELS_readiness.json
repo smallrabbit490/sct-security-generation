@@ -1,0 +1,37 @@
+{
+  "status": "wiring_verified_waiting_allowed_window_queue",
+  "planned": 2730,
+  "actual_completed": 0,
+  "checks": {
+    "status": "passed",
+    "observed_utc": "2026-10-27T06:54:48.927403+00:00",
+    "test_count": 56,
+    "elapsed_seconds": 18.791,
+    "additional_updated_granularity_analysis_tests": 4,
+    "additional_tests_elapsed_seconds": 0.744,
+    "additional_tests_overlap_prior_count": 3,
+    "paid_API_calls": 0,
+    "real_P7_completed": 0,
+    "evidence_kind": "synthetic_original_P7_integration_and_family_split_classifier_checks_not_model_scores",
+    "covered": [
+      "same_pool_same_first_selection",
+      "L0_no_repair_memory",
+      "non_nested_L3_L4",
+      "normal_negative_completes_fixed_grid",
+      "same_family_source_exclusion",
+      "frozen_examples_and_input_resume",
+      "binding_single_flight_and_exact_public_reuse",
+      "zero_API_native_replay",
+      "family_grouped_CV",
+      "no_development_or_repair_lookahead_in_policy_fit"
+    ]
+  },
+  "budget": {
+    "conservative_model_and_embedding_tokens": 737100000,
+    "total_physical_HTTP_attempts": 135408,
+    "embedding_HTTP_attempts_included_in_total": 43680
+  },
+  "binding_candidates": 270,
+  "binding_tasks": 47,
+  "classifier_trained": false
+}

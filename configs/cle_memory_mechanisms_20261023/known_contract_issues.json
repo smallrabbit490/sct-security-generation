@@ -1,0 +1,22 @@
+{
+  "protocol": "cle-memory-mechanisms-data-contract-v2",
+  "issues": [
+    {
+      "task_id": "1348",
+      "status": "unresolved_public_resource_policy",
+      "public_requirement": "Limit the overall cache entry count and individual data size.",
+      "missing": [
+        "Maximum entries and whether a caller can configure it",
+        "Definition and maximum of individual data size",
+        "Whether updating an existing customer consumes additional capacity"
+      ],
+      "reference_preflight_passed": true,
+      "reference_pass_resolves_missing_policy": false,
+      "source_of_values_required": "Project-owned public specification; never derive values from target reference or hidden tests",
+      "owner_question_sent": true,
+      "fixed_cohort_replacement_allowed": false,
+      "blocks": ["unqualified interpretation of the complete 12-task B02 comparison"],
+      "does_not_block": ["1394/102 technical preparation", "offline content review", "historical diagnostic analysis"]
+    }
+  ]
+}

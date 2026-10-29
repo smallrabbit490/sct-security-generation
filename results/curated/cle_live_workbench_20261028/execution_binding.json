@@ -1,0 +1,133 @@
+{
+  "time": "2026-10-28T18:06:31+08:00",
+  "plan_id": "cle-autonomy-20261028-executable-narrative-v7",
+  "offline_tests": {
+    "passed": 61,
+    "experiment_API_calls": 0
+  },
+  "whitespace_errors": [],
+  "workers": 1,
+  "processes": [
+    {
+      "pid": 72988,
+      "package": "FQ_LEARN",
+      "workers": 1,
+      "entry": "configs.cle_weekly_q_tls12_20261028.resume run --kind q"
+    }
+  ],
+  "progress": [
+    {
+      "key": "FQ_LEARN",
+      "completed": 891,
+      "display_completed": 891,
+      "planned": 1122,
+      "display_planned": 1122,
+      "status": "running"
+    },
+    {
+      "key": "FQ_RETEST",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 1416,
+      "display_planned": 1416,
+      "status": "not_started"
+    },
+    {
+      "key": "FQ_GATE",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 2384,
+      "display_planned": 2384,
+      "status": "not_started"
+    },
+    {
+      "key": "FFS",
+      "completed": 1952,
+      "display_completed": 1952,
+      "planned": 2980,
+      "display_planned": 2980,
+      "status": "needs_technical_recovery"
+    },
+    {
+      "key": "FG_LABELS",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 820,
+      "display_planned": 820,
+      "status": "not_started"
+    },
+    {
+      "key": "FG_GATE",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 1788,
+      "display_planned": 1788,
+      "status": "not_started"
+    },
+    {
+      "key": "FR",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 57,
+      "display_planned": 57,
+      "status": "not_started"
+    },
+    {
+      "key": "BUILD_C41",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": null,
+      "display_planned": null,
+      "status": "not_started"
+    },
+    {
+      "key": "FX_GATE",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 3576,
+      "display_planned": 1788,
+      "status": "not_started"
+    },
+    {
+      "key": "FX_EXTERNAL",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 1530,
+      "display_planned": 1530,
+      "status": "not_started"
+    },
+    {
+      "key": "P3_EXTERNAL",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 255,
+      "display_planned": 0,
+      "status": "not_started"
+    },
+    {
+      "key": "FG_LABELS_EXTRA",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 820,
+      "display_planned": 820,
+      "status": "not_started"
+    },
+    {
+      "key": "FR_EXTRA",
+      "completed": 0,
+      "display_completed": 0,
+      "planned": 57,
+      "display_planned": 57,
+      "status": "not_started"
+    }
+  ],
+  "guardian": {
+    "enabled": true,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh"
+  },
+  "current_job": {
+    "status": "running",
+    "job_id": "20261028_180607_818584"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "protocol": "cle-reduced-scope-20261028-v1",
+  "authorization": "2026-10-28用户明确授权：保留活动全量，Q中间54题、记忆首批82题、检索首批57题，按固定条件扩大并自动分析接续。",
+  "selection_manifest": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\scope_reduction_20261028\\selection.json",
+  "current_checklist": "docs/research/CLE-TODO-20261022-20261028-v04.md",
+  "first_batch": {
+    "Q_retest": 1416,
+    "memory_labels": 820,
+    "retrieval_tasks": 57
+  },
+  "maximum_extra": {
+    "Q_intermediate": 0,
+    "memory_labels": 820,
+    "retrieval_tasks": 57
+  },
+  "enlargement": {
+    "Q": "54 fixed diagnostic tasks; final K3/Q1 all273; no automatic extra intermediate tasks",
+    "GR": {
+      "max_tasks": 164,
+      "min_training_label_families": 30,
+      "min_classes_with_five_training_families": 2,
+      "min_development_routed_levels": 2,
+      "expand_if": "initial labels have at least two preferred levels globally but engineering readiness is insufficient",
+      "close_if": "no memory intervention or fewer than two preferred levels, or still insufficient at164",
+      "criterion_is": "engineering readiness, not statistical evidence of Joint benefit"
+    },
+    "FR": {
+      "max_tasks": 114,
+      "expand_if": "major CWE strata missing or worst task-bootstrap 95% half-width exceeds0.10",
+      "major_CWE": "at least5% of its original pool",
+      "minimum_completed_pools": 57,
+      "human_confirmation": "never inferred from AI; final inference retains label source"
+    }
+  },
+  "same_model_and_native_P7": true,
+  "repeats": 2,
+  "active_learning_and_FS_unchanged": true,
+  "historical_results_preserved": true,
+  "technical_retry_policy": "existing exact-prefix transport authorization; retain unknown usage",
+  "branch_omission_is_not_measured_failure": true,
+  "offline_checks": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\scope_reduction_20261028\\offline_checks.json"
+}

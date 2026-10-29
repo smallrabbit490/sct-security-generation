@@ -1,0 +1,51 @@
+{
+  "protocol": "cle-weekly-full-function-security-views-20261027-v1",
+  "status": "running",
+  "planned": 2980,
+  "completed": 2329,
+  "arms": {
+    "B0": {
+      "completed": 466,
+      "functional": 209,
+      "security": 352,
+      "joint": 179,
+      "measured": 465
+    },
+    "BM": {
+      "completed": 466,
+      "functional": 233,
+      "security": 369,
+      "joint": 199,
+      "measured": 465
+    },
+    "BF": {
+      "completed": 466,
+      "functional": 221,
+      "security": 351,
+      "joint": 182,
+      "measured": 463
+    },
+    "BS": {
+      "completed": 465,
+      "functional": 226,
+      "security": 363,
+      "joint": 193,
+      "measured": 464
+    },
+    "BFS": {
+      "completed": 466,
+      "functional": 230,
+      "security": 366,
+      "joint": 195,
+      "measured": 466
+    }
+  },
+  "Q_updates": 0,
+  "new_cards": 0,
+  "known_reported_tokens": 101862966,
+  "physical_HTTP": 17686,
+  "unknown_or_inflight_HTTP": 427,
+  "currency_cost": null,
+  "updated_utc": "2026-10-28T15:06:31.521770+00:00",
+  "no_performance_stop": true
+}

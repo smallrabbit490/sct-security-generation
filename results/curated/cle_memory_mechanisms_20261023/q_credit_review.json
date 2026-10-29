@@ -1,0 +1,108 @@
+{
+  "native_tasks": 326,
+  "native_attempts": 503,
+  "credited_attempts": 403,
+  "credited_tasks": 298,
+  "credited_attempts_by_FS": {
+    "F+S+": 134,
+    "F-S+": 174,
+    "F-S-": 66,
+    "F+S-": 29
+  },
+  "credited_attempts_by_adopted_count": {
+    "2": 155,
+    "3": 172,
+    "1": 76
+  },
+  "multi_card_credited_attempts": 327,
+  "exact_repeat_code_pairs": 9,
+  "negative_reupdates_on_identical_code": 12,
+  "protocol": "cle-q-credit-observational-review-v2",
+  "credited_card_events": 902,
+  "all_recorded_events": 1017,
+  "skip_reasons": {
+    "no_adopted_experiences": 86,
+    "incomplete_or_technical_measurement": 23,
+    "source_task_reward_ineligible": 6
+  },
+  "card_events_by_FS": {
+    "F+S+": 318,
+    "F-S+": 385,
+    "F-S-": 134,
+    "F+S-": 65
+  },
+  "cross_family_event_FS": {
+    "other_family_F+S+": 197,
+    "other_family_F-S+": 227,
+    "source_family_F-S+": 158,
+    "other_family_F-S-": 71,
+    "source_family_F+S+": 121,
+    "source_family_F-S-": 63,
+    "other_family_F+S-": 54,
+    "source_family_F+S-": 11
+  },
+  "cards_in_current_feedback": 463,
+  "cards_with_mixed_outcomes_within_a_family": 8,
+  "cards_with_opposed_pure_families": 58,
+  "cards_with_opposed_pure_families_same_CWE": 55,
+  "cards_source_positive_other_negative_same_CWE": 22,
+  "cards_source_negative_other_positive_same_CWE": 15,
+  "same_CWE_credit_events": 873,
+  "newly_visited_cards_in_current_stages": 46,
+  "already_visited_cards_in_current_stages": 417,
+  "API_calls": 0,
+  "Q_updates": 0,
+  "official_scores_changed": false,
+  "full_historical_Q_ledger_complete": false,
+  "causal_claim_supported": false,
+  "public_binding_diagnostic_cases": [
+    {
+      "task_id": "1003",
+      "side": "old",
+      "passed": 1,
+      "measured": 1
+    },
+    {
+      "task_id": "1003",
+      "side": "new",
+      "passed": 0,
+      "measured": 1
+    },
+    {
+      "task_id": "642",
+      "side": "old",
+      "passed": 1,
+      "measured": 1
+    },
+    {
+      "task_id": "642",
+      "side": "new",
+      "passed": 0,
+      "measured": 1
+    },
+    {
+      "task_id": "1363",
+      "side": "old",
+      "passed": 1,
+      "measured": 1
+    },
+    {
+      "task_id": "1363",
+      "side": "new",
+      "passed": 0,
+      "measured": 1
+    }
+  ],
+  "reviewed_rescue_without_new_declared_adoption": {
+    "task_id": "1113",
+    "new_first_attempt": 0,
+    "new_adopted_ids": [],
+    "new_Joint": true,
+    "claim": "rescue lacks an accepted-card path; not attributable to Q from scores alone"
+  },
+  "initial_snapshot": "translation_work\\diagnostics\\20261020\\cle_dinit_card_cap_v2\\Lall\\all_feedback\\frozen\\m_star_q.jsonl",
+  "initial_visited_cards": 926,
+  "current_visited_cards": 972,
+  "initial_to_current_Q_endpoints_match": 463,
+  "full_history_before_initial_snapshot_reconstructed": false
+}

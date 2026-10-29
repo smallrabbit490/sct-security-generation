@@ -49,7 +49,11 @@ def experience_text(cards: list[dict]) -> str:
               'high_level_invariant', 'positive_principle', 'principle', 'recommended_action', 'negative_guardrail',
               'root_cause', 'fix_directive', 'prev_fix_assessment', 'language_leaf',
               'support_count', 'regression_count')
-    return json.dumps([{key: c.get(key, 'not provided') for key in fields} for c in cards], ensure_ascii=False)
+    # 仅冻结库视图实验显式放入该运行期payload；默认卡片继续原白名单序列化。
+    # 下游三处都使用本函数，避免BF/BS在规划或生成阶段重新注入被排除的原正文。
+    return json.dumps([c['_cle_memory_view'] if '_cle_memory_view' in c else
+                       {key: c.get(key, 'not provided') for key in fields}
+                       for c in cards], ensure_ascii=False)
 
 
 def analysis_prompt(task, reference='', evidence=None, *, initial=None, cards=None):

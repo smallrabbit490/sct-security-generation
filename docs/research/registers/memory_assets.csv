@@ -1,0 +1,9 @@
+﻿asset_id,asset_type,producer_or_feedback_model,card_count,evidence,status,interpretation
+C32H1939,memory_bank,deepseek-v3.2,1939,translation_work/diagnostics/20261026/cle_v41_completion/shared_inputs/memory1939.jsonl,frozen_body_current_studies,来源索引关联303题；不是新模型生产
+C32H1939-Q32-OLD,Q_state,deepseek-v3.2,1939,results/curated/cle_memory_q_full_gate_cap3_20261019/manifest.json,historical_298_four_arm_snapshot,数值沿该manifest回查；区别于最新972
+C32H1939-Q32-972,Q_state,deepseek-v3.2,1939,translation_work/diagnostics/20261020/cle_q_online_v1/D_grow/frozen/m_star_q.jsonl,partial_learning_frozen,972张visits大于0；D_init303加D_grow23
+M1_SOURCE36,source_example_bank,historical_source_records,,translation_work/diagnostics/20261026/cle_v41_completion/shared_inputs/m1_source_bank.json,read_only_same_CWE_different_family,来源示例机制；不是1939卡库的另一别名
+C41N,memory_bank,deepseek-v4.1-flash-1017,,,planned_not_built,从空库建；不假定卡数1939
+C32H1939-Q41,Q_state,deepseek-v4.1-flash-1017,1939,,planned_not_learned,旧Q迁移不等于新模型学习Q
+C41N-Q32,Q_state,deepseek-v3.2,,,planned_not_learned,依赖新库与ds32可用服务
+C41N-Q41,Q_state,deepseek-v4.1-flash-1017,,,planned_not_learned,依赖新库；独立初始化和学习快照

@@ -1,0 +1,52 @@
+{
+  "protocol": "cle-weekly-retrieval-bounded-execution-20261027-v1",
+  "source_protocol": "cle-weekly-retrieval-common-pool-20261027-v1",
+  "model_settings": {
+    "model": "deepseek-v4.1-flash-1017",
+    "max_tokens": 4096,
+    "thinking": "disabled",
+    "temperature": 0,
+    "roles": [
+      "user"
+    ],
+    "stream": true
+  },
+  "AI_max_attempts": 1,
+  "AI_max_physical_HTTP_per_pair": 1,
+  "max_output_tokens": 4096,
+  "pair_limit": 107821,
+  "initial_pair_cap": 63952,
+  "extra_pair_cap": 43869,
+  "absolute_task_card_upper_bound": 1107169,
+  "extra_basis": {
+    "D_grow": "273*3*(3 learning +10 retest +10 granularity)",
+    "D_gate": "298*3*(8 Q +10 F/S +6 classifier +4 old-library cross-model)"
+  },
+  "embedding_text_limit": 3652,
+  "embedding_batch_items": 32,
+  "embedding_batch_chars": 80000,
+  "embedding_max_attempts_per_batch": 1,
+  "budget_proposed": {
+    "conservative_model_and_embedding_tokens": 2450122159,
+    "total_physical_HTTP_attempts": 111473,
+    "embedding_HTTP_attempts_included_in_total": 3652
+  },
+  "budget_basis": {
+    "AI_per_pair_conservative_tokens": 19403,
+    "largest_public_task_UTF8_bytes": 1785,
+    "largest_card_UTF8_bytes": 11273,
+    "prompt_constant_UTF8_bytes": 839,
+    "embedding_conservative_tokens": 358071296
+  },
+  "planned_P7": 571,
+  "execution_units_are_P7": false,
+  "code_generations": 0,
+  "new_initial_analysis_calls": 0,
+  "max_workers": 1,
+  "queue_when_four_worker_evaluation_active": true,
+  "resume_budget_reset": false,
+  "unresolved_HTTP_redispatch": false,
+  "human_confirmation_required": true,
+  "full_library_recall": "unmeasured",
+  "paid_execution_enabled": false
+}

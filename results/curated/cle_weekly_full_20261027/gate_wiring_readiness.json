@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-27T05:44:30.508883+00:00",
+  "paid_HTTP": 0,
+  "gate_and_original_retest_tests": 13,
+  "all_related_tests": 26,
+  "all_related_seconds": 10.478,
+  "command": "python -B -X utf8 -m unittest tests.test_cle_weekly_frozen_retest tests.test_cle_weekly_gate_evaluation tests.test_cle_weekly_analysis tests.test_cle_weekly_retest_analysis tests.test_cle_weekly_gate_analysis tests.test_cle_weekly_gate_contracts -q",
+  "planned_real_cells": 2384,
+  "real_completed_cells": 0,
+  "scope": [
+    "Q0 original unthresholded system reference",
+    "Q1/Q2/Q3 same controlled LLM terminal selector",
+    "within-CWE paired Q/visits shuffle",
+    "shared initial per task-repeat; repeats independent",
+    "frozen memory and Q",
+    "normal code failures complete full synthetic grid",
+    "returned responses restore without added HTTP",
+    "pending requests block recovery",
+    "native zero-API replay"
+  ],
+  "paid_dispatch_ready": false
+}

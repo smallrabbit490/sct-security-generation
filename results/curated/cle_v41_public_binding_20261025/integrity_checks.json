@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "frozen_inputs_and_old_S1_unchanged": true,
+  "source_bundle_unchanged": true,
+  "native_P7_max2_max3_empty_controls_verified": true,
+  "BD_first_selection": [
+    {
+      "task_id": "1322",
+      "repeat": 1,
+      "BD_first_ids": [
+        "pitfall-601-3611919690530987921",
+        "hint-601-6150411928759305315",
+        "hint-601-706879167458623732"
+      ],
+      "identical_order": true
+    },
+    {
+      "task_id": "1322",
+      "repeat": 2,
+      "BD_first_ids": [
+        "pitfall-601-3611919690530987921",
+        "hint-601-8003044894777238839",
+        "seed-650"
+      ],
+      "identical_order": true
+    },
+    {
+      "task_id": "1409",
+      "repeat": 1,
+      "BD_first_ids": [
+        "hint-347-2235550156700228859",
+        "blind-77-4626890306821307923",
+        "seed-442"
+      ],
+      "identical_order": true
+    },
+    {
+      "task_id": "1409",
+      "repeat": 2,
+      "BD_first_ids": [
+        "pitfall-347-8852856027972637597",
+        "hint-347-2235550156700228859"
+      ],
+      "identical_order": true
+    }
+  ],
+  "exact_stage_prompt_counts": {
+    "unchanged_other": 53,
+    "protected_target": 30
+  },
+  "actual_model_and_message_checks": true,
+  "logical_records_completed": 90,
+  "unresolved_logical_requests": 0,
+  "validation_events": 22,
+  "native_rows": 16,
+  "code_attempts": 22,
+  "replay": {
+    "status": "passed",
+    "rows": 16,
+    "different_cells": [],
+    "API_calls": 0,
+    "credentials_reads": 0,
+    "comparison": "all native row fields except selector elapsed_seconds; exact saved requests and vectors"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "protocol": "cle-v41-public-binding-diagnostic-plan-v2",
+  "paid_execution_enabled": false,
+  "status": "execution_completed_combined_gate_not_passed",
+  "purpose": "test whether public binding preservation improves generation and whether memory adds benefit under same preserved bindings",
+  "task_ids": [
+    "1322",
+    "1409"
+  ],
+  "selection": "posthoc diagnosed two distinct CWE/families; not independent confirmation sample",
+  "source_tasks": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261025\\cle_v41_migration_S1\\inputs\\tasks.json",
+  "task_values_modified": false,
+  "arms": {
+    "A": "native P7 empty",
+    "B": "native P7 legacy1939",
+    "C": "native P7 empty + public binding protection",
+    "D": "native P7 legacy1939 + public binding protection"
+  },
+  "public_binding_names": {
+    "1322": "ALLOWED_DOMAINS",
+    "1409": "VALID_SIGNATURES"
+  },
+  "implementation_constraint": "Use the runtime-provided binding already named in the public context. Do not declare, replace, reset, or populate it. Preserve the documented entry point, arguments, return values, and exception behavior.",
+  "constraint_scope": "Append only to experience reanalysis, planning and generation, on c0 and c1. Shared original c0 initial analysis, c1 initial analysis and original retrieval input remain without the new constraint payload.",
+  "shared_initial": "one base-public initial analysis per task/repeat across all4 arms",
+  "shared_first_selection": "B and D share same first query/candidates/LLM selection; repairs use own code and feedback",
+  "model": "deepseek-v4.1-flash-1017",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 4096,
+  "message_roles": [
+    "user"
+  ],
+  "max_experiences": 3,
+  "max_attempts": 2,
+  "first_joint_early_stop": true,
+  "delivery": "last native attempt",
+  "Q_updates": false,
+  "card_generation": false,
+  "freeze_memory": true,
+  "repeats": 2,
+  "P7_runs": 16,
+  "probe_included": "first repeat2 tasks x4 arms=8; then second repeat8, no extra tasks",
+  "allowed_time": "Asia/Shanghai; block weekdays09:00-12:00 and14:00-18:00, left closed/right open",
+  "technical_stop": "unresolved requests, environment failure, model mismatch, frozen input mutation or budget exhaustion; native model degradation retained",
+  "budget_proposed": {
+    "model_token_cap": 2000000,
+    "total_HTTP_cap": 300,
+    "embedding_HTTP_cap": 60,
+    "expected_tokens": "rough0.7-1.0M using S1 per-arm observed usage, not bill quote; unknown retries retain conservative reservation"
+  },
+  "binding_gate": "C-A and D-B each paired Joint net gain >=2/4; C and D each have >=1 binding-preserved Joint pass in both families; no new paired S pass-to-fail regression; rescues require a complete measured mechanism path",
+  "interpretation": {
+    "both_prompt_comparisons_pass": "positive signal on two posthoc known faults only; if D does not improve over C, retain simpler empty+binding candidate; no stable memory benefit claim",
+    "only_D_B_improves": "possible memory-prompt complementarity, not confirmed interaction; no automatic new matrix",
+    "only_C_A_improves_or_D_regresses": "inspect concrete adopted card/source assumptions; expression study requires independent rationale and authorization",
+    "both_prompt_comparisons_fail": "stop this prompt-only version; no extra repeats, Q learning or sample expansion to rescue it",
+    "technical_or_measurement_failure": "inconclusive mechanism result; preserve missingness and paid evidence, no score-driven reruns"
+  },
+  "not_authorized": [
+    "validation24",
+    "full D_gate",
+    "Q learning",
+    "classifier",
+    "Base",
+    "Plus"
+  ],
+  "reviewer_decision": "modified_GO_design_only",
+  "review_source": "docs/cle_memory_mechanisms_20261023/26_6Pro迁移综合审阅原文.md",
+  "original_plan": "pro_review_20261025/03_current_reports_and_next_plan.txt contains unchanged v1",
+  "canonical_task": "B03",
+  "migration_stage": "S2",
+  "automatic_expansion": false,
+  "generalization_claim": false,
+  "code_generation_executed": 22,
+  "engineering_gate": "16 native records, no unresolved infrastructure, frozen inputs and native validator unchanged, within caps; model degradation retained, not retried to improve score",
+  "absolute_3_of_4_required": false,
+  "primary_comparisons": [
+    "C-A: prompt effect without memory",
+    "D-B: prompt effect with memory",
+    "D-C: memory increment under protected bindings"
+  ],
+  "missing_measurement_rule": "Keep all 16 planned cells in end-to-end denominator; separately report jointly measured pairs and code truncation. Missing controls cannot be counted as measured F/S rescues; an incomplete measurement chain cannot establish the mechanism gate.",
+  "consumer_separation": {
+    "runner": "native run_one(P7)",
+    "public_repair_policy_enabled": false,
+    "public_suite_feedback_enabled": false,
+    "new_static_checker_affects_generation_or_delivery": false,
+    "checker_use": "offline preparation and posthoc diagnosis only; no code auto-edit",
+    "c0_c1_delivery": "original first Joint early stop, otherwise final attempt; do not activate contract consumer"
+  },
+  "implementation_status": "completed scoped requester wrapper and shared first selection; run closed, do not relaunch",
+  "sharing_rule": "New v4.1 first analysis per task/repeat; B/D share exact first selected card IDs and order; A/C empty. Repairs follow own original P7 code/feedback/retrieval. No old S1 scores or v3.2 dynamic responses spliced into new paired trials.",
+  "last_conditions_before_paid": [
+    "explicit user authorization for this 16-cell protocol",
+    "strict three-stage prompt hook implemented and checked with saved prompts, c0/c1 initial and query unchanged",
+    "B/D exact c0 candidate/selection sharing and native c1 repair behavior verified offline",
+    "public-name-only payload; native model/validator/schedule/budget frozen; zero unresolved requests"
+  ],
+  "execution_ready": false,
+  "execution_record": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261025\\cle_v41_public_binding_v2\\protocol.json",
+  "result": "D:\\Agent\\sct-security-generation\\results\\curated\\cle_v41_public_binding_20261025\\summary.json"
+}

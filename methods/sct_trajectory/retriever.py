@@ -99,7 +99,7 @@ class HskTreeRetriever:
         embedding_client=None,
         semantic_delta: float | None = None,
         lambda_q: float = 0.5,
-        candidate_order: str | None = None,
+        candidate_order=None,
     ) -> None:
         self.tree = tree
         self.requester = requester

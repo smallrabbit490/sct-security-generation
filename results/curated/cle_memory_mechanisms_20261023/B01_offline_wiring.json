@@ -1,0 +1,87 @@
+{
+  "scope": "offline wiring only; no real LLM/P7 study scores",
+  "tasks": 2,
+  "conditions": 5,
+  "completed_controls": 10,
+  "reference_used_in_stub_only": true,
+  "API_calls": 0,
+  "model_tokens": 0,
+  "Q_updates": 0,
+  "original_P7_repair_once_and_last_delivery_verified": true,
+  "B0_empty_in_both_attempts": true,
+  "records": [
+    {
+      "task_id": "1394",
+      "mode": "B0",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "1394",
+      "mode": "BF",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "1394",
+      "mode": "BS",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "1394",
+      "mode": "BFS",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "1394",
+      "mode": "BM",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "102",
+      "mode": "B0",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "102",
+      "mode": "BF",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "102",
+      "mode": "BS",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "102",
+      "mode": "BFS",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    },
+    {
+      "task_id": "102",
+      "mode": "BM",
+      "attempts": 2,
+      "final_reference_control_pass": true,
+      "model_generated": false
+    }
+  ],
+  "unreviewed_other_views_block_real_study": true,
+  "targeted_tests_passed": 19,
+  "pending_draft_cards": 339
+}

@@ -1,0 +1,42 @@
+{
+  "API_calls": 0,
+  "new_model_generations": 0,
+  "P7_rows_reviewed": 48,
+  "tasks_reviewed": 12,
+  "selected_unique_cards": 76,
+  "adopted_unique_cards": 51,
+  "adopted_occurrences": 72,
+  "model_results_unchanged": true,
+  "posthoc_fixture_visible": true,
+  "retrieval_metrics_computed": false,
+  "measured_function_failures": 32,
+  "failure_primary_counts": {
+    "模板绑定被覆盖＋来源占位符遗留": 4,
+    "公开绑定不完整＋重建空数据": 4,
+    "允许输入范围未说明": 4,
+    "默认值/返回结构缺失＋XML实现错误": 4,
+    "模型覆盖已公开外部绑定": 8,
+    "模型改变接口/模板绑定，另有转义错误": 4,
+    "题面与测试输入类型冲突": 4
+  },
+  "unmeasured_rows": [
+    "1343_r1_E0"
+  ],
+  "clean_explicit_binding_counterfactual": {
+    "rows": 8,
+    "Joint_pass": 8
+  },
+  "four_task_binding_counterfactual": {
+    "rows": 16,
+    "F_pass": 15,
+    "Joint_pass": 14
+  },
+  "registry_binding_counterfactual": {
+    "rows": 4,
+    "Joint_pass": 4
+  },
+  "local_diagnostic_validations": 42,
+  "reference_validations": 8,
+  "diagnostic_patch_error_preserved": "1266 initial transformer failed to remove renamed empty registry; corrected in separate registry_binding_v2",
+  "decision": "design 2-task 4-arm public-binding-protection diagnostic; paid execution disabled; defer Q and classifier"
+}

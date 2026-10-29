@@ -1,0 +1,232 @@
+{
+  "protocol": "cle-memory-granularity-C1-v1",
+  "native_protocol": "cle-memory-granularity-source-bound-v1",
+  "planned_pilot_P7": 120,
+  "received_pilot_rows": 0,
+  "missing_cells": 120,
+  "technical_cells": 0,
+  "shared_start_errors": [],
+  "arms": {
+    "L0": {
+      "planned": 24,
+      "valid_cells": 0,
+      "technical_cells": 0,
+      "missing_cells": 24,
+      "first": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "final": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      }
+    },
+    "L1": {
+      "planned": 24,
+      "valid_cells": 0,
+      "technical_cells": 0,
+      "missing_cells": 24,
+      "first": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "final": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      }
+    },
+    "L2": {
+      "planned": 24,
+      "valid_cells": 0,
+      "technical_cells": 0,
+      "missing_cells": 24,
+      "first": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "final": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      }
+    },
+    "L3": {
+      "planned": 24,
+      "valid_cells": 0,
+      "technical_cells": 0,
+      "missing_cells": 24,
+      "first": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "final": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      }
+    },
+    "L4": {
+      "planned": 24,
+      "valid_cells": 0,
+      "technical_cells": 0,
+      "missing_cells": 24,
+      "first": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "final": {
+        "functional": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "security": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "joint": {
+          "passed": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      }
+    }
+  },
+  "C1": {
+    "evaluated": false,
+    "status": "not_evaluated_missing_outcomes",
+    "passed": null,
+    "stable_different_families": null,
+    "reciprocal_level_pairs": null,
+    "oracle_minus_fixed": null
+  },
+  "API_calls": 0,
+  "Q_updates": 0,
+  "classifier_trained": false,
+  "scheduled_total": 480,
+  "technical_prefix": 20,
+  "pilot_prefix": 120,
+  "paid_orchestrator_implemented": false,
+  "paid_execution_enabled": false,
+  "new_tests_passed": 14,
+  "latest_targeted_tests_passed": 29,
+  "actual_new_API_calls": 0,
+  "actual_new_embedding_calls": 0,
+  "actual_new_Q_updates": 0
+}

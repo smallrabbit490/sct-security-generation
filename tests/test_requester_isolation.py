@@ -208,3 +208,118 @@ def test_exhausted_attempts_expose_safe_diagnostics(monkeypatch):
     assert len(error.value.diagnostics) == 3
     assert all('http_status=503' in item for item in error.value.diagnostics)
     assert not any('private' in item or 'secret' in item for item in error.value.diagnostics)
+
+
+def test_explicit_single_attempt_does_not_repeat_paid_timeout(monkeypatch):
+    calls=[]
+    def fail(*args,**kwargs):
+        calls.append(1)
+        raise TimeoutError('offline')
+    request=build(monkeypatch,fail,max_attempts=1)
+    with pytest.raises(TimeoutError) as error:request('public task')
+    assert len(calls)==len(error.value.diagnostics)==1
+
+
+def test_stream_reassembles_exact_content_and_usage_without_extra_request(monkeypatch):
+    bodies=[]
+    class StreamResponse(Response):
+        def __iter__(self):
+            parts=[{'model':'offline','choices':[{'index':0,'delta':{'content':'{"result":'},'finish_reason':None}]},
+                   {'choices':[{'index':0,'delta':{'content':'42}'},'finish_reason':'stop'}]},
+                   {'choices':[],'usage':{'prompt_tokens':3,'completion_tokens':4,'total_tokens':7}}]
+            return iter([('data: '+json.dumps(p)+'\n\n').encode() for p in parts]+[b'data: [DONE]\n\n'])
+    def fake(request,timeout):
+        bodies.append(json.loads(request.data))
+        return StreamResponse()
+    value=build(monkeypatch,fake,stream=True,max_attempts=1)('public')
+    assert len(bodies)==1 and bodies[0]['stream_options']=={'include_usage':True}
+    assert value['choices'][0]['message']['content']=='{"result":42}'
+    assert value['usage']['total_tokens']==7 and value['model']=='offline'
+
+
+def test_incomplete_stream_is_not_a_success_and_is_not_retried(monkeypatch):
+    calls=[]
+    class Incomplete(Response):
+        def __iter__(self):
+            return iter([b'data: {"choices":[{"delta":{"content":"partial"}}]}\n'])
+    def fake(*args,**kwargs):
+        calls.append(1)
+        return Incomplete()
+    with pytest.raises(RuntimeError):build(monkeypatch,fake,stream=True,max_attempts=1)('public')
+    assert calls==[1]
+
+
+@pytest.mark.parametrize('stream', [False, True])
+def test_provider_controls_send_only_the_exact_public_user_task(monkeypatch, stream):
+    """复核已观测的身份误拒绝：本地不拼入系统、身份或历史消息；不访问真实API。"""
+    bodies = []
+
+    class ExactResponse(Response):
+        def __iter__(self):
+            chunk = {'choices': [{'index': 0, 'delta': {'content': 'offline'},
+                                  'finish_reason': 'stop'}]}
+            return iter([('data: ' + json.dumps(chunk) + '\n\n').encode(),
+                         b'data: [DONE]\n\n'])
+
+    def fake(request, timeout):
+        bodies.append(json.loads(request.data))
+        return ExactResponse()
+
+    prompts = [
+        'Reply with exactly the word OK.',
+        'Calculate 17 + 25. Return a JSON object with the integer field "result" and no other fields.',
+        'Write a Python function add(a, b) that returns a + b. Output only the function code.',
+        json.dumps({'operation': 'complete_python_function',
+                    'code_prefix': 'def add(a, b):\n    ',
+                    'required_behavior': 'sum of arguments',
+                    'output_format': 'complete_python_code'}),
+    ]
+    request = build(monkeypatch, fake, stream=stream, max_attempts=1,
+                    max_tokens=128, thinking='disabled')
+    for prompt in prompts:
+        request(prompt)
+
+    assert len(bodies) == len(prompts)
+    for prompt, body in zip(prompts, bodies):
+        expected = {'model': 'offline', 'messages': [{'role': 'user', 'content': prompt}],
+                    'temperature': 0, 'max_tokens': 128,
+                    'thinking': {'type': 'disabled'}}
+        if stream:
+            expected.update(stream=True, stream_options={'include_usage': True})
+        assert body == expected
+
+
+@pytest.mark.parametrize('endpoint', [None, 'https://api.chatanywhere.org/v1/chat/completions'])
+def test_official_endpoint_choice_does_not_change_message_or_model(monkeypatch, endpoint):
+    observed = []
+    def fake(request, timeout):
+        observed.append((request.full_url, json.loads(request.data)))
+        return Response()
+    options = {} if endpoint is None else {'endpoint': endpoint}
+    build(monkeypatch, fake, max_attempts=1, **options)('public code control')
+    assert observed[0][0] == (endpoint or 'https://api.chatanywhere.tech/v1/chat/completions')
+    assert observed[0][1]['messages'] == [{'role': 'user', 'content': 'public code control'}]
+    assert observed[0][1]['model'] == 'offline'
+
+
+def test_nonofficial_endpoint_is_rejected_before_credentials(monkeypatch):
+    monkeypatch.setattr(runner, 'load_key', lambda: pytest.fail('must not load credential'))
+    with pytest.raises(ValueError, match='unsupported_chatanywhere_endpoint'):
+        runner._requester('deepseek-v3.2', 1, endpoint='https://untrusted.invalid/v1/chat/completions')
+
+
+@pytest.mark.parametrize('endpoint', ['https://api.chatanywhere.tech/v1/chat/completions',
+                                    'https://api.chatanywhere.org/v1/chat/completions'])
+def test_explicit_client_identifier_preserves_payload_and_single_attempt(monkeypatch, endpoint):
+    """已观测Cloudflare1010：两个官方地址都显式声明客户端，且不改提示或多发请求。"""
+    observed = []
+    def fake(request, timeout):
+        observed.append(request)
+        return Response()
+    build(monkeypatch, fake, endpoint=endpoint, max_attempts=1,
+          max_tokens=128, thinking='disabled')('public add function')
+    assert len(observed) == 1
+    assert observed[0].get_header('User-agent') == 'CLE-HTTP-Diagnostic/1.0'
+    assert json.loads(observed[0].data) == {
+        'model': 'offline', 'messages': [{'role': 'user', 'content': 'public add function'}],
+        'temperature': 0, 'max_tokens': 128, 'thinking': {'type': 'disabled'}}

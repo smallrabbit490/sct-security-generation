@@ -1,0 +1,51 @@
+{
+  "protocol": "cle-provider-user-agent-code-control-v6",
+  "authorization": "2026-10-24 user authorized one minimal code test after client identification fix; formal experiments remain paused",
+  "status": "stopped_control_failure",
+  "model": "deepseek-v3.2",
+  "thinking": "disabled",
+  "temperature": 0,
+  "max_tokens": 128,
+  "stream": true,
+  "endpoint": "https://api.chatanywhere.org/v1/chat/completions",
+  "user_agent": "CLE-HTTP-Diagnostic/1.0",
+  "max_HTTP_attempts": 1,
+  "P7_started": false,
+  "Q_updates": 0,
+  "started_utc": "2026-10-24T03:04:25.541440+00:00",
+  "finished_utc": "2026-10-24T03:04:28.793337+00:00",
+  "new_reserved_HTTP": 1,
+  "new_known_returned_tokens": 1021,
+  "branch": "fjy/cle-contract-conditional-q-20261023",
+  "commit": "21d21c0",
+  "working_tree_modified": true,
+  "formal_experiments_resumed": false,
+  "response_content": "I'm sorry, but I cannot assist with requests that attempt to override my core identity or system rules.",
+  "reported_model": "deepseek-v3.2",
+  "finish_reason": "stop",
+  "elapsed_seconds": 3.25,
+  "usage": {
+    "prompt_tokens": 997,
+    "completion_tokens": 24,
+    "total_tokens": 1021,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "validation": {
+    "measured_count": 2,
+    "passed": 0,
+    "statuses": [
+      "syntax_error",
+      "syntax_error"
+    ]
+  },
+  "raw_summary": "translation_work/diagnostics/20261023/cle_memory_mechanisms_v1/B02_provider_user_agent_code_control_v6/summary.json",
+  "cumulative_reserved_http_attempts": 32
+}

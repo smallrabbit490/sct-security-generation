@@ -1,0 +1,39 @@
+{
+  "request_id": "cle-workbench-autorepair-e2e-20261027-v1",
+  "status": "passed",
+  "time": "2026-10-27T23:11:38+08:00",
+  "root": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\workbench_monitor\\selftests\\20261027_230531",
+  "checks": {
+    "real_cli_three_automatic_jobs": true,
+    "repair_model_and_effort": true,
+    "error_then_stage_A_then_stage_B": true,
+    "fault_observed": true,
+    "completed_prefix_reused": true,
+    "saved_response_reused": true,
+    "five_unique_mock_receipts": true,
+    "five_correct_unique_results": true,
+    "analysis_precedes_next_stage": true,
+    "both_analysis_files_computed": true,
+    "duplicate_launch_blocked": true,
+    "single_fixture_worker": true,
+    "exact_three_worker_launches": true,
+    "no_network_in_fixture": true,
+    "immutable_runner_protocol_rules": true,
+    "actual_parser_repaired": true
+  },
+  "experiment_API_calls": 0,
+  "mock_requests": 5,
+  "mock_unique_cells": 5,
+  "codex_cli_jobs": 4,
+  "successful_cli_jobs": 3,
+  "capacity_rejections": 1,
+  "unknown_cli_usage_attempts": 1,
+  "codex_usage": {
+    "input_tokens": 431418,
+    "output_tokens": 2165,
+    "cached_input_tokens": 329600
+  },
+  "formal_process_control_actions": 0,
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh"
+}

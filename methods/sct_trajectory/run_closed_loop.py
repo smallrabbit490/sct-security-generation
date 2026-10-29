@@ -28,6 +28,9 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from methods.sct_lifecycle_replay.chatanywhere_smoke import load_key  # noqa: E402
+from methods.sct_trajectory.provider_policy import (  # noqa: E402
+    CURRENT_MODEL, ModelTimeWindowError, ensure_model_call_allowed,
+)
 from methods.sct_lifecycle_replay.family_manifest import load_family_manifest  # noqa: E402
 from methods.sct_lifecycle_replay.run_lifecycle_replay import has_tests  # noqa: E402
 from methods.sct_trajectory.ablation import get_config as get_ablation  # noqa: E402
@@ -48,7 +51,9 @@ def _requester(model: str, timeout: int, max_tokens: int = 1500,
                max_inflight: int = 0, *, hard_timeout: float | None = None,
                gate_wait_timeout: float | None = None, retry_backoff: float = 2.0,
                circuit_failures: int = 15, circuit_cooldown: float = 60.0, semaphore=None,
-               selector_max_inflight: int = 16, thinking: str | None = None):
+               selector_max_inflight: int = 16, thinking: str | None = None,
+               max_attempts: int = 3, stream: bool = False,
+               endpoint: str = 'https://api.chatanywhere.tech/v1/chat/completions'):
     """构造 LLM 请求器。
 
     max_inflight > 0 时，用本请求器实例的信号量把真实HTTP在途数限制在该值。
@@ -69,11 +74,19 @@ def _requester(model: str, timeout: int, max_tokens: int = 1500,
     import urllib.request
     from methods.sct_trajectory.selector_protocol import SelectorPrompt
 
+    # 已观测tech接入点误拒绝；仅允许文档列出的同服务接入点，避免将凭据发往任意地址。
+    if endpoint not in ('https://api.chatanywhere.tech/v1/chat/completions',
+                        'https://api.chatanywhere.org/v1/chat/completions'):
+        raise ValueError('unsupported_chatanywhere_endpoint')
+
     HARD_TIMEOUT = hard_timeout if hard_timeout is not None else max(timeout + 30, 60)
     GATE_WAIT_TIMEOUT = gate_wait_timeout if gate_wait_timeout is not None else HARD_TIMEOUT * 2
     if min(HARD_TIMEOUT, GATE_WAIT_TIMEOUT, circuit_cooldown) <= 0 or circuit_failures < 1 or retry_backoff < 0:
         raise ValueError('invalid_requester_limits')
-    MAX_ATTEMPTS = 3
+    # 慢中转的已观测超时允许调用者改为单次长等待；旧实验默认仍为三次。
+    if type(max_attempts) is not int or not 1 <= max_attempts <= 3:
+        raise ValueError('max_attempts_must_be_1_to_3')
+    MAX_ATTEMPTS = max_attempts
     if selector_max_inflight < 1:
         raise ValueError('selector_max_inflight_must_be_positive')
     # 长上下文筛选使用独立子闸门；总在途预算仍由所有阶段共享的 _gate 控制。
@@ -87,19 +100,59 @@ def _requester(model: str, timeout: int, max_tokens: int = 1500,
     BACKOFF_MAX = 20.0
 
     def _one_call(prompt: str) -> dict:
+        # 排队可能跨过09:00/14:00；在真实HTTP线程加载凭据前再次检查用户的时段限制。
+        ensure_model_call_allowed(model)
         payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
                    "temperature": 0, "max_tokens": min(max_tokens, 256) if isinstance(prompt, SelectorPrompt) else max_tokens}
         # Q探针已实测默认思考耗尽输出预算；仅显式调用者关闭，不改变旧CLE默认请求。
         if thinking is not None:
             payload["thinking"] = {"type": thinking}
+        if stream:
+            payload.update(stream=True, stream_options={"include_usage": True})
         body = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(
-            "https://api.chatanywhere.tech/v1/chat/completions",
+            endpoint,
             data=body,
-            headers={"Authorization": f"Bearer {load_key()}", "Content-Type": "application/json"},
+            # org已复现Cloudflare1010拦截默认Python-urllib；明确声明真实客户端，不改变模型或正文。
+            headers={"Authorization": f"Bearer {load_key()}", "Content-Type": "application/json",
+                     "User-Agent": "CLE-HTTP-Diagnostic/1.0"},
             method="POST",
         )
+        ensure_model_call_allowed(model)
         with urllib.request.urlopen(req, timeout=timeout) as resp:
+            if stream:
+                # 已观测非流式等待超时：只拼接返回片段，不重写内容、不把半份输出当完成。
+                result = {"choices": [{"message": {"role": "assistant", "content": ""},
+                                        "finish_reason": None, "index": 0}], "usage": None}
+                completed = False
+                for raw_line in resp:
+                    line = raw_line.decode('utf-8').strip()
+                    if not line.startswith('data:'):
+                        continue
+                    data = line[5:].strip()
+                    if data == '[DONE]':
+                        break
+                    part = json.loads(data)
+                    if part.get('error'):
+                        raise RuntimeError('stream_provider_error')
+                    for key in ('id', 'model', 'created'):
+                        if key in part:
+                            result[key] = part[key]
+                    if part.get('usage'):
+                        result['usage'] = part['usage']
+                    for choice in part.get('choices', []):
+                        if choice.get('index', 0) != 0:
+                            raise ValueError('unexpected_multiple_stream_choices')
+                        delta = choice.get('delta', {})
+                        result['choices'][0]['message']['content'] += delta.get('content') or ''
+                        if delta.get('refusal'):
+                            result['choices'][0]['message']['refusal'] = delta['refusal']
+                        if choice.get('finish_reason') is not None:
+                            result['choices'][0]['finish_reason'] = choice['finish_reason']
+                            completed = True
+                if not completed:
+                    raise ValueError('stream_incomplete_response')
+                return result
             return json.loads(resp.read().decode("utf-8"))
 
     _gate = semaphore if semaphore is not None else (threading.Semaphore(max_inflight) if max_inflight > 0 else None)
@@ -168,6 +221,7 @@ def _requester(model: str, timeout: int, max_tokens: int = 1500,
         等超过 90 秒 → 被误判为超时 → 触发重试 → 拥堵加剧，形成正反馈。
         现在改为：**先取槽（等待不计时），再启动计时线程**。
         """
+        ensure_model_call_allowed(model)
         last_exc: Exception | None = None
         diagnostics: list[str] = []
         safe_diagnostics: list[dict] = []
@@ -249,6 +303,9 @@ def _requester(model: str, timeout: int, max_tokens: int = 1500,
                         'elapsed_s': time.monotonic()-started})
                 elif "error" in attempt_box:
                     error = attempt_box['error']
+                    if isinstance(error, ModelTimeWindowError):
+                        safe_diagnostics.append({'category': 'model_time_window_blocked', 'attempt': attempt})
+                        raise attach(error)
                     reason = _diagnostic(error, attempt, time.monotonic() - started)
                     last_exc = TimeoutError(reason) if isinstance(error, TimeoutError) else RuntimeError(reason)
                     from urllib.error import HTTPError
@@ -352,10 +409,12 @@ def _read_jsonl_tolerant(p: Path) -> list[dict]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="CLE 轨迹对比式自进化（全量真实调用 AI）")
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument('--tasks-file', type=Path, default=None,
+                        help='读取本次保存的完整PLT任务快照；默认仍读取原始PLT数据')
     parser.add_argument("--pool-manifest", type=Path, default=None,
                         help="固定四池清单；使用 D_init/D_grow/D_gate，禁止 H_pass 进入训练")
     parser.add_argument("--limit", type=int, default=0, help="参与的任务数上限；0=全量 874 条")
-    parser.add_argument("--model", type=str, default="deepseek-v3.2")
+    parser.add_argument("--model", type=str, default=CURRENT_MODEL)
     parser.add_argument("--max-tokens", type=int, default=1500,
                         help="单次 LLM 回复的 token 上限。原先是硬编码 1500 —— "
                              "deepseek-v3.2 实测单步仅用 169 tokens，够用；"
@@ -520,7 +579,8 @@ def main() -> None:
     write_status(out, status="running", stage="init", detail="初始化")
     append_run_index(sct_runs_root, run_name=run_name, run_dir=out, status="running", model=args.model)
 
-    tasks = _load_tasks(args.limit)
+    tasks = (json.loads(args.tasks_file.read_text(encoding='utf-8'))
+             if args.tasks_file else _load_tasks(args.limit))
     external_pool_manifest = None
     if args.pool_manifest:
         from methods.cle_ablation_matrix.pool_manifest import validate_manifest
@@ -588,7 +648,7 @@ def main() -> None:
         source_hashes[str(relative)] = hashlib.sha256(source_path.read_bytes()).hexdigest()
     (out / "source_manifest.json").write_text(json.dumps({
         "sources": source_hashes,
-        "training_data_sha256": hashlib.sha256((PROJECT_ROOT / "data/external/secodeplt/secodeplt/data.json").read_bytes()).hexdigest(),
+        "training_data_sha256": hashlib.sha256((args.tasks_file or PROJECT_ROOT / "data/external/secodeplt/secodeplt/data.json").read_bytes()).hexdigest(),
         "pipeline": "analysis_retrieval_reanalysis" if args.context_pipeline else "legacy",
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     append_run_index(sct_runs_root, run_name=run_name, run_dir=out, status="running",

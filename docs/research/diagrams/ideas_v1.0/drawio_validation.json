@@ -1,0 +1,62 @@
+[
+  {
+    "file": "CLE_I01_Q值能否改变选卡并提高正确率_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I02_分轮积累解题反馈后，同题表现是否改善_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I03_在同种CWE、不同题族上还能获益吗_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I04_功能与安全经验分开，能否减少功能损失_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I05_能否为不同题目选择合适的记忆程度_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I06_检索找到了多少真正适用的经验_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I07_哪些问题必须完整验证，哪些可以先抽样_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I08_模型能力与经验来源是否存在交叉适配_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_I09_经验究竟改了哪些代码，为什么会损害功能_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  {
+    "file": "CLE_逐条想法与来源索引_v1.0.drawio",
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  }
+]

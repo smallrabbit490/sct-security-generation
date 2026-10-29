@@ -1,0 +1,232 @@
+{
+  "status": "paused_formal_runs_neutral_system_control_passed_role_issue_unresolved_upstream",
+  "targeted_offline_tests_passed": 84,
+  "controls": [
+    {
+      "protocol": "cle-provider-adaptation-v2",
+      "status": "stopped_control_failure",
+      "controls": [
+        {
+          "number": 1,
+          "status": "failed",
+          "passed": false,
+          "elapsed_seconds": 181.11,
+          "usage": null,
+          "error_type": "TimeoutError"
+        }
+      ]
+    },
+    {
+      "protocol": "cle-provider-adaptation-v3-stream",
+      "status": "stopped_control_failure",
+      "controls": [
+        {
+          "number": 1,
+          "status": "returned",
+          "passed": true,
+          "elapsed_seconds": 70.75,
+          "usage": {
+            "prompt_tokens": 993,
+            "completion_tokens": 7,
+            "total_tokens": 1000,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            }
+          },
+          "error_type": null
+        },
+        {
+          "number": 2,
+          "status": "returned",
+          "passed": false,
+          "elapsed_seconds": 87.875,
+          "usage": {
+            "prompt_tokens": 997,
+            "completion_tokens": 24,
+            "total_tokens": 1021,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            }
+          },
+          "error_type": null
+        }
+      ]
+    },
+    {
+      "protocol": "cle-provider-task-data-control-v4",
+      "status": "stopped_control_failure",
+      "controls": [
+        {
+          "number": 1,
+          "status": "returned",
+          "passed": false,
+          "elapsed_seconds": 81.672,
+          "usage": {
+            "prompt_tokens": 1020,
+            "completion_tokens": 54,
+            "total_tokens": 1074,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            }
+          },
+          "error_type": null
+        }
+      ]
+    },
+    {
+      "protocol": "cle-provider-official-org-control-v5",
+      "status": "stopped_control_failure",
+      "controls": [
+        {
+          "number": 1,
+          "kind": "code",
+          "status": "failed",
+          "submitted_utc": "2026-10-23T16:48:23.270437+00:00",
+          "passed": false,
+          "error_type": "RuntimeError",
+          "diagnostics": [
+            {
+              "category": "http_error",
+              "attempt": 1,
+              "elapsed_s": 0.8899999999994179,
+              "http_status": 403
+            }
+          ],
+          "elapsed_seconds": 0.89
+        }
+      ]
+    },
+    {
+      "protocol": "cle-provider-user-agent-code-control-v6",
+      "status": "stopped_control_failure",
+      "controls": [
+        {
+          "number": 1,
+          "status": "returned",
+          "passed": false,
+          "elapsed_seconds": 3.25,
+          "usage": {
+            "prompt_tokens": 997,
+            "completion_tokens": 24,
+            "total_tokens": 1021,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            }
+          },
+          "error_type": null
+        }
+      ]
+    },
+    {
+      "protocol": "cle-provider-prompt-route-diagnosis-v7",
+      "status": "completed_diagnostics",
+      "controls": [
+        {
+          "number": 1,
+          "name": "fresh_code_user",
+          "status": "returned",
+          "passed": false,
+          "elapsed_seconds": 11.782,
+          "usage": {
+            "prompt_tokens": 991,
+            "completion_tokens": 54,
+            "total_tokens": 1045,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            }
+          },
+          "error_type": null
+        },
+        {
+          "number": 2,
+          "name": "system_then_original_code",
+          "status": "returned",
+          "passed": true,
+          "elapsed_seconds": 6.906,
+          "usage": {
+            "prompt_tokens": 1003,
+            "completion_tokens": 11,
+            "total_tokens": 1014,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            }
+          },
+          "error_type": null
+        },
+        {
+          "number": 3,
+          "name": "plain_arithmetic_user",
+          "status": "returned",
+          "passed": true,
+          "elapsed_seconds": 9.313,
+          "usage": {
+            "prompt_tokens": 976,
+            "completion_tokens": 38,
+            "total_tokens": 1014,
+            "completion_tokens_details": {
+              "audio_tokens": 0,
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            }
+          },
+          "error_type": null
+        }
+      ]
+    }
+  ],
+  "new_HTTP_attempts": 9,
+  "new_known_returned_tokens": 7189,
+  "new_unknown_usage_operations": 2,
+  "all_stages_known_tokens": 200385,
+  "aggregate_unknown_usage_operations": 7,
+  "reserved_HTTP_after_shared_preparation": 35,
+  "reserved_tokens_after_shared_preparation": 326010,
+  "budget_caps_unchanged": true,
+  "billing_complete": false,
+  "new_P7_started": 0,
+  "new_Q_updates": 0,
+  "active_probe_processes": 0,
+  "official_org_control": "stopped_HTTP403_code_control_second_not_sent",
+  "latest_prompt_route_diagnosis": "provider_prompt_route_investigation.json",
+  "formal_message_protocol_changed": false
+}

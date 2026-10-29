@@ -1,0 +1,27 @@
+{
+  "status": "protocol_installed_experiments_queued",
+  "protocol": "cle-reduced-scope-20261028-v1",
+  "first_batch": {
+    "Q_retest": 1416,
+    "memory_labels": 820,
+    "retrieval_tasks": 57
+  },
+  "maximum_extra": {
+    "Q_intermediate": 0,
+    "memory_labels": 820,
+    "retrieval_tasks": 57
+  },
+  "offline_checks": {
+    "status": "passed",
+    "tests_run": 68,
+    "failures": 0,
+    "errors": 0,
+    "network_API_calls": 0,
+    "transport": "synthetic HTTP fixtures only; real sockets blocked in integration tests",
+    "output": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\scope_reduction_20261028\\offline_checks_output.txt",
+    "command": "python -B -X utf8 -m configs.cle_weekly_reduced_20261028.offline_check"
+  },
+  "experiment_scores_generated": false,
+  "new_API_calls_by_migration": 0,
+  "original_full_configs": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\scope_reduction_20261028\\original_full"
+}

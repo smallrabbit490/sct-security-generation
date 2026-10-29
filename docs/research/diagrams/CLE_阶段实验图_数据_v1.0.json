@@ -1,0 +1,1393 @@
+{
+  "snapshot": {
+    "time": "2026-10-28T12:38:54+08:00",
+    "workers": 3,
+    "packages": [
+      {
+        "key": "FQ_LEARN",
+        "status": "needs_technical_recovery",
+        "completed": 784,
+        "planned": 1122,
+        "stages": {
+          "K0": {
+            "protocol": "cle-weekly-full-requirements-20261027-v1",
+            "stage": "K0",
+            "pool": "D_init",
+            "status": "completed",
+            "planned": 303,
+            "completed": 303,
+            "first": {
+              "functional": 159,
+              "security": 244,
+              "joint": 143,
+              "measured": 301
+            },
+            "final": {
+              "functional": 163,
+              "security": 247,
+              "joint": 148,
+              "measured": 301
+            },
+            "Q_covered_cards": 445,
+            "card_count": 1939,
+            "Q_coverage": 0.2294997421351212,
+            "credited_events": 837,
+            "adopted_positions": 878,
+            "known_reported_tokens": 20055303,
+            "physical_HTTP": 2809,
+            "unknown_or_inflight_HTTP": 44,
+            "currency_cost": null,
+            "no_performance_stop": true,
+            "updated_utc": "2026-10-27T16:46:45.317440+00:00"
+          },
+          "K1": {
+            "protocol": "cle-weekly-full-requirements-20261027-v1",
+            "stage": "K1",
+            "pool": "D_grow",
+            "status": "completed",
+            "planned": 273,
+            "completed": 273,
+            "first": {
+              "functional": 147,
+              "security": 203,
+              "joint": 128,
+              "measured": 272
+            },
+            "final": {
+              "functional": 149,
+              "security": 207,
+              "joint": 133,
+              "measured": 272
+            },
+            "Q_covered_cards": 610,
+            "card_count": 1939,
+            "Q_coverage": 0.3145951521402785,
+            "credited_events": 646,
+            "adopted_positions": 770,
+            "known_reported_tokens": 18378470,
+            "physical_HTTP": 2530,
+            "unknown_or_inflight_HTTP": 28,
+            "currency_cost": null,
+            "no_performance_stop": true,
+            "updated_utc": "2026-10-27T22:06:53.322945+00:00"
+          },
+          "K2": {
+            "protocol": "cle-weekly-full-requirements-20261027-v1",
+            "stage": "K2",
+            "pool": "D_grow",
+            "status": "needs_technical_recovery",
+            "planned": 273,
+            "completed": 208,
+            "first": {
+              "functional": 107,
+              "security": 157,
+              "joint": 89,
+              "measured": 208
+            },
+            "final": {
+              "functional": 108,
+              "security": 161,
+              "joint": 90,
+              "measured": 208
+            },
+            "Q_covered_cards": 685,
+            "card_count": 1939,
+            "Q_coverage": 0.35327488396080453,
+            "credited_events": 479,
+            "adopted_positions": 591,
+            "known_reported_tokens": 14391782,
+            "physical_HTTP": 2018,
+            "unknown_or_inflight_HTTP": 55,
+            "currency_cost": null,
+            "no_performance_stop": true,
+            "updated_utc": "2026-10-28T04:35:48.011705+00:00"
+          }
+        }
+      },
+      {
+        "key": "FQ_RETEST",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 1416,
+        "stages": {}
+      },
+      {
+        "key": "FQ_GATE",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 2384,
+        "stages": {}
+      },
+      {
+        "key": "FFS",
+        "status": "running",
+        "completed": 1735,
+        "planned": 2980,
+        "stages": {}
+      },
+      {
+        "key": "FG_LABELS",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 820,
+        "stages": {}
+      },
+      {
+        "key": "FG_GATE",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 1788,
+        "stages": {}
+      },
+      {
+        "key": "FR",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 57,
+        "stages": {}
+      },
+      {
+        "key": "BUILD_C41",
+        "status": "not_started",
+        "completed": 0,
+        "planned": null,
+        "stages": {}
+      },
+      {
+        "key": "FX_GATE",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 3576,
+        "stages": {}
+      },
+      {
+        "key": "FX_EXTERNAL",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 1530,
+        "stages": {}
+      },
+      {
+        "key": "P3_EXTERNAL",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 255,
+        "stages": {}
+      },
+      {
+        "key": "FG_LABELS_EXTRA",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 820,
+        "stages": {}
+      },
+      {
+        "key": "FR_EXTRA",
+        "status": "not_started",
+        "completed": 0,
+        "planned": 57,
+        "stages": {}
+      }
+    ],
+    "tasks": [
+      {
+        "id": "Q.run",
+        "status": "running",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "Q.K0.analysis",
+        "status": "completed",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "Q.K1.analysis",
+        "status": "completed",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "Q.K2.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "Q.K3.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "FS.run",
+        "status": "running",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "BUILD.prepare",
+        "status": "completed",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "CROSS.prepare",
+        "status": "completed",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "CROSS.v32",
+        "status": "blocked_external",
+        "reason": "v32_unavailable",
+        "execution": null
+      },
+      {
+        "id": "EXTERNAL.prepare",
+        "status": "blocked_external",
+        "reason": "original_validator_image_missing",
+        "execution": null
+      },
+      {
+        "id": "EXTERNAL.v32",
+        "status": "blocked_external",
+        "reason": "v32_unavailable",
+        "execution": null
+      },
+      {
+        "id": "Q.retest",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "FS.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "P3.external",
+        "status": "blocked_external",
+        "reason": "original_validator_image_missing",
+        "execution": null
+      },
+      {
+        "id": "Q.retest.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.labels",
+        "status": "waiting_turn",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "P3.analysis",
+        "status": "blocked_external",
+        "reason": "upstream:P3.external",
+        "execution": null
+      },
+      {
+        "id": "Q.gate",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.labels.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "Q.gate.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.decide82",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.extra",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.extra.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.decide164",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.train",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.gate",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "GR.gate.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "BUILD.run",
+        "status": "waiting_turn",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "BUILD.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "CROSS.v41",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "EXTERNAL.v41",
+        "status": "blocked_external",
+        "reason": "original_validator_image_missing",
+        "execution": null
+      },
+      {
+        "id": "CROSS.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "EXTERNAL.analysis",
+        "status": "blocked_external",
+        "reason": "upstream:EXTERNAL.v41",
+        "execution": null
+      },
+      {
+        "id": "FR.run",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "FR.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "FR.decide57",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "FR.extra",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "FR.extra.analysis",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "FR.human",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      },
+      {
+        "id": "CLOSEOUT",
+        "status": "waiting_dependency",
+        "reason": null,
+        "execution": null
+      }
+    ]
+  },
+  "experiments": [
+    {
+      "full_name": "旧模型在增长题上的不限三卡学习与回测",
+      "目的": "检查解除三卡上限后，更多经验能否获得Q反馈，以及学到的Q能否帮助原题。",
+      "实验步骤": "①在273道增长题上做题，不限制最多三张卡，让Q跟随实际采用记录学习；②冻结Q，在同273题上回测；③比较覆盖率和正确率。",
+      "结果分析": "实测观察学习Joint为109/273，冻结回测为100/273，净少9题。对“扩大反馈范围”是正向结果，对“学得Q能提高同题正确率”是反向结果。说明让更多卡获得评分，并不会自动让排序更有用，后续必须把覆盖率与提分分开检验。",
+      "id": "A01",
+      "track": "Q",
+      "phase": 4,
+      "title": "不限三卡的增长学习与回测",
+      "scale": "273题学习＋273题冻结回测",
+      "depends": [],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "实测观察学习Joint为109/273，冻结回测为100/273，净少9题。对“扩大反馈范围”是正向结果，对“学得Q能提高同题正确率”是反向结果。说明让更多卡获得评分，并不会自动让排序更有用，后续必须把覆盖率与提分分开检验。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A01",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "旧模型在初始化题上的两种选卡上限学习",
+      "目的": "检查卡片来自初始化题时，扩大选卡数量能否增加反馈覆盖。",
+      "实验步骤": "①分别保留限三卡和不限三卡的学习记录；②让模型生成代码并记录实际采用；③只给符合奖励条件的采用卡更新Q。",
+      "结果分析": "限三卡学习后的反馈卡为669/1939，不限三卡学习后为926/1939。两次学习结束时的覆盖差异，正向支撑扩大可反馈范围的目的。说明三卡上限是覆盖限制之一；这些快照的起始状态不同，不能把全部差额当成解除上限的独立收益。",
+      "id": "A02",
+      "track": "Q",
+      "phase": 4,
+      "title": "初始化集两种上限学习",
+      "scale": "303题初始化集；两种上限",
+      "depends": [],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "限三卡学习后的反馈卡为669/1939，不限三卡学习后为926/1939。两次学习结束时的覆盖差异，正向支撑扩大可反馈范围的目的。说明三卡上限是覆盖限制之一；这些快照的起始状态不同，不能把全部差额当成解除上限的独立收益。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A02",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "旧模型在全审计集上的Q四组对照",
+      "目的": "判断学习Q是否比原CLE、相似度和打乱Q更能选对经验。",
+      "实验步骤": "①冻结当次卡库和Q；②在298题名单上运行原CLE、相似度、学习Q、同类漏洞内打乱Q四组；③按同题配对比较Joint。",
+      "结果分析": "共同可测296题上，学习Q比原CLE净多6题，比相似度净少1题，比打乱Q净多2题。相对原CLE的结果为正向，相对相似度的结果为反向，配对差区间均跨0。说明这次学习Q没有达到稳定胜过强对照的目的，相似度和打乱Q都必须保留为参照。",
+      "id": "A03",
+      "track": "Q",
+      "phase": 5,
+      "title": "旧模型全审计集Q四臂",
+      "scale": "298题×4臂；历史单重复",
+      "depends": [
+        "A01",
+        "A02"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "共同可测296题上，学习Q比原CLE净多6题，比相似度净少1题，比打乱Q净多2题。相对原CLE的结果为正向，相对相似度的结果为反向，配对差区间均跨0。说明这次学习Q没有达到稳定胜过强对照的目的，相似度和打乱Q都必须保留为参照。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A03",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "旧模型重复选卡与实际采用分析",
+      "目的": "确认Q改变的是具体卡片编号，并检查变化是否超过模型自身波动。",
+      "实验步骤": "①固定8题及候选，四组各选卡5次，共160次；②比较组内波动和组间差异；③对齐初始化题的改选、采用和Joint记录。",
+      "结果分析": "160次重复选择显示Q的影响超过组内波动。296道可比较题中281题改变卡片集合，其中225题采用新增成员，该子集Joint由103增至110。对“Q能改变具体选择并进入生成过程”是正向支撑；子集成绩不是随机对照的Q收益，后续仍需冻结比较。",
+      "id": "A04",
+      "track": "Q",
+      "phase": 2,
+      "title": "重复选卡与实际采纳复盘",
+      "scale": "重复选卡；核对具体卡号",
+      "depends": [
+        "A03"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "160次重复选择显示Q的影响超过组内波动。296道可比较题中281题改变卡片集合，其中225题采用新增成员，该子集Joint由103增至110。对“Q能改变具体选择并进入生成过程”是正向支撑；子集成绩不是随机对照的Q收益，后续仍需冻结比较。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A04",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "十八道损失题的代码原因复盘",
+      "目的": "查明原来通过、后来失败的题，具体在哪一步出错。",
+      "实验步骤": "①取出18题前后代码、题面、经验和验证记录；②逐题检查配置、传入对象和公开要求；③用保存代码进行局部复验。",
+      "结果分析": "18题中，13题覆盖已有配置，2题缺公开契约，2题涉及资源策略，1题涉及网络；局部修正配置或契约后，相应题目恢复通过。对定位失败原因是正向支撑。说明主要可定位损失来自具体实现和验收条件，应先处理这些问题，再判断卡片评分的作用。",
+      "id": "A05",
+      "track": "FS",
+      "phase": 6,
+      "title": "十八道损失题代码复盘",
+      "scale": "18道损失题；逐题读代码",
+      "depends": [
+        "A03"
+      ],
+      "actors": [
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "18题中，13题覆盖已有配置，2题缺公开契约，2题涉及资源策略，1题涉及网络；局部修正配置或契约后，相应题目恢复通过。对定位失败原因是正向支撑。说明主要可定位损失来自具体实现和验收条件，应先处理这些问题，再判断卡片评分的作用。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A05",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "历史检索适用性比较与题面修复",
+      "目的": "检查取出的经验是否适用，并修复影响做题和奖励的公开条件。",
+      "实验步骤": "①整理六组检索记录与AI标签；②核对102、136及后续修复题的原题、上下文和测试；③保留原数据，另存补齐后的契约并预检。",
+      "结果分析": "六组完成199道正式统计任务，AI估计的直接适用比例仅约9.1%至12.3%；题面修复已用于后续实验。低适用比例对“当前检索能稳定找到可用经验”给出反向结果，契约修复则正向支撑验收一致性。说明检索和题目条件都需要单独测量，人工复核后才能形成正式指标。",
+      "id": "A06",
+      "track": "FR",
+      "phase": 3,
+      "title": "历史检索与公开契约修复",
+      "scale": "199道检索任务；914对AI标签",
+      "depends": [],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "六组完成199道正式统计任务，AI估计的直接适用比例仅约9.1%至12.3%；题面修复已用于后续实验。低适用比例对“当前检索能稳定找到可用经验”给出反向结果，契约修复则正向支撑验收一致性。说明检索和题目条件都需要单独测量，人工复核后才能形成正式指标。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A06",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "新模型在PLT上的无经验基线",
+      "目的": "得到DeepSeek v4.1 Flash 1017不使用经验时的完整做题参照。",
+      "实验步骤": "①在298道审计题上使用P3初析、规划和生成流程；②最多修订一次；③不输入经验、不生成新卡、不更新Q；④回放保存结果。",
+      "结果分析": "298题全部交付，297题完成测量；功能通过111题，安全通过232题，Joint通过96题。对建立新模型无经验参照是正向支撑。功能成绩明显低于安全成绩，说明后续主线应重点检查功能保持；带卡收益仍与同流程的P7空卡比较。",
+      "id": "A07",
+      "track": "CROSS",
+      "phase": 5,
+      "title": "新模型P3无经验基线",
+      "scale": "298题全部交付；297题可测",
+      "depends": [],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "298题全部交付，297题完成测量；功能通过111题，安全通过232题，Joint通过96题。对建立新模型无经验参照是正向支撑。功能成绩明显低于安全成绩，说明后续主线应重点检查功能保持；带卡收益仍与同流程的P7空卡比较。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A07",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "新模型使用旧1939张卡的初步迁移对照",
+      "目的": "判断旧卡库能否直接帮助新模型，并确认原P7接线可用。",
+      "实验步骤": "①固定12题，每题重复两次；②运行P7空卡和P7旧卡两组，共48次；③保持Q关闭；④核对采用与代码落实。",
+      "结果分析": "空卡Joint为7/24，带卡为8/24；共同可测的23个配对均通过7次，带卡21/24次声明采用。对接线可用是正向支撑，对稳定提高正确率没有正向支撑。说明经验确实进入流程，但通过数增加集中在一个截断案例，不能只看采用率就判断经验有效。",
+      "id": "A08",
+      "track": "CROSS",
+      "phase": 2,
+      "title": "旧1939卡迁移探针",
+      "scale": "12题×2条件×2次＝48次",
+      "depends": [
+        "A07"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "空卡Joint为7/24，带卡为8/24；共同可测的23个配对均通过7次，带卡21/24次声明采用。对接线可用是正向支撑，对稳定提高正确率没有正向支撑。说明经验确实进入流程，但通过数增加集中在一个截断案例，不能只看采用率就判断经验有效。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A08",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "文件与签名关系提醒对照",
+      "目的": "检查生成时明确文件和签名的对应关系，能否减少绑定错误。",
+      "实验步骤": "①固定同一题的初析和计划；②比较空卡或带卡，以及普通绑定提醒或关系提醒，共四种组合；③每组重复两次，共8次。",
+      "结果分析": "四组Joint均为2/2，8次全部通过。对生成阶段能收到关系提醒是正向支撑，对提醒能减少错误的比较目的没有提供区分。说明本题原本就容易通过，应在后续完整比较中检验提醒，而不把这8次作为提分证据。",
+      "id": "A09",
+      "track": "FS",
+      "phase": 2,
+      "title": "文件与签名关系提醒",
+      "scale": "8次共享生成起点对照",
+      "depends": [
+        "A08"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "四组Joint均为2/2，8次全部通过。对生成阶段能收到关系提醒是正向支撑，对提醒能减少错误的比较目的没有提供区分。说明本题原本就容易通过，应在后续完整比较中检验提醒，而不把这8次作为提分证据。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A09",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "功能与安全经验表达的小范围五组比较",
+      "目的": "检查把功能建议和安全建议分开呈现，是否更能同时满足两类测试。",
+      "实验步骤": "①固定12个题族、各重复两次；②比较无卡、原卡、功能建议、安全建议、两类分开呈现，共120次；③保持来源卡一致并比较Joint。",
+      "结果分析": "无卡、原卡、功能建议、安全建议、分开呈现的Joint依次为12、13、13、12、9次，每组24次。分开呈现比原卡少4次，对“拆分即可改善Joint”给出反向结果。说明仅改变组织方式没有解决功能保持和建议落实，必须继续检查实际生成代码。",
+      "id": "A10",
+      "track": "FS",
+      "phase": 3,
+      "title": "功能安全五组小对照",
+      "scale": "12题×5条件×2次＝120次",
+      "depends": [
+        "A09"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "无卡、原卡、功能建议、安全建议、分开呈现的Joint依次为12、13、13、12、9次，每组24次。分开呈现比原卡少4次，对“拆分即可改善Joint”给出反向结果。说明仅改变组织方式没有解决功能保持和建议落实，必须继续检查实际生成代码。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A10",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "带接口保护的来源经验开发对照",
+      "目的": "检查保留目标接口、限制来源假设迁移后，经验能否帮助生成。",
+      "实验步骤": "①在12个题族上比较M1来源经验和无经验；②各重复两次，共48次；③记录经验注入、代码落实和同题救回或损失。",
+      "结果分析": "M1的Joint为14/24，无经验为11/24，救回5次、损失2次，净增3次。对开发阶段的来源经验方案是正向支撑，达到当时进入保留题确认的条件。说明保护目标接口后有值得继续验证的增量，因此按原计划进入A19，而不把开发结果直接当作最终结论。",
+      "id": "A11",
+      "track": "FS",
+      "phase": 3,
+      "title": "接口保护与来源经验",
+      "scale": "24题×2次＝48次",
+      "depends": [
+        "A08"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "M1的Joint为14/24，无经验为11/24，救回5次、损失2次，净增3次。对开发阶段的来源经验方案是正向支撑，达到当时进入保留题确认的条件。说明保护目标接口后有值得继续验证的增量，因此按原计划进入A19，而不把开发结果直接当作最终结论。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A11",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "生成阶段功能保持提醒对照",
+      "目的": "判断仅加强生成提醒是否足以减少功能错误。",
+      "实验步骤": "①共享12个题族的前置分析和规划；②在生成阶段使用原模板及两种提醒模板；③各重复两次，共72次。",
+      "结果分析": "原模板和两种提醒模板的Joint分别为10/24、10/24、11/24。P13与原模板持平，P22有1次正向增量；对减少错误，P13没有正向支撑，P22只支持这1次局部改善。说明单加提醒没有解决本批题的大多数失败，后续应检查目标接口和代码约束是否落实。",
+      "id": "A12",
+      "track": "FS",
+      "phase": 3,
+      "title": "生成阶段功能保持提醒",
+      "scale": "72次生成提醒对照",
+      "depends": [
+        "A11"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "原模板和两种提醒模板的Joint分别为10/24、10/24、11/24。P13与原模板持平，P22有1次正向增量；对减少错误，P13没有正向支撑，P22只支持这1次局部改善。说明单加提醒没有解决本批题的大多数失败，后续应检查目标接口和代码约束是否落实。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A12",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "根据公开要求自生成检查的流程对照",
+      "目的": "判断让模型先写公开自检，能否减少与题目要求不符的代码。",
+      "实验步骤": "①固定48个题族，各重复两次；②比较原P7和公开自检流程，共192次；③正式功能、安全测试只用于最终测量。",
+      "结果分析": "原P7的Joint通过30次，公开自检通过28次；自检组功能通过增加5次，安全通过减少3次。对提高Joint的目的给出反向结果。错误自检会继续改坏已经安全转义的内容，说明自生成检查不能替代正式验证，功能增加也不能掩盖安全损失。",
+      "id": "A13",
+      "track": "FS",
+      "phase": 3,
+      "title": "公开要求自生成检查",
+      "scale": "192次公开契约消费者对照",
+      "depends": [
+        "A09"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "原P7的Joint通过30次，公开自检通过28次；自检组功能通过增加5次，安全通过减少3次。对提高Joint的目的给出反向结果。错误自检会继续改坏已经安全转义的内容，说明自生成检查不能替代正式验证，功能增加也不能掩盖安全损失。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A13",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "五档经验详细程度比较",
+      "目的": "检查不提供经验、简短提醒、机制说明、操作模板和完整示例分别适合什么题。",
+      "实验步骤": "①固定48个题族，各重复两次；②比较五档经验，共480次；③保持合格来源一致，逐题比较Joint和采用。",
+      "结果分析": "五档Joint依次为44、46、44、47、42次，每档计划96次；31个题族的五档重复成功次数相同。对“部分题目会受经验详细程度影响”是正向支撑，对“信息越完整越好”是反向结果。说明应分析具体任务差异，不能统一使用最详细示例。",
+      "id": "A14",
+      "track": "GR",
+      "phase": 3,
+      "title": "五档经验详细程度比较",
+      "scale": "48题×5档×2次＝480次",
+      "depends": [
+        "A08"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "五档Joint依次为44、46、44、47、42次，每档计划96次；31个题族的五档重复成功次数相同。对“部分题目会受经验详细程度影响”是正向支撑，对“信息越完整越好”是反向结果。说明应分析具体任务差异，不能统一使用最详细示例。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A14",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "基于真实做题结果的记忆程度分类器",
+      "目的": "判断根据公开题目特征选择经验档位，能否超过固定提醒和简单规则。",
+      "实验步骤": "①只用训练题的真实结果产生标签；②按题族交叉验证，训练并冻结分类器；③在24个保留题族、两重复上比较三策略，共144个逻辑单元。",
+      "结果分析": "19个训练题族产生可用标签；分类器、固定简短提醒、简单规则的Joint分别为21/48、22/48、19/48。分类器低于固定提醒，对超过简单策略的目的给出反向结果。说明本轮训练没有把题目特征转化为代码收益，应先补足稳定标签，再扩大模型复杂度。",
+      "id": "A15",
+      "track": "GR",
+      "phase": 3,
+      "title": "真实标签分类器小对照",
+      "scale": "24题×3策略×2次＝144逻辑格",
+      "depends": [
+        "A14"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "19个训练题族产生可用标签；分类器、固定简短提醒、简单规则的Joint分别为21/48、22/48、19/48。分类器低于固定提醒，对超过简单策略的目的给出反向结果。说明本轮训练没有把题目特征转化为代码收益，应先补足稳定标签，再扩大模型复杂度。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A15",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "新模型五次重复选卡的Q作用验证",
+      "目的": "判断Q对新模型选卡的作用是否超过同一条件多次调用的波动。",
+      "实验步骤": "①固定8个题族的查询和共同候选；②原CLE、相似度、学习Q、打乱Q各重复选卡5次，共160次；③不生成代码、不更新Q。",
+      "结果分析": "160次选择全部有效，学习Q相对另外三组的卡片成员差异均通过预定机制检验。对“Q作用超过模型自己波动”是正向支撑。说明Q确实改变具体卡片编号，后续要检验采用与代码正确率，不能把排序变化本身当成提分。",
+      "id": "A16",
+      "track": "Q",
+      "phase": 2,
+      "title": "Q四臂五次重复选卡",
+      "scale": "8题×4臂×5次＝160选卡单元",
+      "depends": [
+        "A08"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "160次选择全部有效，学习Q相对另外三组的卡片成员差异均通过预定机制检验。对“Q作用超过模型自己波动”是正向支撑。说明Q确实改变具体卡片编号，后续要检验采用与代码正确率，不能把排序变化本身当成提分。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A16",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "新模型消费旧Q的四组代码比较",
+      "目的": "判断已经改变选卡的旧Q，能否进一步改善新模型最终代码。",
+      "实验步骤": "①冻结旧1939卡及其Q；②固定24个题族、各重复两次；③比较四种选卡方式，共192次；④核对改选、采用、实现和Joint。",
+      "结果分析": "四组Joint依次为11/48、13/48、11/48、13/48；学习Q相对原CLE有46/48次首轮改选，32/48次采用新增成员。选卡干预得到正向支撑，提高正确率则得到反向结果。说明瓶颈已经进入经验适用性和代码落实，单纯增加改选次数不足以改善Joint。",
+      "id": "A17",
+      "track": "Q",
+      "phase": 3,
+      "title": "新模型消费旧Q",
+      "scale": "24题×4臂×2次＝192次",
+      "depends": [
+        "A16"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "四组Joint依次为11/48、13/48、11/48、13/48；学习Q相对原CLE有46/48次首轮改选，32/48次采用新增成员。选卡干预得到正向支撑，提高正确率则得到反向结果。说明瓶颈已经进入经验适用性和代码落实，单纯增加改选次数不足以改善Joint。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A17",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "固定同一份代码后的经验编辑对照",
+      "目的": "将起点代码固定，单独检查经验是否帮助修改代码。",
+      "实验步骤": "①取6题在原卡组的首次代码；②比较带经验编辑和空经验编辑；③各重复两次，共24次；④使用原验证器检查修改后的代码。",
+      "结果分析": "两组Joint均为6/12，功能通过均为7/12，安全通过均为9/12；带经验组有9/12次实际注入经验。对固定起点后经验能带来净编辑收益没有正向支撑。说明这批代码没有因经验输入而修得更好，经验进入输入与最终改对代码是两件事。",
+      "id": "A18",
+      "track": "FS",
+      "phase": 3,
+      "title": "同一代码的反事实编辑",
+      "scale": "24次共享代码起点编辑",
+      "depends": [
+        "A10"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "两组Joint均为6/12，功能通过均为7/12，安全通过均为9/12；带经验组有9/12次实际注入经验。对固定起点后经验能带来净编辑收益没有正向支撑。说明这批代码没有因经验输入而修得更好，经验进入输入与最终改对代码是两件事。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A18",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "来源经验方案在保留题上的确认",
+      "目的": "检查开发阶段选出的M1方案，能否在另一批题上继续产生收益。",
+      "实验步骤": "①按预定开发规则选出M1；②固定24个保留题族，各重复两次；③比较M1和无经验，共96次；④分析配对结果与题族差异。",
+      "结果分析": "M1的Joint为28/48，无经验为20/48，救回9次、损失1次，净增8次；题族精确检验p为0.078125。通过数对方案给出正向支撑，但未达到0.05的统计确认门槛。说明它应作为全量匹配验证的优先候选，现有结果不承担稳定优势的最终确认。",
+      "id": "A19",
+      "track": "FS",
+      "phase": 3,
+      "title": "来源经验保留题确认",
+      "scale": "24题×2条件×2次＝96次",
+      "depends": [
+        "A11"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "M1的Joint为28/48，无经验为20/48，救回9次、损失1次，净增8次；题族精确检验p为0.078125。通过数对方案给出正向支撑，但未达到0.05的统计确认门槛。说明它应作为全量匹配验证的优先候选，现有结果不承担稳定优势的最终确认。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A19",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "保存原记录，作为后续对照与原因复盘的依据。"
+    },
+    {
+      "full_name": "新模型初始化题全量Q学习",
+      "目的": "让新模型用自己的做题反馈为旧卡重新建立Q起点。",
+      "实验步骤": "①固定1939张卡正文，Q和访问次数从零开始；②顺序完成303道初始化题；③仅给合格且实际采用的卡更新Q；④冻结为K0并回放。",
+      "结果分析": "303次全部执行，301次完成测量，最终Joint通过148次；445/1939张卡获得反馈，覆盖22.95%，并冻结K0。对新模型能建立自己的Q起点是正向支撑。说明学习与记账链路已形成；学习期通过数只描述过程，Q是否有用由后续冻结对照判断。",
+      "id": "A20",
+      "track": "Q",
+      "phase": 4,
+      "title": "初始化全量Q学习K0",
+      "scale": "303题；Q从零开始",
+      "depends": [
+        "A17"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "已执行303/303题次；Joint 148；Q反馈卡445/1939。学习过程成绩不替代冻结对照。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A20",
+      "evidence": "../CLE-TODO-20261022-20261028-v04.md",
+      "next": "完成本轮全部题目，冻结Q，零API回放并阅读案例。",
+      "progress": "303/303题次"
+    },
+    {
+      "full_name": "新模型增长题第一轮全量Q学习",
+      "目的": "检查从初始化题迁移到增长题后，反馈覆盖能增加多少。",
+      "实验步骤": "①从K0接续273道增长题；②保持单进程逐题更新Q；③全部题目均做，只有232道合格题授予Q反馈；④冻结为K1并回放。",
+      "结果分析": "273次全部执行，272次完成测量，最终Joint通过133次；反馈卡累计610/1939，覆盖31.46%，比K0增加165张。对跨题池扩展反馈范围是正向支撑。说明增长题接触了更多卡，下一轮需要判断这种扩展是否继续，以及新增评分能否提高冻结回测成绩。",
+      "id": "A21",
+      "track": "Q",
+      "phase": 4,
+      "title": "增长第一轮Q学习K1",
+      "scale": "273题；从K0顺序接续",
+      "depends": [
+        "A20"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "done",
+      "detail": "已执行273/273题次；Joint 133；Q反馈卡610/1939。学习过程成绩不替代冻结对照。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#A21",
+      "evidence": "../CLE-TODO-20261022-20261028-v04.md",
+      "next": "完成本轮全部题目，冻结Q，零API回放并阅读案例。",
+      "progress": "273/273题次"
+    },
+    {
+      "full_name": "新模型增长题第二轮Q学习 K2",
+      "目的": "检查重复做同一批增长题，Q是否继续覆盖新卡，还是集中重复奖励少数卡。",
+      "实验步骤": "①从K1顺序再做273道增长题；②保留已有167题和成功响应；③补足剩余106题；④完成后冻结K2、回放并分析。",
+      "预测结果分析": "当前已做167/273题，Joint通过78次，反馈卡666张。对剩余106题，正向门槛是新增至少1张合格反馈卡，说明接触范围仍在扩大；反向门槛是新增卡为0、但旧卡仍持续收到反馈，说明覆盖趋于集中。两者只判断覆盖变化，Q的提分作用由冻结对照检验。",
+      "id": "B01",
+      "track": "Q",
+      "phase": 4,
+      "title": "增长第二轮Q学习K2",
+      "scale": "273题；从K1接续",
+      "depends": [
+        "A21"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "recovering",
+      "detail": "已执行208/273题次；Joint 90；Q反馈卡685/1939。学习过程成绩不替代冻结对照。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#B01",
+      "evidence": "../CLE-TODO-20261022-20261028-v04.md",
+      "next": "完成本轮全部题目，冻结Q，零API回放并阅读案例。",
+      "progress": "208/273题次"
+    },
+    {
+      "full_name": "全298题功能与安全经验五组比较",
+      "目的": "用全量结果判断分开功能和安全经验，能否减少功能退化并提高Joint。",
+      "实验步骤": "①在298题上比较无卡、原卡、功能建议、安全建议、分开呈现五组；②每组两重复，共2980次；③完成剩余1320次后，做配对分析和案例复盘。",
+      "预测结果分析": "完成2980次后比较分开呈现与原卡。正向门槛是Joint差值的95%题族区间全部高于0，且功能、安全通过率均不下降，支持拆分有收益；反向门槛是该区间全部低于0，支持拆分造成净损失。区间跨0时不作胜负结论，逐题说明损失来自哪里。",
+      "id": "B02",
+      "track": "FS",
+      "phase": 5,
+      "title": "全量功能安全五组对照",
+      "scale": "298题×5条件×2次＝2980次",
+      "depends": [
+        "A10",
+        "A18"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "running",
+      "detail": "无卡、混合、功能、安全、功能安全分栏五条件；同题两重复。已完成部分保留，继续补齐固定矩阵。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#B02",
+      "evidence": "../CLE-TODO-20261022-20261028-v04.md",
+      "next": "完成2980次后回放，比较Joint、功能损失与安全救回。",
+      "progress": "1735/2980次"
+    },
+    {
+      "full_name": "新模型增长题第三轮Q学习 K3",
+      "目的": "完成预定三轮增长学习，得到统一的最终Q状态。",
+      "实验步骤": "①从完整K2接续；②顺序完成同273题并更新Q；③冻结为K3；④回放并比较K0至K3的覆盖、反馈集中度和成本。",
+      "预测结果分析": "以完整K2结束时的反馈卡数为起点。正向门槛是第三轮新增至少1张合格反馈卡且冻结结果可核对，说明覆盖继续扩展；反向门槛是新增卡为0、反馈只重复落在旧卡，说明覆盖饱和。无论哪种结果都完成273题，再由回测判断第三轮评分的实际价值。",
+      "id": "C01",
+      "track": "Q",
+      "phase": 4,
+      "title": "增长第三轮Q学习K3",
+      "scale": "273题；从K2接续",
+      "depends": [
+        "B01"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "等待前轮完成并冻结；按原顺序继续第三轮。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C01",
+      "evidence": "../CLE-TODO-20261022-20261028-v04.md",
+      "next": "完成本轮全部题目，冻结Q，零API回放并阅读案例。",
+      "progress": "0/273题次"
+    },
+    {
+      "full_name": "四个学习阶段的冻结Q同题回测",
+      "目的": "判断多轮学习得到的Q，是否真的让原增长题更容易做对。",
+      "实验步骤": "①等K0至K3完成并冻结；②273题比较相似度、Q-K0、Q-K1、Q-K2、Q-K3五条件；③各两重复，共2730次；④不更新Q。",
+      "预测结果分析": "正向门槛是K3比相似度的Joint更高，按题族的配对检验经过既定校正后p≤0.05，且功能、安全不下降，支持多轮Q改善同题选择；反向门槛是Joint更低且同一检验通过，支持评分损伤选择。其余结果记为未分出高下，并比较各轮救回与损失。",
+      "id": "C02",
+      "track": "Q",
+      "phase": 5,
+      "title": "冻结Q同题回测",
+      "scale": "1416次；主比较273题，中间54题",
+      "depends": [
+        "C01"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "Q1及最终K3各273题，中间K0/K1/K2同54题，各两重复，共1416次；冻结Q只读。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C02",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "K0—K3学习、回放与分析齐备后运行；中间轮不自动扩大。",
+      "task_id": "Q.retest",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "最终Q在全审计集上的四组迁移对照",
+      "目的": "判断学到的Q能否帮助同类漏洞、不同题族的新任务。",
+      "实验步骤": "①固定K3、1939卡和修订后的298题；②比较原CLE、相似度、学习Q、同类漏洞内打乱Q；③各两重复，共2384次；④记录改选、采用与代码落实。",
+      "预测结果分析": "正向门槛是学习Q同时胜过相似度和打乱Q，两项校正后p均≤0.05，功能、安全不下降，并有改选、采用和实现救回的证据，支持Q迁移收益；反向门槛是任一主要比较显著降低Joint，反对稳定优势。只有改选而不提分，判断为机制介入、收益未建立。",
+      "id": "C03",
+      "track": "Q",
+      "phase": 5,
+      "title": "最终Q全量迁移四臂",
+      "scale": "298题×4臂×2次＝2384次",
+      "depends": [
+        "C02"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "正向门槛是学习Q同时胜过相似度和打乱Q，两项校正后p均≤0.05，功能、安全不下降，并有改选、采用和实现救回的证据，支持Q迁移收益；反向门槛是任一主要比较显著降低Joint，反对稳定优势。只有改选而不提分，判断为机制介入、收益未建立。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C03",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "同题回测完整回放分析后，执行全298题四臂；Q2对Q1/Q3作主要比较。",
+      "task_id": "Q.gate",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "全增长集五档经验真实标签实验",
+      "目的": "为每道题找到有实际做题证据支持的经验详细程度。",
+      "实验步骤": "①使用修订后的273题及1924张共同合格来源卡；②五档各两重复，共2730次；③按预定题族划分训练和开发；④比较成功次数、采用和成本。",
+      "预测结果分析": "正向门槛是在按题族留出的开发题中，至少一个题族出现某档2/2次Joint通过、另一档0/2次通过，并能核对实际经验干预，支持存在可重复的档位差异；反向门槛是开发题各档成功次数全部相同，反对本批题需要分档。再统计有多少题能形成稳定标签。",
+      "id": "C04",
+      "track": "GR",
+      "phase": 3,
+      "title": "五档记忆首批82题",
+      "scale": "82题×5档×2次＝820次",
+      "depends": [
+        "B02"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "首批82题、820次。训练标签需覆盖30个family，至少两类各5个训练family，分类器非常量且开发路由至少两档。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C04",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "有多档差异但训练条件不足才追加82题；就绪后训练与全量验证。",
+      "task_id": "GR.labels",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "基于全量真实标签训练并冻结分类器",
+      "目的": "检验公开题目特征能否预测合适的经验详细程度。",
+      "实验步骤": "①等全273题五档实验与回放完成；②只用预定训练题族和真实标签拟合；③在训练内交叉验证；④冻结分类器、固定档位和简单规则。",
+      "预测结果分析": "正向门槛是题族交叉验证的选档准确率高于“始终预测最多类别”的基线，且差值95%区间全部高于0，支持公开特征含有可预测信息；反向门槛是区间全部低于0，说明当前分类器不如简单做法。区间跨0则预测优势未建立，代码收益继续由C06检验。",
+      "id": "C05",
+      "track": "GR",
+      "phase": 4,
+      "title": "分类器训练与冻结",
+      "scale": "82题或164题标签；离线训练",
+      "depends": [
+        "C04"
+      ],
+      "actors": [
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "只使用本轮真实标签；训练与开发按family隔离。标签不就绪时结束该分支，不伪造分类器成绩。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C05",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "先按预登记规则判断82或164题标签是否就绪，再离线训练并冻结。",
+      "task_id": "GR.train",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "全审计集记忆程度三策略对照",
+      "目的": "判断自动选档是否比所有题用同一档或简单规则更有用。",
+      "实验步骤": "①固定新训练的分类器；②298题比较分类器、固定档、公开规则；③各两重复，共1788个逻辑单元；④完整输入一致的既有结果才复用。",
+      "预测结果分析": "正向门槛是分类器的Joint同时高于固定档和公开规则，两项校正后p均≤0.05，且功能、安全不下降，支持自动选档有用；反向门槛是任一比较显著降低Joint，反对采用该分类器。若只提高选档准确率却不提高Joint，说明预测目标没有转化为做题收益。",
+      "id": "C06",
+      "track": "GR",
+      "phase": 5,
+      "title": "全量记忆路由三策略",
+      "scale": "298题×3策略×2次＝1788逻辑格",
+      "depends": [
+        "C05"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "正向门槛是分类器的Joint同时高于固定档和公开规则，两项校正后p均≤0.05，且功能、安全不下降，支持自动选档有用；反向门槛是任一比较显著降低Joint，反对采用该分类器。若只提高选档准确率却不提高Joint，说明预测目标没有转化为做题收益。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C06",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "新分类器就绪并冻结后全量评价；未就绪则按协议不执行。",
+      "task_id": "GR.gate",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "全增长集和审计集的检索AI盲标",
+      "目的": "区分库中没有适用卡、没有召回和召回后没有选中这三种问题。",
+      "实验步骤": "①为273道增长题及298道审计题建立共同候选池；②合并三种查询的向量前24和词面前8，再加固定随机16卡；③每个题卡对最多一次AI盲标。",
+      "预测结果分析": "按题判断：正向门槛是至少1张直接适用卡被召回并选中，支持该题检索命中；反向门槛是已标注池有适用卡、终选命中却为0，支持存在漏选。池内没有适用卡只说明本池未找到经验。汇总四指标后，再区分问题出在召回还是排序。",
+      "id": "C07",
+      "track": "FR",
+      "phase": 3,
+      "title": "检索首批57题AI盲标",
+      "scale": "增长27题＋审计30题",
+      "depends": [
+        "C04",
+        "B02",
+        "C10"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "首批增长27题、审计30题；三查询候选联集加随机16，逐题完整池盲标。AI只作模型辅助估计。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C07",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "缺主要CWE覆盖或区间过宽时追加57题；累计114题后结束扩大。",
+      "task_id": "FR.run",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "检索标签人工复核与正式指标",
+      "目的": "确认AI是否把真正适用的卡标对，使检索评价有可核对的人工依据。",
+      "实验步骤": "①导出题目、卡片、AI理由和依据；②人工逐项确认直接适用、有条件、无关、冲突、信息不足五类；③保存独立人工标签；④裁决后复算四指标。",
+      "预测结果分析": "正向门槛是主评价池全部完成人工裁决，且人工确认AI的直接适用判断、没有发现漏标，支持这批AI标签可复用；反向门槛是人工发现误标或漏标，即需修正相应指标，反对直接照抄AI结论。正式四指标以全部裁决后的人工标签为准。",
+      "id": "C08",
+      "track": "FR",
+      "phase": 6,
+      "title": "人工复核与正式指标",
+      "scale": "逐题完整候选池；人工确认",
+      "depends": [
+        "C07"
+      ],
+      "actors": [
+        "人工复核",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "external",
+      "detail": "AI标签与人工标签独立保存；人工未确认不代签，整库召回率不由抽样推定。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C08",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "AI复核材料齐备后人工逐对确认，导入后复算候选池正式指标。",
+      "progress": "人工确认待做"
+    },
+    {
+      "full_name": "用新模型从空库建立完整CLE经验库",
+      "目的": "得到由新模型自己产生的经验，用于区分模型能力和经验来源。",
+      "实验步骤": "①从空经验库启动原CLE冷启动；②按原流程完成三轮主动回放和全局门控；③保留候选、晋升、拒绝及来源；④冻结新库C41并回放。",
+      "预测结果分析": "正向门槛是原CLE冷启动、三轮回放和门控全部完成，形成至少1张通过原门控、来源可核对的最终卡，并完成回放，支持新模型能建立可用经验资产；反向门槛是最终没有卡通过门控，说明本流程未形成新库。新库是否提高Joint再由C10判断，不以卡数多代替质量。",
+      "id": "C09",
+      "track": "CROSS",
+      "phase": 4,
+      "title": "v4.1从空库完整建卡",
+      "scale": "原CLE三轮、主动回放及门控",
+      "depends": [
+        "C06"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "正向门槛是原CLE冷启动、三轮回放和门控全部完成，形成至少1张通过原门控、来源可核对的最终卡，并完成回放，支持新模型能建立可用经验资产；反向门槛是最终没有卡通过门控，说明本流程未形成新库。新库是否提高Joint再由C10判断，不以卡数多代替质量。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C09",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "按既定队列等待前序分析；从空库完成原CLE三轮、回放和全局门控。",
+      "task_id": "BUILD.run",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "新模型在无卡 旧库 新库三条件下的全量比较",
+      "目的": "判断新模型更适合旧模型经验、新模型经验，还是不使用经验。",
+      "实验步骤": "①等C41新库冻结；②同298题比较无卡、旧1939卡、新C41库；③各两重复，共1788次；④统一公开契约、P7预算和验证规则。",
+      "预测结果分析": "正向门槛是新库相对旧库、无卡的两个Joint差值95%题族区间都高于0，且功能、安全不下降，支持新模型经验具有实际收益；反向门槛是新库比两组都更低且区间都低于0，支持新库消费有害。只胜过一组时，只认可该项比较，不扩大成全面优势。",
+      "id": "C10",
+      "track": "CROSS",
+      "phase": 5,
+      "title": "v4.1无卡、旧库、新库",
+      "scale": "298题×3条件×2次＝1788逻辑格",
+      "depends": [
+        "C09",
+        "B02"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": true,
+      "state": "todo",
+      "detail": "正向门槛是新库相对旧库、无卡的两个Joint差值95%题族区间都高于0，且功能、安全不下降，支持新模型经验具有实际收益；反向门槛是新库比两组都更低且区间都低于0，支持新库消费有害。只胜过一组时，只认可该项比较，不扩大成全面优势。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C10",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md",
+      "next": "新库与来源分析完成后执行v4.1三条件；精确匹配格复用，v3.2臂结束。",
+      "task_id": "CROSS.v41",
+      "progress": "尚未开始"
+    },
+    {
+      "full_name": "新模型在Base和Plus上的三卡库外部验证",
+      "目的": "检查PLT上的经验效果能否迁移到其他测试集。",
+      "实验步骤": "①补齐原验证镜像并完成正向校准；②在Base 115题、Plus 140题比较无卡、旧库、新库；③各两重复，共1530次；④隐藏测试不回传，不更新卡库和Q。",
+      "预测结果分析": "正向门槛是在Base和Plus分别完成全量后，新库相对相同集合无卡、旧库的Joint配对区间均高于0，且安全不下降，支持跨集合收益；反向门槛是任一集合出现区间低于0的Joint损失，说明该集合迁移受损。两集分别判断，不用平均分掩盖其中一集退化。",
+      "id": "C11",
+      "track": "CROSS",
+      "phase": 5,
+      "title": "Base与Plus卡库外部验证",
+      "scale": "115＋140题；v4.1三库两重复",
+      "depends": [
+        "C09"
+      ],
+      "actors": [
+        "API",
+        "原验证环境"
+      ],
+      "core": true,
+      "state": "external",
+      "detail": "正向门槛是在Base和Plus分别完成全量后，新库相对相同集合无卡、旧库的Joint配对区间均高于0，且安全不下降，支持跨集合收益；反向门槛是任一集合出现区间低于0的Joint损失，说明该集合迁移受损。两集分别判断，不用平均分掩盖其中一集退化。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C11",
+      "evidence": "../CLE-TODO-20261022-20261028-v04.md",
+      "next": "原镜像及正向校准就绪后执行；隐藏反馈不回传训练。",
+      "task_id": "EXTERNAL.v41",
+      "progress": "等待原验证镜像"
+    },
+    {
+      "full_name": "无经验P3在Base和Plus上的基线",
+      "目的": "补齐新模型无经验Agent在外部测试集上的参照结果。",
+      "实验步骤": "①使用原验证镜像和P3流程；②完成Base 115题、Plus 140题，共255次；③固定两次前向并交付末次代码；④不输入经验，不回传隐藏测试。",
+      "预测结果分析": "本项不预设最低正确率。正向门槛是255题全部执行，使用原验证器，逐题区分通过、已测失败和生成失败，且没有隐藏测试回传，支持基线可用；反向门槛是缺题或验证后端不一致，说明参照不成立。满足技术门槛后，用实际Joint描述能力，不因分数低否定基线。",
+      "id": "C12",
+      "track": "CROSS",
+      "phase": 5,
+      "title": "Base与Plus无经验P3",
+      "scale": "115＋140题；原P3流程",
+      "depends": [
+        "A07"
+      ],
+      "actors": [
+        "API",
+        "原验证环境"
+      ],
+      "core": true,
+      "state": "external",
+      "detail": "本项不预设最低正确率。正向门槛是255题全部执行，使用原验证器，逐题区分通过、已测失败和生成失败，且没有隐藏测试回传，支持基线可用；反向门槛是缺题或验证后端不一致，说明参照不成立。满足技术门槛后，用实际Joint描述能力，不因分数低否定基线。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C12",
+      "evidence": "../CLE-TODO-20261022-20261028-v04.md",
+      "next": "原镜像及正向校准就绪后执行；隐藏反馈不回传训练。",
+      "task_id": "P3.external",
+      "progress": "等待原验证镜像"
+    },
+    {
+      "full_name": "旧模型在线强化剩余增长题与最终迁移",
+      "目的": "原计划是在旧模型上强化初始化题和增长题，再测最终冻结Q。",
+      "实验步骤": "①保留旧初始化303题和增长23题记录；②保存当时Q快照与未完成状态；③不再向已停用的v3.2派发；④由新模型的独立学习链继续验证研究问题。",
+      "预测结果分析": "旧链已保存初始化303题和增长23题，当前因模型停用而结束。若恢复原模型并补齐原计划，正向门槛是最终冻结Q在审计集上胜过相似度和打乱Q，两项校正后p均≤0.05且功能安全不下降；反向门槛是任一主要比较Joint更低且校正后p≤0.05，分别支持强化有效或有害。停用本身不作为Q效果判断。",
+      "id": "D01",
+      "track": "Q",
+      "phase": 6,
+      "title": "旧模型在线强化剩余项",
+      "scale": "旧模型已停用；不再派发",
+      "depends": [
+        "A01",
+        "A02"
+      ],
+      "actors": [
+        "API"
+      ],
+      "core": true,
+      "state": "ended",
+      "detail": "旧链已保存初始化303题和增长23题，当前因模型停用而结束。若恢复原模型并补齐原计划，正向门槛是最终冻结Q在审计集上胜过相似度和打乱Q，两项校正后p均≤0.05且功能安全不下降；反向门槛是任一主要比较Joint更低且校正后p≤0.05，分别支持强化有效或有害。停用本身不作为Q效果判断。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#D01",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "v3.2已停用，保留历史结果；本轮不再派发。"
+    },
+    {
+      "full_name": "旧模型对无卡 旧库 新库的反向交叉",
+      "目的": "原计划用两种模型互换经验库，判断模型与经验来源是否存在配合关系。",
+      "实验步骤": "①保留两模型乘三卡库的设计；②旧模型原计划在298题三条件各两重复，共1788次；③另在Base和Plus完成1530次外部比较；④当前不派发旧模型请求。",
+      "预测结果分析": "若能够补齐原矩阵，正向匹配门槛是两模型各自使用自产库都优于对方库，两个配对差值95%区间均高于0，支持来源适配；反向门槛是两模型都偏好同一库，且相对另一库的两个差值95%区间均高于0，支持共有的库质量优势、反对简单的自产匹配假设。当前旧模型不可用，这项比较保留未执行。",
+      "id": "D02",
+      "track": "CROSS",
+      "phase": 6,
+      "title": "旧模型反向卡库交叉",
+      "scale": "v3.2不可用；不替换模型",
+      "depends": [
+        "C09"
+      ],
+      "actors": [
+        "API"
+      ],
+      "core": true,
+      "state": "ended",
+      "detail": "若能够补齐原矩阵，正向匹配门槛是两模型各自使用自产库都优于对方库，两个配对差值95%区间均高于0，支持来源适配；反向门槛是两模型都偏好同一库，且相对另一库的两个差值95%区间均高于0，支持共有的库质量优势、反对简单的自产匹配假设。当前旧模型不可用，这项比较保留未执行。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#D02",
+      "evidence": "../reports/CLE-RPT-20261028-experiment-inventory-v02/CLE已做与未做实验清单_20261028_v02.docx",
+      "next": "v3.2已停用，保留历史结果；本轮不再派发。"
+    },
+    {
+      "id": "C04E",
+      "parent": "C04",
+      "full_name": "条件扩展：再加82题",
+      "title": "条件扩展：再加82题",
+      "track": "GR",
+      "phase": 3,
+      "scale": "再820次；累计164题",
+      "state": "conditional",
+      "depends": [
+        "C04"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": false,
+      "detail": "有至少两种首选档且存在干预，但训练工程条件不足时扩大；只扩大一次。",
+      "目的": "仅在预登记条件满足时增加信息；不重做首批。",
+      "实验步骤": "首批完成→回放和案例分析→零API规则判断→必要时只运行新增名单。",
+      "next": "有至少两种首选档且存在干预，但训练工程条件不足时扩大；只扩大一次。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C04E",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md"
+    },
+    {
+      "id": "C07E",
+      "parent": "C07",
+      "full_name": "条件扩展：再加57题",
+      "title": "条件扩展：再加57题",
+      "track": "FR",
+      "phase": 3,
+      "scale": "累计114题；不重标首批",
+      "state": "conditional",
+      "depends": [
+        "C07"
+      ],
+      "actors": [
+        "API",
+        "Codex分析"
+      ],
+      "core": false,
+      "detail": "主要CWE未覆盖，或任一召回区间半宽>0.10、有效正类任务<20时扩大；只扩大一次。",
+      "目的": "仅在预登记条件满足时增加信息；不重做首批。",
+      "实验步骤": "首批完成→回放和案例分析→零API规则判断→必要时只运行新增名单。",
+      "next": "主要CWE未覆盖，或任一召回区间半宽>0.10、有效正类任务<20时扩大；只扩大一次。",
+      "href": "CLE_实验状态与阶段说明清单_v1.0.svg#C07E",
+      "evidence": "../../../configs/cle_weekly_reduced_20261028/README.md"
+    }
+  ]
+}

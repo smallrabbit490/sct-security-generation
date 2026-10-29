@@ -1,0 +1,415 @@
+{
+  "plan_id": "cle-weekly-full-requirements-20261027-v1",
+  "created_at": "2026-10-27T11:30:49+08:00",
+  "authorization": "User 2026-10-27: 本周要求的探索还有哪些实验未做，完成待做清单后更新自动化任务在峰谷时间内完成并且完成后完成分析任务",
+  "source_plan": "docs/research/CLE-PLAN-20261027-seven-requirements-v01.md",
+  "current_checklist": "docs/research/CLE-TODO-20261022-20261028-v04.md",
+  "run_root": "E:/ResearchRuns/CLE/20261027_full_requirements",
+  "preflight_ready": false,
+  "paid_dispatch_ready": true,
+  "scope_authorized": true,
+  "scope_note": "F0 implements and validates dispatch before paid execution; authorized finite required packages only.",
+  "model": "deepseek-v4.1-flash-1017",
+  "cross_model": "deepseek-v3.2",
+  "time_policy": {
+    "timezone": "Asia/Shanghai",
+    "weekday_forbidden": [
+      [
+        "09:00",
+        "12:00"
+      ],
+      [
+        "14:00",
+        "18:00"
+      ]
+    ],
+    "interval": "left_closed_right_open",
+    "weekend_allowed": true,
+    "check_each_physical_request": true
+  },
+  "parameters": {
+    "thinking": "disabled",
+    "temperature": 0,
+    "max_tokens": 4096,
+    "message_roles": [
+      "user"
+    ],
+    "max_cards": 3,
+    "max_repairs": 1,
+    "learning_workers": 1,
+    "evaluation_workers_max": 4,
+    "q_alpha": 0.3,
+    "q_lambda": 0.5,
+    "q_initial": 0,
+    "q_visits_initial": 0,
+    "permutation_seed": 20261015
+  },
+  "budget": {
+    "status": "FQ_LEARN_frozen_remaining_packages_pending",
+    "code_units_before_dedup": 20370,
+    "theoretical_internal_reuse_max": 1788,
+    "old_result_credit_confirmed": 0,
+    "historical_P3_external_separate_units": 255,
+    "native_build_units": null,
+    "label_initial_pairs_max": 63952,
+    "currency_cap": null,
+    "currency_note": "No currency amount specified by user and no verified current unit price. Lock finite task and request/token budgets from actual original flows in F0; report actual known/unknown usage. Do not invent a billed amount or assume cache99%.",
+    "reset_on_resume": false,
+    "expand_after_low_score": false
+  },
+  "packages": [
+    {
+      "id": "F0",
+      "todo_id": "T0",
+      "title": "零API共同规格与接线",
+      "dependencies": [],
+      "planned_units": 0,
+      "unit": "preparation",
+      "experiment_id": null,
+      "status": "Q_FFS_FG_labels_wired_FR_zero_API_ready_remaining_pending",
+      "completed_units": 0,
+      "execution_command": null,
+      "budget_status": "zero_API",
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\preflight\\offline_checks.json"
+    },
+    {
+      "id": "FQ_LEARN",
+      "todo_id": "T1",
+      "title": "固定卡新Q学习",
+      "dependencies": [
+        "F0"
+      ],
+      "planned_units": 1122,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261027-Q-05",
+      "status": "authorized_reissue_waiting_allowed_window",
+      "completed_units": 63,
+      "execution_command": "python -B -X utf8 -m configs.cle_weekly_recovery_20261027.recover launch",
+      "budget_status": "frozen_in_budget_json",
+      "completed_as_of": "2026-10-27T07:38:05.192026+00:00",
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K0\\authorized_prefix_probe_20261027\\prefix_probe_result.json",
+      "pending_task": "437",
+      "pending_operation": "repair_selector",
+      "pending_HTTP_reissued": false,
+      "authorization": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K0\\authorized_reissue_20261027.json"
+    },
+    {
+      "id": "FQ_RETEST",
+      "todo_id": "T2",
+      "title": "分轮Q冻结同题回测",
+      "dependencies": [
+        "FQ_LEARN"
+      ],
+      "planned_units": 1416,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261027-Q-06",
+      "status": "reduced_ready_waiting_learning",
+      "completed_units": 0,
+      "execution_command": "python -m configs.cle_weekly_reduced_20261028.retest launch",
+      "budget_status": "frozen_in_FQ_RETEST_inputs_protocol",
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_RETEST\\offline_checks.json"
+    },
+    {
+      "id": "FQ_GATE",
+      "todo_id": "T2",
+      "title": "全D_gate Q四臂",
+      "dependencies": [
+        "FQ_RETEST"
+      ],
+      "planned_units": 2384,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261027-Q-07",
+      "status": "wiring_verified_waiting_learning_retest",
+      "completed_units": 0,
+      "execution_command": "python -B -X utf8 -m configs.cle_weekly_gate_20261027.evaluate launch",
+      "budget_status": "frozen_in_FQ_GATE_inputs_v3_protocol",
+      "reference_protocol": "cle-weekly-full-gate-restored-public-contract-20261027-v3",
+      "reference_preflight": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_GATE\\preflight_v3\\summary.json",
+      "evaluation_tasks": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_GATE\\inputs_v3\\tasks.json",
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_GATE\\offline_checks.json"
+    },
+    {
+      "id": "FFS",
+      "todo_id": "T3",
+      "title": "全D_gate功能安全五条件",
+      "dependencies": [
+        "F0"
+      ],
+      "planned_units": 2980,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261026-FS-04",
+      "status": "wiring_verified_waiting_allowed_window",
+      "completed_units": 0,
+      "execution_command": "python -B -X utf8 -m configs.cle_weekly_fs_20261027.evaluate launch --workers 3",
+      "budget_status": "frozen_in_FFS_inputs_protocol",
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FFS\\offline_checks.json",
+      "analysis_command": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.fs_analysis",
+      "evaluation_tasks": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FFS\\inputs\\tasks.json",
+      "independent_of_Q_learning": true
+    },
+    {
+      "id": "FG_LABELS",
+      "todo_id": "T4",
+      "title": "全D_grow五档真实成绩标签",
+      "dependencies": [
+        "F0"
+      ],
+      "planned_units": 820,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261026-GRAN-04",
+      "status": "reduced_ready_waiting_slot",
+      "completed_units": 0,
+      "execution_command": "python -m configs.cle_weekly_reduced_20261028.granularity launch",
+      "budget_status": "frozen_in_FG_LABELS_inputs_protocol",
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\offline_checks.json",
+      "independent_of_Q_learning": true,
+      "optional_extra_units": 820
+    },
+    {
+      "id": "FG_TRAIN",
+      "todo_id": "T4",
+      "title": "离线分类器训练与冻结",
+      "dependencies": [
+        "FG_LABELS"
+      ],
+      "planned_units": 0,
+      "unit": "offline",
+      "experiment_id": null,
+      "status": "offline_wiring_verified_waiting_real_labels_and_replay",
+      "completed_units": 0,
+      "execution_command": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.granularity_analysis train",
+      "budget_status": "zero_API",
+      "evidence": "tests/test_cle_weekly_granularity_analysis.py"
+    },
+    {
+      "id": "FG_GATE",
+      "todo_id": "T4",
+      "title": "全D_gate三策略",
+      "dependencies": [
+        "FG_TRAIN"
+      ],
+      "planned_units": 1788,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261026-GRAN-05",
+      "status": "wiring_and_analysis_verified_waiting_full_labels_replay_and_new_model",
+      "completed_units": 0,
+      "execution_command": "python -B -X utf8 -m configs.cle_weekly_granularity_gate_20261027.evaluate launch",
+      "budget_status": "frozen_in_FG_GATE_inputs_protocol",
+      "analysis_command": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.policy_gate_analysis",
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_GATE\\offline_checks.json"
+    },
+    {
+      "id": "FR",
+      "todo_id": "T5",
+      "title": "检索盲标与复核材料",
+      "dependencies": [
+        "F0"
+      ],
+      "planned_units": 571,
+      "unit": "task_pool",
+      "experiment_id": "CLE-EXP-20261027-RET-01",
+      "status": "reduced_ready_waiting_dependencies",
+      "completed_units": 0,
+      "execution_command": "python -m configs.cle_weekly_reduced_20261028.retrieval_execute launch",
+      "budget_status": "frozen_in_FR_execution_protocol",
+      "initial_pairs_max": 63952,
+      "human_review_required": true,
+      "blocks_other_packages": false,
+      "annotation_max_per_pair": 1,
+      "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\execution_offline_checks.json",
+      "initials_reused": 129,
+      "initials_pending": 442,
+      "pending_query_vectors": 248,
+      "AI_pairs_max": 107821,
+      "budget": {
+        "conservative_model_and_embedding_tokens": 2450122159,
+        "total_physical_HTTP_attempts": 111473,
+        "embedding_HTTP_attempts_included_in_total": 3652
+      },
+      "real_AI_labels": 0,
+      "human_labels": 0,
+      "complete_task_pools": 0,
+      "planned_tasks": 57,
+      "optional_extra_tasks": 57
+    },
+    {
+      "id": "BUILD_C41",
+      "todo_id": "T6",
+      "title": "原CLE从空库构建C41",
+      "dependencies": [
+        "F0"
+      ],
+      "planned_units": null,
+      "unit": "native_CLE",
+      "experiment_id": "CLE-EXP-20261026-BUILD-01",
+      "status": "authorized_partial_wiring_not_ready",
+      "completed_units": 0,
+      "execution_command": null,
+      "budget_status": "frozen_engineering_cap_in_BUILD_C41_budget_json",
+      "check_command": "python -B -X utf8 -m configs.cle_weekly_build_20261027.execute check",
+      "wiring_evidence": "E:/ResearchRuns/CLE/20261027_full_requirements/BUILD_C41/integration_checks.json",
+      "remaining": "full native recovery and replay readiness, autonomous dispatch integration; no paid execution yet"
+    },
+    {
+      "id": "FX_GATE",
+      "todo_id": "T7",
+      "title": "两模型三经验全D_gate",
+      "dependencies": [
+        "F0",
+        "BUILD_C41"
+      ],
+      "planned_units": 3576,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261026-CROSS-02",
+      "status": "authorized_manifest_frozen_runner_pending",
+      "completed_units": 0,
+      "execution_command": null,
+      "budget_status": "to_freeze_in_F0",
+      "partial_dispatch": "Proceed with eligible v4.1 cells when ds32 is unavailable; never silently replace model.",
+      "manifest": "E:/ResearchRuns/CLE/20261027_full_requirements/FX_GATE/inputs/schedule.json",
+      "remaining": "C41 library, exact per-cell reuse checks, runner and finite budget; V32 access unavailable"
+    },
+    {
+      "id": "FX_EXTERNAL",
+      "todo_id": "T7",
+      "title": "六条件BasePlus",
+      "dependencies": [
+        "F0",
+        "BUILD_C41"
+      ],
+      "planned_units": 3060,
+      "unit": "P7",
+      "experiment_id": "CLE-EXP-20261026-CROSS-03",
+      "status": "authorized_pending_dependencies",
+      "completed_units": 0,
+      "execution_command": null,
+      "budget_status": "to_freeze_in_F0",
+      "partial_dispatch": "Proceed with eligible v4.1 cells when ds32 is unavailable; never silently replace model.",
+      "environment_dependency": "Original safecoder-python-validator:local plus parent image and positive calibration; no substitute validator."
+    },
+    {
+      "id": "P3_EXTERNAL",
+      "todo_id": "T7",
+      "title": "历史待执行P3 BasePlus",
+      "dependencies": [
+        "F0"
+      ],
+      "planned_units": 255,
+      "unit": "P3",
+      "experiment_id": null,
+      "status": "authorized_pending_dependencies",
+      "completed_units": 0,
+      "execution_command": null,
+      "budget_status": "to_freeze_in_F0",
+      "environment_dependency": "Original safecoder-python-validator:local plus parent image and positive calibration; no substitute validator."
+    },
+    {
+      "id": "CLOSEOUT",
+      "todo_id": "T8",
+      "title": "综合分析与报告",
+      "dependencies": [],
+      "planned_units": 0,
+      "unit": "analysis",
+      "experiment_id": null,
+      "status": "authorized_pending_dependencies",
+      "completed_units": 0,
+      "execution_command": null,
+      "budget_status": "zero_API",
+      "completion_rule": "Analyze every completed package and report unresolved dependencies; do not label pending cells complete."
+    }
+  ],
+  "preferred_order": [
+    "F0",
+    "FQ_LEARN",
+    "FQ_RETEST",
+    "FQ_GATE",
+    "FFS",
+    "FG_LABELS",
+    "FG_TRAIN",
+    "FG_GATE",
+    "BUILD_C41",
+    "FX_GATE",
+    "FX_EXTERNAL",
+    "P3_EXTERNAL",
+    "CLOSEOUT"
+  ],
+  "alongside": [
+    "FR",
+    "completed_package_analysis"
+  ],
+  "not_authorized": [
+    "optional_four_model_bank_Q_extension",
+    "old_ds32_online_resume",
+    "MASE"
+  ],
+  "do_not_restart_completed_run": "translation_work/diagnostics/20261026/cle_v41_completion",
+  "paid_dispatch_ready_packages": [
+    "FQ_LEARN",
+    "FFS",
+    "FG_LABELS",
+    "FR"
+  ],
+  "readiness_scope": "User directly authorized reissue of only the original task437 selector; at allowed window continue learning1 plus independent FFS3, then FG_LABELS; no billing reconciliation required for that request. Other package readiness unchanged.",
+  "updated_at": "2026-10-27T07:45:47.664079+00:00",
+  "analysis_commands": {
+    "learning": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.analysis analysis --stage K0",
+    "retest": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.retest_analysis",
+    "gate": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.gate_analysis",
+    "FFS": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.fs_analysis",
+    "granularity": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.granularity_analysis analysis",
+    "classifier_train": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.granularity_analysis train",
+    "policy_gate": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.policy_gate_analysis"
+  },
+  "independent_evaluation_queue": [
+    "FFS",
+    "FG_LABELS"
+  ],
+  "parallel_allocation": {
+    "total_workers_max": 4,
+    "learning": 1,
+    "independent_frozen_evaluation_when_learning_active": 3,
+    "do_not_run_two_frozen_packages_together": true
+  },
+  "scope_revision": {
+    "protocol": "cle-reduced-scope-20261028-v1",
+    "authorization": "2026-10-28用户明确授权：保留活动全量，Q中间54题、记忆首批82题、检索首批57题，按固定条件扩大并自动分析接续。",
+    "selection_manifest": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\scope_reduction_20261028\\selection.json",
+    "current_checklist": "docs/research/CLE-TODO-20261022-20261028-v04.md",
+    "first_batch": {
+      "Q_retest": 1416,
+      "memory_labels": 820,
+      "retrieval_tasks": 57
+    },
+    "maximum_extra": {
+      "Q_intermediate": 0,
+      "memory_labels": 820,
+      "retrieval_tasks": 57
+    },
+    "enlargement": {
+      "Q": "54 fixed diagnostic tasks; final K3/Q1 all273; no automatic extra intermediate tasks",
+      "GR": {
+        "max_tasks": 164,
+        "min_training_label_families": 30,
+        "min_classes_with_five_training_families": 2,
+        "min_development_routed_levels": 2,
+        "expand_if": "initial labels have at least two preferred levels globally but engineering readiness is insufficient",
+        "close_if": "no memory intervention or fewer than two preferred levels, or still insufficient at164",
+        "criterion_is": "engineering readiness, not statistical evidence of Joint benefit"
+      },
+      "FR": {
+        "max_tasks": 114,
+        "expand_if": "major CWE strata missing or worst task-bootstrap 95% half-width exceeds0.10",
+        "major_CWE": "at least5% of its original pool",
+        "minimum_completed_pools": 57,
+        "human_confirmation": "never inferred from AI; final inference retains label source"
+      }
+    },
+    "same_model_and_native_P7": true,
+    "repeats": 2,
+    "active_learning_and_FS_unchanged": true,
+    "historical_results_preserved": true,
+    "technical_retry_policy": "existing exact-prefix transport authorization; retain unknown usage",
+    "branch_omission_is_not_measured_failure": true,
+    "offline_checks": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\scope_reduction_20261028\\offline_checks.json"
+  }
+}

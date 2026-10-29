@@ -13,6 +13,7 @@ from .runner import plt_contract, public_contract
 
 
 VARIANT = 'P7_public_contract_v1'
+CONDITIONAL_VARIANT = 'P7_public_contract_q_conditional_v1'
 INFRASTRUCTURE_ERRORS = {'environment_error', 'plt_validator_exception',
                          'validator_exception', 'local_worker_error'}
 
@@ -43,25 +44,41 @@ def complete_public_query(query):
 
 
 def make_provider(memory, requester, embedding_client, *, retrieval_mode='semantic_llm',
-                  delta=-1.0, lambda_q=0.5, max_experiences=3):
+                  delta=-1.0, lambda_q=0.5, max_experiences=3, candidate_order=None):
     """前向检索只读显式冻结库，保存实际候选轨迹；Q 模式亦不更新数值。"""
     from methods.sct_trajectory.ablation import get_config
     from methods.sct_trajectory.hsk_tree import HskTree
     from methods.sct_trajectory.retriever import HskTreeRetriever
     if not memory:
         raise ValueError('empty_frozen_memory')
+    if candidate_order is not None and retrieval_mode != 'semantic_llm':
+        raise ValueError('candidate_reordering_requires_LLM_selection')
     traces = []
 
     def provider(query):
         retriever = HskTreeRetriever(HskTree(), requester=requester, ablation=get_config('A7'),
             retrieval_mode=retrieval_mode, embedding_client=embedding_client,
-            semantic_delta=delta, lambda_q=lambda_q)
+            semantic_delta=delta, lambda_q=lambda_q, candidate_order=candidate_order)
         found = retriever.search(complete_public_query(query), limit=max_experiences,
                                  pool_nodes=memory)
         traces.append(copy.deepcopy(getattr(retriever, 'last_hier_trace', None)))
         return found
 
     return provider, traces
+
+
+def prepare_contract(subset, task):
+    """仅由公开任务编译约束，供共享用例生成和两个新消费者共用。"""
+    from methods.sct_trajectory.public_contract_checks import compile_public_contract
+    contract = copy.deepcopy(plt_contract(task) if subset == 'PLT' else public_contract(subset, task))
+    contract['implementation_constraints'] = compile_public_contract(contract)
+    return contract
+
+
+def prepare_public_suite(subset, task, requester, *, suite_builder=None):
+    """每题×重复只构造一次公开suite；在任何分臂代码生成前冻结。"""
+    from methods.sct_trajectory.internal_checks import propose_checks
+    return copy.deepcopy((suite_builder or propose_checks)(prepare_contract(subset, task), {}, requester))
 
 
 def official_evaluate(subset, task, code):
@@ -91,7 +108,8 @@ def official_evaluate(subset, task, code):
 
 
 def run_one(subset, task, requester, provider, *, backend=None, pipeline=None,
-            suite_builder=None, check_executor=None, evaluator=None):
+            suite_builder=None, check_executor=None, evaluator=None, public_suite=None,
+            initial_analysis=None):
     """冻结消费者逐题执行：公开输入→固定用例→至多两候选→公开选择→正式计分。
 
     保留全部真实尝试、提示及失败；无选择价值的修复记录跳过，不伪造 c1。
@@ -112,24 +130,28 @@ def run_one(subset, task, requester, provider, *, backend=None, pipeline=None,
     suite_builder = suite_builder or propose_checks
     check_executor = check_executor or execute_checks
     evaluator = evaluator or official_evaluate
-    contract = copy.deepcopy(plt_contract(task) if subset == 'PLT' else public_contract(subset, task))
-    requirements = compile_public_contract(contract)
-    contract['implementation_constraints'] = requirements
+    contract = prepare_contract(subset, task)
+    requirements = contract['implementation_constraints']
     # 用例先于任何候选生成，且只从公开任务提取；不消费官方参考/测试/执行状态。
-    suite = suite_builder(copy.deepcopy(contract), {}, requester)
+    suite = (suite_builder(copy.deepcopy(contract), {}, requester)
+             if public_suite is None else public_suite)
     suite = copy.deepcopy(suite)
     suite_fingerprint = hashlib.sha256(json.dumps(suite, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
     row = {'schema_version': 1, 'arm': VARIANT, 'task_id': contract['task_id'],
            'subset': subset, 'public_contract': contract, 'requirements': requirements,
            'internal_suite': suite, 'attempts': [], 'feedback_source': 'public_only',
            'official_evaluation_order': 'after_candidate_selection', 'memory_updates': 0}
+    row['public_suite_sha256'] = suite_fingerprint
+    row['public_suite_reused'] = public_suite is not None
     reference, feedback = '', None
     entry_point = contract.get('entry_point') or contract.get('function_name', '')
     for index in range(2):
         try:
             generated = pipeline(copy.deepcopy(contract), [], requester=requester,
                 reference_code=reference, previous_evidence=copy.deepcopy(feedback),
-                cards_provider=provider, reanalyze=True)
+                cards_provider=provider, reanalyze=True,
+                **({'initial_analysis': copy.deepcopy(initial_analysis)}
+                   if index == 0 and initial_analysis is not None else {}))
         except Exception as exc:
             generated = {'code': '', 'workflow_completed': False, 'error_type': type(exc).__name__}
         code = str(generated.get('code') or '').strip()

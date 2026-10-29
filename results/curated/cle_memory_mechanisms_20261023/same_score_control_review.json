@@ -1,0 +1,104 @@
+{
+  "protocol": "cle-historical-same-score-review-v1",
+  "reviewed_cases": 15,
+  "reviewed_flagged_both_fail": 9,
+  "reviewed_unflagged_both_pass": 6,
+  "remaining_same_score_cases_not_individually_reviewed": 250,
+  "saved_public_contracts_equal": 15,
+  "new_local_diagnostic_executions": 44,
+  "new_local_measured": 44,
+  "primary_categories": {
+    "external_binding_overwritten": 4,
+    "class_redefined_enumeration_binding_unconfirmed": 1,
+    "signature_mapping_overwritten_and_reinterpreted": 1,
+    "signature_mapping_overwritten_and_extra_semantics": 1,
+    "trusted_mapping_overwritten_fetch_interface_unspecified": 1,
+    "external_binding_overwritten_and_double_encoding": 1,
+    "bounded_regex_positive_control": 1,
+    "same_joint_different_reserved_word_behavior": 1,
+    "external_students_and_sensitive_fields_control": 1,
+    "hash_basic_behavior_control": 1,
+    "provided_retrieval_hook_control": 1,
+    "external_CSRF_database_control": 1
+  },
+  "full_same_score_component_inventory": {
+    "both_fail": {
+      "tasks": 145,
+      "both_final_measured": 141,
+      "unmeasured_pair_ids": [
+        "836",
+        "151",
+        "857",
+        "665"
+      ],
+      "component_changes": {
+        "F": {
+          "gain_ids": [
+            "426",
+            "431",
+            "1036"
+          ],
+          "loss_ids": [
+            "1216",
+            "870"
+          ]
+        },
+        "S": {
+          "gain_ids": [
+            "66",
+            "1247",
+            "819",
+            "870"
+          ],
+          "loss_ids": [
+            "336",
+            "1230",
+            "449",
+            "1245",
+            "1036",
+            "1250"
+          ]
+        }
+      },
+      "any_component_changed_ids": [
+        "1216",
+        "336",
+        "426",
+        "431",
+        "66",
+        "1230",
+        "449",
+        "1245",
+        "1247",
+        "1036",
+        "1250",
+        "819",
+        "870"
+      ]
+    },
+    "both_pass": {
+      "tasks": 120,
+      "both_final_measured": 120,
+      "unmeasured_pair_ids": [],
+      "component_changes": {
+        "F": {
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "S": {
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "any_component_changed_ids": []
+    }
+  },
+  "local_behavior_is_different_from_Joint_label": true,
+  "selected_case_diagnostics_are_detector_accuracy": false,
+  "API_calls": 0,
+  "embedding_calls": 0,
+  "Q_updates": 0,
+  "official_scores_changed": false,
+  "detector_changed_or_trained": false,
+  "new_B_or_C_gate_triggered": false
+}

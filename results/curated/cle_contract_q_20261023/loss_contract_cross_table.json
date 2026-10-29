@@ -1,0 +1,538 @@
+{
+  "operation": "historical_post_outcome_association_not_new_policy_scores",
+  "source_pairs": "results\\curated\\cle_q_dinit_selection_joint_20261021\\per_task.csv",
+  "source_static_audit": "results\\curated\\cle_joint_contract_20261022\\public_contract_audit.json",
+  "primary_38": {
+    "table_loss_rescue_by_flag": [
+      [
+        2,
+        16
+      ],
+      [
+        0,
+        20
+      ]
+    ],
+    "odds_ratio": null,
+    "odds_ratio_infinite": true,
+    "two_sided_p": 0.21763869132290184,
+    "proposal_gate_passed": false
+  },
+  "complete_measurement_sensitivity": {
+    "table_loss_rescue_by_flag": [
+      [
+        1,
+        16
+      ],
+      [
+        0,
+        19
+      ]
+    ],
+    "odds_ratio": null,
+    "odds_ratio_infinite": true,
+    "two_sided_p": 0.4722222222222222,
+    "proposal_gate_passed": false
+  },
+  "pre_generation_binding_signal": {
+    "table_loss_rescue_by_flag": [
+      [
+        3,
+        15
+      ],
+      [
+        0,
+        20
+      ]
+    ],
+    "odds_ratio": null,
+    "odds_ratio_infinite": true,
+    "two_sided_p": 0.09672830725462304,
+    "proposal_gate_passed": true
+  },
+  "pre_generation_signature_signal": {
+    "table_loss_rescue_by_flag": [
+      [
+        18,
+        0
+      ],
+      [
+        20,
+        0
+      ]
+    ],
+    "odds_ratio": null,
+    "odds_ratio_infinite": false,
+    "two_sided_p": 1.0,
+    "proposal_gate_passed": false
+  },
+  "cases": [
+    {
+      "task_id": "1299",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "1003",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": true,
+      "violation_ids": [
+        "public.external_binding_rebound:USER_POST_FORMAT"
+      ],
+      "pre_generation_explicit_bindings": true,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "1004",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "642",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "874",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1223",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "834",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1063",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "352",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "1021",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1113",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "354",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1022",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1234",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "150",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "1024",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1241",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "1150",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": false,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "976",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1158",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1162",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "981",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1034",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "907",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1037",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": true,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "989",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": true,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "88",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "996",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "999",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1382",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "1363",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "1364",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "1174",
+      "transition": "rescue",
+      "old_joint": false,
+      "new_joint": true,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "487",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "488",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "885",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": false,
+      "new_static_flag": true,
+      "violation_ids": [
+        "public.entrypoint_missing:save_user_event"
+      ],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": false
+    },
+    {
+      "task_id": "664",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    },
+    {
+      "task_id": "670",
+      "transition": "loss",
+      "old_joint": true,
+      "new_joint": false,
+      "both_measured": true,
+      "new_static_flag": false,
+      "violation_ids": [],
+      "pre_generation_explicit_bindings": false,
+      "pre_generation_signature_known": true,
+      "verified_global_defect": true
+    }
+  ],
+  "new_API_calls": 0,
+  "new_Joint_scores": 0,
+  "limits": [
+    "Static flags depend on generated code and cannot be used as pre-generation route inputs.",
+    "The 38 outcomes are selected historical disagreements, not an independent validation set.",
+    "No threshold search, card learning or reinterpretation of old scores as new-policy scores."
+  ]
+}

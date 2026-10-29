@@ -1,0 +1,41 @@
+{
+  "period": "20261022-20261028",
+  "title": "10月22日-10月28日实验探索总结",
+  "paragraphs": [
+    "本周将课题转到新模型，重点检查旧经验能否继续发挥作用，以及经验怎样表达、讲到多具体才有帮助。已有对照显示，旧评分仍能改变选卡，但未带来稳定提分；将功能和安全建议分开、自动选择经验详细程度，也没有优于简单做法。",
+    "另一种经验整理方式出现了改善信号，需要继续验证。当前正在让新模型重新积累反馈，并扩大功能与安全对照，重点查清经验是否真正减少错误，而不只改变了选卡或代码。",
+    "下一步优先完成主要对照，其余探索分批验证，根据结果决定是否扩大，集中回答“哪些经验有用、怎样使用才有用”。"
+  ],
+  "question": "换用新模型后，经验怎样使用才有效？",
+  "cards": [
+    [
+      "旧经验评分",
+      "未见稳定提分"
+    ],
+    [
+      "经验表达与详细程度",
+      "现有方案未显优势"
+    ],
+    [
+      "新的经验整理方式",
+      "出现改善信号"
+    ]
+  ],
+  "next_figure": "下一步：完成新模型学习与功能安全对照",
+  "report_md": "docs/research/reports/CLE-RPT-20261022-20261028-weekly-v06/CLE-RPT-20261022-20261028-weekly-v06.md",
+  "report_docx": "10月22日-10月28日实验探索报告.docx",
+  "evidence": [
+    "docs/research/reports/CLE-RPT-20261022-20261028-weekly-v06/CLE-RPT-20261022-20261028-weekly-v06.md",
+    "docs/research/CLE-TODO-20261022-20261028-v04.md",
+    "results/curated/cle_q_update_frequency_20261028/summary.json"
+  ],
+  "scope": "截至10月28日已保存材料的阶段摘要；当日周报收尾时按最新完成结果同步更新，不预写运行中实验结论",
+  "visible_characters_including_figure": 351,
+  "limit": 500,
+  "API_calls": 0,
+  "output_md": "docs\\research\\reports\\CLE-SUM-20261022-20261028-v01\\10月22日-10月28日实验探索总结.md",
+  "output_docx": "docs\\research\\reports\\CLE-SUM-20261022-20261028-v01\\10月22日-10月28日实验探索总结.docx",
+  "full_reports_modified": false,
+  "word_and_markdown_same_text": true,
+  "chart_kind": "qualitative_research_judgment_not_numeric_effect"
+}

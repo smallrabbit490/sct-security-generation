@@ -1,0 +1,10 @@
+{
+  "default_formatter_byte_identical_to_HEAD_cards": 1939,
+  "BM_byte_identical_cards": 1939,
+  "Q_snapshot_unchanged": true,
+  "targeted_tests_passed": 19,
+  "offline_real_task_controls": 10,
+  "real_model_probes": 0,
+  "API_calls": 0,
+  "known_unrelated_test_failure": "test_context_ablation historical source fixture missing at original 20260923 path"
+}

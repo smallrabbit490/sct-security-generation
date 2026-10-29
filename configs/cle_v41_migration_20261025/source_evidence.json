@@ -1,0 +1,184 @@
+{
+  "checked_at": "2026-10-25T17:49:17.465016+08:00",
+  "new_model_calls": 0,
+  "old_baselines": {
+    "PLT": {
+      "model": "deepseek-v3.2",
+      "status": "completed",
+      "unique_rows": 2384,
+      "source": "E:\\ResearchArchives\\sct-security-generation_20261016\\原始项目\\translation_work\\diagnostics\\20260928\\cle_ablation_plt_phase3",
+      "arms": {
+        "P0": {
+          "n": 298,
+          "joint": 61,
+          "unmeasured": 3
+        },
+        "P1": {
+          "n": 298,
+          "joint": 61,
+          "unmeasured": 3
+        },
+        "P2": {
+          "n": 298,
+          "joint": 55,
+          "unmeasured": 7
+        },
+        "P3": {
+          "n": 298,
+          "joint": 52,
+          "unmeasured": 8
+        },
+        "P4": {
+          "n": 298,
+          "joint": 68,
+          "unmeasured": 7
+        },
+        "P5": {
+          "n": 298,
+          "joint": 71,
+          "unmeasured": 3
+        },
+        "P6": {
+          "n": 298,
+          "joint": 75,
+          "unmeasured": 9
+        },
+        "P7": {
+          "n": 298,
+          "joint": 70,
+          "unmeasured": 4
+        }
+      },
+      "environment_audit": "PLT source/rows checked; historical Base/Plus watchdog accident must be separately reviewed before formal reuse"
+    },
+    "Base": {
+      "model": "deepseek-v3.2",
+      "status": "completed",
+      "unique_rows": 920,
+      "source": "E:\\ResearchArchives\\sct-security-generation_20261016\\原始项目\\translation_work\\validation_runs\\cle_ablation_base_20260928\\python",
+      "arms": {
+        "P0": {
+          "n": 115,
+          "joint": 5,
+          "unmeasured": 3
+        },
+        "P1": {
+          "n": 115,
+          "joint": 5,
+          "unmeasured": 3
+        },
+        "P2": {
+          "n": 115,
+          "joint": 6,
+          "unmeasured": 3
+        },
+        "P3": {
+          "n": 115,
+          "joint": 7,
+          "unmeasured": 2
+        },
+        "P4": {
+          "n": 115,
+          "joint": 8,
+          "unmeasured": 3
+        },
+        "P5": {
+          "n": 115,
+          "joint": 5,
+          "unmeasured": 2
+        },
+        "P6": {
+          "n": 115,
+          "joint": 5,
+          "unmeasured": 4
+        },
+        "P7": {
+          "n": 115,
+          "joint": 6,
+          "unmeasured": 2
+        }
+      },
+      "environment_audit": "PLT source/rows checked; historical Base/Plus watchdog accident must be separately reviewed before formal reuse"
+    },
+    "Plus": {
+      "model": "deepseek-v3.2",
+      "status": "completed",
+      "unique_rows": 1120,
+      "source": "E:\\ResearchArchives\\sct-security-generation_20261016\\原始项目\\translation_work\\validation_runs\\cle_ablation_plus_20260928\\python",
+      "arms": {
+        "P0": {
+          "n": 140,
+          "joint": 34,
+          "unmeasured": 0
+        },
+        "P1": {
+          "n": 140,
+          "joint": 38,
+          "unmeasured": 0
+        },
+        "P2": {
+          "n": 140,
+          "joint": 40,
+          "unmeasured": 0
+        },
+        "P3": {
+          "n": 140,
+          "joint": 30,
+          "unmeasured": 0
+        },
+        "P4": {
+          "n": 140,
+          "joint": 28,
+          "unmeasured": 0
+        },
+        "P5": {
+          "n": 140,
+          "joint": 37,
+          "unmeasured": 0
+        },
+        "P6": {
+          "n": 140,
+          "joint": 31,
+          "unmeasured": 0
+        },
+        "P7": {
+          "n": 140,
+          "joint": 36,
+          "unmeasured": 0
+        }
+      },
+      "environment_audit": "PLT source/rows checked; historical Base/Plus watchdog accident must be separately reviewed before formal reuse"
+    }
+  },
+  "v41_P3": {
+    "source": "results/curated/cle_nomemory_baseline_20261024/summary.json",
+    "PLT": {
+      "first": {
+        "functional": 107,
+        "security": 220,
+        "joint": 87,
+        "measured": 297,
+        "joint_rate_completed": 0.29194630872483224,
+        "joint_rate_planned": 0.29194630872483224
+      },
+      "final": {
+        "functional": 111,
+        "security": 232,
+        "joint": 96,
+        "measured": 297,
+        "joint_rate_completed": 0.3221476510067114,
+        "joint_rate_planned": 0.3221476510067114
+      }
+    },
+    "known_usage": {
+      "prompt_tokens": 2526704,
+      "completion_tokens": 1314932,
+      "total_tokens": 3841636,
+      "cached_tokens": 193152,
+      "reasoning_tokens": 0
+    },
+    "unknown_usage_attempts": 30,
+    "Base": "not_executed",
+    "Plus": "not_executed"
+  }
+}

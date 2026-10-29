@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "documents": {
+    "10月22日-10月28日实验探索总结.docx": {
+      "anchors": 0,
+      "links": 2,
+      "pages": 1
+    },
+    "10月22日-10月28日实验探索报告.docx": {
+      "anchors": 31,
+      "links": 88,
+      "pages": 24
+    },
+    "10月22日-10月28日研究思路图汇总.docx": {
+      "anchors": 10,
+      "links": 65,
+      "pages": 10
+    }
+  },
+  "summary_characters": 363,
+  "errors": []
+}

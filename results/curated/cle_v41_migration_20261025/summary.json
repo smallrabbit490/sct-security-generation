@@ -1,0 +1,1146 @@
+{
+  "protocol": "cle-v41-native-P7-empty-vs-legacy1939-v1",
+  "model": "deepseek-v4.1-flash-1017",
+  "planned_P7": 48,
+  "completed_P7": 48,
+  "arms": {
+    "E0": {
+      "completed": 24,
+      "first": {
+        "functional": 7,
+        "security": 17,
+        "joint": 7,
+        "measured": 23,
+        "joint_rate_completed": 0.2916666666666667
+      },
+      "final": {
+        "functional": 7,
+        "security": 18,
+        "joint": 7,
+        "measured": 23,
+        "joint_rate_completed": 0.2916666666666667
+      },
+      "technical_errors": 3,
+      "selected_card_occurrences": 0,
+      "adopted_card_occurrences": 0,
+      "rows_with_adoption": 0
+    },
+    "E1": {
+      "completed": 24,
+      "first": {
+        "functional": 8,
+        "security": 20,
+        "joint": 8,
+        "measured": 24,
+        "joint_rate_completed": 0.3333333333333333
+      },
+      "final": {
+        "functional": 8,
+        "security": 20,
+        "joint": 8,
+        "measured": 24,
+        "joint_rate_completed": 0.3333333333333333
+      },
+      "technical_errors": 4,
+      "selected_card_occurrences": 113,
+      "adopted_card_occurrences": 72,
+      "rows_with_adoption": 21
+    }
+  },
+  "Q_updates": 0,
+  "card_generation": 0,
+  "time": "2026-10-25T13:30:16.303186+00:00",
+  "paired": [
+    {
+      "task_id": "100",
+      "repeat": 1,
+      "E0_joint": true,
+      "E1_joint": true,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1000",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1256",
+      "repeat": 1,
+      "E0_joint": true,
+      "E1_joint": true,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1266",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1306",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1317",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1322",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1341",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1343",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": true,
+      "both_measured": false,
+      "delta": 1
+    },
+    {
+      "task_id": "1352",
+      "repeat": 1,
+      "E0_joint": true,
+      "E1_joint": true,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1409",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "335",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "100",
+      "repeat": 2,
+      "E0_joint": true,
+      "E1_joint": true,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1000",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1256",
+      "repeat": 2,
+      "E0_joint": true,
+      "E1_joint": true,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1266",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1306",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1317",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1322",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1341",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1343",
+      "repeat": 2,
+      "E0_joint": true,
+      "E1_joint": true,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1352",
+      "repeat": 2,
+      "E0_joint": true,
+      "E1_joint": true,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "1409",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    },
+    {
+      "task_id": "335",
+      "repeat": 2,
+      "E0_joint": false,
+      "E1_joint": false,
+      "both_measured": true,
+      "delta": 0
+    }
+  ],
+  "net_joint_by_repeat": {
+    "1": 1,
+    "2": 0
+  },
+  "cost": {
+    "physical_HTTP": 391,
+    "HTTP_with_usage": 376,
+    "unknown_usage_HTTP": 15,
+    "known_usage": {
+      "prompt_tokens": 1773619,
+      "completion_tokens": 289510,
+      "total_tokens": 2063129
+    },
+    "request_models": {
+      "deepseek-v4.1-flash-1017": 351,
+      "text-embedding-3-large": 40
+    },
+    "currency_cost": null,
+    "settings_ok": true,
+    "initial_analysis_included": true,
+    "wire_error_types": {
+      "PermissionError": 4,
+      "SSLEOFError": 11
+    },
+    "logical_buckets": {
+      "shared": {
+        "logical_requests": 24,
+        "statuses": {
+          "completed": 24
+        },
+        "known_usage": {
+          "prompt_tokens": 13154,
+          "completion_tokens": 21870,
+          "total_tokens": 35024
+        }
+      },
+      "E0": {
+        "logical_requests": 136,
+        "statuses": {
+          "completed": 136
+        },
+        "known_usage": {
+          "prompt_tokens": 273747,
+          "completion_tokens": 130610,
+          "total_tokens": 404357
+        }
+      },
+      "E1": {
+        "logical_requests": 176,
+        "statuses": {
+          "completed": 176
+        },
+        "known_usage": {
+          "prompt_tokens": 1440257,
+          "completion_tokens": 137030,
+          "total_tokens": 1577287
+        }
+      },
+      "embedding": {
+        "logical_requests": 40,
+        "statuses": {
+          "completed": 40
+        },
+        "known_usage": {
+          "prompt_tokens": 51344,
+          "completion_tokens": 0,
+          "total_tokens": 51344
+        },
+        "physical_usage": {
+          "prompt_tokens": 46461,
+          "completion_tokens": 0,
+          "total_tokens": 46461
+        },
+        "usage_basis": "physical response authoritative; original shared-client delta counters retained for diagnosis"
+      }
+    },
+    "physical_usage_by_model": {
+      "deepseek-v4.1-flash-1017": {
+        "prompt_tokens": 1727158,
+        "completion_tokens": 289510,
+        "total_tokens": 2016668
+      },
+      "text-embedding-3-large": {
+        "prompt_tokens": 46461,
+        "completion_tokens": 0,
+        "total_tokens": 46461
+      }
+    }
+  },
+  "state": {
+    "status": "completed",
+    "pid": null,
+    "completed_new_P7": 33,
+    "combined_completed_P7": 48,
+    "time": "2026-10-25T13:27:03.350773+00:00",
+    "last_cell": "1000_r2_E1",
+    "memory_unchanged": true
+  },
+  "prior_states": [
+    {
+      "status": "stopped_technical",
+      "pid": null,
+      "time": "2026-10-25T12:54:55.038412+00:00",
+      "completed_P7": 15,
+      "last_cell": "1409_r1_E1",
+      "error_type": "ReplayStop",
+      "reason": "technical_gate_failed:335_r1_E0:workflow_incomplete,experience_analysis:degraded",
+      "memory_unchanged": true
+    }
+  ],
+  "protocols": [
+    {
+      "protocol": "cle-v41-native-P7-empty-vs-legacy1939-v1",
+      "status": "authorized_S0_S1_only",
+      "paid_execution_enabled": true,
+      "model": "deepseek-v4.1-flash-1017",
+      "thinking": "disabled",
+      "temperature": 0,
+      "max_tokens": 4096,
+      "message_roles": [
+        "user"
+      ],
+      "transport": "reuse verified same-org endpoint and transparent client identifier; experiment-scoped explicit-proxy bypass with verified TLS",
+      "workers_max": 4,
+      "max_experiences": 3,
+      "native_P7_attempts_max": 2,
+      "native_PLT_delivery": "first Joint early stop; otherwise one repair and deliver last; unmeasured ends original attempt loop",
+      "forbidden_dispatch_windows_Asia_Shanghai": {
+        "weekdays": "Monday-Friday",
+        "windows": [
+          "09:00-12:00",
+          "14:00-18:00"
+        ],
+        "endpoints": "left-inclusive right-exclusive",
+        "weekends": "allowed all day"
+      },
+      "memory": "translation_work/diagnostics/20261020/cle_q_online_v1/D_grow/frozen/m_star_q.jsonl",
+      "memory_count": 1939,
+      "legacy_Q_visited": 972,
+      "learning_Dinit": "303 completed",
+      "learning_Dgrow": "23/273 completed in latest online reinforcement; old separate Dgrow full learning exists",
+      "Q_updates_during_transfer": false,
+      "selection_source": "configs/cle_contract_q_20261023/manifest.json, stored order; no filtering by v41 score",
+      "task_source": "translation_work/diagnostics/20261023/cle_contract_q/tasks_D_gate_48_restored_urls_v2.json",
+      "splits": {
+        "technical": [
+          {
+            "task_id": "1256",
+            "family_id": "26e03da64df8",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "100",
+            "family_id": "b1be3d02111c",
+            "cwe": "179"
+          }
+        ],
+        "development": [
+          {
+            "task_id": "1256",
+            "family_id": "26e03da64df8",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "100",
+            "family_id": "b1be3d02111c",
+            "cwe": "179"
+          },
+          {
+            "task_id": "1266",
+            "family_id": "796599e07fe5",
+            "cwe": "200"
+          },
+          {
+            "task_id": "335",
+            "family_id": "2d999c0d0d72",
+            "cwe": "327"
+          },
+          {
+            "task_id": "1409",
+            "family_id": "3ef963e6098d",
+            "cwe": "347"
+          },
+          {
+            "task_id": "1306",
+            "family_id": "c491a96333c7",
+            "cwe": "352"
+          },
+          {
+            "task_id": "1317",
+            "family_id": "6254ceb5c539",
+            "cwe": "502"
+          },
+          {
+            "task_id": "1322",
+            "family_id": "accd39ecb618",
+            "cwe": "601"
+          },
+          {
+            "task_id": "1341",
+            "family_id": "694af4fba622",
+            "cwe": "74"
+          },
+          {
+            "task_id": "1343",
+            "family_id": "f38d18af5ea5",
+            "cwe": "77"
+          },
+          {
+            "task_id": "1352",
+            "family_id": "e1649f0815a6",
+            "cwe": "770"
+          },
+          {
+            "task_id": "1000",
+            "family_id": "8effd9406673",
+            "cwe": "79"
+          }
+        ],
+        "validation": [
+          {
+            "task_id": "1013",
+            "family_id": "1047f2bc6f3b",
+            "cwe": "862"
+          },
+          {
+            "task_id": "1215",
+            "family_id": "0202d6a5afe9",
+            "cwe": "863"
+          },
+          {
+            "task_id": "1055",
+            "family_id": "b27afdfa4c6d",
+            "cwe": "915"
+          },
+          {
+            "task_id": "1082",
+            "family_id": "99ac325fbf98",
+            "cwe": "918"
+          },
+          {
+            "task_id": "1125",
+            "family_id": "bb690cb66710",
+            "cwe": "94"
+          },
+          {
+            "task_id": "1170",
+            "family_id": "3c028bc080c8",
+            "cwe": "95"
+          },
+          {
+            "task_id": "1259",
+            "family_id": "5aeb6e97473a",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "103",
+            "family_id": "ae44044347c3",
+            "cwe": "179"
+          },
+          {
+            "task_id": "1267",
+            "family_id": "b4f08ece902e",
+            "cwe": "200"
+          },
+          {
+            "task_id": "338",
+            "family_id": "1f822ff36d2a",
+            "cwe": "327"
+          },
+          {
+            "task_id": "424",
+            "family_id": "58ef28b25367",
+            "cwe": "347"
+          },
+          {
+            "task_id": "471",
+            "family_id": "2cdebbea3921",
+            "cwe": "352"
+          },
+          {
+            "task_id": "1318",
+            "family_id": "167bebe21100",
+            "cwe": "502"
+          },
+          {
+            "task_id": "1323",
+            "family_id": "0871c2ec5cd8",
+            "cwe": "601"
+          },
+          {
+            "task_id": "777",
+            "family_id": "8ac9f3ea0eb2",
+            "cwe": "74"
+          },
+          {
+            "task_id": "1345",
+            "family_id": "53cce12b61e4",
+            "cwe": "77"
+          },
+          {
+            "task_id": "873",
+            "family_id": "5bd2a1d9722f",
+            "cwe": "770"
+          },
+          {
+            "task_id": "1001",
+            "family_id": "bf1c4709bade",
+            "cwe": "79"
+          },
+          {
+            "task_id": "1015",
+            "family_id": "ef36f1232121",
+            "cwe": "862"
+          },
+          {
+            "task_id": "1225",
+            "family_id": "228bf424541f",
+            "cwe": "863"
+          },
+          {
+            "task_id": "1056",
+            "family_id": "d6448e408574",
+            "cwe": "915"
+          },
+          {
+            "task_id": "1086",
+            "family_id": "79f9803495c0",
+            "cwe": "918"
+          },
+          {
+            "task_id": "1126",
+            "family_id": "426b5178e24d",
+            "cwe": "94"
+          },
+          {
+            "task_id": "1179",
+            "family_id": "a5db646d9dbc",
+            "cwe": "95"
+          }
+        ],
+        "unused_reserve": [
+          {
+            "task_id": "48",
+            "family_id": "aa4e8b63e818",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "106",
+            "family_id": "d0d35d0245f3",
+            "cwe": "179"
+          },
+          {
+            "task_id": "1269",
+            "family_id": "23c8065b0296",
+            "cwe": "200"
+          },
+          {
+            "task_id": "340",
+            "family_id": "4048652cb877",
+            "cwe": "327"
+          },
+          {
+            "task_id": "427",
+            "family_id": "b992ac7b2f85",
+            "cwe": "347"
+          },
+          {
+            "task_id": "489",
+            "family_id": "cf9e2b4681b9",
+            "cwe": "352"
+          },
+          {
+            "task_id": "1402",
+            "family_id": "46a830a68cb8",
+            "cwe": "502"
+          },
+          {
+            "task_id": "639",
+            "family_id": "f8663a5390f0",
+            "cwe": "601"
+          },
+          {
+            "task_id": "783",
+            "family_id": "cd73a94d9e2b",
+            "cwe": "74"
+          },
+          {
+            "task_id": "1347",
+            "family_id": "fcfdfb66f77c",
+            "cwe": "77"
+          },
+          {
+            "task_id": "875",
+            "family_id": "444cf0bcfc61",
+            "cwe": "770"
+          },
+          {
+            "task_id": "1006",
+            "family_id": "89de5a2d1dc3",
+            "cwe": "79"
+          }
+        ]
+      },
+      "score_reuse": "v41 P3 score reuse only if public task, fixture, feedback, attempt and source protocol match; restored v2 default requires fresh matched control",
+      "fast_stage": {
+        "arms": [
+          "native_P7_empty_control",
+          "native_P7_Q0_legacy1939"
+        ],
+        "repeats": 2,
+        "P7_total": 48,
+        "technical_P7_included": 8,
+        "model_token_hard_cap_proposed": 8000000,
+        "total_HTTP_hard_cap_proposed": 2000,
+        "embedding_HTTP_cap_proposed": 200,
+        "gate": "complete measurements; zero unresolved flow errors; memory Joint net >=2/24 versus empty; each repeat nonnegative; F and S totals nondecreasing; evidence in >=2 families",
+        "scientific_scope": "engineering screen; P3 is method-level reference, P7 empty is component-level memory control"
+      },
+      "validation_stage": {
+        "tasks": 24,
+        "arms": 2,
+        "repeats": 2,
+        "P7_total": 96,
+        "model_token_hard_cap_proposed": 16000000,
+        "total_HTTP_hard_cap_proposed": 4000,
+        "embedding_HTTP_cap_proposed": 400,
+        "gate": "positive Joint in both repeats; paired family 95% interval lower bound >0 for supported within-study claim; otherwise inconclusive and no automatic expansion",
+        "exposure": "migration-policy holdout only; tasks exposed in older research and v41 P3, not an untouched benchmark"
+      },
+      "requires_implementation_before_paid": [
+        "explicit model/metadata parameterization for hardcoded v3.2 consumers",
+        "new shared starts and reviewed materials for current model",
+        "same-P7 empty provider wrapper",
+        "reuse replay/cost transport across actual selected entry",
+        "scope-correct budget controller and trial manifest"
+      ],
+      "non_default": [
+        "full fresh CLE training",
+        "additional Q coverage learning",
+        "all P0-P7 reruns",
+        "unlimited-card variants",
+        "B/C full matrices",
+        "classifier training before labels",
+        "Base/Plus without original images",
+        "MASE"
+      ],
+      "authorization_note": "Current user explicitly authorized this S0/S1 package only.",
+      "authorization": "User 2026-10-25: S0, 2-task technical then12-task two-repeat E0/E1; no Q/classifier/BasePlus",
+      "original_project_root": "D:\\Agent\\sct-security-generation",
+      "candidate_order": null,
+      "semantic_delta": null,
+      "Q_enabled": false,
+      "workers": 4,
+      "counts": {
+        "technical_included": 8,
+        "total_P7": 48
+      },
+      "initial_analysis": "one native analysis_prompt per task/repeat; no old-model response reuse",
+      "max_http": 2000,
+      "max_embedding_http": 200,
+      "max_conservative_tokens": 8000000,
+      "scope": "S0 and S1 only; no validation24 or further packages"
+    },
+    {
+      "protocol": "cle-v41-native-P7-empty-vs-legacy1939-v2",
+      "status": "authorized_S0_S1_only",
+      "paid_execution_enabled": true,
+      "model": "deepseek-v4.1-flash-1017",
+      "thinking": "disabled",
+      "temperature": 0,
+      "max_tokens": 4096,
+      "message_roles": [
+        "user"
+      ],
+      "transport": "reuse verified same-org endpoint and transparent client identifier; experiment-scoped explicit-proxy bypass with verified TLS",
+      "workers_max": 4,
+      "max_experiences": 3,
+      "native_P7_attempts_max": 2,
+      "native_PLT_delivery": "first Joint early stop; otherwise one repair and deliver last; unmeasured ends original attempt loop",
+      "forbidden_dispatch_windows_Asia_Shanghai": {
+        "weekdays": "Monday-Friday",
+        "windows": [
+          "09:00-12:00",
+          "14:00-18:00"
+        ],
+        "endpoints": "left-inclusive right-exclusive",
+        "weekends": "allowed all day"
+      },
+      "memory": "translation_work/diagnostics/20261020/cle_q_online_v1/D_grow/frozen/m_star_q.jsonl",
+      "memory_count": 1939,
+      "legacy_Q_visited": 972,
+      "learning_Dinit": "303 completed",
+      "learning_Dgrow": "23/273 completed in latest online reinforcement; old separate Dgrow full learning exists",
+      "Q_updates_during_transfer": false,
+      "selection_source": "configs/cle_contract_q_20261023/manifest.json, stored order; no filtering by v41 score",
+      "task_source": "translation_work/diagnostics/20261023/cle_contract_q/tasks_D_gate_48_restored_urls_v2.json",
+      "splits": {
+        "technical": [
+          {
+            "task_id": "1256",
+            "family_id": "26e03da64df8",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "100",
+            "family_id": "b1be3d02111c",
+            "cwe": "179"
+          }
+        ],
+        "development": [
+          {
+            "task_id": "1256",
+            "family_id": "26e03da64df8",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "100",
+            "family_id": "b1be3d02111c",
+            "cwe": "179"
+          },
+          {
+            "task_id": "1266",
+            "family_id": "796599e07fe5",
+            "cwe": "200"
+          },
+          {
+            "task_id": "335",
+            "family_id": "2d999c0d0d72",
+            "cwe": "327"
+          },
+          {
+            "task_id": "1409",
+            "family_id": "3ef963e6098d",
+            "cwe": "347"
+          },
+          {
+            "task_id": "1306",
+            "family_id": "c491a96333c7",
+            "cwe": "352"
+          },
+          {
+            "task_id": "1317",
+            "family_id": "6254ceb5c539",
+            "cwe": "502"
+          },
+          {
+            "task_id": "1322",
+            "family_id": "accd39ecb618",
+            "cwe": "601"
+          },
+          {
+            "task_id": "1341",
+            "family_id": "694af4fba622",
+            "cwe": "74"
+          },
+          {
+            "task_id": "1343",
+            "family_id": "f38d18af5ea5",
+            "cwe": "77"
+          },
+          {
+            "task_id": "1352",
+            "family_id": "e1649f0815a6",
+            "cwe": "770"
+          },
+          {
+            "task_id": "1000",
+            "family_id": "8effd9406673",
+            "cwe": "79"
+          }
+        ],
+        "validation": [
+          {
+            "task_id": "1013",
+            "family_id": "1047f2bc6f3b",
+            "cwe": "862"
+          },
+          {
+            "task_id": "1215",
+            "family_id": "0202d6a5afe9",
+            "cwe": "863"
+          },
+          {
+            "task_id": "1055",
+            "family_id": "b27afdfa4c6d",
+            "cwe": "915"
+          },
+          {
+            "task_id": "1082",
+            "family_id": "99ac325fbf98",
+            "cwe": "918"
+          },
+          {
+            "task_id": "1125",
+            "family_id": "bb690cb66710",
+            "cwe": "94"
+          },
+          {
+            "task_id": "1170",
+            "family_id": "3c028bc080c8",
+            "cwe": "95"
+          },
+          {
+            "task_id": "1259",
+            "family_id": "5aeb6e97473a",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "103",
+            "family_id": "ae44044347c3",
+            "cwe": "179"
+          },
+          {
+            "task_id": "1267",
+            "family_id": "b4f08ece902e",
+            "cwe": "200"
+          },
+          {
+            "task_id": "338",
+            "family_id": "1f822ff36d2a",
+            "cwe": "327"
+          },
+          {
+            "task_id": "424",
+            "family_id": "58ef28b25367",
+            "cwe": "347"
+          },
+          {
+            "task_id": "471",
+            "family_id": "2cdebbea3921",
+            "cwe": "352"
+          },
+          {
+            "task_id": "1318",
+            "family_id": "167bebe21100",
+            "cwe": "502"
+          },
+          {
+            "task_id": "1323",
+            "family_id": "0871c2ec5cd8",
+            "cwe": "601"
+          },
+          {
+            "task_id": "777",
+            "family_id": "8ac9f3ea0eb2",
+            "cwe": "74"
+          },
+          {
+            "task_id": "1345",
+            "family_id": "53cce12b61e4",
+            "cwe": "77"
+          },
+          {
+            "task_id": "873",
+            "family_id": "5bd2a1d9722f",
+            "cwe": "770"
+          },
+          {
+            "task_id": "1001",
+            "family_id": "bf1c4709bade",
+            "cwe": "79"
+          },
+          {
+            "task_id": "1015",
+            "family_id": "ef36f1232121",
+            "cwe": "862"
+          },
+          {
+            "task_id": "1225",
+            "family_id": "228bf424541f",
+            "cwe": "863"
+          },
+          {
+            "task_id": "1056",
+            "family_id": "d6448e408574",
+            "cwe": "915"
+          },
+          {
+            "task_id": "1086",
+            "family_id": "79f9803495c0",
+            "cwe": "918"
+          },
+          {
+            "task_id": "1126",
+            "family_id": "426b5178e24d",
+            "cwe": "94"
+          },
+          {
+            "task_id": "1179",
+            "family_id": "a5db646d9dbc",
+            "cwe": "95"
+          }
+        ],
+        "unused_reserve": [
+          {
+            "task_id": "48",
+            "family_id": "aa4e8b63e818",
+            "cwe": "1333"
+          },
+          {
+            "task_id": "106",
+            "family_id": "d0d35d0245f3",
+            "cwe": "179"
+          },
+          {
+            "task_id": "1269",
+            "family_id": "23c8065b0296",
+            "cwe": "200"
+          },
+          {
+            "task_id": "340",
+            "family_id": "4048652cb877",
+            "cwe": "327"
+          },
+          {
+            "task_id": "427",
+            "family_id": "b992ac7b2f85",
+            "cwe": "347"
+          },
+          {
+            "task_id": "489",
+            "family_id": "cf9e2b4681b9",
+            "cwe": "352"
+          },
+          {
+            "task_id": "1402",
+            "family_id": "46a830a68cb8",
+            "cwe": "502"
+          },
+          {
+            "task_id": "639",
+            "family_id": "f8663a5390f0",
+            "cwe": "601"
+          },
+          {
+            "task_id": "783",
+            "family_id": "cd73a94d9e2b",
+            "cwe": "74"
+          },
+          {
+            "task_id": "1347",
+            "family_id": "fcfdfb66f77c",
+            "cwe": "77"
+          },
+          {
+            "task_id": "875",
+            "family_id": "444cf0bcfc61",
+            "cwe": "770"
+          },
+          {
+            "task_id": "1006",
+            "family_id": "89de5a2d1dc3",
+            "cwe": "79"
+          }
+        ]
+      },
+      "score_reuse": "v41 P3 score reuse only if public task, fixture, feedback, attempt and source protocol match; restored v2 default requires fresh matched control",
+      "fast_stage": {
+        "arms": [
+          "native_P7_empty_control",
+          "native_P7_Q0_legacy1939"
+        ],
+        "repeats": 2,
+        "P7_total": 48,
+        "technical_P7_included": 8,
+        "model_token_hard_cap_proposed": 8000000,
+        "total_HTTP_hard_cap_proposed": 2000,
+        "embedding_HTTP_cap_proposed": 200,
+        "gate": "complete measurements; zero unresolved flow errors; memory Joint net >=2/24 versus empty; each repeat nonnegative; F and S totals nondecreasing; evidence in >=2 families",
+        "scientific_scope": "engineering screen; P3 is method-level reference, P7 empty is component-level memory control"
+      },
+      "validation_stage": {
+        "tasks": 24,
+        "arms": 2,
+        "repeats": 2,
+        "P7_total": 96,
+        "model_token_hard_cap_proposed": 16000000,
+        "total_HTTP_hard_cap_proposed": 4000,
+        "embedding_HTTP_cap_proposed": 400,
+        "gate": "positive Joint in both repeats; paired family 95% interval lower bound >0 for supported within-study claim; otherwise inconclusive and no automatic expansion",
+        "exposure": "migration-policy holdout only; tasks exposed in older research and v41 P3, not an untouched benchmark"
+      },
+      "requires_implementation_before_paid": [
+        "explicit model/metadata parameterization for hardcoded v3.2 consumers",
+        "new shared starts and reviewed materials for current model",
+        "same-P7 empty provider wrapper",
+        "reuse replay/cost transport across actual selected entry",
+        "scope-correct budget controller and trial manifest"
+      ],
+      "non_default": [
+        "full fresh CLE training",
+        "additional Q coverage learning",
+        "all P0-P7 reruns",
+        "unlimited-card variants",
+        "B/C full matrices",
+        "classifier training before labels",
+        "Base/Plus without original images",
+        "MASE"
+      ],
+      "authorization_note": "Current user explicitly authorized this S0/S1 package only.",
+      "authorization": "User 2026-10-25: S0, 2-task technical then12-task two-repeat E0/E1; no Q/classifier/BasePlus",
+      "original_project_root": "D:\\Agent\\sct-security-generation",
+      "candidate_order": null,
+      "semantic_delta": null,
+      "Q_enabled": false,
+      "workers": 4,
+      "counts": {
+        "technical_included": 8,
+        "total_P7": 48
+      },
+      "initial_analysis": "one native analysis_prompt per task/repeat; no old-model response reuse",
+      "max_http": 2000,
+      "max_embedding_http": 200,
+      "max_conservative_tokens": 8000000,
+      "scope": "S0 and S1 only; no validation24 or further packages",
+      "parent_protocol": "cle-v41-native-P7-empty-vs-legacy1939-v1",
+      "recovery_authorization": "User 2026-10-25: update then continue experiment",
+      "stopping_policy": "model JSON/selector/generation degradation retains native fallback and score; infrastructure/unknown requests/model mismatch/budget stop",
+      "budget_accounting": "same8M cap; reported usage settles reservations; unknown/inflight retain conservative bounds; historical5 unknown retained",
+      "remaining_P7": 33,
+      "reused_completed_P7": 15,
+      "parser_modified": false,
+      "prompts_modified": false
+    }
+  ],
+  "technical_gate": {
+    "status": "passed",
+    "completed_P7": 8,
+    "accuracy_is_not_a_gate": true,
+    "time": "2026-10-25T12:52:13.844147+00:00"
+  },
+  "replay": {
+    "status": "passed",
+    "rows": 48,
+    "different_cells": [],
+    "API_calls": 0,
+    "credentials_reads": 0,
+    "comparison": "all native fields except selector elapsed_seconds; saved embedding cache reused",
+    "partial_cells_not_executed": true
+  },
+  "partial_cells": [],
+  "development_gate": {
+    "quantitative_passed": false,
+    "mechanism_review": "pending_actual_code_review",
+    "passed": false,
+    "reason": "requires complete scores plus >=2 family rescue paths with selected/adopted/implemented evidence"
+  },
+  "v2_development_gate": {
+    "quantitative_passed": false,
+    "mechanism_review_required": "at least2 distinct family selected-adopted-implemented rescues",
+    "passed": false,
+    "model_degradations_counted": 7,
+    "original_strict_gate_not_relabelled": true
+  },
+  "reused_request_count": 11,
+  "analysis": {
+    "completed_P7": 48,
+    "end_to_end_Joint": {
+      "E0": 7,
+      "E1": 8,
+      "denominator_each": 24
+    },
+    "paired_complete_measurements": 23,
+    "paired_measured_joint": {
+      "E0": 7,
+      "E1": 7
+    },
+    "changed_pairs": [
+      {
+        "task_id": "1343",
+        "repeat": 1,
+        "E0_joint": false,
+        "E1_joint": true,
+        "both_measured": false,
+        "delta": 1
+      }
+    ],
+    "native_degraded_runs": {
+      "E0": 3,
+      "E1": 4
+    },
+    "mechanism_gate_passed": false,
+    "decision": "stop_S1_no_validation24_no_Q_learning",
+    "reason": "only one apparent rescue; baseline code truncated/unmeasured; second repeat both pass; <2 net rescues and <2 families",
+    "one_case_review": {
+      "task_id": "1343",
+      "repeat": 1,
+      "E0": "planning invalid JSON, generation finish_reason=length, no executable final code",
+      "E1_adopted_ids": [
+        "seed-842",
+        "seed-831"
+      ],
+      "E1_implementation": "restricted tokenizer/parser, whitelisted operator functions, no eval/exec",
+      "E1_validation": "F and S pass",
+      "repeat2": "both E0 and E1 Joint pass",
+      "claim": "implemented adopted parser advice; isolated truncation-sensitive rescue, no established broad benefit"
+    }
+  }
+}

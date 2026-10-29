@@ -1,0 +1,24 @@
+{
+  "version": "conditional-q-public-v1",
+  "enabled": false,
+  "rules": [],
+  "reason": "No independently validated pre-generation routing signal; keep Q route disabled.",
+  "historical_contract_enrichment_gate": false,
+  "allowed_features": [
+    "explicit_external_binding",
+    "signature_known",
+    "visited_fraction",
+    "negative_q_fraction",
+    "max_visits",
+    "normalized_rank_displacement"
+  ],
+  "forbidden_inputs": [
+    "F",
+    "S",
+    "Joint",
+    "generated_code",
+    "adoption",
+    "hidden_tests",
+    "reference"
+  ]
+}

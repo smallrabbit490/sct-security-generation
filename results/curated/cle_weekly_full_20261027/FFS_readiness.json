@@ -1,0 +1,37 @@
+{
+  "status": "wiring_verified_waiting_allowed_window",
+  "protocol": "cle-weekly-full-function-security-views-20261027-v1",
+  "planned": 2980,
+  "actual_completed": 0,
+  "paid_calls_in_preparation": 0,
+  "offline_checks": {
+    "status": "passed",
+    "observed_utc": "2026-10-27T06:20:57.038570+00:00",
+    "test_count": 36,
+    "elapsed_seconds": 13.69,
+    "command": "python -B -X utf8 -m unittest tests.test_cle_weekly_frozen_retest tests.test_cle_weekly_gate_evaluation tests.test_cle_weekly_analysis tests.test_cle_weekly_retest_analysis tests.test_cle_weekly_gate_analysis tests.test_cle_weekly_gate_contracts tests.test_cle_weekly_fs tests.test_cle_weekly_fs_analysis -q",
+    "paid_API_calls": 0,
+    "test_evidence_kind": "synthetic_integration_and_hand_calculated_analysis_not_real_model_scores",
+    "real_P7_completed": 0,
+    "verified": [
+      "full_fixed_schedule_normal_negative_continues",
+      "same_source_IDs_before_view",
+      "B0_no_memory_including_repair",
+      "independent_repeats",
+      "source_single_flight_cache_and_original_method_retained",
+      "unresolved_HTTP_blocks_resume",
+      "zero_API_saved_response_replay",
+      "same_family_clustered_analysis",
+      "shared_and_material_cost_not_duplicated"
+    ],
+    "performance_gate_controls_dispatch": false
+  },
+  "budget": {
+    "conservative_model_and_embedding_tokens": 640900000,
+    "total_physical_HTTP_attempts": 134712,
+    "embedding_HTTP_attempts_included_in_total": 47680
+  },
+  "material_inventory": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FFS\\preflight_material_inventory.json",
+  "Q_learning_dependency": false,
+  "analysis_command": "python -B -X utf8 -m configs.cle_weekly_analysis_20261027.fs_analysis"
+}

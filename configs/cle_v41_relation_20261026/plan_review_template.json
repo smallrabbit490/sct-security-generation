@@ -1,0 +1,53 @@
+{
+  "purpose": "新8次首次生成前的计划复核模板；无新真实计划，全部未填写。不得直接复用历史标签。",
+  "labels": [
+    "explicit",
+    "ambiguous",
+    "absent"
+  ],
+  "no_label_based_filtering": true,
+  "review_file_schema": {
+    "label": null,
+    "reason": null,
+    "reviewer": null,
+    "reviewed_plan": null
+  },
+  "rows": [
+    {
+      "prefix_id": "1409_r1_E",
+      "status": "pending_real_prefix",
+      "label": null,
+      "reason": null,
+      "reviewer": null,
+      "reviewed_plan": null,
+      "evidence_kind": "template_not_reviewed"
+    },
+    {
+      "prefix_id": "1409_r1_K",
+      "status": "pending_real_prefix",
+      "label": null,
+      "reason": null,
+      "reviewer": null,
+      "reviewed_plan": null,
+      "evidence_kind": "template_not_reviewed"
+    },
+    {
+      "prefix_id": "1409_r2_E",
+      "status": "pending_real_prefix",
+      "label": null,
+      "reason": null,
+      "reviewer": null,
+      "reviewed_plan": null,
+      "evidence_kind": "template_not_reviewed"
+    },
+    {
+      "prefix_id": "1409_r2_K",
+      "status": "pending_real_prefix",
+      "label": null,
+      "reason": null,
+      "reviewer": null,
+      "reviewed_plan": null,
+      "evidence_kind": "template_not_reviewed"
+    }
+  ]
+}

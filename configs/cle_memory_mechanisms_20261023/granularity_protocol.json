@@ -1,0 +1,124 @@
+{
+  "protocol": "cle-memory-granularity-C1-v2-ds41flash1017-offpeak-v1",
+  "native_protocol": "cle-memory-granularity-source-bound-v1",
+  "paid_execution_enabled": false,
+  "authorized_C02_HTTP_budget": null,
+  "consumer_frozen": false,
+  "consumer_version": null,
+  "provider_control_summary": "B02_provider_adaptation_v3_stream/summary.json",
+  "unresolved_contract_task_ids": [
+    "1348"
+  ],
+  "technical_execution": {
+    "enabled": false,
+    "scope": "technical_20",
+    "planned_P7": 20,
+    "max_http_attempts": null,
+    "max_conservative_tokens": null,
+    "max_embedding_attempts": null
+  },
+  "pilot_execution": {
+    "enabled": false,
+    "scope": "pilot_120",
+    "planned_P7": 120,
+    "max_http_attempts": null,
+    "max_conservative_tokens": null,
+    "max_embedding_attempts": null
+  },
+  "expansion_execution": {
+    "enabled": false,
+    "scope": "expansion_480",
+    "planned_P7": 480,
+    "max_http_attempts": null,
+    "max_conservative_tokens": null,
+    "max_embedding_attempts": null
+  },
+  "schedule_seed": 20261023,
+  "levels": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "repeats": [
+    1,
+    2
+  ],
+  "technical_P7": 20,
+  "pilot_P7_including_technical": 120,
+  "full_train_development_P7_including_pilot": 480,
+  "C1": {
+    "minimum_stable_different_families": 4,
+    "minimum_observed_oracle_minus_fixed": 0.1,
+    "stable_choice_operationalization": "At least one pair of levels has >=2 families with left Joint 2/2 and right 0/2, and >=2 other families with the reverse. Tied successes do not establish opposite preference.",
+    "clarification_timing": "Before any real C02 outcome; conservative operationalization of the existing stable-better/no-dominance condition, not a change based on model scores.",
+    "missing_or_technical_is_scientific_failure": false,
+    "observed_oracle_is_deployable_score": false
+  },
+  "cost_labels": {
+    "native_row_usage_is_complete_cell_cost": false,
+    "required_cell_cost_fields": [
+      "cell_id",
+      "prompt_tokens",
+      "complete"
+    ],
+    "complete_meaning": "All known model input usage attributable to this cell, including repair selection and binding; unknown usage makes complete=false. Shared first analysis/selection is reported separately as common overhead.",
+    "preferred_level": "Among levels with Joint 2/2, minimum actual mean complete cell input tokens, ties lower level. Missing any acceptable level cost leaves preferred_level=null."
+  },
+  "unchanged": {
+    "model": "deepseek-v4.1-flash-1017",
+    "thinking": "disabled",
+    "temperature": 0,
+    "max_tokens": 4096,
+    "embedding_model": "text-embedding-3-large",
+    "Q_used_or_updated": false,
+    "max_selected_cards": 3,
+    "delta": -1,
+    "candidate_order": null,
+    "max_repairs": 1,
+    "delivery": "last_attempt_first_joint_early_stop"
+  },
+  "remaining_before_paid": [
+    "Provider benign-code control must pass; existing failed controls remain terminal, do not automatically retry.",
+    "Freeze the consumer; task 1348 public policy gates the full twelve-task interpretation, not the first two-task technical scope.",
+    "Prepare actual selected-card views and target bindings; L4 source must be available.",
+    "Fixed 20/120/480 phase orchestration and request/cost core are implemented; fill explicitly scoped cumulative C02 budgets. Every stage remains disabled; B02 budget is not transferable."
+  ],
+  "previous_protocol": "cle-memory-granularity-C1-v1",
+  "model_transition": {
+    "from": "deepseek-v3.2",
+    "to": "deepseek-v4.1-flash-1017",
+    "authority": "2026-10-24 user model replacement and off-peak-only restriction",
+    "new_model_control_passed": false,
+    "historical_v32_records_unchanged": true,
+    "v32_shared_starts_reusable": false,
+    "formal_experiments_paused": true,
+    "message_roles_unchanged": true
+  },
+  "shared_start_run": "B02_shared_starts_ds41flash1017-offpeak-v1",
+  "usage_schedule": {
+    "timezone": "Asia/Shanghai",
+    "blocked_iso_weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "blocked_intervals": [
+      [
+        "09:00",
+        "12:00"
+      ],
+      [
+        "14:00",
+        "18:00"
+      ]
+    ],
+    "interval_boundary": "start inclusive; end exclusive",
+    "time_basis": "each HTTP dispatch; rechecked after queuing",
+    "action_when_blocked": "raise ModelTimeWindowError; no HTTP, no automatic retry or waiting",
+    "weekends": "all hours allowed"
+  }
+}

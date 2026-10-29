@@ -1,0 +1,528 @@
+{
+  "observed_at": "2026-10-28T00:09:50+08:00",
+  "run_snapshot_time": "2026-10-28T00:09:31+08:00",
+  "run_root": "E:\\ResearchRuns\\CLE\\20261027_full_requirements",
+  "workers": 4,
+  "processes": [
+    {
+      "pid": 83556,
+      "package": "FFS",
+      "workers": 3,
+      "entry": "configs.cle_weekly_proxy_recovery_20261027.runner run --kind ffs"
+    },
+    {
+      "pid": 117656,
+      "package": "FQ_LEARN",
+      "workers": 1,
+      "entry": "configs.cle_weekly_proxy_recovery_20261027.runner run --kind q"
+    }
+  ],
+  "packages": [
+    {
+      "key": "FQ_LEARN",
+      "status": "running",
+      "completed": 276,
+      "planned": 1122,
+      "segment": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K0\\segment_014"
+    },
+    {
+      "key": "FQ_RETEST",
+      "status": "not_started",
+      "completed": 0,
+      "planned": 2730,
+      "segment": null
+    },
+    {
+      "key": "FQ_GATE",
+      "status": "not_started",
+      "completed": 0,
+      "planned": 2384,
+      "segment": null
+    },
+    {
+      "key": "FFS",
+      "status": "running",
+      "completed": 632,
+      "planned": 2980,
+      "segment": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FFS\\segment_018"
+    },
+    {
+      "key": "FG_LABELS",
+      "status": "not_started",
+      "completed": 0,
+      "planned": 2730,
+      "segment": null
+    },
+    {
+      "key": "FG_GATE",
+      "status": "not_started",
+      "completed": 0,
+      "planned": 1788,
+      "segment": null
+    },
+    {
+      "key": "FR",
+      "status": "not_started",
+      "completed": 0,
+      "planned": null,
+      "segment": null
+    },
+    {
+      "key": "BUILD_C41",
+      "status": "not_started",
+      "completed": 0,
+      "planned": null,
+      "segment": null
+    },
+    {
+      "key": "FX_GATE",
+      "status": "not_started",
+      "completed": 0,
+      "planned": 3576,
+      "segment": null
+    },
+    {
+      "key": "FX_EXTERNAL",
+      "status": "not_started",
+      "completed": 0,
+      "planned": 1530,
+      "segment": null
+    },
+    {
+      "key": "P3_EXTERNAL",
+      "status": "not_started",
+      "completed": 0,
+      "planned": 255,
+      "segment": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "Q.run",
+      "title": "四轮Q学习",
+      "package": "FQ_LEARN",
+      "kind": "run",
+      "depends": [],
+      "priority": 10,
+      "reason": null,
+      "status": "running",
+      "attempts": 0
+    },
+    {
+      "id": "Q.K0.analysis",
+      "title": "K0冻结、回放与逐题分析",
+      "package": "FQ_LEARN",
+      "kind": "analysis",
+      "depends": [],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "Q.K1.analysis",
+      "title": "K1冻结、回放与逐题分析",
+      "package": "FQ_LEARN",
+      "kind": "analysis",
+      "depends": [],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "Q.K2.analysis",
+      "title": "K2冻结、回放与逐题分析",
+      "package": "FQ_LEARN",
+      "kind": "analysis",
+      "depends": [],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "Q.K3.analysis",
+      "title": "K3冻结、回放与逐题分析",
+      "package": "FQ_LEARN",
+      "kind": "analysis",
+      "depends": [],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "FS.run",
+      "title": "全D_gate功能安全五条件",
+      "package": "FFS",
+      "kind": "run",
+      "depends": [],
+      "priority": 11,
+      "reason": null,
+      "status": "running",
+      "attempts": 0
+    },
+    {
+      "id": "BUILD.prepare",
+      "title": "补齐C41原生建库接线及恢复验证",
+      "package": "BUILD_C41",
+      "kind": "prepare",
+      "depends": [],
+      "priority": 35,
+      "reason": null,
+      "status": "completed",
+      "attempts": 0
+    },
+    {
+      "id": "CROSS.prepare",
+      "title": "补齐v4.1三卡库交叉与逐格复用接线",
+      "package": "FX_GATE",
+      "kind": "prepare",
+      "depends": [],
+      "priority": 36,
+      "reason": null,
+      "status": "running",
+      "attempts": 0
+    },
+    {
+      "id": "CROSS.v32",
+      "title": "v3.2交叉三条件",
+      "package": "FX_GATE",
+      "kind": "external",
+      "depends": [],
+      "priority": 50,
+      "reason": "v32_unavailable",
+      "status": "blocked_external",
+      "attempts": 0
+    },
+    {
+      "id": "EXTERNAL.prepare",
+      "title": "准备Base/Plus原环境与原生执行入口",
+      "package": "FX_EXTERNAL",
+      "kind": "prepare",
+      "depends": [],
+      "priority": 37,
+      "reason": "original_validator_image_missing",
+      "status": "blocked_external",
+      "attempts": 0
+    },
+    {
+      "id": "EXTERNAL.v32",
+      "title": "Base/Plus的v3.2三条件",
+      "package": "FX_EXTERNAL",
+      "kind": "external",
+      "depends": [],
+      "priority": 50,
+      "reason": "v32_unavailable",
+      "status": "blocked_external",
+      "attempts": 0
+    },
+    {
+      "id": "Q.retest",
+      "title": "冻结Q同题五条件回测",
+      "package": "FQ_RETEST",
+      "kind": "run",
+      "depends": [
+        "Q.K0.analysis",
+        "Q.K1.analysis",
+        "Q.K2.analysis",
+        "Q.K3.analysis"
+      ],
+      "priority": 15,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "FS.analysis",
+      "title": "功能安全回放、配对与逐题分析",
+      "package": "FFS",
+      "kind": "analysis",
+      "depends": [
+        "FS.run"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "BUILD.run",
+      "title": "从空库完成C41完整CLE",
+      "package": "BUILD_C41",
+      "kind": "run",
+      "depends": [
+        "BUILD.prepare"
+      ],
+      "priority": 80,
+      "reason": null,
+      "status": "waiting_capacity",
+      "attempts": 0
+    },
+    {
+      "id": "P3.external",
+      "title": "历史P3 Base/Plus完整255格",
+      "package": "P3_EXTERNAL",
+      "kind": "run",
+      "depends": [
+        "EXTERNAL.prepare"
+      ],
+      "priority": 96,
+      "reason": "original_validator_image_missing",
+      "status": "blocked_external",
+      "attempts": 0
+    },
+    {
+      "id": "Q.retest.analysis",
+      "title": "同题回测配对与代码分析",
+      "package": "FQ_RETEST",
+      "kind": "analysis",
+      "depends": [
+        "Q.retest"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "GR.labels",
+      "title": "全D_grow五档两重复",
+      "package": "FG_LABELS",
+      "kind": "run",
+      "depends": [],
+      "priority": 25,
+      "reason": null,
+      "status": "waiting_turn",
+      "attempts": 0
+    },
+    {
+      "id": "BUILD.analysis",
+      "title": "新卡库原生复验与来源分析",
+      "package": "BUILD_C41",
+      "kind": "custom",
+      "depends": [
+        "BUILD.run"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "P3.analysis",
+      "title": "原P3外部结果分析",
+      "package": "P3_EXTERNAL",
+      "kind": "custom",
+      "depends": [
+        "P3.external"
+      ],
+      "priority": 1,
+      "reason": "upstream:P3.external",
+      "status": "blocked_external",
+      "attempts": 0
+    },
+    {
+      "id": "Q.gate",
+      "title": "全D_gate四臂两重复",
+      "package": "FQ_GATE",
+      "kind": "run",
+      "depends": [
+        "Q.retest.analysis"
+      ],
+      "priority": 16,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "GR.labels.analysis",
+      "title": "五档真实标签与逐题分析",
+      "package": "FG_LABELS",
+      "kind": "analysis",
+      "depends": [
+        "GR.labels"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "FR.run",
+      "title": "571题候选池、AI盲标与人审材料",
+      "package": "FR",
+      "kind": "run",
+      "depends": [
+        "GR.labels",
+        "FS.run"
+      ],
+      "priority": 60,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "CROSS.v41",
+      "title": "v4.1三卡库完整交叉",
+      "package": "FX_GATE",
+      "kind": "run",
+      "depends": [
+        "CROSS.prepare",
+        "BUILD.analysis",
+        "FS.analysis"
+      ],
+      "priority": 90,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "EXTERNAL.v41",
+      "title": "Base/Plus的v4.1三卡库两重复",
+      "package": "FX_EXTERNAL",
+      "kind": "run",
+      "depends": [
+        "EXTERNAL.prepare",
+        "BUILD.analysis"
+      ],
+      "priority": 95,
+      "reason": "original_validator_image_missing",
+      "status": "blocked_external",
+      "attempts": 0
+    },
+    {
+      "id": "Q.gate.analysis",
+      "title": "Q迁移的Holm配对与逐题分析",
+      "package": "FQ_GATE",
+      "kind": "analysis",
+      "depends": [
+        "Q.gate"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "GR.train",
+      "title": "离线训练并冻结分类器",
+      "package": "FG_TRAIN",
+      "kind": "train",
+      "depends": [
+        "GR.labels.analysis"
+      ],
+      "priority": 2,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "FR.analysis",
+      "title": "检索模型估计、成本与复核交付",
+      "package": "FR",
+      "kind": "custom",
+      "depends": [
+        "FR.run"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "CROSS.analysis",
+      "title": "v4.1卡库交叉的配对与逐题分析",
+      "package": "FX_GATE",
+      "kind": "custom",
+      "depends": [
+        "CROSS.v41"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "EXTERNAL.analysis",
+      "title": "Base/Plus交叉分析",
+      "package": "FX_EXTERNAL",
+      "kind": "custom",
+      "depends": [
+        "EXTERNAL.v41"
+      ],
+      "priority": 1,
+      "reason": "upstream:EXTERNAL.v41",
+      "status": "blocked_external",
+      "attempts": 0
+    },
+    {
+      "id": "GR.gate",
+      "title": "全D_gate三策略两重复",
+      "package": "FG_GATE",
+      "kind": "run",
+      "depends": [
+        "GR.train"
+      ],
+      "priority": 26,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "FR.human",
+      "title": "人工检索标签确认",
+      "package": "FR",
+      "kind": "external",
+      "depends": [
+        "FR.analysis"
+      ],
+      "priority": 50,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "GR.gate.analysis",
+      "title": "分类器收益与逐题分析",
+      "package": "FG_GATE",
+      "kind": "analysis",
+      "depends": [
+        "GR.gate"
+      ],
+      "priority": 1,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    },
+    {
+      "id": "CLOSEOUT",
+      "title": "全部可执行任务收尾及可跳转周报",
+      "package": "CLOSEOUT",
+      "kind": "closeout",
+      "depends": [],
+      "priority": 999,
+      "reason": null,
+      "status": "waiting_dependency",
+      "attempts": 0
+    }
+  ],
+  "counts": {
+    "completed": 1,
+    "running": 3,
+    "ready": 0,
+    "blocked_external": 7,
+    "waiting_dependency": 20,
+    "waiting_capacity": 1,
+    "waiting_window": 0,
+    "waiting_turn": 1
+  },
+  "current_cli": {
+    "job_id": "20261028_000108_182520",
+    "status": "running",
+    "pid": 116716
+  },
+  "current_task": "CROSS.prepare",
+  "scope": "documentation refresh only; no runtime control or protocol change"
+}

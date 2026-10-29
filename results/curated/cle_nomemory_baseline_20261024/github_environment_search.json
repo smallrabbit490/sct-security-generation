@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-24T22:10:38.785746+08:00",
+  "repository": "smallrabbit490/sct-security-generation",
+  "branches_checked": [
+    "master",
+    "codex/branch-global-gate-20260923",
+    "codex/cle-web-history-20261015",
+    "codex/cle-joint-contract-20261022",
+    "fjy/cle-q-exploration-20261018"
+  ],
+  "all_tree_responses_truncated": false,
+  "common_python_Dockerfile_blob": "8b205018be9178f10e7c4230d8dd85398dfcc804",
+  "Dockerfile": "docker/python-validator/Dockerfile",
+  "required_parent": "porta-bench-runtime-python3:latest",
+  "Actions_artifacts": [],
+  "owner_container_packages": [],
+  "global_GitHub_exact_code_search_both_image_names": [],
+  "Dockerfile_path_history": [
+    "700d926a24783cf43582da3d8b3b0a70f9c15550"
+  ],
+  "release": "cle-project-snapshot-20261022",
+  "release_assets": [
+    "CLE-full-project-20261022.zip",
+    "export_receipt.json"
+  ],
+  "export_receipt_local": "translation_work/diagnostics/20261024/p3_environment_github/export_receipt.json",
+  "result": "No original image export, parent build definition or registry address located in inspected GitHub sources. Release project ZIP contents not newly downloaded; receipt alone does not establish image availability.",
+  "fallback_performed": false,
+  "release_zip_tail_request": "HTTP501; ZIP central directory not retrieved, no claim made about all archive contents"
+}

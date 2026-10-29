@@ -1,0 +1,64 @@
+{
+  "protocol": "same-48-task-URL-fixture-restoration-v2",
+  "upstream_revision": "1f3da9ee48e0046359903cba0cc48d03665f96d5",
+  "source_url": "https://raw.githubusercontent.com/ucsb-mlsec/SeCodePLT/1f3da9ee48e0046359903cba0cc48d03665f96d5/virtue_code_eval/data/safety/secodeplt/data.json",
+  "original_tasks": "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48.json",
+  "restored_tasks": "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json",
+  "tasks": 48,
+  "changed_tasks": [
+    {
+      "task_id": "1322",
+      "cwe": "601",
+      "changed_fields": [
+        "unittest.testcases"
+      ],
+      "public_contract_unchanged": true,
+      "reference_unchanged": true,
+      "setup_unchanged": true
+    },
+    {
+      "task_id": "1082",
+      "cwe": "918",
+      "changed_fields": [
+        "unittest.testcases"
+      ],
+      "public_contract_unchanged": true,
+      "reference_unchanged": true,
+      "setup_unchanged": true
+    },
+    {
+      "task_id": "1323",
+      "cwe": "601",
+      "changed_fields": [
+        "unittest.testcases"
+      ],
+      "public_contract_unchanged": true,
+      "reference_unchanged": true,
+      "setup_unchanged": true
+    },
+    {
+      "task_id": "1086",
+      "cwe": "918",
+      "changed_fields": [
+        "unittest.testcases"
+      ],
+      "public_contract_unchanged": true,
+      "reference_unchanged": true,
+      "setup_unchanged": true
+    },
+    {
+      "task_id": "639",
+      "cwe": "601",
+      "changed_fields": [
+        "unittest.testcases"
+      ],
+      "public_contract_unchanged": true,
+      "reference_unchanged": true,
+      "setup_unchanged": true
+    }
+  ],
+  "selection_unchanged": true,
+  "historical_scores_unchanged": true,
+  "new_model_generations": 0,
+  "test_values_added_to_public_context": false
+}

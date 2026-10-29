@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "core_experiments": 37,
+  "conditional_branches": 2,
+  "all_experiment_anchors_present": true,
+  "all_local_links_and_anchors_resolved": true,
+  "overlapping_experiment_cards": 0,
+  "new_experiment_API_calls": 0,
+  "snapshot_time": "2026-10-28T12:38:54+08:00",
+  "states": {
+    "done": 21,
+    "recovering": 1,
+    "running": 1,
+    "todo": 9,
+    "external": 3,
+    "ended": 2
+  }
+}

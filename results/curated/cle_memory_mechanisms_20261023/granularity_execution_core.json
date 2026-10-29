@@ -1,0 +1,131 @@
+{
+  "protocol": "cle-granularity-staged-execution-offline-20261024",
+  "checked_at": "2026-10-24T00:41:54.960584+08:00",
+  "targeted_tests_passed": 85,
+  "new_targeted_tests_this_implementation": 30,
+  "new_stage_tests": 9,
+  "technical_20_entry_implemented": true,
+  "cell_request_cost_resume_core_implemented": true,
+  "pilot_full_stage_orchestrator_implemented": true,
+  "stage_limits": [
+    20,
+    120,
+    480
+  ],
+  "new_real_API_calls": 0,
+  "new_real_embedding_calls": 0,
+  "new_real_P7_runs": 0,
+  "new_Q_updates": 0,
+  "new_real_tokens": 0,
+  "classifier_trained": false,
+  "offline_controls_are_experiment_results": false,
+  "paid_execution_enabled": false,
+  "entry_checks": [
+    {
+      "protocol": "cle-memory-granularity-source-bound-v1",
+      "scope": "technical_20",
+      "planned_P7": 20,
+      "scheduled_total": 480,
+      "stage_gate": {
+        "phase": "technical",
+        "prefix_limit": 20,
+        "ready": true,
+        "reasons": [],
+        "qualified_technical_cells": 0,
+        "C1": {
+          "evaluated": false,
+          "status": "not_evaluated_missing_outcomes",
+          "passed": null,
+          "stable_different_families": null,
+          "reciprocal_level_pairs": null,
+          "oracle_minus_fixed": null
+        },
+        "new_API_calls": 0
+      },
+      "ready": false,
+      "reasons": [
+        "paid_execution_disabled",
+        "consumer_not_frozen",
+        "C02_independent_budget_missing",
+        "provider_code_controls_not_passed"
+      ],
+      "new_API_calls": 0,
+      "Q_updates": 0
+    },
+    {
+      "protocol": "cle-memory-granularity-source-bound-v1",
+      "scope": "pilot_120",
+      "planned_P7": 120,
+      "scheduled_total": 480,
+      "stage_gate": {
+        "phase": "pilot",
+        "prefix_limit": 120,
+        "ready": false,
+        "reasons": [
+          "technical_prefix_not_qualified"
+        ],
+        "qualified_technical_cells": 0,
+        "C1": {
+          "evaluated": false,
+          "status": "not_evaluated_missing_outcomes",
+          "passed": null,
+          "stable_different_families": null,
+          "reciprocal_level_pairs": null,
+          "oracle_minus_fixed": null
+        },
+        "new_API_calls": 0
+      },
+      "ready": false,
+      "reasons": [
+        "paid_execution_disabled",
+        "consumer_not_frozen",
+        "C02_independent_budget_missing",
+        "provider_code_controls_not_passed",
+        "technical_prefix_not_qualified",
+        "pilot_public_contract_unresolved"
+      ],
+      "new_API_calls": 0,
+      "Q_updates": 0
+    },
+    {
+      "protocol": "cle-memory-granularity-source-bound-v1",
+      "scope": "expansion_480",
+      "planned_P7": 480,
+      "scheduled_total": 480,
+      "stage_gate": {
+        "phase": "expansion",
+        "prefix_limit": 480,
+        "ready": false,
+        "reasons": [
+          "technical_prefix_not_qualified",
+          "C1_not_passed"
+        ],
+        "qualified_technical_cells": 0,
+        "C1": {
+          "evaluated": false,
+          "status": "not_evaluated_missing_outcomes",
+          "passed": null,
+          "stable_different_families": null,
+          "reciprocal_level_pairs": null,
+          "oracle_minus_fixed": null
+        },
+        "new_API_calls": 0
+      },
+      "ready": false,
+      "reasons": [
+        "paid_execution_disabled",
+        "consumer_not_frozen",
+        "C02_independent_budget_missing",
+        "provider_code_controls_not_passed",
+        "technical_prefix_not_qualified",
+        "C1_not_passed",
+        "pilot_public_contract_unresolved"
+      ],
+      "new_API_calls": 0,
+      "Q_updates": 0
+    }
+  ],
+  "shared_starts_regenerated": false,
+  "old_results_overwritten": false,
+  "verification_scope": "85 targeted offline checks including 30 new execution/entry/stage controls; no real model efficacy evidence"
+}

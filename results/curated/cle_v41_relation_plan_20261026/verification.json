@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "scope": "offline full8 execution, stop rules, historical plan review and task mapping; not model results",
+  "unit_checks": 36,
+  "journal_regression_checks": 5,
+  "total_checks": 41,
+  "synthetic_execution": "8 cells,16 attempts",
+  "synthetic_replay": "8/8; selector elapsed_seconds excluded only",
+  "real_P7_completed": 0,
+  "model_API_calls": 0,
+  "embedding_API_calls": 0,
+  "paid_enabled": false,
+  "execution_ready": false,
+  "offline_execution_rules_ready": true,
+  "historical_plans_reviewed": 6,
+  "new_real_plan_reviews_completed": 0,
+  "new_real_plan_reviews_pending": 4,
+  "task_rows": 27,
+  "migration_validation_rows": 30,
+  "checked_text_files": 20,
+  "local_links_checked": 15,
+  "protected_files_unchanged": true
+}

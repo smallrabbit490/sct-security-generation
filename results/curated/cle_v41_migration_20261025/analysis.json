@@ -1,0 +1,43 @@
+{
+  "completed_P7": 48,
+  "end_to_end_Joint": {
+    "E0": 7,
+    "E1": 8,
+    "denominator_each": 24
+  },
+  "paired_complete_measurements": 23,
+  "paired_measured_joint": {
+    "E0": 7,
+    "E1": 7
+  },
+  "changed_pairs": [
+    {
+      "task_id": "1343",
+      "repeat": 1,
+      "E0_joint": false,
+      "E1_joint": true,
+      "both_measured": false,
+      "delta": 1
+    }
+  ],
+  "native_degraded_runs": {
+    "E0": 3,
+    "E1": 4
+  },
+  "mechanism_gate_passed": false,
+  "decision": "stop_S1_no_validation24_no_Q_learning",
+  "reason": "only one apparent rescue; baseline code truncated/unmeasured; second repeat both pass; <2 net rescues and <2 families",
+  "one_case_review": {
+    "task_id": "1343",
+    "repeat": 1,
+    "E0": "planning invalid JSON, generation finish_reason=length, no executable final code",
+    "E1_adopted_ids": [
+      "seed-842",
+      "seed-831"
+    ],
+    "E1_implementation": "restricted tokenizer/parser, whitelisted operator functions, no eval/exec",
+    "E1_validation": "F and S pass",
+    "repeat2": "both E0 and E1 Joint pass",
+    "claim": "implemented adopted parser advice; isolated truncation-sensitive rescue, no established broad benefit"
+  }
+}

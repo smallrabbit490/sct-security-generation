@@ -158,6 +158,9 @@ def main():
     from .run_closed_loop import _requester
     parser = argparse.ArgumentParser()
     parser.add_argument('--out', required=True)
+    parser.add_argument('--data-root', type=Path, default=ROOT / 'data/SecEvoBasePlus',
+                        help='本次只读Base/Plus数据快照；默认仍为仓库正式数据')
+    parser.add_argument('--only-cle', action='store_true', help='只运行CLE完整流水线，不额外运行prompt对照')
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--model', default='deepseek-v3.2')
@@ -189,7 +192,7 @@ def main():
     source = ROOT / args.memory
     digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     before_hash = digest(source)
-    data_files = {subset: ROOT / f'data/SecEvoBasePlus/{subset}/Python_{subset}.json'
+    data_files = {subset: args.data_root / subset / f'Python_{subset}.json'
                   for subset in args.subsets}
     data = []
     for subset, data_path in data_files.items():
@@ -252,6 +255,7 @@ def main():
     metadata['embedding_model'] = args.embedding_model if embedding_client else None
     metadata['prompt_only'] = args.prompt_only
     metadata['no_memory_control'] = args.no_memory_control
+    metadata['only_cle'] = args.only_cle
     write('run_metadata.json', metadata)
     def retrieve(contract, pool):
         retriever = HskTreeRetriever(tree, requester=request, ablation=config,
@@ -304,10 +308,10 @@ def main():
                 from .internal_checks import propose_checks, execute_checks
                 suite = propose_checks(contract, initial or {}, request)
             task_rows = []
-            arms = [('prompt_concat', memory)]
-            if args.no_memory_control:
+            arms = [('cle_four_agent', memory)] if args.only_cle else [('prompt_concat', memory)]
+            if args.no_memory_control and not args.only_cle:
                 arms.append(('prompt_nomemory', []))
-            if not args.prompt_only:
+            if not args.prompt_only and not args.only_cle:
                 arms.append(('cle_four_agent', memory))
             for method, arm_memory in arms:
                 row = {'subset': subset, 'task_id': task['ID'], 'method': method, 'attempts': [],
@@ -367,7 +371,7 @@ def main():
                         handle.write(json.dumps(row, ensure_ascii=False) + '\n')
                 write('summary.json', summarize(rows))
                 write('usage.json', usage)
-                arm_count = 1 + int(args.no_memory_control) + int(not args.prompt_only)
+                arm_count = 1 if args.only_cle else 1 + int(args.no_memory_control) + int(not args.prompt_only)
                 print(f'completed {len(rows)//arm_count}/{len(data)} tasks, {usage["calls"]} calls', flush=True)
         metadata['memory_unchanged'] = digest(source) == before_hash
         if not metadata['memory_unchanged']:

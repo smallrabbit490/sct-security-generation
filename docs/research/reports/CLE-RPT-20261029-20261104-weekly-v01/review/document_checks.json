@@ -1,0 +1,33 @@
+{
+  "bookmarks": 17,
+  "internal_links": 28,
+  "broken_links": [],
+  "rendered_pages": 9,
+  "fonts": {
+    "Normal": {
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}ascii": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}hAnsi": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}eastAsia": "宋体",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}cs": "Times New Roman"
+    },
+    "Heading1": {
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}ascii": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}hAnsi": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}eastAsia": "宋体",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}cs": "Times New Roman"
+    },
+    "Heading2": {
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}ascii": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}hAnsi": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}eastAsia": "宋体",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}cs": "Times New Roman"
+    },
+    "Title": {
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}ascii": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}hAnsi": "Times New Roman",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}eastAsia": "宋体",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}cs": "Times New Roman"
+    }
+  },
+  "visual_review": "All 9 rendered pages inspected; charts, tables, repeated table headers and text are legible; no clipping or blank pages."
+}

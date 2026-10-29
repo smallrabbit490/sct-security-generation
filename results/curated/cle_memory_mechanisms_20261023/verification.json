@@ -1,0 +1,17 @@
+{
+  "scope": "new preparation files and locked cohort; not mechanism efficacy",
+  "files_checked": 18,
+  "python_syntax": "passed",
+  "fixed_family_disjointness": true,
+  "reference_v2_pass": 96,
+  "human_review_auto_signatures": 0,
+  "Q_snapshot_matches_prior_protocol": true,
+  "API_calls": 0,
+  "generation_results": 0,
+  "remaining": [
+    "public semantic contract review including task1348",
+    "Notion raw records",
+    "914 human relevance labels",
+    "B/C implementation and paid experiments"
+  ]
+}

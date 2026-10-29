@@ -1,0 +1,19 @@
+{
+  "protocol": "cle-weekly-full-gate-restored-public-contract-20261027-v3",
+  "planned": 298,
+  "completed": 298,
+  "reference_joint": 298,
+  "reference_and_name_checks_passed": 298,
+  "remaining_reference_failed_ids": [],
+  "remaining_contract_check_ids": [],
+  "new_model_generations": 0,
+  "model_API_calls": 0,
+  "Q_updates": 0,
+  "active_learning_inputs_modified": false,
+  "reference_pass_does_not_prove_public_contract_completeness": true,
+  "paid_dispatch_ready": false,
+  "not_a_generated_code_result": true,
+  "reused_unchanged_reference_checks": 297,
+  "new_reference_checks": 1,
+  "reference_preflight_ready": true
+}

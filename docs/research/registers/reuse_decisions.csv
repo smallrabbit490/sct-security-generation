@@ -1,0 +1,20 @@
+reuse_id,requirement_ids,source_experiment,source_evidence,completed_scope,reuse_class,reuse_now,target_package,exact_conditions,confirmed_credit_new_plan,cannot_claim,next_action,as_of
+U01,R1;R2;R3;R4;R7,C32H1939,translation_work/diagnostics/20261026/cle_v41_completion/shared_inputs/memory1939.jsonl,1939 cards,R1,正文来源及同文本向量,FQ;FFS;FG;FX,资格和公开版本按各包固定,0,新模型代码成绩,登记源卡和Q反馈来源,2026-10-27T09:16:10+08:00
+U02,R1;R2,CLE-EXP-20261016-Q-01,results/curated/cle_memory_q_full_dgrow_20261016/summary.json,273;J105;m272;Q297,R3,历史完整观察学习,FQ,模型卡上限学习角色不同不抵扣,0,从未全量学习或已完成Q41,保留旧范围,2026-10-27T09:16:10+08:00
+U03,R1;R2,CLE-EXP-20261018-Q-01,results/curated/cle_memory_q_unlimited_complete_20261018/analysis.json,690 including273+273+144,R3;R4,同题下降与不限卡迁移诊断,FQ,不同上限不得拼三卡曲线,0,连续三轮或三卡主表,保留观察与回测分离,2026-10-27T09:16:10+08:00
+U04,R1;R2,CLE-EXP-20261019-Q-02,results/curated/cle_memory_q_unlimited_gate_q0_20261019/summary.json,Q0new48;other144reused,R3,补齐48题四臂历史,FQ,后补开发对照单列,0,新增加192付费题,避免父实验重复计数,2026-10-27T09:16:10+08:00
+U05,R1;R2,CLE-EXP-20261019-Q-01,results/curated/cle_memory_q_full_gate_cap3_20261019/summary.json,1192;Q0-3J97/104/102/100,R3,全298旧Q结论,FQ,旧Q快照和一次生成不同,0,972状态或新Q41成绩,保留各臂可测数,2026-10-27T09:16:10+08:00
+U06,R1;R2,CLE-EXP-20261020-Q-02,results/curated/cle_dgrow_url_q_learning_20261020/learning_summary.json,32;J24;workflowJ22;Q436,R1;R3;R4,公开契约修订和补反馈,F0;FQ,新模型公开上下文逐项一致,0,新DgateJoint提升,按两种Joint口径保留,2026-10-27T09:16:10+08:00
+U07,R1;R2,CLE-EXP-20261020-Q-03,results/curated/cle_dinit_full_learning_20261020_v4b/summary.json,303;296new7reuse;J138;Q669,R3,Dinit全量学习历史,FQ,旧模型及起点不同,0,新Q41已完成,不重复统计7复用,2026-10-27T09:16:10+08:00
+U08,R1;R2,CLE-EXP-20261020-Q-04,results/curated/cle_dinit_card_cap_20261020_v2/summary.json,303Lall+12L3;J140;Q926,R3,不限卡覆盖和采用诊断,FQ,不同上限与角色不抵扣,0,三卡Q排序的纯收益,保留299可测口径,2026-10-27T09:16:10+08:00
+U09,R1;R2,CLE-EXP-20261020-Q-01,results/curated/cle_q_online_20261020/D_grow_summary.json,Dinit303+Dgrow23;Q972,R1;R3,冻结旧Q迁移资产,FQ;old_Q_transfer,不能拿Q32初始化Q41从零链,0,Dgrow273完成或旧298使用此Q,保留历史暂停,2026-10-27T09:16:10+08:00
+U10,R7,CLE-EXP-20260928-BASE-01,configs/cle_v41_migration_20261025/source_evidence.json,4424 acrossPLTBasePlus,R3,历史基线及原项目规范,FX,同模型完整消息消费者验证环境逐项匹配,0,纯模型因果增益,BasePlus环境另核,2026-10-27T09:16:10+08:00
+U11,R7,CLE-EXP-20261024-BASE-01,results/curated/cle_nomemory_baseline_20261024/PLT_completion_20261025.json,298;J96;m297,R3,v41无记忆P3完整基线,FX,P3不能作为P7空卡,0,匹配P7控制,保持独立行,2026-10-27T09:16:10+08:00
+U12,R6;R7,CLE-EXP-20261025-CROSS-01,results/curated/cle_v41_migration_20261025/summary.json,48code,R2_candidate,原P7空卡带卡局部证据,FFS;FX,同模型消息题面候选经验消费者反馈验证重复完全一致,0,已抵扣48,F0逐格匹配,2026-10-27T09:16:10+08:00
+U13,R3,CLE-EXP-20261026-FS-02,results/curated/cle_v41_completion_20261026/summary.json,B02_120,R2_candidate;R4,五条件及逐题功能损失,FFS,同选卡源分区公开文本共享前缀与重复,0,分栏已有效或独立双库已测,F0逐格匹配,2026-10-27T09:16:10+08:00
+U14,R4,CLE-EXP-20261026-GRAN-01,results/curated/cle_v41_completion_20261026/summary.json,C02_480,R2_candidate,五档真实结果与有效标签,FG,同资格过滤源示例档位消息family角色重复,0,自动抵扣480,F0匹配后最多480,2026-10-27T09:16:10+08:00
+U15,R4,CLE-EXP-20261026-GRAN-03,results/curated/cle_v41_completion_20261026/summary.json,C04b_144,R3;R2_candidate_fixed_policy,旧分类器基线,FG,固定策略逐格匹配；重训分类器不能继承,0,新分类器已跑144,保存旧模型独立版本,2026-10-27T09:16:10+08:00
+U16,R1;R2,CLE-EXP-20261026-Q-01;Q-02,results/curated/cle_v41_completion_20261026/summary.json,D03a160selector;D03b192code,R3;R2_candidate_controls,选卡变化与旧Q迁移,FQ,Q0Q1候选消息完全相同才可抵扣；新Q2Q3不可,0,Q41自身学习收益,保留46/48集合变化链,2026-10-27T09:16:10+08:00
+U17,R3,B03R;P13P22;D02;B05;M1;S4,results/curated/cle_v41_completion_20261026/summary.json,8+72+192+24+48+96code,R3;R4,辅助消费者及原因解释,FFS;FG,原生消费者和起点保留,0,M1为Q或1939卡独立收益,不混入P7公共控制,2026-10-27T09:16:10+08:00
+U18,R5,CLE-EXP-20261017-RET-01,results/curated/cle_retrieval_q_public_contract_20261017/summary.json,914AI;0human;14tasks,R1;R2_candidate_labels,待人审标签材料,FR,同公开题卡正文定义；新共同池重算指标,0,人工金标准或整库召回,逐对复用后导出人审,2026-10-27T09:16:10+08:00
+U19,R6,CLE-v41-completion,translation_work/diagnostics/20261026/cle_v41_completion/CLOSEOUT/agent_case_review.json,12actual_case_reviews,R4,实现错误与契约冲突例证,FFS;FQ;FG,案例发生条件保留,0,全体错误原因占比,全量后按固定分类复核,2026-10-27T09:16:10+08:00

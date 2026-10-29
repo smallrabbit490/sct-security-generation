@@ -1,0 +1,89 @@
+{
+  "protocol": "cle-historical-same-score-review-v1",
+  "created_utc": "2026-10-23T15:00:32.759853+00:00",
+  "selection_timing": "metadata and existing footprint only; frozen before reading these control code pairs",
+  "selection_rule": "all nine footprint-flagged both-fail tasks; six unflagged both-pass tasks, first string-ID in each first string-sorted CWE, distinct families",
+  "flagged_both_fail": [
+    {
+      "task_id": "1230",
+      "family_id": "0ec3b26431db",
+      "cwe": "863"
+    },
+    {
+      "task_id": "148",
+      "family_id": "64be938e89a0",
+      "cwe": "200"
+    },
+    {
+      "task_id": "442",
+      "family_id": "5b7704eee9cb",
+      "cwe": "347"
+    },
+    {
+      "task_id": "446",
+      "family_id": "ad443859484d",
+      "cwe": "347"
+    },
+    {
+      "task_id": "1245",
+      "family_id": "1871db569b4c",
+      "cwe": "863"
+    },
+    {
+      "task_id": "464",
+      "family_id": "c83ede8f86d8",
+      "cwe": "347"
+    },
+    {
+      "task_id": "1387",
+      "family_id": "7c9e33969eba",
+      "cwe": "863"
+    },
+    {
+      "task_id": "1044",
+      "family_id": "ce7ee5d34cee",
+      "cwe": "862"
+    },
+    {
+      "task_id": "652",
+      "family_id": "8969a4389110",
+      "cwe": "601"
+    }
+  ],
+  "unflagged_both_pass": [
+    {
+      "task_id": "1258",
+      "family_id": "19e7fa87a01d",
+      "cwe": "1333"
+    },
+    {
+      "task_id": "105",
+      "family_id": "c5db424ace81",
+      "cwe": "179"
+    },
+    {
+      "task_id": "1270",
+      "family_id": "71981e31bda6",
+      "cwe": "200"
+    },
+    {
+      "task_id": "1288",
+      "family_id": "b1811164f7de",
+      "cwe": "327"
+    },
+    {
+      "task_id": "451",
+      "family_id": "0b8278609f9b",
+      "cwe": "347"
+    },
+    {
+      "task_id": "481",
+      "family_id": "a84a552c8f29",
+      "cwe": "352"
+    }
+  ],
+  "not_a_random_or_representative_sample": true,
+  "train_or_enable_detector": false,
+  "API_calls": 0,
+  "Q_updates": 0
+}

@@ -1,0 +1,9 @@
+{
+  "protocol": "cle-weekly-full-requirements-20261027-v1",
+  "formal_old_code_units_reused": 0,
+  "reason": "new Q starts at zero; v4.1 learning and current public contracts need independent generated code",
+  "embedding_cache_reuse": "exact text/model SQLite cache only; no model response reuse across repeats",
+  "historical_completed_run": "20261026:1376 code units and160 selection units, retained unchanged",
+  "theoretical_internal_max": 1788,
+  "confirmed_internal_units": 0
+}

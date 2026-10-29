@@ -1,0 +1,75 @@
+{
+  "checked_at": "2026-10-25T10:16:56.010303+08:00",
+  "status": "partial_complete_waiting_request_reconciliation",
+  "original_preserved": 43,
+  "recovery_completed": 247,
+  "delivered": 290,
+  "planned": 298,
+  "metrics": {
+    "first": {
+      "functional": 105,
+      "security": 217,
+      "joint": 87,
+      "measured": 289,
+      "joint_rate_completed": 0.3,
+      "joint_rate_planned": null
+    },
+    "final": {
+      "functional": 109,
+      "security": 228,
+      "joint": 96,
+      "measured": 289,
+      "joint_rate_completed": 0.3310344827586207,
+      "joint_rate_planned": null
+    }
+  },
+  "cost": {
+    "physical_HTTP_attempts": 1519,
+    "attempts_with_usage": 1489,
+    "attempts_without_usage": 30,
+    "known_usage": {
+      "prompt_tokens": 2465088,
+      "completion_tokens": 1289601,
+      "total_tokens": 3754689,
+      "cached_tokens": 191104,
+      "reasoning_tokens": 0
+    }
+  },
+  "held_task_ids": [
+    "1229",
+    "1006",
+    "1061",
+    "1347",
+    "639",
+    "778",
+    "1016",
+    "873"
+  ],
+  "replay": {
+    "tasks": 290,
+    "API_calls": 0,
+    "credential_reads": 0,
+    "differences": [],
+    "same_code_and_measurement": true,
+    "row_sources": [
+      "D:\\Agent\\sct-security-generation\\translation_work\\baseline_runs\\cle_P3_nomemory_v41flash1017_20261024\\source_bundle\\translation_work\\nomemory\\PLT\\rows.jsonl",
+      "D:\\Agent\\sct-security-generation\\translation_work\\baseline_runs\\cle_P3_nomemory_v41flash1017_20261024\\recovery_20261025_001\\native\\PLT\\rows.jsonl"
+    ]
+  },
+  "frozen_method_sources_unchanged": true,
+  "memory_cards_used": 0,
+  "Embedding": 0,
+  "Q_updates": 0,
+  "BasePlus": "not_executed_waiting_original_image",
+  "unknown_attempt_breakdown": {
+    "historical": 23,
+    "new_SSL_EOF": 5,
+    "new_incomplete_HTTP200_streams": 2
+  },
+  "billing_reconciliation": "login required; no uncertain request resubmitted",
+  "monitor": {
+    "id": "cle-2",
+    "status": "deleted",
+    "reason": "safe segment completed; remaining work requires user-provided account reconciliation"
+  }
+}

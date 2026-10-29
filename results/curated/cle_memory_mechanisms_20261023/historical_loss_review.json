@@ -1,0 +1,115 @@
+{
+  "protocol": "cle-historical-loss-implementation-review-v1",
+  "historical_delivery_losses": 18,
+  "final_both_measured_losses": 17,
+  "new_final_unmeasured_ids": [
+    "885"
+  ],
+  "primary_categories": {
+    "external_binding_overwritten": 12,
+    "public_resource_policy_underspecified": 1,
+    "supplied_class_redefined_and_enumeration_unspecified": 1,
+    "public_resource_policy_and_auxiliary_state": 1,
+    "public_record_schema_underspecified": 1,
+    "public_template_schema_underspecified": 1,
+    "technical_empty_unmeasured_delivery": 1
+  },
+  "final_no_declared_adoption_ids": [
+    "1299",
+    "1037",
+    "1364",
+    "487",
+    "488",
+    "885",
+    "664"
+  ],
+  "all_attempts_no_declared_adoption_ids": [
+    "885"
+  ],
+  "pipeline_degradation_ids": [
+    "1241",
+    "907",
+    "487",
+    "885"
+  ],
+  "new_local_diagnostic_executions": 30,
+  "new_local_measured": 30,
+  "previous_local_diagnostics_reused": 6,
+  "diagnostic_kinds": {
+    "public_contract": 16,
+    "public_object_identity": 4,
+    "assumption_sensitivity": 8,
+    "mechanism_probe_not_contract_ground_truth": 2
+  },
+  "API_calls": 0,
+  "embedding_calls": 0,
+  "Q_updates": 0,
+  "official_scores_changed": false,
+  "isolated_Q_causal_effect_established": false,
+  "new_B_or_C_effectiveness_gate_triggered": false,
+  "paired_measurement_sensitivity": {
+    "all_delivery": {
+      "tasks": 303,
+      "old_joint": 138,
+      "new_joint": 140,
+      "transitions": {
+        "both_pass": 120,
+        "loss": 18,
+        "both_fail": 145,
+        "rescue": 20
+      }
+    },
+    "both_final_measured": {
+      "tasks": 297,
+      "old_joint": 137,
+      "new_joint": 139,
+      "transitions": {
+        "both_pass": 120,
+        "loss": 17,
+        "both_fail": 141,
+        "rescue": 19
+      }
+    },
+    "unmeasured_pairs": [
+      {
+        "task_id": "1150",
+        "old_measured": false,
+        "new_measured": true,
+        "transition": "rescue"
+      },
+      {
+        "task_id": "836",
+        "old_measured": false,
+        "new_measured": false,
+        "transition": "both_fail"
+      },
+      {
+        "task_id": "151",
+        "old_measured": true,
+        "new_measured": false,
+        "transition": "both_fail"
+      },
+      {
+        "task_id": "885",
+        "old_measured": true,
+        "new_measured": false,
+        "transition": "loss"
+      },
+      {
+        "task_id": "857",
+        "old_measured": true,
+        "new_measured": false,
+        "transition": "both_fail"
+      },
+      {
+        "task_id": "665",
+        "old_measured": false,
+        "new_measured": true,
+        "transition": "both_fail"
+      }
+    ]
+  },
+  "new_obligation_paths": 3,
+  "summary_note": "v2 adds source-verified obligation paths and paired-measurement sensitivity; initial summary and all 30 local diagnostic executions retained",
+  "loss_saved_public_contracts_equal": 18
+}

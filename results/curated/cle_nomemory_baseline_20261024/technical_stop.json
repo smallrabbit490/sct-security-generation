@@ -1,0 +1,225 @@
+{
+  "checked_at": "2026-10-24T22:19:39.208692+08:00",
+  "protocol": "cle-P3-nomemory-v41flash1017-v1",
+  "status": "incomplete_technical_stop",
+  "delivered_rows": 43,
+  "planned_PLT": 298,
+  "final_F": 18,
+  "final_S": 33,
+  "final_joint": 15,
+  "final_measured": 42,
+  "physical_HTTP_attempts": 246,
+  "responses_with_usage": 223,
+  "unknown_usage_attempts": 23,
+  "known_tokens": 538727,
+  "network_failure_records": [
+    {
+      "identity": "03a6158037eb65b1e4c0c51a9cc1c897039dfde390f7613762e2a48048046f12-000001",
+      "task_ids": [
+        "1229"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.01500000001397
+        },
+        {
+          "category": "network_error",
+          "attempt": 2,
+          "elapsed_s": 5.030999999988126
+        },
+        {
+          "category": "circuit_open"
+        }
+      ],
+      "elapsed_seconds": 13.687
+    },
+    {
+      "identity": "330576a0283bf1c7b6af91aaec538b3795a455dd1983efd8cc4b9669c561e449-000001",
+      "task_ids": [
+        "1006"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.015999999974156
+        },
+        {
+          "category": "network_error",
+          "attempt": 2,
+          "elapsed_s": 5.030999999988126
+        },
+        {
+          "category": "network_error",
+          "attempt": 3,
+          "elapsed_s": 5.0
+        }
+      ],
+      "elapsed_seconds": 19.719
+    },
+    {
+      "identity": "4fbfd43c10fb244a110ff7d2d7a2a460a624abd6a7ca27f69c689bf6495c5612-000001",
+      "task_ids": [
+        "1061"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.032000000006519
+        },
+        {
+          "category": "circuit_open"
+        }
+      ],
+      "elapsed_seconds": 5.032
+    },
+    {
+      "identity": "b85b7a7af7c0d9dd353c16efaac3d2415a9a493f9f4ccc98b59e3eb36c7557b3-000001",
+      "task_ids": [
+        "1347"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.030999999988126
+        },
+        {
+          "category": "network_error",
+          "attempt": 2,
+          "elapsed_s": 5.032000000006519
+        },
+        {
+          "category": "network_error",
+          "attempt": 3,
+          "elapsed_s": 5.0
+        }
+      ],
+      "elapsed_seconds": 20.672
+    },
+    {
+      "identity": "d43e23c8ae5b957023cc860d54ad48339139b84cb6b179c327b68407f3818121-000001",
+      "task_ids": [
+        "639"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.032000000006519
+        },
+        {
+          "category": "network_error",
+          "attempt": 2,
+          "elapsed_s": 5.032000000006519
+        },
+        {
+          "category": "network_error",
+          "attempt": 3,
+          "elapsed_s": 5.01500000001397
+        }
+      ],
+      "elapsed_seconds": 20.203
+    },
+    {
+      "identity": "d9620b0c2e5b0d7f16182781e6f8469238a503e8ec04b8c3a7f481f7481a66cf-000001",
+      "task_ids": [
+        "778"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.014999999984866
+        },
+        {
+          "category": "network_error",
+          "attempt": 2,
+          "elapsed_s": 5.014999999984866
+        },
+        {
+          "category": "network_error",
+          "attempt": 3,
+          "elapsed_s": 5.01600000000326
+        }
+      ],
+      "elapsed_seconds": 19.859
+    },
+    {
+      "identity": "e4f7f021a4dc0084b43c823096e224bcf7d1476e1cfde916246774e2ab36b15d-000001",
+      "task_ids": [
+        "1016"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.030999999988126
+        },
+        {
+          "category": "network_error",
+          "attempt": 2,
+          "elapsed_s": 5.0310000000172295
+        },
+        {
+          "category": "circuit_open"
+        }
+      ],
+      "elapsed_seconds": 13.266
+    },
+    {
+      "identity": "fff219e45095a94c3811e3d436b75256c4ac75a71fa5b0b76eadf803e5f6791c-000001",
+      "task_ids": [
+        "873"
+      ],
+      "diagnostics": [
+        {
+          "category": "network_error",
+          "attempt": 1,
+          "elapsed_s": 5.01600000000326
+        },
+        {
+          "category": "network_error",
+          "attempt": 2,
+          "elapsed_s": 5.015999999974156
+        },
+        {
+          "category": "network_error",
+          "attempt": 3,
+          "elapsed_s": 5.01500000001397
+        }
+      ],
+      "elapsed_seconds": 19.422
+    }
+  ],
+  "circuit_only_records_no_HTTP": 247,
+  "unauthed_connection_diagnosis": {
+    "system_proxy_endpoint": "127.0.0.1:7897",
+    "system_route": "URLError/SSLEOFError: UNEXPECTED_EOF_WHILE_READING",
+    "direct_route": "URLError/SSLEOFError: UNEXPECTED_EOF_WHILE_READING",
+    "credential_used": false,
+    "model_generation_calls": 0,
+    "historical_URLError_reason_not_saved": "Do not infer all failed prior POSTs were unbilled from a later unauthenticated GET"
+  },
+  "memory_cards_used": 0,
+  "embedding_calls": 0,
+  "Q_updates": 0,
+  "card_generation": 0,
+  "replay43": {
+    "stage": "PLT",
+    "tasks": 43,
+    "API_calls": 0,
+    "credential_reads": 0,
+    "differing_task_ids": [],
+    "same_code_and_measurement": true,
+    "output": "D:\\Agent\\sct-security-generation\\translation_work\\baseline_runs\\cle_P3_nomemory_v41flash1017_20261024\\source_bundle\\translation_work\\replay\\PLT\\pass_002",
+    "source": "saved model responses; native validators rerun locally"
+  },
+  "BasePlus": "not executed; original image unavailable after GitHub source search",
+  "monitor_id": "cle-2",
+  "monitor_status": "PAUSED",
+  "recovery_policy": "preserve raw data, do not resend failed/uncertain requests; do not substitute validation backend"
+}

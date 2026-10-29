@@ -1,0 +1,46 @@
+{
+  "protocol": "cle-memory-granularity-source-bound-v1",
+  "shared_starts": 4,
+  "levels": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "rendered_cells": 20,
+  "unique_card_specs": 2,
+  "unique_task_card_bindings": 2,
+  "API_calls": 0,
+  "Q_updates": 0,
+  "new_generated_code": 0,
+  "classifier_trained": false,
+  "real_P7_completed": 0,
+  "is_experiment_score": false,
+  "other_selected_cards_require_preparation": true,
+  "targeted_offline_tests_passed": 15,
+  "characters_by_task_level": {
+    "102": {
+      "L0": 2,
+      "L1": 321,
+      "L2": 1929,
+      "L3": 2769,
+      "L4": 6113
+    },
+    "1394": {
+      "L0": 2,
+      "L1": 318,
+      "L2": 1615,
+      "L3": 2419,
+      "L4": 4113
+    }
+  },
+  "renderer_implemented": true,
+  "native_P7_function_implemented": true,
+  "paid_orchestrator_implemented": false,
+  "classifier_labels_created": 0,
+  "levels_are_strictly_nested": false,
+  "reviewed_scope": "two actual first-selected cards and two public task-card bindings",
+  "source_comments": "verbatim; not an equal-language or pure-length ablation",
+  "L4_unavailable_source_cards": 15
+}

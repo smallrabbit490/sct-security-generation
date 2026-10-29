@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests": 26,
+  "seconds": 7.936,
+  "new_HTTP": 0,
+  "scope": "FR pool/execution10 including active-policy-gate capacity; FG_GATE7; policy_analysis3; source fixture network only",
+  "observed_utc": "2026-10-27T07:48:22.152739+00:00",
+  "command": "unittest tests.test_cle_weekly_policy_gate_analysis tests.test_cle_weekly_granularity_gate tests.test_cle_weekly_retrieval tests.test_cle_weekly_retrieval_execution -q"
+}

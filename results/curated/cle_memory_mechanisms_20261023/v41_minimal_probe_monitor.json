@@ -1,0 +1,37 @@
+{
+  "protocol": "cle-v41flash1017-original-user-only-add-control-v1",
+  "automation_id": "cle-2",
+  "name": "CLE新模型单次加法测试",
+  "status": "ACTIVE",
+  "kind": "heartbeat",
+  "check_interval_minutes": 15,
+  "timezone": "Asia/Shanghai",
+  "registered_at": "2026-10-24T11:40:01.338179+08:00",
+  "execution_state": "scheduled_not_yet_executed",
+  "model": "deepseek-v4.1-flash-1017",
+  "forbidden_weekday_windows": [
+    "09:00-12:00",
+    "14:00-18:00"
+  ],
+  "boundary": "start_inclusive_end_exclusive",
+  "weekend_allowed": true,
+  "same_existing_credential_loader": true,
+  "message_roles": [
+    "user"
+  ],
+  "system_message_added": false,
+  "max_HTTP_attempts": 1,
+  "automatic_retries": 0,
+  "max_tokens": 128,
+  "entry": "configs.cle_memory_mechanisms_20261023.probe_v41_flash_1017_once",
+  "task_document": "docs/cle_memory_mechanisms_20261023/24_新模型单次加法探针监控任务.md",
+  "raw_output": "translation_work/diagnostics/20261023/cle_memory_mechanisms_v1/B02_provider_v41flash1017_add_control_v1",
+  "related_offline_tests_passed": 43,
+  "new_offline_tests_passed": 4,
+  "new_API_calls": 0,
+  "new_known_tokens": 0,
+  "credential_loaded": false,
+  "self_pause_after_terminal_or_unresolved_result": true,
+  "formal_experiments_paused": true,
+  "old_cle_monitor_status": "PAUSED"
+}

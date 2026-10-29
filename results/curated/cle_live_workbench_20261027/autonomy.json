@@ -1,0 +1,25 @@
+{
+  "activated": true,
+  "time": "2026-10-27T23:57:02+08:00",
+  "plan_id": "cle-autonomy-20261027-v1",
+  "task_nodes": 33,
+  "tests_passed": 23,
+  "scope": "task orchestration upgrade; full scientific experiments remain in progress",
+  "current_task": "BUILD.prepare",
+  "current_cli_pid": 75408,
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "workers": 4,
+  "task_counts": {
+    "completed": 0,
+    "running": 3,
+    "ready": 1,
+    "blocked_external": 7,
+    "waiting_dependency": 21,
+    "waiting_capacity": 0,
+    "waiting_window": 0,
+    "waiting_turn": 1
+  },
+  "source_plan": "configs/cle_weekly_full_20261027/execution_plan.json",
+  "server_pid": 113052
+}

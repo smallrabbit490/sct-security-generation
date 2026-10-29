@@ -18,6 +18,8 @@ for path in (ROOT, ROOT / 'src'):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
+from methods.sct_trajectory.provider_policy import CURRENT_MODEL  # noqa: E402
+
 FULL = ROOT / 'translation_work/sct_runs/cle_full_deepseek32_20260924_phase3_resume_20260925/frozen/m_star.jsonl'
 PHASE1 = ROOT / 'translation_work/sct_runs/cle_full_deepseek32_20260924_full/pool_snapshots/phase1.jsonl'
 POOLS = ROOT / 'translation_work/sct_runs/cle_full_deepseek32_20260924_full/pools.json'
@@ -178,7 +180,13 @@ def run_one(subset, task, arm, requester, memory, embedding_client=None, *,
             raise ValueError('unknown_retrieval_query_mode')
         if retrieval_provider is not None:
             # 固定库专项只替换选卡，不复制P7修复/验证/交付流程；回调须返回原生卡与轨迹。
-            found, trace = retrieval_provider(query)
+            try:
+                found, trace = retrieval_provider(query)
+            except Exception as exc:
+                # 已观测：修复检索失败时若不追加本轮错误，attempt会误用首次成功轨迹。
+                # 仅修正产物归属；异常继续原样交给原流水线，反馈和生成行为不改变。
+                traces.append(getattr(exc, 'retrieval_trace', None))
+                raise
             traces.append(trace)
             if not spec.negative:
                 found = [{**card, 'negative_guardrail': ''} for card in found]
@@ -248,6 +256,7 @@ def _main():
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--max-tokens', type=int, default=4096)
+    parser.add_argument('--model', default=CURRENT_MODEL)
     parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--calibration-only', action='store_true')
     args = parser.parse_args()
@@ -257,7 +266,10 @@ def _main():
     if not out.is_relative_to((ROOT / 'translation_work').resolve()):
         parser.error('output must be inside translation_work')
     tasks = load_tasks(args.dataset, args.limit)
-    sources = {'phase1': PHASE1, 'full': FULL}
+    # 无经验P0-P3不依赖任何旧冻结卡，也不为它们创建向量客户端。
+    required_memory = {arm_spec(arm).memory for arm in args.arms} - {'none'}
+    sources = {key: path for key, path in {'phase1': PHASE1, 'full': FULL}.items()
+               if key in required_memory}
     hashes = {key: digest(path) for key, path in sources.items()}
     memory = {'none': [], **{key: load_memory(path) for key, path in sources.items()}}
     out.mkdir(parents=True, exist_ok=True)
@@ -271,7 +283,7 @@ def _main():
                     ('context_pipeline', 'agent_pipeline', 'retriever', 'semantic_retrieval', 'closed_loop',
                      'run_closed_loop', 'run_plus_frozen_comparison')]]
     configuration = {'dataset': args.dataset, 'arms': args.arms, 'task_ids': task_ids, 'memory_sha256': hashes,
-                     'model': 'deepseek-v3.2', 'temperature': 0, 'max_tokens': args.max_tokens,
+                     'model': args.model, 'temperature': 0, 'max_tokens': args.max_tokens,
                      'workers': args.workers, 'dataset_sha256': digest(data_path), 'pools_sha256': digest(POOLS),
                      'feedback': 'PLT task-local only; Base/Plus none', 'phase3_independent_heldout': False,
                      'retrieval_mode': 'semantic_llm', 'source_sha256': {str(p.relative_to(ROOT)): digest(p) for p in source_paths},
@@ -328,9 +340,10 @@ def _main():
         if not args.calibration_only:
             from methods.sct_trajectory.run_closed_loop import _requester, load_key
             from methods.sct_trajectory.semantic_retrieval import EmbeddingClient
-            requester = _requester('deepseek-v3.2', 60, max_tokens=args.max_tokens, max_inflight=args.workers)
-            embedding = EmbeddingClient(model='text-embedding-3-large',
+            requester = _requester(args.model, 60, max_tokens=args.max_tokens, max_inflight=args.workers)
+            embedding = (EmbeddingClient(model='text-embedding-3-large',
                 cache_path=ROOT / 'translation_work/cache/embeddings/cle.sqlite3', key_loader=load_key, timeout=120)
+                if required_memory else None)
             rows = list(previous)
             jobs = []
             for index, (subset, task) in enumerate(tasks):

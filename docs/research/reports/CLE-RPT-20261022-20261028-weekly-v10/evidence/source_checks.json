@@ -1,0 +1,16 @@
+[
+  {
+    "package": "FQ_LEARN",
+    "path": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K3\\segment_025\\summary.json",
+    "native_completed": 248,
+    "snapshot_completed": 243,
+    "native_updated": "2026-10-28T15:06:59.135680+00:00"
+  },
+  {
+    "package": "FFS",
+    "path": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FFS\\segment_060\\summary.json",
+    "native_completed": 2329,
+    "snapshot_completed": 2315,
+    "native_updated": "2026-10-28T15:06:31.521770+00:00"
+  }
+]

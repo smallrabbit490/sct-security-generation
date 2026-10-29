@@ -1,0 +1,53 @@
+{
+  "protocol": "cle-v41flash1017-original-user-only-add-control-v1",
+  "status": "passed",
+  "model": "deepseek-v4.1-flash-1017",
+  "authorization": "2026-10-24 user authorized a monitoring task for one minimal add-function test only",
+  "endpoint": "https://api.chatanywhere.org/v1/chat/completions",
+  "message_roles": [
+    "user"
+  ],
+  "system_message_added": false,
+  "temperature": 0,
+  "thinking": "disabled",
+  "max_tokens": 128,
+  "stream": true,
+  "user_agent": "CLE-HTTP-Diagnostic/1.0",
+  "max_HTTP_attempts": 1,
+  "automatic_retries": 0,
+  "credential": "same existing native loader; no key value exported",
+  "started_utc": "2026-10-24T03:54:29.253184+00:00",
+  "P7_started": false,
+  "Q_updates": 0,
+  "formal_experiments_resumed": false,
+  "submitted_utc": "2026-10-24T03:54:29.256184+00:00",
+  "request_elapsed_seconds": 1.781,
+  "response_received": true,
+  "usage": {
+    "prompt_tokens": 25,
+    "completion_tokens": 16,
+    "total_tokens": 41,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "reported_model": "deepseek-v4.1-flash-1017",
+  "finish_reason": "stop",
+  "validation_elapsed_seconds": 0.125,
+  "passed": true,
+  "validation": {
+    "measured_count": 2,
+    "passed": 2
+  },
+  "total_elapsed_seconds": 1.906,
+  "finished_utc": "2026-10-24T03:54:31.167860+00:00",
+  "reserved_HTTP_attempts": 1,
+  "known_returned_tokens": 41,
+  "unknown_usage_operations": 0
+}

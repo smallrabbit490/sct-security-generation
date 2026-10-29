@@ -1,0 +1,359 @@
+{
+  "protocol": "cle-v41-public-binding-diagnostic-v2",
+  "planned_P7": 16,
+  "completed_P7": 16,
+  "arms": {
+    "A": {
+      "completed": 4,
+      "first": {
+        "functional": 2,
+        "security": 4,
+        "joint": 2,
+        "measured": 4
+      },
+      "final": {
+        "functional": 2,
+        "security": 4,
+        "joint": 2,
+        "measured": 4
+      },
+      "selected_occurrences": 0,
+      "adopted_occurrences": 0,
+      "rows_with_adoption": 0
+    },
+    "B": {
+      "completed": 4,
+      "first": {
+        "functional": 2,
+        "security": 4,
+        "joint": 2,
+        "measured": 4
+      },
+      "final": {
+        "functional": 2,
+        "security": 4,
+        "joint": 2,
+        "measured": 4
+      },
+      "selected_occurrences": 16,
+      "adopted_occurrences": 13,
+      "rows_with_adoption": 4
+    },
+    "C": {
+      "completed": 4,
+      "first": {
+        "functional": 4,
+        "security": 3,
+        "joint": 3,
+        "measured": 4
+      },
+      "final": {
+        "functional": 4,
+        "security": 4,
+        "joint": 4,
+        "measured": 4
+      },
+      "selected_occurrences": 0,
+      "adopted_occurrences": 0,
+      "rows_with_adoption": 0
+    },
+    "D": {
+      "completed": 4,
+      "first": {
+        "functional": 4,
+        "security": 3,
+        "joint": 3,
+        "measured": 4
+      },
+      "final": {
+        "functional": 4,
+        "security": 3,
+        "joint": 3,
+        "measured": 4
+      },
+      "selected_occurrences": 14,
+      "adopted_occurrences": 8,
+      "rows_with_adoption": 3
+    }
+  },
+  "paired": {
+    "C-A": {
+      "pairs": [
+        {
+          "task_id": "1322",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": false,
+          "treated_joint": true,
+          "delta": 1,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1322",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": false,
+          "treated_joint": true,
+          "delta": 1,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1409",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1409",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        }
+      ],
+      "net_joint": 2,
+      "rescues": 2,
+      "losses": 0,
+      "both_measured": 4,
+      "new_S_losses": 0
+    },
+    "D-B": {
+      "pairs": [
+        {
+          "task_id": "1322",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": false,
+          "treated_joint": true,
+          "delta": 1,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1322",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": false,
+          "treated_joint": true,
+          "delta": 1,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1409",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": false,
+          "delta": -1,
+          "new_S_loss": true
+        },
+        {
+          "task_id": "1409",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        }
+      ],
+      "net_joint": 1,
+      "rescues": 2,
+      "losses": 1,
+      "both_measured": 4,
+      "new_S_losses": 1
+    },
+    "D-C": {
+      "pairs": [
+        {
+          "task_id": "1322",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1322",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1409",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": false,
+          "delta": -1,
+          "new_S_loss": true
+        },
+        {
+          "task_id": "1409",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        }
+      ],
+      "net_joint": -1,
+      "rescues": 0,
+      "losses": 1,
+      "both_measured": 4,
+      "new_S_losses": 1
+    },
+    "B-A": {
+      "pairs": [
+        {
+          "task_id": "1322",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": false,
+          "treated_joint": false,
+          "delta": 0,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1322",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": false,
+          "treated_joint": false,
+          "delta": 0,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1409",
+          "repeat": 1,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        },
+        {
+          "task_id": "1409",
+          "repeat": 2,
+          "both_measured": true,
+          "baseline_joint": true,
+          "treated_joint": true,
+          "delta": 0,
+          "new_S_loss": false
+        }
+      ],
+      "net_joint": 0,
+      "rescues": 0,
+      "losses": 0,
+      "both_measured": 4,
+      "new_S_losses": 0
+    }
+  },
+  "Q_updates": 0,
+  "card_generation": 0,
+  "posthoc_sample": true,
+  "automatic_expansion": false,
+  "cost": {
+    "physical_HTTP": 97,
+    "HTTP_with_usage": 90,
+    "unknown_usage_HTTP": 7,
+    "known_usage": {
+      "prompt_tokens": 398242,
+      "completion_tokens": 78524,
+      "total_tokens": 476766
+    },
+    "models": {
+      "deepseek-v4.1-flash-1017": 90,
+      "text-embedding-3-large": 7
+    },
+    "currency_cost": null,
+    "logical_groups": {
+      "shared_initial": {
+        "requests": 4,
+        "total_tokens": 6095
+      },
+      "shared_selection": {
+        "requests": 4,
+        "total_tokens": 97365
+      },
+      "A": {
+        "requests": 20,
+        "total_tokens": 68805
+      },
+      "B": {
+        "requests": 22,
+        "total_tokens": 158072
+      },
+      "C": {
+        "requests": 16,
+        "total_tokens": 46418
+      },
+      "D": {
+        "requests": 17,
+        "total_tokens": 91072
+      },
+      "embedding": {
+        "requests": 7,
+        "total_tokens": 9722
+      }
+    },
+    "physical_usage_by_model": {
+      "deepseek-v4.1-flash-1017": {
+        "physical_attempts": 90,
+        "reported": 83,
+        "unknown": 7,
+        "prompt_tokens": 389303,
+        "completion_tokens": 78524,
+        "total_tokens": 467827
+      },
+      "text-embedding-3-large": {
+        "physical_attempts": 7,
+        "reported": 7,
+        "unknown": 0,
+        "prompt_tokens": 8939,
+        "completion_tokens": 0,
+        "total_tokens": 8939
+      }
+    },
+    "embedding_logical_delta_note": "logical embedding9722 is concurrent cumulative-delta telemetry; physical reported8939 is authoritative; originals retained"
+  },
+  "mechanism_gate_static_preliminary": false,
+  "mechanism_gate_requires_final_code_review": false,
+  "engineering_gate": "passed",
+  "mechanism_gate": "not_passed",
+  "comparison_gates": {
+    "C-A": {
+      "passed_on_this_posthoc_sample": true,
+      "complete_pairs": 4,
+      "net_Joint": 2,
+      "required_net": 2,
+      "new_S_losses": 0,
+      "both_family_binding_Joint": {
+        "1322": true,
+        "1409": true
+      }
+    },
+    "D-B": {
+      "passed_on_this_posthoc_sample": false,
+      "complete_pairs": 4,
+      "net_Joint": 1,
+      "required_net": 2,
+      "new_S_losses": 1,
+      "both_family_binding_Joint": {
+        "1322": true,
+        "1409": true
+      }
+    }
+  },
+  "final_code_review_complete": true,
+  "next": "stop_at16_no_automatic_expansion"
+}

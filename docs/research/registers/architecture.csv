@@ -1,0 +1,17 @@
+﻿component,actual_path,responsibility,path_exists
+研究入口,docs/research/README.md,任务到协议到结果统一导航,True
+原方法与RQ,docs/CLE项目全景手册_零基础完整版_20261016.md,原Phase与RQ定义,True
+原CLE闭环,methods/sct_trajectory/run_closed_loop.py,冷启动、主动回放、门控、冻结,True
+检索终选,methods/sct_trajectory/semantic_retrieval.py,向量词面召回与LLM终选,True
+原P0-P7,methods/cle_ablation/runner.py,同流程生成和原评价,True
+Q学习比较,methods/cle_ablation/run_memory_q.py,按实际配置区分观察参与冻结,True
+契约消费者,methods/cle_ablation/joint_contract.py,公开检查反馈与最终选择,True
+粒度,methods/cle_ablation/memory_granularity_study.py,L0-L4真实结果,True
+当前编排,configs/cle_v41_completion_20261026/README.md,既定矩阵预算和恢复,True
+当前原始运行,translation_work/diagnostics/20261026/cle_v41_completion,逐题记录请求响应恢复段,True
+数据夹具,data/,原始、修订和family,True
+外部镜像,docker/,原验证环境,True
+历史归档,E:/ResearchArchives/sct-security-generation_20261016/原始项目,原全量训练评价归档只读,True
+精简成果,results/curated/,可引用摘要,True
+项目技能,skills/,研究工作方法,True
+实时进度,tools/cle_research_status.py,零API只读状态,True

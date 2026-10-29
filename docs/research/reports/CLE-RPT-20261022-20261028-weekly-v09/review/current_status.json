@@ -1,0 +1,3061 @@
+{
+  "time": "2026-10-29T15:50:32+08:00",
+  "packages": [
+    {
+      "key": "FQ_LEARN",
+      "label": "Q 学习",
+      "planned": 1122,
+      "completed": 1122,
+      "status": "completed",
+      "summary": {
+        "protocol": "cle-weekly-full-requirements-20261027-v1",
+        "stage": "K3",
+        "pool": "D_grow",
+        "status": "completed",
+        "planned": 273,
+        "completed": 273,
+        "first": {
+          "functional": 142,
+          "security": 201,
+          "joint": 120,
+          "measured": 273
+        },
+        "final": {
+          "functional": 144,
+          "security": 204,
+          "joint": 126,
+          "measured": 273
+        },
+        "Q_covered_cards": 769,
+        "card_count": 1939,
+        "Q_coverage": 0.3965961835997937,
+        "credited_events": 743,
+        "adopted_positions": 928,
+        "known_reported_tokens": 18270428,
+        "physical_HTTP": 2639,
+        "unknown_or_inflight_HTTP": 83,
+        "currency_cost": null,
+        "no_performance_stop": true,
+        "updated_utc": "2026-10-28T15:33:48.786147+00:00"
+      },
+      "stages": {
+        "K0": {
+          "protocol": "cle-weekly-full-requirements-20261027-v1",
+          "stage": "K0",
+          "pool": "D_init",
+          "status": "completed",
+          "planned": 303,
+          "completed": 303,
+          "first": {
+            "functional": 159,
+            "security": 244,
+            "joint": 143,
+            "measured": 301
+          },
+          "final": {
+            "functional": 163,
+            "security": 247,
+            "joint": 148,
+            "measured": 301
+          },
+          "Q_covered_cards": 445,
+          "card_count": 1939,
+          "Q_coverage": 0.2294997421351212,
+          "credited_events": 837,
+          "adopted_positions": 878,
+          "known_reported_tokens": 20055303,
+          "physical_HTTP": 2809,
+          "unknown_or_inflight_HTTP": 44,
+          "currency_cost": null,
+          "no_performance_stop": true,
+          "updated_utc": "2026-10-27T16:46:45.317440+00:00"
+        },
+        "K1": {
+          "protocol": "cle-weekly-full-requirements-20261027-v1",
+          "stage": "K1",
+          "pool": "D_grow",
+          "status": "completed",
+          "planned": 273,
+          "completed": 273,
+          "first": {
+            "functional": 147,
+            "security": 203,
+            "joint": 128,
+            "measured": 272
+          },
+          "final": {
+            "functional": 149,
+            "security": 207,
+            "joint": 133,
+            "measured": 272
+          },
+          "Q_covered_cards": 610,
+          "card_count": 1939,
+          "Q_coverage": 0.3145951521402785,
+          "credited_events": 646,
+          "adopted_positions": 770,
+          "known_reported_tokens": 18378470,
+          "physical_HTTP": 2530,
+          "unknown_or_inflight_HTTP": 28,
+          "currency_cost": null,
+          "no_performance_stop": true,
+          "updated_utc": "2026-10-27T22:06:53.322945+00:00"
+        },
+        "K2": {
+          "protocol": "cle-weekly-full-requirements-20261027-v1",
+          "stage": "K2",
+          "pool": "D_grow",
+          "status": "completed",
+          "planned": 273,
+          "completed": 273,
+          "first": {
+            "functional": 145,
+            "security": 204,
+            "joint": 123,
+            "measured": 273
+          },
+          "final": {
+            "functional": 146,
+            "security": 206,
+            "joint": 124,
+            "measured": 273
+          },
+          "Q_covered_cards": 702,
+          "card_count": 1939,
+          "Q_coverage": 0.36204228984012377,
+          "credited_events": 611,
+          "adopted_positions": 748,
+          "known_reported_tokens": 18639471,
+          "physical_HTTP": 2616,
+          "unknown_or_inflight_HTTP": 79,
+          "currency_cost": null,
+          "no_performance_stop": true,
+          "updated_utc": "2026-10-28T06:25:40.795566+00:00"
+        },
+        "K3": {
+          "protocol": "cle-weekly-full-requirements-20261027-v1",
+          "stage": "K3",
+          "pool": "D_grow",
+          "status": "completed",
+          "planned": 273,
+          "completed": 273,
+          "first": {
+            "functional": 142,
+            "security": 201,
+            "joint": 120,
+            "measured": 273
+          },
+          "final": {
+            "functional": 144,
+            "security": 204,
+            "joint": 126,
+            "measured": 273
+          },
+          "Q_covered_cards": 769,
+          "card_count": 1939,
+          "Q_coverage": 0.3965961835997937,
+          "credited_events": 743,
+          "adopted_positions": 928,
+          "known_reported_tokens": 18270428,
+          "physical_HTTP": 2639,
+          "unknown_or_inflight_HTTP": 83,
+          "currency_cost": null,
+          "no_performance_stop": true,
+          "updated_utc": "2026-10-28T15:33:48.786147+00:00"
+        }
+      },
+      "display_summary": {
+        "protocol": "cle-weekly-full-requirements-20261027-v1",
+        "stage": "K3",
+        "pool": "D_grow",
+        "status": "completed",
+        "planned": 273,
+        "completed": 273,
+        "first": {
+          "functional": 142,
+          "security": 201,
+          "joint": 120,
+          "measured": 273
+        },
+        "final": {
+          "functional": 144,
+          "security": 204,
+          "joint": 126,
+          "measured": 273
+        },
+        "Q_covered_cards": 769,
+        "card_count": 1939,
+        "Q_coverage": 0.3965961835997937,
+        "credited_events": 743,
+        "adopted_positions": 928,
+        "known_reported_tokens": 18270428,
+        "physical_HTTP": 2639,
+        "unknown_or_inflight_HTTP": 83,
+        "currency_cost": null,
+        "no_performance_stop": true,
+        "updated_utc": "2026-10-28T15:33:48.786147+00:00"
+      },
+      "usage_summary": {
+        "protocol": "cle-weekly-full-requirements-20261027-v1",
+        "stage": "K0",
+        "pool": "D_init",
+        "status": "completed",
+        "planned": 303,
+        "completed": 303,
+        "first": {
+          "functional": 159,
+          "security": 244,
+          "joint": 143,
+          "measured": 301
+        },
+        "final": {
+          "functional": 163,
+          "security": 247,
+          "joint": 148,
+          "measured": 301
+        },
+        "Q_covered_cards": 445,
+        "card_count": 1939,
+        "Q_coverage": 0.2294997421351212,
+        "credited_events": 837,
+        "adopted_positions": 878,
+        "known_reported_tokens": 20055303,
+        "physical_HTTP": 2809,
+        "unknown_or_inflight_HTTP": 44,
+        "currency_cost": null,
+        "no_performance_stop": true,
+        "updated_utc": "2026-10-27T16:46:45.317440+00:00"
+      },
+      "display_completed": 1122,
+      "segment": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K3\\segment_025",
+      "processes": [],
+      "activity": {
+        "file": "0000940.status.json",
+        "time": "2026-10-28T23:33:45.597684+08:00",
+        "age_seconds": 58607,
+        "state": "响应状态已保存",
+        "status": "response_closed",
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_seconds": 4.547000000020489
+      },
+      "display_planned": 1122,
+      "display_status": "completed"
+    },
+    {
+      "key": "FQ_RETEST",
+      "label": "冻结Q同题回测 · 54题小批",
+      "planned": 1416,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {
+        "protocol": "cle-q-retest-fixed54-probe-20261029-v1",
+        "status": "running",
+        "planned": 540,
+        "completed": 16,
+        "arms": {
+          "Q1": {
+            "completed": 3,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 3
+          },
+          "Q2_K0": {
+            "completed": 4,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 4
+          },
+          "Q2_K1": {
+            "completed": 3,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 3
+          },
+          "Q2_K2": {
+            "completed": 4,
+            "functional": 2,
+            "security": 4,
+            "joint": 2,
+            "measured": 4
+          },
+          "Q2_K3": {
+            "completed": 2,
+            "functional": 1,
+            "security": 2,
+            "joint": 1,
+            "measured": 2
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 1296336,
+        "physical_HTTP": 171,
+        "unknown_or_inflight_HTTP": 17,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:16:18.283156+00:00",
+        "no_performance_stop": true
+      },
+      "stages": {},
+      "display_summary": {
+        "protocol": "cle-q-retest-fixed54-probe-20261029-v1",
+        "status": "running",
+        "planned": 540,
+        "completed": 16,
+        "arms": {
+          "Q1": {
+            "completed": 3,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 3
+          },
+          "Q2_K0": {
+            "completed": 4,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 4
+          },
+          "Q2_K1": {
+            "completed": 3,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 3
+          },
+          "Q2_K2": {
+            "completed": 4,
+            "functional": 2,
+            "security": 4,
+            "joint": 2,
+            "measured": 4
+          },
+          "Q2_K3": {
+            "completed": 2,
+            "functional": 1,
+            "security": 2,
+            "joint": 1,
+            "measured": 2
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 1296336,
+        "physical_HTTP": 171,
+        "unknown_or_inflight_HTTP": 17,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:16:18.283156+00:00",
+        "no_performance_stop": true
+      },
+      "usage_summary": {
+        "protocol": "cle-q-retest-fixed54-probe-20261029-v1",
+        "status": "running",
+        "planned": 540,
+        "completed": 16,
+        "arms": {
+          "Q1": {
+            "completed": 3,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 3
+          },
+          "Q2_K0": {
+            "completed": 4,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 4
+          },
+          "Q2_K1": {
+            "completed": 3,
+            "functional": 1,
+            "security": 3,
+            "joint": 1,
+            "measured": 3
+          },
+          "Q2_K2": {
+            "completed": 4,
+            "functional": 2,
+            "security": 4,
+            "joint": 2,
+            "measured": 4
+          },
+          "Q2_K3": {
+            "completed": 2,
+            "functional": 1,
+            "security": 2,
+            "joint": 1,
+            "measured": 2
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 1296336,
+        "physical_HTTP": 171,
+        "unknown_or_inflight_HTTP": 17,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:16:18.283156+00:00",
+        "no_performance_stop": true
+      },
+      "display_completed": 16,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_planned": 540,
+      "display_status": "paused",
+      "display_note": "按用户要求暂停；已保存结果和成功响应保留。"
+    },
+    {
+      "key": "FQ_GATE",
+      "label": "D_gate 四臂 Q 对照",
+      "planned": 2384,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {},
+      "stages": {},
+      "display_summary": {},
+      "usage_summary": {},
+      "display_completed": 0,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_planned": 16,
+      "display_status": "paused",
+      "display_note": "按用户要求暂停，等待明确恢复。"
+    },
+    {
+      "key": "FFS",
+      "label": "功能与安全经验拆分",
+      "planned": 2980,
+      "completed": 2433,
+      "status": "needs_technical_recovery",
+      "summary": {
+        "protocol": "cle-weekly-full-function-security-views-20261027-v1",
+        "status": "needs_technical_recovery",
+        "planned": 2980,
+        "completed": 2433,
+        "arms": {
+          "B0": {
+            "completed": 486,
+            "functional": 219,
+            "security": 368,
+            "joint": 188,
+            "measured": 485
+          },
+          "BM": {
+            "completed": 487,
+            "functional": 241,
+            "security": 385,
+            "joint": 206,
+            "measured": 486
+          },
+          "BF": {
+            "completed": 485,
+            "functional": 229,
+            "security": 365,
+            "joint": 188,
+            "measured": 482
+          },
+          "BS": {
+            "completed": 487,
+            "functional": 233,
+            "security": 381,
+            "joint": 200,
+            "measured": 486
+          },
+          "BFS": {
+            "completed": 488,
+            "functional": 240,
+            "security": 383,
+            "joint": 203,
+            "measured": 488
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 106549386,
+        "physical_HTTP": 18464,
+        "unknown_or_inflight_HTTP": 434,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:23:25.845000+00:00",
+        "no_performance_stop": true
+      },
+      "stages": {},
+      "display_summary": {
+        "protocol": "cle-weekly-full-function-security-views-20261027-v1",
+        "status": "needs_technical_recovery",
+        "planned": 2980,
+        "completed": 2433,
+        "arms": {
+          "B0": {
+            "completed": 486,
+            "functional": 219,
+            "security": 368,
+            "joint": 188,
+            "measured": 485
+          },
+          "BM": {
+            "completed": 487,
+            "functional": 241,
+            "security": 385,
+            "joint": 206,
+            "measured": 486
+          },
+          "BF": {
+            "completed": 485,
+            "functional": 229,
+            "security": 365,
+            "joint": 188,
+            "measured": 482
+          },
+          "BS": {
+            "completed": 487,
+            "functional": 233,
+            "security": 381,
+            "joint": 200,
+            "measured": 486
+          },
+          "BFS": {
+            "completed": 488,
+            "functional": 240,
+            "security": 383,
+            "joint": 203,
+            "measured": 488
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 106549386,
+        "physical_HTTP": 18464,
+        "unknown_or_inflight_HTTP": 434,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:23:25.845000+00:00",
+        "no_performance_stop": true
+      },
+      "usage_summary": {
+        "protocol": "cle-weekly-full-function-security-views-20261027-v1",
+        "status": "needs_technical_recovery",
+        "planned": 2980,
+        "completed": 2433,
+        "arms": {
+          "B0": {
+            "completed": 486,
+            "functional": 219,
+            "security": 368,
+            "joint": 188,
+            "measured": 485
+          },
+          "BM": {
+            "completed": 487,
+            "functional": 241,
+            "security": 385,
+            "joint": 206,
+            "measured": 486
+          },
+          "BF": {
+            "completed": 485,
+            "functional": 229,
+            "security": 365,
+            "joint": 188,
+            "measured": 482
+          },
+          "BS": {
+            "completed": 487,
+            "functional": 233,
+            "security": 381,
+            "joint": 200,
+            "measured": 486
+          },
+          "BFS": {
+            "completed": 488,
+            "functional": 240,
+            "security": 383,
+            "joint": 203,
+            "measured": 488
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 106549386,
+        "physical_HTTP": 18464,
+        "unknown_or_inflight_HTTP": 434,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:23:25.845000+00:00",
+        "no_performance_stop": true
+      },
+      "display_completed": 2433,
+      "segment": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FFS\\segment_062",
+      "processes": [],
+      "activity": {
+        "file": "0000271.status.json",
+        "time": "2026-10-29T00:23:25.656134+08:00",
+        "age_seconds": 55627,
+        "state": "响应状态已保存",
+        "status": "response_closed",
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_seconds": 12.530999999959022
+      },
+      "display_planned": 2980,
+      "display_status": "deferred_full",
+      "display_note": "保存2433格；剩余全量跳过。已完成部分结果分析，不自动修复或续跑。"
+    },
+    {
+      "key": "FG_LABELS",
+      "label": "五档记忆标签 · 82题小批",
+      "planned": 820,
+      "completed": 5,
+      "status": "interrupted",
+      "summary": {
+        "protocol": "cle-reduced-granularity-fg_labels-20261028-v1",
+        "status": "running",
+        "planned": 820,
+        "completed": 5,
+        "arms": {
+          "L0": {
+            "completed": 1,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1
+          },
+          "L1": {
+            "completed": 1,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1
+          },
+          "L2": {
+            "completed": 2,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 2
+          },
+          "L3": {
+            "completed": 0,
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 0
+          },
+          "L4": {
+            "completed": 1,
+            "functional": 1,
+            "security": 1,
+            "joint": 1,
+            "measured": 1
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 358600,
+        "physical_HTTP": 60,
+        "unknown_or_inflight_HTTP": 5,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:19:48.251920+00:00",
+        "no_performance_stop": true
+      },
+      "stages": {},
+      "display_summary": {
+        "protocol": "cle-reduced-granularity-fg_labels-20261028-v1",
+        "status": "running",
+        "planned": 820,
+        "completed": 5,
+        "arms": {
+          "L0": {
+            "completed": 1,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1
+          },
+          "L1": {
+            "completed": 1,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1
+          },
+          "L2": {
+            "completed": 2,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 2
+          },
+          "L3": {
+            "completed": 0,
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 0
+          },
+          "L4": {
+            "completed": 1,
+            "functional": 1,
+            "security": 1,
+            "joint": 1,
+            "measured": 1
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 358600,
+        "physical_HTTP": 60,
+        "unknown_or_inflight_HTTP": 5,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:19:48.251920+00:00",
+        "no_performance_stop": true
+      },
+      "usage_summary": {
+        "protocol": "cle-reduced-granularity-fg_labels-20261028-v1",
+        "status": "running",
+        "planned": 820,
+        "completed": 5,
+        "arms": {
+          "L0": {
+            "completed": 1,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1
+          },
+          "L1": {
+            "completed": 1,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1
+          },
+          "L2": {
+            "completed": 2,
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 2
+          },
+          "L3": {
+            "completed": 0,
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 0
+          },
+          "L4": {
+            "completed": 1,
+            "functional": 1,
+            "security": 1,
+            "joint": 1,
+            "measured": 1
+          }
+        },
+        "Q_updates": 0,
+        "new_cards": 0,
+        "known_reported_tokens": 358600,
+        "physical_HTTP": 60,
+        "unknown_or_inflight_HTTP": 5,
+        "currency_cost": null,
+        "updated_utc": "2026-10-28T16:19:48.251920+00:00",
+        "no_performance_stop": true
+      },
+      "display_completed": 5,
+      "segment": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_001",
+      "processes": [],
+      "activity": {
+        "file": "0000063.response.raw",
+        "time": "2026-10-29T00:19:57.796926+08:00",
+        "age_seconds": 55834,
+        "state": "接收响应中"
+      },
+      "display_planned": 820,
+      "display_status": "paused",
+      "display_note": "记忆标签及分类器暂停，不自动续跑。"
+    },
+    {
+      "key": "FG_GATE",
+      "label": "记忆程度分类器",
+      "planned": 1788,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {},
+      "stages": {},
+      "display_summary": {},
+      "usage_summary": {},
+      "display_completed": 0,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_planned": 36,
+      "display_status": "paused",
+      "display_note": "按用户要求暂停，等待明确恢复。"
+    },
+    {
+      "key": "FR",
+      "label": "经验检索质量 · 57题",
+      "planned": 57,
+      "completed": 57,
+      "status": "stopped_technical",
+      "summary": {
+        "status": "stopped_technical",
+        "reason": "logical_request_failed_or_unresolved",
+        "time_utc": "2026-10-29T04:24:03.738674+00:00",
+        "code_generations": 0,
+        "new_initial_analysis_calls": 0,
+        "AI_pairs_completed_or_label_error": 34,
+        "AI_label_errors": 1,
+        "budget": {
+          "cap_tokens": 411551183,
+          "cap_HTTP": 12877,
+          "cap_embedding_HTTP": 2110,
+          "charged_tokens_including_unknown_and_inflight_bounds": 147424,
+          "known_reported_tokens": 116329,
+          "transport_attempts_including_prior": 46,
+          "entries": [
+            {
+              "model": "text-embedding-3-large",
+              "bound": 83311,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 15314,
+                "total_tokens": 15314
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000001.request.json"
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 82677,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 15820,
+                "total_tokens": 15820
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000002.request.json"
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 81419,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 14852,
+                "total_tokens": 14852
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000003.request.json"
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 80337,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 14818,
+                "total_tokens": 14818
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000004.request.json"
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 9885,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1595,
+                "total_tokens": 1595
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000005.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10771,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1047,
+                "completion_tokens": 215,
+                "total_tokens": 1262,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000006.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10768,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1140,
+                "completion_tokens": 226,
+                "total_tokens": 1366,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000007.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10280,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 987,
+                "completion_tokens": 212,
+                "total_tokens": 1199,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000008.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10623,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1057,
+                "completion_tokens": 219,
+                "total_tokens": 1276,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000009.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9874,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 921,
+                "completion_tokens": 192,
+                "total_tokens": 1113,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000010.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9934,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 956,
+                "completion_tokens": 171,
+                "total_tokens": 1127,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000011.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11044,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1131,
+                "completion_tokens": 251,
+                "total_tokens": 1382,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000012.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10656,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1049,
+                "completion_tokens": 261,
+                "total_tokens": 1310,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000013.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11081,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1179,
+                "completion_tokens": 170,
+                "total_tokens": 1349,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000014.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10474,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1049,
+                "completion_tokens": 331,
+                "total_tokens": 1380,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000015.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10427,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1022,
+                "completion_tokens": 314,
+                "total_tokens": 1336,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000016.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9682,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 868,
+                "completion_tokens": 286,
+                "total_tokens": 1154,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000017.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10925,
+              "status": "historical_unknown",
+              "usage": null,
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_001\\wire\\0000018.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8041,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 552,
+                "completion_tokens": 806,
+                "total_tokens": 1358,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_preparation_20261029\\wire\\0000001.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8496,
+              "status": "historical_unknown",
+              "usage": null,
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_preparation_20261029\\wire\\0000002.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8496,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 628,
+                "completion_tokens": 1004,
+                "total_tokens": 1632,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000001.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8475,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 630,
+                "completion_tokens": 913,
+                "total_tokens": 1543,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000002.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8321,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 602,
+                "completion_tokens": 1619,
+                "total_tokens": 2221,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000003.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8066,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 563,
+                "completion_tokens": 774,
+                "total_tokens": 1337,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000004.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9953,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 949,
+                "completion_tokens": 363,
+                "total_tokens": 1312,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10931,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1137,
+                "completion_tokens": 215,
+                "total_tokens": 1352,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11175,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1167,
+                "completion_tokens": 233,
+                "total_tokens": 1400,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10508,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1066,
+                "completion_tokens": 232,
+                "total_tokens": 1298,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 17965,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 2535,
+                "completion_tokens": 317,
+                "total_tokens": 2852,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10782,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1129,
+                "completion_tokens": 217,
+                "total_tokens": 1346,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10542,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1048,
+                "completion_tokens": 255,
+                "total_tokens": 1303,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10335,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 979,
+                "completion_tokens": 260,
+                "total_tokens": 1239,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10442,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1062,
+                "completion_tokens": 267,
+                "total_tokens": 1329,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9830,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 890,
+                "completion_tokens": 170,
+                "total_tokens": 1060,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10364,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1029,
+                "completion_tokens": 265,
+                "total_tokens": 1294,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10411,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1047,
+                "completion_tokens": 350,
+                "total_tokens": 1397,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11348,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1274,
+                "completion_tokens": 242,
+                "total_tokens": 1516,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11479,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1203,
+                "completion_tokens": 414,
+                "total_tokens": 1617,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11685,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1242,
+                "completion_tokens": 182,
+                "total_tokens": 1424,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9840,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 873,
+                "completion_tokens": 243,
+                "total_tokens": 1116,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 256
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10815,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1166,
+                "completion_tokens": 340,
+                "total_tokens": 1506,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11602,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1266,
+                "completion_tokens": 208,
+                "total_tokens": 1474,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11259,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1217,
+                "completion_tokens": 322,
+                "total_tokens": 1539,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11928,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1393,
+                "completion_tokens": 223,
+                "total_tokens": 1616,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11520,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1294,
+                "completion_tokens": 301,
+                "total_tokens": 1595,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 256
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11674,
+              "status": "failed_unknown",
+              "usage": null
+            }
+          ]
+        },
+        "new_physical_HTTP": 22,
+        "inputs_unchanged": true,
+        "logical": {
+          "label_ddd233054d0aed298a741676aabf22db0719f8254c8f57190adb0bce55829242": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 949,
+              "completion_tokens": 363,
+              "total_tokens": 1312
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_7d3963ddd4af09c84626047535b9ec9a779c75209ddc0caaae489d84fa8fd077": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1137,
+              "completion_tokens": 215,
+              "total_tokens": 1352
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_57ab276e89cbbfc49e42ca1e34582a1f1ac583f1565777ca8becfd45e03c9f18": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1167,
+              "completion_tokens": 233,
+              "total_tokens": 1400
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_1bccc452cb1de161fcdae9f0adc6cbc9a34331fea05265b10e8282e1b38a4865": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1066,
+              "completion_tokens": 232,
+              "total_tokens": 1298
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_c8a56a03a036f6d1b0c78973430f145c2f6955355b1e4b054be4ed11ec6758e4": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 2535,
+              "completion_tokens": 317,
+              "total_tokens": 2852
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_6a682104a814e58d35cf8bcee84cca1384a9221a5b444c1ad63a6db0f008a793": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1129,
+              "completion_tokens": 217,
+              "total_tokens": 1346
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_9969794be96e2e2b479a64928130a3ca1965d05e8dc81a0adcd3a9411ae41769": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1048,
+              "completion_tokens": 255,
+              "total_tokens": 1303
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_ad74288d227cccb53ef8bc41e4e66fbc19ffd01ac0b7115092d2630228550ee5": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 979,
+              "completion_tokens": 260,
+              "total_tokens": 1239
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_fc51780e03fe97bec559795d82470835e48b7046e601f21ac00ca2b056899536": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1062,
+              "completion_tokens": 267,
+              "total_tokens": 1329
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_fba962e74b58ec4de69a030ae6b85a6b06697e3c8c179860d1e800c4f38311be": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 890,
+              "completion_tokens": 170,
+              "total_tokens": 1060
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_301a8d3f666c184da354ac51fada6d7cf59f1ab30b6836637a048e8e4328edd3": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1029,
+              "completion_tokens": 265,
+              "total_tokens": 1294
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_545fbc7f001f054f734dd7e0259a8db0de8a7d64860e53b71fc27e3e48c1f942": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1047,
+              "completion_tokens": 350,
+              "total_tokens": 1397
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_1edadb3cbde115a72d54d5dd5b30cd2c68bfd2c2df85689f0dbc1434338c072d": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1274,
+              "completion_tokens": 242,
+              "total_tokens": 1516
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_ce25ce3771702dd07d79bf62ff1ce250f07d6ffc3112f31c011e14d0299a45ad": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1203,
+              "completion_tokens": 414,
+              "total_tokens": 1617
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_7a3ec6194f6f68028ee4ba2157fc86fb23bbcb84197d666e19a2f0cdd44cbef1": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1242,
+              "completion_tokens": 182,
+              "total_tokens": 1424
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_de53eda24681a36c6591df6805574469999e9ce51637b535fe1dcb5f74e73827": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 873,
+              "completion_tokens": 243,
+              "total_tokens": 1116
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_534fc8b524e8a9c3da758bc4c62c309413c5afd75e8a5bba3ec27a97625b21c8": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1166,
+              "completion_tokens": 340,
+              "total_tokens": 1506
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_089d6710b3839ef83f0b0d336df4b6fdb419e888bcc56873788e2de0671c6db8": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1266,
+              "completion_tokens": 208,
+              "total_tokens": 1474
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_91cb48d34ecee7c2924bd9a6bf8031094f9401d416858f1373ebe95a9119a0a8": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1217,
+              "completion_tokens": 322,
+              "total_tokens": 1539
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_85d2789df809ede0eeda3e2d4f7bf0beddf072975bf6e8a2404f884031f0228a": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1393,
+              "completion_tokens": 223,
+              "total_tokens": 1616
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_19ebf955058d736e230c62210df6c652c8694e6dae193b76cc816368e42c1b8b": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1294,
+              "completion_tokens": 301,
+              "total_tokens": 1595
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_ec6df85779b46247d376f4e0c63e13f33f5ba58f563b54b3f3327d4702d6e821": {
+            "logical_requests": 1,
+            "known_usage": {},
+            "unknown_usage_operations": 1,
+            "cost_currency": null,
+            "statuses": {
+              "failed_or_unresolved": 1
+            }
+          }
+        },
+        "AI_label_task_scope": [
+          "1184",
+          "500"
+        ],
+        "missing_pairs_retained": 1,
+        "no_missing_pair_redispatch": true
+      },
+      "stages": {},
+      "display_summary": {
+        "status": "stopped_technical",
+        "reason": "logical_request_failed_or_unresolved",
+        "time_utc": "2026-10-29T04:12:17.490392+00:00",
+        "code_generations": 0,
+        "new_initial_analysis_calls": 0,
+        "AI_pairs_completed_or_label_error": 12,
+        "AI_label_errors": 0,
+        "budget": {
+          "cap_tokens": 411551183,
+          "cap_HTTP": 12877,
+          "cap_embedding_HTTP": 2110,
+          "charged_tokens_including_unknown_and_inflight_bounds": 105165,
+          "known_reported_tokens": 85744,
+          "transport_attempts_including_prior": 24,
+          "entries": [
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8041,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 552,
+                "completion_tokens": 806,
+                "total_tokens": 1358,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_preparation_20261029\\wire\\0000001.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8496,
+              "status": "historical_unknown",
+              "usage": null,
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_preparation_20261029\\wire\\0000002.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8496,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 628,
+                "completion_tokens": 1004,
+                "total_tokens": 1632,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000001.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8475,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 630,
+                "completion_tokens": 913,
+                "total_tokens": 1543,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000002.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8321,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 602,
+                "completion_tokens": 1619,
+                "total_tokens": 2221,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000003.request.json"
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 8066,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 563,
+                "completion_tokens": 774,
+                "total_tokens": 1337,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_recovery_20261029\\segment_001\\wire\\0000004.request.json"
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 83311,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 15314,
+                "total_tokens": 15314
+              }
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 82677,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 15820,
+                "total_tokens": 15820
+              }
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 81419,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 14852,
+                "total_tokens": 14852
+              }
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 80337,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 14818,
+                "total_tokens": 14818
+              }
+            },
+            {
+              "model": "text-embedding-3-large",
+              "bound": 9885,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1595,
+                "total_tokens": 1595
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10771,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1047,
+                "completion_tokens": 215,
+                "total_tokens": 1262,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10768,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1140,
+                "completion_tokens": 226,
+                "total_tokens": 1366,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10280,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 987,
+                "completion_tokens": 212,
+                "total_tokens": 1199,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10623,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1057,
+                "completion_tokens": 219,
+                "total_tokens": 1276,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9874,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 921,
+                "completion_tokens": 192,
+                "total_tokens": 1113,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9934,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 956,
+                "completion_tokens": 171,
+                "total_tokens": 1127,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11044,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1131,
+                "completion_tokens": 251,
+                "total_tokens": 1382,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10656,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1049,
+                "completion_tokens": 261,
+                "total_tokens": 1310,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 11081,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1179,
+                "completion_tokens": 170,
+                "total_tokens": 1349,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10474,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1049,
+                "completion_tokens": 331,
+                "total_tokens": 1380,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10427,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 1022,
+                "completion_tokens": 314,
+                "total_tokens": 1336,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 9682,
+              "status": "reported",
+              "usage": {
+                "prompt_tokens": 868,
+                "completion_tokens": 286,
+                "total_tokens": 1154,
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                }
+              }
+            },
+            {
+              "model": "deepseek-v4.1-flash-1017",
+              "bound": 10925,
+              "status": "failed_unknown",
+              "usage": null
+            }
+          ]
+        },
+        "new_physical_HTTP": 18,
+        "inputs_unchanged": true,
+        "logical": {
+          "embedding": {
+            "logical_requests": 5,
+            "known_usage": {
+              "prompt_tokens": 62399,
+              "total_tokens": 62399
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 5
+            }
+          },
+          "label_deaab6ca0cc28a198b61574506d5458530972f6081dc5bcd47f777cd77dd1f52": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1047,
+              "completion_tokens": 215,
+              "total_tokens": 1262
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_d7284f4de8a50dbd0c277ac05dc6a221e488cd2a977bfb8ea136503d44388ebe": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1140,
+              "completion_tokens": 226,
+              "total_tokens": 1366
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_bc34ebac59dafd24002c51af810de8991e2a4710c770c63fafebfbe8c46400b4": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 987,
+              "completion_tokens": 212,
+              "total_tokens": 1199
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_de44e3df6b1154c8654d3c552e71d743c47156a734ec258f440b615d7a59babd": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1057,
+              "completion_tokens": 219,
+              "total_tokens": 1276
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_7eafbed031ee167cd86dfc4c2e97eb887889a555549384977c1a874c4336df99": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 921,
+              "completion_tokens": 192,
+              "total_tokens": 1113
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_3b7f694dc8c5ecf7bd942f805acb4b5117946464be53bf763283701f6827a9fa": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 956,
+              "completion_tokens": 171,
+              "total_tokens": 1127
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_cb758cb300556577ed71eddca975405793cebe39cf60fdda74965a09eac74cf5": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1131,
+              "completion_tokens": 251,
+              "total_tokens": 1382
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_fedc8dc0c2d35096c02462acbc287a8f031b2733f19c7dbb534e2bf00ddb5d78": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1049,
+              "completion_tokens": 261,
+              "total_tokens": 1310
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_3ab3537a00c839c2bdb0ce3749082e673099b9ea78c7cf0371278ee0d0296169": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1179,
+              "completion_tokens": 170,
+              "total_tokens": 1349
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_9c8841fc8a901b8ae2a2b29a101602cb3f4445d28e0629e1cbfd0501d4c49390": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1049,
+              "completion_tokens": 331,
+              "total_tokens": 1380
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_038585a420d51eb608b3b7204673c15b9e4673c3d9250d964ebf391448bb7954": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 1022,
+              "completion_tokens": 314,
+              "total_tokens": 1336
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_2755b2115824166b0ddbe55533ab95c23fec082df9bc70b168104800f037b752": {
+            "logical_requests": 1,
+            "known_usage": {
+              "prompt_tokens": 868,
+              "completion_tokens": 286,
+              "total_tokens": 1154
+            },
+            "unknown_usage_operations": 0,
+            "cost_currency": null,
+            "statuses": {
+              "completed": 1
+            }
+          },
+          "label_02e1c361382934fba5890aeef3dcb0790425fec521bd30a263eb0101cbd1b068": {
+            "logical_requests": 1,
+            "known_usage": {},
+            "unknown_usage_operations": 1,
+            "cost_currency": null,
+            "statuses": {
+              "failed_or_unresolved": 1
+            }
+          }
+        },
+        "AI_label_task_scope": [
+          "1184",
+          "500"
+        ],
+        "shared_embedding_scope": 57,
+        "other_task_pairs_not_labeled": 806,
+        "initial_preparation_budget_included": true
+      },
+      "usage_summary": {
+        "known_reported_tokens": 116329,
+        "physical_HTTP": 46,
+        "unknown_or_inflight_HTTP": 3
+      },
+      "display_completed": 0,
+      "segment": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\segment_002",
+      "processes": [],
+      "activity": {
+        "file": "0000022.status.json",
+        "time": "2026-10-29T12:24:03.725436+08:00",
+        "age_seconds": 12389,
+        "state": "响应状态已保存",
+        "status": "transport_error",
+        "http_status": null,
+        "error_type": "URLError",
+        "elapsed_seconds": 1.297000000020489
+      },
+      "display_planned": 57,
+      "display_status": "needs_technical_recovery",
+      "display_note": "初析已备57/57，候选池57/57；已处理34个题卡对。先完成2题前缀检查，再接续其余标注；人工未确认。"
+    },
+    {
+      "key": "BUILD_C41",
+      "label": "新模型建库 · 2题技术探针",
+      "planned": null,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {
+        "status": "completed_two_task_probe_replayed_analyzed",
+        "completed": 2,
+        "planned": 2,
+        "task_ids": [
+          "45",
+          "46"
+        ],
+        "distinct_families": 1,
+        "first_Joint": 2,
+        "final_Joint": 2,
+        "card_count": 5,
+        "card_lifecycle": "provisional_not_global_gated",
+        "full_library_complete": false,
+        "Q_updates": 0,
+        "physical_HTTP": 17,
+        "known_reported_tokens": 29944,
+        "unknown_usage_HTTP": 1,
+        "physical_statuses": {
+          "response_closed": 16,
+          "response_read_error": 1
+        },
+        "replay_status": "passed_recorded_event_replay",
+        "new_replay_HTTP": 0,
+        "next": "full build skipped; do not use toy library for cross-library claim",
+        "unknown_or_inflight_HTTP": 1
+      },
+      "stages": {},
+      "display_summary": {
+        "status": "completed_two_task_probe_replayed_analyzed",
+        "completed": 2,
+        "planned": 2,
+        "task_ids": [
+          "45",
+          "46"
+        ],
+        "distinct_families": 1,
+        "first_Joint": 2,
+        "final_Joint": 2,
+        "card_count": 5,
+        "card_lifecycle": "provisional_not_global_gated",
+        "full_library_complete": false,
+        "Q_updates": 0,
+        "physical_HTTP": 17,
+        "known_reported_tokens": 29944,
+        "unknown_usage_HTTP": 1,
+        "physical_statuses": {
+          "response_closed": 16,
+          "response_read_error": 1
+        },
+        "replay_status": "passed_recorded_event_replay",
+        "new_replay_HTTP": 0,
+        "next": "full build skipped; do not use toy library for cross-library claim",
+        "unknown_or_inflight_HTTP": 1
+      },
+      "usage_summary": {
+        "status": "completed_two_task_probe_replayed_analyzed",
+        "completed": 2,
+        "planned": 2,
+        "task_ids": [
+          "45",
+          "46"
+        ],
+        "distinct_families": 1,
+        "first_Joint": 2,
+        "final_Joint": 2,
+        "card_count": 5,
+        "card_lifecycle": "provisional_not_global_gated",
+        "full_library_complete": false,
+        "Q_updates": 0,
+        "physical_HTTP": 17,
+        "known_reported_tokens": 29944,
+        "unknown_usage_HTTP": 1,
+        "physical_statuses": {
+          "response_closed": 16,
+          "response_read_error": 1
+        },
+        "replay_status": "passed_recorded_event_replay",
+        "new_replay_HTTP": 0,
+        "next": "full build skipped; do not use toy library for cross-library claim",
+        "unknown_or_inflight_HTTP": 1
+      },
+      "display_completed": 2,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_status": "completed",
+      "display_planned": 2,
+      "display_note": "Joint 2/2，产生5张临时卡；回放分析完成。全量建库跳过，临时库不用于正式交叉。"
+    },
+    {
+      "key": "FX_GATE",
+      "label": "模型与卡库交叉",
+      "planned": 3576,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {},
+      "stages": {},
+      "display_summary": {},
+      "usage_summary": {},
+      "display_completed": 0,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_planned": 72,
+      "display_status": "waiting_dependency",
+      "display_note": "等待完整冻结新卡库；v3.2已停用，Base/Plus另缺原验证镜像。"
+    },
+    {
+      "key": "FX_EXTERNAL",
+      "label": "Base/Plus v4.1交叉",
+      "planned": 1530,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {},
+      "stages": {},
+      "display_summary": {},
+      "usage_summary": {},
+      "display_completed": 0,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_planned": 1530,
+      "display_status": "waiting_dependency",
+      "display_note": "等待完整冻结新卡库；v3.2已停用，Base/Plus另缺原验证镜像。"
+    },
+    {
+      "key": "P3_EXTERNAL",
+      "label": "原P3 Base/Plus",
+      "planned": 255,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {},
+      "stages": {},
+      "display_summary": {},
+      "usage_summary": {},
+      "display_completed": 0,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_status": "deferred",
+      "display_planned": 0,
+      "display_note": "保留原计划；本轮不执行，不生成成绩。"
+    },
+    {
+      "key": "FG_LABELS_EXTRA",
+      "label": "记忆标签追加82题（有条件）",
+      "planned": 820,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {},
+      "stages": {},
+      "display_summary": {},
+      "usage_summary": {},
+      "display_completed": 0,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_planned": 820,
+      "display_status": "paused",
+      "display_note": "按用户要求暂停，等待明确恢复。"
+    },
+    {
+      "key": "FR_EXTRA",
+      "label": "检索追加57题（有条件）",
+      "planned": 57,
+      "completed": 0,
+      "status": "not_started",
+      "summary": {},
+      "stages": {},
+      "display_summary": {},
+      "usage_summary": {},
+      "display_completed": 0,
+      "segment": null,
+      "processes": [],
+      "activity": null,
+      "display_planned": 57,
+      "display_status": "waiting_dependency",
+      "display_note": "先完成57题并分析扩大条件；未派发追加57题。"
+    },
+    {
+      "key": "IR02",
+      "label": "影响半径 · 边界提醒对照",
+      "summary": {
+        "status": "completed_statistics",
+        "completed": 48,
+        "planned": 48,
+        "arms": {
+          "original_edit": {
+            "completed": 24,
+            "planned": 24,
+            "measured": 24,
+            "F": 11,
+            "S": 16,
+            "Joint": 8
+          },
+          "boundary_edit": {
+            "completed": 24,
+            "planned": 24,
+            "measured": 24,
+            "F": 11,
+            "S": 16,
+            "Joint": 8
+          }
+        },
+        "paired_units": 24,
+        "paired_measured": 24,
+        "rescue": 0,
+        "loss": 0,
+        "new_security_failures": 0,
+        "repeat_net": {
+          "1": 0,
+          "2": 0
+        },
+        "experiment_HTTP_in_analysis": 0,
+        "family_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "outcome_gate_passed": false,
+        "replay_passed": true,
+        "mechanism_gate_passed": false,
+        "known_reported_tokens": 712383,
+        "physical_HTTP": 48,
+        "unknown_or_inflight_HTTP": 0
+      },
+      "stages": {},
+      "processes": [],
+      "activity": null,
+      "display_completed": 48,
+      "display_planned": 48,
+      "display_status": "completed",
+      "display_note": "48格已回放分析；两臂Joint均8/24，净收益0。未通过扩大条件，96格确认不执行。",
+      "display_summary": {
+        "status": "completed_statistics",
+        "completed": 48,
+        "planned": 48,
+        "arms": {
+          "original_edit": {
+            "completed": 24,
+            "planned": 24,
+            "measured": 24,
+            "F": 11,
+            "S": 16,
+            "Joint": 8
+          },
+          "boundary_edit": {
+            "completed": 24,
+            "planned": 24,
+            "measured": 24,
+            "F": 11,
+            "S": 16,
+            "Joint": 8
+          }
+        },
+        "paired_units": 24,
+        "paired_measured": 24,
+        "rescue": 0,
+        "loss": 0,
+        "new_security_failures": 0,
+        "repeat_net": {
+          "1": 0,
+          "2": 0
+        },
+        "experiment_HTTP_in_analysis": 0,
+        "family_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "outcome_gate_passed": false,
+        "replay_passed": true,
+        "mechanism_gate_passed": false,
+        "known_reported_tokens": 712383,
+        "physical_HTTP": 48,
+        "unknown_or_inflight_HTTP": 0
+      },
+      "usage_summary": {
+        "status": "completed_statistics",
+        "completed": 48,
+        "planned": 48,
+        "arms": {
+          "original_edit": {
+            "completed": 24,
+            "planned": 24,
+            "measured": 24,
+            "F": 11,
+            "S": 16,
+            "Joint": 8
+          },
+          "boundary_edit": {
+            "completed": 24,
+            "planned": 24,
+            "measured": 24,
+            "F": 11,
+            "S": 16,
+            "Joint": 8
+          }
+        },
+        "paired_units": 24,
+        "paired_measured": 24,
+        "rescue": 0,
+        "loss": 0,
+        "new_security_failures": 0,
+        "repeat_net": {
+          "1": 0,
+          "2": 0
+        },
+        "experiment_HTTP_in_analysis": 0,
+        "family_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "outcome_gate_passed": false,
+        "replay_passed": true,
+        "mechanism_gate_passed": false,
+        "known_reported_tokens": 712383,
+        "physical_HTTP": 48,
+        "unknown_or_inflight_HTTP": 0
+      }
+    },
+    {
+      "key": "R01",
+      "label": "损失原因 · 单点修改本地复验",
+      "summary": {
+        "completed": 3,
+        "planned": 3,
+        "physical_HTTP": 0,
+        "known_reported_tokens": 0,
+        "unknown_or_inflight_HTTP": 0
+      },
+      "stages": {},
+      "processes": [],
+      "activity": null,
+      "display_completed": 3,
+      "display_planned": 3,
+      "display_status": "completed",
+      "display_note": "3题6次本地验证：两题恢复Joint，一题恢复功能但安全失败。仅完成该小批，不等于原最多6题全部完成。",
+      "display_summary": {
+        "completed": 3,
+        "planned": 3,
+        "physical_HTTP": 0,
+        "known_reported_tokens": 0,
+        "unknown_or_inflight_HTTP": 0
+      },
+      "usage_summary": {
+        "completed": 3,
+        "planned": 3,
+        "physical_HTTP": 0,
+        "known_reported_tokens": 0,
+        "unknown_or_inflight_HTTP": 0
+      }
+    }
+  ],
+  "usage": {
+    "known_reported_tokens": 184406650,
+    "physical_HTTP": 29400,
+    "unknown_or_inflight_HTTP": 694,
+    "note": "本轮已纳入原生累计摘要的实验用量；CLI独立计费，未报告Token不计为0费用。"
+  },
+  "findings": [
+    {
+      "title": "Q学习已完成四轮",
+      "result": "1122/1122；最后一轮Q覆盖769/1939张卡（39.7%）。",
+      "impact": "同题回测已保存16/540，按要求暂停，尚无完整回测结论。"
+    },
+    {
+      "title": "拆分经验未改善现有配对结果",
+      "result": "486个BM/BFS有效配对：改善27、退步32，净少5个Joint通过。",
+      "impact": "2433格部分结果已分析；剩余全量跳过。"
+    },
+    {
+      "title": "边界提醒在12题中没有提高正确率",
+      "result": "12题×两臂×两重复，48/48；原始编辑与边界提醒各Joint 8/24，改善0、退步0。",
+      "impact": "回放一致，停止96格确认和后续全量。"
+    },
+    {
+      "title": "从空库提卡链路已打通",
+      "result": "2题Joint均通过，产生5张临时卡；17次HTTP，29944已报告Token。",
+      "impact": "仅验证技术链路，未建立可供正式交叉比较的新卡库。"
+    }
+  ],
+  "retrieval_preparation": {
+    "status": "completed",
+    "completed": 5,
+    "planned": 5,
+    "missing_ids": [],
+    "summary": {
+      "status": "completed",
+      "completed": 5,
+      "task_ids": [
+        "110",
+        "156",
+        "167",
+        "461",
+        "479"
+      ],
+      "code_generations": 0,
+      "Q_updates": 0,
+      "budget": {
+        "cap_tokens": 100000,
+        "cap_HTTP": 6,
+        "cap_embedding_HTTP": 0,
+        "charged_tokens_including_unknown_and_inflight_bounds": 16587,
+        "known_reported_tokens": 8091,
+        "transport_attempts_including_prior": 6,
+        "entries": [
+          {
+            "model": "deepseek-v4.1-flash-1017",
+            "bound": 8041,
+            "status": "reported",
+            "usage": {
+              "prompt_tokens": 552,
+              "completion_tokens": 806,
+              "total_tokens": 1358,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_preparation_20261029\\wire\\0000001.request.json"
+          },
+          {
+            "model": "deepseek-v4.1-flash-1017",
+            "bound": 8496,
+            "status": "historical_unknown",
+            "usage": null,
+            "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FR\\initial_preparation_20261029\\wire\\0000002.request.json"
+          },
+          {
+            "model": "deepseek-v4.1-flash-1017",
+            "bound": 8496,
+            "status": "reported",
+            "usage": {
+              "prompt_tokens": 628,
+              "completion_tokens": 1004,
+              "total_tokens": 1632,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          },
+          {
+            "model": "deepseek-v4.1-flash-1017",
+            "bound": 8475,
+            "status": "reported",
+            "usage": {
+              "prompt_tokens": 630,
+              "completion_tokens": 913,
+              "total_tokens": 1543,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          },
+          {
+            "model": "deepseek-v4.1-flash-1017",
+            "bound": 8321,
+            "status": "reported",
+            "usage": {
+              "prompt_tokens": 602,
+              "completion_tokens": 1619,
+              "total_tokens": 2221,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          },
+          {
+            "model": "deepseek-v4.1-flash-1017",
+            "bound": 8066,
+            "status": "reported",
+            "usage": {
+              "prompt_tokens": 563,
+              "completion_tokens": 774,
+              "total_tokens": 1337,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    "contexts_on_disk": 57
+  }
+}

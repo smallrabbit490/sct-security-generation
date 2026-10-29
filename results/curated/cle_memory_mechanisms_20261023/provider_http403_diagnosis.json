@@ -1,0 +1,73 @@
+{
+  "protocol": "cle-provider-readonly-http403-diagnosis-v1",
+  "created_utc": "2026-10-24T02:57:02.419019+00:00",
+  "finished_utc": "2026-10-24T02:58:26.861988+00:00",
+  "HTTP_requests": 6,
+  "model_generation_requests": 0,
+  "experiment_resumed": false,
+  "Q_updates": 0,
+  "diagnosis": {
+    "reproduced_org_403": "Cloudflare 1010 with Python-urllib default User-Agent, before authentication",
+    "user_agent_control": "same org models path, unauthenticated: default UA403/1010; explicit transparent diagnostic UA401/provider JSON",
+    "org_authenticated_models_status": 200,
+    "balance": "not_obtained; official anonymous query rejects login-account keys with40300; browser not logged in",
+    "historical_v5_error_body": "not retained; attribution is supported by current same-client same-path reproduction, not recovered original body",
+    "experimental_requester_changed": false,
+    "paid_controls_enabled": false
+  },
+  "browser_balance_status": "no_authenticated_session; login page reached; no credentials entered",
+  "sources": {
+    "balance": "https://chatanywhere.tech/assets/index-DphW0nKw.js",
+    "models": "https://docs.chatanywhere.tech/api-92222074",
+    "cloudflare_1010": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1010/"
+  },
+  "request_evidence": [
+    {
+      "label": "official_website_balance",
+      "http_status": 403,
+      "authenticated": true,
+      "safe_fields": {
+        "code": 40300,
+        "message": "该 ApiKey 属于登录账号，请登录用户后台查询用量或为账户充值。"
+      }
+    },
+    {
+      "label": "tech_models",
+      "http_status": 200,
+      "authenticated": true,
+      "model_count": 138,
+      "requested_model_listed": true,
+      "embedding_model_listed": true
+    },
+    {
+      "label": "org_models_without_auth",
+      "http_status": 403,
+      "authenticated": false,
+      "safe_body_excerpt": "error code: 1010\n"
+    },
+    {
+      "label": "org_original_chat_path_without_auth",
+      "http_status": 403,
+      "user_agent": "Python-urllib default",
+      "authenticated": false,
+      "safe_body_excerpt": "error code: 1010\n"
+    },
+    {
+      "label": "org_models_identified_diagnostic_client_without_auth",
+      "http_status": 401,
+      "user_agent": "CLE-HTTP-Diagnostic/1.0",
+      "authenticated": false,
+      "safe_body_excerpt": "{\"error\":{\"message\":\"ApiKey错误(当前请求使用的ApiKey: )。wrong api key【如果您遇到问题，欢迎加入QQ群咨询：1003520025】\",\"type\":\"chatanywhere_error\",\"param\":null,\"code\":\"401 UNAUTHORIZED\"}}"
+    },
+    {
+      "label": "org_models_identified_diagnostic_client_authenticated",
+      "http_status": 200,
+      "user_agent": "CLE-HTTP-Diagnostic/1.0",
+      "authenticated": true,
+      "model_count": 138,
+      "requested_model_listed": true,
+      "embedding_model_listed": true
+    }
+  ],
+  "raw_summary": "translation_work/diagnostics/20261023/cle_memory_mechanisms_v1/provider_http403_diagnosis_20261024/summary.json"
+}

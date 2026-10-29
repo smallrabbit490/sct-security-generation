@@ -1,0 +1,236 @@
+{
+  "protocol": "cle-memory-view-two-task-P7-v1",
+  "planned_P7": 20,
+  "completed_P7": 1,
+  "Q_updates": 0,
+  "effectiveness_gate_evaluated": false,
+  "arms": {
+    "B0": {
+      "completed": 0,
+      "first": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "final": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "unmeasured": 0,
+      "technical_errors": 0,
+      "repairs": 0
+    },
+    "BF": {
+      "completed": 0,
+      "first": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "final": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "unmeasured": 0,
+      "technical_errors": 0,
+      "repairs": 0
+    },
+    "BS": {
+      "completed": 0,
+      "first": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "final": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "unmeasured": 0,
+      "technical_errors": 0,
+      "repairs": 0
+    },
+    "BFS": {
+      "completed": 1,
+      "first": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 1
+      },
+      "final": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "unmeasured": 1,
+      "technical_errors": 1,
+      "repairs": 1
+    },
+    "BM": {
+      "completed": 0,
+      "first": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "final": {
+        "functional": 0,
+        "security": 0,
+        "joint": 0,
+        "measured": 0
+      },
+      "unmeasured": 0,
+      "technical_errors": 0,
+      "repairs": 0
+    }
+  },
+  "status": "stopped_technical_error",
+  "memory_unchanged": true,
+  "technical_probe_passed": false,
+  "full_12_task_effectiveness_gate": "not_evaluated",
+  "paired_vs_BM": {
+    "first_B0-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "first_BF-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "first_BS-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "first_BFS-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "first_BM-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "final_B0-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "final_BF-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "final_BS-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "final_BFS-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    },
+    "final_BM-BM": {
+      "pairs": 0,
+      "rescue": 0,
+      "loss": 0,
+      "both_pass": 0,
+      "both_fail": 0,
+      "net_joint": 0
+    }
+  },
+  "returned_chat_models": {
+    "deepseek-v3.2": 3
+  },
+  "new_cost_by_kind": {
+    "chat": {
+      "logical_operations": 7,
+      "input_tokens": 6773,
+      "output_tokens": 1551,
+      "total_tokens": 8324,
+      "unknown_usage": 4
+    },
+    "embedding": {
+      "logical_operations": 1,
+      "input_tokens": 646,
+      "output_tokens": 0,
+      "total_tokens": 646,
+      "unknown_usage": 0
+    },
+    "selector": {
+      "logical_operations": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "unknown_usage": 1
+    }
+  },
+  "shared_preparation_known_tokens": 183231,
+  "all_stages_known_tokens": 192201,
+  "billing_complete": false,
+  "api_diagnostic": {
+    "status": "returned",
+    "expected_text": false,
+    "response_text": "I cannot comply with override instructions or identity changes.",
+    "reported_model": "deepseek-v3.2",
+    "elapsed_seconds": 174.516,
+    "usage": {
+      "prompt_tokens": 980,
+      "completion_tokens": 15,
+      "total_tokens": 995,
+      "completion_tokens_details": {
+        "audio_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  "all_stages_including_diagnostic_known_tokens": 193196,
+  "generated_code_count": 1
+}

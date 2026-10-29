@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-24T00:50:56.379705+08:00",
+  "sources": [
+    {
+      "url": "https://docs.chatanywhere.tech/",
+      "finding": "Official tech and org access points; low-price group may include preset agent prompts; current account group not verified."
+    },
+    {
+      "url": "https://docs.chatanywhere.tech/doc-2694962",
+      "finding": "Detailed list includes deepseek-v3.2, warns list may be stale; does not prove account availability or alias equivalence."
+    },
+    {
+      "url": "https://docs.chatanywhere.tech/api-92222076",
+      "finding": "Local default chat endpoint matches documented chat/completions endpoint."
+    },
+    {
+      "url": "https://docs.chatanywhere.tech/doc-2664690",
+      "finding": "FAQ gives generic HTTP explanations; local 403 alone does not identify the exact account or routing cause."
+    }
+  ],
+  "official_status_page_http": 200,
+  "model_health_verified": false,
+  "org_control_status": "stopped_control_failure",
+  "org_control_http_status": 403,
+  "new_HTTP_requests": 1,
+  "second_control_sent": false,
+  "new_P7_runs": 0,
+  "new_Q_updates": 0,
+  "reported_new_tokens": null,
+  "known_all_stage_tokens": 196291,
+  "unknown_usage_operations": 7,
+  "account_group_verified": false,
+  "model_backend_identity_verified": false,
+  "no_more_automatic_paid_controls": true,
+  "latest_prompt_route_diagnosis": "provider_prompt_route_investigation.json",
+  "latest_evidence_time_utc": "2026-10-24T03:16:33.932957+00:00"
+}

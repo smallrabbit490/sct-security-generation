@@ -1,0 +1,33 @@
+{
+  "PLT": {
+    "credential_available": true,
+    "docker_binary_available": true,
+    "credential_check": "configuration_presence_only_not_authenticated",
+    "python": "3.12.14",
+    "official_validator_runtime_ready": true,
+    "positive_control_executed": false,
+    "blockers": []
+  },
+  "Base": {
+    "credential_available": true,
+    "docker_binary_available": true,
+    "credential_check": "configuration_presence_only_not_authenticated",
+    "python": "3.12.14",
+    "official_validator_runtime_ready": false,
+    "positive_control_executed": false,
+    "blockers": [
+      "original_Docker_validator_unavailable"
+    ]
+  },
+  "Plus": {
+    "credential_available": true,
+    "docker_binary_available": true,
+    "credential_check": "configuration_presence_only_not_authenticated",
+    "python": "3.12.14",
+    "official_validator_runtime_ready": false,
+    "positive_control_executed": false,
+    "blockers": [
+      "original_Docker_validator_unavailable"
+    ]
+  }
+}

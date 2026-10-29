@@ -1,0 +1,182 @@
+{
+  "ideas": 9,
+  "core_experiments": 37,
+  "conditional_extensions": 2,
+  "local_links_checked": 253,
+  "all_experiments_covered": true,
+  "figures": [
+    {
+      "nodes": 8,
+      "branches": 1,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I01_Q值能否改变选卡并提高正确率_v1.0.svg",
+      "width": 1372,
+      "height": 2384,
+      "experiments": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A16",
+        "A17",
+        "A20",
+        "A21",
+        "B01",
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "nodes": 8,
+      "branches": 1,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I02_分轮积累解题反馈后，同题表现是否改善_v1.0.svg",
+      "width": 1372,
+      "height": 2104,
+      "experiments": [
+        "A20",
+        "A21",
+        "B01",
+        "C01",
+        "C02",
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "nodes": 5,
+      "branches": 0,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I03_在同种CWE、不同题族上还能获益吗_v1.0.svg",
+      "width": 1320,
+      "height": 2250,
+      "experiments": [
+        "A20",
+        "A21",
+        "B01",
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "nodes": 5,
+      "branches": 0,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I04_功能与安全经验分开，能否减少功能损失_v1.0.svg",
+      "width": 1320,
+      "height": 2048,
+      "experiments": [
+        "A10",
+        "A18",
+        "A19",
+        "B02"
+      ]
+    },
+    {
+      "nodes": 9,
+      "branches": 2,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I05_能否为不同题目选择合适的记忆程度_v1.0.svg",
+      "width": 2046,
+      "height": 2257,
+      "experiments": [
+        "A14",
+        "A15",
+        "C04",
+        "C04E",
+        "C05",
+        "C06"
+      ]
+    },
+    {
+      "nodes": 8,
+      "branches": 2,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I06_检索找到了多少真正适用的经验_v1.0.svg",
+      "width": 2046,
+      "height": 1862,
+      "experiments": [
+        "A06",
+        "C07",
+        "C07E",
+        "C08"
+      ]
+    },
+    {
+      "nodes": 6,
+      "branches": 1,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I07_哪些问题必须完整验证，哪些可以先抽样_v1.0.svg",
+      "width": 1372,
+      "height": 2137,
+      "experiments": [
+        "A20",
+        "A21",
+        "B01",
+        "B02",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C07",
+        "C10"
+      ]
+    },
+    {
+      "nodes": 8,
+      "branches": 2,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I08_模型能力与经验来源是否存在交叉适配_v1.0.svg",
+      "width": 2720,
+      "height": 2036,
+      "experiments": [
+        "A07",
+        "A08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "D01",
+        "D02"
+      ]
+    },
+    {
+      "nodes": 7,
+      "branches": 1,
+      "parent_centering": "passed",
+      "subtree_reserved_space": "passed",
+      "card_overlap": 0,
+      "file": "CLE_I09_经验究竟改了哪些代码，为什么会损害功能_v1.0.svg",
+      "width": 1372,
+      "height": 2210,
+      "experiments": [
+        "A05",
+        "A09",
+        "A11",
+        "A12",
+        "A13",
+        "A18",
+        "A19",
+        "B02"
+      ]
+    }
+  ]
+}

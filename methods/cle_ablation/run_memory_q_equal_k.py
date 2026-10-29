@@ -330,6 +330,19 @@ def import_review(out,path):
     report(out)
 
 
+def exact_family_sign_flip(deltas):
+    """两次二元重复的题族差为半整数；动态计数与穷举全部符号置换精确等价。"""
+    values=[int(2*d) for d in deltas]
+    counts={0:1}
+    for value in values:
+        updated={}
+        for total,count in counts.items():
+            for sign in (-1,1):updated[total+sign*value]=updated.get(total+sign*value,0)+count
+        counts=updated
+    observed=abs(sum(values))
+    return sum(count for total,count in counts.items() if abs(total)>=observed)/2**len(values)
+
+
 def cluster_pair(rows,baseline,test):
     """重复不是独立题；以题族为单位平均两次结果，做符号置换和配对重采样。"""
     families = sorted({r['family_id'] for r in rows})
@@ -340,8 +353,7 @@ def cluster_pair(rows,baseline,test):
             return {'complete':False,'reason':'two_repeats_required_per_family'}
         deltas.append(sum(groups[test])/2-sum(groups[baseline])/2)
     observed = sum(deltas)
-    p = sum(abs(sum(sign*d for sign,d in zip(signs,deltas)))>=abs(observed)-1e-12
-            for signs in itertools.product((-1,1),repeat=len(deltas)))/2**len(deltas)
+    p = exact_family_sign_flip(deltas)
     rng = random.Random(20261019)
     samples = sorted(sum(rng.choices(deltas,k=len(deltas)))/len(deltas) for _ in range(10000))
     return {'complete':True,'families':len(families),'mean_joint_difference':observed/len(deltas),

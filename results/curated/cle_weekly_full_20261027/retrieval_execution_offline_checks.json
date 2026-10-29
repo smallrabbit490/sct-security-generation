@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests": 25,
+  "seconds": 5.774,
+  "new_HTTP": 0,
+  "scope": "FR6+execution9, FG_GATE7, policy_analysis3; synthetic network only",
+  "observed_utc": "2026-10-27T07:45:47.664079+00:00",
+  "command": "unittest tests.test_cle_weekly_policy_gate_analysis tests.test_cle_weekly_granularity_gate tests.test_cle_weekly_retrieval tests.test_cle_weekly_retrieval_execution -q"
+}

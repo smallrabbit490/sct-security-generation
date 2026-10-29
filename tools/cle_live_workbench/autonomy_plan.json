@@ -1,0 +1,1808 @@
+{
+  "plan_id": "cle-autonomy-20261028-probe-relay-impact-radius-v9",
+  "source_plan": "configs/cle_weekly_full_20261027/execution_plan.json",
+  "authorization": "2026-10-28用户明确授权：保留活动全量，Q中间54题、记忆首批82题、检索首批57题，按固定条件扩大并自动分析接续。 2026-10-28用户明确要求影响半径加入自主实验并提高优先级：IR01/R01分析及IR02小批自动执行，IR03按预登记门自动接续，IR04全量暂缓。 2026-10-29用户最新要求：本对话持续推进，跳过全部全量任务；工作台自主派发与修复保持关闭。 2026-10-29用户明确暂停所有Q相关实验及后续派发，需用户明确恢复。 2026-10-29用户明确暂停记忆标签，标签扩展、训练及分类器接续一并等待恢复。",
+  "parallel_limit": 4,
+  "repair_model": "gpt-6.1-sol",
+  "repair_effort": "xhigh",
+  "tasks": [
+    {
+      "id": "Q.run",
+      "title": "四轮Q学习",
+      "kind": "run",
+      "package": "FQ_LEARN",
+      "depends": [],
+      "priority": 10,
+      "slots": 1,
+      "expected": 1122,
+      "commands": [
+        "configs.cle_weekly_http403_recovery_20261028.resume launch --kind q"
+      ],
+      "note": "Current known HTTP403 denials were explicitly reauthorized after verified credit restoration; use registered exact-prefix wrapper. Same-type TLS interruptions remain authorized; any new balance/auth denial is not a TLS retry. Preserve all completed rows/responses and budgets.",
+      "execution_scope": "full",
+      "user_paused": true
+    },
+    {
+      "id": "Q.K0.analysis",
+      "title": "K0冻结、回放与逐题分析",
+      "kind": "analysis",
+      "package": "FQ_LEARN",
+      "depends": [],
+      "priority": 1,
+      "stage": "K0",
+      "requires_stage": "K0",
+      "expected": 303,
+      "analysis_dir": "analysis/K0",
+      "replay": "FQ_LEARN/K0/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_full_20261027.learn replay --stage K0",
+        "configs.cle_weekly_analysis_20261027.analysis analysis --stage K0"
+      ],
+      "note": "处理已观测的1107原验证反馈与当前复验不一致。原303题成绩、当时验证反馈和冻结Q不改；原失败回放文件保留。可独立实现明确标注的保存响应加当时验证反馈重放，核对全部303题请求/反馈/Q事件及冻结库一致性；当前原验证器复验作为另一份环境差异记录，不能冒称动态验证全部一致。若后续check需消费独立回放证书，在独立接续目录实施并明确登记，不改活动学习源码或旧结果。先实际完成核对再结单，不能直接改passed。该项由当前技术分析节点继续处理，不再以同一已知回放差异等待人工选择。",
+      "user_paused": true
+    },
+    {
+      "id": "Q.K1.analysis",
+      "title": "K1冻结、回放与逐题分析",
+      "kind": "analysis",
+      "package": "FQ_LEARN",
+      "depends": [],
+      "priority": 1,
+      "stage": "K1",
+      "requires_stage": "K1",
+      "expected": 273,
+      "analysis_dir": "analysis/K1",
+      "replay": "FQ_LEARN/K1/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_full_20261027.learn replay --stage K1",
+        "configs.cle_weekly_analysis_20261027.analysis analysis --stage K1"
+      ],
+      "user_paused": true
+    },
+    {
+      "id": "Q.K2.analysis",
+      "title": "K2冻结、回放与逐题分析",
+      "kind": "analysis",
+      "package": "FQ_LEARN",
+      "depends": [],
+      "priority": 1,
+      "stage": "K2",
+      "requires_stage": "K2",
+      "expected": 273,
+      "analysis_dir": "analysis/K2",
+      "replay": "FQ_LEARN/K2/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_full_20261027.learn replay --stage K2",
+        "configs.cle_weekly_analysis_20261027.analysis analysis --stage K2"
+      ],
+      "user_paused": true
+    },
+    {
+      "id": "Q.K3.analysis",
+      "title": "K3冻结、回放与逐题分析",
+      "kind": "analysis",
+      "package": "FQ_LEARN",
+      "depends": [],
+      "priority": 1,
+      "stage": "K3",
+      "requires_stage": "K3",
+      "expected": 273,
+      "analysis_dir": "analysis/K3",
+      "replay": "FQ_LEARN/K3/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_full_20261027.learn replay --stage K3",
+        "configs.cle_weekly_analysis_20261027.analysis analysis --stage K3"
+      ],
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea01",
+          "idea02"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/Q.K3.analysis/receipt.json"
+      },
+      "user_paused": true
+    },
+    {
+      "id": "Q.retest",
+      "title": "最终Q全273题＋中间三轮54题冻结回测",
+      "kind": "run",
+      "package": "FQ_RETEST",
+      "depends": [
+        "Q.K0.analysis",
+        "Q.K1.analysis",
+        "Q.K2.analysis",
+        "Q.K3.analysis",
+        "Q.retest.probe.analysis"
+      ],
+      "priority": 15,
+      "slots": "available",
+      "expected": 1416,
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.retest check",
+        "configs.cle_weekly_reduced_20261028.retest launch --workers {workers}"
+      ],
+      "prefix_probe": {
+        "experiment": "C02",
+        "task": "Q.retest",
+        "package": "FQ_RETEST",
+        "tasks": 2,
+        "units": 20,
+        "total": 1416,
+        "conditions": 5,
+        "repeats": 2,
+        "selection": "from_fixed_Q_intermediate_54",
+        "checks": [
+          "五条件同题同重复共用首次初析及候选",
+          "Q与卡正文冻结不变",
+          "两重复各自生成并保留完整轨迹"
+        ],
+        "existing_evidence": [
+          "A04",
+          "A16",
+          "A17"
+        ],
+        "gap": "新Q快照与修订公开契约的联合贯通",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "note": "当前探针接力规则：本全量节点保留待做，自动队列跳过，不因探针通过放行。原协议、名单、预算和已保存结果保留。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C02：1416格与正式20格前缀不变；只在同54题比较各轮，K3/Q1全273另列，不用在线分数作收益。"
+      },
+      "execution_scope": "full",
+      "user_paused": true
+    },
+    {
+      "id": "Q.retest.analysis",
+      "title": "同题回测配对与代码分析",
+      "kind": "analysis",
+      "package": "FQ_RETEST",
+      "depends": [
+        "Q.retest"
+      ],
+      "priority": 1,
+      "expected": 1416,
+      "analysis_dir": "FQ_RETEST/analysis",
+      "replay": "FQ_RETEST/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.retest replay",
+        "configs.cle_weekly_reduced_20261028.retest_analysis"
+      ],
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C02：原五项探索Holm保留；同54题列相邻轮/K3-K0，273题列K3-Q1。区分从未反馈、负反馈、正负抵消和多family反馈；共同候选、改选、采用、代码落实分别判定。"
+      },
+      "note": "\n目标与成本审查：C02：原五项探索Holm保留；同54题列相邻轮/K3-K0，273题列K3-Q1。区分从未反馈、负反馈、正负抵消和多family反馈；共同候选、改选、采用、代码落实分别判定。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图02：同54题比较K0至K3；最终Q/Q1全273另列。这是固定卡的Q反馈曲线，不能称每轮新增经验的收益曲线。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea02，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图02：同54题比较K0至K3；最终Q/Q1全273另列。这是固定卡的Q反馈曲线，不能称每轮新增经验的收益曲线。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea02"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/Q.retest.analysis/receipt.json"
+      },
+      "user_paused": true
+    },
+    {
+      "id": "Q.gate",
+      "title": "全D_gate四臂两重复",
+      "kind": "run",
+      "package": "FQ_GATE",
+      "depends": [
+        "Q.retest.analysis",
+        "Q.gate.probe.analysis"
+      ],
+      "priority": 16,
+      "slots": "available",
+      "expected": 2384,
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.qgate check",
+        "configs.cle_weekly_reduced_20261028.qgate launch --workers {workers}"
+      ],
+      "prefix_probe": {
+        "experiment": "C03",
+        "task": "Q.gate",
+        "package": "FQ_GATE",
+        "tasks": 2,
+        "units": 16,
+        "total": 2384,
+        "conditions": 4,
+        "repeats": 2,
+        "selection": "from_fixed_gate_298",
+        "checks": [
+          "Q1/Q2/Q3共同候选",
+          "Q3只在同CWE内置换Q及visits",
+          "Q0原路径单列",
+          "冻结Q和无反馈回流"
+        ],
+        "existing_evidence": [
+          "A03",
+          "A16",
+          "A17"
+        ],
+        "gap": "新K3与修订D_gate的实际接线",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "note": "当前探针接力规则：本全量节点保留待做，自动队列跳过，不因探针通过放行。原协议、名单、预算和已保存结果保留。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C03：2384格不变。生成前按合法Q反馈来源固定同CWE异family集合及未覆盖CWE集合；均保留在298题中。"
+      },
+      "execution_scope": "full",
+      "user_paused": true
+    },
+    {
+      "id": "Q.gate.analysis",
+      "title": "Q迁移的Holm配对与逐题分析",
+      "kind": "analysis",
+      "package": "FQ_GATE",
+      "depends": [
+        "Q.gate"
+      ],
+      "priority": 1,
+      "expected": 2384,
+      "analysis_dir": "FQ_GATE/analysis",
+      "replay": "FQ_GATE/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.qgate replay",
+        "configs.cle_weekly_analysis_20261027.gate_analysis"
+      ],
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C03：原全池Q2-Q1/Q3两项Holm不变；同CWE异family的两项作为预先指定迁移验证。若子集不是全池，另给四个不同对比共同Holm校正后的判断，禁止挑显著子集。按Q是否压低本题适用卡复核跨family负迁移，不能只看Q高低。"
+      },
+      "note": "\n目标与成本审查：C03：原全池Q2-Q1/Q3两项Holm不变；同CWE异family的两项作为预先指定迁移验证。若子集不是全池，另给四个不同对比共同Holm校正后的判断，禁止挑显著子集。按Q是否压低本题适用卡复核跨family负迁移，不能只看Q高低。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图01/03：首次Q1/Q2/Q3共同候选，Q0边界不同；修复查询可不同。按实际合法Q反馈的CWE/family集合报告迁移，旧卡来源暴露另列。改选、声明采用、代码落实和Joint分别判断。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea01,idea03，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图01/03：首次Q1/Q2/Q3共同候选，Q0边界不同；修复查询可不同。按实际合法Q反馈的CWE/family集合报告迁移，旧卡来源暴露另列。改选、声明采用、代码落实和Joint分别判断。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea01",
+          "idea03"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/Q.gate.analysis/receipt.json"
+      },
+      "user_paused": true
+    },
+    {
+      "id": "FS.run",
+      "title": "全D_gate功能安全五条件",
+      "kind": "run",
+      "package": "FFS",
+      "depends": [],
+      "priority": 11,
+      "slots": "available",
+      "expected": 2980,
+      "commands": [
+        "configs.cle_weekly_http403_probe_refresh_20261028.resume launch --kind ffs"
+      ],
+      "note": "Use per-segment exact-prefix recovery. The prior fixed cache label could not accept new TLS interruptions. The new wrapper retains old caches and checks current pending identities and all saved responses; three workers while learning is live. No successful response is reissued.",
+      "execution_scope": "full"
+    },
+    {
+      "id": "FS.analysis",
+      "title": "功能安全回放、配对与逐题分析",
+      "kind": "analysis",
+      "package": "FFS",
+      "depends": [
+        "FS.run"
+      ],
+      "priority": -6,
+      "expected": 2980,
+      "analysis_dir": "FFS/analysis",
+      "replay": "FFS/zero_API_replay/replay_result.json",
+      "commands": [
+        "E:/ResearchRuns/CLE/20261027_full_requirements/FFS/replay_utf8_20261027.py replay",
+        "configs.cle_weekly_analysis_20261027.fs_analysis"
+      ],
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "B02与思路9：保留原预定BFS-BM Joint主检验。补列F/S四象限、原安全通过但功能失败的救回、安全回退、AI/规则分区和首次/修复差异。结论是分栏表达，不是独立双库。复用全部主要损益案例，一题同时服务功能安全与代码改动解释，不重复生成。"
+      },
+      "note": "\n目标与成本审查：B02与思路9：保留原预定BFS-BM Joint主检验。补列F/S四象限、原安全通过但功能失败的救回、安全回退、AI/规则分区和首次/修复差异。结论是分栏表达，不是独立双库。复用全部主要损益案例，一题同时服务功能安全与代码改动解释，不重复生成。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图04/09：A11/A19接口保护、A18固定代码编辑不是B02同一干预。原BFS-BM主检验不变。Joint与安全净变化、逐题安全退步同时列出；无净收益不等于必有取舍。完成代表差异题实际阅读后，由FS.single_edit接续R01本地单点复验，不能先把阅读印象写成验证过的原因。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea04,idea09，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图04/09：A11/A19接口保护、A18固定代码编辑不是B02同一干预。原BFS-BM主检验不变。Joint与安全净变化、逐题安全退步同时列出；无净收益不等于必有取舍。完成代表差异题实际阅读后，由FS.single_edit接续R01本地单点复验，不能先把阅读印象写成验证过的原因。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea04",
+          "idea09"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/FS.analysis/receipt.json"
+      }
+    },
+    {
+      "id": "GR.labels",
+      "title": "首批82题五档两重复",
+      "kind": "run",
+      "package": "FG_LABELS",
+      "depends": [],
+      "priority": 25,
+      "order_after": "FS.analysis",
+      "slots": "available",
+      "expected": 820,
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.granularity check",
+        "configs.cle_weekly_reduced_20261028.granularity launch --workers {workers}"
+      ],
+      "prefix_probe": {
+        "experiment": "C04",
+        "task": "GR.labels",
+        "package": "FG_LABELS",
+        "tasks": 2,
+        "units": 20,
+        "total": 820,
+        "conditions": 5,
+        "repeats": 2,
+        "selection": "from_fixed_GR_first_82",
+        "checks": [
+          "L0始终无卡",
+          "五档共同来源卡编号",
+          "L3使用目标模板而L4使用来源示例",
+          "同题族用途不交叉"
+        ],
+        "existing_evidence": [
+          "A14",
+          "A15"
+        ],
+        "gap": "新82题与实际来源材料的贯通",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "note": "2026-10-28实验审查：先完成C04正式名单中的2题、20逻辑格前缀检查，再接续其余固定单元。逐项检查：L0始终无卡；五档共同来源卡编号；L3使用目标模板而L4使用来源示例；同题族用途不交叉。探针包含在原总量与原预算内，已完成格直接复用，不增加重复、不改卡数/修复次数。模型正常解题失败与低Joint不阻止后续正式比较；接线、持久化、反馈边界错误修复后精确继续。若现入口还不能只运行并检查该前缀，本节点先用独立配置目录实现有界派发及离线验证，再启动真实前缀；不能直接启动不受限全量后把最初几题事后改称已通过探针。前缀报告写design_review_20261028/probes/对应实验ID/summary.json，标明题号、实际单元、检查结果、响应位置、成本及后续动作。名单与具体条件见configs/cle_experiment_review_20261028/protocol.json和该目录README。\n目标与成本审查：C04：820格与前20格不变；先区分正确性差异、重复翻转和纯成本差异。标签只是本次可接受档中的低输入成本选择，不是唯一真值。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。 正式前缀完成后用本包实测用量投影剩余工作，仍受原累计硬预算约束；不添加付费矩阵。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C04：820格与前20格不变；先区分正确性差异、重复翻转和纯成本差异。标签只是本次可接受档中的低输入成本选择，不是唯一真值。"
+      },
+      "execution_scope": "probe_batch",
+      "user_paused": true
+    },
+    {
+      "id": "GR.labels.analysis",
+      "title": "五档真实标签与逐题分析",
+      "kind": "analysis",
+      "package": "FG_LABELS",
+      "depends": [
+        "GR.labels"
+      ],
+      "priority": 1,
+      "expected": 820,
+      "analysis_dir": "FG_LABELS/analysis",
+      "replay": "FG_LABELS/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.granularity replay",
+        "configs.cle_weekly_reduced_20261028.granularity_analysis analysis"
+      ],
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C04：调用新router.opportunity作训练侧诊断，报告跨重复同向差异、波动、完全同结果；保留accepted_levels。最低Token标签不同不直接说明题目正确性需求不同。"
+      },
+      "note": "\n目标与成本审查：C04：调用新router.opportunity作训练侧诊断，报告跨重复同向差异、波动、完全同结果；保留accepted_levels。最低Token标签不同不直接说明题目正确性需求不同。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图05：L3目标模板和L4来源示例是两种呈现，不是信息量单调递增。正确性异质性、重复翻转和纯Token差异分开；仍按原可训练/扩大条件执行。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea05，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图05：L3目标模板和L4来源示例是两种呈现，不是信息量单调递增。正确性异质性、重复翻转和纯Token差异分开；仍按原可训练/扩大条件执行。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea05"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/GR.labels.analysis/receipt.json"
+      },
+      "user_paused": true
+    },
+    {
+      "id": "GR.decide82",
+      "title": "GR.decide82：零API判断是否扩大",
+      "kind": "prepare",
+      "package": "FG_LABELS",
+      "depends": [
+        "GR.labels.analysis"
+      ],
+      "priority": 2,
+      "commands": [
+        "configs.cle_scientific_review_20261028.adaptive gr-first"
+      ],
+      "accept": [
+        {
+          "path": "scope_reduction_20261028/GR_decision_82.json",
+          "field": "status",
+          "equals": "decided"
+        }
+      ],
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C04/C05：沿原工程扩大门，使用新Joint选模入口。开发结果只作预演，不用小样本收益取消既定全量。"
+      },
+      "note": "\n目标与成本审查：C04/C05：沿原工程扩大门，使用新Joint选模入口。开发结果只作预演，不用小样本收益取消既定全量。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。",
+      "user_paused": true
+    },
+    {
+      "id": "GR.extra",
+      "title": "条件触发后追加82题记忆标签",
+      "kind": "run",
+      "package": "FG_LABELS_EXTRA",
+      "depends": [
+        "GR.decide82"
+      ],
+      "priority": 25,
+      "expected": 820,
+      "slots": "available",
+      "omit_when": {
+        "path": "scope_reduction_20261028/GR_decision_82.json",
+        "field": "action",
+        "values": [
+          "freeze_and_gate",
+          "close_classifier_exploration"
+        ]
+      },
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.granularity_extra check",
+        "configs.cle_weekly_reduced_20261028.granularity_extra launch --workers {workers}"
+      ],
+      "execution_scope": "probe_batch",
+      "user_paused": true
+    },
+    {
+      "id": "GR.extra.analysis",
+      "title": "追加82题回放与案例分析",
+      "kind": "analysis",
+      "package": "FG_LABELS_EXTRA",
+      "depends": [
+        "GR.extra"
+      ],
+      "priority": 1,
+      "expected": 820,
+      "analysis_dir": "FG_LABELS_EXTRA/analysis",
+      "replay": "FG_LABELS_EXTRA/zero_API_replay/replay_result.json",
+      "omit_when": {
+        "path": "scope_reduction_20261028/GR_decision_82.json",
+        "field": "action",
+        "values": [
+          "freeze_and_gate",
+          "close_classifier_exploration"
+        ]
+      },
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.granularity_extra replay",
+        "configs.cle_weekly_reduced_20261028.granularity_extra_analysis analysis"
+      ],
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C04E：合并互斥批次后重复相同机会分析，不重标旧题，不改变标签定义或重新购买旧格。"
+      },
+      "note": "\n目标与成本审查：C04E：合并互斥批次后重复相同机会分析，不重标旧题，不改变标签定义或重新购买旧格。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea05，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea05"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/GR.extra.analysis/receipt.json"
+      },
+      "user_paused": true
+    },
+    {
+      "id": "GR.decide164",
+      "title": "GR.decide164：零API判断是否扩大",
+      "kind": "prepare",
+      "package": "FG_LABELS_EXTRA",
+      "depends": [
+        "GR.extra.analysis"
+      ],
+      "priority": 2,
+      "commands": [
+        "configs.cle_scientific_review_20261028.adaptive gr-extra"
+      ],
+      "accept": [
+        {
+          "path": "scope_reduction_20261028/GR_decision_164.json",
+          "field": "status",
+          "equals": "decided"
+        }
+      ],
+      "omit_when": {
+        "path": "scope_reduction_20261028/GR_decision_82.json",
+        "field": "action",
+        "values": [
+          "freeze_and_gate",
+          "close_classifier_exploration"
+        ]
+      },
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C04E/C05：最多164题，沿原结束条件。不得继续补样追正收益。"
+      },
+      "note": "\n目标与成本审查：C04E/C05：最多164题，沿原结束条件。不得继续补样追正收益。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。",
+      "user_paused": true
+    },
+    {
+      "id": "GR.train",
+      "title": "离线训练并冻结分类器",
+      "kind": "train",
+      "package": "FG_TRAIN",
+      "depends": [
+        "GR.decide164"
+      ],
+      "priority": 2,
+      "commands": [
+        "configs.cle_scientific_review_20261028.adaptive train"
+      ],
+      "accept": [
+        {
+          "path": "FG_TRAIN/summary.json",
+          "field": "status",
+          "equals": "completed"
+        },
+        {
+          "path": "FG_TRAIN/model.json",
+          "exists": true
+        },
+        {
+          "path": "FG_TRAIN/model.json",
+          "field": "method_revision",
+          "equals": "cle-goal-aligned-router-20261028-v1"
+        }
+      ],
+      "omit_when": {
+        "path": "scope_reduction_20261028/GR_decision.json",
+        "field": "action",
+        "values": [
+          "close_classifier_exploration"
+        ]
+      },
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C05：使用goal-aligned-router新方法；训练family三折按实际Joint选正则，平手输入Token再小C。只用原8特征/三参数/0.5阈值；开发21或41题复用结果预演，不能反向选模型。"
+      },
+      "note": "\n目标与成本审查：C05：使用goal-aligned-router新方法；训练family三折按实际Joint选正则，平手输入Token再小C。只用原8特征/三参数/0.5阈值；开发21或41题复用结果预演，不能反向选模型。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。",
+      "user_paused": true
+    },
+    {
+      "id": "GR.gate",
+      "title": "全D_gate三策略两重复",
+      "kind": "run",
+      "package": "FG_GATE",
+      "depends": [
+        "GR.train",
+        "GR.gate.probe.analysis"
+      ],
+      "priority": 26,
+      "slots": "available",
+      "expected": 1788,
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.granularity_gate check",
+        "configs.cle_weekly_reduced_20261028.granularity_gate launch --workers {workers}"
+      ],
+      "omit_when": {
+        "path": "scope_reduction_20261028/GR_decision.json",
+        "field": "action",
+        "values": [
+          "close_classifier_exploration"
+        ]
+      },
+      "prefix_probe": {
+        "experiment": "C06",
+        "task": "GR.gate",
+        "package": "FG_GATE",
+        "tasks": 6,
+        "units": 36,
+        "total": 1788,
+        "conditions": 3,
+        "repeats": 2,
+        "selection": "from_fixed_gate_298",
+        "checks": [
+          "只读本轮冻结分类器",
+          "路由只用公开特征",
+          "固定档仅按训练标签确定",
+          "同题同重复同档精确复用而跨重复独立"
+        ],
+        "existing_evidence": [
+          "A15"
+        ],
+        "gap": "新分类器的真实路由与复用链路",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "note": "当前探针接力规则：本全量节点保留待做，自动队列跳过，不因探针通过放行。原协议、名单、预算和已保存结果保留。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C06：1788逻辑格及正式36格前缀保留；精确同题同重复同档复用，跨重复独立，不把复用行成本相加。"
+      },
+      "execution_scope": "full",
+      "user_paused": true
+    },
+    {
+      "id": "GR.gate.analysis",
+      "title": "分类器收益与逐题分析",
+      "kind": "analysis",
+      "package": "FG_GATE",
+      "depends": [
+        "GR.gate"
+      ],
+      "priority": 1,
+      "expected": 1788,
+      "analysis_dir": "FG_GATE/analysis",
+      "replay": "FG_GATE/zero_API_replay/replay_result.json",
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.granularity_gate replay",
+        "configs.cle_weekly_analysis_20261027.policy_gate_analysis"
+      ],
+      "omit_when": {
+        "path": "scope_reduction_20261028/GR_decision.json",
+        "field": "action",
+        "values": [
+          "close_classifier_exploration"
+        ]
+      },
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C06：分类器对训练选出的固定档/规则两项Holm。区分提高Joint与只省Token；报告实际生成格/1788逻辑格。两种收益均未过门就结束本轮，不追加复杂分类器。"
+      },
+      "note": "\n目标与成本审查：C06：分类器对训练选出的固定档/规则两项Holm。区分提高Joint与只省Token；报告实际生成格/1788逻辑格。两种收益均未过门就结束本轮，不追加复杂分类器。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图05：只用训练侧选择固定档与模型；分别报告对固定档和简单规则的配对Joint及完整流程成本。不要把首选标签预测准确率当正确率。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea05，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图05：只用训练侧选择固定档与模型；分别报告对固定档和简单规则的配对Joint及完整流程成本。不要把首选标签预测准确率当正确率。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea05"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/GR.gate.analysis/receipt.json"
+      },
+      "user_paused": true
+    },
+    {
+      "id": "FR.run",
+      "title": "57题共同候选池与一次AI盲标",
+      "kind": "run",
+      "package": "FR",
+      "depends": [
+        "GR.labels.analysis",
+        "FS.analysis"
+      ],
+      "priority": 60,
+      "slots": "exclusive",
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.retrieval_execute check",
+        "configs.cle_weekly_reduced_20261028.retrieval_execute launch"
+      ],
+      "custom": true,
+      "expected": 57,
+      "prefix_probe": {
+        "experiment": "C07",
+        "task": "FR.run",
+        "package": "FR",
+        "tasks": 2,
+        "units": null,
+        "total": 57,
+        "conditions": 3,
+        "repeats": null,
+        "selection": "one_fixed_grow_and_one_fixed_gate",
+        "checks": [
+          "两题逐卡完整共同池",
+          "三查询加随机16",
+          "去重与匿名",
+          "每对AI最多一次，标签错误保留",
+          "人审签名保持空白"
+        ],
+        "existing_evidence": [
+          "A06"
+        ],
+        "gap": "新公开契约、候选池与一次盲标的完整输出",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "note": "2026-10-28实验审查：先完成C07正式名单中的2题的完整原生记录前缀检查，再接续其余固定单元。逐项检查：两题逐卡完整共同池；三查询加随机16；去重与匿名；每对AI最多一次，标签错误保留；人审签名保持空白。探针包含在原总量与原预算内，已完成格直接复用，不增加重复、不改卡数/修复次数。模型正常解题失败与低Joint不阻止后续正式比较；接线、持久化、反馈边界错误修复后精确继续。若现入口还不能只运行并检查该前缀，本节点先用独立配置目录实现有界派发及离线验证，再启动真实前缀；不能直接启动不受限全量后把最初几题事后改称已通过探针。前缀报告写design_review_20261028/probes/对应实验ID/summary.json，标明题号、实际单元、检查结果、响应位置、成本及后续动作。名单与具体条件见configs/cle_experiment_review_20261028/protocol.json和该目录README。\n目标与成本审查：C07：57题同一池标签回答三查询；额外选中卡仍按原预算纳入，不为完成机制链生成新代码。首次分析和卡库必须匹配才连接采用记录。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。 正式前缀完成后用本包实测用量投影剩余工作，仍受原累计硬预算约束；不添加付费矩阵。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C07：57题同一池标签回答三查询；额外选中卡仍按原预算纳入，不为完成机制链生成新代码。首次分析和卡库必须匹配才连接采用记录。"
+      },
+      "execution_scope": "probe_batch"
+    },
+    {
+      "id": "FR.analysis",
+      "title": "检索模型估计、成本与复核交付",
+      "kind": "custom",
+      "package": "FR",
+      "depends": [
+        "FR.run"
+      ],
+      "priority": 1,
+      "note": "实际复算57题AI辅助候选池指标和成本、导出全部人工复核材料；不得把未人审标签写成正式指标。按custom收据保存实际分析文件。\n目标与成本审查：C07/C08：同一标签表分别算候选和最终选卡四指标，区分池内无正类、候选漏失、选择漏失和实现错误。三查询配对，待裁决不算负类；提供完整人审材料。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图06：199题历史对照与另14题914对初标不是同一批。当前AI指标单列；完整人审池之后才是正式四指标；无匹配题面/查询/卡库的代码记录就不宣称已解释实现环节。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea06，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.retrieval_execute replay",
+        "configs.cle_weekly_reduced_20261028.retrieval_execute metrics",
+        "configs.cle_weekly_reduced_20261028.retrieval_execute export-review"
+      ],
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C07/C08：同一标签表分别算候选和最终选卡四指标，区分池内无正类、候选漏失、选择漏失和实现错误。三查询配对，待裁决不算负类；提供完整人审材料。"
+      },
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图06：199题历史对照与另14题914对初标不是同一批。当前AI指标单列；完整人审池之后才是正式四指标；无匹配题面/查询/卡库的代码记录就不宣称已解释实现环节。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea06"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/FR.analysis/receipt.json"
+      }
+    },
+    {
+      "id": "FR.decide57",
+      "title": "FR.decide57：零API判断是否扩大",
+      "kind": "prepare",
+      "package": "FR",
+      "depends": [
+        "FR.analysis"
+      ],
+      "priority": 2,
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.adaptive fr-first"
+      ],
+      "accept": [
+        {
+          "path": "scope_reduction_20261028/FR_decision_57.json",
+          "field": "status",
+          "equals": "decided"
+        }
+      ]
+    },
+    {
+      "id": "FR.extra",
+      "title": "条件触发后追加57题检索标注",
+      "kind": "run",
+      "package": "FR_EXTRA",
+      "custom": true,
+      "depends": [
+        "FR.decide57"
+      ],
+      "priority": 60,
+      "slots": "exclusive",
+      "expected": 57,
+      "omit_when": {
+        "path": "scope_reduction_20261028/FR_decision_57.json",
+        "field": "action",
+        "values": [
+          "finish_sampled_retrieval"
+        ]
+      },
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.retrieval_extra_execute check",
+        "configs.cle_weekly_reduced_20261028.retrieval_extra_execute launch"
+      ],
+      "execution_scope": "probe_batch"
+    },
+    {
+      "id": "FR.extra.analysis",
+      "title": "累计114题检索分析与复核材料",
+      "kind": "custom",
+      "package": "FR_EXTRA",
+      "depends": [
+        "FR.extra"
+      ],
+      "priority": 1,
+      "omit_when": {
+        "path": "scope_reduction_20261028/FR_decision_57.json",
+        "field": "action",
+        "values": [
+          "finish_sampled_retrieval"
+        ]
+      },
+      "commands": [
+        "configs.cle_weekly_reduced_20261028.retrieval_extra_execute replay",
+        "configs.cle_weekly_reduced_20261028.retrieval_extra_execute metrics",
+        "configs.cle_weekly_reduced_20261028.retrieval_extra_execute export-review",
+        "configs.cle_weekly_reduced_20261028.adaptive fr-extra"
+      ],
+      "note": "实际分析FR和FR_EXTRA两批；各自导出人审材料，成本物理ledger分批汇总；合计114题后结束扩大，不重标首批。保存custom分析收据和真实文件。\n目标与成本审查：C07E：同样比较57+57；不额外扫TopK或追加批。人工缺失保持AI估计，不据准确率高宣称召回好。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图06：追加不改原标签与选样规则；人工确认之后才合并正式指标。不要为补采用路径重新生成代码。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea06，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C07E：同样比较57+57；不额外扫TopK或追加批。人工缺失保持AI估计，不据准确率高宣称召回好。"
+      },
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图06：追加不改原标签与选样规则；人工确认之后才合并正式指标。不要为补采用路径重新生成代码。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea06"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/FR.extra.analysis/receipt.json"
+      }
+    },
+    {
+      "id": "FR.human",
+      "title": "人工检索标签确认",
+      "kind": "external",
+      "package": "FR",
+      "depends": [
+        "FR.extra.analysis"
+      ],
+      "reason": "human_review_pending"
+    },
+    {
+      "id": "BUILD.prepare",
+      "title": "补齐C41原生建库接线及恢复验证",
+      "kind": "prepare",
+      "package": "BUILD_C41",
+      "depends": [],
+      "priority": 35,
+      "commands": [
+        "configs.cle_weekly_build_20261027.execute check"
+      ],
+      "accept": [
+        {
+          "path": "BUILD_C41/recovery_readiness.json",
+          "field": "status",
+          "equals": "passed"
+        },
+        {
+          "path": "BUILD_C41/execution_wiring_readiness.json",
+          "field": "status",
+          "equals": "passed"
+        },
+        {
+          "path": "BUILD_C41/budget.json",
+          "field": "execution_ready",
+          "equals": true
+        }
+      ],
+      "note": "实际完成原生三轮主动回放、全局门控、恢复、完整回放和独占四worker验证；有限预算冻结后才就绪，禁止自行写passed。独立目录改动，不能修改活动冻结来源。"
+    },
+    {
+      "id": "BUILD.run",
+      "title": "从空库完成C41完整CLE",
+      "kind": "run",
+      "package": "BUILD_C41",
+      "depends": [
+        "BUILD.prepare",
+        "BUILD.run.probe.analysis"
+      ],
+      "priority": 40,
+      "slots": "exclusive",
+      "custom": true,
+      "commands": [
+        "configs.cle_weekly_build_readiness_20261027.execute check",
+        "configs.cle_weekly_build_readiness_20261027.execute launch"
+      ],
+      "order_after": "GR.gate.analysis",
+      "prefix_probe": {
+        "experiment": "C09",
+        "task": "BUILD.run",
+        "package": "BUILD_C41",
+        "tasks": 2,
+        "units": null,
+        "total": 303,
+        "conditions": 1,
+        "repeats": 1,
+        "selection": "native_source_pool_first_two",
+        "checks": [
+          "从空库开始",
+          "原生题目与请求顺序不改",
+          "解题到提卡及验证事件完整落盘",
+          "精确前缀续跑不重发成功响应"
+        ],
+        "existing_evidence": [
+          "BUILD.prepare:offline_only"
+        ],
+        "gap": "v4.1从空库提卡的真实前缀，已有封网接线不算真实探针",
+        "later_check": "进入主动回放时再核对原生首2题；保留三轮和全局门控。",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "note": "当前探针接力规则：本全量节点保留待做，自动队列跳过，不因探针通过放行。原协议、名单、预算和已保存结果保留。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C09：原三轮和名单内前缀不变；先列原预算及前缀实测成本投影。卡数增长不是收益，D_gate用于全局门控，效果待C10/C11。"
+      },
+      "execution_scope": "full"
+    },
+    {
+      "id": "BUILD.analysis",
+      "title": "新卡库原生复验与来源分析",
+      "kind": "custom",
+      "package": "BUILD_C41",
+      "depends": [
+        "BUILD.run"
+      ],
+      "priority": 1,
+      "note": "核对完整三轮、主动回放、门控与最终M*；执行保存代码/响应的零API回放，报告卡数、采用、成本和公开/隐藏边界。\n目标与成本审查：C09：完整建库与新库有用分开判定；新增/拒收/保留与来源family分轮记录。核实空库或与已有库相同的情况，不能为完全相同消费再购重复代码。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图02/08：原CLE动态回放的各轮题目/记忆会变化，记录过程与卡库变化即可，不称为各轮同条件效果对照。最终新库的价值由C10/C11判断；本轮不增加432次逐轮卡库回测。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea02,idea08，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C09：完整建库与新库有用分开判定；新增/拒收/保留与来源family分轮记录。核实空库或与已有库相同的情况，不能为完全相同消费再购重复代码。"
+      },
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图02/08：原CLE动态回放的各轮题目/记忆会变化，记录过程与卡库变化即可，不称为各轮同条件效果对照。最终新库的价值由C10/C11判断；本轮不增加432次逐轮卡库回测。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea02",
+          "idea08"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/BUILD.analysis/receipt.json"
+      },
+      "commands": [
+        "configs.cle_weekly_build_readiness_20261027.finish"
+      ]
+    },
+    {
+      "id": "CROSS.prepare",
+      "title": "补齐v4.1三卡库交叉与逐格复用接线",
+      "kind": "prepare",
+      "package": "FX_GATE",
+      "depends": [],
+      "priority": 36,
+      "note": "v4.1无卡/旧库/新库各298题两重复，共1788逻辑格；只精确复用FFS一致格，不复用P3冒替P7。固定v3契约；缺新库时先完成离线接线与有限预算。v3.2不再请求。"
+    },
+    {
+      "id": "CROSS.v41",
+      "title": "v4.1三卡库完整交叉",
+      "kind": "run",
+      "package": "FX_GATE",
+      "depends": [
+        "CROSS.prepare",
+        "BUILD.analysis",
+        "FS.analysis",
+        "CROSS.v41.probe.analysis"
+      ],
+      "priority": 45,
+      "slots": "exclusive",
+      "custom": true,
+      "expected": 1788,
+      "note": "当前探针接力规则：本全量节点保留待做，自动队列跳过，不因探针通过放行。原协议、名单、预算和已保存结果保留。",
+      "prefix_probe": {
+        "experiment": "C10",
+        "task": "CROSS.v41",
+        "package": "FX_GATE",
+        "tasks": 12,
+        "units": 72,
+        "total": 1788,
+        "conditions": 3,
+        "repeats": 2,
+        "selection": "from_fixed_gate_298",
+        "new_C41_units": 24,
+        "FFS_reused_units": 48,
+        "checks": [
+          "真实冻结C41来源",
+          "旧库与无卡48格逐格精确复用FFS",
+          "新库24格独立生成",
+          "正文冻结",
+          "三条件同P7预算"
+        ],
+        "existing_evidence": [
+          "A08",
+          "CROSS.prepare:offline_only"
+        ],
+        "gap": "新库实际被检索、呈现和采用的比较",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C10：1788逻辑格，精确复用FFS1192格，新增最多596；正式12题前缀内新库最多24格。新库真实为空或完全相同，先验证同协议可复用性，不重复买相同消费。"
+      },
+      "commands": [
+        "configs.cle_weekly_cross_readiness_20261028.execute check",
+        "configs.cle_weekly_cross_readiness_20261028.execute launch --workers {workers}"
+      ],
+      "max_workers": 3,
+      "execution_scope": "full"
+    },
+    {
+      "id": "CROSS.analysis",
+      "title": "v4.1卡库交叉的配对与逐题分析",
+      "kind": "custom",
+      "package": "FX_GATE",
+      "depends": [
+        "CROSS.v41"
+      ],
+      "priority": 1,
+      "note": "复算模型相同条件下卡库效果、收益损失、family区间、重复波动、选卡采用实现和成本。旧v3.2仅历史证据，不混成新配对。\n目标与成本审查：C10：新库对无卡/旧库两项Holm、题族区间、两重复；同时胜才说新库更好。单列一次性建库成本和消费成本。D_gate用于门控，只作审计集比较，不能归因为生产模型能力。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图08：C10审计题参与原建库门控，只判断这套新库在该审计集的效果。v3.2不可用，不能把单模型三库写成完整模型交互。1192复用逐格核准，建库与消费成本分开。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea08，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C10：新库对无卡/旧库两项Holm、题族区间、两重复；同时胜才说新库更好。单列一次性建库成本和消费成本。D_gate用于门控，只作审计集比较，不能归因为生产模型能力。"
+      },
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图08：C10审计题参与原建库门控，只判断这套新库在该审计集的效果。v3.2不可用，不能把单模型三库写成完整模型交互。1192复用逐格核准，建库与消费成本分开。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea08"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/CROSS.analysis/receipt.json"
+      },
+      "commands": [
+        "configs.cle_weekly_cross_readiness_20261028.execute replay",
+        "configs.cle_weekly_cross_readiness_20261028.execute finalize"
+      ]
+    },
+    {
+      "id": "CROSS.v32",
+      "title": "v3.2交叉三条件",
+      "kind": "external",
+      "package": "FX_GATE",
+      "depends": [],
+      "reason": "v32_unavailable",
+      "expected": 1788
+    },
+    {
+      "id": "EXTERNAL.prepare",
+      "title": "准备Base/Plus原环境与原生执行入口",
+      "kind": "prepare",
+      "package": "FX_EXTERNAL",
+      "depends": [],
+      "priority": 37,
+      "requires_image": true,
+      "note": "仅原safecoder-python-validator:local及父镜像和官方正向校准。补齐v4.1三卡库两重复1530格与独立P3 255格的原生恢复、回放、有限预算；不换验证器。"
+    },
+    {
+      "id": "EXTERNAL.v41",
+      "title": "Base/Plus的v4.1三卡库两重复",
+      "kind": "run",
+      "package": "FX_EXTERNAL",
+      "depends": [
+        "EXTERNAL.prepare",
+        "BUILD.analysis"
+      ],
+      "priority": 95,
+      "slots": "exclusive",
+      "requires_image": true,
+      "custom": true,
+      "expected": 1530,
+      "note": "当前探针接力规则：本全量节点保留待做，自动队列跳过，不因探针通过放行。原协议、名单、预算和已保存结果保留。",
+      "prefix_probe": {
+        "experiment": "C11",
+        "task": "EXTERNAL.v41",
+        "package": "FX_EXTERNAL",
+        "tasks": 4,
+        "units": 24,
+        "total": 1530,
+        "conditions": 3,
+        "repeats": 2,
+        "selection": "two_Base_two_Plus_when_original_manifests_ready",
+        "checks": [
+          "原验证镜像及官方正向校准",
+          "Base和Plus分别前2题",
+          "隐藏反馈不回传",
+          "记忆及Q不变",
+          "固定两次前向交付末次"
+        ],
+        "existing_evidence": [],
+        "gap": "真实外部验证环境与三库消费尚未贯通",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C11：保留原环境下1530格和24格前缀，隐藏反馈边界不变；P3已暂缓，不连带启动。"
+      },
+      "execution_scope": "full"
+    },
+    {
+      "id": "EXTERNAL.analysis",
+      "title": "Base/Plus交叉分析",
+      "kind": "custom",
+      "package": "FX_EXTERNAL",
+      "depends": [
+        "EXTERNAL.v41"
+      ],
+      "priority": 1,
+      "note": "按Base/Plus分别F/S/Joint、配对、复用、已知未知成本；不把未测记失败。\n目标与成本审查：C11：Base/Plus各新库对无卡/旧库，四项主要外部比较统一Holm。分别报告效果和费用，不能只选好的集；仅一个集通过就只说该集有效。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：图08：C11的两集外部结果独立于C10说明，每集对无卡/旧库的主要比较按v06。P3仍暂缓，不因镜像到位恢复。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea08，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "C11：Base/Plus各新库对无卡/旧库，四项主要外部比较统一Holm。分别报告效果和费用，不能只选好的集；仅一个集通过就只说该集有效。"
+      },
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "图08：C11的两集外部结果独立于C10说明，每集对无卡/旧库的主要比较按v06。P3仍暂缓，不因镜像到位恢复。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea08"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/EXTERNAL.analysis/receipt.json"
+      }
+    },
+    {
+      "id": "P3.external",
+      "title": "暂缓：历史P3 Base/Plus完整255格",
+      "kind": "run",
+      "package": "P3_EXTERNAL",
+      "depends": [
+        "EXTERNAL.prepare"
+      ],
+      "priority": 96,
+      "slots": "exclusive",
+      "requires_image": true,
+      "custom": true,
+      "expected": 255,
+      "note": "当前探针接力规则：本全量节点保留待做，自动队列跳过，不因探针通过放行。原协议、名单、预算和已保存结果保留。",
+      "prefix_probe": {
+        "experiment": "C12",
+        "task": "P3.external",
+        "package": "P3_EXTERNAL",
+        "tasks": 4,
+        "units": 4,
+        "total": 255,
+        "conditions": 1,
+        "repeats": 1,
+        "selection": "two_Base_two_Plus_when_original_manifests_ready",
+        "checks": [
+          "原验证环境",
+          "全程无卡且不提卡",
+          "隐藏反馈不回传",
+          "两次前向且交付末次"
+        ],
+        "existing_evidence": [
+          "A07:PLT_only"
+        ],
+        "gap": "原FirstTwoGate只挂PLT，Base/Plus仍需各2题前缀",
+        "included_in_formal_total": true,
+        "extra_paid_units": 0,
+        "performance_stop": false,
+        "dispatch_policy": "bounded_prefix_then_review_then_remainder",
+        "specification": "configs/cle_experiment_review_20261028/protocol.json"
+      },
+      "omit_when": {
+        "path": "scientific_review_20261028/scope_decision.json",
+        "field": "P3_external",
+        "values": [
+          "deferred_from_current_mainline"
+        ]
+      },
+      "execution_scope": "full"
+    },
+    {
+      "id": "P3.analysis",
+      "title": "暂缓：原P3外部结果分析",
+      "kind": "custom",
+      "package": "P3_EXTERNAL",
+      "depends": [
+        "P3.external"
+      ],
+      "priority": 1,
+      "omit_when": {
+        "path": "scientific_review_20261028/scope_decision.json",
+        "field": "P3_external",
+        "values": [
+          "deferred_from_current_mainline"
+        ]
+      }
+    },
+    {
+      "id": "EXTERNAL.v32",
+      "title": "Base/Plus的v3.2三条件",
+      "kind": "external",
+      "package": "FX_EXTERNAL",
+      "depends": [],
+      "reason": "v32_unavailable",
+      "expected": 1530
+    },
+    {
+      "id": "FS.single_edit",
+      "title": "R01：最多6题单点代码复验（不调用实验API）",
+      "kind": "custom",
+      "package": "FFS",
+      "depends": [
+        "FS.analysis"
+      ],
+      "priority": -6,
+      "note": "按docs/research/CLE-TODO-20261022-20261028-v08.md#r01执行。实际读主要BFS-BM差异，按预定顺序最多6道不同题；每题先写假设与单点改动，再在独立副本用同版本原验证器复验原代码及修改版，总计最多12次本地验证。不得改测试/契约/正式代码，不注入隐藏答案，不更新Q，不发生成或Embedding请求，不迭代修到通过。无单点可隔离例子也保存候选和原因，不能凑题。输出FFS/analysis/single_edit_review/cases.json和summary.md，包含选样、原证据路径、diff、两份验证结果、结果判断、耗时及实际分析用量；使用真实文件写custom完成收据。局部支持/否定/未隔离均保留，完成不代表正收益。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea04,idea09，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "experiment": "R01",
+        "max_tasks": 6,
+        "max_local_validations": 12,
+        "model_api_calls": 0
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea04",
+          "idea09"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/FS.single_edit/receipt.json"
+      }
+    },
+    {
+      "id": "IR.prepare",
+      "title": "影响半径：冻结名单、预算及有界编辑入口",
+      "kind": "custom",
+      "package": "IMPACT_RADIUS",
+      "depends": [],
+      "priority": -5,
+      "note": "严格执行docs/research/CLE-PLAN-20261028-impact-radius-v01.md。用户本轮批准自主执行并提高优先级。保留活动Q/FFS及原R01，使用独立配置与输出，不改冻结输入。固定模型、原验证器、时段、总并发4和累计预算；现有成功响应精确复用。每阶段实际分析后更新idea09叙事和图；不把技术验证或未执行写成绩。 仅零API准备：实现IR01离线指标及IR02/IR03有界两臂编辑、逐请求时段预算和断点复用；在看新成绩前冻结12题开发与24题确认的不同family名单、共同起始代码/卡片/提示和实际输入Token预算。48与96逻辑编辑上限，4096输出上限；物理重发设置有限累计HTTP预算，不得无限重试。缺少保存的无卡起始代码或检索输入时不得偷偷生成，明确资产缺口并先完成可执行部分。封网验证单元去重、独立重复、一次编辑无反馈修复、并发注册和原生回放。输出到运行根/impact_radius_20261028/prepare；未来运行节点先读冻结manifest/budget和README真实命令，custom完成收据必须引用这些实际文件。"
+    },
+    {
+      "id": "IR.association",
+      "title": "IR01：改动范围与功能退步关联分析",
+      "kind": "custom",
+      "package": "IMPACT_RADIUS",
+      "depends": [
+        "FS.analysis"
+      ],
+      "priority": -5,
+      "note": "严格执行docs/research/CLE-PLAN-20261028-impact-radius-v01.md。用户本轮批准自主执行并提高优先级。保留活动Q/FFS及原R01，使用独立配置与输出，不改冻结输入。固定模型、原验证器、时段、总并发4和累计预算；现有成功响应精确复用。每阶段实际分析后更新idea09叙事和图；不把技术验证或未执行写成绩。 复用全部FFS代码，区分首次与修复、大小与边界、四类结果；按协议最多12例实际深读，不调用实验API。输出运行根/impact_radius_20261028/IR01/summary.json及report.md，明确相关性结论。"
+    },
+    {
+      "id": "IR.probe",
+      "title": "IR02：12题边界约束编辑对照",
+      "kind": "run",
+      "package": "IMPACT_RADIUS",
+      "depends": [
+        "IR.prepare",
+        "IR.association",
+        "FS.single_edit"
+      ],
+      "priority": -5,
+      "note": "严格执行docs/research/CLE-PLAN-20261028-impact-radius-v01.md。用户本轮批准自主执行并提高优先级。保留活动Q/FFS及原R01，使用独立配置与输出，不改冻结输入。固定模型、原验证器、时段、总并发4和累计预算；现有成功响应精确复用。每阶段实际分析后更新idea09叙事和图；不把技术验证或未执行写成绩。 按prepare冻结名单12题两臂两重复只执行48次；使用prepare真实有界入口，先核对活进程/已有结果/预算。启动后登记registered_workers，立即返回工作台，勿长期轮询。custom run收据引用原生完整summary与native_counters；保存输入、响应、代码、验证和成本，不能只写总结。",
+      "custom": true,
+      "execution_scope": "probe",
+      "slots": "available",
+      "expected": 48,
+      "commands": []
+    },
+    {
+      "id": "IR.probe.analysis",
+      "title": "IR02：分析并决定是否接续24题",
+      "kind": "custom",
+      "package": "IMPACT_RADIUS",
+      "depends": [
+        "IR.probe"
+      ],
+      "priority": -5,
+      "note": "严格执行docs/research/CLE-PLAN-20261028-impact-radius-v01.md。用户本轮批准自主执行并提高优先级。保留活动Q/FFS及原R01，使用独立配置与输出，不改冻结输入。固定模型、原验证器、时段、总并发4和累计预算；现有成功响应精确复用。每阶段实际分析后更新idea09叙事和图；不把技术验证或未执行写成绩。 原生回放及实际代码检查，按协议4/12题真实干预、净增2/24、两重复不负且无新增安全失败共同判定。写运行根/impact_radius_20261028/IR02/decision.json，status=decided，advance=proceed或stop；证据不满足一律stop并说明结果，不能以无法显著为普遍无效。不加样本或改提示。"
+    },
+    {
+      "id": "IR.confirm",
+      "title": "IR03：24题独立题族确认",
+      "kind": "run",
+      "package": "IMPACT_RADIUS",
+      "depends": [
+        "IR.prepare",
+        "IR.probe.analysis"
+      ],
+      "priority": -5,
+      "note": "严格执行docs/research/CLE-PLAN-20261028-impact-radius-v01.md。用户本轮批准自主执行并提高优先级。保留活动Q/FFS及原R01，使用独立配置与输出，不改冻结输入。固定模型、原验证器、时段、总并发4和累计预算；现有成功响应精确复用。每阶段实际分析后更新idea09叙事和图；不把技术验证或未执行写成绩。 仅IR02 decision明确proceed才运行；缺少或非法决定不派发。沿prepare预先固定24题两臂两重复96次，冻结方法不调参，注册实际worker，不超过总4；完成按custom run原生计数和证据结单。",
+      "custom": true,
+      "execution_scope": "probe",
+      "slots": "available",
+      "expected": 96,
+      "commands": [],
+      "omit_when": {
+        "path": "impact_radius_20261028/IR02/decision.json",
+        "field": "advance",
+        "values": [
+          "stop"
+        ]
+      }
+    },
+    {
+      "id": "IR.confirm.analysis",
+      "title": "IR03：独立确认分析与结论",
+      "kind": "custom",
+      "package": "IMPACT_RADIUS",
+      "depends": [
+        "IR.confirm"
+      ],
+      "priority": -5,
+      "note": "严格执行docs/research/CLE-PLAN-20261028-impact-radius-v01.md。用户本轮批准自主执行并提高优先级。保留活动Q/FFS及原R01，使用独立配置与输出，不改冻结输入。固定模型、原验证器、时段、总并发4和累计预算；现有成功响应精确复用。每阶段实际分析后更新idea09叙事和图；不把技术验证或未执行写成绩。 完整回放、题族95%区间、重复和安全损益；按净增3/48、下界>0、方向一致、无新增安全失败判定，结果写运行根/impact_radius_20261028/IR03/report.md；不满足如实收口，完成分析后也不自动派发全量。",
+      "omit_when": {
+        "path": "impact_radius_20261028/IR02/decision.json",
+        "field": "advance",
+        "values": [
+          "stop"
+        ]
+      }
+    },
+    {
+      "id": "IR.full",
+      "title": "IR04：298题全量确认（暂缓）",
+      "kind": "run",
+      "package": "IMPACT_RADIUS",
+      "depends": [
+        "IR.confirm.analysis"
+      ],
+      "priority": -5,
+      "note": "严格执行docs/research/CLE-PLAN-20261028-impact-radius-v01.md。用户本轮批准自主执行并提高优先级。保留活动Q/FFS及原R01，使用独立配置与输出，不改冻结输入。固定模型、原验证器、时段、总并发4和累计预算；现有成功响应精确复用。每阶段实际分析后更新idea09叙事和图；不把技术验证或未执行写成绩。 当前全量暂缓自动跳过；后续单独释放时还须IR03通过和全量预算/输入就绪，不能仅依赖分析完成标记。",
+      "custom": true,
+      "execution_scope": "full",
+      "slots": "available",
+      "expected": 1192,
+      "commands": []
+    },
+    {
+      "id": "CLOSEOUT",
+      "title": "全部可执行任务收尾及可跳转周报",
+      "kind": "closeout",
+      "package": "CLOSEOUT",
+      "depends": [
+        "FS.single_edit",
+        "IR.association",
+        "IR.probe.analysis",
+        "IR.confirm.analysis"
+      ],
+      "priority": 999,
+      "note": "全部可自主执行节点完成，或仅剩已核实外部依赖时生成最终综合Markdown和带书签的Word；按实际周历、现行报告模板，不回填未来成绩。逐项对应七条来源要求，给确定的已测判断和明确未执行项。\n目标与成本审查：综合逐项回答九条思路：已证明什么、未过哪一道效果/成本门、对主线什么决定。P3暂缓写未执行，不写完成或0分；v3.2不可用不能拼出双模型交互。 开始前读v06对应段，按其中效果门、投入标准、成本口径写实际判断；这是新分析要求，不得改写历史成绩。\n九图审查：逐条回答v08九条叙事：来源、阶段理由、结果、分析、结论、下一步；先更新叙事再出图。R01只有局部单点作用结论。逐轮新卡、不可用双模型交叉和独立双库架构按真实未测状态写。 执行前读docs/research/CLE-TODO-20261022-20261028-v08.md，原实验和预算不改。\n叙事与成图：使用 $cle-idea-narrative，实际完成本包分析后，将来源要求、阶段理由、比较与实测结果、结果分析、结论、下一步写全。回写docs/research/CLE-STORY-20261028-nine-ideas.md中的idea01,idea02,idea03,idea04,idea05,idea06,idea07,idea08,idea09，再按同一截止仅刷新对应图；运行/恢复统一显示正在运行。不要为补叙事新增模型请求、重跑已完成实验或改活动规则。",
+      "research_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v06.md",
+        "required_analysis": "综合逐项回答九条思路：已证明什么、未过哪一道效果/成本门、对主线什么决定。P3暂缓写未执行，不写完成或0分；v3.2不可用不能拼出双模型交互。"
+      },
+      "diagram_review": {
+        "source": "docs/research/CLE-TODO-20261022-20261028-v08.md",
+        "required_analysis": "逐条回答v08九条叙事：来源、阶段理由、结果、分析、结论、下一步；先更新叙事再出图。R01只有局部单点作用结论。逐轮新卡、不可用双模型交叉和独立双库架构按真实未测状态写。"
+      },
+      "narrative": {
+        "source": "docs/research/CLE-STORY-20261028-nine-ideas.md",
+        "sections": [
+          "idea01",
+          "idea02",
+          "idea03",
+          "idea04",
+          "idea05",
+          "idea06",
+          "idea07",
+          "idea08",
+          "idea09"
+        ],
+        "skill": "cle-idea-narrative",
+        "receipt": "workbench_monitor/autonomy/deliveries/CLOSEOUT/receipt.json"
+      }
+    },
+    {
+      "id": "Q.retest.probe",
+      "title": "54题五条件两重复探索（前2题技术检查计入）",
+      "kind": "probe",
+      "package": "FQ_RETEST",
+      "depends": [
+        "Q.K0.analysis",
+        "Q.K1.analysis",
+        "Q.K2.analysis",
+        "Q.K3.analysis"
+      ],
+      "priority": 15,
+      "slots": "available",
+      "expected": 540,
+      "execution_scope": "probe",
+      "probe_scope": {
+        "experiment": "C02",
+        "task": "Q.retest",
+        "package": "FQ_RETEST",
+        "tasks": 54,
+        "units": 540,
+        "total": 1416,
+        "conditions": 5,
+        "repeats": 2,
+        "selection": "from_fixed_Q_intermediate_54",
+        "checks": [
+          "五条件同题同重复共用首次初析及候选",
+          "Q与卡正文冻结不变",
+          "两重复各自生成并保留完整轨迹"
+        ],
+        "existing_evidence": [
+          "A04",
+          "A16",
+          "A17"
+        ],
+        "gap": "新Q快照与修订公开契约的联合贯通",
+        "task_ids": [
+          "144",
+          "1152",
+          "52",
+          "1302",
+          "1389",
+          "1038",
+          "350",
+          "1060",
+          "1359",
+          "619",
+          "108",
+          "497",
+          "1371",
+          "913",
+          "1184",
+          "846",
+          "803",
+          "683",
+          "136",
+          "1134",
+          "69",
+          "432",
+          "1218",
+          "1028",
+          "334",
+          "1064",
+          "994",
+          "636",
+          "93",
+          "476",
+          "1405",
+          "914",
+          "1384",
+          "861",
+          "813",
+          "677",
+          "156",
+          "1160",
+          "85",
+          "425",
+          "1221",
+          "1045",
+          "1290",
+          "1369",
+          "974",
+          "632",
+          "132",
+          "468",
+          "1112",
+          "900",
+          "1188",
+          "1391",
+          "1339",
+          "1326"
+        ],
+        "status": "planned_not_executed",
+        "extra_paid_units": 0
+      },
+      "probe_report": "probe_relay_20261028/Q.retest/summary.json",
+      "commands": [
+        "configs.cle_q_retest_probe_20261029.run launch --workers 4"
+      ],
+      "note": "先落实只消费固定probe_scope名单的独立有界入口与零API验证，再执行。不得调用全量launch。正式总名单不改，完整响应及累计预算沿原链复用；到探针边界自然退出。原方法和数据依赖保持。分析只解释本样本；技术链通过不等于收益。",
+      "user_paused": true
+    },
+    {
+      "id": "Q.retest.probe.analysis",
+      "title": "探针回放与结果分析：最终Q全273题＋中间三轮54题冻结回测",
+      "kind": "custom",
+      "package": "FQ_RETEST",
+      "depends": [
+        "Q.retest.probe"
+      ],
+      "priority": 15,
+      "execution_scope": "probe_analysis",
+      "commands": [],
+      "note": "读取本探针真实代码、验证、选卡和成本，给出技术检查、描述性Joint和局部机制判断，写probe_relay_20261028/Q.retest/analysis.md和agent_case_review.json，并以真实文件写节点收据。不得生成全量完成证明，不得启动全量；分析完由队列寻找下一个依赖齐的探针。",
+      "user_paused": true
+    },
+    {
+      "id": "Q.gate.probe",
+      "title": "2题四臂迁移技术探针",
+      "kind": "probe",
+      "package": "FQ_GATE",
+      "depends": [
+        "Q.K3.analysis",
+        "Q.retest.probe.analysis"
+      ],
+      "priority": 16,
+      "slots": "available",
+      "expected": 16,
+      "execution_scope": "probe",
+      "probe_scope": {
+        "experiment": "C03",
+        "task": "Q.gate",
+        "package": "FQ_GATE",
+        "tasks": 2,
+        "units": 16,
+        "total": 2384,
+        "conditions": 4,
+        "repeats": 2,
+        "selection": "from_fixed_gate_298",
+        "checks": [
+          "Q1/Q2/Q3共同候选",
+          "Q3只在同CWE内置换Q及visits",
+          "Q0原路径单列",
+          "冻结Q和无反馈回流"
+        ],
+        "existing_evidence": [
+          "A03",
+          "A16",
+          "A17"
+        ],
+        "gap": "新K3与修订D_gate的实际接线",
+        "task_ids": [
+          "1368",
+          "1141"
+        ],
+        "status": "planned_not_executed",
+        "extra_paid_units": 0
+      },
+      "probe_report": "probe_relay_20261028/Q.gate/summary.json",
+      "commands": [],
+      "note": "先落实只消费固定probe_scope名单的独立有界入口与零API验证，再执行。不得调用全量launch。正式总名单不改，完整响应及累计预算沿原链复用；到探针边界自然退出。原方法和数据依赖保持。分析只解释本样本；技术链通过不等于收益。",
+      "user_paused": true
+    },
+    {
+      "id": "Q.gate.probe.analysis",
+      "title": "探针回放与结果分析：全D_gate四臂两重复",
+      "kind": "custom",
+      "package": "FQ_GATE",
+      "depends": [
+        "Q.gate.probe"
+      ],
+      "priority": 16,
+      "execution_scope": "probe_analysis",
+      "commands": [],
+      "note": "读取本探针真实代码、验证、选卡和成本，给出技术检查、描述性Joint和局部机制判断，写probe_relay_20261028/Q.gate/analysis.md和agent_case_review.json，并以真实文件写节点收据。不得生成全量完成证明，不得启动全量；分析完由队列寻找下一个依赖齐的探针。",
+      "user_paused": true
+    },
+    {
+      "id": "GR.gate.probe",
+      "title": "6题三策略技术探针",
+      "kind": "probe",
+      "package": "FG_GATE",
+      "depends": [
+        "GR.train"
+      ],
+      "priority": 26,
+      "slots": "available",
+      "expected": 36,
+      "execution_scope": "probe",
+      "probe_scope": {
+        "experiment": "C06",
+        "task": "GR.gate",
+        "package": "FG_GATE",
+        "tasks": 6,
+        "units": 36,
+        "total": 1788,
+        "conditions": 3,
+        "repeats": 2,
+        "selection": "from_fixed_gate_298",
+        "checks": [
+          "只读本轮冻结分类器",
+          "路由只用公开特征",
+          "固定档仅按训练标签确定",
+          "同题同重复同档精确复用而跨重复独立"
+        ],
+        "existing_evidence": [
+          "A15"
+        ],
+        "gap": "新分类器的真实路由与复用链路",
+        "task_ids": [
+          "349",
+          "845",
+          "1055",
+          "783",
+          "454",
+          "50"
+        ],
+        "status": "planned_not_executed",
+        "extra_paid_units": 0
+      },
+      "probe_report": "probe_relay_20261028/GR.gate/summary.json",
+      "commands": [],
+      "note": "先落实只消费固定probe_scope名单的独立有界入口与零API验证，再执行。不得调用全量launch。正式总名单不改，完整响应及累计预算沿原链复用；到探针边界自然退出。原方法和数据依赖保持。分析只解释本样本；技术链通过不等于收益。",
+      "user_paused": true
+    },
+    {
+      "id": "GR.gate.probe.analysis",
+      "title": "探针回放与结果分析：全D_gate三策略两重复",
+      "kind": "custom",
+      "package": "FG_GATE",
+      "depends": [
+        "GR.gate.probe"
+      ],
+      "priority": 26,
+      "execution_scope": "probe_analysis",
+      "commands": [],
+      "note": "读取本探针真实代码、验证、选卡和成本，给出技术检查、描述性Joint和局部机制判断，写probe_relay_20261028/GR.gate/analysis.md和agent_case_review.json，并以真实文件写节点收据。不得生成全量完成证明，不得启动全量；分析完由队列寻找下一个依赖齐的探针。",
+      "user_paused": true
+    },
+    {
+      "id": "BUILD.run.probe",
+      "title": "2题从空库提卡探针",
+      "kind": "probe",
+      "package": "BUILD_C41",
+      "depends": [
+        "BUILD.prepare"
+      ],
+      "priority": 40,
+      "slots": "exclusive",
+      "expected": 2,
+      "execution_scope": "probe",
+      "probe_scope": {
+        "experiment": "C09",
+        "task": "BUILD.run",
+        "package": "BUILD_C41",
+        "tasks": 2,
+        "units": null,
+        "total": 303,
+        "conditions": 1,
+        "repeats": 1,
+        "selection": "native_source_pool_first_two",
+        "checks": [
+          "从空库开始",
+          "原生题目与请求顺序不改",
+          "解题到提卡及验证事件完整落盘",
+          "精确前缀续跑不重发成功响应"
+        ],
+        "existing_evidence": [
+          "BUILD.prepare:offline_only"
+        ],
+        "gap": "v4.1从空库提卡的真实前缀，已有封网接线不算真实探针",
+        "later_check": "进入主动回放时再核对原生首2题；保留三轮和全局门控。",
+        "task_ids": [
+          "45",
+          "46"
+        ],
+        "status": "planned_not_executed",
+        "extra_paid_units": 0
+      },
+      "probe_report": "probe_relay_20261028/BUILD.run/summary.json",
+      "commands": [],
+      "note": "先落实只消费固定probe_scope名单的独立有界入口与零API验证，再执行。不得调用全量launch。正式总名单不改，完整响应及累计预算沿原链复用；到探针边界自然退出。原方法和数据依赖保持。分析只解释本样本；技术链通过不等于收益。 2026-10-29封网实测原生source首两题为45/46；三池集合与冻结清单完全一致，仅manifest列表和原生输入顺序不同。派发前纠正旧798/799探针标签，不重排原生任务、不改变三池。"
+    },
+    {
+      "id": "BUILD.run.probe.analysis",
+      "title": "探针回放与结果分析：从空库完成C41完整CLE",
+      "kind": "custom",
+      "package": "BUILD_C41",
+      "depends": [
+        "BUILD.run.probe"
+      ],
+      "priority": 40,
+      "execution_scope": "probe_analysis",
+      "commands": [],
+      "note": "读取本探针真实代码、验证、选卡和成本，给出技术检查、描述性Joint和局部机制判断，写probe_relay_20261028/BUILD.run/analysis.md和agent_case_review.json，并以真实文件写节点收据。不得生成全量完成证明，不得启动全量；分析完由队列寻找下一个依赖齐的探针。"
+    },
+    {
+      "id": "CROSS.v41.probe",
+      "title": "12题三卡库消费探针",
+      "kind": "probe",
+      "package": "FX_GATE",
+      "depends": [
+        "CROSS.prepare",
+        "BUILD.analysis",
+        "FS.analysis"
+      ],
+      "priority": 45,
+      "slots": "exclusive",
+      "expected": 72,
+      "execution_scope": "probe",
+      "probe_scope": {
+        "experiment": "C10",
+        "task": "CROSS.v41",
+        "package": "FX_GATE",
+        "tasks": 12,
+        "units": 72,
+        "total": 1788,
+        "conditions": 3,
+        "repeats": 2,
+        "selection": "from_fixed_gate_298",
+        "new_C41_units": 24,
+        "FFS_reused_units": 48,
+        "checks": [
+          "真实冻结C41来源",
+          "旧库与无卡48格逐格精确复用FFS",
+          "新库24格独立生成",
+          "正文冻结",
+          "三条件同P7预算"
+        ],
+        "existing_evidence": [
+          "A08",
+          "CROSS.prepare:offline_only"
+        ],
+        "gap": "新库实际被检索、呈现和采用的比较",
+        "task_ids": [
+          "779",
+          "472",
+          "1259",
+          "1180",
+          "1151",
+          "159",
+          "657",
+          "92",
+          "995",
+          "454",
+          "1082",
+          "1046"
+        ],
+        "status": "planned_not_executed",
+        "extra_paid_units": 0
+      },
+      "probe_report": "probe_relay_20261028/CROSS.v41/summary.json",
+      "commands": [],
+      "note": "先落实只消费固定probe_scope名单的独立有界入口与零API验证，再执行。不得调用全量launch。正式总名单不改，完整响应及累计预算沿原链复用；到探针边界自然退出。原方法和数据依赖保持。分析只解释本样本；技术链通过不等于收益。",
+      "max_workers": 3
+    },
+    {
+      "id": "CROSS.v41.probe.analysis",
+      "title": "探针回放与结果分析：v4.1三卡库完整交叉",
+      "kind": "custom",
+      "package": "FX_GATE",
+      "depends": [
+        "CROSS.v41.probe"
+      ],
+      "priority": 45,
+      "execution_scope": "probe_analysis",
+      "commands": [],
+      "note": "读取本探针真实代码、验证、选卡和成本，给出技术检查、描述性Joint和局部机制判断，写probe_relay_20261028/CROSS.v41/analysis.md和agent_case_review.json，并以真实文件写节点收据。不得生成全量完成证明，不得启动全量；分析完由队列寻找下一个依赖齐的探针。"
+    }
+  ],
+  "scheduling_revision": {
+    "at": "2026-10-28T10:58:27.868192+08:00",
+    "reason": "Complete in-flight Q+FS first; Q frozen comparisons and functional/granularity questions precede library cross; defer large retrieval labeling until code experiments can provide reusable first analyses.",
+    "sequence": [
+      "Q.run + FS.run",
+      "Q.retest -> Q.gate (after K0-K3 verification)",
+      "GR.labels -> GR.train -> GR.gate",
+      "BUILD.run -> CROSS.v41",
+      "FR.run -> FR.analysis -> FR.human"
+    ],
+    "preempt_running": false,
+    "scientific_protocols_changed": false,
+    "task_counts_budgets_and_repeats_changed": true,
+    "reduced_scope": true,
+    "repeat_count_changed": false,
+    "active_learning_or_FS_changed": false,
+    "source": "2026-10-28用户减量授权；固定名单和工程扩大门优先于旧全量探索规模"
+  },
+  "reduced_protocol": "configs/cle_weekly_reduced_20261028/protocol.json",
+  "design_review": "configs/cle_experiment_review_20261028/protocol.json",
+  "current_checklist": "docs/research/CLE-TODO-20261022-20261028-v09.md",
+  "scientific_review": "configs/cle_scientific_review_20261028/README.md",
+  "dispatch_policy": {
+    "mode": "probe_relay",
+    "continue_started": [],
+    "queued_full": "deferred_full",
+    "auto_expand_to_full": false,
+    "preserve_real_dependencies": true
+  }
+}

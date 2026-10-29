@@ -1,0 +1,39 @@
+{
+  "protocol": "cle-granularity-source-reconciliation-v1",
+  "cards": 1939,
+  "original_card_ids_matched": 1939,
+  "source_tasks_with_actual_episodes": 303,
+  "source_generated_code_versions": 553,
+  "example_kind_counts": {
+    "training_reference_seed": 246,
+    "training_generated_episode": 1693
+  },
+  "phase1_outcome_counts": {
+    "seed_grounding_failure": 232,
+    "seed_active_after_repair": 23,
+    "seed_active": 48
+  },
+  "source_code_origin": "actual native phase1_results; reference seeds separate",
+  "source_target_family_overlap": 0,
+  "API_calls": 0,
+  "Q_updates": 0,
+  "L0_to_L4_renderer_implemented": false,
+  "classifier_trained": false,
+  "source_prompt_reconstruction_performed": false,
+  "prior_source_example_index_meaning": "reference material availability, not certified producing episode",
+  "single_card_exact_producing_attempt_certified": false,
+  "source_last_attempt_FS": {
+    "F+S+": 71,
+    "F-S+": 142,
+    "F-S-": 60,
+    "F+S-": 22,
+    "unmeasured": 8
+  },
+  "source_generated_code_versions_semantics": "saved output slots, including empty responses",
+  "source_nonempty_generated_codes": 546,
+  "source_empty_code_slots": 7,
+  "source_tasks_with_nonempty_generated_code": 298,
+  "L4_source_payload_available_cards": 1924,
+  "L4_unavailable_cards": 15,
+  "count_correction_record": "C01_source_availability_v1/summary.json"
+}

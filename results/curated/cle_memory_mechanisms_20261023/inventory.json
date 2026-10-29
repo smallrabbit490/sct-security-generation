@@ -1,0 +1,23 @@
+{
+  "protocol": "cle-memory-mechanisms-preparation-v1",
+  "pool_counts": {
+    "D_init": 303,
+    "D_grow": 273,
+    "D_gate": 298
+  },
+  "family_counts": {
+    "D_init": 217,
+    "D_grow": 217,
+    "D_gate": 217
+  },
+  "pool_family_disjoint": true,
+  "cards": 1939,
+  "visited_cards": 972,
+  "source_examples_available": 1939,
+  "distinct_source_tasks": 303,
+  "L4_source_status": "training sources indexed; not yet rendered or evaluated",
+  "notion_raw_status": "not located in previously checked workspace and archive index",
+  "notion_unaccounted_pairs": 106,
+  "raw_output_resolved": "E:\\ResearchRuns\\CLE\\diagnostics\\20261023\\cle_memory_mechanisms_v1",
+  "API_calls": 0
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "cle-weekly-full-grow-restored-public-contract-20261027-v2",
+  "planned": 273,
+  "completed": 273,
+  "reference_joint": 273,
+  "reference_and_name_checks_passed": 273,
+  "remaining_reference_failed_ids": [],
+  "remaining_contract_check_ids": [],
+  "reference_preflight_ready": true,
+  "model_API_calls": 0,
+  "new_model_generations": 0,
+  "Q_updates": 0,
+  "active_learning_inputs_modified": false,
+  "validator_changed": false,
+  "not_a_generated_code_result": true,
+  "reference_pass_does_not_prove_public_contract_completeness": true
+}

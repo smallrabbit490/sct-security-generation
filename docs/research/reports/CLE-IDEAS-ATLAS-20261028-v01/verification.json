@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "documents": [
+    {
+      "name": "CLE各条研究思路图汇总.docx",
+      "pages": 10,
+      "complete_original_maps": 9,
+      "bookmarks": 10,
+      "hyperlinks": 95,
+      "visual_review": "passed"
+    },
+    {
+      "name": "CLE-TPL-weekly-idea-map-v02.docx",
+      "pages": 2,
+      "complete_original_maps": 1,
+      "bookmarks": 2,
+      "hyperlinks": 11,
+      "visual_review": "passed"
+    }
+  ],
+  "errors": [],
+  "source_maps_unchanged": true,
+  "experiment_dispatch": "none"
+}

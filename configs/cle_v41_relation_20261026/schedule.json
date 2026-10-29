@@ -1,0 +1,66 @@
+[
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 1,
+    "arm": "K_rel",
+    "cell_id": "1409_r1_K_rel",
+    "group": "technical"
+  },
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 1,
+    "arm": "K_bind",
+    "cell_id": "1409_r1_K_bind",
+    "group": "technical"
+  },
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 1,
+    "arm": "E_rel",
+    "cell_id": "1409_r1_E_rel",
+    "group": "technical"
+  },
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 1,
+    "arm": "E_bind",
+    "cell_id": "1409_r1_E_bind",
+    "group": "technical"
+  },
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 2,
+    "arm": "E_bind",
+    "cell_id": "1409_r2_E_bind",
+    "group": "development"
+  },
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 2,
+    "arm": "E_rel",
+    "cell_id": "1409_r2_E_rel",
+    "group": "development"
+  },
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 2,
+    "arm": "K_rel",
+    "cell_id": "1409_r2_K_rel",
+    "group": "development"
+  },
+  {
+    "task_id": "1409",
+    "family_id": "3ef963e6098d",
+    "repeat": 2,
+    "arm": "K_bind",
+    "cell_id": "1409_r2_K_bind",
+    "group": "development"
+  }
+]

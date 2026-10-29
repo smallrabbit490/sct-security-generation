@@ -1,0 +1,304 @@
+﻿task_id,family_id,cwe,transition,old_measured,new_measured,old_joint,new_joint,review_status,category,finding,evidence_case,claim_scope
+1258,19e7fa87a01d,1333,both_pass,True,True,True,True,limited_code_public_evidence_review,bounded_regex_positive_control,1到100字的标签内部长度来自公开契约，区别于无依据附加阈值；新旧均保留基本匹配。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\1258.json,not isolated Q causality or full correctness
+1288,b1811164f7de,327,both_pass,True,True,True,True,limited_code_public_evidence_review,hash_basic_behavior_control,分别核对普通sha256结果及显式禁止md5；不能由两个例子认证全部算法兼容。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\1288.json,not isolated Q causality or full correctness
+1299,91421efc45a3,347,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,外部可信签名字典被清空，接收函数被替换成None；合法签名路径无法继续。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\1299.json,not isolated Q causality or full correctness
+1303,240f45dd9159,352,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1319,4d3ee957bdfa,502,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1338,74597a7be2b8,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+831,a75b7241dcda,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1350,a567bd506ace,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1003,b8891a885e22,79,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,重定义外部帖子模板；采用卡要求保留该模板却未落实。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\1003.json,not isolated Q causality or full correctness
+1008,ca9c1ef5cb1f,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1216,4450eb28f932,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1053,da8112acfd9f,915,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+101,42746763a08e,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1268,e282cc258b36,200,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1324,a63f97975b88,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1089,412aa01cba1e,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1130,96d23faca2db,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1173,d303ac21177a,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1260,f6a2ea8d65db,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1270,71981e31bda6,200,both_pass,True,True,True,True,limited_code_public_evidence_review,external_students_and_sensitive_fields_control,保留公开students映射，检查合法字段和敏感gpa字段；示例通过不认证所有模板语法。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\1270.json,not isolated Q causality or full correctness
+336,0d45abdda5e9,327,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+423,49ab5d84588c,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+481,a84a552c8f29,352,both_pass,True,True,True,True,limited_code_public_evidence_review,external_CSRF_database_control,一参数公开调用下保留外部token/数据库完成更新；新代码增加可选参数，不能单凭样例认证扩展接口。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\481.json,not isolated Q causality or full correctness
+1320,f33c1f1d608f,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1325,65325f479a7e,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+775,bf4acf2947af,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1004,d08cced3916b,79,rescue,True,True,False,True,limited_code_public_evidence_review,external_binding_restored,删除硬编码邀请模板，保持四参数和公开模板；采用卡中另有要求加参数的建议并未执行。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1004.json,not isolated Q causality or full correctness
+1009,1f59b43b3cb0,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1219,52a2a70018d9,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1054,b1f0fc77e903,915,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1090,46fc4f820f4e,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1131,b6509ece3013,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+45,eee82387ae89,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+107,c51270b2626b,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+135,c18d2c3035e5,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+337,76526ed7e4c1,327,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+426,353ee24ec07c,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+482,e51e1f981952,352,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+594,0c3f1b6e9c82,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+642,846a3996759b,601,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,清空外部白名单，合法跨域跳转被拒绝。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\642.json,not isolated Q causality or full correctness
+780,6880cc901434,74,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+874,625d18e60e11,770,loss,True,True,True,False,limited_code_public_evidence_review,public_resource_policy_underspecified,新旧对容量和单条大小的数值、度量方式不同；公开题面没有规定数值和单位。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\874.json,not isolated Q causality or full correctness
+1007,66fd03085bb2,79,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1010,e69881bb7432,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1223,e619ce6ba66c,863,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,清空权威文档库，进入权限判断前就不能正常取文档。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\1223.json,not isolated Q causality or full correctness
+1057,fd4a0f2d7c30,915,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1097,434adecfff3c,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1136,9e631a693afd,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+137,2027e7307904,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+344,dbfa2eea7045,327,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+431,e349f622c6d3,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+483,fb2557acb2a8,352,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+834,3fb60898b5a6,77,rescue,True,True,False,True,limited_code_public_evidence_review,query_parser_reimplementation,旧扫描按单词寻找ORDER BY，无法匹配含空格的关键字；新解析器分别处理ORDER和BY。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\834.json,not isolated Q causality or full correctness
+1362,8558dac07cde,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1018,31429830735f,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1227,24a6543add06,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1058,57f81cc5b8bf,915,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1107,ef50f318a969,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1138,055defa06bf2,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1176,9afc0708b75a,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+113,cbf03b4bea88,179,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+139,bc5766947204,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+348,0bf0dff0f83f,327,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+437,862c2ee3a805,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+877,aa6b00f2c702,770,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+969,c68cdbf12064,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1020,1c5ff22f1289,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1228,5bef8b6a51ab,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1063,f89cbf24f300,915,rescue,True,True,False,True,limited_code_public_evidence_review,residual_external_configuration_defect,白名单从八项缩为五项，历史安全通过但仍重定义外部白名单；两张采用卡的非法字段处理建议相反。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1063.json,not isolated Q causality or full correctness
+1111,81cdaa957a56,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1143,15d1d66ae6f3,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+66,3e80bb0f39a0,1333,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+114,1ab1dc7b3b3a,179,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+146,5a8d085433af,200,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+352,6e242197f629,327,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,外部HMAC签名密钥被环境变量或示例常量替换。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\352.json,not isolated Q causality or full correctness
+440,694602f580f9,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+597,386003a008e5,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+648,f1a295572f9d,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+790,3a91f0e18aca,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+972,9bd647e563b8,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1021,a20306ea7d4b,862,rescue,True,True,False,True,limited_code_public_evidence_review,authorization_field_handling,旧版privilege字段优先可能遮蔽admin角色，新版改为多字段或判断；首次未过，修复才过。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1021.json,not isolated Q causality or full correctness
+1230,0ec3b26431db,863,both_fail,True,True,False,False,limited_code_public_evidence_review,external_binding_overwritten,新代码清空账户库；合法业务与未授权PermissionError路径均可受影响，历史S从通过变失败。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\1230.json,not isolated Q causality or full correctness
+1071,6f19c6b6dd78,915,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1113,2674ec4a44f3,918,rescue,True,True,False,True,limited_code_public_evidence_review,no_declared_adoption_in_success,首次Joint通过但未采用卡；沿用既有DNS/IP/导入差异复盘，不将成功归为新增卡作用。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1113.json,not isolated Q causality or full correctness
+1145,70089e5c7aec,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+116,5de702a7429d,179,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+148,64be938e89a0,200,both_fail,True,True,False,False,limited_code_public_evidence_review,class_redefined_enumeration_binding_unconfirmed,足迹标记EMPLOYEES，但题面未给出员工集合取得方式，不能认证该标记为公开绑定违规；新重定义已提供Employee类可另核对。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\148.json,not isolated Q causality or full correctness
+354,aa38daf2e200,327,rescue,True,True,False,True,limited_code_public_evidence_review,provided_key_used,旧版仅计算普通摘要、不使用提供的key；新版使用外部key作带密钥摘要。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\354.json,not isolated Q causality or full correctness
+442,5b7704eee9cb,347,both_fail,True,True,False,False,limited_code_public_evidence_review,signature_mapping_overwritten_and_reinterpreted,清空已知签名表，并将表中正确签名当HMAC密钥；恢复表后仍不满足匹配已知签名的公开路径。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\442.json,not isolated Q causality or full correctness
+486,2c9e0cc3f66f,352,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+795,965caf4a4e69,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+840,f5b20eaecd81,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+973,e0d61b6d5420,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1022,b3fa21a554ee,862,rescue,True,True,False,True,limited_code_public_evidence_review,external_binding_restored,不再将外部USERS置为空字典，保留注解；具体权限字段兼容仍需公开schema。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1022.json,not isolated Q causality or full correctness
+1234,acb3a530e0b5,863,rescue,True,True,False,True,limited_code_public_evidence_review,external_binding_restored,删除空患者库、额外失败计数和限流，直接使用外部记录；不能只把变化归给一个建议。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1234.json,not isolated Q causality or full correctness
+1072,723db5fcae31,915,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1116,b51dc9061a19,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1148,fbf0a98c92ee,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1185,593db185dfe0,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+120,169eaff17e7d,179,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+150,fdb0e9b09089,200,loss,True,True,True,False,limited_code_public_evidence_review,supplied_class_redefined_and_enumeration_unspecified,重定义已提供的Employee类并内置示例员工；同时公开题面没有说清员工集合从哪里取得。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\150.json,not isolated Q causality or full correctness
+355,4fcad70526ac,327,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+446,ad443859484d,347,both_fail,True,True,False,False,limited_code_public_evidence_review,signature_mapping_overwritten_and_extra_semantics,新清空签名表并采用HMAC；旧代码也额外要求内容SHA256等于给定签名，说明两侧可能有不同语义缺陷。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\446.json,not isolated Q causality or full correctness
+884,608db806f245,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+975,54f48784f0c7,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1024,98b544a0a8d0,862,rescue,True,True,False,True,limited_code_public_evidence_review,external_binding_restored,不再清空USERS，保留外部数据并简化权限修改；也改变了字段和额外限制。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1024.json,not isolated Q causality or full correctness
+1241,9cb97d7a2381,863,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,清空已提供的患者记录；合法人员不能读取已有患者数据。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\1241.json,not isolated Q causality or full correctness
+1073,76ae8a2d4738,915,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1117,545be5bdd896,918,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1150,634efdb58c78,94,rescue,False,True,False,True,limited_code_public_evidence_review,technical_delivery_recovery,旧末次输出截断为空且未测，新侧交付成功；交付救回不能冒称可测代码质量的配对救回。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1150.json,not isolated Q causality or full correctness
+75,7bd2304d926b,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+121,3ee72226446f,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+356,e711eef9a5c8,327,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+449,450cd56d6dfb,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+600,d922af748fe9,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+651,8969a4389110,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+976,dcd4b24c95d0,79,rescue,True,True,False,True,limited_code_public_evidence_review,external_binding_restored,恢复外部论坛模板，同时扩展占位符映射；公开格式并未完全规定。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\976.json,not isolated Q causality or full correctness
+1025,ccc79e651fc2,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1244,12e86a21c923,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1075,bb6961b35fa0,915,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1123,3bd31b40db32,918,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1154,860050d3d78a,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+122,79d9fca44924,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+361,97bc946e7b96,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+798,001a27498c0e,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+852,3c84bf094e1d,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+978,2cfe9d66d118,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1027,b6a04223f093,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1245,1871db569b4c,863,both_fail,True,True,False,False,limited_code_public_evidence_review,external_binding_overwritten,清空项目库，已存在项目转为不存在，未授权请求可能先抛KeyError而非PermissionError；历史S退化被Joint掩盖。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\1245.json,not isolated Q causality or full correctness
+1373,f77188b86c12,918,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1158,c45cdec3016c,94,rescue,True,True,False,True,limited_code_public_evidence_review,arithmetic_rewrite_with_incomplete_workflow,算术实现和边界策略改变；末次Joint通过但规划解析故障，采用卡的Q更新被跳过。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1158.json,not isolated Q causality or full correctness
+1191,f3d4d7a49f99,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+124,887d35b12bde,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+168,72edf3368140,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+363,d201e0bbe5c0,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+888,935e08fac959,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+979,48ad23189f5b,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1033,8fd1c2bc7b73,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1247,e16b3d1f2333,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1374,cfd6d46fe31e,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1162,4e3f8547d488,94,rescue,True,True,False,True,limited_code_public_evidence_review,numeric_grammar_expansion,从自写词法/递归解析改为AST求值，支持部分旧版拒绝的小数写法；不能认证全部语法和安全。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1162.json,not isolated Q causality or full correctness
+78,06b6f0713a53,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1261,bb356d0dd312,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+170,2234d26e4c54,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+365,307c53aebe4a,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+609,5f4e93c4e2d6,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+654,3a187b544b93,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+981,247f5b560c4a,79,rescue,True,True,False,True,limited_code_public_evidence_review,external_binding_restored,已有模板存在时不再覆盖，增加占位符别名；旧侧规划曾降级，流程身份不同。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\981.json,not isolated Q causality or full correctness
+1034,28e2f7301f15,862,rescue,True,True,False,True,limited_code_public_evidence_review,record_schema_expansion,增加USERS值为记录字典的处理，而公开文字描述为ID到角色；字符串映射下也需保留对照。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1034.json,not isolated Q causality or full correctness
+1249,9481f2bd06ec,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1375,ab9e475a1161,918,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1378,88372cdf14a5,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1262,2085bad3e591,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+174,ff2d71add24d,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+367,9d533da89f60,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+459,26fedbb8a8f8,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+801,781eba4de215,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+855,e7a41dc8a7fb,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+984,d4de8c8dcc3f,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1036,a39cda91d0b8,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1250,0dfcd8d747cf,863,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1380,2166d66475d2,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1197,4ba186b210c5,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+127,14cd13601b8a,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+369,126a6d599ea8,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+464,c83ede8f86d8,347,both_fail,True,True,False,False,limited_code_public_evidence_review,trusted_mapping_overwritten_fetch_interface_unspecified,签名表被清空；fetch_remote_profile名字和远程端点未在公开题面明确，不能把全部足迹名称都认证为违规接口。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\464.json,not isolated Q causality or full correctness
+804,509a1773add9,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+907,6c037ecb922f,770,loss,True,True,True,False,limited_code_public_evidence_review,public_resource_policy_and_auxiliary_state,最终采用卡建议增加错误账本；队列满后的不同拒绝ID仍不断进入这个无容量限制的字典。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\907.json,not isolated Q causality or full correctness
+987,a101c9e1e155,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1037,8df9e9390a75,862,loss,True,True,True,False,limited_code_public_evidence_review,public_record_schema_underspecified,新旧支持的订阅字段名不同；公开说明没有完整给出记录字段名。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\1037.json,not isolated Q causality or full correctness
+1387,7c9e33969eba,863,both_fail,True,True,False,False,limited_code_public_evidence_review,external_binding_overwritten,新清空账户库；旧新Joint均失败不说明新增绑定问题没有影响，消息字符串等其他契约仍可能未明。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\1387.json,not isolated Q causality or full correctness
+1401,d0d8257f7689,94,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+81,33a4347d8a9a,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+131,89f78a73b22c,179,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+372,69fc42467897,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+467,eaeb299d9f33,347,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+614,07cd52b0e959,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+663,b7701062bd5b,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+805,d766ef14ac09,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+989,cf2b75b4672e,79,loss,True,True,True,False,limited_code_public_evidence_review,public_template_schema_underspecified,新版本只替换四种短占位符，旧版本覆盖更多形式；公开模板的实际占位符没有完整说明。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\989.json,not isolated Q causality or full correctness
+1040,ec88e08286f4,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+373,b7cb522415ee,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+620,1112d0526e1a,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+819,027384703a40,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+867,f02a49b0b230,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+990,7910de404900,79,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1041,17db4be66c3f,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1200,82fadf221458,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+86,26e8bd870a46,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+374,ea0dae4c0b8e,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+621,375934a2a12d,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+992,6148ea4c6306,79,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1042,8ce9694a69bc,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+88,2ba22cb7334b,1333,rescue,True,True,False,True,limited_code_public_evidence_review,regex_contract_restored_with_new_boundary,从字符串find改为正则fullmatch，符合公开正则要求；另加未规定的长度上限，性能收益未测。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\88.json,not isolated Q causality or full correctness
+377,f273f3391bae,327,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+669,7faf82503dd7,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+996,22a95591dc91,79,rescue,True,True,False,True,limited_code_public_evidence_review,external_binding_restored,删除硬编码模板和已绑定到该模板的默认参数，改读外部模板；占位符支持也发生变化。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\996.json,not isolated Q causality or full correctness
+1043,3d80dfdec0bb,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+870,cdb130486d9e,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+999,0aa59b2aaabc,79,rescue,True,True,False,True,limited_code_public_evidence_review,residual_external_configuration_defect,更换硬编码模板和占位符后历史Joint通过，但仍覆盖公开外部模板；禁止改模板的采用卡却获正奖。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\999.json,not isolated Q causality or full correctness
+1044,ce7ee5d34cee,862,both_fail,True,True,False,False,limited_code_public_evidence_review,external_binding_overwritten,清空角色和发票字典，合法管理员只能得到Unauthorized；旧侧也F失败不等于此前没有任何正确路径。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\1044.json,not isolated Q causality or full correctness
+1382,e42757de8ef0,95,rescue,True,True,False,True,limited_code_public_evidence_review,AST_operator_validation_fixed,旧版遍历运算符子节点但未允许ast.Add等节点，普通加法可能被判不安全；新递归检查跳过操作符对象本身。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1382.json,not isolated Q causality or full correctness
+624,9a336dabcd3a,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1049,2a04af2656e5,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+678,af247e493690,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1051,087b52f2ae7e,862,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+679,7ab1fcad03f6,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1363,2da802e9a8aa,862,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,清空用户和资料字典，权限检查保留但正常资料查询被破坏。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\1363.json,not isolated Q causality or full correctness
+633,ce269b03268d,502,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+680,ed64e4bf6ee5,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1364,dfa05de15f87,862,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,新版本清空USERS；旧版仅类型声明而不覆盖对象，两者不能只看变量名判断。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\1364.json,not isolated Q causality or full correctness
+1365,3b15525c3dc7,862,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+832,a75b7241dcda,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1351,a567bd506ace,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1174,d303ac21177a,95,rescue,True,True,False,True,limited_code_public_evidence_review,isinstance_type_set_bug_fixed,旧验证器把类型集合传给isinstance引发TypeError，普通加法被转成Execution Blocked；新版表达式解释器恢复该公开用例，旧侧另有初析降级。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_rescue_review_v1\cases\1174.json,not isolated Q causality or full correctness
+833,a75b7241dcda,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1175,d303ac21177a,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+46,eee82387ae89,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+595,0c3f1b6e9c82,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+643,846a3996759b,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+781,6880cc901434,74,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+876,a567bd506ace,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+47,eee82387ae89,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+484,fb2557acb2a8,352,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+596,0c3f1b6e9c82,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+644,846a3996759b,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+782,6880cc901434,74,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+835,3fb60898b5a6,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1177,9afc0708b75a,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+485,fb2557acb2a8,352,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+836,3fb60898b5a6,77,both_fail,False,False,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+878,aa6b00f2c702,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1178,9afc0708b75a,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+67,3e80bb0f39a0,1333,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+598,386003a008e5,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+649,f1a295572f9d,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+879,aa6b00f2c702,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+68,3e80bb0f39a0,1333,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+487,2c9e0cc3f66f,352,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,清空已有CSRF常量；即使请求与原配置一致也立即拒绝。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\487.json,not isolated Q causality or full correctness
+599,386003a008e5,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+650,f1a295572f9d,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+796,965caf4a4e69,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+841,f5b20eaecd81,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1186,593db185dfe0,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+151,fdb0e9b09089,200,both_fail,True,False,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+488,2c9e0cc3f66f,352,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,空CSRF常量和空数据库替换已提供对象；旧版X=X不创建替代数据。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\488.json,not isolated Q causality or full correctness
+797,965caf4a4e69,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+842,f5b20eaecd81,77,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+885,608db806f245,770,loss,True,False,True,False,limited_code_public_evidence_review,technical_empty_unmeasured_delivery,模型请求链失败，代码为空且末次未测量；属于交付损失，不能计作已测代码失败。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\885.json,not isolated Q causality or full correctness
+1187,593db185dfe0,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+152,fdb0e9b09089,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+601,d922af748fe9,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+652,8969a4389110,601,both_fail,True,True,False,False,limited_code_public_evidence_review,external_binding_overwritten_and_double_encoding,替换SSO白名单；恢复配置后还有quote再urlencode的双重编码路径，应与绑定保持分别测。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\652.json,not isolated Q causality or full correctness
+887,608db806f245,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+77,7bd2304d926b,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+602,d922af748fe9,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+653,8969a4389110,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+799,001a27498c0e,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+853,3c84bf094e1d,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1192,f3d4d7a49f99,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+800,001a27498c0e,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+854,3c84bf094e1d,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+889,935e08fac959,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1193,f3d4d7a49f99,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+79,06b6f0713a53,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+610,5f4e93c4e2d6,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+655,3a187b544b93,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+890,935e08fac959,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+80,06b6f0713a53,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+175,ff2d71add24d,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+611,5f4e93c4e2d6,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+656,3a187b544b93,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+856,e7a41dc8a7fb,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1198,4ba186b210c5,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+176,ff2d71add24d,200,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+857,e7a41dc8a7fb,77,both_fail,True,False,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+910,6c037ecb922f,770,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+1199,4ba186b210c5,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+664,b7701062bd5b,601,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,无条件清空OAuth回调白名单；旧版只在外部缺失时设置默认，语义不同。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\664.json,not isolated Q causality or full correctness
+665,b7701062bd5b,601,both_fail,False,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+820,027384703a40,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+868,f02a49b0b230,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1201,82fadf221458,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+622,375934a2a12d,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+821,027384703a40,74,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+869,f02a49b0b230,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+1202,82fadf221458,95,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+623,375934a2a12d,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+670,7faf82503dd7,601,loss,True,True,True,False,limited_code_public_evidence_review,external_binding_overwritten,将外部CDN白名单替换为示例域名；合法配置域名被拒绝。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\historical_loss_review_v1\cases\670.json,not isolated Q causality or full correctness
+671,7faf82503dd7,601,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+871,cdb130486d9e,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+625,9a336dabcd3a,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+872,cdb130486d9e,77,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+626,9a336dabcd3a,502,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+634,ce269b03268d,502,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+635,ce269b03268d,502,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+76,7bd2304d926b,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+82,33a4347d8a9a,1333,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+105,c5db424ace81,179,both_pass,True,True,True,True,limited_code_public_evidence_review,same_joint_different_reserved_word_behavior,旧代码对保留词任意子串都拒绝，新代码按整名/分隔组成部分判定；两侧Joint均通过不等于公开行为相同。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\105.json,not isolated Q causality or full correctness
+109,8b8e3c8581a7,179,both_fail,True,True,False,False,not_deeply_reviewed,unknown,,,metadata and outcome only
+451,0b8278609f9b,347,both_pass,True,True,True,True,limited_code_public_evidence_review,provided_retrieval_hook_control,保留已明确提供的DOC_SIGS和获取函数；无效签名不取文档，有效签名再调用。只用本地替身，无网络。,translation_work\diagnostics\20261023\cle_memory_mechanisms_v1\same_score_control_review_v1\cases\451.json,not isolated Q causality or full correctness
+453,41fc34a2f456,347,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only
+456,f283066d3145,347,both_pass,True,True,True,True,not_deeply_reviewed,unknown,,,metadata and outcome only

@@ -1,0 +1,25 @@
+﻿id,asset,evidence_status,source,implementation,migration,acceptance,priority,source_exists,implementation_exists
+A01,数据与family分池,静态资产已核对,data/DATASET_CARD.md,methods/sct_trajectory/split.py,复用303/273/298及Base115/Plus140；固定具体版本,题族隔离、公开字段及夹具版本一致,S0,True,True
+A02,原P0-P7三集,本轮原生4424行逐条核对,configs/cle_v41_migration_20261025/source_evidence.json,methods/cle_ablation/runner.py,保留旧模型基准；新模型只重测选定方案,实际代码入口、预算、同一代码F/S/Joint；旧Base/Plus环境另审,S0,True,True
+A03,v41 P3全量基准,298题及零API回放通过,results/curated/cle_nomemory_baseline_20261024/summary.json,configs/cle_nomemory_baseline_20261024/replay.py,不重跑；只在完整协议相同时复用分数,新v2夹具不默认复用旧修复成绩；1125缺测保留,已完成,True,True
+A04,1939卡及972反馈Q快照,S1冻结消费完成48格；Q未参与；热迁移收益门未过,translation_work/diagnostics/20261020/cle_q_online_v1/D_grow/frozen/m_star_q.jsonl,methods/cle_ablation/runner.py,冻结旧正文热迁移；Q默认不参与、不更新,原始来源与生命周期不变；不把旧Q当新模型学习结果,冻结归档,True,True
+A05,生命周期及完整CLE,已有流程；未确证稳定外部收益,docs/experience_self_evolution_guide.md,methods/sct_trajectory/run_closed_loop.py,先复用前向；冷启动及三轮训练暂缓,提炼、回放、门控、冻结分别有实际产物,后置,True,True
+A06,语义/层次检索与选择器,S1新模型实际召回/LLM终选完成；48格回放一致,docs/english_semantic_retrieval_20260924.md,methods/sct_trajectory/semantic_retrieval.py,同文本向量缓存可复用；新初析与查询重做,向量24+词面8联集、LLM终选0-3、格式失败记录,工程复用,True,True
+A07,Q更新与排序接口,已实现并有完整小/大对照,docs/CLE_MemRL记忆Q值接入方案与实验任务书_20261015.md,methods/sct_trajectory/memory_q.py,单列冻结旧Q迁移臂；不覆盖旧Q,同候选、同CWE打乱Q与visits；实际采用才授信,后置Q,True,True
+A08,Q超出选择波动的证据,160次不限量选择；只支持旧条件影响选卡,results/curated/cle_selector_repeat_20261019/summary.json,methods/cle_ablation/run_selector_repeat.py,新模型限三张重新做8x4x5；旧记录不当新模型证据,报告同臂波动和最终卡号集合变化,后置Q,True,True
+A09,旧Q全298四臂,1192行；97/104/102/100；收益门未过,results/curated/cle_memory_q_full_gate_cap3_20261019/summary.json,methods/cle_ablation/run_memory_q_full_gate_v4.py,保留负结果；不重跑全部旧Q矩阵,新模型消费者冻结后才做有限增量对照,后置Q,True,True
+A10,覆盖学习与未完成强化,最新Dinit303完成、Dgrow23/273,results/curated/cle_q_online_20261020/D_grow_summary.json,methods/cle_ablation/run_memory_q_online.py,保留旧Q先验；不自动继续250题或再刷轮次,覆盖不等于召回；在线同题分数不等于跨族迁移,后置Q,True,True
+A11,数据修复与参考正对照,修订48题48/48、BC96题96/96；1348语义未决,docs/CLE契约与条件Q接续执行报告_20261023.md,configs/cle_memory_mechanisms_20261023/repair_preflight_v2.py,原版修订版分开；静态材料复用,不得从目标答案补公开要求；不把正对照当模型得分,S0,True,True
+A12,检索适用性测量,914对AI初标；人工0；全库召回未测,docs/CLE项目本周Q值选卡探索实验报告_20261022.docx,methods/cle_ablation/retrieval_q_study.py,复用材料与定义；人审后才出正式指标,共同候选池、insufficient裁决、候选池内分母,并行零API,True,True
+A13,逐题归因和影响足迹,历史53例有限复核及新12题48格诊断完成,docs/cle_memory_mechanisms_20261023/16_同成绩对照与Joint盲区.md,methods/cle_ablation/memory_footprint.py,优先公开绑定机制；人工副本成绩不加回模型成绩,区分数据、代码、Q归因和技术问题；flag不直接作真值,B03依据,True,True
+A14,接口保护与M1来源示例,历史17->22/50信号，p=.267,docs/experiment_evidence_summary_20261013.md,methods/a7_exploration/workflow.py,同原型无记忆控制；来源不同family,不把来源参考答案送当前题；不继承旧分数,S2候选,True,True
+A15,P13/P22模板,旧本地Plus有信号；呈现方式也变,docs/experiment_evidence_summary_20261013.md,methods/cle_prompt_ablation/run_prompt_matrix.py,先迁移一个模板到冻结消费者,同消费者对照；不是复现整个25组矩阵,S2候选,True,True
+A16,F/S分区视图,代码和少量来源审核；无合格真实配对成绩,docs/cle_memory_mechanisms_20261023/02_功能安全与影响边界.md,methods/cle_ablation/run_memory_view_probe.py,新模型共享起点；原事实重新分栏,BFS/BM事实一致；复析及修复遵守原P7,暂停；需独立表达依据,True,True
+A17,L0-L4及粒度编排,渲染和20/120/480入口；分类器未训练,docs/cle_memory_mechanisms_20261023/03_记忆粒度与分类器.md,methods/cle_ablation/run_memory_granularity.py,先120格先导再决定是否采标签/分类器,缺代码15卡不造；C1未过不训分类器,S3条件,True,True
+A18,公开契约消费者,离线验证完成；48题真实双臂未跑,docs/CLE契约与条件Q接续执行报告_20261023.md,methods/cle_ablation/run_joint_contract.py,S0模型参数已修；保留整体消费者包，真实效果未测，不混入B03,公开反馈/候选选择与原P7不同；报整体消费者包,D02暂停,True,True
+A19,条件Q路由,38例未过门；enabled=false,configs/cle_contract_q_20261023/route_policy.json,methods/cle_ablation/conditional_q.py,保持关闭；另有事前证据才考虑,不能使用生成后flag或隐藏成绩作路由输入,保持关闭,True,True
+A20,大矩阵及复杂搜索,多项负结果/无效消融标签,docs/experiment_evidence_summary_20261013.md,methods/cle_ablation_matrix/run_training_matrix.py,保留反例和模块；不整张迁移矩阵,标签须真正改变CLI和消费者；不挑最高分拼方法,暂缓,True,True
+A21,传输、成本与回放,P3全298与S1全48回放已完成；各批未知用量分列,docs/CLE_P3无经验Agent_PLT全量基准报告_20261025.md,methods/sct_trajectory/wire_recording.py,复用同服务端/UA/验证TLS/时段/精确请求记录,Embedding与各LLM都接入；未知不归零；不自动重发,已完成工程复用,True,True
+A22,九条外部baseline,正式工作流实现与旧适配器明确分开,docs/baseline_fidelity.md,methods/workflow_baselines/run_true_agent_workflows.py,未来按正式入口迁移；当前不全量重跑,workflow_completed及fidelity_passed，不以单prompt冒充Agent,外部集后置,True,True
+A23,多语言/harness/Java,代码数据资产；非本次新模型跨语言成绩,data/DATASET_CARD.md,methods/secodeplt_eval/java_executor.py,原样保留；Python路线先行,对应语言参考正对照及原验证环境,后置,True,True
+A24,Skills/方法文档/历史看板,七项skills与35运行索引、人工最新版Word,docs/cle_web_history_20261015/README.md,tools/export_cle_dashboard_history.py,复用导航和展示；按模型协议分开数据,不覆盖人工Word和旧站点；摘要非逐题原件,直接复用,True,True

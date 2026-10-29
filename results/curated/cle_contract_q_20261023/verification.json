@@ -1,0 +1,27 @@
+{
+  "tests": 220,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "model_API_calls": 0,
+  "new_model_generations": 0,
+  "new_model_Joint_scores": 0,
+  "reference_controls_original": 48,
+  "reference_controls_restored_v2": 48,
+  "source_sha256": {
+    "methods/cle_ablation/joint_contract.py": "126bc5bafa95aff894c8de47c9bf5df96efd14fdd4ddaa3bc8b3203878573da9",
+    "methods/cle_ablation/run_joint_contract.py": "17be17fc5eb1ff215f16c4e231132cc539dd1e867dad6698087f32c380ba6817",
+    "methods/cle_ablation/runner.py": "4087a224f6dd46045ebbc88952226e15780fe424ff192e2b3053414da88a1e99",
+    "methods/cle_ablation/conditional_q.py": "a1e2541b75999c49b029678a48d5ac38264039a1b920e327c5db252347781895",
+    "methods/sct_trajectory/public_contract_checks.py": "a08905a21aa9cc393d998fdd0aadd02c35d9d4dc00f9d40f1c0644a7457db7ab",
+    "methods/sct_trajectory/public_repair_policy.py": "3b9d3da4e919d8783d1555368444aa64ec408b59eed2a8d86922786061459ec3",
+    "methods/sct_trajectory/internal_checks.py": "c3a2d4cea76d9b1b05b9c6b6d40da6b4b27ac45321e96e617bd9aaa7ad843f3d",
+    "methods/sct_trajectory/context_pipeline.py": "f8554fe92231d19f70c2437acab806776c6ea7dff9984b1fa5ec71fb5458fcad",
+    "methods/sct_trajectory/semantic_retrieval.py": "02ea635cbc3dc5d6ffbdce415e9d1efc395763baa7ae7943a26ac997c2edefff",
+    "methods/sct_trajectory/retriever.py": "404e79d577f32118a207ca49d247e69cd785b5248135fa1db753161a09a36972",
+    "methods/sct_trajectory/run_closed_loop.py": "3ef0b271546ec0e59c76b5229cfec8b3898572ed30f5f89eb7849268afcb9b12",
+    "methods/sct_agent/validation_evidence.py": "b12005b06a7a83d1c9ff01d9a971e239eec46a0a89536b0f48337d68ab40f840",
+    "src/translation_pipeline/python_validator.py": "c5e7eca2727fb66010b263d53c294dfde9e42df2f71048656ae8ac55f8158542"
+  },
+  "branch": "fjy/cle-contract-conditional-q-20261023"
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "old L1 and new Q2 native D_init303 paired; Q feedback covers new D_init303/D_grow23",
+  "paired_tasks": 303,
+  "transitions": {
+    "both_pass": 120,
+    "loss": 18,
+    "both_fail": 145,
+    "rescue": 20
+  },
+  "old_joint": 138,
+  "new_joint": 140,
+  "old_native_code_not_located_by_this_analysis": false,
+  "both_native_results_verified": true,
+  "discordant_code_pair_exports": 38,
+  "same_score_control_tasks": 265,
+  "implementation_reviews_pending": 303,
+  "current_two_stage_attempts": 503,
+  "current_two_stage_event_counts": {
+    "all_recorded_events": 1017,
+    "credited": 902,
+    "not_credited": 115
+  },
+  "credited_events_by_FS": {
+    "F+S+": 318,
+    "F-S+": 385,
+    "F-S-": 134,
+    "F+S-": 65
+  },
+  "credited_events_by_co_adoption": {
+    "multiple_cards": 826,
+    "one_card": 76
+  },
+  "cards_receiving_current_two_stage_credit": 463,
+  "cards_with_multiple_current_feedback_families": 169,
+  "self_family_events": 353,
+  "other_family_events": 549,
+  "latest_visits_positive": 972,
+  "full_historical_Q_ledger_complete": false,
+  "API_calls": 0,
+  "Q_updates": 0,
+  "causal_limit": "historical states/timing and repair inputs differ; no isolated Q efficacy conclusion"
+}

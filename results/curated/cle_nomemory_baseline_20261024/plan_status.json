@@ -1,0 +1,36 @@
+{
+  "protocol": "cle-P3-nomemory-v41flash1017-v1",
+  "status": "incomplete_technical_stop",
+  "plan": "docs/CLE_无经验Agent换模基准方案_20261024.md",
+  "model": "deepseek-v4.1-flash-1017",
+  "datasets": {
+    "PLT_D_gate": 298,
+    "Base_python": 115,
+    "Plus_python": 140
+  },
+  "memory_use": false,
+  "card_generation": false,
+  "Q_learning": false,
+  "embedding": false,
+  "monitor_id": "cle-2",
+  "monitor_status": "PAUSED",
+  "real_baseline_API_calls": 246,
+  "related_offline_tests_passed": 55,
+  "minimal_control_tokens_separate": 41,
+  "misstarted_training": {
+    "status": "stopped_user_scope_correction",
+    "known_tokens_separate": 154685,
+    "physical_attempts": 76,
+    "attempts_with_usage": 65,
+    "attempts_without_complete_usage": 11,
+    "logical_prepared_unresolved": 2,
+    "never_reuse_as_baseline": true
+  },
+  "authorization": "2026-10-24 user: 完成设计好的新P3",
+  "first_two_gate_passed": true,
+  "zero_API_replay_two_tasks_passed": true,
+  "API_calls_scope": "physical HTTP attempts; 223 responses with usage",
+  "completed_PLT": 43,
+  "known_baseline_tokens": 538727,
+  "BasePlus_status": "blocked_original_validator_image"
+}

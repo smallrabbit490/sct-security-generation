@@ -1,0 +1,19 @@
+{
+  "scope": "single_original_unresolved_selector_reissue_then_continue_original_learning",
+  "authorization_source": "direct_user_message_20261027",
+  "user_instruction": "那题直接重跑了，后台我没有权限也没有账号",
+  "authorized_utc": "2026-10-27T07:29:10.752650+00:00",
+  "original_request": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FQ_LEARN\\K0\\segment_001\\journals\\K0_437\\requests\\6c0c3d334fe11db8ab547242286295fff03b39fc21cc84afbd588c7c17274a1d-000001.json",
+  "original_identity": "6c0c3d334fe11db8ab547242286295fff03b39fc21cc84afbd588c7c17274a1d-000001",
+  "cell_id": "K0_437",
+  "billing_reconciliation": "unavailable; user has no provider account or permission",
+  "old_execution_or_charge": "unknown",
+  "original_failed_records_preserved": true,
+  "completed_63_tasks_reused": true,
+  "successful_task437_prefix_reused": true,
+  "model_and_scientific_rules_changed": false,
+  "native_retry_rules_changed": false,
+  "request_window_unchanged": true,
+  "budget_reset": false,
+  "authorization_does_not_cover_other_unresolved_requests": true
+}

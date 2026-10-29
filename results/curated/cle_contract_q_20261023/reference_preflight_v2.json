@@ -1,0 +1,520 @@
+{
+  "scope": "reference_environment_check_not_CLE_model_scores",
+  "tasks": 48,
+  "completed": 48,
+  "reference_joint_pass": 48,
+  "all_references_pass": true,
+  "records": [
+    {
+      "task_id": "100",
+      "family_id": "b1be3d02111c",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\100.json"
+    },
+    {
+      "task_id": "1000",
+      "family_id": "8effd9406673",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1000.json"
+    },
+    {
+      "task_id": "1001",
+      "family_id": "bf1c4709bade",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1001.json"
+    },
+    {
+      "task_id": "1006",
+      "family_id": "89de5a2d1dc3",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1006.json"
+    },
+    {
+      "task_id": "1013",
+      "family_id": "1047f2bc6f3b",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1013.json"
+    },
+    {
+      "task_id": "1015",
+      "family_id": "ef36f1232121",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1015.json"
+    },
+    {
+      "task_id": "103",
+      "family_id": "ae44044347c3",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\103.json"
+    },
+    {
+      "task_id": "1055",
+      "family_id": "b27afdfa4c6d",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1055.json"
+    },
+    {
+      "task_id": "1056",
+      "family_id": "d6448e408574",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1056.json"
+    },
+    {
+      "task_id": "106",
+      "family_id": "d0d35d0245f3",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\106.json"
+    },
+    {
+      "task_id": "1082",
+      "family_id": "99ac325fbf98",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1082.json"
+    },
+    {
+      "task_id": "1086",
+      "family_id": "79f9803495c0",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1086.json"
+    },
+    {
+      "task_id": "1125",
+      "family_id": "bb690cb66710",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {
+        "static_analysis": "static_unsafe"
+      },
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1125.json"
+    },
+    {
+      "task_id": "1126",
+      "family_id": "426b5178e24d",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {
+        "static_analysis": "static_unsafe"
+      },
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1126.json"
+    },
+    {
+      "task_id": "1170",
+      "family_id": "3c028bc080c8",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {
+        "static_analysis": "static_unsafe"
+      },
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1170.json"
+    },
+    {
+      "task_id": "1179",
+      "family_id": "a5db646d9dbc",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {
+        "static_analysis": "static_unsafe"
+      },
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1179.json"
+    },
+    {
+      "task_id": "1215",
+      "family_id": "0202d6a5afe9",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1215.json"
+    },
+    {
+      "task_id": "1225",
+      "family_id": "228bf424541f",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1225.json"
+    },
+    {
+      "task_id": "1256",
+      "family_id": "26e03da64df8",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1256.json"
+    },
+    {
+      "task_id": "1259",
+      "family_id": "5aeb6e97473a",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1259.json"
+    },
+    {
+      "task_id": "1266",
+      "family_id": "796599e07fe5",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1266.json"
+    },
+    {
+      "task_id": "1267",
+      "family_id": "b4f08ece902e",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1267.json"
+    },
+    {
+      "task_id": "1269",
+      "family_id": "23c8065b0296",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1269.json"
+    },
+    {
+      "task_id": "1306",
+      "family_id": "c491a96333c7",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1306.json"
+    },
+    {
+      "task_id": "1317",
+      "family_id": "6254ceb5c539",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1317.json"
+    },
+    {
+      "task_id": "1318",
+      "family_id": "167bebe21100",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1318.json"
+    },
+    {
+      "task_id": "1322",
+      "family_id": "accd39ecb618",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1322.json"
+    },
+    {
+      "task_id": "1323",
+      "family_id": "0871c2ec5cd8",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1323.json"
+    },
+    {
+      "task_id": "1341",
+      "family_id": "694af4fba622",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1341.json"
+    },
+    {
+      "task_id": "1343",
+      "family_id": "f38d18af5ea5",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1343.json"
+    },
+    {
+      "task_id": "1345",
+      "family_id": "53cce12b61e4",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1345.json"
+    },
+    {
+      "task_id": "1347",
+      "family_id": "fcfdfb66f77c",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1347.json"
+    },
+    {
+      "task_id": "1352",
+      "family_id": "e1649f0815a6",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1352.json"
+    },
+    {
+      "task_id": "1402",
+      "family_id": "46a830a68cb8",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1402.json"
+    },
+    {
+      "task_id": "1409",
+      "family_id": "3ef963e6098d",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\1409.json"
+    },
+    {
+      "task_id": "335",
+      "family_id": "2d999c0d0d72",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\335.json"
+    },
+    {
+      "task_id": "338",
+      "family_id": "1f822ff36d2a",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\338.json"
+    },
+    {
+      "task_id": "340",
+      "family_id": "4048652cb877",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\340.json"
+    },
+    {
+      "task_id": "424",
+      "family_id": "58ef28b25367",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\424.json"
+    },
+    {
+      "task_id": "427",
+      "family_id": "b992ac7b2f85",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\427.json"
+    },
+    {
+      "task_id": "471",
+      "family_id": "2cdebbea3921",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\471.json"
+    },
+    {
+      "task_id": "48",
+      "family_id": "aa4e8b63e818",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\48.json"
+    },
+    {
+      "task_id": "489",
+      "family_id": "cf9e2b4681b9",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\489.json"
+    },
+    {
+      "task_id": "639",
+      "family_id": "f8663a5390f0",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\639.json"
+    },
+    {
+      "task_id": "777",
+      "family_id": "8ac9f3ea0eb2",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\777.json"
+    },
+    {
+      "task_id": "783",
+      "family_id": "cd73a94d9e2b",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\783.json"
+    },
+    {
+      "task_id": "873",
+      "family_id": "5bd2a1d9722f",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\873.json"
+    },
+    {
+      "task_id": "875",
+      "family_id": "444cf0bcfc61",
+      "reference_measured": true,
+      "reference_joint": true,
+      "functional": true,
+      "security": true,
+      "errors": {},
+      "raw_evidence": "translation_work\\diagnostics\\20261023\\cle_contract_q\\reference_preflight_v2\\875.json"
+    }
+  ],
+  "frozen_memory": {
+    "cards": 1939,
+    "visited_cards": 972,
+    "same_card_bodies_lifecycle_as_original": true,
+    "snapshot_sha256": "a92f06389a27386a50795f45fd8c0da8ad8394397cd08ea408a9e2c37fa4c711"
+  },
+  "runtime": {
+    "credential_available": true,
+    "docker_binary_available": true,
+    "credential_check": "configuration_presence_only_not_authenticated",
+    "python": "3.12.14",
+    "official_validator_runtime_ready": true,
+    "positive_control_executed": true,
+    "blockers": []
+  },
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "API_calls": 0,
+  "new_model_generations": 0,
+  "new_model_Joint_scores": 0,
+  "hidden_feedback_used_for_routing_or_generation": false,
+  "original_records_modified": false,
+  "tasks_path": "translation_work\\diagnostics\\20261023\\cle_contract_q\\tasks_D_gate_48_restored_urls_v2.json"
+}

@@ -1,0 +1,25 @@
+{
+  "summary_visible_characters": 354,
+  "source_report": "docs\\research\\reports\\CLE-RPT-20261014-20261021-weekly-v06\\CLE-RPT-20261014-20261021-weekly-v06.md",
+  "period_end": "2026-10-21T22:26:00+08:00",
+  "historical_numeric_tokens_retained": true,
+  "report_sections": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+  ],
+  "historical_todos": [
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "later_review_explicit": "A4",
+  "generated_docx": [
+    "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-PKG-20261014-20261021-v01\\10月14日-10月21日实验探索报告.docx",
+    "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-PKG-20261014-20261021-v01\\10月14日-10月21日思路脉络图.docx",
+    "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-PKG-20261014-20261021-v01\\10月14日-10月21日本周结论与下一步.docx"
+  ]
+}

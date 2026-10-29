@@ -1,0 +1,17 @@
+{
+  "protocol": "cle-memory-mechanisms-data-contract-v2",
+  "planned": 96,
+  "completed": 96,
+  "reference_joint_pass": 96,
+  "reference_and_dependency_checks_pass": 96,
+  "failed_ids": [],
+  "selection_unchanged": true,
+  "runtime_executable_path_prepend": "C:\\Program Files\\Git\\usr\\bin",
+  "runtime_profile_required_for_all_future_arms": true,
+  "original_validator_unchanged": true,
+  "public_contract_review": "Agent dependency-and-name review; not a human relevance-label signoff",
+  "reference_pass_does_not_prove_public_contract_completeness": true,
+  "API_calls": 0,
+  "new_model_generations": 0,
+  "Q_updates": 0
+}

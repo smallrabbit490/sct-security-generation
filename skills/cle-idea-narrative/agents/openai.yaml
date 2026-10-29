@@ -1,0 +1,4 @@
+interface:
+  display_name: "CLE 研究叙事与单思路图"
+  short_description: "先写起因、阶段实验、结果分析和结论，再生成横向阶段图并更新实验计划"
+  default_prompt: "使用 $cle-idea-narrative 整理当前CLE思路的完整实验叙事，再生成一条思路一张的阶段图并同步待做计划。"

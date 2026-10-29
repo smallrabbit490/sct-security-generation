@@ -1,0 +1,26 @@
+{
+  "status": "completed_two_task_probe_replayed_analyzed",
+  "completed": 2,
+  "planned": 2,
+  "task_ids": [
+    "45",
+    "46"
+  ],
+  "distinct_families": 1,
+  "first_Joint": 2,
+  "final_Joint": 2,
+  "card_count": 5,
+  "card_lifecycle": "provisional_not_global_gated",
+  "full_library_complete": false,
+  "Q_updates": 0,
+  "physical_HTTP": 17,
+  "known_reported_tokens": 29944,
+  "unknown_usage_HTTP": 1,
+  "physical_statuses": {
+    "response_closed": 16,
+    "response_read_error": 1
+  },
+  "replay_status": "passed_recorded_event_replay",
+  "new_replay_HTTP": 0,
+  "next": "full build skipped; do not use toy library for cross-library claim"
+}

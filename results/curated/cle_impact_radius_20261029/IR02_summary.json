@@ -1,0 +1,52 @@
+{
+  "experiment": "IR02",
+  "summary": {
+    "status": "completed_statistics",
+    "completed": 48,
+    "planned": 48,
+    "arms": {
+      "original_edit": {
+        "completed": 24,
+        "planned": 24,
+        "measured": 24,
+        "F": 11,
+        "S": 16,
+        "Joint": 8
+      },
+      "boundary_edit": {
+        "completed": 24,
+        "planned": 24,
+        "measured": 24,
+        "F": 11,
+        "S": 16,
+        "Joint": 8
+      }
+    },
+    "paired_units": 24,
+    "paired_measured": 24,
+    "rescue": 0,
+    "loss": 0,
+    "new_security_failures": 0,
+    "repeat_net": {
+      "1": 0,
+      "2": 0
+    },
+    "experiment_HTTP_in_analysis": 0,
+    "family_bootstrap_95": [
+      0.0,
+      0.0
+    ],
+    "outcome_gate_passed": false,
+    "replay_passed": true,
+    "mechanism_gate_passed": false
+  },
+  "cost": {
+    "known_reported_tokens": 712383,
+    "transport_attempts_including_prior": 48,
+    "charged_tokens_including_unknown_and_inflight_bounds": 712383
+  },
+  "unknown_usage_HTTP": 0,
+  "decision": "stop_no_IR03",
+  "public_input_revision": "v02",
+  "report": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\impact_radius_20261028\\IR02\\analysis\\report.md"
+}

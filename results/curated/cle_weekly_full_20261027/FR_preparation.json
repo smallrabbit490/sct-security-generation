@@ -1,0 +1,19 @@
+{
+  "status": "zero_API_preparation_only",
+  "candidate_pools": {
+    "status": "waiting_cached_inputs",
+    "planned_tasks": 571,
+    "completed_tasks": 0,
+    "pending": {
+      "embedding_vectors": 129,
+      "initial_analysis": 442
+    },
+    "new_API_calls": 0,
+    "formal_metrics": "pending_human_confirmation"
+  },
+  "initials_reused": 129,
+  "initials_pending": 442,
+  "missing_query_vectors": 248,
+  "AI_labels_dispatched": 0,
+  "formal_metrics": "pending_human_confirmation"
+}

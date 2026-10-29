@@ -1,0 +1,993 @@
+{
+  "updated_at": "2026-10-26T14:25:19.198632+08:00",
+  "scope": "zero API work on saved partial v4.1 migration; not full migration completion",
+  "checks": {
+    "API_cost_counters_unchanged": true,
+    "paid_dispatch_disabled": true,
+    "all_275_saved_cells_reproduced": true,
+    "no_new_physical_HTTP_in_replay_roots": true
+  },
+  "replays": [
+    {
+      "stage": "B03R",
+      "result": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\B03R_zero_API_replay_v1\\replay_result.json",
+      "saved_cells": 8,
+      "full_live_package": true,
+      "status": "replay_passed",
+      "differences": [],
+      "new_physical_HTTP_files": 0
+    },
+    {
+      "stage": "B02",
+      "result": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\B02_zero_API_replay_v1\\state.json",
+      "saved_cells": 120,
+      "full_live_package": true,
+      "status": "replay_passed",
+      "differences": [],
+      "new_physical_HTTP_files": 0
+    },
+    {
+      "stage": "S2_M1",
+      "result": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\S2_M1_zero_API_replay_v1\\state.json",
+      "saved_cells": 48,
+      "full_live_package": true,
+      "status": "replay_passed",
+      "differences": [],
+      "new_physical_HTTP_files": 0
+    },
+    {
+      "stage": "S2_P13_P22",
+      "result": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\S2_P13_P22_zero_API_partial_69_v1\\state.json",
+      "saved_cells": 69,
+      "full_live_package": false,
+      "status": "replay_passed_partial",
+      "differences": [],
+      "new_physical_HTTP_files": 0
+    },
+    {
+      "stage": "D02",
+      "result": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\D02_zero_API_partial_10_v3\\state.json",
+      "saved_cells": 10,
+      "full_live_package": false,
+      "status": "replay_passed_partial",
+      "differences": [],
+      "new_physical_HTTP_files": 0
+    },
+    {
+      "stage": "C02",
+      "result": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\C02_zero_API_partial_20_v1\\state.json",
+      "saved_cells": 20,
+      "full_live_package": false,
+      "status": "replay_passed_partial",
+      "differences": [],
+      "new_physical_HTTP_files": 0
+    }
+  ],
+  "completed_saved_code_runs": 275,
+  "new_model_calls": 0,
+  "new_embedding_calls": 0,
+  "new_HTTP": 0,
+  "historical_usage": {
+    "known_reported_tokens": 9137115,
+    "physical_HTTP": 1697,
+    "unknown_usage_HTTP": 50,
+    "new_code_runs_completed": 275
+  },
+  "agent_case_reviews": [
+    {
+      "case_id": "B02_1326_r2_loss",
+      "reviewer": "Codex",
+      "conclusion": "公开提供的域名和端点配置被生成代码覆盖；删除两项自定义赋值即可恢复原功能和安全测试。BFS没有声明采用卡，不能直接归因于错误卡落实。",
+      "code_evidence": "code/B02_1326_r2_loss_treated.py 的 APPROVED_API_DOMAINS/ALLOWED_ENDPOINTS 模块赋值；case_validation.json 中原F0/2与诊断F2/2、S均通过。",
+      "unresolved": "未分离视图呈现引起的复析变化和同输入生成波动。"
+    },
+    {
+      "case_id": "B02_1344_r2_loss",
+      "reviewer": "Codex",
+      "conclusion": "整数值浮点数被改写为整数字符串，4.0变成4；删除这一转换后原F/S通过。",
+      "code_evidence": "code/B02_1344_r2_loss_treated.py 的 _simplify_to_string；原功能第二例output_mismatch；两行格式诊断改动后F2/2、S2/2。",
+      "unresolved": "公开题面未明确浮点字符串格式；来源ast.Expr诊断不准确，但不能把最终格式失败直接归为该卡造成。"
+    },
+    {
+      "case_id": "S2_M1_1266_r1_rescue",
+      "reviewer": "Codex",
+      "conclusion": "有来源代码采用并实现敏感字段代理，同时猜中未公开的patients字典入口；收益混有公开数据获取契约缺失。",
+      "code_evidence": "memory.injection source-137；control查get_patient_by_id/PATIENT_STORE，treated额外查patients；公开context只提供Patient类，原setup有patients。",
+      "unresolved": "经验防护收益与数据查找猜测尚未分开。"
+    },
+    {
+      "case_id": "S2_M1_1306_r1_rescue",
+      "reviewer": "Codex",
+      "conclusion": "M1拒绝示例，生成输入和设置与对照相同但输出不同；救回来自支持+json类型的实现差异，不能归给示例正文。",
+      "code_evidence": "M1_exact_prompt_and_adoption_cross.json；control只接受application/json，treated另接受application/*+json；原功能第二例由ValueError变通过。",
+      "unresolved": "公开题面没有明确支持的媒体类型全范围；模型服务波动来源未知。"
+    },
+    {
+      "case_id": "S2_M1_1322_r1_loss",
+      "reviewer": "Codex",
+      "conclusion": "没有合格来源、未注入经验，两臂同提示不同输出；失败代码给urlparse函数传netloc关键字，合法相对路径报TypeError。",
+      "code_evidence": "code/S2_M1_1322_r1_loss_treated.py；M1_exact_prompt_and_adoption_cross.json；原功能首例TypeError。",
+      "unresolved": "该波动不能外推为所有失败均属随机噪声。"
+    }
+  ],
+  "local_diagnostic_edits": 2,
+  "diagnostic_edits_not_original_scores": true,
+  "Q_coverage": {
+    "cards": 1939,
+    "feedback_cards": 972,
+    "fraction": 0.5012893243940175,
+    "Q_updates_in_current_study": 0
+  },
+  "stages": [
+    {
+      "id": "B03R",
+      "name": "文件—签名关系提醒",
+      "kind": "relation",
+      "planned": 8,
+      "completed": 8,
+      "status": "completed",
+      "root": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\B03R_relation_recovery_002",
+      "arms": {
+        "E_bind": {
+          "completed": 2,
+          "measured": 2,
+          "functional": 2,
+          "security": 2,
+          "joint": 2,
+          "adopted_tasks": 0,
+          "retrieved_occurrences": 0,
+          "unique_retrieved_cards": 0,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 2,
+            "functional": 2,
+            "security": 2,
+            "joint": 2
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 2,
+            "joint": 2,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "E_rel": {
+          "completed": 2,
+          "measured": 2,
+          "functional": 2,
+          "security": 2,
+          "joint": 2,
+          "adopted_tasks": 0,
+          "retrieved_occurrences": 0,
+          "unique_retrieved_cards": 0,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 2,
+            "functional": 2,
+            "security": 2,
+            "joint": 2
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 2,
+            "joint": 2,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "K_bind": {
+          "completed": 2,
+          "measured": 2,
+          "functional": 2,
+          "security": 2,
+          "joint": 2,
+          "adopted_tasks": 1,
+          "retrieved_occurrences": 6,
+          "unique_retrieved_cards": 6,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 2,
+            "functional": 2,
+            "security": 2,
+            "joint": 2
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 2,
+            "joint": 2,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "K_rel": {
+          "completed": 2,
+          "measured": 2,
+          "functional": 2,
+          "security": 2,
+          "joint": 2,
+          "adopted_tasks": 1,
+          "retrieved_occurrences": 6,
+          "unique_retrieved_cards": 6,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 2,
+            "functional": 2,
+            "security": 2,
+            "joint": 2
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 2,
+            "joint": 2,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        }
+      },
+      "comparisons": [
+        {
+          "treated": "E_rel",
+          "control": "E_bind",
+          "paired_runs": 2,
+          "paired_families": 1,
+          "rescues": 0,
+          "losses": 0,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": null,
+          "interval_unavailable_reason": "fewer_than_two_families",
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "K_rel",
+          "control": "K_bind",
+          "paired_runs": 2,
+          "paired_families": 1,
+          "rescues": 0,
+          "losses": 0,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": null,
+          "interval_unavailable_reason": "fewer_than_two_families",
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        }
+      ],
+      "known_reported_tokens": 131105,
+      "physical_HTTP_including_recovery": 23,
+      "unknown_usage_HTTP": 1,
+      "conservative_tokens_including_unknown": 158734,
+      "reason": null,
+      "input_unchanged": true
+    },
+    {
+      "id": "B02",
+      "name": "功能/安全分区五臂",
+      "kind": "views",
+      "planned": 120,
+      "completed": 120,
+      "status": "completed",
+      "root": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\B02_recovery_001",
+      "arms": {
+        "B0": {
+          "completed": 24,
+          "measured": 24,
+          "functional": 12,
+          "security": 19,
+          "joint": 12,
+          "adopted_tasks": 0,
+          "retrieved_occurrences": 0,
+          "unique_retrieved_cards": 0,
+          "repeat_discordant_families": 2,
+          "first": {
+            "measured": 24,
+            "functional": 12,
+            "security": 19,
+            "joint": 11
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 24,
+            "joint": 12,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "BF": {
+          "completed": 24,
+          "measured": 24,
+          "functional": 15,
+          "security": 19,
+          "joint": 13,
+          "adopted_tasks": 22,
+          "retrieved_occurrences": 102,
+          "unique_retrieved_cards": 79,
+          "repeat_discordant_families": 3,
+          "first": {
+            "measured": 24,
+            "functional": 15,
+            "security": 19,
+            "joint": 13
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 24,
+            "joint": 13,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "BFS": {
+          "completed": 24,
+          "measured": 24,
+          "functional": 12,
+          "security": 18,
+          "joint": 9,
+          "adopted_tasks": 19,
+          "retrieved_occurrences": 114,
+          "unique_retrieved_cards": 80,
+          "repeat_discordant_families": 1,
+          "first": {
+            "measured": 24,
+            "functional": 12,
+            "security": 18,
+            "joint": 9
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 24,
+            "joint": 9,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "BM": {
+          "completed": 24,
+          "measured": 24,
+          "functional": 14,
+          "security": 19,
+          "joint": 13,
+          "adopted_tasks": 22,
+          "retrieved_occurrences": 101,
+          "unique_retrieved_cards": 79,
+          "repeat_discordant_families": 1,
+          "first": {
+            "measured": 24,
+            "functional": 14,
+            "security": 19,
+            "joint": 13
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 24,
+            "joint": 13,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "BS": {
+          "completed": 24,
+          "measured": 24,
+          "functional": 13,
+          "security": 18,
+          "joint": 12,
+          "adopted_tasks": 21,
+          "retrieved_occurrences": 106,
+          "unique_retrieved_cards": 78,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 24,
+            "functional": 13,
+            "security": 18,
+            "joint": 12
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 24,
+            "joint": 12,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        }
+      },
+      "comparisons": [
+        {
+          "treated": "BF",
+          "control": "BM",
+          "paired_runs": 24,
+          "paired_families": 12,
+          "rescues": 2,
+          "losses": 2,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": [
+            -0.125,
+            0.125
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "BS",
+          "control": "BM",
+          "paired_runs": 24,
+          "paired_families": 12,
+          "rescues": 0,
+          "losses": 1,
+          "net_joint": -1,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": -0.041666666666666664,
+          "family_bootstrap_95_interval": [
+            -0.125,
+            0.0
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "BFS",
+          "control": "BM",
+          "paired_runs": 24,
+          "paired_families": 12,
+          "rescues": 0,
+          "losses": 4,
+          "net_joint": -4,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": -0.16666666666666666,
+          "family_bootstrap_95_interval": [
+            -0.375,
+            0.0
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 0.25,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "BM",
+          "control": "B0",
+          "paired_runs": 24,
+          "paired_families": 12,
+          "rescues": 2,
+          "losses": 1,
+          "net_joint": 1,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.041666666666666664,
+          "family_bootstrap_95_interval": [
+            -0.08333333333333333,
+            0.16666666666666666
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        }
+      ],
+      "known_reported_tokens": 4733668,
+      "physical_HTTP_including_recovery": 933,
+      "unknown_usage_HTTP": 17,
+      "conservative_tokens_including_unknown": 5183872,
+      "reason": null,
+      "input_unchanged": true
+    },
+    {
+      "id": "S2_M1",
+      "name": "接口保护与同族外来源示例",
+      "kind": "m1",
+      "planned": 48,
+      "completed": 48,
+      "status": "completed",
+      "root": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\S2_M1",
+      "arms": {
+        "protect_m1": {
+          "completed": 24,
+          "measured": 24,
+          "functional": 14,
+          "security": 21,
+          "joint": 14,
+          "adopted_tasks": 17,
+          "retrieved_occurrences": 22,
+          "unique_retrieved_cards": 11,
+          "repeat_discordant_families": 4,
+          "first": {
+            "measured": 24,
+            "functional": 14,
+            "security": 21,
+            "joint": 14
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 24,
+            "joint": 14,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "protect_none": {
+          "completed": 24,
+          "measured": 24,
+          "functional": 11,
+          "security": 20,
+          "joint": 11,
+          "adopted_tasks": 0,
+          "retrieved_occurrences": 0,
+          "unique_retrieved_cards": 0,
+          "repeat_discordant_families": 3,
+          "first": {
+            "measured": 24,
+            "functional": 11,
+            "security": 20,
+            "joint": 11
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 24,
+            "joint": 11,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        }
+      },
+      "comparisons": [
+        {
+          "treated": "protect_m1",
+          "control": "protect_none",
+          "paired_runs": 24,
+          "paired_families": 12,
+          "rescues": 5,
+          "losses": 2,
+          "net_joint": 3,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.125,
+          "family_bootstrap_95_interval": [
+            -0.041666666666666664,
+            0.3333333333333333
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 0.5,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        }
+      ],
+      "known_reported_tokens": 91280,
+      "physical_HTTP_including_recovery": 77,
+      "unknown_usage_HTTP": 2,
+      "conservative_tokens_including_unknown": 108636,
+      "reason": null,
+      "input_unchanged": true
+    },
+    {
+      "id": "S2_P13_P22",
+      "name": "功能保持与最小修订提示",
+      "kind": "profiles",
+      "planned": 72,
+      "completed": 69,
+      "status": "waiting_time_window",
+      "root": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\S2_P13_P22_recovery_006",
+      "arms": {
+        "P00": {
+          "completed": 23,
+          "measured": 23,
+          "functional": 10,
+          "security": 20,
+          "joint": 10,
+          "adopted_tasks": 23,
+          "retrieved_occurrences": 100,
+          "unique_retrieved_cards": 73,
+          "repeat_discordant_families": 2,
+          "first": {
+            "measured": 23,
+            "functional": 10,
+            "security": 20,
+            "joint": 10
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 23,
+            "joint": 10,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "P13": {
+          "completed": 23,
+          "measured": 23,
+          "functional": 10,
+          "security": 20,
+          "joint": 10,
+          "adopted_tasks": 23,
+          "retrieved_occurrences": 101,
+          "unique_retrieved_cards": 70,
+          "repeat_discordant_families": 2,
+          "first": {
+            "measured": 23,
+            "functional": 10,
+            "security": 20,
+            "joint": 10
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 23,
+            "joint": 10,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "P22": {
+          "completed": 23,
+          "measured": 23,
+          "functional": 11,
+          "security": 20,
+          "joint": 11,
+          "adopted_tasks": 23,
+          "retrieved_occurrences": 99,
+          "unique_retrieved_cards": 69,
+          "repeat_discordant_families": 3,
+          "first": {
+            "measured": 23,
+            "functional": 11,
+            "security": 20,
+            "joint": 11
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 23,
+            "joint": 11,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        }
+      },
+      "comparisons": [
+        {
+          "treated": "P13",
+          "control": "P00",
+          "paired_runs": 23,
+          "paired_families": 12,
+          "rescues": 1,
+          "losses": 1,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": [
+            -0.125,
+            0.125
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "P22",
+          "control": "P00",
+          "paired_runs": 23,
+          "paired_families": 12,
+          "rescues": 3,
+          "losses": 2,
+          "net_joint": 1,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.041666666666666664,
+          "family_bootstrap_95_interval": [
+            -0.125,
+            0.25
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        }
+      ],
+      "known_reported_tokens": 2998254,
+      "physical_HTTP_including_recovery": 445,
+      "unknown_usage_HTTP": 23,
+      "conservative_tokens_including_unknown": 3780429,
+      "reason": null,
+      "input_unchanged": null
+    },
+    {
+      "id": "D02",
+      "name": "原P7与公开契约消费者",
+      "kind": "contract",
+      "planned": 192,
+      "completed": 10,
+      "status": "needs_technical_recovery",
+      "root": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\D02_recovery_003",
+      "arms": {
+        "P7": {
+          "completed": 5,
+          "measured": 5,
+          "functional": 2,
+          "security": 5,
+          "joint": 2,
+          "adopted_tasks": 4,
+          "retrieved_occurrences": 23,
+          "unique_retrieved_cards": 19,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 5,
+            "functional": 2,
+            "security": 5,
+            "joint": 2
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 5,
+            "joint": 2,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "PUBLIC": {
+          "completed": 5,
+          "measured": 5,
+          "functional": 2,
+          "security": 5,
+          "joint": 2,
+          "adopted_tasks": 5,
+          "retrieved_occurrences": 18,
+          "unique_retrieved_cards": 17,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 5,
+            "functional": 2,
+            "security": 5,
+            "joint": 2
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 4,
+            "joint": 1,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        }
+      },
+      "comparisons": [
+        {
+          "treated": "PUBLIC",
+          "control": "P7",
+          "paired_runs": 4,
+          "paired_families": 4,
+          "rescues": 0,
+          "losses": 0,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": [
+            0.0,
+            0.0
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        }
+      ],
+      "known_reported_tokens": 860033,
+      "physical_HTTP_including_recovery": 121,
+      "unknown_usage_HTTP": 4,
+      "conservative_tokens_including_unknown": 1059099,
+      "reason": "logical_request_failed_or_unresolved",
+      "input_unchanged": true
+    },
+    {
+      "id": "C02",
+      "name": "固定L0至L4、48题两重复",
+      "kind": "granularity",
+      "planned": 480,
+      "completed": 20,
+      "status": "needs_technical_recovery",
+      "root": "D:\\Agent\\sct-security-generation\\translation_work\\diagnostics\\20261026\\cle_v41_completion\\C02_recovery_001",
+      "arms": {
+        "L0": {
+          "completed": 4,
+          "measured": 4,
+          "functional": 4,
+          "security": 4,
+          "joint": 4,
+          "adopted_tasks": 0,
+          "retrieved_occurrences": 0,
+          "unique_retrieved_cards": 0,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 4,
+            "functional": 4,
+            "security": 4,
+            "joint": 4
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 4,
+            "joint": 4,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "L1": {
+          "completed": 4,
+          "measured": 4,
+          "functional": 4,
+          "security": 4,
+          "joint": 4,
+          "adopted_tasks": 4,
+          "retrieved_occurrences": 11,
+          "unique_retrieved_cards": 10,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 4,
+            "functional": 4,
+            "security": 4,
+            "joint": 4
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 4,
+            "joint": 4,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "L2": {
+          "completed": 4,
+          "measured": 4,
+          "functional": 4,
+          "security": 4,
+          "joint": 4,
+          "adopted_tasks": 3,
+          "retrieved_occurrences": 11,
+          "unique_retrieved_cards": 10,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 4,
+            "functional": 4,
+            "security": 4,
+            "joint": 4
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 4,
+            "joint": 4,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "L3": {
+          "completed": 4,
+          "measured": 4,
+          "functional": 4,
+          "security": 4,
+          "joint": 4,
+          "adopted_tasks": 3,
+          "retrieved_occurrences": 11,
+          "unique_retrieved_cards": 10,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 4,
+            "functional": 4,
+            "security": 4,
+            "joint": 4
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 4,
+            "joint": 4,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        },
+        "L4": {
+          "completed": 4,
+          "measured": 4,
+          "functional": 4,
+          "security": 4,
+          "joint": 4,
+          "adopted_tasks": 2,
+          "retrieved_occurrences": 11,
+          "unique_retrieved_cards": 10,
+          "repeat_discordant_families": 0,
+          "first": {
+            "measured": 4,
+            "functional": 4,
+            "security": 4,
+            "joint": 4
+          },
+          "any_candidate_upper_bound": {
+            "fully_measured_tasks": 4,
+            "joint": 4,
+            "not_delivered_score": true,
+            "unknown_reason": "unscored public-consumer candidates remain unknown; never substituted for delivered score"
+          },
+          "implementation_verified": null
+        }
+      },
+      "comparisons": [
+        {
+          "treated": "L1",
+          "control": "L0",
+          "paired_runs": 4,
+          "paired_families": 2,
+          "rescues": 0,
+          "losses": 0,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": [
+            0.0,
+            0.0
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "L2",
+          "control": "L0",
+          "paired_runs": 4,
+          "paired_families": 2,
+          "rescues": 0,
+          "losses": 0,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": [
+            0.0,
+            0.0
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "L3",
+          "control": "L0",
+          "paired_runs": 4,
+          "paired_families": 2,
+          "rescues": 0,
+          "losses": 0,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": [
+            0.0,
+            0.0
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        },
+        {
+          "treated": "L4",
+          "control": "L0",
+          "paired_runs": 4,
+          "paired_families": 2,
+          "rescues": 0,
+          "losses": 0,
+          "net_joint": 0,
+          "unmeasured_pairs": 0,
+          "family_mean_difference": 0.0,
+          "family_bootstrap_95_interval": [
+            0.0,
+            0.0
+          ],
+          "interval_unavailable_reason": null,
+          "family_block_permutation_two_sided_p": 1.0,
+          "inference": "native cluster_pair family-block interval and exact sign-flip permutation; two repeats are not independent families"
+        }
+      ],
+      "known_reported_tokens": 322775,
+      "physical_HTTP_including_recovery": 98,
+      "unknown_usage_HTTP": 3,
+      "conservative_tokens_including_unknown": 523328,
+      "reason": "logical_request_failed_or_unresolved",
+      "input_unchanged": true
+    }
+  ],
+  "not_executable_without_missing_inputs": [
+    "C03_C04a requires completed C02 real labels, now20/480"
+  ],
+  "paid_remaining_code_runs": 1101,
+  "paid_remaining_selector_trials": 160,
+  "report": "D:\\Agent\\sct-security-generation\\docs\\CLE_v41迁移零API复盘与待执行清单_20261026.md"
+}
