@@ -1,0 +1,884 @@
+{
+  "status": "fixed_saved_prefix",
+  "completed": 2433,
+  "planned": 2980,
+  "unique_tasks": 298,
+  "arms": {
+    "B0": {
+      "first": {
+        "functional": 208,
+        "security": 359,
+        "joint": 174,
+        "measured": 486,
+        "completed": 486,
+        "planned": 596,
+        "unmeasured_completed": 0,
+        "pending_tasks": 110,
+        "joint_rate_among_completed": 0.35802469135802467,
+        "joint_rate_among_measured": 0.35802469135802467,
+        "confirmed_joint_divided_by_planned": 0.29194630872483224
+      },
+      "final": {
+        "functional": 219,
+        "security": 368,
+        "joint": 188,
+        "measured": 485,
+        "completed": 486,
+        "planned": 596,
+        "unmeasured_completed": 1,
+        "pending_tasks": 110,
+        "joint_rate_among_completed": 0.3868312757201646,
+        "joint_rate_among_measured": 0.38762886597938145,
+        "confirmed_joint_divided_by_planned": 0.31543624161073824
+      },
+      "repeat_variability": {
+        "tasks_with_two_measured_repeats": 188,
+        "Joint_discordant_tasks": 27
+      }
+    },
+    "BM": {
+      "first": {
+        "functional": 230,
+        "security": 371,
+        "joint": 190,
+        "measured": 486,
+        "completed": 487,
+        "planned": 596,
+        "unmeasured_completed": 1,
+        "pending_tasks": 109,
+        "joint_rate_among_completed": 0.39014373716632444,
+        "joint_rate_among_measured": 0.39094650205761317,
+        "confirmed_joint_divided_by_planned": 0.3187919463087248
+      },
+      "final": {
+        "functional": 241,
+        "security": 385,
+        "joint": 206,
+        "measured": 486,
+        "completed": 487,
+        "planned": 596,
+        "unmeasured_completed": 1,
+        "pending_tasks": 109,
+        "joint_rate_among_completed": 0.42299794661190965,
+        "joint_rate_among_measured": 0.42386831275720166,
+        "confirmed_joint_divided_by_planned": 0.34563758389261745
+      },
+      "repeat_variability": {
+        "tasks_with_two_measured_repeats": 188,
+        "Joint_discordant_tasks": 35
+      }
+    },
+    "BF": {
+      "first": {
+        "functional": 222,
+        "security": 363,
+        "joint": 179,
+        "measured": 483,
+        "completed": 485,
+        "planned": 596,
+        "unmeasured_completed": 2,
+        "pending_tasks": 111,
+        "joint_rate_among_completed": 0.36907216494845363,
+        "joint_rate_among_measured": 0.37060041407867494,
+        "confirmed_joint_divided_by_planned": 0.30033557046979864
+      },
+      "final": {
+        "functional": 229,
+        "security": 365,
+        "joint": 188,
+        "measured": 482,
+        "completed": 485,
+        "planned": 596,
+        "unmeasured_completed": 3,
+        "pending_tasks": 111,
+        "joint_rate_among_completed": 0.38762886597938145,
+        "joint_rate_among_measured": 0.3900414937759336,
+        "confirmed_joint_divided_by_planned": 0.31543624161073824
+      },
+      "repeat_variability": {
+        "tasks_with_two_measured_repeats": 184,
+        "Joint_discordant_tasks": 33
+      }
+    },
+    "BS": {
+      "first": {
+        "functional": 225,
+        "security": 371,
+        "joint": 189,
+        "measured": 486,
+        "completed": 487,
+        "planned": 596,
+        "unmeasured_completed": 1,
+        "pending_tasks": 109,
+        "joint_rate_among_completed": 0.38809034907597534,
+        "joint_rate_among_measured": 0.3888888888888889,
+        "confirmed_joint_divided_by_planned": 0.31711409395973156
+      },
+      "final": {
+        "functional": 233,
+        "security": 381,
+        "joint": 200,
+        "measured": 486,
+        "completed": 487,
+        "planned": 596,
+        "unmeasured_completed": 1,
+        "pending_tasks": 109,
+        "joint_rate_among_completed": 0.4106776180698152,
+        "joint_rate_among_measured": 0.411522633744856,
+        "confirmed_joint_divided_by_planned": 0.33557046979865773
+      },
+      "repeat_variability": {
+        "tasks_with_two_measured_repeats": 188,
+        "Joint_discordant_tasks": 25
+      }
+    },
+    "BFS": {
+      "first": {
+        "functional": 237,
+        "security": 373,
+        "joint": 195,
+        "measured": 488,
+        "completed": 488,
+        "planned": 596,
+        "unmeasured_completed": 0,
+        "pending_tasks": 108,
+        "joint_rate_among_completed": 0.39959016393442626,
+        "joint_rate_among_measured": 0.39959016393442626,
+        "confirmed_joint_divided_by_planned": 0.3271812080536913
+      },
+      "final": {
+        "functional": 240,
+        "security": 383,
+        "joint": 203,
+        "measured": 488,
+        "completed": 488,
+        "planned": 596,
+        "unmeasured_completed": 0,
+        "pending_tasks": 108,
+        "joint_rate_among_completed": 0.41598360655737704,
+        "joint_rate_among_measured": 0.41598360655737704,
+        "confirmed_joint_divided_by_planned": 0.34060402684563756
+      },
+      "repeat_variability": {
+        "tasks_with_two_measured_repeats": 190,
+        "Joint_discordant_tasks": 28
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "target": "BFS",
+      "control": "BM",
+      "pairs": 487,
+      "measured_pairs": 486,
+      "missing_pairs": 1,
+      "families": 217,
+      "wins": 27,
+      "losses": 32,
+      "rescue_tasks": [
+        "1015_r1",
+        "1017_r2",
+        "1029_r2",
+        "1094_r1",
+        "1124_r1",
+        "1181_r1",
+        "1267_r1",
+        "1306_r2",
+        "1360_r1",
+        "353_r1",
+        "359_r1",
+        "447_r2",
+        "448_r1",
+        "498_r1",
+        "639_r1",
+        "639_r2",
+        "640_r1",
+        "641_r1",
+        "666_r1",
+        "810_r1",
+        "845_r2",
+        "850_r1",
+        "873_r1",
+        "894_r1",
+        "896_r1",
+        "901_r1",
+        "988_r1"
+      ],
+      "loss_tasks": [
+        "1056_r1",
+        "1065_r2",
+        "1066_r2",
+        "1094_r2",
+        "1121_r1",
+        "1149_r1",
+        "1179_r2",
+        "117_r1",
+        "1212_r1",
+        "1235_r2",
+        "1239_r1",
+        "128_r1",
+        "1306_r1",
+        "1322_r1",
+        "1322_r2",
+        "1343_r1",
+        "1361_r2",
+        "1409_r2",
+        "142_r1",
+        "147_r2",
+        "349_r2",
+        "351_r1",
+        "351_r2",
+        "463_r1",
+        "662_r1",
+        "672_r1",
+        "787_r1",
+        "908_r1",
+        "92_r1",
+        "96_r1",
+        "993_r1",
+        "997_r1"
+      ],
+      "net": -5,
+      "difference": -0.0102880658436214,
+      "ci95_family_bootstrap": [
+        -0.04462474645030426,
+        0.023715415019762844
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.64275,
+      "permutation": "19999 family sign swaps plus observed",
+      "functional_gains": 28,
+      "functional_losses": 31,
+      "planned_pairs": 596,
+      "not_yet_paired": 109,
+      "repeat_comparisons": {
+        "1": {
+          "measured_pairs": 298,
+          "net_joint": 0,
+          "difference": 0.0
+        },
+        "2": {
+          "measured_pairs": 188,
+          "net_joint": -5,
+          "difference": -0.026595744680851064
+        }
+      }
+    },
+    {
+      "target": "BM",
+      "control": "B0",
+      "pairs": 486,
+      "measured_pairs": 484,
+      "missing_pairs": 2,
+      "families": 216,
+      "wins": 43,
+      "losses": 24,
+      "rescue_tasks": [
+        "1006_r2",
+        "1013_r1",
+        "1015_r2",
+        "1016_r1",
+        "1017_r1",
+        "1030_r1",
+        "1056_r1",
+        "1066_r1",
+        "1086_r1",
+        "1121_r1",
+        "1126_r2",
+        "1142_r1",
+        "117_r1",
+        "1235_r2",
+        "1236_r2",
+        "1238_r1",
+        "1238_r2",
+        "1239_r1",
+        "1269_r1",
+        "1306_r1",
+        "1322_r1",
+        "1322_r2",
+        "1345_r1",
+        "1360_r2",
+        "1361_r1",
+        "1361_r2",
+        "1409_r2",
+        "142_r1",
+        "147_r2",
+        "349_r2",
+        "351_r1",
+        "351_r2",
+        "438_r2",
+        "500_r1",
+        "662_r1",
+        "672_r1",
+        "787_r1",
+        "845_r1",
+        "91_r1",
+        "92_r1",
+        "96_r1",
+        "971_r1",
+        "993_r1"
+      ],
+      "loss_tasks": [
+        "1017_r2",
+        "1029_r2",
+        "1149_r2",
+        "1163_r1",
+        "1181_r1",
+        "1267_r1",
+        "1360_r1",
+        "338_r1",
+        "353_r1",
+        "359_r1",
+        "359_r2",
+        "439_r1",
+        "448_r1",
+        "498_r1",
+        "641_r2",
+        "657_r1",
+        "659_r1",
+        "661_r1",
+        "674_r1",
+        "843_r1",
+        "845_r2",
+        "894_r1",
+        "901_r1",
+        "903_r1"
+      ],
+      "net": 19,
+      "difference": 0.03925619834710744,
+      "ci95_family_bootstrap": [
+        0.006275172017849843,
+        0.07438182815903685
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.03265,
+      "permutation": "19999 family sign swaps plus observed",
+      "functional_gains": 44,
+      "functional_losses": 21,
+      "planned_pairs": 596,
+      "not_yet_paired": 110,
+      "repeat_comparisons": {
+        "1": {
+          "measured_pairs": 297,
+          "net_joint": 11,
+          "difference": 0.037037037037037035
+        },
+        "2": {
+          "measured_pairs": 187,
+          "net_joint": 8,
+          "difference": 0.0427807486631016
+        }
+      }
+    },
+    {
+      "target": "BF",
+      "control": "BM",
+      "pairs": 485,
+      "measured_pairs": 481,
+      "missing_pairs": 4,
+      "families": 217,
+      "wins": 22,
+      "losses": 39,
+      "rescue_tasks": [
+        "1000_r2",
+        "1015_r1",
+        "1017_r2",
+        "1050_r1",
+        "1092_r1",
+        "1094_r1",
+        "1181_r1",
+        "1235_r1",
+        "1267_r1",
+        "1360_r1",
+        "353_r1",
+        "359_r1",
+        "447_r2",
+        "498_r1",
+        "639_r2",
+        "641_r2",
+        "667_r1",
+        "845_r2",
+        "903_r1",
+        "90_r1",
+        "97_r1",
+        "988_r1"
+      ],
+      "loss_tasks": [
+        "1016_r1",
+        "1016_r2",
+        "1017_r1",
+        "1031_r1",
+        "1056_r1",
+        "106_r2",
+        "1074_r2",
+        "1094_r2",
+        "1121_r1",
+        "1142_r1",
+        "117_r1",
+        "1235_r2",
+        "128_r1",
+        "1306_r1",
+        "1322_r1",
+        "1352_r1",
+        "1352_r2",
+        "1360_r2",
+        "1361_r1",
+        "1361_r2",
+        "1385_r1",
+        "1397_r1",
+        "1397_r2",
+        "1409_r2",
+        "142_r1",
+        "349_r2",
+        "351_r1",
+        "351_r2",
+        "443_r1",
+        "454_r1",
+        "500_r1",
+        "662_r1",
+        "672_r1",
+        "787_r1",
+        "880_r2",
+        "886_r1",
+        "897_r2",
+        "91_r1",
+        "92_r1"
+      ],
+      "net": -17,
+      "difference": -0.035343035343035345,
+      "ci95_family_bootstrap": [
+        -0.07143193435566317,
+        -0.002020100195503423
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.06565,
+      "permutation": "19999 family sign swaps plus observed",
+      "functional_gains": 22,
+      "functional_losses": 33,
+      "planned_pairs": 596,
+      "not_yet_paired": 111,
+      "repeat_comparisons": {
+        "1": {
+          "measured_pairs": 296,
+          "net_joint": -9,
+          "difference": -0.030405405405405407
+        },
+        "2": {
+          "measured_pairs": 185,
+          "net_joint": -8,
+          "difference": -0.043243243243243246
+        }
+      }
+    },
+    {
+      "target": "BS",
+      "control": "BM",
+      "pairs": 487,
+      "measured_pairs": 485,
+      "missing_pairs": 2,
+      "families": 217,
+      "wins": 17,
+      "losses": 23,
+      "rescue_tasks": [
+        "1006_r1",
+        "1015_r1",
+        "1017_r2",
+        "1030_r2",
+        "1086_r2",
+        "1092_r1",
+        "1181_r1",
+        "1235_r1",
+        "335_r2",
+        "359_r1",
+        "447_r2",
+        "498_r1",
+        "640_r2",
+        "845_r2",
+        "895_r2",
+        "901_r1",
+        "903_r1"
+      ],
+      "loss_tasks": [
+        "1017_r1",
+        "1056_r1",
+        "1065_r1",
+        "1094_r2",
+        "1121_r1",
+        "117_r1",
+        "1235_r2",
+        "1239_r1",
+        "1267_r2",
+        "128_r1",
+        "1322_r2",
+        "1343_r2",
+        "1361_r2",
+        "142_r1",
+        "147_r2",
+        "349_r2",
+        "351_r1",
+        "351_r2",
+        "438_r2",
+        "662_r1",
+        "672_r1",
+        "787_r1",
+        "908_r1"
+      ],
+      "net": -6,
+      "difference": -0.012371134020618556,
+      "ci95_family_bootstrap": [
+        -0.03765690376569038,
+        0.012269938650306749
+      ],
+      "bootstrap_samples": 10000,
+      "p_family_swap": 0.43105,
+      "permutation": "19999 family sign swaps plus observed",
+      "functional_gains": 15,
+      "functional_losses": 23,
+      "planned_pairs": 596,
+      "not_yet_paired": 109,
+      "repeat_comparisons": {
+        "1": {
+          "measured_pairs": 297,
+          "net_joint": -4,
+          "difference": -0.013468013468013467
+        },
+        "2": {
+          "measured_pairs": 188,
+          "net_joint": -2,
+          "difference": -0.010638297872340425
+        }
+      }
+    }
+  ],
+  "paid_API_calls_by_analysis": 0,
+  "observed_utc": "2026-11-01T02:55:37.511416+00:00",
+  "scope": "2433 saved observations only; no imputation for the unexecuted 547",
+  "repeat_arms": {
+    "1": {
+      "B0": {
+        "first": {
+          "functional": 126,
+          "security": 219,
+          "joint": 105,
+          "measured": 298,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.3523489932885906,
+          "joint_rate_among_measured": 0.3523489932885906,
+          "confirmed_joint_divided_by_planned": 0.3523489932885906
+        },
+        "final": {
+          "functional": 133,
+          "security": 227,
+          "joint": 114,
+          "measured": 297,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.3825503355704698,
+          "joint_rate_among_measured": 0.3838383838383838,
+          "confirmed_joint_divided_by_planned": 0.3825503355704698
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BM": {
+        "first": {
+          "functional": 139,
+          "security": 221,
+          "joint": 113,
+          "measured": 298,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.37919463087248323,
+          "joint_rate_among_measured": 0.37919463087248323,
+          "confirmed_joint_divided_by_planned": 0.37919463087248323
+        },
+        "final": {
+          "functional": 147,
+          "security": 236,
+          "joint": 125,
+          "measured": 298,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.41946308724832215,
+          "joint_rate_among_measured": 0.41946308724832215,
+          "confirmed_joint_divided_by_planned": 0.41946308724832215
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BF": {
+        "first": {
+          "functional": 137,
+          "security": 224,
+          "joint": 109,
+          "measured": 297,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.36577181208053694,
+          "joint_rate_among_measured": 0.367003367003367,
+          "confirmed_joint_divided_by_planned": 0.36577181208053694
+        },
+        "final": {
+          "functional": 141,
+          "security": 226,
+          "joint": 115,
+          "measured": 296,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 2,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.3859060402684564,
+          "joint_rate_among_measured": 0.3885135135135135,
+          "confirmed_joint_divided_by_planned": 0.3859060402684564
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BS": {
+        "first": {
+          "functional": 139,
+          "security": 225,
+          "joint": 115,
+          "measured": 297,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.3859060402684564,
+          "joint_rate_among_measured": 0.3872053872053872,
+          "confirmed_joint_divided_by_planned": 0.3859060402684564
+        },
+        "final": {
+          "functional": 142,
+          "security": 231,
+          "joint": 120,
+          "measured": 297,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.40268456375838924,
+          "joint_rate_among_measured": 0.40404040404040403,
+          "confirmed_joint_divided_by_planned": 0.40268456375838924
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BFS": {
+        "first": {
+          "functional": 145,
+          "security": 227,
+          "joint": 121,
+          "measured": 298,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.40604026845637586,
+          "joint_rate_among_measured": 0.40604026845637586,
+          "confirmed_joint_divided_by_planned": 0.40604026845637586
+        },
+        "final": {
+          "functional": 147,
+          "security": 234,
+          "joint": 125,
+          "measured": 298,
+          "completed": 298,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 0,
+          "joint_rate_among_completed": 0.41946308724832215,
+          "joint_rate_among_measured": 0.41946308724832215,
+          "confirmed_joint_divided_by_planned": 0.41946308724832215
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      }
+    },
+    "2": {
+      "B0": {
+        "first": {
+          "functional": 82,
+          "security": 140,
+          "joint": 69,
+          "measured": 188,
+          "completed": 188,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 110,
+          "joint_rate_among_completed": 0.3670212765957447,
+          "joint_rate_among_measured": 0.3670212765957447,
+          "confirmed_joint_divided_by_planned": 0.23154362416107382
+        },
+        "final": {
+          "functional": 86,
+          "security": 141,
+          "joint": 74,
+          "measured": 188,
+          "completed": 188,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 110,
+          "joint_rate_among_completed": 0.39361702127659576,
+          "joint_rate_among_measured": 0.39361702127659576,
+          "confirmed_joint_divided_by_planned": 0.2483221476510067
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BM": {
+        "first": {
+          "functional": 91,
+          "security": 150,
+          "joint": 77,
+          "measured": 188,
+          "completed": 189,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 109,
+          "joint_rate_among_completed": 0.4074074074074074,
+          "joint_rate_among_measured": 0.4095744680851064,
+          "confirmed_joint_divided_by_planned": 0.25838926174496646
+        },
+        "final": {
+          "functional": 94,
+          "security": 149,
+          "joint": 81,
+          "measured": 188,
+          "completed": 189,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 109,
+          "joint_rate_among_completed": 0.42857142857142855,
+          "joint_rate_among_measured": 0.4308510638297872,
+          "confirmed_joint_divided_by_planned": 0.27181208053691275
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BF": {
+        "first": {
+          "functional": 85,
+          "security": 139,
+          "joint": 70,
+          "measured": 186,
+          "completed": 187,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 111,
+          "joint_rate_among_completed": 0.37433155080213903,
+          "joint_rate_among_measured": 0.3763440860215054,
+          "confirmed_joint_divided_by_planned": 0.2348993288590604
+        },
+        "final": {
+          "functional": 88,
+          "security": 139,
+          "joint": 73,
+          "measured": 186,
+          "completed": 187,
+          "planned": 298,
+          "unmeasured_completed": 1,
+          "pending_tasks": 111,
+          "joint_rate_among_completed": 0.39037433155080214,
+          "joint_rate_among_measured": 0.3924731182795699,
+          "confirmed_joint_divided_by_planned": 0.24496644295302014
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BS": {
+        "first": {
+          "functional": 86,
+          "security": 146,
+          "joint": 74,
+          "measured": 189,
+          "completed": 189,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 109,
+          "joint_rate_among_completed": 0.3915343915343915,
+          "joint_rate_among_measured": 0.3915343915343915,
+          "confirmed_joint_divided_by_planned": 0.2483221476510067
+        },
+        "final": {
+          "functional": 91,
+          "security": 150,
+          "joint": 80,
+          "measured": 189,
+          "completed": 189,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 109,
+          "joint_rate_among_completed": 0.42328042328042326,
+          "joint_rate_among_measured": 0.42328042328042326,
+          "confirmed_joint_divided_by_planned": 0.2684563758389262
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      },
+      "BFS": {
+        "first": {
+          "functional": 92,
+          "security": 146,
+          "joint": 74,
+          "measured": 190,
+          "completed": 190,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 108,
+          "joint_rate_among_completed": 0.3894736842105263,
+          "joint_rate_among_measured": 0.3894736842105263,
+          "confirmed_joint_divided_by_planned": 0.2483221476510067
+        },
+        "final": {
+          "functional": 93,
+          "security": 149,
+          "joint": 78,
+          "measured": 190,
+          "completed": 190,
+          "planned": 298,
+          "unmeasured_completed": 0,
+          "pending_tasks": 108,
+          "joint_rate_among_completed": 0.4105263157894737,
+          "joint_rate_among_measured": 0.4105263157894737,
+          "confirmed_joint_divided_by_planned": 0.26174496644295303
+        },
+        "repeat_variability": {
+          "tasks_with_two_measured_repeats": 0,
+          "Joint_discordant_tasks": 0
+        }
+      }
+    }
+  },
+  "primary_comparison": "BFS vs BM",
+  "secondary_observed_comparison": "BM vs B0"
+}

@@ -1,10 +1,156 @@
 """当前人工接续的展示视图；只读结果，不修改原生状态或派发队列。"""
 from copy import deepcopy
+from pathlib import Path
+from datetime import datetime, timezone
+
+PLAN_FILE = Path(__file__).resolve().parents[2] / 'configs/cle_weekly_closeout_20261101/execution_plan.json'
+
+
+def batch_detail(package, run, read):
+    """只读当前段、请求元数据及收尾产物；生成完成不等于分析完成。"""
+    if not package.get('segment'):
+        return
+    segment = Path(package['segment'])
+    root = segment.parent
+    summary = package.get('display_summary') or {}
+    planned = package['display_planned']
+    completed = package['display_completed']
+    switched = (root/'model_switch_flash_20261101/manifest.json').exists()
+    if switched:
+        replay = read(root/'model_switch_flash_20261101/replay_result.json', {})
+        analysis = read(root/'model_switch_flash_20261101/analysis/summary.json', {})
+        readiness = analysis.get('training_readiness', {})
+        package['model_strata'] = summary.get('model_strata', {})
+        package['model'] = summary.get('model', 'deepseek-v4.1-flash')
+    else:
+        replay = read(root/'zero_API_replay/replay_result.json', {})
+        analysis = read(root/'analysis_20261101/summary.json', {})
+        readiness = read(root/'analysis_20261101/training_readiness.json', {})
+    native = package.get('native_state', {})
+    live = bool(package.get('processes'))
+    all_saved = completed == planned
+    reviewed = analysis.get('case_review_status') == 'completed'
+    finished = all_saved and replay.get('status') == 'passed' and analysis.get('status') == 'completed' and reviewed
+    status = ('postprocessing' if live and all_saved else
+              ('running' if package.get('status') == 'running' else 'waiting_window') if live else
+              'completed' if finished else
+              'awaiting_case_review' if all_saved and analysis.get('status') == 'completed' else
+              'awaiting_analysis' if all_saved else
+              native.get('status', package.get('status', 'not_started')))
+    if not live and status in ('running', 'starting', 'waiting_time_window'):
+        status = 'interrupted'
+    package.update(display_status=status, status=status, last_saved_at=summary.get('updated_utc'),
+                   display_note='固定小批；生成完成后自动回放和数值分析，实际案例复盘单独完成。全量不自动启动。')
+    if status == 'postprocessing':
+        for process in package['processes']:
+            process['workers'] = 0
+    package['workflow'] = {
+        'generation': 'completed' if all_saved else status,
+        'replay': replay.get('status', 'not_started'),
+        'statistics': analysis.get('status', 'not_started'),
+        'analyzed_cells': analysis.get('completed', 0),
+        'statistics_current': bool(analysis) and analysis.get('completed') == completed,
+        'case_review': analysis.get('case_review_status', 'not_started'),
+        'training_readiness': readiness.get('status', 'not_started'),
+        'analysis_time': analysis.get('observed_utc'),
+    }
+    requests = list((segment/'journals').glob('*/requests/*.json'))
+    if requests:
+        recent = max(requests, key=lambda p: p.stat().st_mtime_ns)
+        record = read(recent, {})
+        package['request'] = {k: record.get(k) for k in
+            ('identity', 'status', 'started_utc', 'finished_utc', 'elapsed_seconds', 'error_type')}
+        package['request'].update(cell_id=recent.parent.parent.name,
+            stage='选卡' if record.get('selector') else '模型生成/分析',
+            time=datetime.fromtimestamp(recent.stat().st_mtime, timezone.utc).isoformat())
+    budget = read(segment/'budget.json', {})
+    if budget:
+        entries = budget.get('entries', [])
+        unknown = sum(e.get('status') != 'reported' for e in entries)
+        package['usage_summary'] = dict(
+            known_reported_tokens=budget.get('known_reported_tokens', 0),
+            physical_HTTP=budget.get('transport_attempts_including_prior', 0),
+            unknown_or_inflight_HTTP=unknown)
+        package['budget'] = {k: budget.get(k) for k in (
+            'cap_tokens', 'cap_HTTP', 'charged_tokens_including_unknown_and_inflight_bounds',
+            'transport_attempts_including_prior')}
+    package['result_totals'] = {k: sum(a.get(k, 0) for a in summary.get('arms', {}).values())
+                                for k in ('functional', 'security', 'joint', 'measured')}
+
+
+def restored_view(snapshot, view, run, read, plan):
+    """从已授权小批计划和真实文件构建展示，绝不写派发或实验控制。"""
+    packages = {p['key']: p for p in snapshot['packages']}
+    tasks = {t['id']: t for t in plan.get('tasks', [])}
+    for key, node in (('FQ_RETEST', 'N1'), ('FG_LABELS', 'N3')):
+        p, definition = packages[key], tasks[node]
+        p.update(display_completed=max(p.get('completed', 0), p.get('display_completed', 0)),
+                 display_planned=definition['planned'], scope=definition['unique_tasks'],
+                 repeats=definition['repeats'], conditions=definition['conditions'])
+        batch_detail(p, run, read)
+    snapshot['workers'] = sum(p['workers'] for p in snapshot.get('processes', []))
+    snapshot['control'] = dict(owner='已授权小批接续', autonomous_dispatch=False,
+        Q='54题Q回测已恢复', memory='82题记忆标签已恢复，分类器付费评价暂停',
+        full_tasks='排队全量跳过', retrieval='57题检索先完成续跑接线')
+    snapshot['plan'] = dict(id=plan['plan_id'], report_due=plan.get('report_due'),
+                            scope='54题Q回测 + 82题记忆标签；排队全量跳过')
+    if any(p.get('model') == 'deepseek-v4.1-flash' for p in packages.values()):
+        snapshot['model'] = 'deepseek-v4.1-flash · Q回测和记忆标签换模接续'
+        snapshot['control']['Q'] = 'Q回测换模继续，前后结果分层统计'
+        snapshot['control']['memory'] = '记忆标签换模继续，复用旧前缀另列'
+    # 全量仍保留在表内，但不把局部探针分母冒充全量分母。
+    for key in ('FQ_GATE', 'FG_GATE', 'FX_GATE', 'FX_EXTERNAL'):
+        packages[key].update(display_planned=packages[key].get('planned'), display_status='deferred_full',
+                             display_note='当前计划跳过排队全量；未解除模型、卡库或验证环境依赖。')
+    packages['FQ_LEARN'].update(display_status='completed')
+    for key in ('FG_LABELS_EXTRA', 'FR_EXTRA'):
+        packages[key].update(display_status='deferred', display_note='追加批未授权启动，先完成当前小批和分析。')
+    fr = tasks.get('N4', {})
+    if not packages['FR'].get('processes') and fr.get('dispatch_ready') is False:
+        packages['FR'].update(display_status='needs_wiring',
+            display_note='57题候选池已齐；先接好保留缺失请求、只继续未派发题卡对的入口和盲审导出。人工标签尚未确认。')
+    current = {'Q.retest.probe': 'FQ_RETEST', 'GR.labels': 'FG_LABELS'}
+    analyses = {'Q.retest.probe.analysis': 'FQ_RETEST', 'GR.labels.analysis': 'FG_LABELS'}
+    for task in view.get('tasks', []):
+        tid = task['id']
+        if tid in current:
+            p = packages[current[tid]]
+            task.update(title=p['label'], expected=p['display_planned'], kind='probe',
+                        status=p['display_status'], display_status=p['display_status'],
+                        reason=f"已保存{p['display_completed']}/{p['display_planned']}次；完成后回放和分析")
+        elif tid in analyses:
+            p = packages[analyses[tid]]
+            w = p.get('workflow', {})
+            stage = 'partial_analysis' if w.get('analyzed_cells') else 'waiting_dependency'
+            if w.get('statistics') == 'completed' and w.get('statistics_current'):
+                stage = 'awaiting_case_review'
+            task.update(title=p['label']+'：回放、统计与案例复盘', status=stage, display_status=stage,
+                reason=f"统计覆盖{w.get('analyzed_cells', 0)}次，当前已保存{p['display_completed']}次；案例复盘状态单独核对")
+        elif tid == 'GR.train':
+            task.update(title='标签完成后的离线训练资格分析', status='waiting_dependency',
+                display_status='waiting_dependency', reason='820次及原生回放齐全后自动分析，只保存候选，不启动付费评价')
+        elif tid == 'FR.run':
+            task.update(status=packages['FR']['display_status'], display_status=packages['FR']['display_status'],
+                        reason=packages['FR']['display_note'])
+        elif tid in ('Q.retest', 'Q.retest.analysis', 'FS.run'):
+            task.update(status='deferred_full', display_status='deferred_full', reason='当前计划跳过剩余或排队全量')
+    counts = {}
+    for task in view.get('tasks', []):
+        counts[task['status']] = counts.get(task['status'], 0) + 1
+    view.update(counts=counts, next_description='完成54题Q回测与82题记忆标签及分析；57题检索先补续跑接线。全量不自动启动。')
+    q = packages['FQ_RETEST']
+    snapshot['findings'][0]['impact'] = f"新Q同题回测已保存{q['display_completed']}/{q['display_planned']}次，完成固定小批后作主要比较。"
+    snapshot['findings'][1].update(title='拆分经验在完整第一轮没有增加Joint通过数',
+        result='原卡与分开写均125/298；第二轮当前有效配对188次，净少5次。',
+        impact='完整第一轮与未齐第二轮分开报告；剩余547次继续暂缓。')
+    snapshot['usage'] = {key: sum(s.get(key, 0) or 0 for p in snapshot['packages']
+        for s in (p.get('stages', {}).values() if p['key'] == 'FQ_LEARN' else [p.get('usage_summary', {})]))
+        for key in ('known_reported_tokens', 'physical_HTTP', 'unknown_or_inflight_HTTP')}
+    snapshot['usage']['note'] = '各包采用物理累计账本或原生摘要；续段不相加。未知用量不折算为0费用，Codex用量另列。'
 
 
 def extra_rows(run, read):
     for package, folder in (
-        ('FQ_RETEST', 'probe_relay_20261028/Q.retest/segment_*/task_rows/*.json'),
         ('IR02', 'impact_radius_20261028/IR02/segment_001/task_rows/*.json'),
     ):
         for path in sorted(run.glob(folder)):
@@ -166,4 +312,6 @@ def apply_current_view(snapshot, autonomy, run, read):
         dict(title='边界提醒在12题中没有提高正确率', result='12题×两臂×两重复，48/48；原始编辑与边界提醒各Joint 8/24，改善0、退步0。', impact='回放一致，停止96格确认和后续全量。'),
         dict(title='从空库提卡链路已打通', result='2题Joint均通过，产生5张临时卡；17次HTTP，29944已报告Token。', impact='仅验证技术链路，未建立可供正式交叉比较的新卡库。'),
     ]
+    if policy.get('status') == 'two_registered_batches_resumed':
+        restored_view(snapshot, view, run, read, read(PLAN_FILE, {}))
     return view

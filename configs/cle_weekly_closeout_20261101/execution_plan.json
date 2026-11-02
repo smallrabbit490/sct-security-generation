@@ -1,0 +1,260 @@
+{
+  "plan_id": "cle-closeout-20261101-to-20261104-v1",
+  "timezone": "Asia/Shanghai",
+  "report_cutoff": "2026-11-04T20:00:00+08:00",
+  "report_due": "2026-11-04T22:00:00+08:00",
+  "authorization": "2026-11-01 explicit user reply: resume the two registered small batches and analyze after completion",
+  "execution_owner": "current_chat",
+  "legacy_autonomous_dispatch": false,
+  "full_tasks": "skip",
+  "maximum_model_workers": 4,
+  "tasks": [
+    {
+      "id": "N1",
+      "package": "Q.retest",
+      "unique_tasks": 54,
+      "conditions": 5,
+      "repeats": 2,
+      "planned": 540,
+      "saved_at_resume": 16,
+      "remaining_at_resume": 524,
+      "workers": 2,
+      "entry": "configs.cle_weekly_closeout_20261101.switch_flash launch --kind q",
+      "on_complete": [
+        "native_zero_API_replay",
+        "bounded_Q_statistics",
+        "actual_case_review"
+      ],
+      "automatic_steps": [
+        "native_zero_API_replay",
+        "bounded_Q_statistics"
+      ],
+      "no_automatic_expansion": true,
+      "completion_criteria": [
+        "540 unique scheduled cells accounted",
+        "native replay passed",
+        "primary K3-Q1 comparison and five diagnostic comparisons",
+        "actual primary outcome cases reviewed"
+      ],
+      "inference": {
+        "primary_count": 1,
+        "primary_test": "two-sided family sign swap",
+        "alpha": 0.05,
+        "primary_CI": "family bootstrap 95%",
+        "diagnostics": "Holm5",
+        "repeats_are_not_independent_families": true
+      },
+      "model": "deepseek-v4.1-flash",
+      "saved_at_model_switch": 227,
+      "remaining_at_model_switch": 313,
+      "analysis": "model-separated and legacy-prefix-separated; never join different cohorts for paired performance",
+      "latest_delivery": {
+        "status": "completed_generation_replay_primary_case_analysis",
+        "completed": 540,
+        "measured": 535,
+        "primary_cases_reviewed": 13,
+        "evidence": "E:/ResearchRuns/CLE/20261027_full_requirements/probe_relay_20261028/Q.retest/model_switch_flash_20261101/analysis/summary.json",
+        "full_queue": "skip",
+        "updated_at": "2026-11-01T20:49:26.899266+08:00"
+      }
+    },
+    {
+      "id": "N3",
+      "package": "FG_LABELS",
+      "unique_tasks": 82,
+      "conditions": 5,
+      "repeats": 2,
+      "planned": 820,
+      "saved_at_resume": 5,
+      "remaining_at_resume": 815,
+      "workers": 2,
+      "entry": "configs.cle_weekly_closeout_20261101.switch_flash launch --kind gr",
+      "on_complete": [
+        "native_zero_API_replay",
+        "level_statistics",
+        "actual_case_review",
+        "offline_training_readiness"
+      ],
+      "automatic_steps": [
+        "native_zero_API_replay",
+        "level_statistics",
+        "offline_training_readiness"
+      ],
+      "no_automatic_expansion": true,
+      "automatic_readiness_entry": "configs.cle_weekly_closeout_20261101.switch_flash analysis --kind gr",
+      "outputs": [
+        "model_switch_flash_20261101/analysis/summary.json",
+        "model_switch_flash_20261101/analysis/training_readiness.json",
+        "model_switch_flash_20261101/analysis/agent_case_review.json"
+      ],
+      "formal_classifier_frozen": false,
+      "paid_gate_dispatched": false,
+      "completion_criteria": [
+        "820 unique scheduled cells accounted",
+        "native replay passed",
+        "training-only opportunity and label stability",
+        "offline Joint-based family-CV readiness",
+        "actual contrasting cases reviewed"
+      ],
+      "model": "deepseek-v4.1-flash",
+      "saved_at_model_switch": 247,
+      "remaining_at_model_switch": 573,
+      "analysis": "model-separated and legacy-prefix-separated; never join different cohorts for paired performance",
+      "training_readiness_scope": "Only tasks with five levels and two repeats entirely in flash_only; original family split; candidate only, no paid gate.",
+      "latest_execution": {
+        "status": "completed",
+        "completed": 820,
+        "planned": 820,
+        "workers": 0,
+        "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_007\\state.json",
+        "updated_utc": "2026-11-01T15:05:48.560346+00:00",
+        "original_embedding_failure_preserved": true,
+        "recovery_prefix_replayed": 773,
+        "recovery_prefix_http": 0,
+        "recovery_exact_cell": "676_r2_L3",
+        "actual_label_case_reviews_in_progress": 4
+      },
+      "latest_delivery": {
+        "status": "completed_generation_replay_stratified_analysis_actual_cases",
+        "completed": 820,
+        "measured": 819,
+        "actual_case_tasks": 6,
+        "registered_case_queue_entries": 4,
+        "training_ready": false,
+        "training_label_families": 5,
+        "formal_classifier_frozen": false,
+        "paid_gate_dispatched": false,
+        "evidence": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\model_switch_flash_20261101\\analysis\\summary.json",
+        "updated_utc": "2026-11-01T15:05:48.560346+00:00"
+      }
+    },
+    {
+      "id": "N2",
+      "package": "FFS_analysis",
+      "paid": false,
+      "saved_cells": 2433,
+      "planned_original": 2980,
+      "remaining_paid": "deferred",
+      "entry": "configs.cle_weekly_closeout_20261101.analysis fs",
+      "case_review": "four outcome strata; first up to six different families per stratum in fixed task order",
+      "first_repeat": {
+        "BM_joint": 125,
+        "BFS_joint": 125,
+        "measured_pairs": 298,
+        "net_joint": 0
+      },
+      "second_repeat_common_pairs": 188,
+      "combined_486_pairs_are_not_complete_two_repeats": true,
+      "case_sample_infers_cause_prevalence": false
+    },
+    {
+      "id": "N4",
+      "package": "FR57",
+      "unique_tasks": 57,
+      "candidate_pairs": 3758,
+      "prefix_pairs": 144,
+      "paid_attempts_already_made": 35,
+      "valid_AI_labels": 33,
+      "human_confirmed": 0,
+      "depends_on": "available slots and audited 144-pair prefix",
+      "no_automatic_extra57": true,
+      "dispatch_ready": false,
+      "blocker": "one previously dispatched unresolved HTTP prevents original native resume; preserve missing response and do not resend the pair",
+      "required_before_dispatch": [
+        "bounded continuation skips only the already attempted missing pair",
+        "replay successful prefix and exact candidate pool",
+        "blind human-review export omits AI labels and reasons",
+        "global worker capacity available"
+      ],
+      "metrics_scope": "four metrics for actual native selection; candidate recall only for query variants without real final selection; missing-label bounds explicit"
+    },
+    {
+      "id": "N5",
+      "package": "existing_M1_and_requirements_synthesis",
+      "paid": false,
+      "depends_on": [
+        "N1",
+        "N2",
+        "N3",
+        "N4"
+      ]
+    },
+    {
+      "id": "NEW1",
+      "question": "When does a change in task preconditions turn useful experience into harmful transfer?",
+      "scope": "literature and zero_API feasibility only",
+      "paid_probe_proposed_not_started": 96,
+      "depends_on": [
+        "N5"
+      ],
+      "shared_prefix_scope": "same task, same precondition variant, same repeat only",
+      "comparison_budget": "put both reminders in the same original planning step; no extra method-only review call"
+    }
+  ],
+  "not_restored": [
+    "new_Q_learning",
+    "FQ_GATE_full",
+    "FG_LABELS_EXTRA",
+    "FG_GATE_paid",
+    "FFS_remaining547",
+    "BUILD_C41_full",
+    "FX_GATE_full",
+    "FR_EXTRA",
+    "Base_Plus"
+  ],
+  "closed_model_access": "deepseek-v3.2 unavailable; no replacement model",
+  "scientific_scope": "same-task Q and granularity development; not a substitute for cross-family or independent full-set confirmation",
+  "reviewed_on": "2026-11-01",
+  "completion_is_not_assumed_by_calendar": true,
+  "automatic_scope": "only the two fixed remaining batches, full native replay, model-stratified numeric analysis and homogeneous-label readiness; no full queue expansion",
+  "transport_recovery": {
+    "entry": "configs.cle_weekly_closeout_20261101.recover_tls",
+    "route": "proxy 127.0.0.1:7897, verified TLS1.2, original endpoint",
+    "certificate_and_hostname_validation": true,
+    "completed_prefixes_verified_zero_API": {
+      "q": 73,
+      "gr": 67
+    },
+    "missing_request_boundaries": {
+      "q": 2,
+      "gr": 2
+    },
+    "cumulative_budget_reset": false,
+    "historical_only": true,
+    "current_entry": "configs.cle_weekly_closeout_20261101.switch_flash"
+  },
+  "monitor": {
+    "automation_id": "cle",
+    "interval_minutes": 15,
+    "status": "PAUSED",
+    "scope": [
+      "N1",
+      "N3"
+    ],
+    "on_complete": "native replay, numeric analysis, actual case interpretation; then pause monitor",
+    "completed_at": "2026-11-01T23:36:18.647862+08:00",
+    "completion_record": "results/curated/cle_weekly_closeout_20261101/two_batch_closeout.json"
+  },
+  "current_model": "deepseek-v4.1-flash",
+  "model_switch_authorization": "2026-11-01 user explicitly authorized switching both remaining batches, retaining history and separate statistics",
+  "model_switch": {
+    "old_model": "deepseek-v4.1-flash-1017",
+    "new_model": "deepseek-v4.1-flash",
+    "saved_before_switch": {
+      "q": 227,
+      "gr": 247
+    },
+    "remaining_at_switch": {
+      "q": 313,
+      "gr": 573
+    },
+    "entry": "configs.cle_weekly_closeout_20261101.switch_flash",
+    "source_strata": [
+      "1017_only",
+      "flash_only",
+      "mixed_saved_prefix"
+    ],
+    "pool_cross_model_performance": false,
+    "budget_reset": false
+  }
+}

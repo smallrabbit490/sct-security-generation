@@ -1,0 +1,64 @@
+{
+  "primary_reconciliation": [
+    [
+      "原1017模型",
+      45,
+      19,
+      17
+    ],
+    [
+      "无1017模型",
+      59,
+      26,
+      27
+    ]
+  ],
+  "preferred_level_adoption": [
+    [
+      "L0",
+      11,
+      22,
+      0,
+      0,
+      22
+    ],
+    [
+      "L1",
+      2,
+      4,
+      2,
+      2,
+      0
+    ],
+    [
+      "L2",
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      "L3",
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      "L4",
+      1,
+      2,
+      2,
+      0,
+      0
+    ]
+  ],
+  "primary_Holm2": {
+    "1017_only": 1.0,
+    "flash_only": 1.0
+  },
+  "unknown_HTTP_fraction": 0.005755110140900972,
+  "original_native_results_changed": false
+}

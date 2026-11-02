@@ -1,0 +1,11 @@
+{
+  "session": "session-f1b6756e-cbbf-41c6-a30e-e2c1d37bc944",
+  "reader": "dsh-tui deepseek-official/deepseek-flash",
+  "supplied_scope": "full text and tables; no images",
+  "tool_events": [],
+  "obstacles": 52,
+  "processed": 52,
+  "raw_full_result_characters": 28074,
+  "formal_model_requests_added_by_review": 0,
+  "native_experiment_results_changed": false
+}

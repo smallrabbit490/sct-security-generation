@@ -20,6 +20,7 @@ STATIC = Path(__file__).with_name('static')
 SHANGHAI = dt.timezone(dt.timedelta(hours=8))
 REPAIR_MODEL = 'gpt-6.1-sol'
 REPAIR_EFFORT = 'xhigh'
+SAMPLE_SECONDS = 5
 PACKAGES = {'FQ_LEARN': ('Q 学习', 1122), 'FQ_RETEST': ('冻结 Q 同题回测', 2730),
             'FQ_GATE': ('D_gate 四臂 Q 对照', 2384), 'FFS': ('功能与安全经验拆分', 2980),
             'FG_LABELS': ('五档记忆标签', 2730), 'FG_GATE': ('记忆程度分类器', 1788),
@@ -91,6 +92,10 @@ def process_package(command):
     # launch只负责前缀核对与派生进程；把它算作worker会让其误判自己已运行。
     if not re.search(r'\s(run|resume)(?:\s|$)', text):
         return None
+    if any(marker in text for marker in ('configs.cle_weekly_closeout_20261101.resume',
+                                         'configs.cle_weekly_closeout_20261101.recover_tls', 'configs.cle_weekly_closeout_20261101.switch_flash')):
+        kind = re.search(r'--kind\s+(q|gr)(?:\s|$)', text)
+        return {'q': 'FQ_RETEST', 'gr': 'FG_LABELS'}.get(kind[1]) if kind else None
     for marker, package in [('granularity_extra', 'FG_LABELS_EXTRA'),
                             ('granularity_gate', 'FG_GATE'), ('retrieval_extra_execute', 'FR_EXTRA'),
                             ('retrieval_execute', 'FR'), ('granularity', 'FG_LABELS'),
@@ -140,7 +145,10 @@ def segments_for(run, package):
         index = read_json(run / 'execution_index.json', {})
         return [Path(p) for key in ('FQ_LEARN_K0', 'FQ_LEARN_K1', 'FQ_LEARN_K2', 'FQ_LEARN_K3')
                 for p in index.get(key, [])]
-    index = read_json(run / package / 'execution_index.json', {})
+    folder = run / package
+    if package == 'FQ_RETEST' and (run / 'probe_relay_20261028/Q.retest/execution_index.json').exists():
+        folder = run / 'probe_relay_20261028/Q.retest'
+    index = read_json(folder / 'execution_index.json', {})
     return [Path(p) for p in index.get('segments', [])]
 
 
@@ -167,8 +175,8 @@ def latest_activity(segment):
     safe = {}
     if recent.name.endswith('.status.json'):
         value = read_json(recent, {})
-        safe = {k: value[k] for k in ('status', 'http_status', 'error_type', 'elapsed_seconds') if k in value}
-        status = '响应状态已保存'
+        safe = {k: value[k] for k in ('status', 'http_status', 'error_type', 'reason_type', 'elapsed_seconds') if k in value}
+        status = '请求传输中断' if value.get('status') == 'transport_error' else '响应状态已保存'
     return {'file': recent.name, 'time': dt.datetime.fromtimestamp(stamp, SHANGHAI).isoformat(),
             'age_seconds': round(time.time() - stamp), 'state': status, **safe}
 
@@ -191,6 +199,7 @@ def summarize_rows(rows):
                       'arm': row.get('arm'), 'family': row.get('family_id'), 'cwe': row.get('cwe'),
                       'functional': final.get('functional'), 'security': final.get('security'),
                       'joint': final.get('joint'), 'measured': final.get('measured'),
+                      'model_cohort': row.get('model_cohort'), 'execution_model': row.get('execution_model'),
                       'selected': sorted(selected), 'adopted': sorted(adopted),
                       'credits': sum(e.get('credited') is True for e in events),
                       'time': row['_time']})
@@ -204,6 +213,7 @@ class Collector:
     def __init__(self, run, *, packages=None, worker_reader=worker_processes):
         self.run, self.cache = Path(run), {}
         self.rows = {}
+        self.row_paths = {}
         self.packages = PACKAGES if packages is None else packages
         self.worker_reader = worker_reader
 
@@ -236,6 +246,7 @@ class Collector:
             latest = segments[-1] if segments else None
             summaries = [read_json(segment / 'summary.json', {}) for segment in segments]
             summary = summaries[-1] if summaries else {}
+            native_state = read_json(latest / 'state.json', {}) if latest else {}
             display_summary = max(summaries, key=lambda s: s.get('completed', 0), default={})
             usage_summary = max(summaries, key=lambda s: s.get('known_reported_tokens', 0), default={})
             completed = summary.get('completed', 0)
@@ -265,20 +276,32 @@ class Collector:
                         continue
                     self.cache[path] = stamp
                     identity = (key, str(row.get('cell_id') or row.get('task_id')))
-                    row['_package'] = key
-                    row['_time'] = self.rows.get(identity, {}).get('_time', path.stat().st_mtime)
-                    self.rows[identity] = row
+                    # 历史行含完整提示/候选/代码，全部常驻曾造成MemoryError。
+                    # 列表仅保留显示字段，点击详情时再读取对应的一行原始证据。
+                    compact = {k: row.get(k) for k in ('cell_id', 'task_id', 'learning_checkpoint',
+                        'arm', 'family_id', 'cwe', 'model_cohort', 'execution_model')}
+                    compact['final'] = {k: (row.get('final') or {}).get(k)
+                        for k in ('functional', 'security', 'joint', 'measured')}
+                    compact['mechanism'] = [{k: m.get(k, []) for k in ('selected', 'adopted')}
+                                            for m in row.get('mechanism', [])]
+                    compact['q_credit_events'] = [{k: e.get(k) for k in ('credited', 'invariant_id')}
+                                                  for e in row.get('q_credit_events', [])]
+                    compact['_package'] = key
+                    compact['_time'] = self.rows.get(identity, {}).get('_time', path.stat().st_mtime)
+                    self.rows[identity] = compact
+                    self.row_paths[identity] = path
             live = [p for p in workers if p['package'] == key]
+            native_status = native_state.get('status') or summary.get('status')
             if live:
                 status = 'running' if allowed() else 'waiting_window'
             elif planned and completed == planned and (key not in ('FR','FR_EXTRA') or summary.get('status') == 'awaiting_human_confirmation'):
                 status = 'completed'
             elif latest and not summary and not (latest / 'state.json').exists():
                 status = 'not_started'
-            elif latest and summary.get('status') in ('running', 'starting'):
+            elif latest and native_status in ('running', 'starting', 'waiting_time_window'):
                 status = 'interrupted'
             elif latest:
-                status = summary.get('status', 'needs_check')
+                status = native_status or 'needs_check'
             else:
                 status = 'not_started'
             packages.append({'key': key, 'label': label, 'planned': planned, 'completed': completed,
@@ -286,6 +309,8 @@ class Collector:
                              'display_summary': display_summary, 'usage_summary': usage_summary,
                              'display_completed': max(completed, sum(1 for identity in self.rows if identity[0] == key)),
                              'segment': str(latest) if latest else None, 'processes': live,
+                             'native_state': native_state,
+                             'last_saved_at': display_summary.get('updated_utc'),
                              'activity': latest_activity(latest)})
         from .current_view import extra_rows
         for row in extra_rows(self.run, read_json):
@@ -294,6 +319,7 @@ class Collector:
         ordered = sorted(self.rows.values(), key=lambda r: r['_time'])
         rows, curve = summarize_rows(ordered)
         return {'time': now(), 'model': 'deepseek-v4.1-flash-1017', 'allowed': allowed(),
+                'sample_interval_seconds': SAMPLE_SECONDS,
                 'run_root': str(self.run), 'packages': packages, 'processes': workers,
                 'workers': sum(p['workers'] for p in workers), 'worker_limit': 4,
                 'rows': list(reversed(rows)), 'curve': curve}
@@ -555,11 +581,13 @@ class Workbench:
         self.snapshot = {'time': now(), 'packages': [], 'rows': [], 'curve': [], 'processes': [],
                          'workers': 0, 'worker_limit': 4, 'allowed': allowed(), 'loading': True}
         self.error = None
+        self.sequence = 0
         self.stop = threading.Event()
 
     def loop(self):
         while not self.stop.is_set():
             try:
+                started = time.monotonic()
                 snapshot = self.collector.collect(process_inventory())
                 incidents = self.autonomy.reconcile(snapshot, self.guardian.current,
                     history=self.guardian.state.get('history', []))
@@ -568,6 +596,9 @@ class Workbench:
                 snapshot['guardian'] = self.guardian.public()
                 from .current_view import apply_current_view
                 snapshot['autonomy'] = apply_current_view(snapshot, self.autonomy.view, self.collector.run, read_json)
+                self.sequence += 1
+                snapshot.update(time=now(), sequence=self.sequence,
+                                sample_duration_seconds=round(time.monotonic()-started, 2))
                 self.snapshot, self.error = snapshot, None
                 write_json(self.guardian.control / 'status.json', {**snapshot, 'rows': snapshot['rows'][:100]})
             except (OSError, ValueError, subprocess.SubprocessError) as exc:
@@ -575,7 +606,7 @@ class Workbench:
                 write_json(self.guardian.control / 'monitor_error.json', {'time': now(), 'error': self.error})
                 self.guardian.tick(self.snapshot, incidents=[{'id': 'workbench:' + self.error,
                                    'kind': 'error', 'package': 'workbench', 'error': self.error}])
-            self.stop.wait(10)
+            self.stop.wait(SAMPLE_SECONDS)
 
 
 def handler_for(app):
@@ -603,6 +634,7 @@ def handler_for(app):
             parsed = urlsplit(self.path)
             if parsed.path == '/api/status':
                 value = {**app.snapshot, 'monitor_error': app.error, 'guardian': app.guardian.public(),
+                         'server_time': now(),
                          'selftest': selftest_status()}
                 return self.respond(value)
             if parsed.path == '/api/task':
@@ -611,13 +643,22 @@ def handler_for(app):
                 row = app.collector.rows.get((package, cell))
                 if not row:
                     return self.respond({'error': 'not_found'}, 404)
+                source = app.collector.row_paths.get((package, cell))
+                if source:
+                    row = read_json(source, {})
                 # 只提供解题证据白名单；不暴露原始HTTP或任务隐藏测试。
                 attempts = [{'attempt': a.get('attempt'), 'code': a.get('code'),
                              'functional': a.get('functional'), 'security': a.get('security'),
                              'joint': a.get('joint'), 'measured': a.get('measured')}
                             for a in row.get('attempts', [])]
+                mechanism = [{**{k: m.get(k) for k in ('attempt', 'candidate_count', 'learned_candidates')},
+                    **{k: m.get(k) or [] for k in ('selected', 'adopted', 'selected_Q')}}
+                    for m in row.get('mechanism', [])]
                 return self.respond({'task_id': row.get('task_id'), 'cell_id': cell, 'attempts': attempts,
-                                     'mechanism': row.get('mechanism', []), 'q_credit_events': row.get('q_credit_events', [])})
+                                     'mechanism': mechanism, 'q_credit_events': row.get('q_credit_events', []),
+                                     'model_cohort': row.get('model_cohort', '1017_only'),
+                                     'response_models': row.get('response_models', []),
+                                     'request_model_lineage': row.get('request_model_lineage', [])})
             files = {'/': ('index.html', 'text/html; charset=utf-8'),
                      '/app.js': ('app.js', 'text/javascript; charset=utf-8'),
                      '/style.css': ('style.css', 'text/css; charset=utf-8')}

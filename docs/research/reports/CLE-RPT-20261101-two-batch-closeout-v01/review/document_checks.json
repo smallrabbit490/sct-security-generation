@@ -1,0 +1,51 @@
+{
+  "pages": 16,
+  "all_latest_pages_visually_checked": true,
+  "first_render_pages_checked": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "final_unchanged_pages_reused_after_pixel_comparison": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "final_changed_pages_rechecked": [
+    3,
+    4,
+    16
+  ],
+  "Word_bookmarks": 15,
+  "Word_hyperlinks": 91,
+  "Word_internal_links": 13,
+  "Word_cross_document_anchors": 1,
+  "Markdown_file_links": 78,
+  "broken_file_links": [],
+  "broken_cross_document_anchors": [],
+  "latest_render": "E:/ResearchRuns/CLE/20261027_full_requirements/closeout_20261101/report_render_v02",
+  "status": "passed"
+}

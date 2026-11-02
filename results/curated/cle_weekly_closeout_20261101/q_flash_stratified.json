@@ -1,0 +1,1339 @@
+{
+  "status": "completed",
+  "completed": 540,
+  "planned": 540,
+  "model": "deepseek-v4.1-flash",
+  "old_model": "deepseek-v4.1-flash-1017",
+  "model_strata": {
+    "1017_only": {
+      "arms": {
+        "Q1": {
+          "first": {
+            "functional": 20,
+            "security": 33,
+            "joint": 17,
+            "measured": 45,
+            "completed": 45,
+            "planned": 45,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.37777777777777777,
+            "joint_rate_among_measured": 0.37777777777777777,
+            "confirmed_joint_divided_by_planned": 0.37777777777777777
+          },
+          "final": {
+            "functional": 19,
+            "security": 35,
+            "joint": 17,
+            "measured": 45,
+            "completed": 45,
+            "planned": 45,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.37777777777777777,
+            "joint_rate_among_measured": 0.37777777777777777,
+            "confirmed_joint_divided_by_planned": 0.37777777777777777
+          }
+        },
+        "Q2_K0": {
+          "first": {
+            "functional": 19,
+            "security": 35,
+            "joint": 19,
+            "measured": 46,
+            "completed": 46,
+            "planned": 46,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.41304347826086957,
+            "joint_rate_among_measured": 0.41304347826086957,
+            "confirmed_joint_divided_by_planned": 0.41304347826086957
+          },
+          "final": {
+            "functional": 21,
+            "security": 35,
+            "joint": 21,
+            "measured": 46,
+            "completed": 46,
+            "planned": 46,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.45652173913043476,
+            "joint_rate_among_measured": 0.45652173913043476,
+            "confirmed_joint_divided_by_planned": 0.45652173913043476
+          }
+        },
+        "Q2_K1": {
+          "first": {
+            "functional": 21,
+            "security": 33,
+            "joint": 17,
+            "measured": 44,
+            "completed": 45,
+            "planned": 45,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.37777777777777777,
+            "joint_rate_among_measured": 0.38636363636363635,
+            "confirmed_joint_divided_by_planned": 0.37777777777777777
+          },
+          "final": {
+            "functional": 22,
+            "security": 33,
+            "joint": 18,
+            "measured": 44,
+            "completed": 45,
+            "planned": 45,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4,
+            "joint_rate_among_measured": 0.4090909090909091,
+            "confirmed_joint_divided_by_planned": 0.4
+          }
+        },
+        "Q2_K2": {
+          "first": {
+            "functional": 17,
+            "security": 34,
+            "joint": 15,
+            "measured": 44,
+            "completed": 45,
+            "planned": 45,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.3333333333333333,
+            "joint_rate_among_measured": 0.3409090909090909,
+            "confirmed_joint_divided_by_planned": 0.3333333333333333
+          },
+          "final": {
+            "functional": 19,
+            "security": 35,
+            "joint": 18,
+            "measured": 44,
+            "completed": 45,
+            "planned": 45,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4,
+            "joint_rate_among_measured": 0.4090909090909091,
+            "confirmed_joint_divided_by_planned": 0.4
+          }
+        },
+        "Q2_K3": {
+          "first": {
+            "functional": 25,
+            "security": 35,
+            "joint": 20,
+            "measured": 46,
+            "completed": 46,
+            "planned": 46,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.43478260869565216,
+            "joint_rate_among_measured": 0.43478260869565216,
+            "confirmed_joint_divided_by_planned": 0.43478260869565216
+          },
+          "final": {
+            "functional": 25,
+            "security": 36,
+            "joint": 20,
+            "measured": 46,
+            "completed": 46,
+            "planned": 46,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.43478260869565216,
+            "joint_rate_among_measured": 0.43478260869565216,
+            "confirmed_joint_divided_by_planned": 0.43478260869565216
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "target": "Q2_K0",
+          "control": "Q1",
+          "pairs": 45,
+          "measured_pairs": 45,
+          "missing_pairs": 0,
+          "families": 45,
+          "wins": 3,
+          "losses": 0,
+          "rescue_tasks": [
+            "1152_r1",
+            "1160_r1",
+            "677_r1"
+          ],
+          "loss_tasks": [],
+          "net": 3,
+          "difference": 0.06666666666666667,
+          "ci95_family_bootstrap": [
+            0.0,
+            0.15555555555555556
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 0.25,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 3,
+          "functional_losses": 2,
+          "planned_pairs": 46,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 45,
+              "net_joint": 3,
+              "difference": 0.06666666666666667
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K1",
+          "control": "Q1",
+          "pairs": 45,
+          "measured_pairs": 44,
+          "missing_pairs": 1,
+          "families": 44,
+          "wins": 4,
+          "losses": 3,
+          "rescue_tasks": [
+            "1359_r1",
+            "432_r1",
+            "677_r1",
+            "974_r1"
+          ],
+          "loss_tasks": [
+            "108_r1",
+            "1221_r1",
+            "683_r1"
+          ],
+          "net": 1,
+          "difference": 0.022727272727272728,
+          "ci95_family_bootstrap": [
+            -0.09090909090909091,
+            0.13636363636363635
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 5,
+          "functional_losses": 2,
+          "planned_pairs": 45,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 44,
+              "net_joint": 1,
+              "difference": 0.022727272727272728
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K2",
+          "control": "Q1",
+          "pairs": 45,
+          "measured_pairs": 44,
+          "missing_pairs": 1,
+          "families": 44,
+          "wins": 4,
+          "losses": 2,
+          "rescue_tasks": [
+            "1152_r1",
+            "1290_r1",
+            "93_r1",
+            "974_r1"
+          ],
+          "loss_tasks": [
+            "1028_r1",
+            "683_r1"
+          ],
+          "net": 2,
+          "difference": 0.045454545454545456,
+          "ci95_family_bootstrap": [
+            -0.06818181818181818,
+            0.1590909090909091
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 0.6875,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 4,
+          "functional_losses": 3,
+          "planned_pairs": 45,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 44,
+              "net_joint": 2,
+              "difference": 0.045454545454545456
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K3",
+          "control": "Q1",
+          "pairs": 45,
+          "measured_pairs": 45,
+          "missing_pairs": 0,
+          "families": 45,
+          "wins": 5,
+          "losses": 3,
+          "rescue_tasks": [
+            "1152_r1",
+            "1160_r1",
+            "1218_r1",
+            "156_r1",
+            "974_r1"
+          ],
+          "loss_tasks": [
+            "1028_r1",
+            "108_r1",
+            "683_r1"
+          ],
+          "net": 2,
+          "difference": 0.044444444444444446,
+          "ci95_family_bootstrap": [
+            -0.06666666666666667,
+            0.15555555555555556
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 0.7265625,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 7,
+          "functional_losses": 2,
+          "planned_pairs": 46,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 45,
+              "net_joint": 2,
+              "difference": 0.044444444444444446
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K3",
+          "control": "Q2_K0",
+          "pairs": 46,
+          "measured_pairs": 46,
+          "missing_pairs": 0,
+          "families": 46,
+          "wins": 3,
+          "losses": 4,
+          "rescue_tasks": [
+            "1218_r1",
+            "156_r1",
+            "974_r1"
+          ],
+          "loss_tasks": [
+            "1028_r1",
+            "108_r1",
+            "677_r1",
+            "683_r1"
+          ],
+          "net": -1,
+          "difference": -0.021739130434782608,
+          "ci95_family_bootstrap": [
+            -0.13043478260869565,
+            0.08695652173913043
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 7,
+          "functional_losses": 3,
+          "planned_pairs": 46,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 46,
+              "net_joint": -1,
+              "difference": -0.021739130434782608
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        }
+      ],
+      "primary_comparison": "Q2_K3 vs Q1",
+      "inference_plan": {
+        "primary_count": 1,
+        "primary_test": "two-sided family sign swap",
+        "alpha": 0.05,
+        "primary_p_field": "p_family_swap",
+        "diagnostic_p_field": "exploratory_Holm5_p",
+        "positive_evidence": "complete registered batch, positive difference, CI lower bound > 0, primary p < 0.05",
+        "negative_evidence": "complete registered batch, negative difference, CI upper bound < 0, primary p < 0.05",
+        "otherwise": "report observed contrast; no stable direction established",
+        "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison"
+      },
+      "mechanism_counts": {
+        "Q2_K0_vs_Q1": {
+          "paired_cells": 45,
+          "common_candidates_verified": 45,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 43,
+          "new_members_declared_adopted_with_common_candidates": 33
+        },
+        "Q2_K1_vs_Q1": {
+          "paired_cells": 45,
+          "common_candidates_verified": 45,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 43,
+          "new_members_declared_adopted_with_common_candidates": 35
+        },
+        "Q2_K2_vs_Q1": {
+          "paired_cells": 45,
+          "common_candidates_verified": 45,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 44,
+          "new_members_declared_adopted_with_common_candidates": 35
+        },
+        "Q2_K3_vs_Q1": {
+          "paired_cells": 45,
+          "common_candidates_verified": 45,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 42,
+          "new_members_declared_adopted_with_common_candidates": 33
+        },
+        "Q2_K3_vs_Q2_K0": {
+          "paired_cells": 46,
+          "common_candidates_verified": 46,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 41,
+          "new_members_declared_adopted_with_common_candidates": 31
+        }
+      },
+      "completed": 227,
+      "unique_tasks": 46,
+      "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison",
+      "unexecuted_cells_counted_as_failures": false,
+      "case_review_status": "pending_actual_code_review"
+    },
+    "flash_only": {
+      "arms": {
+        "Q1": {
+          "first": {
+            "functional": 30,
+            "security": 44,
+            "joint": 26,
+            "measured": 60,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.43333333333333335,
+            "joint_rate_among_measured": 0.43333333333333335,
+            "confirmed_joint_divided_by_planned": 0.43333333333333335
+          },
+          "final": {
+            "functional": 31,
+            "security": 44,
+            "joint": 27,
+            "measured": 60,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.45,
+            "joint_rate_among_measured": 0.45,
+            "confirmed_joint_divided_by_planned": 0.45
+          }
+        },
+        "Q2_K0": {
+          "first": {
+            "functional": 26,
+            "security": 41,
+            "joint": 21,
+            "measured": 59,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.35,
+            "joint_rate_among_measured": 0.3559322033898305,
+            "confirmed_joint_divided_by_planned": 0.35
+          },
+          "final": {
+            "functional": 28,
+            "security": 44,
+            "joint": 25,
+            "measured": 59,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4166666666666667,
+            "joint_rate_among_measured": 0.423728813559322,
+            "confirmed_joint_divided_by_planned": 0.4166666666666667
+          }
+        },
+        "Q2_K1": {
+          "first": {
+            "functional": 30,
+            "security": 44,
+            "joint": 25,
+            "measured": 60,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4166666666666667,
+            "joint_rate_among_measured": 0.4166666666666667,
+            "confirmed_joint_divided_by_planned": 0.4166666666666667
+          },
+          "final": {
+            "functional": 31,
+            "security": 45,
+            "joint": 27,
+            "measured": 59,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.45,
+            "joint_rate_among_measured": 0.4576271186440678,
+            "confirmed_joint_divided_by_planned": 0.45
+          }
+        },
+        "Q2_K2": {
+          "first": {
+            "functional": 29,
+            "security": 44,
+            "joint": 24,
+            "measured": 60,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4,
+            "joint_rate_among_measured": 0.4,
+            "confirmed_joint_divided_by_planned": 0.4
+          },
+          "final": {
+            "functional": 30,
+            "security": 47,
+            "joint": 28,
+            "measured": 60,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4666666666666667,
+            "joint_rate_among_measured": 0.4666666666666667,
+            "confirmed_joint_divided_by_planned": 0.4666666666666667
+          }
+        },
+        "Q2_K3": {
+          "first": {
+            "functional": 30,
+            "security": 44,
+            "joint": 25,
+            "measured": 59,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4166666666666667,
+            "joint_rate_among_measured": 0.423728813559322,
+            "confirmed_joint_divided_by_planned": 0.4166666666666667
+          },
+          "final": {
+            "functional": 30,
+            "security": 43,
+            "joint": 26,
+            "measured": 59,
+            "completed": 60,
+            "planned": 60,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.43333333333333335,
+            "joint_rate_among_measured": 0.4406779661016949,
+            "confirmed_joint_divided_by_planned": 0.43333333333333335
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "target": "Q2_K0",
+          "control": "Q1",
+          "pairs": 60,
+          "measured_pairs": 59,
+          "missing_pairs": 1,
+          "families": 53,
+          "wins": 3,
+          "losses": 5,
+          "rescue_tasks": [
+            "432_r2",
+            "93_r2",
+            "994_r2"
+          ],
+          "loss_tasks": [
+            "1134_r2",
+            "1152_r2",
+            "1160_r2",
+            "1221_r2",
+            "1290_r2"
+          ],
+          "net": -2,
+          "difference": -0.03389830508474576,
+          "ci95_family_bootstrap": [
+            -0.12727272727272726,
+            0.05555555555555555
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 0.7265625,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 2,
+          "functional_losses": 5,
+          "planned_pairs": 60,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 7,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 52,
+              "net_joint": -2,
+              "difference": -0.038461538461538464
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K1",
+          "control": "Q1",
+          "pairs": 60,
+          "measured_pairs": 59,
+          "missing_pairs": 1,
+          "families": 53,
+          "wins": 5,
+          "losses": 4,
+          "rescue_tasks": [
+            "1218_r2",
+            "1359_r2",
+            "677_r2",
+            "85_r2",
+            "974_r2"
+          ],
+          "loss_tasks": [
+            "1028_r2",
+            "1134_r2",
+            "1221_r2",
+            "1290_r2"
+          ],
+          "net": 1,
+          "difference": 0.01694915254237288,
+          "ci95_family_bootstrap": [
+            -0.0847457627118644,
+            0.11864406779661017
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 5,
+          "functional_losses": 4,
+          "planned_pairs": 60,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 7,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 52,
+              "net_joint": 1,
+              "difference": 0.019230769230769232
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K2",
+          "control": "Q1",
+          "pairs": 60,
+          "measured_pairs": 60,
+          "missing_pairs": 0,
+          "families": 54,
+          "wins": 4,
+          "losses": 3,
+          "rescue_tasks": [
+            "108_r2",
+            "813_r2",
+            "85_r2",
+            "93_r2"
+          ],
+          "loss_tasks": [
+            "1134_r2",
+            "1221_r2",
+            "1290_r2"
+          ],
+          "net": 1,
+          "difference": 0.016666666666666666,
+          "ci95_family_bootstrap": [
+            -0.06779661016949153,
+            0.10344827586206896
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 2,
+          "functional_losses": 3,
+          "planned_pairs": 60,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 7,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 53,
+              "net_joint": 1,
+              "difference": 0.018867924528301886
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K3",
+          "control": "Q1",
+          "pairs": 60,
+          "measured_pairs": 59,
+          "missing_pairs": 1,
+          "families": 53,
+          "wins": 2,
+          "losses": 3,
+          "rescue_tasks": [
+            "1112_r1",
+            "1218_r2"
+          ],
+          "loss_tasks": [
+            "1152_r2",
+            "1290_r2",
+            "497_r2"
+          ],
+          "net": -1,
+          "difference": -0.01694915254237288,
+          "ci95_family_bootstrap": [
+            -0.09836065573770492,
+            0.05172413793103448
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 2,
+          "functional_losses": 3,
+          "planned_pairs": 60,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 7,
+              "net_joint": 1,
+              "difference": 0.14285714285714285
+            },
+            "2": {
+              "measured_pairs": 52,
+              "net_joint": -2,
+              "difference": -0.038461538461538464
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K3",
+          "control": "Q2_K0",
+          "pairs": 60,
+          "measured_pairs": 58,
+          "missing_pairs": 2,
+          "families": 52,
+          "wins": 5,
+          "losses": 4,
+          "rescue_tasks": [
+            "1112_r1",
+            "1134_r2",
+            "1160_r2",
+            "1218_r2",
+            "1221_r2"
+          ],
+          "loss_tasks": [
+            "432_r2",
+            "497_r2",
+            "93_r2",
+            "994_r2"
+          ],
+          "net": 1,
+          "difference": 0.017241379310344827,
+          "ci95_family_bootstrap": [
+            -0.08620689655172414,
+            0.11864406779661017
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 5,
+          "functional_losses": 3,
+          "planned_pairs": 60,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 7,
+              "net_joint": 1,
+              "difference": 0.14285714285714285
+            },
+            "2": {
+              "measured_pairs": 51,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        }
+      ],
+      "primary_comparison": "Q2_K3 vs Q1",
+      "inference_plan": {
+        "primary_count": 1,
+        "primary_test": "two-sided family sign swap",
+        "alpha": 0.05,
+        "primary_p_field": "p_family_swap",
+        "diagnostic_p_field": "exploratory_Holm5_p",
+        "positive_evidence": "complete registered batch, positive difference, CI lower bound > 0, primary p < 0.05",
+        "negative_evidence": "complete registered batch, negative difference, CI upper bound < 0, primary p < 0.05",
+        "otherwise": "report observed contrast; no stable direction established",
+        "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison"
+      },
+      "mechanism_counts": {
+        "Q2_K0_vs_Q1": {
+          "paired_cells": 60,
+          "common_candidates_verified": 59,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 42,
+          "new_members_declared_adopted_with_common_candidates": 35
+        },
+        "Q2_K1_vs_Q1": {
+          "paired_cells": 60,
+          "common_candidates_verified": 60,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 45,
+          "new_members_declared_adopted_with_common_candidates": 35
+        },
+        "Q2_K2_vs_Q1": {
+          "paired_cells": 60,
+          "common_candidates_verified": 60,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 55,
+          "new_members_declared_adopted_with_common_candidates": 41
+        },
+        "Q2_K3_vs_Q1": {
+          "paired_cells": 60,
+          "common_candidates_verified": 59,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 50,
+          "new_members_declared_adopted_with_common_candidates": 36
+        },
+        "Q2_K3_vs_Q2_K0": {
+          "paired_cells": 60,
+          "common_candidates_verified": 58,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 49,
+          "new_members_declared_adopted_with_common_candidates": 35
+        }
+      },
+      "completed": 300,
+      "unique_tasks": 54,
+      "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison",
+      "unexecuted_cells_counted_as_failures": false,
+      "case_review_status": "pending_actual_code_review"
+    },
+    "mixed_saved_prefix": {
+      "arms": {
+        "Q1": {
+          "first": {
+            "functional": 2,
+            "security": 3,
+            "joint": 2,
+            "measured": 3,
+            "completed": 3,
+            "planned": 3,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6666666666666666,
+            "joint_rate_among_measured": 0.6666666666666666,
+            "confirmed_joint_divided_by_planned": 0.6666666666666666
+          },
+          "final": {
+            "functional": 2,
+            "security": 3,
+            "joint": 2,
+            "measured": 3,
+            "completed": 3,
+            "planned": 3,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6666666666666666,
+            "joint_rate_among_measured": 0.6666666666666666,
+            "confirmed_joint_divided_by_planned": 0.6666666666666666
+          }
+        },
+        "Q2_K0": {
+          "first": {
+            "functional": 1,
+            "security": 2,
+            "joint": 1,
+            "measured": 2,
+            "completed": 2,
+            "planned": 2,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5,
+            "joint_rate_among_measured": 0.5,
+            "confirmed_joint_divided_by_planned": 0.5
+          },
+          "final": {
+            "functional": 1,
+            "security": 2,
+            "joint": 1,
+            "measured": 2,
+            "completed": 2,
+            "planned": 2,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5,
+            "joint_rate_among_measured": 0.5,
+            "confirmed_joint_divided_by_planned": 0.5
+          }
+        },
+        "Q2_K1": {
+          "first": {
+            "functional": 2,
+            "security": 3,
+            "joint": 2,
+            "measured": 3,
+            "completed": 3,
+            "planned": 3,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6666666666666666,
+            "joint_rate_among_measured": 0.6666666666666666,
+            "confirmed_joint_divided_by_planned": 0.6666666666666666
+          },
+          "final": {
+            "functional": 2,
+            "security": 3,
+            "joint": 2,
+            "measured": 3,
+            "completed": 3,
+            "planned": 3,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6666666666666666,
+            "joint_rate_among_measured": 0.6666666666666666,
+            "confirmed_joint_divided_by_planned": 0.6666666666666666
+          }
+        },
+        "Q2_K2": {
+          "first": {
+            "functional": 2,
+            "security": 3,
+            "joint": 2,
+            "measured": 3,
+            "completed": 3,
+            "planned": 3,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6666666666666666,
+            "joint_rate_among_measured": 0.6666666666666666,
+            "confirmed_joint_divided_by_planned": 0.6666666666666666
+          },
+          "final": {
+            "functional": 2,
+            "security": 3,
+            "joint": 2,
+            "measured": 3,
+            "completed": 3,
+            "planned": 3,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6666666666666666,
+            "joint_rate_among_measured": 0.6666666666666666,
+            "confirmed_joint_divided_by_planned": 0.6666666666666666
+          }
+        },
+        "Q2_K3": {
+          "first": {
+            "functional": 1,
+            "security": 2,
+            "joint": 1,
+            "measured": 2,
+            "completed": 2,
+            "planned": 2,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5,
+            "joint_rate_among_measured": 0.5,
+            "confirmed_joint_divided_by_planned": 0.5
+          },
+          "final": {
+            "functional": 1,
+            "security": 2,
+            "joint": 1,
+            "measured": 2,
+            "completed": 2,
+            "planned": 2,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5,
+            "joint_rate_among_measured": 0.5,
+            "confirmed_joint_divided_by_planned": 0.5
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "target": "Q2_K0",
+          "control": "Q1",
+          "pairs": 2,
+          "measured_pairs": 2,
+          "missing_pairs": 0,
+          "families": 2,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 3,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K1",
+          "control": "Q1",
+          "pairs": 3,
+          "measured_pairs": 3,
+          "missing_pairs": 0,
+          "families": 3,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 3,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 2,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K2",
+          "control": "Q1",
+          "pairs": 3,
+          "measured_pairs": 3,
+          "missing_pairs": 0,
+          "families": 3,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 3,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 2,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K3",
+          "control": "Q1",
+          "pairs": 2,
+          "measured_pairs": 2,
+          "missing_pairs": 0,
+          "families": 2,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 3,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "Q2_K3",
+          "control": "Q2_K0",
+          "pairs": 2,
+          "measured_pairs": 2,
+          "missing_pairs": 0,
+          "families": 2,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 2,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm5_p": 1.0,
+          "cross_model_pairs_included": false
+        }
+      ],
+      "primary_comparison": "Q2_K3 vs Q1",
+      "inference_plan": {
+        "primary_count": 1,
+        "primary_test": "two-sided family sign swap",
+        "alpha": 0.05,
+        "primary_p_field": "p_family_swap",
+        "diagnostic_p_field": "exploratory_Holm5_p",
+        "positive_evidence": "complete registered batch, positive difference, CI lower bound > 0, primary p < 0.05",
+        "negative_evidence": "complete registered batch, negative difference, CI upper bound < 0, primary p < 0.05",
+        "otherwise": "report observed contrast; no stable direction established",
+        "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison"
+      },
+      "mechanism_counts": {
+        "Q2_K0_vs_Q1": {
+          "paired_cells": 2,
+          "common_candidates_verified": 2,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 2,
+          "new_members_declared_adopted_with_common_candidates": 2
+        },
+        "Q2_K1_vs_Q1": {
+          "paired_cells": 3,
+          "common_candidates_verified": 3,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 3,
+          "new_members_declared_adopted_with_common_candidates": 3
+        },
+        "Q2_K2_vs_Q1": {
+          "paired_cells": 3,
+          "common_candidates_verified": 3,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 2,
+          "new_members_declared_adopted_with_common_candidates": 2
+        },
+        "Q2_K3_vs_Q1": {
+          "paired_cells": 2,
+          "common_candidates_verified": 2,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 2,
+          "new_members_declared_adopted_with_common_candidates": 1
+        },
+        "Q2_K3_vs_Q2_K0": {
+          "paired_cells": 2,
+          "common_candidates_verified": 2,
+          "common_candidates_mismatched": 0,
+          "selected_members_changed_with_common_candidates": 2,
+          "new_members_declared_adopted_with_common_candidates": 1
+        }
+      },
+      "completed": 13,
+      "unique_tasks": 3,
+      "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison",
+      "unexecuted_cells_counted_as_failures": false,
+      "case_review_status": "pending_actual_code_review"
+    }
+  },
+  "physical_cost_by_requested_model": {
+    "deepseek-v4.1-flash-1017": {
+      "physical_HTTP": 1679,
+      "known_reported_tokens": 14955132,
+      "unknown_or_inflight_HTTP": 32
+    },
+    "text-embedding-3-large": {
+      "physical_HTTP": 426,
+      "known_reported_tokens": 597667,
+      "unknown_or_inflight_HTTP": 0
+    },
+    "deepseek-v4.1-flash": {
+      "physical_HTTP": 2223,
+      "known_reported_tokens": 20253363,
+      "unknown_or_inflight_HTTP": 5
+    }
+  },
+  "cumulative_costs": {
+    "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_008\\budget.json",
+    "status": "saved_budget_snapshot",
+    "known_reported_tokens": 35806162,
+    "physical_HTTP_including_prior": 4328,
+    "unknown_or_inflight_HTTP": 37,
+    "physical_statuses": {
+      "historical_unknown": 37,
+      "reported": 4291
+    },
+    "conservative_tokens_including_unknown_and_inflight_bounds": 37148301,
+    "currency_cost": null,
+    "includes_saved_work_and_possibly_current_inflight_request": true
+  },
+  "pooled_Joint_rate": null,
+  "model_transition_is_not_a_paired_model_effect": true,
+  "identical_duplicate_row_copies": 0,
+  "source_segments": [
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_001",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_002",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_003",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_004",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_005",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_008"
+  ],
+  "replay_status": "passed",
+  "case_review_status": "completed_primary_outcome_review",
+  "observed_utc": "2026-11-01T12:06:18.937743+00:00",
+  "paid_API_calls_by_analysis": 0,
+  "actual_case_review_file": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\model_switch_flash_20261101\\analysis\\agent_case_review.json",
+  "primary_outcome_pairs_reviewed": 13,
+  "supplementary_queue_status": "not_all_reviewed",
+  "repeat_stability_file": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\model_switch_flash_20261101\\analysis\\repeat_stability.json",
+  "delivery_report_md": "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-RPT-20261101-two-batch-closeout-v01\\11月1日Q回测与记忆标签结果分析.md",
+  "delivery_report_word": "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-RPT-20261101-two-batch-closeout-v01\\11月1日Q回测与记忆标签结果分析.docx",
+  "report_readability_issues_processed": 52,
+  "report_visual_pages_checked": 16,
+  "delivery_observed_utc": "2026-11-01T15:31:42.463405+00:00"
+}

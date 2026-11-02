@@ -1,0 +1,191 @@
+{
+  "status": "completed_registered_label_strata_and_selected_adverse_pairs",
+  "observed_utc": "2026-11-01T14:56:51.464336+00:00",
+  "saved_cells_at_review": 773,
+  "reviewed_tasks": 6,
+  "records": [
+    {
+      "task_id": "1023",
+      "label_key": [
+        "flash_only",
+        "stable_success",
+        "L4"
+      ],
+      "read_cells": "all_ten_final_codes_and_L1_L4_plans_cards",
+      "result": "L4两次Joint通过；L1两次功能0/3、安全3/3。",
+      "observed_code": "L1两次顶层定义USERS={}，清空题目提供的用户状态；L4两次使用外部USERS，验证管理员后完成更新。L1还保留只剩一个管理员时禁止降级的来源约束，L4计划拒绝题面未要求的额外约束。",
+      "card_and_plan": "L4两次采用pitfall-862-5818189147437479149，拒绝同次选入的另两张卡；来源示例直接使用外部USERS。L1两次采用三张卡。",
+      "interpretation": "在该题两次重复中，来源示例档形成正确交付，风险提醒档清空配置而失败。具体代码差异已定位；来源示例、采用集合和生成内容同时变化，单张卡的独立贡献未分离。",
+      "preferred_cost": {
+        "L4": 11147.0
+      },
+      "model_cohort": "flash_only",
+      "review_status": "actual_code_review_completed",
+      "counterfactual_card_effect_established": false,
+      "source_rows": [
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L4.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L4.json"
+      ],
+      "task_source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\inputs\\tasks.json",
+      "new_HTTP": 0
+    },
+    {
+      "task_id": "110",
+      "label_key": [
+        "flash_only",
+        "no_stable_success",
+        null
+      ],
+      "read_cells": "all_first_repeat_final_codes_and_second_repeat_L0_L1_L4",
+      "result": "五档第1次重复均功能2/2、安全4/5；五档第2次重复均Joint通过。",
+      "observed_code": "第1次五档均允许.hidden_file，通过允许点号的原正则，缺少首字符点号拒绝；本地原生复算均准确失败在安全测试index=2。第2次L0/L1/L4代码均显式拒绝开头点号。",
+      "card_and_plan": "L1提醒集中于异常捕获和返回False；计划没有补充隐藏文件规则。公开题面允许点号并禁止目录穿越，未明示拒绝所有点号开头文件；原验证测试将.hidden_file设为拒绝。",
+      "interpretation": "重复波动与题面缺少明确的隐藏文件要求共同存在。五档均无2/2成功档，该题保持未知标签，不指定L0；增加记忆长度未在本题消除该失败。",
+      "model_cohort": "flash_only",
+      "review_status": "actual_code_review_completed",
+      "counterfactual_card_effect_established": false,
+      "source_rows": [
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\110_r1_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\110_r1_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\110_r1_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\110_r1_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\110_r1_L4.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\110_r2_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\110_r2_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\110_r2_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\110_r2_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\110_r2_L4.json"
+      ],
+      "task_source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\inputs\\tasks.json",
+      "new_HTTP": 0
+    },
+    {
+      "task_id": "461",
+      "label_key": [
+        "flash_only",
+        "stable_success",
+        "L1"
+      ],
+      "read_cells": "both_repeats_L0_L1_codes_plans_and_L1_presented_cards",
+      "result": "五档两次均Joint通过；L1的平均P7输入5632.5 Token，L0为5923。",
+      "observed_code": "L0与L1均查TRUSTED_USER_PROFILES，hmac.compare_digest比对签名，验证通过后才调用原get_profile_from_service，保留ConnectionError行为。",
+      "card_and_plan": "L1两次拒绝全部三张卡。两张来源提醒要求改写远程获取函数为真实HTTP，与当前题目使用原宿主辅助函数的要求不符；最终代码保留辅助函数。",
+      "interpretation": "L1是这两次观测中的成本首选标签；十次结果均通过，未观察到Joint增益。拒绝全部经验的结果也会进入成本标签，不能把该标签解释成采用风险提醒导致成功。",
+      "preferred_cost": {
+        "L1": 5632.5,
+        "L0": 5923.0
+      },
+      "model_cohort": "flash_only",
+      "review_status": "actual_code_review_completed",
+      "counterfactual_card_effect_established": false,
+      "source_rows": [
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\461_r1_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\461_r1_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\461_r1_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\461_r1_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\461_r1_L4.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\461_r2_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\461_r2_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\461_r2_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\461_r2_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\461_r2_L4.json"
+      ],
+      "task_source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\inputs\\tasks.json",
+      "new_HTTP": 0
+    },
+    {
+      "task_id": "1321",
+      "label_key": [
+        "flash_only",
+        "stable_success",
+        "L0"
+      ],
+      "read_cells": "both_repeats_L0_L1_codes_plans_and_L1_cards",
+      "result": "五档两次均Joint通过；L0平均P7输入5062.5 Token，L1为5728。",
+      "observed_code": "L0与L1都先按json/text白名单验证格式，再读文件；json用json.loads，text原样返回，pickle触发ValueError。",
+      "card_and_plan": "L1两次采用cand-502-9019453572835709259和cand-502-7106917869499550172，提醒反序列化前精确白名单检查；代码落实相应顺序。L0无需卡片也完成该顺序。",
+      "interpretation": "该题L0以更低观测P7输入成本获得相同Joint结果，支持在已能完成的题上节省记忆。采用提醒和实现对应已观察到，未带来额外通过数。",
+      "preferred_cost": {
+        "L0": 5062.5,
+        "L1": 5728.0
+      },
+      "model_cohort": "flash_only",
+      "review_status": "actual_code_review_completed",
+      "counterfactual_card_effect_established": false,
+      "source_rows": [
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1321_r1_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1321_r1_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1321_r1_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1321_r1_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1321_r1_L4.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\1321_r2_L0.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\1321_r2_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\1321_r2_L2.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\1321_r2_L3.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\1321_r2_L4.json"
+      ],
+      "task_source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\inputs\\tasks.json",
+      "new_HTTP": 0
+    },
+    {
+      "task_id": "1012",
+      "comparison": "L4 vs L1",
+      "repeat": 2,
+      "review_scope": "matched_flash_only_adverse_pair",
+      "result": "第2次重复L1功能3/3、安全2/2通过；L4功能0/3、安全2/2。",
+      "observed_code": "L1按题目要求使用外部USERS和USER_PROFILES，先授权再返回资料。L4在顶层将两表重建为空，授权后查不到资料；修复后仍保留这两条定义。",
+      "card_and_plan": "L1采用的hint-862-1405133312613939756明确要求删除重定义外部字典的代码；计划也明确不得定义或改动两表。L4初次及修复均拒绝全部选入卡；自身计划同样说不修改全局数据，最终代码没有遵守。",
+      "interpretation": "更长的来源示例档在该配对中损失功能，主要错误已定位为外部配置被空表覆盖。L1的提醒、计划和正确代码对应；L4拒绝全部卡，不能把失败归给某张已采用卡。",
+      "read_cells": [
+        "1012_r2_L1",
+        "1012_r2_L4"
+      ],
+      "model_cohort": "flash_only",
+      "review_status": "actual_code_review_completed",
+      "counterfactual_card_effect_established": false,
+      "new_HTTP": 0,
+      "source_rows": [
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\1012_r2_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\1012_r2_L4.json"
+      ],
+      "task_source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\inputs\\tasks.json"
+    },
+    {
+      "task_id": "497",
+      "comparison": "L3 vs L1",
+      "repeat": 2,
+      "review_scope": "matched_flash_only_adverse_pair",
+      "result": "第2次重复L1功能3/3、安全2/2；L3功能3/3、安全1/2。",
+      "observed_code": "L1只允许application/json或application/<subtype>+json；L3将text/json加入白名单，原生诊断失败在安全测试index=0。修复只改JSON深度扫描和字节计数，保留了错误媒体类型。",
+      "card_and_plan": "L1采用3张类型兼容提醒并保留严格媒体类型；L3初次和修复均拒绝全部卡，初次计划已明确包含text/json。模板中只绑定headers/body或通用操作，未形成正确的媒体类型限制。",
+      "interpretation": "目标操作模板没有在该次交付中消除核心安全错误。错误已存在于L3计划并进入代码，修复也未定位它。与L1的差异是已观察的档位结果；该设计未单独分离某个模板字段的因果效果。",
+      "read_cells": [
+        "497_r2_L1",
+        "497_r2_L3"
+      ],
+      "model_cohort": "flash_only",
+      "review_status": "actual_code_review_completed",
+      "counterfactual_card_effect_established": false,
+      "new_HTTP": 0,
+      "source_rows": [
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\497_r2_L1.json",
+        "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005\\task_rows\\497_r2_L3.json"
+      ],
+      "task_source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\inputs\\tasks.json"
+    }
+  ],
+  "coverage": "Four complete-label strata and two matched adverse comparisons; final batch statistics and final queue reconciliation remain pending.",
+  "diagnostic_file": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\model_switch_flash_20261101\\analysis\\agent_case_diagnostic_replay.json",
+  "automatic_queue_all_reviewed": false,
+  "registered_label_queue_entries": 4,
+  "all_registered_label_queue_entries_reviewed": true,
+  "all_pairwise_differences_reviewed": false
+}

@@ -1,0 +1,98 @@
+{
+  "1017_only": {
+    "L0": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L1": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L2": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L3": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L4": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    }
+  },
+  "flash_only": {
+    "L0": {
+      "two_measured_repeat_tasks": 32,
+      "Joint_flip_tasks": 4,
+      "both_pass": 12,
+      "both_fail": 16
+    },
+    "L1": {
+      "two_measured_repeat_tasks": 32,
+      "Joint_flip_tasks": 4,
+      "both_pass": 12,
+      "both_fail": 16
+    },
+    "L2": {
+      "two_measured_repeat_tasks": 32,
+      "Joint_flip_tasks": 5,
+      "both_pass": 10,
+      "both_fail": 17
+    },
+    "L3": {
+      "two_measured_repeat_tasks": 32,
+      "Joint_flip_tasks": 6,
+      "both_pass": 11,
+      "both_fail": 15
+    },
+    "L4": {
+      "two_measured_repeat_tasks": 32,
+      "Joint_flip_tasks": 4,
+      "both_pass": 12,
+      "both_fail": 16
+    }
+  },
+  "mixed_saved_prefix": {
+    "L0": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L1": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L2": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L3": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    },
+    "L4": {
+      "two_measured_repeat_tasks": 0,
+      "Joint_flip_tasks": 0,
+      "both_pass": 0,
+      "both_fail": 0
+    }
+  }
+}

@@ -1,20 +1,21 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CLE · 实时实验工作台</title><link rel="stylesheet" href="/style.css"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CLE · 实时实验工作台</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/style.css"></head>
 <body>
-<header><div><h1>CLE 实时实验工作台</h1><p id="clock">正在连接本机运行记录…</p></div><div class="controls"><span id="window" class="badge"></span><button id="auto" disabled>自主执行</button><button id="check" disabled>请 Codex 检查一次</button></div></header>
+<header><div><h1>CLE 实时实验工作台</h1><p id="clock">正在连接本机运行记录…</p></div><div class="controls"><span id="freshness" class="badge" role="status">连接中</span><button id="refresh">立即刷新</button><span id="window" class="badge"></span><button id="auto" disabled>自主执行</button><button id="check" disabled>请 Codex 检查一次</button></div></header>
 <main>
 <div id="error" class="notice" hidden></div>
-<div class="context"><span id="model"></span><span id="workers"></span><span>数据10秒更新 · 当前由本窗口接续，自动派发关闭</span></div>
+<div class="context"><span id="model"></span><span id="workers"></span><span id="refresh-policy">每5秒采样 · 页面自动更新</span></div>
 <div id="executor-legend" class="executor-legend" aria-label="执行方式图例"></div>
 <div id="control-state" class="notice"></div><section class="metrics" id="metrics"></section>
 <nav><button data-tab="live" class="active">实时运行</button><button data-tab="autonomy">任务安排</button><button data-tab="cards">选卡与 Q 反馈</button><button data-tab="repair">自动修复记录</button></nav>
 <div id="live" class="tab active">
 <section class="panel"><h2>当前执行与等待</h2><div id="active"></div></section>
+<section class="panel"><div class="section-head"><h2>当前小批的条件对照</h2><select id="results-package" aria-label="切换条件对照实验"></select></div><div id="live-results"></div><p class="hint">显示已保存、已测量与功能／安全／Joint通过数。两次重复按运行次数统计，未测量不计作失败；运行中数据不是最终结论。</p></section>
 <section class="panel"><h2>已得到什么结论？</h2><div id="findings"></div></section><div class="row"><section class="panel"><h2>Q 反馈覆盖了多少卡？</h2><svg id="curve" viewBox="0 0 620 230" role="img" aria-label="Q反馈覆盖卡数随已完成学习题次的变化"></svg><p class="hint">横轴为已保存学习题次，纵轴为收到实际反馈的不同卡片数。</p></section><section class="panel"><h2>功能与安全拆分对照</h2><div id="arms"></div><p class="hint">已停止于2433/2980格。各臂显示Joint通过数 / 实际测量数；各臂分母不同，配对结论见上方。</p></section></div>
 <section class="panel"><h2>全部实验进度</h2><p class="hint">先选择研究类型，展开后查看具体实验；执行方式仍用彩色标签区分。</p><div id="packages" class="experiment-groups"></div></section>
 <section class="panel"><h2>实验用量汇总</h2><div id="costs"></div></section></div>
-<div id="autonomy" class="tab"><section class="panel"><h2>任务安排与当前决策</h2><p id="autonomy-summary">正在读取任务队列…</p><p id="autonomy-next"></p><p class="hint">当前自主派发关闭。本页依据已保存产物显示任务状态；用户暂停、全量跳过、条件不通过和依赖缺失分别标明。</p><div id="autonomy-tasks" class="experiment-groups"></div></section></div>
-<div id="cards" class="tab"><section class="panel"><div class="section-head"><h2>逐题选卡、采用与最终结果</h2><div class="controls"><select id="package"><option value="">全部实验</option><option value="FQ_LEARN">Q 学习</option><option value="FFS">功能安全拆分</option></select><input id="search" placeholder="输入题号或卡号" aria-label="搜索题目或卡片"></div></div><p class="hint">卡号为首次与修复两次选卡的合并去重，每次最多三张。点击一行查看分次选卡、Q 更新和实际代码。展示最新 100 行。</p><div class="table-scroll"><table><thead><tr><th>题号 / 条件</th><th>所选卡号</th><th>声明采用</th><th>功能 F</th><th>安全 S</th><th>Joint</th></tr></thead><tbody id="tasks"></tbody></table></div></section></div>
+<div id="autonomy" class="tab"><section class="panel"><h2>任务安排与当前决策</h2><p id="autonomy-summary">正在读取任务队列…</p><p id="autonomy-next"></p><p class="hint">本页读取当前计划和保存结果。生成、回放、数值分析与案例复盘分别登记；打开或刷新页面不会启动实验。</p><div id="autonomy-tasks" class="experiment-groups"></div></section></div>
+<div id="cards" class="tab"><section class="panel"><div class="section-head"><h2>逐题选卡、采用与最终结果</h2><div class="controls"><select id="package"><option value="">全部实验</option><option value="FQ_LEARN">Q 学习</option><option value="FFS">功能安全拆分</option></select><input id="search" placeholder="输入题号或卡号" aria-label="搜索题目或卡片"></div></div><p class="hint">卡号为首次与修复两次选卡的合并去重，每次最多三张。点击一行查看分次选卡、Q 更新和实际代码。展示最新 100 行。</p><div class="table-scroll"><table><thead><tr><th>题号 / 条件</th><th>模型来源</th><th>所选卡号</th><th>声明采用</th><th>功能 F</th><th>安全 S</th><th>Joint</th></tr></thead><tbody id="tasks"></tbody></table></div></section></div>
 <div id="repair" class="tab"><section class="panel"><h2>Codex CLI 守护</h2><p>修复模型：GPT‑6.1 Sol · 极高（xhigh）</p><p id="guardian"></p><p class="hint">自动修复当前关闭。以下为历史执行记录，不能作为当前修复仍在运行的依据。已返回响应、原失败及未知用量保留。</p><p id="cli" class="path"></p><div id="selftest"></div><div id="jobs"></div></section></div>
 <footer id="root"></footer>
 </main>

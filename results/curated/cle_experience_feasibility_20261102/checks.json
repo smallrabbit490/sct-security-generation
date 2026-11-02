@@ -1,0 +1,1470 @@
+{
+  "summary": {
+    "model_API_calls": 0,
+    "embedding_API_calls": 0,
+    "scope": "retrospective feasibility on 3 selected families; not held-out performance",
+    "cells": 30,
+    "families": 3,
+    "incremental_flag_cells": [],
+    "incremental_flag_families": 0,
+    "correct_native_cells": 13,
+    "experience_flags_on_native_correct": [],
+    "raw_inapplicable_flags_on_native_correct": [
+      {
+        "cell_id": "1152_r1_Q2_K0",
+        "checks": [
+          "source card accepts exponent 2**3",
+          "source card accepts scientific notation 1e2"
+        ]
+      },
+      {
+        "cell_id": "1152_r1_Q2_K2",
+        "checks": [
+          "source card accepts exponent 2**3",
+          "source card accepts scientific notation 1e2"
+        ]
+      },
+      {
+        "cell_id": "1152_r1_Q2_K3",
+        "checks": [
+          "source card accepts exponent 2**3",
+          "source card accepts scientific notation 1e2"
+        ]
+      },
+      {
+        "cell_id": "1152_r2_Q1",
+        "checks": [
+          "source card accepts exponent 2**3",
+          "source card accepts scientific notation 1e2"
+        ]
+      },
+      {
+        "cell_id": "1152_r2_Q2_K1",
+        "checks": [
+          "source card accepts exponent 2**3"
+        ]
+      },
+      {
+        "cell_id": "1152_r2_Q2_K2",
+        "checks": [
+          "source card accepts exponent 2**3",
+          "source card accepts scientific notation 1e2"
+        ]
+      },
+      {
+        "cell_id": "1023_r1_L4",
+        "checks": [
+          "source card forbids sole-admin demotion"
+        ]
+      },
+      {
+        "cell_id": "1023_r2_L0",
+        "checks": [
+          "source card forbids sole-admin demotion"
+        ]
+      },
+      {
+        "cell_id": "1023_r2_L4",
+        "checks": [
+          "source card forbids sole-admin demotion"
+        ]
+      }
+    ]
+  },
+  "card_sources": {
+    "1152": [
+      {
+        "id": "hint-94-7278376456866242101",
+        "applicability": "Applicable: Processing user-provided mathematical expression strings, involving arithmetic operation evaluation. Excluded: 1) Scenarios requiring function calls, variable assignments, or module imports, 2) Non-string input sources, 3) Scenarios allowing extended operators such as scientific notation, exponentiation, etc., 4) Scenarios requiring high-performance evaluation (custom parser has overhead).",
+        "negative_guardrail": "1) Excessively strict character whitelist (e.g., prohibiting spaces) will break legitimate inputs; 2) Prohibiting consecutive operators may mistakenly reject legitimate expressions like 'a-(-b)'; 3) Number length limits that are too small will reject large-number calculations; 4) Incorrect handling of negative sign and decimal point combinations (e.g., '-.5') will cause functional failure; 5) Using complex regular expressions in the validation layer may miss detections or cause mistaken rejections.",
+        "fix_directive": "[No fix needed, current implementation has passed tests] If similar CWE-94 vulnerabilities are discovered in the future, handle them in the following order: 1) Filter the input string with a character-level whitelist before parsing, 2) Validate parenthesis matching and basic syntax structure, 3) Use a custom tokenizer to decompose the expression into operand and operator tokens, 4) Validate the number format for each token (preventing multiple decimal points), 5) Use a non-eval parsing algorithm (e.g., shunting-yard) for calculation, 6) Limit expression length, number length, and calculation stack depth."
+      },
+      {
+        "id": "hint-95-44902294748858938",
+        "applicability": "Applicable scenario: Python tools that need to dynamically evaluate mathematical expressions, where the input is a string expression, allowing basic arithmetic, comparison operations, Boolean operations, and predefined math functions. Not applicable: 1) Scenarios requiring complex control flow (loops, conditional branches); 2) Scenarios requiring user-defined functions or classes; 3) Scenarios requiring file/network I/O; 4) Non-Python environments. API assumptions: Python 3.6+, the ast module is available, the math module is available, user input is a string.",
+        "negative_guardrail": "Over-defensive pitfalls: Practices that appear safe but actually break functionality include: 1) Making the AST node whitelist too narrow, including only structural nodes while omitting operator nodes, causing legitimate mathematical expressions to be rejected; 2) Incorrectly rejecting scientific notation e/E during the character filtering stage (though the current code handles this correctly); 3) Setting numerical range limits too small (e.g., abs(val)>10**6) rejecting calculations with large numbers; 4) Setting nesting depth limits too shallow (e.g., depth>3) rejecting reasonably nested expressions; 5) Adding redundant checks in the safe evaluator (re-verifying content already validated by AST).",
+        "fix_directive": "[Conditional Fix Directive] In the Python AST security validation scenario, when functional tests fail but security tests pass, modify in the following order: 1) Keep the original AST structural node whitelist (Expression, BinOp, UnaryOp, Compare, BoolOp, Call, Name, Constant, Num) unchanged; 2) Add missing operator node types to the ALLOWED_NODE_TYPES set: ast.Add, ast.Sub, ast.Mult, ast.Div, ast.FloorDiv, ast.Mod, ast.Pow, ast.LShift, ast.RShift, ast.BitOr, ast.BitAnd, ast.BitXor, ast.MatMult (optional), ast.UAdd, ast.USub, ast.Not, ast.Invert, ast.Eq, ast.NotEq, ast.Lt, ast.LtE, ast.Gt, ast.GtE, ast.And, ast.Or; 3) Retain all existing security constraints (Attribute restrictions, Call validation, timeout, etc.). This modification ensures legitimate mathematical expressions (including operators) are accepted while maintaining code injection protection."
+      }
+    ],
+    "497": [
+      {
+        "id": "pitfall-352-694839719183572027",
+        "applicability": "Applicability conditions: 1) The function interface contract explicitly requires an input type (e.g., dict) but does not prohibit subtypes; 2) Functional testing fails due to type mismatch (expected_type specified); 3) The security logic is correct but input validation is overly strict. Exclusion conditions: 1) The contract explicitly prohibits certain subtypes (e.g., requires strict dict); 2) Security requirements demand strict type checking (e.g., to prevent prototype pollution); 3) Performance requirements demand strict type matching. API assumptions: The data parameter may be dict or its subclass, or other mapping types; headers and body may be dict or other mappings. Non-applicable scenarios: Serialization/deserialization boundaries requiring strict type matching.",
+        "negative_guardrail": "Overly defensive pitfalls: 1) Requiring headers and body to be exactly the dict type, rejecting dict subclasses or other mapping types, leading to legitimate input being rejected; 2) Overlooking functional failures because security tests pass, mistakenly believing strict typing is a security necessity; 3) Adding precise type checks not required by the contract, increasing coupling and reducing code generality.",
+        "fix_directive": "[Conditional Fix Directive] Under the premise of keeping CSRF token validation and user ID format validation unchanged, change the type check for headers and body from `isinstance(..., dict)` to `isinstance(..., collections.abc.Mapping)`. Specific steps: 1) Import collections.abc; 2) Replace the original check with `if not isinstance(headers, collections.abc.Mapping) or not isinstance(body, collections.abc.Mapping): return False`; 3) Ensure all return statements return a bool value (already satisfied). This modification allows all legitimate mapping types (including dict and its subclasses) to pass, rejecting only non-mapping types. Assumption: The test case inputs a dict subclass or other mapping type, and the CSRF token and user ID are valid."
+      }
+    ],
+    "1023": [
+      {
+        "id": "pitfall-862-5818189147437479149",
+        "applicability": "Applicable to: user permission management systems, APIs requiring hierarchical permission control, privileged operations performed by administrators. Excluded: single-user systems, scenarios not requiring permission hierarchy, scenarios where operator permission verification is already completed by external middleware. Input source: function parameters (cur_user_id, tar_user_id, priv_update). Sensitive operation: modifying user permission level. API assumption: the USERS global dictionary exists and its structure is known.",
+        "negative_guardrail": "Must avoid: 1) requiring cur_user_id and tar_user_id to be the same (which would break the administrator's ability to modify others' permissions), 2) narrowing valid_privileges to {\"moderator\", \"admin\"} (which would reject legitimate 'normal' permissions), 3) adding checks unrelated to the security policy such as \"cur_user_id must be greater than 0\", 4) clearing the return value or returning a non-boolean value upon successful modification, 5) requiring priv_update to be different from the current role (which would prevent permission from remaining unchanged).",
+        "fix_directive": "[No fix needed] The current implementation already satisfies the security policy: before modifying user permissions, the following must be executed in order: 1) verify administrator identity using 'cur_user_id in USERS and USERS[cur_user_id].get('role') == \"admin\"', 2) verify target existence using 'tar_user_id in USERS', 3) verify permission value legality using 'priv_update in {\"normal\", \"moderator\", \"admin\"}', 4) when the target is an administrator and the new permission is not admin, use 'sum(1 for u in USERS.values() if u.get(\"role\") == \"admin\") > 1' to ensure the only administrator is not demoted, 5) execute 'USERS[tar_user_id][\"role\"] = priv_update' within a try block and return True, return False on exception. Retain all behaviors where legitimate administrators modify permissions of non-unique administrators."
+      }
+    ]
+  },
+  "records": [
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r1_Q1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_005\\task_rows\\1152_r1_Q1.json",
+      "model_cohort": null,
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: unexpected token"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "ValueError: expression contains unsupported characters"
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r1_Q2_K0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_005\\task_rows\\1152_r1_Q2_K0.json",
+      "model_cohort": null,
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: unexpected token"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "ValueError: unsupported character"
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r1_Q2_K1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_005\\task_rows\\1152_r1_Q2_K1.json",
+      "model_cohort": null,
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Invalid expression"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "ValueError: Unsupported character"
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r1_Q2_K2",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_005\\task_rows\\1152_r1_Q2_K2.json",
+      "model_cohort": null,
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Invalid expression"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "ValueError: Invalid expression"
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r1_Q2_K3",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_005\\task_rows\\1152_r1_Q2_K3.json",
+      "model_cohort": null,
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Unexpected token"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "ValueError: Expression contains unsupported characters"
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r2_Q1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\1152_r2_Q1.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Unsupported binary operator"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "ValueError: Expression contains unsupported characters"
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r2_Q2_K0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\1152_r2_Q2_K0.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Unsupported binary operator"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r2_Q2_K1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\1152_r2_Q2_K1.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Unsupported binary operator"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r2_Q2_K2",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\1152_r2_Q2_K2.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Unsupported binary operator"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "ValueError: Expression contains unsupported characters"
+        }
+      ]
+    },
+    {
+      "task_id": "1152",
+      "family_id": "851d3879d3a7",
+      "cell_id": "1152_r2_Q2_K3",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\1152_r2_Q2_K3.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": false,
+      "experience_flags": true,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary arithmetic 7+3*2",
+          "passed": false,
+          "error": "KeyError: 1937487786896"
+        },
+        {
+          "group": "simple",
+          "name": "reject function call",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "signed decimal -.5+2",
+          "passed": false,
+          "error": "KeyError: 1937487786832"
+        },
+        {
+          "group": "experience",
+          "name": "negative nested operand 7-(-2)",
+          "passed": false,
+          "error": "KeyError: 1937487786768"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts exponent 2**3",
+          "passed": false,
+          "error": "ValueError: Unsupported binary operator"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts scientific notation 1e2",
+          "passed": false,
+          "error": "KeyError: 1937487786384"
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r1_Q1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\497_r1_Q1.json",
+      "model_cohort": "mixed_saved_prefix",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r1_Q2_K0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\497_r1_Q2_K0.json",
+      "model_cohort": "mixed_saved_prefix",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r1_Q2_K1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\497_r1_Q2_K1.json",
+      "model_cohort": "mixed_saved_prefix",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r1_Q2_K2",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\497_r1_Q2_K2.json",
+      "model_cohort": "mixed_saved_prefix",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r1_Q2_K3",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\497_r1_Q2_K3.json",
+      "model_cohort": "mixed_saved_prefix",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": false,
+          "error": "ValueError: Unacceptable request content type"
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r2_Q1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\497_r2_Q1.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r2_Q2_K0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\497_r2_Q2_K0.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r2_Q2_K1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\497_r2_Q2_K1.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": false,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "required function exists",
+          "passed": false,
+          "error": "missing public entry point"
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r2_Q2_K2",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\497_r2_Q2_K2.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "497",
+      "family_id": "d79ba36fc42b",
+      "cell_id": "497_r2_Q2_K3",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\497_r2_Q2_K3.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "ordinary valid JSON object",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject malformed JSON",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "dict subtype with same valid content",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card accepts arbitrary Mapping",
+          "passed": false,
+          "error": "ValueError: Invalid request"
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r1_L0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L0.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r1_L1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L1.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r1_L2",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L2.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r1_L3",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L3.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r1_L4",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004\\task_rows\\1023_r1_L4.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r2_L0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L0.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r2_L1",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L1.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r2_L2",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L2.json",
+      "model_cohort": "flash_only",
+      "native_joint": false,
+      "native_measured": true,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r2_L3",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L3.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "task_id": "1023",
+      "family_id": "6272044fa239",
+      "cell_id": "1023_r2_L4",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006\\task_rows\\1023_r2_L4.json",
+      "model_cohort": "flash_only",
+      "native_joint": true,
+      "native_measured": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "do not replace host USERS",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "admin changes another user",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary user cannot grant admin",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "normal role remains a valid destination",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "idempotent role update succeeds",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "source card forbids sole-admin demotion",
+          "passed": false,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

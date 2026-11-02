@@ -1,0 +1,33 @@
+{
+  "training_only": true,
+  "task_counts": {
+    "no_observed_correctness_difference": 7,
+    "difference_with_repeat_variation": 3,
+    "same_direction_difference_in_both_repeats": 1
+  },
+  "family_counts": {
+    "no_observed_correctness_difference": 7,
+    "difference_with_repeat_variation": 3,
+    "same_direction_difference_in_both_repeats": 1
+  },
+  "meaning": "诊断分档是否改变正确性；不能把成本选出的不同标签直接解释成正确性需求不同。",
+  "complete_training_tasks": 11,
+  "observed_fixed_level_joint_counts": {
+    "L0": 10,
+    "L1": 11,
+    "L2": 9,
+    "L3": 12,
+    "L4": 13
+  },
+  "best_observed_fixed_joint": 13,
+  "hindsight_per_task_joint": 13,
+  "potential_net_joint": 0,
+  "paired_observations": 22,
+  "not_classifier_performance": true,
+  "interpretation": "optimistic selection using the same two observed repeats; development results unused",
+  "model_cohort": "flash_only",
+  "pure_complete_tasks": 32,
+  "train_complete_tasks": 11,
+  "development_complete_tasks": 21,
+  "new_HTTP": 0
+}

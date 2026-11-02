@@ -1,0 +1,1203 @@
+{
+  "status": "completed",
+  "completed": 820,
+  "planned": 820,
+  "model": "deepseek-v4.1-flash",
+  "old_model": "deepseek-v4.1-flash-1017",
+  "model_strata": {
+    "1017_only": {
+      "comparisons": [
+        {
+          "target": "L0",
+          "control": "L1",
+          "pairs": 49,
+          "measured_pairs": 49,
+          "missing_pairs": 0,
+          "families": 49,
+          "wins": 4,
+          "losses": 2,
+          "rescue_tasks": [
+            "1012_r1",
+            "1160_r1",
+            "350_r1",
+            "974_r1"
+          ],
+          "loss_tasks": [
+            "156_r1",
+            "784_r1"
+          ],
+          "net": 2,
+          "difference": 0.04081632653061224,
+          "ci95_family_bootstrap": [
+            -0.061224489795918366,
+            0.14285714285714285
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 0.6875,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 4,
+          "functional_losses": 2,
+          "planned_pairs": 50,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 49,
+              "net_joint": 2,
+              "difference": 0.04081632653061224
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L2",
+          "control": "L1",
+          "pairs": 48,
+          "measured_pairs": 48,
+          "missing_pairs": 0,
+          "families": 48,
+          "wins": 3,
+          "losses": 2,
+          "rescue_tasks": [
+            "1012_r1",
+            "830_r1",
+            "991_r1"
+          ],
+          "loss_tasks": [
+            "156_r1",
+            "784_r1"
+          ],
+          "net": 1,
+          "difference": 0.020833333333333332,
+          "ci95_family_bootstrap": [
+            -0.0625,
+            0.10416666666666667
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 3,
+          "functional_losses": 4,
+          "planned_pairs": 50,
+          "not_yet_paired": 2,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 48,
+              "net_joint": 1,
+              "difference": 0.020833333333333332
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L3",
+          "control": "L1",
+          "pairs": 49,
+          "measured_pairs": 49,
+          "missing_pairs": 0,
+          "families": 49,
+          "wins": 4,
+          "losses": 4,
+          "rescue_tasks": [
+            "683_r1",
+            "830_r1",
+            "905_r1",
+            "994_r1"
+          ],
+          "loss_tasks": [
+            "1169_r1",
+            "156_r1",
+            "457_r1",
+            "784_r1"
+          ],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            -0.12244897959183673,
+            0.12244897959183673
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 3,
+          "functional_losses": 5,
+          "planned_pairs": 50,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 49,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L4",
+          "control": "L1",
+          "pairs": 49,
+          "measured_pairs": 49,
+          "missing_pairs": 0,
+          "families": 49,
+          "wins": 4,
+          "losses": 1,
+          "rescue_tasks": [
+            "1012_r1",
+            "1160_r1",
+            "830_r1",
+            "974_r1"
+          ],
+          "loss_tasks": [
+            "784_r1"
+          ],
+          "net": 3,
+          "difference": 0.061224489795918366,
+          "ci95_family_bootstrap": [
+            -0.02040816326530612,
+            0.16326530612244897
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 0.375,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 4,
+          "functional_losses": 3,
+          "planned_pairs": 49,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 49,
+              "net_joint": 3,
+              "difference": 0.061224489795918366
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        }
+      ],
+      "arms": {
+        "L0": {
+          "first": {
+            "functional": 32,
+            "security": 41,
+            "joint": 30,
+            "measured": 50,
+            "completed": 50,
+            "planned": 50,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6,
+            "joint_rate_among_measured": 0.6,
+            "confirmed_joint_divided_by_planned": 0.6
+          },
+          "final": {
+            "functional": 33,
+            "security": 42,
+            "joint": 31,
+            "measured": 50,
+            "completed": 50,
+            "planned": 50,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.62,
+            "joint_rate_among_measured": 0.62,
+            "confirmed_joint_divided_by_planned": 0.62
+          }
+        },
+        "L1": {
+          "first": {
+            "functional": 31,
+            "security": 39,
+            "joint": 29,
+            "measured": 49,
+            "completed": 49,
+            "planned": 49,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5918367346938775,
+            "joint_rate_among_measured": 0.5918367346938775,
+            "confirmed_joint_divided_by_planned": 0.5918367346938775
+          },
+          "final": {
+            "functional": 31,
+            "security": 41,
+            "joint": 29,
+            "measured": 49,
+            "completed": 49,
+            "planned": 49,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5918367346938775,
+            "joint_rate_among_measured": 0.5918367346938775,
+            "confirmed_joint_divided_by_planned": 0.5918367346938775
+          }
+        },
+        "L2": {
+          "first": {
+            "functional": 29,
+            "security": 43,
+            "joint": 29,
+            "measured": 49,
+            "completed": 49,
+            "planned": 49,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5918367346938775,
+            "joint_rate_among_measured": 0.5918367346938775,
+            "confirmed_joint_divided_by_planned": 0.5918367346938775
+          },
+          "final": {
+            "functional": 30,
+            "security": 43,
+            "joint": 30,
+            "measured": 49,
+            "completed": 49,
+            "planned": 49,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6122448979591837,
+            "joint_rate_among_measured": 0.6122448979591837,
+            "confirmed_joint_divided_by_planned": 0.6122448979591837
+          }
+        },
+        "L3": {
+          "first": {
+            "functional": 29,
+            "security": 42,
+            "joint": 28,
+            "measured": 50,
+            "completed": 50,
+            "planned": 50,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.56,
+            "joint_rate_among_measured": 0.56,
+            "confirmed_joint_divided_by_planned": 0.56
+          },
+          "final": {
+            "functional": 29,
+            "security": 43,
+            "joint": 29,
+            "measured": 50,
+            "completed": 50,
+            "planned": 50,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.58,
+            "joint_rate_among_measured": 0.58,
+            "confirmed_joint_divided_by_planned": 0.58
+          }
+        },
+        "L4": {
+          "first": {
+            "functional": 31,
+            "security": 41,
+            "joint": 30,
+            "measured": 49,
+            "completed": 49,
+            "planned": 49,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6122448979591837,
+            "joint_rate_among_measured": 0.6122448979591837,
+            "confirmed_joint_divided_by_planned": 0.6122448979591837
+          },
+          "final": {
+            "functional": 32,
+            "security": 41,
+            "joint": 32,
+            "measured": 49,
+            "completed": 49,
+            "planned": 49,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.6530612244897959,
+            "joint_rate_among_measured": 0.6530612244897959,
+            "confirmed_joint_divided_by_planned": 0.6530612244897959
+          }
+        }
+      },
+      "completed": 247,
+      "unique_tasks": 50,
+      "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison",
+      "unexecuted_cells_counted_as_failures": false,
+      "case_review_status": "pending_actual_code_review"
+    },
+    "flash_only": {
+      "comparisons": [
+        {
+          "target": "L0",
+          "control": "L1",
+          "pairs": 114,
+          "measured_pairs": 113,
+          "missing_pairs": 1,
+          "families": 79,
+          "wins": 6,
+          "losses": 6,
+          "rescue_tasks": [
+            "1023_r2",
+            "1290_r2",
+            "502_r2",
+            "905_r2",
+            "93_r1",
+            "974_r2"
+          ],
+          "loss_tasks": [
+            "1012_r2",
+            "1102_r2",
+            "1159_r2",
+            "1290_r1",
+            "784_r2",
+            "84_r2"
+          ],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            -0.05504587155963303,
+            0.05357142857142857
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 3,
+          "functional_losses": 6,
+          "planned_pairs": 114,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 32,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 81,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L2",
+          "control": "L1",
+          "pairs": 114,
+          "measured_pairs": 114,
+          "missing_pairs": 0,
+          "families": 80,
+          "wins": 3,
+          "losses": 5,
+          "rescue_tasks": [
+            "502_r2",
+            "905_r2",
+            "93_r1"
+          ],
+          "loss_tasks": [
+            "1069_r2",
+            "1290_r1",
+            "784_r2",
+            "84_r2",
+            "93_r2"
+          ],
+          "net": -2,
+          "difference": -0.017543859649122806,
+          "ci95_family_bootstrap": [
+            -0.0603448275862069,
+            0.02586206896551724
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 0.6875,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 0,
+          "functional_losses": 3,
+          "planned_pairs": 114,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 32,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 82,
+              "net_joint": -2,
+              "difference": -0.024390243902439025
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L3",
+          "control": "L1",
+          "pairs": 114,
+          "measured_pairs": 114,
+          "missing_pairs": 0,
+          "families": 80,
+          "wins": 7,
+          "losses": 6,
+          "rescue_tasks": [
+            "1023_r2",
+            "1052_r1",
+            "1290_r2",
+            "1326_r2",
+            "502_r2",
+            "830_r2",
+            "905_r2"
+          ],
+          "loss_tasks": [
+            "1069_r2",
+            "1290_r1",
+            "497_r2",
+            "784_r2",
+            "93_r2",
+            "991_r2"
+          ],
+          "net": 1,
+          "difference": 0.008771929824561403,
+          "ci95_family_bootstrap": [
+            -0.047619047619047616,
+            0.06779661016949153
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 5,
+          "functional_losses": 3,
+          "planned_pairs": 114,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 32,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 82,
+              "net_joint": 1,
+              "difference": 0.012195121951219513
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L4",
+          "control": "L1",
+          "pairs": 114,
+          "measured_pairs": 114,
+          "missing_pairs": 0,
+          "families": 80,
+          "wins": 5,
+          "losses": 4,
+          "rescue_tasks": [
+            "1023_r1",
+            "1023_r2",
+            "502_r2",
+            "830_r2",
+            "905_r2"
+          ],
+          "loss_tasks": [
+            "1012_r2",
+            "1069_r2",
+            "784_r2",
+            "93_r2"
+          ],
+          "net": 1,
+          "difference": 0.008771929824561403,
+          "ci95_family_bootstrap": [
+            -0.045454545454545456,
+            0.06779661016949153
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 3,
+          "functional_losses": 2,
+          "planned_pairs": 114,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 32,
+              "net_joint": 1,
+              "difference": 0.03125
+            },
+            "2": {
+              "measured_pairs": 82,
+              "net_joint": 0,
+              "difference": 0.0
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        }
+      ],
+      "arms": {
+        "L0": {
+          "first": {
+            "functional": 62,
+            "security": 90,
+            "joint": 55,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.4824561403508772,
+            "joint_rate_among_measured": 0.4824561403508772,
+            "confirmed_joint_divided_by_planned": 0.4824561403508772
+          },
+          "final": {
+            "functional": 62,
+            "security": 93,
+            "joint": 58,
+            "measured": 113,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 1,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5087719298245614,
+            "joint_rate_among_measured": 0.5132743362831859,
+            "confirmed_joint_divided_by_planned": 0.5087719298245614
+          }
+        },
+        "L1": {
+          "first": {
+            "functional": 64,
+            "security": 93,
+            "joint": 57,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5,
+            "joint_rate_among_measured": 0.5,
+            "confirmed_joint_divided_by_planned": 0.5
+          },
+          "final": {
+            "functional": 65,
+            "security": 91,
+            "joint": 58,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5087719298245614,
+            "joint_rate_among_measured": 0.5087719298245614,
+            "confirmed_joint_divided_by_planned": 0.5087719298245614
+          }
+        },
+        "L2": {
+          "first": {
+            "functional": 62,
+            "security": 91,
+            "joint": 54,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.47368421052631576,
+            "joint_rate_among_measured": 0.47368421052631576,
+            "confirmed_joint_divided_by_planned": 0.47368421052631576
+          },
+          "final": {
+            "functional": 62,
+            "security": 90,
+            "joint": 56,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.49122807017543857,
+            "joint_rate_among_measured": 0.49122807017543857,
+            "confirmed_joint_divided_by_planned": 0.49122807017543857
+          }
+        },
+        "L3": {
+          "first": {
+            "functional": 65,
+            "security": 88,
+            "joint": 57,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5,
+            "joint_rate_among_measured": 0.5,
+            "confirmed_joint_divided_by_planned": 0.5
+          },
+          "final": {
+            "functional": 67,
+            "security": 89,
+            "joint": 59,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5175438596491229,
+            "joint_rate_among_measured": 0.5175438596491229,
+            "confirmed_joint_divided_by_planned": 0.5175438596491229
+          }
+        },
+        "L4": {
+          "first": {
+            "functional": 66,
+            "security": 90,
+            "joint": 58,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5087719298245614,
+            "joint_rate_among_measured": 0.5087719298245614,
+            "confirmed_joint_divided_by_planned": 0.5087719298245614
+          },
+          "final": {
+            "functional": 66,
+            "security": 91,
+            "joint": 59,
+            "measured": 114,
+            "completed": 114,
+            "planned": 114,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.5175438596491229,
+            "joint_rate_among_measured": 0.5175438596491229,
+            "confirmed_joint_divided_by_planned": 0.5175438596491229
+          }
+        }
+      },
+      "completed": 570,
+      "unique_tasks": 82,
+      "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison",
+      "unexecuted_cells_counted_as_failures": false,
+      "case_review_status": "pending_actual_code_review"
+    },
+    "mixed_saved_prefix": {
+      "comparisons": [
+        {
+          "target": "L0",
+          "control": "L1",
+          "pairs": 0,
+          "measured_pairs": 0,
+          "missing_pairs": 0,
+          "families": 0,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": null,
+          "ci95_family_bootstrap": null,
+          "bootstrap_samples": 10000,
+          "p_family_swap": null,
+          "permutation": "no complete pairs",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 1,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L2",
+          "control": "L1",
+          "pairs": 0,
+          "measured_pairs": 0,
+          "missing_pairs": 0,
+          "families": 0,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": null,
+          "ci95_family_bootstrap": null,
+          "bootstrap_samples": 10000,
+          "p_family_swap": null,
+          "permutation": "no complete pairs",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 2,
+          "not_yet_paired": 2,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L3",
+          "control": "L1",
+          "pairs": 0,
+          "measured_pairs": 0,
+          "missing_pairs": 0,
+          "families": 0,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": null,
+          "ci95_family_bootstrap": null,
+          "bootstrap_samples": 10000,
+          "p_family_swap": null,
+          "permutation": "no complete pairs",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 1,
+          "not_yet_paired": 1,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "cross_model_pairs_included": false
+        },
+        {
+          "target": "L4",
+          "control": "L1",
+          "pairs": 1,
+          "measured_pairs": 1,
+          "missing_pairs": 0,
+          "families": 1,
+          "wins": 0,
+          "losses": 0,
+          "rescue_tasks": [],
+          "loss_tasks": [],
+          "net": 0,
+          "difference": 0.0,
+          "ci95_family_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_samples": 10000,
+          "p_family_swap": 1.0,
+          "permutation": "exact family sign swaps",
+          "functional_gains": 0,
+          "functional_losses": 0,
+          "planned_pairs": 1,
+          "not_yet_paired": 0,
+          "repeat_comparisons": {
+            "1": {
+              "measured_pairs": 1,
+              "net_joint": 0,
+              "difference": 0.0
+            },
+            "2": {
+              "measured_pairs": 0,
+              "net_joint": 0,
+              "difference": null
+            }
+          },
+          "exploratory_Holm4_p": 1.0,
+          "cross_model_pairs_included": false
+        }
+      ],
+      "arms": {
+        "L0": {
+          "first": {
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 0,
+            "completed": 0,
+            "planned": 0,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": null,
+            "joint_rate_among_measured": null,
+            "confirmed_joint_divided_by_planned": null
+          },
+          "final": {
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 0,
+            "completed": 0,
+            "planned": 0,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": null,
+            "joint_rate_among_measured": null,
+            "confirmed_joint_divided_by_planned": null
+          }
+        },
+        "L1": {
+          "first": {
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1,
+            "completed": 1,
+            "planned": 1,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.0,
+            "joint_rate_among_measured": 0.0,
+            "confirmed_joint_divided_by_planned": 0.0
+          },
+          "final": {
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1,
+            "completed": 1,
+            "planned": 1,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.0,
+            "joint_rate_among_measured": 0.0,
+            "confirmed_joint_divided_by_planned": 0.0
+          }
+        },
+        "L2": {
+          "first": {
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 1,
+            "completed": 1,
+            "planned": 1,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.0,
+            "joint_rate_among_measured": 0.0,
+            "confirmed_joint_divided_by_planned": 0.0
+          },
+          "final": {
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 1,
+            "completed": 1,
+            "planned": 1,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.0,
+            "joint_rate_among_measured": 0.0,
+            "confirmed_joint_divided_by_planned": 0.0
+          }
+        },
+        "L3": {
+          "first": {
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 0,
+            "completed": 0,
+            "planned": 0,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": null,
+            "joint_rate_among_measured": null,
+            "confirmed_joint_divided_by_planned": null
+          },
+          "final": {
+            "functional": 0,
+            "security": 0,
+            "joint": 0,
+            "measured": 0,
+            "completed": 0,
+            "planned": 0,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": null,
+            "joint_rate_among_measured": null,
+            "confirmed_joint_divided_by_planned": null
+          }
+        },
+        "L4": {
+          "first": {
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1,
+            "completed": 1,
+            "planned": 1,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.0,
+            "joint_rate_among_measured": 0.0,
+            "confirmed_joint_divided_by_planned": 0.0
+          },
+          "final": {
+            "functional": 0,
+            "security": 1,
+            "joint": 0,
+            "measured": 1,
+            "completed": 1,
+            "planned": 1,
+            "unmeasured_completed": 0,
+            "pending_tasks": 0,
+            "joint_rate_among_completed": 0.0,
+            "joint_rate_among_measured": 0.0,
+            "confirmed_joint_divided_by_planned": 0.0
+          }
+        }
+      },
+      "completed": 3,
+      "unique_tasks": 2,
+      "scope": "observed model-homogeneous subset of the original fixed schedule; not a completed full-set model comparison",
+      "unexecuted_cells_counted_as_failures": false,
+      "case_review_status": "pending_actual_code_review"
+    }
+  },
+  "physical_cost_by_requested_model": {
+    "deepseek-v4.1-flash-1017": {
+      "physical_HTTP": 1585,
+      "known_reported_tokens": 9121876,
+      "unknown_or_inflight_HTTP": 14
+    },
+    "text-embedding-3-large": {
+      "physical_HTTP": 480,
+      "known_reported_tokens": 671862,
+      "unknown_or_inflight_HTTP": 2
+    },
+    "deepseek-v4.1-flash": {
+      "physical_HTTP": 3685,
+      "known_reported_tokens": 22245515,
+      "unknown_or_inflight_HTTP": 5
+    }
+  },
+  "cumulative_costs": {
+    "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_007\\budget.json",
+    "status": "saved_budget_snapshot",
+    "known_reported_tokens": 32039253,
+    "physical_HTTP_including_prior": 5750,
+    "unknown_or_inflight_HTTP": 21,
+    "physical_statuses": {
+      "reported": 5729,
+      "historical_unknown": 21
+    },
+    "conservative_tokens_including_unknown_and_inflight_bounds": 32642798,
+    "currency_cost": null,
+    "includes_saved_work_and_possibly_current_inflight_request": true
+  },
+  "pooled_Joint_rate": null,
+  "model_transition_is_not_a_paired_model_effect": true,
+  "identical_duplicate_row_copies": 0,
+  "source_segments": [
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_001",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_002",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_003",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_004",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_005",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_006",
+    "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\segment_007"
+  ],
+  "replay_status": "passed",
+  "case_review_status": "completed_registered_label_strata_and_selected_adverse_pairs",
+  "observed_utc": "2026-11-01T14:54:19.554910+00:00",
+  "paid_API_calls_by_analysis": 0,
+  "pure_flash_complete_label_tasks": 32,
+  "training_readiness": {
+    "status": "analyzed",
+    "readiness": {
+      "ready": false,
+      "reasons": [
+        "training_label_families_below30",
+        "fewer_than_two_classes_with5_training_families"
+      ],
+      "training_label_families": 5,
+      "class_training_families": {
+        "L0": 2,
+        "L4": 1,
+        "L1": 2
+      },
+      "development_routed_levels": [
+        "L0",
+        "L1",
+        "L4"
+      ]
+    },
+    "paid_API_calls": 0,
+    "selection_objective": "family-held-out actual Joint, then known mean P7 input tokens, then smaller C",
+    "development_comparisons": [
+      {
+        "target": "classifier",
+        "control": "fixed_L1",
+        "pairs": 42,
+        "measured_pairs": 42,
+        "missing_pairs": 0,
+        "families": 20,
+        "wins": 0,
+        "losses": 2,
+        "rescue_tasks": [],
+        "loss_tasks": [
+          "1069_r2",
+          "93_r2"
+        ],
+        "net": -2,
+        "difference": -0.047619047619047616,
+        "ci95_family_bootstrap": [
+          -0.11904761904761904,
+          0.0
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 0.5,
+        "permutation": "exact family sign swaps",
+        "functional_gains": 0,
+        "functional_losses": 0,
+        "planned_pairs": 42,
+        "not_yet_paired": 0,
+        "repeat_comparisons": {
+          "1": {
+            "measured_pairs": 21,
+            "net_joint": 0,
+            "difference": 0.0
+          },
+          "2": {
+            "measured_pairs": 21,
+            "net_joint": -2,
+            "difference": -0.09523809523809523
+          }
+        }
+      },
+      {
+        "target": "classifier",
+        "control": "fixed",
+        "pairs": 42,
+        "measured_pairs": 42,
+        "missing_pairs": 0,
+        "families": 20,
+        "wins": 0,
+        "losses": 0,
+        "rescue_tasks": [],
+        "loss_tasks": [],
+        "net": 0,
+        "difference": 0.0,
+        "ci95_family_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 1.0,
+        "permutation": "exact family sign swaps",
+        "functional_gains": 0,
+        "functional_losses": 0,
+        "planned_pairs": 42,
+        "not_yet_paired": 0,
+        "repeat_comparisons": {
+          "1": {
+            "measured_pairs": 21,
+            "net_joint": 0,
+            "difference": 0.0
+          },
+          "2": {
+            "measured_pairs": 21,
+            "net_joint": 0,
+            "difference": 0.0
+          }
+        }
+      },
+      {
+        "target": "classifier",
+        "control": "rule",
+        "pairs": 42,
+        "measured_pairs": 42,
+        "missing_pairs": 0,
+        "families": 20,
+        "wins": 0,
+        "losses": 1,
+        "rescue_tasks": [],
+        "loss_tasks": [
+          "1052_r1"
+        ],
+        "net": -1,
+        "difference": -0.023809523809523808,
+        "ci95_family_bootstrap": [
+          -0.075,
+          0.0
+        ],
+        "bootstrap_samples": 10000,
+        "p_family_swap": 1.0,
+        "permutation": "exact family sign swaps",
+        "functional_gains": 0,
+        "functional_losses": 1,
+        "planned_pairs": 42,
+        "not_yet_paired": 0,
+        "repeat_comparisons": {
+          "1": {
+            "measured_pairs": 21,
+            "net_joint": -1,
+            "difference": -0.047619047619047616
+          },
+          "2": {
+            "measured_pairs": 21,
+            "net_joint": 0,
+            "difference": 0.0
+          }
+        }
+      }
+    ],
+    "candidate_only": true,
+    "formal_classifier_frozen": false,
+    "automatic_expansion": false,
+    "paid_gate_dispatched": false
+  },
+  "case_review_file": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\FG_LABELS\\model_switch_flash_20261101\\analysis\\agent_case_review.json",
+  "actual_case_tasks_reviewed": 6,
+  "registered_label_case_queue_reviewed": 4,
+  "supplementary_adverse_pairs_reviewed": 2,
+  "all_pairwise_differences_reviewed": false,
+  "delivery_report_md": "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-RPT-20261101-two-batch-closeout-v01\\11月1日Q回测与记忆标签结果分析.md",
+  "delivery_report_word": "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-RPT-20261101-two-batch-closeout-v01\\11月1日Q回测与记忆标签结果分析.docx",
+  "report_readability_issues_processed": 52,
+  "report_visual_pages_checked": 16,
+  "delivery_observed_utc": "2026-11-01T15:31:42.463405+00:00"
+}

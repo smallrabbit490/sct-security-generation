@@ -1,0 +1,29 @@
+{
+  "status": "code_verified_archives_uploading",
+  "branch": "fjy/cle-contract-conditional-q-20261023",
+  "tests": {
+    "count": 40,
+    "status": "passed",
+    "scope": "TLS recovery, model switch, workbench realtime/current/display"
+  },
+  "restored_recomputation": {
+    "q_completed": 540,
+    "q_measured": 535,
+    "gr_completed": 820,
+    "gr_measured": 819,
+    "saved_metrics_match": true,
+    "new_model_HTTP": 0
+  },
+  "increment_archive": {
+    "parts": 8,
+    "all_CRC_passed": true,
+    "manifest_paths": 61076,
+    "new_unique_blobs": 40672,
+    "missing_blobs": 0
+  },
+  "base_release": "https://github.com/smallrabbit490/sct-security-generation/releases/tag/cle-project-snapshot-20261029",
+  "increment_release": "https://github.com/smallrabbit490/sct-security-generation/releases/tag/cle-completed-evidence-20261102",
+  "original_runtime_modified": false,
+  "workbench_restarted": false,
+  "experiments_launched": false
+}

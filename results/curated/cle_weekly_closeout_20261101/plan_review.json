@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-01T10:56:38.070227+08:00",
+  "plan_scope_passed": true,
+  "runtime": {
+    "Q": {
+      "status": "running",
+      "completed_P7": 57,
+      "planned_P7": 540
+    },
+    "labels": {
+      "status": "running",
+      "completed_P7": 52,
+      "planned_P7": 820
+    }
+  },
+  "fixed": [
+    "one primary Q test alpha0.05; exploratory Holm5 separate",
+    "complete first FFS repeat separated from incomplete second",
+    "training-only memory opportunity and offline readiness linked",
+    "FR original unresolved-request blocker and blind export gap identified",
+    "new direction shares prefixes only within same precondition version",
+    "root instructions and task acceptance synchronized"
+  ],
+  "remaining_execution_gap": "FR bounded continuation and blind export not yet implemented; do not launch original resume",
+  "verification": [
+    "zero-network opportunity/missing-label/paired tests passed",
+    "native FFS summary recomputed without API",
+    "local links and anchors passed",
+    "Python sources compile"
+  ],
+  "formal_generator_or_frozen_inputs_changed": false,
+  "new_paid_experiment_started_by_review": false
+}
