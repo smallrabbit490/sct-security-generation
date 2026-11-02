@@ -31,9 +31,10 @@ def recompute(run_root, output):
             value.pop('mechanisms',None)
             expected = read(root/'model_switch_flash_20261101/analysis'/(cohort+'.json'))
             assert value['arms'] == expected['arms'], (kind,cohort,'arm_metrics_mismatch')
+            assert len(value['comparisons']) == len(expected['comparisons'])
             for actual, saved in zip(value['comparisons'],expected['comparisons']):
-                for key in ('pairs','wins','losses','net_joint','difference','p_family_swap'):
-                    if key in saved:assert actual[key] == saved[key], (kind,cohort,key)
+                for key, metric in actual.items():
+                    assert metric == saved[key], (kind,cohort,key)
             cohorts[cohort] = value
         result[kind] = {'completed':len(rows),'measured':sum(bool(r['final']['measured']) for r in rows),
                         'duplicates_consistent':duplicates,'cohorts':cohorts,'saved_metrics_match':True}

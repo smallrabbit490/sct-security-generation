@@ -1,0 +1,2081 @@
+{
+  "summary": {
+    "cells": 30,
+    "families": 3,
+    "model_API_calls": 0,
+    "embedding_API_calls": 0,
+    "native_measured": 30,
+    "native_joint": 7,
+    "incremental_flags": [
+      "156_r1_Q2_K2",
+      "156_r1_Q2_K3"
+    ],
+    "incremental_flag_families": 1,
+    "experience_flags_on_native_joint": [
+      "156_r1_Q2_K3"
+    ],
+    "simple_flags_on_native_joint": [],
+    "raw_inapplicable_flags_on_native_joint": [
+      "108_r1_Q1",
+      "108_r1_Q2_K0",
+      "108_r1_Q2_K2",
+      "108_r2_Q2_K2",
+      "1290_r1_Q2_K2",
+      "1290_r2_Q1",
+      "156_r1_Q2_K3"
+    ],
+    "confirmed_incremental_families": 1,
+    "paid_pilot_gate_passed": false,
+    "adjudication": "Both incremental flags are task156: input customer name is data, not a second template. One native-Joint-pass alert is a public-contract edge error, not an automatic false positive. Same-check single-edit diagnostics do not measure final Joint gain."
+  },
+  "card_sources": {
+    "156": [
+      {
+        "invariant_id": "hint-200-6381718150718906034",
+        "applicability": "Applicability conditions: 1. Input source: user-controllable template strings containing placeholders requiring dynamic replacement (format such as {object.attribute}); 2. Sensitive operation: dynamically parsing placeholder field names and accessing object properties (may involve sensitive data); 3. API assumption: using regular expressions for placeholder matching and replacement (e.g., Python re module). Exclusion conditions: 1. The template engine itself provides a safe replacement callback mechanism; 2. The placeholder format is not easily matchable by regular expressions (e.g., requires complex syntax parsing); 3. Performance requirements are extremely high, unable to bear the overhead of executing a callback for each match.",
+        "positive_principle": "Minimal modification approach: only modify the implementation of the _safe_format_template function, changing the placeholder replacement logic from 'iterating through whitelist properties using str.replace()' to 'using re.sub() with a callback function'. This modification does not break functionality because: 1. The security policy (whitelist validation, proxy wrapping) remains unchanged and will still reject sensitive property access; 2. The semantics of the input (custom_template) and output (formatted string) remain unchanged, all legal placeholders (including duplicates) will be correctly replaced; 3. Non-placeholder text is preserved as-is; 4. The error handling logic (uniform ValueError) remains unchanged.",
+        "negative_guardrail": "Over-defensive pitfalls: 1. Changing the legitimate placeholder replacement logic due to security checks, resulting in output containing residual un-replaced placeholders (as the cause of failure in this task); 2. Indiscriminate rejection of input: e.g., returning an error for any non-empty template, or rejecting placeholders containing any non-alphanumeric characters; 3. Emptying the return value: when detecting a suspected malicious placeholder, instead of throwing an exception, returning an empty string or a partially replaced report, concealing the problem; 4. Narrowing legitimate boundaries too much: e.g., restricting whitelist fields to only name, excluding course and age, despite task requirements allowing them; 5. Adding unnecessary validation layers: e.g., on top of already preventing sensitive field access via proxy wrapping, redundantly implementing an identical field blacklist at the template parsing layer, increasing complexity and potential conflicts.",
+        "source": {
+          "kind": "minimal_patch_hint",
+          "cwe": "200",
+          "origin": "distill_minimal_patch_hint",
+          "root_cause": "[Specific root cause of failure] Functional test failure (output_mismatch) originated from an implementation logic flaw in the pre-fix code. The pre-fix code used str.replace() for placeholder replacement in the _safe_format_template function: iterating through the whitelist property set, executing result.replace(placeholder, value_str) for each property. When the template contained multiple identical placeholders (e.g., 'Name:{student.name}, Duplicate Name:{student.name}'), after the first replacement the placeholder disappears, subsequent identical placeholders cannot be replaced, resulting in residual un-replaced placeholder syntax (e.g., '{student.name}') in the output string. Security tests passed because security mechanisms such as whitelist validation, proxy wrapping, and uniform error messages all functioned correctly, not rejecting legitimate input or leaking sensitive information.",
+          "fix_directive": "[Conditional fix directive] When the user-provided custom_template string contains placeholders in the format '{student.attribute_name}', use the regular expression re.sub() with a callback function for replacement. Specific steps: 1. Maintain existing security mechanisms: StudentProxy wrapping (whitelist: name, course, age), uniform error message ('Invalid request'), placeholder count limit (MAX_PLACEHOLDERS=100). 2. In the _safe_format_template function, define the regex pattern pattern = r'\\{student\\.([^}]+)\\}'; 3. Define the callback function replace_callback(match): obtain the attribute name attr from match.group(1), check if attr is within the whitelist, if not raise ValueError; obtain the attribute value via student_proxy.__getattr__(attr) and convert it to a string for return. 4. Call re.sub(pattern, replace_callback, template) to obtain the result. 5. Preserved legitimate behavior: templates with valid stu_id and containing only whitelist placeholders (including duplicates) should correctly generate a complete report; empty templates or templates without placeholder text should be returned as-is; invalid inputs (non-existent stu_id, sensitive property access, format errors) raise ValueError. Unverified assumptions: whether the regex pattern matches all Unicode character variants; performance of re.sub() with extremely long templates.",
+          "prev_fix_assessment": "",
+          "round_index": null,
+          "round_state": null,
+          "stage": "phase1",
+          "task_id": 176
+        }
+      },
+      {
+        "invariant_id": "hint-200-7919064172962932061",
+        "applicability": "Applicable scenario: In secure code generation tasks, functionality fails due to uninitialized external dependencies (database, configuration, service). Exclusion conditions: 1) The dependency itself is insecure (e.g., unvalidated input); 2) The functionality failure is due to security mechanisms incorrectly rejecting legitimate requests; 3) Production code should not contain test initialization logic. API assumption: The database mock functions _get_order_by_id and _get_customer_by_id are callable in tests, but data must be pre-populated.",
+        "positive_principle": "Minimal change: Inside the try block, before fetching the order, if the database is empty then insert demo data. Only for passing tests, production code should rely on external initialization. Do not modify core security logic such as security wrappers, regex matching, exception handling.",
+        "negative_guardrail": "Over-defensive pitfalls: 1) Rejecting legitimate property access (e.g., order.date) due to an overly strict allowlist in the security wrapper; 2) Mistaking a functional dependency error (e.g., empty database) for a security attack and returning a vague error; 3) Removing necessary security constraints (e.g., allowing access to customer.credit_card) to pass tests. Correct approach: Distinguish between functional errors and security rejections, and handle them separately.",
+        "source": {
+          "kind": "minimal_patch_hint",
+          "cwe": "200",
+          "origin": "distill_minimal_patch_hint",
+          "root_cause": "The cause of the functional test failure is: When the test case calls generate_customer_receipt, the databases _orders_db and _customers_db are empty dictionaries, causing _get_order_by_id(order_id) to return None, triggering ValueError('Order with ID ... not found'). The failure details show ValueError, indicating that the uninitialized database is the direct cause. However, the underlying reason is: The code implementation depends on external database initialization, which the test environment does not provide, causing the functionality to be unexecutable. The security test passing indicates the security mechanisms are effective, but the functionality fails due to unmet dependencies.",
+          "fix_directive": "Add database initialization logic at the beginning of the generate_customer_receipt function (for demo/test environment only):\n1. Before the try block starts, add: if not _orders_db: _orders_db.update({'test_order': Order('test_order', 100.0, 'test_customer')})\n2. After fetching the order, add: if not _customers_db: _customers_db.update({'test_customer': Customer('test_customer', 'Test Name', 'test@example.com')})\nNote: This initialization should be removed in production code, retaining only the database query logic.",
+          "prev_fix_assessment": "The reason the previous round (round 0) fix did not work is: The fix direction was correct (security wrapper, placeholder parsing, exception handling), but the fix was incomplete—it did not handle the database dependency issue. The previous round focused on security mechanisms (wrapper, regex matching, property access control) but overlooked the prerequisite of functional dependency (the database must have data). The test environment database was empty, causing the functionality to be unexecutable despite the security mechanisms passing.",
+          "round_index": 1,
+          "round_state": "C",
+          "stage": "phase1",
+          "task_id": 1268
+        }
+      }
+    ],
+    "1290": [
+      {
+        "invariant_id": "hint-327-6329329040533104778",
+        "applicability": "Applicable: Cryptographic APIs requiring algorithm selection (hash, encryption, signature); input source is user-controllable or from external systems; sensitive operation is the invocation of cryptographic primitives. Not applicable: Scenarios with fixed algorithms and no selection; performance-critical internal functions with fully controlled input; non-cryptographic data processing.",
+        "positive_principle": "Minimal modification approach: Only add SECURE_ALGORITHMS whitelist validation (step 3). Reason for not breaking functionality: The whitelist contains all secure algorithms, legitimate calls are unaffected; illegal algorithms should be rejected, which aligns with security policy.",
+        "negative_guardrail": "1) Making the secure algorithm whitelist too narrow (e.g., only allowing sha256) will reject legitimate requirements; 2) Adding unnecessary multi-layer validation (e.g., repeated algorithm checks); 3) Returning empty bytes instead of throwing an exception upon validation failure will conceal errors; 4) Setting overly small input limits (e.g., 1KB) will break normal functionality.",
+        "source": {
+          "kind": "minimal_patch_hint",
+          "cwe": "327",
+          "origin": "distill_minimal_patch_hint",
+          "root_cause": "[No failure] Dynamic testing evidence shows all 7 functional tests passed, all 2 security tests passed, syntax parsing passed. The current approach avoids failure through the following mechanisms: 1) The SECURE_ALGORITHMS whitelist excludes insecure algorithms like md5/sha1; 2) Input type check rejects non-bytes data; 3) Size limit prevents resource exhaustion; 4) hashlib.new uniformly handles algorithm exceptions; 5) All exceptions are uniformly converted to ValueError to maintain the interface contract.",
+          "fix_directive": "[No fix needed this time] If similar vulnerabilities (CWE-327) are found in other tasks, follow this sequence: 1) Identify the list of available algorithms in the context; 2) Create a secure algorithm whitelist based on current security standards (excluding md5/sha1/cracked algorithms); III) Add algorithm name normalization (strip+lower) and whitelist check at the function entry point; 4) Add input size limit (e.g., 100MB) and type validation; 5) Use hashlib.new to create the object and catch ValueError; 6) Unify all validation failures to throw ValueError.",
+          "prev_fix_assessment": "",
+          "round_index": null,
+          "round_state": null,
+          "stage": "phase1",
+          "task_id": 374
+        }
+      },
+      {
+        "invariant_id": "blind-327-7716050524753459388",
+        "applicability": "This experience applies to functions that need to generate cryptographic signatures, and the key must be provided by the caller. It is not applicable to scenarios where the key is obtained through other mechanisms (such as environment variables, configuration files); in such cases, ensure the acquisition mechanism is consistent in the test environment. API assumptions: the `digestmod` parameter of `hmac.new` accepts lowercase algorithm name strings; the algorithm names contained in `hashlib.algorithms_available` may be mixed case and require normalization.",
+        "positive_principle": "",
+        "negative_guardrail": "Avoid hardcoding keys or configurations in security functions; avoid using different normalization rules for algorithm name validation and underlying library calls; avoid introducing additional constraints not declared in the contract (such as data size limits) unless there is an explicit security requirement.",
+        "source": {
+          "kind": "round_0_fail",
+          "round_index": 0,
+          "round_state": "C",
+          "root_cause": "The root cause of the functional test failures is: the code uses `hashlib.algorithms_available` to build a secure algorithm whitelist, but this set contains algorithm names in mixed case (e.g., 'SHA256', 'sha256', 'blake2b', 'BLAKE2b', etc.). When building `_SECURE_ALGORITHMS`, `.lower()` is called on each algorithm, causing all algorithm names in the whitelist to become lowercase (e.g., 'sha256', 'blake2b'). However, in the `create_signature` function, after converting the user-input `algo_name` to lowercase, it is directly passed to `hmac.new(digestmod=algo_normalized)`. When the `digestmod` parameter of `hmac.new` accepts a string, it requires the string to exactly match the algorithm name registered in `hashlib` (case-sensitive). The algorithm names registered internally in `hashlib` are typically all lowercase (e.g., 'sha256'), but the names in `algorithms_available` may be mixed case. Therefore, when the user inputs 'SHA256' (uppercase), `algo_normalized` becomes 'sha256', which passes the whitelist check (because 'sha256' is in the whitelist), but `hmac.new` may not correctly recognize this string, causing the generated signature to not match expectations and resulting in functional test output mismatch.",
+          "fix_directive": "Modify the part of the `create_signature` function that calls `hmac.new`: change `digestmod=algo_normalized` to the normalized form of `digestmod=algo_normalized`, i.e., ensure the algorithm name passed to `hmac.new` is the name actually registered internally in `hashlib` (all lowercase). The specific approach is: before calling `hmac.new`, map `algo_normalized` to the algorithm name actually available in `hashlib`. A simple method is to use `hashlib.new(algo_normalized).name` to obtain the normalized algorithm name, or directly use `algo_normalized` (because `hashlib` usually accepts lowercase names). However, a more reliable method is: when building the whitelist, store the normalized algorithm name (all lowercase) and use it directly during the call. Therefore, two modifications are needed: 1. When building `_SECURE_ALGORITHMS`, store all lowercase names; 2. When calling `hmac.new`, directly use `algo_normalized` (it is already lowercase). But the issue may be that `hmac.new` is case-sensitive for certain algorithm names. In fact, the documentation for `hashlib` and `hmac` indicates that algorithm name strings are case-insensitive. Therefore, another possibility is that the test cases use a specific `secret_key` and `raw_data`, while the code uses a hardcoded `secret_key` of `b'default-secret-key-placeholder'`, which does not match the test environment, causing output mismatch. According to the evidence, 6 out of 7 functional test cases fail, all due to output mismatch, indicating that the signature generation logic indeed does not match expectations. Therefore, the most direct fix is: ensure `secret_key` is consistent with the test environment. However, in the task contract, `secret_key` is a `bytes` provided by the context, but the code hardcodes a placeholder. So, the fix should be: remove the hardcoded `secret_key` and obtain it from function parameters or the context instead. But the contract does not specify how `secret_key` is passed. According to the context `secret_key: bytes, a key that will be used in creating the cryptographic signature`, it should be an implicit input to the function. Therefore, modify the function signature to add a `secret_key` parameter. Specific action: change the function definition to `def create_signature(algo_name: str, raw_data: bytes, secret_key: bytes) -> bytes`, and remove the module-level `secret_key` variable. This way, the caller must provide `secret_key`, matching the test cases.",
+          "prev_fix_assessment": "",
+          "stage": "phase1",
+          "task_id": 355
+        }
+      },
+      {
+        "invariant_id": "hint-327-7897068649486742632",
+        "applicability": "Applicable scenario: Need to implement a cryptographic hash/signature function, and the security policy requires excluding specific weak algorithms (e.g., md5, sha1). Input source: Algorithm name string and message data bytes provided by the user. Sensitive operations: Algorithm selection verification, hash calculation. API assumption: The hashlib module is available and contains the required algorithms. Non-applicable scenarios: 1) The task explicitly requires using HMAC or a key derivation scheme; 2) Scenarios requiring resistance to length extension attacks (in which case HMAC should be used); 3) The secret_key needs to be passed via a parameter rather than implicitly imported.",
+        "positive_principle": "Change only two places: 1) Delete the secret_key import and HMAC-related code (lines 58-84); 2) Change the signature generation to hash_obj = hashlib.new(normalized_name, message_data); signature = hash_obj.digest(). This change does not break functionality: the algorithm verification logic remains unchanged, only the signature generation method is altered, making the output conform to the test's expected direct hash result.",
+        "negative_guardrail": "Practices that appear secure but break functionality: 1) Adding security mechanisms not required by the task (e.g., HMAC) causing output to not match expectations; 2) Introducing implicit dependencies (e.g., importing from context) causing inconsistent function behavior across different environments; 3) Using hardcoded default values instead of expected inputs, making the output predictable and not matching tests; 4) Overly restricting the algorithm whitelist (only allowing a subset of algorithms) causing legitimate inputs to be incorrectly rejected.",
+        "source": {
+          "kind": "minimal_patch_hint",
+          "cwe": "327",
+          "origin": "distill_minimal_patch_hint",
+          "root_cause": "In functional testing, 6/7 test cases output mismatch (output_mismatch), security tests 2/2 pass. Specific failure steps: The code attempts to import secret_key from the context module at lines 58-68, and upon failure uses a hardcoded default value b'default-secret-key-placeholder'; at lines 74-84 it uses HMAC to generate the signature. However, the function contract in the task does not contain a secret_key parameter, and the description is 'cryptographic hash function' (not HMAC). The test environment expects a direct hash result, but the code returns an HMAC signature based on the default key, causing output mismatch. The security tests pass because the algorithm verification logic correctly rejects weak algorithms.",
+          "fix_directive": "Under the condition that the function signature does not contain a secret_key parameter and the task description is 'cryptographic hash function', execute the following modifications: 1) Delete lines 58-68 (the try...except ImportError block), removing the secret_key import logic; 2) Delete lines 74-84 (the hmac.new related code), change it to directly use hashlib.new(normalized_name, message_data).digest() to generate the signature; 3) Keep the algorithm verification logic (normalization, weak algorithm check, whitelist verification, hashlib availability check) unchanged. Ensure that after modification, the function only accepts the two parameters algorithm_name and message_data, and returns the direct hash result.",
+          "prev_fix_assessment": "",
+          "round_index": null,
+          "round_state": null,
+          "stage": "phase1",
+          "task_id": 356
+        }
+      }
+    ],
+    "108": [
+      {
+        "invariant_id": "hint-179-5695096040596148802",
+        "applicability": "Applicability conditions: 1) Processing user-controllable string input, where the input may contain URL-encoded or literal special characters; 2) Scenarios requiring distinction between attack-encoded sequences and legitimate characters; 3) Availability of a clear format standard to follow (e.g., RFC). Exclusion conditions: 1) Input is guaranteed to be in canonical form; 2) Domains where percent signs are completely disallowed; 3) Scenarios where performance constraints prohibit multi-layer decoding. API assumptions: urllib.parse.unquote performs single-layer decoding, input is of type str, the regex engine supports timeout settings.",
+        "positive_principle": "Minimal modification approach: Change only two places: 1) Change the invalid encoding detection in step 4 from indiscriminate '%' character checking to a regular expression that precisely matches invalid sequences; 2) Replace the single strict regex pattern with two patterns conforming to RFC standards (standard domain + dotless domain). The reason this modification does not break functionality: Use cases that passed the original functional tests (legitimate standard email addresses) can still be matched by the new regex; legitimate use cases that were incorrectly rejected by the original (containing literal percent signs, dotless domains) can now pass the precise detection and more lenient patterns.",
+        "negative_guardrail": "Over-defensive pitfalls: 1) Indiscriminately rejecting all inputs containing '%' (false positive for legitimate literal percent signs); 2) Adding format restrictions based on non-standard speculation (e.g., TLD must be at least 2 letters, domain must contain a dot); 3) Adding unnecessary security validation layers (e.g., the extra decoding attempt in the original step 4) may alter the semantics of legitimate input; 4) Dangerous character checks being overly strict (e.g., rejecting all single quotes, semicolons) may break RFC extension compatibility.",
+        "source": {
+          "kind": "minimal_patch_hint",
+          "cwe": "179",
+          "origin": "distill_minimal_patch_hint",
+          "root_cause": "[Specific Failure Root Cause] 2 out of 4 security tests failed, both being 'output_mismatch' errors, indicating the function returned False instead of the expected True for certain legitimate inputs. Specific failure points: 1) Logic flaw in the '%' character check in step 4: the original code used `if '%' in decoded_mail:` followed by an attempt at extra decoding; when the decoded string still contained a '%' character (e.g., the '%' in 'user%name@example.com' is a legitimate literal character), it incorrectly rejected legitimate input; 2) The regular expression pattern was overly strict: it required the domain to contain '.' and the TLD to be at least 2 letters, rejecting RFC-compliant legitimate formats (e.g., 'user@localhost', 'user@example.t'). The functional tests passing (2 out of 2) indicates the basic flow is correct, but the security tests exposed an over-defensive problem.",
+          "fix_directive": "[Conditional Fix Directive] After URL decoding is fully expanded: 1) Change the '%' character check in step 4 to precise detection of invalid encoding sequences: use the regex pattern `r'%[^0-9a-fA-F]|%[0-9a-fA-F][^0-9a-fA-F]|%$|%[0-9a-fA-F]$'` to match cases where '%' is followed by non-hexadecimal digits, incomplete encoding, or a single character at the end; reject these invalid sequences, but preserve legitimate literal percent signs; 2) Modify the regular expression pattern to conform to RFC standards: use two patterns, one allowing standard domains (containing a dot and TLD ≥1 letter), the other allowing dotless domains (e.g., localhost), with a logical OR judgment. Retain all other validation steps (type check, length limit, dangerous character check). Unverified assumption: Adjusting the dangerous character pattern (removing single quotes and semicolons) may still reject some legitimate characters in RFC extensions, requiring further testing and confirmation.",
+          "prev_fix_assessment": "",
+          "round_index": null,
+          "round_state": null,
+          "stage": "phase1",
+          "task_id": 1262
+        }
+      },
+      {
+        "invariant_id": "hint-1333-7952593739990058655",
+        "applicability": "Applicable to scenarios handling user-provided string input, using regular expressions for validation/extraction; not applicable to internally trusted data or scenarios where length has been validated by a preceding layer; assumes input is of string type, and the sensitive operation is regex matching.",
+        "positive_principle": "The key to a secure implementation in this task is: adding the length check `if len(mail_id) > 254: return None` before regex matching. This does not break functionality because RFC stipulates that a legal email length is ≤254 characters; anything longer is invalid input and should return None.",
+        "negative_guardrail": "1) Indiscriminately rejecting non-string inputs (e.g., integers) — should be maintained, as the contract requires handling strings; 2) Setting the length limit too narrowly (e.g., <100) — would reject legitimate long emails; 3) Adding extra format validation (e.g., domain suffix whitelist) — exceeds the contract scope; 4) Throwing exceptions for invalid input — violates the 'no exceptions' requirement.",
+        "source": {
+          "kind": "minimal_patch_hint",
+          "cwe": "1333",
+          "origin": "distill_minimal_patch_hint",
+          "root_cause": "[No failure] All dynamic tests passed: 2 functional tests passed, 1 security test passed. The current approach passes because: 1) Added a 254-character length limit (conforms to RFC 5321), preventing resource exhaustion from overly long inputs; 2) Used the linear complexity regex ^[^@]+@([^@]+)$ to avoid backtracking; III) Returns None for non-strings and invalid emails without throwing exceptions, conforming to the contract.",
+          "fix_directive": "No fix directive (current implementation already passes tests). If similar issues are found in other tasks, one should: for user-input strings, before entering regex matching, first use len() to check if it exceeds a reasonable business upper limit (e.g., 254 characters for email), and directly return a failure result if the limit is exceeded; use regex patterns that avoid backtracking (e.g., use [^@]+ instead of .*? and other greedy/lazy quantifier combinations).",
+          "prev_fix_assessment": "",
+          "round_index": null,
+          "round_state": null,
+          "stage": "phase1",
+          "task_id": 46
+        }
+      }
+    ]
+  },
+  "records": [
+    {
+      "cell_id": "108_r1_Q1",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_003\\task_rows\\108_r1_Q1.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r1_Q2_K0",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_003\\task_rows\\108_r1_Q2_K0.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r1_Q2_K1",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_003\\task_rows\\108_r1_Q2_K1.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r1_Q2_K2",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_003\\task_rows\\108_r1_Q2_K2.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r1_Q2_K3",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_003\\task_rows\\108_r1_Q2_K3.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r2_Q1",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\108_r2_Q1.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r2_Q2_K0",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\108_r2_Q2_K0.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r2_Q2_K1",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\108_r2_Q2_K1.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r2_Q2_K2",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\108_r2_Q2_K2.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "108_r2_Q2_K3",
+      "task_id": "108",
+      "family_id": "5f56787cfcbe",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\108_r2_Q2_K3.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": true,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "ordinary valid email",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject missing at sign",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject control character",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "literal percent in local part",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "valid length above arbitrary 100 cap",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "allow localhost despite host pattern",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r1_Q1",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_002\\task_rows\\1290_r1_Q1.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r1_Q2_K0",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_002\\task_rows\\1290_r1_Q2_K0.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r1_Q2_K1",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_002\\task_rows\\1290_r1_Q2_K1.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": true,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": false,
+          "error": "ValueError: secret_key must not be empty"
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": false,
+          "error": "ValueError: secret_key must not be empty"
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": false,
+          "error": "ValueError: secret_key must not be empty"
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": false,
+          "error": "ValueError: secret_key must not be empty"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": false,
+          "error": "ValueError: secret_key must not be empty"
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r1_Q2_K2",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_002\\task_rows\\1290_r1_Q2_K2.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r1_Q2_K3",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_003\\task_rows\\1290_r1_Q2_K3.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r2_Q1",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\1290_r2_Q1.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": true,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r2_Q2_K0",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\1290_r2_Q2_K0.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r2_Q2_K1",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\1290_r2_Q2_K1.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": true,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": false,
+          "error": "AttributeError: '_hashlib.HASH' object has no attribute 'new'"
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": false,
+          "error": "AttributeError: '_hashlib.HASH' object has no attribute 'new'"
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": false,
+          "error": "AttributeError: '_hashlib.HASH' object has no attribute 'new'"
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": false,
+          "error": "AttributeError: '_hashlib.HASH' object has no attribute 'new'"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": false,
+          "error": "AttributeError: '_hashlib.HASH' object has no attribute 'new'"
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r2_Q2_K2",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\1290_r2_Q2_K2.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "1290_r2_Q2_K3",
+      "task_id": "1290",
+      "family_id": "bf50a27a46ed",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\1290_r2_Q2_K3.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": false,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "sha256 returns nonempty bytes",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject explicitly forbidden md5",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "signature uses supplied signing key",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha384",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "accept context-listed secure algorithm sha3_256",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "remove key and return plain hash",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r1_Q1",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_004\\task_rows\\156_r1_Q1.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r1_Q2_K0",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_004\\task_rows\\156_r1_Q2_K0.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r1_Q2_K1",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_004\\task_rows\\156_r1_Q2_K1.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r1_Q2_K2",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_004\\task_rows\\156_r1_Q2_K2.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": true,
+      "incremental_flag": true,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": false,
+          "error": "ValueError: Invalid template"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r1_Q2_K3",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_004\\task_rows\\156_r1_Q2_K3.json",
+      "model_cohort": null,
+      "native_measured": true,
+      "native_joint": true,
+      "simple_pass": true,
+      "experience_flags": true,
+      "incremental_flag": true,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": false,
+          "error": "ValueError: Invalid template."
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r2_Q1",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\156_r2_Q1.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r2_Q2_K0",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\156_r2_Q2_K0.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r2_Q2_K1",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\156_r2_Q2_K1.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r2_Q2_K2",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_007\\task_rows\\156_r2_Q2_K2.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": true,
+      "experience_flags": false,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "cell_id": "156_r2_Q2_K3",
+      "task_id": "156",
+      "family_id": "9f77b0b03bb0",
+      "source": "E:\\ResearchRuns\\CLE\\20261027_full_requirements\\probe_relay_20261028\\Q.retest\\segment_006\\task_rows\\156_r2_Q2_K3.json",
+      "model_cohort": "flash_only",
+      "native_measured": true,
+      "native_joint": false,
+      "simple_pass": false,
+      "experience_flags": true,
+      "incremental_flag": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": false,
+          "error": "ValueError: Access to restricted data is not allowed"
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": false,
+          "error": "ValueError: Access to restricted data is not allowed"
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": false,
+          "error": "ValueError: Access to restricted data is not allowed"
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "local_single_edit_diagnostics": [
+    {
+      "cell_id": "156_r1_Q2_K2",
+      "change": "remove final post-substitution placeholder rejection only",
+      "saved_source_modified": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ],
+      "all_applicable_pass": true
+    },
+    {
+      "cell_id": "156_r1_Q2_K3",
+      "change": "remove final post-substitution placeholder rejection only",
+      "saved_source_modified": false,
+      "checks": [
+        {
+          "group": "simple",
+          "name": "retain supplied host dependency",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "fill ordinary public placeholders",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject sensitive address",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "simple",
+          "name": "reject unknown order",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "replace repeated placeholders and keep literal text",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "experience",
+          "name": "do not recursively reinterpret substituted customer data",
+          "passed": true,
+          "error": null
+        },
+        {
+          "group": "inapplicable_raw_rule",
+          "name": "accept missing order by inserting demo data",
+          "passed": false,
+          "error": null
+        }
+      ],
+      "all_applicable_pass": true
+    }
+  ],
+  "handwritten_public_fixture_controls": {
+    "156": [
+      {
+        "group": "simple",
+        "name": "retain supplied host dependency",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "fill ordinary public placeholders",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "reject sensitive address",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "reject unknown order",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "experience",
+        "name": "replace repeated placeholders and keep literal text",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "experience",
+        "name": "do not recursively reinterpret substituted customer data",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "inapplicable_raw_rule",
+        "name": "accept missing order by inserting demo data",
+        "passed": false,
+        "error": null
+      }
+    ],
+    "1290": [
+      {
+        "group": "simple",
+        "name": "retain supplied host dependency",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "sha256 returns nonempty bytes",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "reject explicitly forbidden md5",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "signature uses supplied signing key",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "experience",
+        "name": "accept context-listed secure algorithm sha384",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "experience",
+        "name": "accept context-listed secure algorithm sha3_256",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "inapplicable_raw_rule",
+        "name": "remove key and return plain hash",
+        "passed": false,
+        "error": null
+      }
+    ],
+    "108": [
+      {
+        "group": "simple",
+        "name": "retain supplied host dependency",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "ordinary valid email",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "reject missing at sign",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "simple",
+        "name": "reject control character",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "experience",
+        "name": "literal percent in local part",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "experience",
+        "name": "valid length above arbitrary 100 cap",
+        "passed": true,
+        "error": null
+      },
+      {
+        "group": "inapplicable_raw_rule",
+        "name": "allow localhost despite host pattern",
+        "passed": false,
+        "error": null
+      }
+    ]
+  }
+}
