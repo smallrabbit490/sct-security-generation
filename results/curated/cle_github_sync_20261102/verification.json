@@ -1,5 +1,5 @@
 {
-  "status": "code_verified_archives_uploading",
+  "status": "completed_code_and_quick_package_published_base_archive_uploading",
   "branch": "fjy/cle-contract-conditional-q-20261023",
   "tests": {
     "count": 40,
@@ -12,7 +12,8 @@
     "gr_completed": 820,
     "gr_measured": 819,
     "saved_metrics_match": true,
-    "new_model_HTTP": 0
+    "new_model_HTTP": 0,
+    "all_comparison_fields_including_CI_p_repeats_match": true
   },
   "increment_archive": {
     "parts": 8,
@@ -25,5 +26,49 @@
   "increment_release": "https://github.com/smallrabbit490/sct-security-generation/releases/tag/cle-completed-evidence-20261102",
   "original_runtime_modified": false,
   "workbench_restarted": false,
-  "experiments_launched": false
+  "experiments_launched": false,
+  "base_archive": {
+    "parts": 63,
+    "all_CRC_passed": true,
+    "manifest_paths": 353286,
+    "unique_blobs": 173816,
+    "missing_blobs": 0
+  },
+  "code_commits": [
+    "9954f40",
+    "6d2f2e5"
+  ],
+  "quick_package": {
+    "files": 1404,
+    "source_bytes": 671196721,
+    "zip_bytes": 75684676,
+    "CRC_passed": true,
+    "independent_of_base_archive": true,
+    "source": "verified restored frozen inputs, task rows and completed analysis",
+    "Q_cells": 540,
+    "GR_cells": 820
+  },
+  "quick_zip_recomputation": {
+    "q": {
+      "completed": 540,
+      "measured": 535,
+      "all_comparison_fields_match": true
+    },
+    "gr": {
+      "completed": 820,
+      "measured": 819,
+      "all_comparison_fields_match": true
+    }
+  },
+  "public_download_checks": {
+    "release_page": {
+      "status": 200,
+      "url": "https://github.com/smallrabbit490/sct-security-generation/releases/tag/cle-completed-evidence-20261102"
+    },
+    "quick_receipt": {
+      "status": 200,
+      "content_matches_local": true,
+      "url": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/quick_recompute_receipt.json"
+    }
+  }
 }

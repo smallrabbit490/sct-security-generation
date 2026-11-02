@@ -6,7 +6,8 @@
 
 | 下载入口 | 内容 | 保存位置 |
 |---|---|---|
-| [10月29日基础原始记录](https://github.com/smallrabbit490/sct-security-generation/releases/tag/cle-project-snapshot-20261029) | 63个`blobs-*.zip`分卷、`manifest.json`、`receipt.json`、`restore.py` | `base/` |
+| [快速复算包](https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/CLE-closeout-recompute-20261101.zip) | 两批全部逐题结果、冻结输入、分层统计与案例分析，可独立复算保存的指标 | 解压到`D:/CLE-recompute/` |
+| 10月29日基础原始记录（补传中） | 63个`blobs-*.zip`分卷、`manifest.json`、`receipt.json`、`restore.py`；齐全后开放下载 | `base/` |
 | [11月2日增量原始记录](https://github.com/smallrabbit490/sct-security-generation/releases/tag/cle-completed-evidence-20261102) | 新增或变化的原始记录分卷、`manifest.json`、`receipt.json`、`restore.py` | `increment/` |
 | [10月22日历史快照](https://github.com/smallrabbit490/sct-security-generation/releases/tag/cle-project-snapshot-20261022) | 更早的独立历史包 | 单独保留，无需参与本次还原 |
 
@@ -16,7 +17,14 @@
 
 ## 怎样离线复算？
 
-先下载或检出个人分支，并准备其声明的Python依赖。在仓库根执行：
+先下载或检出个人分支，并准备其声明的Python依赖。使用快速复算包时，在仓库根执行：
+
+```powershell
+Expand-Archive D:/CLE-download/CLE-closeout-recompute-20261101.zip -DestinationPath D:/CLE-recompute
+python -B -X utf8 tools/recompute_cle_closeout_20261101.py --run-root D:/CLE-recompute/external_runs/20261027_full_requirements --output D:/CLE-recompute/recomputed.json
+```
+
+快速包用于统计复算与案例阅读。完整模型请求、响应、失败及回放现场保存在基础包和增量包中。下载完整记录后，也可从两包选择还原统计材料：
 
 ```powershell
 python -B -X utf8 tools/restore_cle_archives.py --base D:/CLE-download/base --increment D:/CLE-download/increment --output D:/CLE-restored --scope recompute
@@ -34,6 +42,7 @@ python -B -X utf8 tools/recompute_cle_closeout_20261101.py --run-root D:/CLE-res
 - [11月1日综合报告：Markdown](reports/CLE-RPT-20261101-two-batch-closeout-v01/11月1日Q回测与记忆标签结果分析.md) · [Word](reports/CLE-RPT-20261101-two-batch-closeout-v01/11月1日Q回测与记忆标签结果分析.docx)
 - [Q回测阶段报告](reports/CLE-RPT-20261101-Q-retest-v01/11月1日Q冻结回测结果与分析.md)
 - [11月2日经验检查可行性报告](CLE-RPT-20261102-experience-check-feasibility.md)
+- [11月2日第二批经验检查报告](CLE-RPT-20261102-experience-check-batch2.md)
 - [两批最终统计登记](../../results/curated/cle_weekly_closeout_20261101/two_batch_closeout.json)
 - [归档校验及发布登记](../../results/curated/cle_github_sync_20261102/verification.json)
 
