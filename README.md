@@ -2,7 +2,7 @@
 
 本仓库用于复现“安全经验自进化 + 多语言安全代码生成”实验。推荐按下面的顺序阅读和执行，像阅读一本实验手册一样逐层深入。
 
-**最新完成成果（2026-11-02）**：[原始记录下载与离线复算](docs/research/CLE-project-export-20261102.md) · [Q回测与记忆标签完整报告](docs/research/reports/CLE-RPT-20261101-two-batch-closeout-v01/11月1日Q回测与记忆标签结果分析.md) · [当前研究总览](docs/research/README.md)。两批540次与820次已完成生成、回放、分层统计及主要案例复盘；监控已暂停，排队全量继续跳过。下列早期安排保留为历史记录。
+**最新完成成果（2026-11-02）**：[原始记录索引与离线复算](docs/research/CLE-project-export-20261102.md) · [Q回测与记忆标签完整报告](docs/research/reports/CLE-RPT-20261101-two-batch-closeout-v01/11月1日Q回测与记忆标签结果分析.md) · [当前研究总览](docs/research/README.md)。两批540次与820次已完成生成、回放、分层统计及主要案例复盘；监控已暂停，排队全量继续跳过。下列早期安排保留为历史记录。
 
 **当前研究入口（2026-10-26）**：[两分钟研究总览](docs/research/README.md) · [项目与工作流升级方案](docs/research/CLE-PLAN-20261026-research-upgrade-v01.md) · [实验登记与旧名称映射](docs/research/registers/experiments.csv)。主要研究问题按固定全量方案验证；技术探针不以收益高低决定是否执行预定全量。当前v4.1基础清单正在运行，实时状态可执行`python -B -X utf8 tools/cle_research_status.py`。下方日期较早的报告保留各自历史状态。
 

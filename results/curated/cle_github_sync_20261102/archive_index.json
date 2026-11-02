@@ -1,0 +1,15 @@
+{
+  "status": "index_only_per_user_20261102",
+  "base_index": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/CLE-base-index-20261029.json.gz",
+  "increment_index": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/manifest.json",
+  "quick_recompute": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/CLE-closeout-recompute-20261101.zip",
+  "base_manifest_paths": 353286,
+  "increment_manifest_paths": 61076,
+  "local_base_parts": 63,
+  "local_increment_parts": 8,
+  "base_release_draft": true,
+  "base_uploaded_parts_retained": 41,
+  "full_base_download_public": false,
+  "remaining_raw_uploads_cancelled": true,
+  "original_records_preserved": true
+}

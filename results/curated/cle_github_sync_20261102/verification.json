@@ -1,5 +1,5 @@
 {
-  "status": "completed_code_and_quick_package_published_base_archive_uploading",
+  "status": "completed_index_delivery_per_latest_user_scope",
   "branch": "fjy/cle-contract-conditional-q-20261023",
   "tests": {
     "count": 40,
@@ -70,5 +70,28 @@
       "content_matches_local": true,
       "url": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/quick_recompute_receipt.json"
     }
-  }
+  },
+  "raw_uploads_stopped": true,
+  "archive_index": {
+    "status": "index_only_per_user_20261102",
+    "base_index": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/CLE-base-index-20261029.json.gz",
+    "increment_index": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/manifest.json",
+    "quick_recompute": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/CLE-closeout-recompute-20261101.zip",
+    "base_manifest_paths": 353286,
+    "increment_manifest_paths": 61076,
+    "local_base_parts": 63,
+    "local_increment_parts": 8,
+    "base_release_draft": true,
+    "base_uploaded_parts_retained": 41,
+    "full_base_download_public": false,
+    "remaining_raw_uploads_cancelled": true,
+    "original_records_preserved": true
+  },
+  "index_anonymous_download": {
+    "status": 200,
+    "content_matches_local": true,
+    "url": "https://github.com/smallrabbit490/sct-security-generation/releases/download/cle-completed-evidence-20261102/archive_index.json"
+  },
+  "increment_release_published": true,
+  "full_base_release_published": false
 }

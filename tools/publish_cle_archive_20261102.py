@@ -16,7 +16,7 @@ def gh(*args):
     return subprocess.check_output(['gh', *args], env=env, text=True, encoding='utf-8')
 
 
-def publish(folder, tag, defer_name=None):
+def publish(folder, tag, defer_names=(), workers=4):
     folder = Path(folder)
     files = sorted(folder.glob('*blobs-*.zip')) + [folder/n for n in ('manifest.json', 'restore.py', 'receipt.json')]
     assert files and all(p.is_file() for p in files)
@@ -28,12 +28,12 @@ def publish(folder, tag, defer_name=None):
         if p.name in assets:
             assert assets[p.name]['size'] == p.stat().st_size, p.name
             continue
-        if p.name != defer_name:missing.append(p)
+        if p.name not in defer_names:missing.append(p)
     def upload(p):
         print('upload', p.name, p.stat().st_size, flush=True)
         gh('release', 'upload', tag, str(p), '--repo', REPO)
         print('uploaded', p.name, flush=True)
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         list(pool.map(upload,missing))
     release = json.loads(gh('api', f'repos/{REPO}/releases/{release_id}'))
     assets = {a['name']: a for a in release['assets']}
@@ -50,6 +50,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('folder')
     parser.add_argument('tag')
-    parser.add_argument('--defer-name')
+    parser.add_argument('--defer-name',action='append',default=[])
+    parser.add_argument('--workers',type=int,default=4)
     args = parser.parse_args()
-    publish(args.folder, args.tag, args.defer_name)
+    publish(args.folder, args.tag, args.defer_name,args.workers)
