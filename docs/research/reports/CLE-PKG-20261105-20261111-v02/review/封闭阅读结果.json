@@ -1,0 +1,308 @@
+{
+  "session_id": "session-d5bd5b1a-a27b-44cb-82fc-61f7d349bd12",
+  "draft": "# 11月5日-11月11日实验探索报告\r\n\r\n<a id=\"main\"></a>\r\n## 一、本周实验主线\r\n\r\n本周围绕“怎样提炼经验，才能帮助模型写出同时满足功能和安全要求的代码”，检查失败代码、经验的来源以及题目和测试。最直接的发现是：4道已有失败题中，3道代码覆盖了题目提供的配置、数据或模板，1道增加了题目没有要求的必填参数。研究者依据公开题面人工修改后，4道题均通过原功能和安全测试。这个结果给出了经验卡可以提醒模型关注的具体操作。【A5】[查看实验](#a5)\r\n\r\n### 1. 失败代码中的哪些错误值得写进经验？\r\n\r\n在54道已有测试题中，31道未同时通过功能和安全测试。其中4道题在使用同一批候选卡中的其他卡片组合时，曾生成首次测试通过的代码；研究者又对原失败代码做局部修改，4道均通过测试。下一步比较不同经验内容对模型生成代码的影响。【A5】[查看实验](#a5)\r\n\r\n### 2. 用来提炼经验的参考材料可靠吗？\r\n\r\n86份参考代码中，26份在本次针对题目要求的检查中出现错误行为。另从参考代码通过检查且有完整生成记录的题目中选出50份材料，发现4份材料的修复前后结果标注容易混淆。提炼经验前，应先检查参考代码和历史记录。【A3】[查看实验](#a3)\r\n\r\n### 3. 题目要求与测试是否一致？\r\n\r\n对三个数据集的874道题逐题检查后，发现20道题的公开要求与原测试直接冲突。这些问题需要在解释模型成绩时单独识别。【A1】[查看实验](#a1)\r\n\r\n另检查了检索输入和相同请求的返回文字，分别发现字段名未直接保留、相同请求的返回文字不同。【A2】[检索检查](#a2)　【A4】[重复请求检查](#a4)\r\n\r\n<a id=\"experiments\"></a>\r\n## 二、主要实验与结果\r\n\r\n<a id=\"a5\"></a>\r\n### 【A5】失败代码的错误能根据题目要求修正吗？\r\n\r\n**为什么做：**找到模型做题时犯下、并且题目已经提供解决信息的错误，为经验卡确定具体的提醒内容。\r\n\r\n**怎么做：**\r\n\r\n1. 在增长集54道已有测试题中，每题按重复运行编号和记录路径选一份代码，不按测试结果挑选；其中31道未同时通过功能和安全测试。\r\n2. 查找题面、模型和首次分析相同的历史记录，找到4道题：它们曾在同一批候选卡中选择其他卡片组合，并生成首次测试通过的代码。\r\n3. 阅读这4道题的题面和代码，人工只修改公开信息支持的局部错误，再用原测试分别检查原失败代码、历史成功代码和修改后的代码。\r\n\r\n表1 四道失败题的错误和人工修改结果\r\n\r\n| 题目 | 失败代码的问题 | 人工修改 | 修改后功能与安全 |\r\n| --- | --- | --- | --- |\r\n| API重定向 | 覆盖了题目提供的域名和接口配置 | 使用已有配置 | 均通过 |\r\n| XML输出 | 增加了题目没有要求的必填参数 | 保留题目要求的单参数接口 | 均通过 |\r\n| 文档修改 | 把已有文档字典清空 | 保留已有文档字典 | 均通过 |\r\n| 页面渲染 | 覆盖了题目提供的模板 | 使用已有模板 | 均通过 |\r\n\r\n**结果分析：**4份失败代码经过人工修改后均通过原测试；修改包括保留已有配置、文档和模板，并遵守题目规定的接口。这为后续经验内容提供了具体方向。这里统计的是人工修改后的代码，通过率是否会随经验提炼方式改变，需要用模型生成对照继续检验。\r\n\r\n对已有50例经验、计划与代码记录分类时，12例出现已有配置被重新赋值，14例出现计划与实现不一致；类别可以重叠。37份经过局部修改的旧代码重新测试后，功能和安全结果均与原记录一致。11月6日检查的31题中，19题经人工修改后通过；其中1题与本次4题重合，去重后共22题通过原测试。\r\n\r\n证据：[四题的修改与测试记录](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S2_four_cases/summary.json) · [50例逐项分类](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S5_all50_mechanism_categories.csv) · [完整分析](../../CLE-RPT-20261109-zero-api-closeout-v01.md)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a3\"></a>\r\n### 【A3】用来提炼经验的参考代码和历史记录可靠吗？\r\n\r\n**为什么做：**CLE可以利用已有题目和代码提炼经验；检查这些材料是否符合题目要求，有助于避免把错误写进经验卡。\r\n\r\n**怎么做：**\r\n\r\n1. 对86道来源题的参考代码，依据各自题面编写并运行定向检查。\r\n2. 从参考代码通过这些检查、且保有生成和测试记录的题目中选出50份材料，核对修复前后的证据标签。\r\n\r\n表2 经验来源材料检查结果\r\n\r\n| 检查内容 | 结果 | 数量 |\r\n| --- | --- | --- |\r\n| 参考代码是否符合本次检查 | 通过已列检查 | 60/86份 |\r\n| 参考代码是否符合本次检查 | 出现至少一项与题面不符的行为 | 26/86份 |\r\n| 修复前后记录是否清楚 | 结果的阶段标签容易混淆 | 4/50份 |\r\n\r\n**结果分析：**例如，一道题要求非法邮箱返回空值，但参考代码接受了包含未加引号空格的邮箱。另有4份材料用修复后的通过结果作标题，却紧接着展示未标明阶段的修复前失败记录。参考代码应先按题面检查，历史记录也应标清失败和修复分别发生在什么时候，再用于后续提炼。\r\n\r\n证据：[86份参考代码的逐题检查](E:/ResearchRuns/CLE/20261105_six_questions/S3/reference_public_checks.json) · [50份材料的阶段记录](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S3_all50_source_stage_matrix.csv)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a1\"></a>\r\n### 【A1】公开题目和原测试的要求一致吗？\r\n\r\n**为什么做：**模型根据公开题面写代码。先检查题面和测试是否提出一致的要求，才能解释一份代码为什么没有通过测试。\r\n\r\n**怎么做：**\r\n\r\n1. 逐题阅读初始化集、增长集和检验集的公开题面及原测试，共874题。\r\n2. 按功能与安全同时满足所需的信息，将题目分为条件充分、信息缺失、存在多种解释和题面与测试冲突四类；同一题按“冲突、缺失、多种解释”的顺序归类。同一位研究者完成分类，并复查20道冲突题。\r\n\r\n表3 三个数据集的题目分类（单位：题）\r\n\r\n| 数据集 | 条件充分 | 信息缺失 | 多种解释 | 题面与测试冲突 | 合计 |\r\n| --- | ---: | ---: | ---: | ---: | ---: |\r\n| 初始化集 | 150 | 49 | 96 | 8 | 303 |\r\n| 增长集 | 160 | 42 | 67 | 4 | 273 |\r\n| 检验集 | 151 | 39 | 100 | 8 | 298 |\r\n| 合计 | 461 | 130 | 263 | 20 | 874 |\r\n\r\n**结果分析：**20道冲突题中，10道对未知消息的异常和返回值要求不同，9道对禁用命令的异常和拒绝结果要求不同，1道对输出数据的形状要求不同。461题被判定为公开条件充分；这是题面和测试条件的分类结果。后续分析代码成绩时，应保留题目分类，并单独解释这些冲突。\r\n\r\n证据：[三项分类与逐题依据](../../CLE-RPT-20261106-S1-three-D-contracts-v01.md) · [874题逐题核查](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S1_all874_coverage.csv)\r\n\r\n[返回本周主线](#main)\r\n\r\n## 三、补充检查\r\n\r\n<a id=\"a2\"></a>\r\n### 【A2】题目的返回值和异常要求直接进入检索了吗？\r\n\r\n**为什么做：**CLE用题目内容查找经验卡。检查检索文字是否保留返回值和异常要求，可以定位选卡输入的问题。\r\n\r\n**怎么做：**检查题库字段，并查看现有程序怎样把字段选入检索文字。\r\n\r\n**结果分析：**874道题的返回值字段、650道题的异常字段有内容，但生成检索文字时都没有以原字段名直接保留。模型对题目的首次分析文字也会参与检索。下一步应核对字段对应关系，再比较选出的卡片是否改变。\r\n\r\n证据：[字段检查结果](../../../../results/curated/CLE-query-field-audit-20261105.json) · [查询文字生成代码](../../../../methods/sct_trajectory/semantic_retrieval.py)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a4\"></a>\r\n### 【A4】相同输入的经验分析会返回相同文字吗？\r\n\r\n**为什么做：**同一道题使用相同经验卡后，有的代码通过测试，有的没有通过。检查经验分析阶段的返回文字，有助于安排后续重复实验。\r\n\r\n**怎么做：**阅读13组历史案例和32份代码，并核对其中5组的10对经验分析请求。\r\n\r\n**结果分析：**10对请求中有5对的提示和设置完全相同，涉及2道题；这5对返回的分析文字逐字比较均不相同。后续比较需保留独立重复，并检查实际生成的代码。\r\n\r\n证据：[13组案例和模板检查](../../CLE-RPT-20261106-S4-S5-all-advice-v01.md) · [实际请求核对](../../CLE-RPT-20261109-zero-api-closeout-v01.md)\r\n\r\n[返回本周主线](#main)　[查看一页结论](11月5日-11月11日本周结论与下一步.md#summary)　[查看研究思路图](11月5日-11月11日研究思路图汇总.md#index)\r\n\r\n\r\n# 11月5日-11月11日本周结论与下一步\r\n\r\n<a id=\"summary\"></a>\r\n本周重点寻找可写入经验卡的代码错误。截至11月9日14:38，对4道已有失败题按公开题面人工修改后，4道均通过原功能和安全测试。【A5】[查看实验](11月5日-11月11日实验探索报告.md#a5)\r\n\r\n![图1 四道已选失败题的人工修改结果](figures/manual_repair.png)\r\n\r\n图1 四道已选失败题的人工修改结果\r\n\r\n经验来源检查中，86份参考代码有26份出现与题面不符的行为；三个数据集874题中，20题的公开要求与原测试直接冲突。【A3】[来源检查](11月5日-11月11日实验探索报告.md#a3)　【A1】[题目检查](11月5日-11月11日实验探索报告.md#a1)\r\n\r\n下一步：比较不同经验内容对模型生成代码和通过率的影响。\r\n\r\n[完整实验周报](11月5日-11月11日实验探索报告.md#main)　[研究思路图](11月5日-11月11日研究思路图汇总.md#index)\r\n\r\n\r\n# 11月5日-11月11日研究思路图汇总\r\n\r\n<a id=\"index\"></a>\r\n每张图只展示一项检查，从研究问题、检查材料、操作和发现，走到结论与下一步。\r\n\r\n[图2 失败代码的错误](#idea01)　[图3 经验来源是否可靠](#idea02)　[图4 题目与测试是否一致](#idea03)　[图5 检索输入是否保留题目要求](#idea04)　[图6 相同请求的返回文字](#idea05)　[返回完整周报](11月5日-11月11日实验探索报告.md#main)\r\n\r\n<a id=\"idea01\"></a>\r\n## 图2 失败代码的错误能根据题目要求修正吗？\r\n\r\n![图2 失败代码的错误能根据题目要求修正吗](maps/idea_01.png)\r\n\r\n[返回目录](#index)　[打开可点击原图](maps/idea_01.svg)　[【A5】代码检查](11月5日-11月11日实验探索报告.md#a5)\r\n\r\n<a id=\"idea02\"></a>\r\n## 图3 用来提炼经验的参考材料可靠吗？\r\n\r\n![图3 用来提炼经验的参考材料可靠吗](maps/idea_02.png)\r\n\r\n[返回目录](#index)　[打开可点击原图](maps/idea_02.svg)　[【A3】来源检查](11月5日-11月11日实验探索报告.md#a3)\r\n\r\n<a id=\"idea03\"></a>\r\n## 图4 公开题目和测试的要求一致吗？\r\n\r\n![图4 公开题目和测试的要求一致吗](maps/idea_03.png)\r\n\r\n[返回目录](#index)　[打开可点击原图](maps/idea_03.svg)　[【A1】题目检查](11月5日-11月11日实验探索报告.md#a1)\r\n\r\n<a id=\"idea04\"></a>\r\n## 图5 题目要求直接进入检索了吗？\r\n\r\n![图5 题目要求直接进入检索了吗](maps/idea_04.png)\r\n\r\n[返回目录](#index)　[打开可点击原图](maps/idea_04.svg)　[【A2】检索输入检查](11月5日-11月11日实验探索报告.md#a2)\r\n\r\n<a id=\"idea05\"></a>\r\n## 图6 相同的经验分析请求会返回相同文字吗？\r\n\r\n![图6 相同的经验分析请求会返回相同文字吗](maps/idea_05.png)\r\n\r\n[返回目录](#index)　[打开可点击原图](maps/idea_05.svg)　[【A4】重复请求检查](11月5日-11月11日实验探索报告.md#a4)\r\n",
+  "review": {
+    "reader_mode": "manuscript_only_v1",
+    "requires_change": true,
+    "issues": [
+      {
+        "id": "R001",
+        "location": "一、本周实验主线 paragraph 1; 【A5】'为什么做'; 【A5】'怎么做' step 2",
+        "category": "term",
+        "quote": "这个结果给出了经验卡可以提醒模型关注的具体操作。",
+        "problem": "The central artifact 经验卡 is never defined, so the reader cannot tell whether it is a retrieved text passage, a structured record, a fixed prompt section, or a member of a selectable candidate set, nor its granularity (per task, per failure mode, per project). The related terms 候选卡 and 卡片组合 used to select the four cases are equally undefined.",
+        "evidence": "The term recurs in 主线, A5 ('为经验卡确定具体的提醒内容'), A3 ('CLE可以利用已有题目和代码提炼经验'), A2 ('CLE用题目内容查找经验卡') and 图2-图6 without a definition; A5 step 2 refers to '同一批候选卡中的其他卡片组合' without saying what a candidate pool is or what '组合' means operationally.",
+        "possible_misreading": "A reader may take 经验卡 as a generic natural-language hint and therefore assume the '提醒内容' of A5, the '经验分析' of A4 and the '计划' of A5's second result paragraph all refer to the same text artifact.",
+        "needed_explanation": "One sentence on what a card contains, its granularity, how cards are produced (human-written vs distilled from reference code), and how a card combination is chosen before generation.",
+        "suggested_revision": "Define at first use, e.g. '经验卡：从已有题目与参考代码提炼、在生成前注入提示的一段文本，每张卡对应一类错误提醒'; state that 候选卡 is the retrieved candidate set and 卡片组合 the subset finally injected.",
+        "severity": "main_chain"
+      },
+      {
+        "id": "R002",
+        "location": "【A5】'怎么做' step 2; cf. 【A2】'结果分析' and 【A4】'怎么做'/'结果分析'",
+        "category": "term",
+        "quote": "查找题面、模型和首次分析相同的历史记录",
+        "problem": "The matching key '首次分析' is undefined and is not visibly the same stage as '经验分析' in A4 or '模型对题目的首次分析文字' in A2; the reader cannot determine which recorded stage had to be identical for the four cases to qualify.",
+        "evidence": "A5 requires '题面、模型和首次分析相同'; A2 states '模型对题目的首次分析文字也会参与检索'; A4 examines '经验分析请求' and '经验分析阶段' but never connects the two labels.",
+        "possible_misreading": "A reader may treat 首次分析 and 经验分析 as the same model call, in which case A4's finding that identical requests return different text would also invalidate A5's '首次分析相同' matching criterion.",
+        "needed_explanation": "The pipeline stage names in order (e.g. 首次分析 → 检索 → 经验分析 → 代码生成) and which one A5 matched on.",
+        "suggested_revision": "Use one stage name throughout and give the pipeline order once, e.g. '首次分析（题目分析）；经验分析（基于经验卡的分析）'.",
+        "severity": "main_chain"
+      },
+      {
+        "id": "R003",
+        "location": "【A5】'怎么做' step 1; 表3 '增长集' row",
+        "category": "experiment",
+        "quote": "在增长集54道已有测试题中，每题按重复运行编号和记录路径选一份代码，不按测试结果挑选",
+        "problem": "A1 reports 273 tasks in 增长集, while A5 samples from '增长集54道已有测试题'; the reader cannot tell whether 54 is a filtered subset of 273 or a different collection, so the coverage of the main experiment cannot be judged. The one-code-per-task rule is also not reproducible because the tie-break among records of the same task is not specified.",
+        "evidence": "表3 gives 增长集 = 273 (160+42+67+4); A5 gives 54 and 31. The three set names 初始化集/增长集/检验集 are used but never characterised by size, role or how they differ.",
+        "possible_misreading": "A reader may read 54 as the entire growth set and conclude that 表3's 273 and A5's 54 describe different datasets.",
+        "needed_explanation": "The relation between 54 and 273 (what the filter is: tasks that already have original tests) and the exact selection rule, e.g. lowest repeat index, then lexicographic record path.",
+        "suggested_revision": "在增长集54道已有测试题（增长集273题中已具备原测试的子集）中 …；选取规则为重复运行编号升序、同编号按记录路径字典序取第一条。",
+        "severity": "local"
+      },
+      {
+        "id": "R004",
+        "location": "【A5】'结果分析' paragraph 2",
+        "category": "structure",
+        "quote": "对已有50例经验、计划与代码记录分类时，12例出现已有配置被重新赋值，14例出现计划与实现不一致；类别可以重叠。",
+        "problem": "Inside A5's result analysis the paragraph reports three analyses (50-case classification, 37 re-tested codes, an 11月6日 31-task repair) with no procedure, denominator or link to A5's four cases; '已有50例' has no antecedent the reader can resolve and '计划' appears here for the first time.",
+        "evidence": "A3 mentions '50份材料' selected from the 86 source tasks; A5 writes '已有50例' without saying whether it is that set. No 怎么做 step covers the 12/14 categories, the 37 codes, or the 11月6日 batch that yields 19 passing and 22 after de-duplication.",
+        "possible_misreading": "A reader may take '已有50例' as the 31 failing tasks or the four repaired ones, and read 22 (=4+19−1) as an outcome of the same procedure as A5 rather than of a separate 11月6日 experiment.",
+        "needed_explanation": "Identify the 50 (same as A3's?), state the coding procedure for the 12/14 categories, and give the 37-code retest and the 11月6日 batch their own result statements with denominators.",
+        "suggested_revision": "在段首标明来源与分母，例如“对A3的50份材料按同一编码表分类（n=50）…”，并把37份重测与11月6日31题各自单独成段。",
+        "severity": "local"
+      },
+      {
+        "id": "R005",
+        "location": "【A5】'怎么做' step 3 and 表1",
+        "category": "experiment",
+        "quote": "再用原测试分别检查原失败代码、历史成功代码和修改后的代码",
+        "problem": "The procedure promises three test outcomes per task, but 表1 and the result text report only the post-repair outcome; the reader cannot verify that the original test still passes on the historical success code, i.e. whether the '首次测试通过' record used to select the four tasks is reproducible.",
+        "evidence": "表1 columns are 题目/失败代码的问题/人工修改/修改后功能与安全; 结果分析 states only '4份失败代码经过人工修改后均通过原测试'. Retest results are reported for a different set ('37份经过局部修改的旧代码'), not for the four historical success codes.",
+        "possible_misreading": "A reader may assume the historical success code was re-tested and still passes, when only the repaired code is reported.",
+        "needed_explanation": "Per-task pass/fail for the three versions: original failure code, historical success code, repaired code.",
+        "suggested_revision": "在表1增加两列：原失败代码（功能/安全）与历史成功代码重测（功能/安全）。",
+        "severity": "local"
+      },
+      {
+        "id": "R006",
+        "location": "【A3】'怎么做' step 2, 表2 row '修复前后记录是否清楚', 结果分析",
+        "category": "term",
+        "quote": "核对修复前后的证据标签",
+        "problem": "The reader cannot tell what a '修复' record is in these source materials: who performed the repair, which stage labels exist, or how many stages a record has. The 4/50 finding and the recommendation '历史记录也应标清失败和修复分别发生在什么时候' therefore cannot be judged or reproduced.",
+        "evidence": "A3 gives no label schema and only one example ('用修复后的通过结果作标题，却紧接着展示未标明阶段的修复前失败记录'); the size and selection rule of the 50-item pool behind the 4/50 denominator are also unstated.",
+        "possible_misreading": "A reader may take 修复前/修复后 as stages of the researchers' own checking rather than of a recorded model-repair trajectory stored with the reference code.",
+        "needed_explanation": "What a record contains (allowed stage labels and the test result per stage), who produced the repair stage, and how the 50 materials were drawn from the eligible pool.",
+        "suggested_revision": "给出一行记录模式，例如“每条材料含 stage ∈ {repair_before, repair_after} 及对应测试结果”，并说明50份的抽取规则。",
+        "severity": "local"
+      },
+      {
+        "id": "R007",
+        "location": "【A3】'怎么做' step 1, 表2 row 2, 结果分析",
+        "category": "experiment",
+        "quote": "对86道来源题的参考代码，依据各自题面编写并运行定向检查",
+        "problem": "The 26 flagged '与题面不符的行为' come from researcher-written directed checks, not from the dataset's original tests. Since A1 reports 20 prompt/test conflicts and 263 tasks with multiple interpretations, the reader cannot tell whether the 26 are genuine code defects or cases where the prompt admits another reading.",
+        "evidence": "A3 reports 26/86 without stating whether these tasks were also run against the 原测试 or excluded when the prompt is ambiguous or conflicting; the checks themselves exist only in an external file.",
+        "possible_misreading": "A reader may read '26份出现错误行为' as '26 reference solutions fail their own original tests', i.e. as dataset-level defects rather than disagreements with an author-written reading of the prompt.",
+        "needed_explanation": "Whether each flagged behavior also fails the task's original test, and how the 26 overlap A1's conflicting or ambiguous categories.",
+        "suggested_revision": "补一句：“26份中x份同时未通过原测试，其余y份属题面存在多种解释的情形。”",
+        "severity": "local"
+      },
+      {
+        "id": "R008",
+        "location": "【A1】'怎么做' step 2; 表3",
+        "category": "term",
+        "quote": "将题目分为条件充分、信息缺失、存在多种解释和题面与测试冲突四类",
+        "problem": "None of the four categories is defined and the boundary between 信息缺失 and 存在多种解释 is not given, so the headline counts (461 sufficient, 130 missing, 263 multiple interpretations, 20 conflicts) cannot be interpreted or reproduced; the reader cannot decide, for example, whether an unspecified return value counts as missing or as ambiguous.",
+        "evidence": "A1 supplies only the priority rule '同一题按“冲突、缺失、多种解释”的顺序归类' and subtype examples for the 20 conflicts; 表3 gives counts without criteria.",
+        "possible_misreading": "A reader may treat 存在多种解释 as a synonym of 信息缺失, making the 130/263 split look arbitrary.",
+        "needed_explanation": "One-sentence criterion per category: what must be present for 条件充分, and what separates missing information from multiple interpretations.",
+        "suggested_revision": "为四类各给一句判定标准，例如“信息缺失：题面未给出测试所要求的返回值或异常类型；存在多种解释：题面给出了要求，但测试与之相容地可作另一种理解”。",
+        "severity": "main_chain"
+      },
+      {
+        "id": "R009",
+        "location": "【A1】'怎么做' step 2, last sentence",
+        "category": "experiment",
+        "quote": "同一位研究者完成分类，并复查20道冲突题",
+        "problem": "The only reliability control is a re-check by the same researcher, so the reader cannot tell whether the re-check was independent; no second coder, agreement statistic or change log is reported, although the 874-task classification underpins the section's conclusions.",
+        "evidence": "Single-annotator statement; no inter-rater data; the outcome of the re-check (whether any of the 20 labels changed) is not reported.",
+        "possible_misreading": "A reader may read '复查' as an independent second review and over-estimate the reliability of the 20/874 conflict count.",
+        "needed_explanation": "Who performed the re-check, what changed after it, and any agreement measure if a second coder existed.",
+        "suggested_revision": "改为“由同一研究者复查20道冲突题，复查后分类未变/变更x题”，或补充第二位标注者与一致率。",
+        "severity": "local"
+      },
+      {
+        "id": "R010",
+        "location": "【A2】'结果分析'",
+        "category": "sentence",
+        "quote": "但生成检索文字时都没有以原字段名直接保留",
+        "problem": "The evidence concerns field names, while the section asks whether the return-value and exception requirements enter the retrieval text. The reader cannot tell whether the requirement content was dropped, renamed, or absorbed into free text, so the stated next step ('核对字段对应关系') appears either redundant or unmotivated.",
+        "evidence": "A2 reports counts (874 return-value fields, 650 exception fields) and only that original field names are not retained; how the query text is assembled from those fields is not shown.",
+        "possible_misreading": "A reader may conclude that the return-value and exception requirements were omitted from retrieval, when the finding is only that the field labels were not preserved verbatim.",
+        "needed_explanation": "Which fields map to which part of the query text, and whether their content is preserved after rewriting.",
+        "suggested_revision": "改为“字段内容进入检索文字但以改写后的表述出现，原字段名未保留”，并给出一个字段到检索文字的映射示例。",
+        "severity": "local"
+      },
+      {
+        "id": "R011",
+        "location": "【A4】'结果分析'",
+        "category": "experiment",
+        "quote": "10对请求中有5对的提示和设置完全相同",
+        "problem": "The conclusion that the returned analyses differ verbatim is attributed to model nondeterminism, but '设置' is never enumerated; without knowing whether decoding parameters (temperature, top-p, seed) and model version were fixed, the reader cannot separate nondeterminism from a changed configuration.",
+        "evidence": "A4 states only '提示和设置完全相同' for the 5 pairs; the request records sit behind external links.",
+        "possible_misreading": "A reader may accept the 5/5 difference as evidence of nondeterminism although a pair could differ in an unlisted setting.",
+        "needed_explanation": "The list of parameters compared as identical, and confirmation that the 5 pairs differ in nothing else.",
+        "suggested_revision": "写明“提示、temperature、top_p、seed、模型版本均相同”，并注明逐字比较的粒度。",
+        "severity": "local"
+      },
+      {
+        "id": "R012",
+        "location": "一、本周实验主线 paragraph 1",
+        "category": "term",
+        "quote": "3道代码覆盖了题目提供的配置、数据或模板",
+        "problem": "In Chinese technical prose 覆盖 denotes both 'overwrite' and 'cover', so at the report's headline sentence the reader cannot tell whether the code overwrote the provided configuration/data/template or merely handled it; only 表1's repair column ('使用已有配置') disambiguates.",
+        "evidence": "The headline uses 覆盖 without qualification; 表1 gives the intended sense through '覆盖了题目提供的域名和接口配置' paired with '使用已有配置', but the headline precedes the table.",
+        "possible_misreading": "A reader may take '覆盖了题目提供的配置' as 'the code did handle the provided configuration', i.e. as a success rather than the failure being reported.",
+        "needed_explanation": "Replace 覆盖 with an unambiguous verb for re-assignment.",
+        "suggested_revision": "3道代码把题目提供的配置、数据或模板重新赋值（覆盖）而没有沿用。",
+        "severity": "minor"
+      }
+    ],
+    "coverage": [
+      {
+        "location": "一、本周实验主线 (week-report opening section)",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A5】失败代码的错误能根据题目要求修正吗 (full section text)",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "表1 四道失败题的错误和人工修改结果",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A3】用来提炼经验的参考代码和历史记录可靠吗 (full section text)",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "表2 经验来源材料检查结果",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A1】公开题目和原测试的要求一致吗 (full section text)",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "表3 三个数据集的题目分类",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A2】题目的返回值和异常要求直接进入检索了吗",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A4】相同输入的经验分析会返回相同文字吗",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "11月5日-11月11日本周结论与下一步 (summary page)",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "图1 manual_repair.png (rendered bar chart)",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "11月5日-11月11日研究思路图汇总 (index page)",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "图2 idea_01.png",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "图3 idea_02.png",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "图4 idea_03.png",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "图5 idea_04.png",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "图6 idea_05.png",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "Clickable SVG originals of 图2-图6 (maps/idea_0*.svg)",
+        "status": "not_reviewed",
+        "limitation": "Only PNG previews were provided; the interactive SVG versions were not supplied."
+      },
+      {
+        "location": "Linked evidence artifacts (E:/ResearchRuns/... JSON and CSV files, ../../results, ../../methods/sct_trajectory/semantic_retrieval.py, CLE-RPT-*.md reports)",
+        "status": "not_reviewed",
+        "limitation": "Not provided; only their names and local paths appear in the draft, so no claim resting on them could be verified."
+      }
+    ],
+    "discussion": "The report keeps two failure taxonomies unlinked: 表1's four task-level defects and the 50-case labels '已有配置被重新赋值' / '计划与实现不一致'. Whether the four cases belong to the 50, and how the two label sets nest, is never stated, so the step from 'these errors are repairable' to 'this fixes card content' remains an assertion. No numeric conflict was found among the week report, the conclusion page and 图1-图6.",
+    "revised_paragraph": "",
+    "unresolved_evidence": [
+      "E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S2_four_cases/summary.json — per-task test logs for the four cases (original failure, historical success, repaired); needed to check the three-version retest promised in A5 and 表1.",
+      "E:/ResearchRuns/CLE/20261105_six_questions/S3/reference_public_checks.json — the directed checks written per task and the 26 flagged behaviors; needed to verify A3's 60/86 and 26/86 counts and whether the behaviors also fail the original tests.",
+      "E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S3_all50_source_stage_matrix.csv — the stage labels and repair history of the 50 materials; needed to judge the 4/50 'label confusion' finding and the pool the 50 were drawn from.",
+      "E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S1_all874_coverage.csv and ../../CLE-RPT-20261106-S1-three-D-contracts-v01.md — per-task category assignments and justifications; needed to reproduce the 461/130/263/20 split and the category criteria.",
+      "E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S5_all50_mechanism_categories.csv — category labels behind the 12 're-assigned configuration' and 14 'plan/implementation mismatch' counts in A5.",
+      "The 11月6日 31-task repair run referenced only by the number '11月6日检查的31题' — no artifact link is given; needed to check the 19 passing and the de-duplicated 22.",
+      "../../../../results/curated/CLE-query-field-audit-20261105.json and ../../../../methods/sct_trajectory/semantic_retrieval.py — the field audit output and query-text construction code; needed to determine whether return-value and exception content, as opposed to field names, enters retrieval in A2.",
+      "../../CLE-RPT-20261106-S4-S5-all-advice-v01.md and ../../CLE-RPT-20261109-zero-api-closeout-v01.md — the 13 cases, 32 codes and the 10 request pairs with their prompts and decoding settings; needed to verify A4's 'identical prompts and settings' claim.",
+      "E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S2_four_cases/summary.json (same artifact as above, second use) — the selection records needed to confirm that the four tasks were chosen by the stated 'same prompt, model and first analysis' rule rather than by outcome."
+    ]
+  },
+  "supplied_images": [
+    "manual_repair.png",
+    "idea_01.png",
+    "idea_02.png",
+    "idea_03.png",
+    "idea_04.png",
+    "idea_05.png"
+  ],
+  "usage": {
+    "inputTokens": 11659,
+    "outputTokens": 23563,
+    "cacheReadTokens": 128,
+    "cacheWriteTokens": 0,
+    "totalTokens": 35350,
+    "request_settings": {
+      "model": "deepseek-flash",
+      "thinking": {
+        "type": "enabled"
+      },
+      "reasoning_effort": "max",
+      "max_tokens": 393216,
+      "context_window_tokens": 1000000
+    },
+    "reader_policy": {
+      "mode": "manuscript_only_v1",
+      "tool_execution": "denied",
+      "advertised_tools": 0,
+      "launcher": "dsh-tui run",
+      "visual_tui": false,
+      "ambient_instructions": "disabled"
+    }
+  },
+  "elapsed_seconds": 167.344,
+  "review_pass": "reader",
+  "source": "reader",
+  "project_root": "D:\\Agent\\sct-security-generation",
+  "prompt_source": "D:\\Agent\\tools\\dst-review\\references\\prompts_and_workflow.md",
+  "input_version": {
+    "file": "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-PKG-20261105-20261111-v02\\review\\封闭阅读材料.md",
+    "sha256": "b97cceee28f9a1c50902232fe16431959f69b7f4e89bc21cb23d31e895f4e209",
+    "modified_at": "2026-11-09T07:49:43.393504+00:00"
+  },
+  "scope": "Manuscript-only review through local dsh-tui run; no tools or proof certification",
+  "reader_mode": "manuscript_only_v1"
+}

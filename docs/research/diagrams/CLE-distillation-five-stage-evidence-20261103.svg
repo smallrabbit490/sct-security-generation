@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="807" viewBox="0 0 1380 807" role="img" aria-labelledby="t d">
+<title id="t">CLE 提炼研究：五个阶段与三种证据</title><desc id="d">五阶段中种子保持对照；真实来源产生三张同动作卡；双向干预确认覆盖名单导致功能失败；已见题有收益；独立目标上的最终 Joint 尚待验证。</desc>
+<style>text{font-family:'Microsoft YaHei','SimSun',sans-serif;fill:#18313f}.title{font-size:34px;font-weight:700}.big{font-size:25px;font-weight:700}.mid{font-size:21px;font-weight:700}.copy{font-size:18px}.small{font-size:16px}.white{fill:white}.muted{fill:#42606c}.teal{fill:#126658}.gold{fill:#925705}.rule{stroke:#b8c9ce;stroke-width:2}</style>
+<rect width="1380" height="807" fill="#f5f7f6"/>
+<text x="48" y="62" class="title">怎样确认经验提炼真的提高了 Joint？</text>
+<text x="48" y="101" class="copy muted">沿 CLE 五个阶段看证据：先定位代码动作，再检验卡片能否把它带到新的题族。</text>
+<g>
+<rect x="48" y="132" width="246" height="135" rx="12" fill="#e4ebee"/><text x="65" y="170" class="mid">01　种子卡</text><text x="65" y="209" class="copy">本轮保持相同背景卡。</text><text x="65" y="238" class="small muted">种子提炼的单独收益未测。</text>
+<rect x="308" y="132" width="246" height="135" rx="12" fill="#dceee7"/><text x="325" y="170" class="mid">02　来源轨迹</text><text x="325" y="209" class="copy">303 题有 5 条真实修复</text><text x="325" y="238" class="small muted">从未 Joint 变为 Joint。</text>
+<rect x="568" y="132" width="246" height="135" rx="12" fill="#dceee7"/><text x="585" y="170" class="mid">03　判定修法</text><text x="585" y="209" class="copy">3 条修复通过双向验证。</text><text x="585" y="238" class="small muted">其余 2 条沿用原生提炼。</text>
+<rect x="828" y="132" width="246" height="135" rx="12" fill="#dceee7"/><text x="845" y="170" class="mid">04　写入卡片</text><text x="845" y="209" class="copy">3 张卡表达同一个动作。</text><text x="845" y="238" class="small muted">正文已通过原生渲染。</text>
+<rect x="1088" y="132" width="245" height="135" rx="12" fill="#f7eacb"/><text x="1105" y="170" class="mid">05　目标生成</text><text x="1105" y="209" class="copy">保留自然检索与拒用。</text><text x="1105" y="238" class="small muted">新版独立 Joint 待测。</text>
+</g>
+<rect x="48" y="299" width="754" height="344" rx="14" fill="white"/><text x="74" y="344" class="big">动作本身能决定成败吗？</text>
+<text x="74" y="382" class="small muted">3 个已研究题族 · 18 份已存代码 · 原验证器 48 次本地回放</text>
+<line x1="74" y1="400" x2="775" y2="400" class="rule"/>
+<text x="76" y="443" class="copy">在原生失败代码里，删除覆盖赋值</text><text x="580" y="443" class="mid teal">0/6 → 6/6</text>
+<text x="76" y="498" class="copy">在通过代码里，写回同一份示例名单</text><text x="580" y="498" class="mid gold">12/12 → 0/12</text>
+<text x="76" y="553" class="copy">把同样的示例赋给一个不用的变量</text><text x="580" y="553" class="mid teal">12/12 → 12/12</text>
+<text x="76" y="608" class="small muted">数字为功能与安全同时通过数。48 次回放的安全测试全部通过。</text>
+<rect x="823" y="299" width="510" height="344" rx="14" fill="white"/><text x="849" y="344" class="big">收益走到了哪一步？</text>
+<text x="849" y="382" class="small muted">原生提炼 → 固定动作卡｜每题两次重复</text>
+<line x1="849" y1="400" x2="1306" y2="400" class="rule"/>
+<text x="850" y="442" class="copy">开发题，三族</text><text x="1126" y="442" class="mid teal">1/6 → 6/6</text>
+<text x="850" y="495" class="copy">冻结后，共同采用的四族</text><text x="1126" y="495" class="mid teal">6/8 → 8/8</text>
+<text x="850" y="548" class="copy">剔除已诊断的正例后</text><text x="1126" y="548" class="mid">6/6 → 6/6</text>
+<text x="850" y="591" class="small muted">右侧数字属于此前的固定动作版本。</text><text x="850" y="616" class="small muted">今晚从真实轨迹自动出卡的新版本另行验收。</text>
+<rect x="48" y="669" width="1285" height="100" rx="12" fill="#163e4d"/><text x="76" y="711" class="mid white">最终验收：固定来源、冻结规则，在未参与设计的题族上，用正常 CLE 比较最终 Joint。</text>
+<text x="76" y="745" class="copy white">超过原生提炼，才确认方法提分；再超过只读公开要求的规则，才确认来源修复带来了额外价值。</text>
+</svg>

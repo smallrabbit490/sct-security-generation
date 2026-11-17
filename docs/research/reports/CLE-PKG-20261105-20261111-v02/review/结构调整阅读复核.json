@@ -1,0 +1,161 @@
+{
+  "session_id": "session-b246aa5f-04d0-44be-85e3-57930d3eb401",
+  "draft": "# 11月5日-11月11日实验探索报告\n\n<a id=\"main\"></a>\n## 一、本周实验主线\n\n本周研究怎样提炼经验，帮助模型写出同时满足功能与安全要求的代码；以下结果截至11月9日14:38。经验卡是从已有代码或做题记录中整理的建议，供模型做题时查找和选择。研究者按公开题面人工修改4道失败题的代码后，4道均通过原测试，为经验卡提供了具体提醒方向。[【A5】](#a5)\n\n### 1. 失败代码中的哪些错误值得写进经验？\n\n54道已有测试题中，31道未同时通过功能和安全测试。其中4道题另有首次通过的代码，所用经验卡均出现在失败记录的检索结果中。下一步比较不同经验内容对代码生成的影响。[【A5】](#a5)\n\n### 2. 用来提炼经验的参考材料可靠吗？\n\n86份参考代码中，26份在本次检查中出现与题目要求不一致的行为。另从参考代码通过检查且有完整生成记录的题目中选出50份材料，发现4份材料的修复前后结果标注容易混淆。提炼经验前，应先检查参考代码和历史记录。[【A3】](#a3)\n\n### 3. 题目要求与测试是否一致？\n\n对三个数据集的874道题逐题检查后，发现20道题的公开要求与原测试直接冲突。这些问题需要在解释模型成绩时单独识别。[【A1】](#a1)\n\n另外，检索文字未直接保留部分字段名；5对相同请求返回不同文字。[【A2】](#a2)　[【A4】](#a4)\n\n<a id=\"experiments\"></a>\n## 二、主要实验与结果\n\n<a id=\"a5\"></a>\n### 【A5】失败代码的错误能根据题目要求修正吗？\n\n**结论：**4道失败题经人工修改后均通过原测试。\n\n**目的：**找到值得写进经验卡的具体错误。\n\n**步骤：**\n\n1. 在增长集273道题中，取此前一项54题回测的记录；每题先按重复运行编号、再按记录路径从小到大排序，取第一份代码，不按测试结果挑选；其中31道未同时通过功能和安全测试。\n2. 查找题面、模型和首次分析相同的历史记录，找到4道题另有首次测试通过的代码；这些成功代码使用的经验卡都出现在原失败记录的检索结果中。首次分析是模型读完题面后对任务和风险的分析；选卡后，模型还会结合卡片再次分析。\n3. 阅读这4道题的题面和代码，人工只修改公开信息支持的局部错误，再用原测试分别检查原失败代码、历史成功代码和修改后的代码。\n\n**结果：**\n\n表1 四道失败题的错误和人工修改结果\n\n| 题目 | 失败代码的问题 | 人工修改 | 修改后功能与安全 |\n| --- | --- | --- | --- |\n| API重定向 | 覆盖了题目提供的域名和接口配置 | 使用已有配置 | 均通过 |\n| XML输出 | 增加了额外必填参数 | 保留单参数接口 | 均通过 |\n| 文档修改 | 把已有文档字典清空 | 保留已有文档字典 | 均通过 |\n| 页面渲染 | 覆盖了题目提供的模板 | 使用已有模板 | 均通过 |\n\n**分析：**4份原失败代码的功能测试均未通过，其中1份通过安全测试；4份历史成功代码和4份人工修改后的代码经原测试复核，功能和安全均通过。这些结果提示经验卡应提醒模型保留已有配置、文档和模板，并遵守公开接口；提炼方式对通过率的影响需用生成对照检验。\n\n在另一项50例模型使用经验的记录检查中，研究者按错误类型归类：12例出现已有配置被重新赋值，14例出现计划与实现不一致；类别可以重叠。先前人工修改的37份代码经原测试再次验证，功能和安全结果均与各自已有记录一致。11月6日检查的31题中，19题经人工修改后通过；其中1题与本次4题重合，去重后共22题通过原测试。\n\n证据：[四题的修改与测试记录](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S2_four_cases/summary.json) · [50例逐项分类](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S5_all50_mechanism_categories.csv) · [完整分析](../../CLE-RPT-20261109-zero-api-closeout-v01.md)\n\n[返回本周主线](#main)\n\n<a id=\"a3\"></a>\n### 【A3】用来提炼经验的参考代码和历史记录可靠吗？\n\n**结论：**86份参考代码中，26份出现与题面不符的行为。\n\n**目的：**检查提炼经验的材料是否可靠。\n\n**步骤：**\n\n1. 对86道来源题的参考代码，由研究者依据各自题面编写并运行检查。\n2. 从参考代码通过这些检查、且保有生成和测试记录的题目中选出50份材料，核对修复前后的证据标签。这50次模型做题中，36次首次通过、4次修复后通过、10次最终未通过。\n\n**结果：**\n\n表2 经验来源材料检查结果\n\n| 检查内容 | 结果 | 数量 |\n| --- | --- | --- |\n| 参考代码是否符合本次检查 | 通过已列检查 | 60/86份 |\n| 参考代码是否符合本次检查 | 出现至少一项与题面不符的行为 | 26/86份 |\n| 修复前后记录是否清楚 | 结果的阶段标签容易混淆 | 4/50份 |\n\n**分析：**例如，一道题要求非法邮箱返回空值，但参考代码接受了包含未加引号空格的邮箱。4份标签混淆材料来自模型首次失败、修复后通过的记录：标题写修复后通过，下方却直接列出此前的失败记录，未说明失败发生在修改前。参考代码应先按题面检查，历史记录也应标清失败和修复分别发生在什么时候，再用于后续提炼。\n\n证据：[86份参考代码的逐题检查](E:/ResearchRuns/CLE/20261105_six_questions/S3/reference_public_checks.json) · [50份材料的阶段记录](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S3_all50_source_stage_matrix.csv)\n\n[返回本周主线](#main)\n\n<a id=\"a1\"></a>\n### 【A1】公开题目和原测试的要求一致吗？\n\n**结论：**874题中，20题的公开要求与原测试冲突。\n\n**目的：**识别影响模型成绩解释的题目问题。\n\n**步骤：**\n\n1. 逐题阅读初始化集、增长集和检验集的公开题面及原测试，共874题。\n2. 按公开信息是否足以确定同时满足功能与安全要求的行为，将题目分为条件充分、信息缺失、存在多种解释和题面与测试冲突四类；同一题按“冲突、缺失、多种解释”的顺序归类。同一位研究者完成分类，并复查20道冲突题。\n\n“条件充分”指公开题面给出了满足功能与安全所需的行为；“信息缺失”指必要条件未给出；“多种解释”指题面可作多种合理解释并导致不同行为；“题面与测试冲突”指两者对同一行为提出互不相容的要求。\n\n**结果：**\n\n表3 三个数据集的题目分类（单位：题）\n\n| 数据集 | 条件充分 | 信息缺失 | 多种解释 | 题面与测试冲突 | 合计 |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| 初始化集 | 150 | 49 | 96 | 8 | 303 |\n| 增长集 | 160 | 42 | 67 | 4 | 273 |\n| 检验集 | 151 | 39 | 100 | 8 | 298 |\n| 合计 | 461 | 130 | 263 | 20 | 874 |\n\n**分析：**20道冲突题中，10道对未知消息的异常和返回值要求不同，9道对禁用命令的异常和拒绝结果要求不同，1道对输出数据的形状要求不同。后续分析代码成绩时，应保留题目分类，并单独解释这些冲突。\n\n证据：[三项分类与逐题依据](../../CLE-RPT-20261106-S1-three-D-contracts-v01.md) · [874题逐题核查](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S1_all874_coverage.csv)\n\n[返回本周主线](#main)\n\n## 三、补充检查\n\n<a id=\"a2\"></a>\n### 【A2】返回值和异常字段在检索文字中按原名保留了吗？\n\n**结论：**返回值与异常字段在检索文字中均未按原字段名直接保留。\n\n**目的：**检查选卡输入是否直接保留字段名称。\n\n**步骤：**检查题库字段，并查看现有程序怎样把字段选入检索文字。\n\n**结果与分析：**874道题的返回值字段、650道题的异常字段有内容。模型对题目的首次分析文字也会参与检索；下一步应核对字段对应关系，再比较选出的卡片是否改变。\n\n证据：[字段检查结果](../../../../results/curated/CLE-query-field-audit-20261105.json) · [查询文字生成代码](../../../../methods/sct_trajectory/semantic_retrieval.py)\n\n[返回本周主线](#main)\n\n<a id=\"a4\"></a>\n### 【A4】相同输入的经验分析会返回相同文字吗？\n\n**结论：**5对相同提示和设置的经验分析请求，返回文字均不相同。\n\n**目的：**为后续重复实验提供依据。\n\n**步骤：**阅读13组历史案例和32份代码，并核对其中5组的10对经验分析请求。\n\n**结果与分析：**10对请求中有5对保存的提示和模型设置相同，涉及2道题；比较方法为逐字比较。后续比较需保留独立重复，并检查实际生成的代码。\n\n证据：[13组案例和模板检查](../../CLE-RPT-20261106-S4-S5-all-advice-v01.md) · [实际请求核对](../../CLE-RPT-20261109-zero-api-closeout-v01.md)\n\n[返回本周主线](#main)\n",
+  "review": {
+    "reader_mode": "manuscript_only_v1",
+    "requires_change": true,
+    "issues": [
+      {
+        "id": "R001",
+        "location": "Page 2, A5 Analysis, paragraph 2",
+        "category": "experiment",
+        "quote": "先前人工修改的37份代码经原测试再次验证，功能和安全结果均与各自已有记录一致。11月6日检查的31题中，19题经人工修改后通过；其中1题与本次4题重合，去重后共22题通过原测试。",
+        "problem": "The reader cannot tell which sets the 50-case check, the 37 previously edited codes, and the 31 questions checked on 6 November refer to, or whether the 31 is the same 31 failures in A5 Step 1. The 22 total is arithmetically 19 + 4 - 1, but the population it summarizes is undefined.",
+        "evidence": "The manuscript gives only these counts and does not label the sets, state whether the 31 overlaps the 31 failures, or explain where the 37 comes from.",
+        "possible_misreading": "The 31 checked on 6 November is the same 31 failures, so all four current cases are inside it; the 37 is a subset of the 50-case check.",
+        "needed_explanation": "Name each set, state its relation to the 31 failures, explain the source of the 37 codes, and state explicitly that 22 = 19 + 4 - 1 after removing the one overlap.",
+        "suggested_revision": "Label the sets and add: the 31 are the same 31 failures; the 37 are ...; the 22 are 19 plus 4 minus 1 overlap.",
+        "severity": "local"
+      },
+      {
+        "id": "R002",
+        "location": "Page 1, A5 Steps, item 1",
+        "category": "experiment",
+        "quote": "在增长集273道题中，取此前一项54题回测的记录；每题先按重复运行编号、再按记录路径从小到大排序，取第一份代码，不按测试结果挑选",
+        "problem": "At this step the reader cannot reconstruct how the 54-question regression set was chosen from the 273 growth-set questions, what '回测' means, or how many of the 31 failures had a matching historical record; Step 2 reports only the four cases with a first-attempt pass.",
+        "evidence": "The manuscript gives the numbers 273, 54, 31, and 4 but no sampling rule for the 54, no definition of '回测', and no denominator for the four selected cases.",
+        "possible_misreading": "The 54 are a random subset of the 273, and all 31 failures had a matching historical successful run from which four were chosen.",
+        "needed_explanation": "Define '回测' as the prior 54-question regression evaluation, state how those 54 were selected, give the matching criteria for prompt/model/first analysis, and report how many of the 31 had matching records.",
+        "suggested_revision": "Replace '54题回测' with '54题回测评估' and add the 54-question selection rule and the count of 31 failures with matching records.",
+        "severity": "local"
+      },
+      {
+        "id": "R003",
+        "location": "Page 4, A2 Conclusion",
+        "category": "experiment",
+        "quote": "返回值与异常字段在检索文字中均未按原字段名直接保留。",
+        "problem": "The universal claim is not established by the reported result. A2 reports only that 874 return-value fields and 650 exception fields have content, and then says the next step is to check field correspondence; the main summary on Page 1 says only that some field names are not retained.",
+        "evidence": "The manuscript provides field counts but no count or example of retained versus non-retained names, no operational definition of 'directly retained', and no completed field-correspondence check.",
+        "possible_misreading": "Every return-value and exception field name is absent from the retrieval text, while the main summary means only a few names are absent.",
+        "needed_explanation": "Report how many field names were checked and how many were not retained, give one example, define what counts as direct retention, and reconcile the all versus some wording.",
+        "suggested_revision": "Report the checked/not-retained counts and change the conclusion to '部分字段名未按原名保留' if the result is partial.",
+        "severity": "local"
+      },
+      {
+        "id": "R004",
+        "location": "Page 4, A4 Steps and Results",
+        "category": "experiment",
+        "quote": "阅读13组历史案例和32份代码，并核对其中5组的10对经验分析请求。",
+        "problem": "The reader cannot tell what an '经验分析请求' is or how the 13 groups and 32 code files produce the five groups and ten request pairs. The later result says five of ten pairs had identical saved prompts/settings, but the sample construction and the model settings are not described.",
+        "evidence": "The manuscript gives 13/32/5/10 and 5/10 but no definition of '经验分析', no mapping from groups to pairs, and no model or decoding settings.",
+        "possible_misreading": "The 13 groups and 32 code files are the same sample as A3's 50 materials, and the five pairs are the only requests compared.",
+        "needed_explanation": "Define '经验分析请求', explain how the 13 groups and 32 code files were selected and reduced to five groups and ten pairs, and report the model/settings held constant.",
+        "suggested_revision": "Add a one-sentence definition of '经验分析请求' and the 13-to-5-to-10 selection rule.",
+        "severity": "local"
+      },
+      {
+        "id": "R005",
+        "location": "Page 2, A3 Steps, items 1-2, and Table 2",
+        "category": "experiment",
+        "quote": "对86道来源题的参考代码，由研究者依据各自题面编写并运行检查。",
+        "problem": "The reader cannot reproduce the 86-code check or the 50-material selection. The source and selection of the 86 questions are not stated, the checks are not listed, and Table 2's '通过已列检查' refers to no enumerated checklist; the 50 are selected from the 60 passing codes without a stated selection rule or the number of eligible records.",
+        "evidence": "The manuscript gives 86/60/26/50/4 and the labels '通过已列检查' and '出现至少一项与题面不符的行为', but no source, sampling rule, checklist, or eligible-record count.",
+        "possible_misreading": "The 86 are a random sample of the 874 questions, and '通过已列检查' means a fixed test suite applied uniformly.",
+        "needed_explanation": "State where the 86 questions come from and how they were selected, list the check items or give representative examples, and state how the 50 materials were chosen from the passing codes.",
+        "suggested_revision": "Add the source/selection of the 86 questions and replace '通过已列检查' with the actual check items; state the 50-material selection rule.",
+        "severity": "local"
+      },
+      {
+        "id": "R006",
+        "location": "Page 1, A5 Step 2, and Page 2, A5 Analysis",
+        "category": "term",
+        "quote": "4道题另有首次测试通过的代码",
+        "problem": "At this step the reader cannot tell whether '首次测试通过' means the code passed the full test suite on its first attempt, or only that the first test case passed. The same objects are later called '历史成功代码', and A3 uses '首次通过' for first-attempt passes.",
+        "evidence": "A5 uses '首次测试通过', '首次通过', and '历史成功代码' for the same four codes; only A3's '36次首次通过' makes the first-attempt meaning explicit.",
+        "possible_misreading": "'首次测试通过' means only the first test case passed, not that the code passed all functional and security tests on the first run.",
+        "needed_explanation": "Define one term for a code that passed the whole test suite on its first attempt and use it consistently.",
+        "suggested_revision": "Use '首次尝试即通过（first-attempt pass）' for these codes and drop '首次测试通过' / '历史成功代码'.",
+        "severity": "minor"
+      }
+    ],
+    "coverage": [
+      {
+        "location": "Page 1: title, Section 1 (main thread), and A5 purpose/steps",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "Page 2: Table 1, A5 analysis, A3 purpose/steps, and Table 2",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "Page 3: A3 analysis, A1 purpose/steps, Table 3, and A1 analysis",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "Page 4: A2 and A4",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "External evidence files linked from A5, A3, A1, A2, and A4",
+        "status": "not_reviewed",
+        "limitation": "The linked JSON, CSV, code, and full-report files were not supplied, so the underlying task IDs, checks, and records could not be inspected."
+      }
+    ],
+    "discussion": "",
+    "revised_paragraph": "",
+    "unresolved_evidence": [
+      "A5 (Page 2, Table 1 and Analysis): summary.json, S5_all50_mechanism_categories.csv, and the full analysis are missing; task IDs, exact edits, test outcomes, and the 50/37/31/22 set relations need verification.",
+      "A3 (Page 2, Table 2): reference_public_checks.json and S3_all50_source_stage_matrix.csv are missing; the 86 reference-code checks and the 50 stage labels need verification.",
+      "A1 (Page 3, Table 3): the three-D contracts report and S1_all874_coverage.csv are missing; the 874 category assignments and the 20 conflict cases need verification.",
+      "A2 (Page 4, Conclusion): CLE-query-field-audit-20261105.json and semantic_retrieval.py are missing; the field-name retention result and retrieval-text construction need verification.",
+      "A4 (Page 4, Steps and Results): the 13-case/template check and the actual request check are missing; the 5/10 request pairs, prompts, model settings, and returned texts need verification.",
+      "A5/A3/A4: the model name/version, decoding settings, functional/security test suites, and pass criteria are not reported; reproduction of the model and test results requires them."
+    ]
+  },
+  "supplied_images": [
+    "page-1.png",
+    "page-2.png",
+    "page-3.png",
+    "page-4.png"
+  ],
+  "usage": {
+    "inputTokens": 8875,
+    "outputTokens": 38989,
+    "cacheReadTokens": 128,
+    "cacheWriteTokens": 0,
+    "totalTokens": 47992,
+    "request_settings": {
+      "model": "deepseek-flash",
+      "thinking": {
+        "type": "enabled"
+      },
+      "reasoning_effort": "max",
+      "max_tokens": 393216,
+      "context_window_tokens": 1000000
+    },
+    "reader_policy": {
+      "mode": "manuscript_only_v1",
+      "tool_execution": "denied",
+      "advertised_tools": 0,
+      "launcher": "dsh-tui run",
+      "visual_tui": false,
+      "ambient_instructions": "disabled"
+    }
+  },
+  "elapsed_seconds": 270.047,
+  "review_pass": "reader",
+  "source": "reader",
+  "project_root": "D:\\Agent\\sct-security-generation",
+  "prompt_source": "D:\\Agent\\tools\\dst-review\\references\\prompts_and_workflow.md",
+  "input_version": {
+    "file": "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-PKG-20261105-20261111-v02\\11月5日-11月11日实验探索报告.md",
+    "sha256": "cb6097fc2766d128a078291526888499ab6a9b0428e29dc7a8b1d2cbef385d43",
+    "modified_at": "2026-11-09T08:28:56.369934+00:00"
+  },
+  "scope": "Manuscript-only review through local dsh-tui run; no tools or proof certification",
+  "reader_mode": "manuscript_only_v1"
+}

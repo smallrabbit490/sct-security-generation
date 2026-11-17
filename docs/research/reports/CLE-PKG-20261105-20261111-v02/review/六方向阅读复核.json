@@ -1,0 +1,239 @@
+{
+  "session_id": "session-d9cc412a-6041-4966-a8fa-8191508a5588",
+  "draft": "# 11月5日-11月11日实验探索报告\r\n\r\n<a id=\"main\"></a>\r\n## 一、本周实验主线\r\n\r\n本周研究怎样提炼经验，帮助模型写出同时满足功能与安全要求的代码；以下结果截至11月9日14:38。经验卡是从已有代码或做题记录中整理的建议，供模型做题时查找和选择。研究者按公开题面人工修改4道失败题的代码后，4道均通过原测试，为经验卡提供了具体提醒方向。[【A5】](#a5)\r\n\r\n### 1. 三个数据集的题目能否根据公开信息完成？\r\n\r\n874道题已分别按安全、功能及两者同时满足所需的信息分类。在同时满足的分类中，461题条件充分，20题的公开要求与原测试冲突。[【A1】](#a1)\r\n\r\n### 2. 人工选择已有经验卡能提高多少通过率？\r\n\r\n54道已有测试题中有31道未同时通过功能和安全测试；其中4道已有使用检索结果中的其他卡片并首次通过的历史代码。人工选卡后重新生成代码的通过率尚未测量。[【A2】](#a2)\r\n\r\n### 3. 参考代码可以在哪个阶段帮助提炼经验？\r\n\r\n原生冷启动已使用来源题的漏洞代码和修补代码。86份候选参考中，26份出现与题面不符的行为；参考代码用于后续提炼或复审的效果尚待对照。[【A3】](#a3)\r\n\r\n### 4. 相同题目和卡片为什么会产生不同结果？\r\n\r\n13组历史案例发现接口绑定、计划取值和代码实现中的问题；5对提示与设置相同的经验分析请求返回了不同文字。卡片结构与生成提示的优化效果尚待对照。[【A4】](#a4)\r\n\r\n### 5. 经验对生成代码产生了什么影响？\r\n\r\n50例记录中，12例出现已有配置被重新赋值，14例出现计划与实现不一致。4道失败题经人工修改后通过原测试；移除经验卡或卡内建议的生成对照尚未完成。[【A5】](#a5)\r\n\r\n### 6. 怎样把这些发现形成有价值的论文？\r\n\r\n现有结果可以支撑题目、经验来源和代码实现问题的实证分析。经验提炼方法是否提高通过率，需要与原生方法及通用指导做独立对照。[【A6】](#a6)\r\n\r\n<a id=\"experiments\"></a>\r\n## 二、实验内容与结果\r\n\r\n<a id=\"a1\"></a>\r\n### 【A1】三个数据集的题目能否根据公开信息完成？\r\n\r\n**结论：**874题的安全、功能及两者同时满足所需信息均已分类；同时满足的分类中，20题的公开要求与原测试冲突。\r\n\r\n**目的：**识别公开题面的信息条件，帮助解释模型在三个数据集上的成绩。\r\n\r\n**步骤：**\r\n\r\n1. 逐题阅读初始化集、增长集和检验集的公开题面及原测试，共874题。\r\n2. 分别判断公开信息是否足以确定满足安全、功能及两者同时满足的行为，归为条件充分、信息缺失、多种解释和题面与测试冲突四类；同一题按“冲突、缺失、多种解释”的顺序归类。同一位研究者完成分类，并复查同时满足维度的20道冲突题。\r\n\r\n“条件充分”指公开题面给出了相应指标所需的行为；“信息缺失”指必要条件未给出；“多种解释”指题面可作多种合理解释并导致不同行为；“题面与测试冲突”指两者对同一行为提出互不相容的要求。\r\n\r\n**结果：**\r\n\r\n表1 三个数据集按安全、功能和同时满足要求的题目分类（单位：题）\r\n\r\n| 数据集 | 判断对象 | 条件充分 | 信息缺失 | 多种解释 | 要求冲突 | 合计 |\r\n| --- | --- | ---: | ---: | ---: | ---: | ---: |\r\n| 初始化集 | 安全 | 260 | 7 | 28 | 8 | 303 |\r\n| 初始化集 | 功能 | 164 | 44 | 95 | 0 | 303 |\r\n| 初始化集 | 同时满足 | 150 | 49 | 96 | 8 | 303 |\r\n| 增长集 | 安全 | 232 | 8 | 30 | 3 | 273 |\r\n| 增长集 | 功能 | 167 | 38 | 67 | 1 | 273 |\r\n| 增长集 | 同时满足 | 160 | 42 | 67 | 4 | 273 |\r\n| 检验集 | 安全 | 246 | 14 | 30 | 8 | 298 |\r\n| 检验集 | 功能 | 166 | 32 | 100 | 0 | 298 |\r\n| 检验集 | 同时满足 | 151 | 39 | 100 | 8 | 298 |\r\n| 三集合计 | 安全 | 738 | 29 | 88 | 19 | 874 |\r\n| 三集合计 | 功能 | 497 | 114 | 262 | 1 | 874 |\r\n| 三集合计 | 同时满足 | 461 | 130 | 263 | 20 | 874 |\r\n\r\n**分析：**每道题分别判断安全、功能和两者同时满足的条件，三行判断对应同一批题目。同时满足维度的20道冲突题中，10道对未知消息的异常和返回值要求不同，9道对禁用命令的异常和拒绝结果要求不同，1道对输出数据的形状要求不同。后续分析代码成绩时，应保留题目分类，并单独解释这些冲突。\r\n\r\n证据：[三项分类与逐题依据](../../CLE-RPT-20261106-S1-three-D-contracts-v01.md) · [874题逐题核查](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S1_all874_coverage.csv)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a2\"></a>\r\n### 【A2】人工选择已有经验卡有多少改进空间？\r\n\r\n**结论：**54道已有测试题中，4道失败题另有使用原检索结果中的卡片、首次生成即通过的历史记录。人工选卡后的通过率尚未测量。\r\n\r\n**目的：**区分检索阶段是否提供了可用卡片，以及后续选卡能带来多少改进。\r\n\r\n**步骤：**\r\n\r\n1. 从增长集按漏洞类型轮流选出54题，优先覆盖不同题族；对每题按重复编号和记录路径选取一份已有代码，其中31道未同时通过功能和安全测试。\r\n2. 查找同模型、同题目要求的成功记录，再限定卡库、首次分析和成功代码所用卡片的范围；人工阅读符合条件的题目、卡片与代码。\r\n3. 检查三个数据集中表示返回要求的`return`和异常要求的`raise`，核对原字段名是否直接保留在检索文字中。\r\n\r\n**结果与分析：**31道失败题中，12道另有同模型、同题目要求的成功记录；进一步限定同一卡库、相同首次分析及成功代码所用卡片来自失败时的检索结果，留下4题。另有874道题的返回值字段和650道题的异常字段有内容，检索文字直接保留的原字段名分别为0/874和0/650。模型首次分析也会参与检索；人工重新选卡对通过率的影响需要生成对照测量。\r\n\r\n证据：[54题选卡记录](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S2_all54_selection_observables.csv) · [字段检查结果](../../../../results/curated/CLE-query-field-audit-20261105.json) · [查询文字生成代码](../../../../methods/sct_trajectory/semantic_retrieval.py)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a3\"></a>\r\n### 【A3】参考代码可以在哪个阶段帮助提炼经验？\r\n\r\n**结论：**原生冷启动使用来源题的漏洞代码和修补代码；86份候选参考代码中，26份出现与题面不符的行为。\r\n\r\n**目的：**确定参考代码进入经验提炼的位置，并检查来源材料是否可靠。\r\n\r\n**步骤：**\r\n\r\n1. 阅读冷启动的经验提炼流程，核对来源题的漏洞代码和修补代码如何进入模型输入。\r\n2. 对86份拟作为经验来源的候选参考代码，研究者依据各题公开要求分别检查特定行为，例如非法邮箱是否返回空值。\r\n3. 从通过检查且有生成、测试记录的题目中，选出50份材料核对修复前后的标签。这50次模型做题中，36次首次生成通过、4次修复后通过、10次最终未通过。\r\n\r\n**结果：**\r\n\r\n表2 经验来源材料检查结果\r\n\r\n| 检查内容 | 结果 | 数量 |\r\n| --- | --- | --- |\r\n| 参考代码是否符合本次检查 | 通过本次题面要求检查 | 60/86份 |\r\n| 参考代码是否符合本次检查 | 出现至少一项与题面不符的行为 | 26/86份 |\r\n| 修复前后记录是否清楚 | 结果的阶段标签容易混淆 | 4/50份 |\r\n\r\n**分析：**例如，一道题要求非法邮箱返回空值，但参考代码接受了包含未加引号空格的邮箱。4份标签混淆材料来自模型首次失败、修复后通过的记录：标题写修复后通过，下方却直接列出此前的失败记录，未说明失败发生在修改前。参考代码应先按题面检查，历史记录也应标清失败和修复的阶段。这里使用的是训练来源题的参考代码；目标题生成继续使用公开题面。参考代码额外进入轨迹提炼或入库前复审的效果尚待对照。\r\n\r\n证据：[冷启动提炼代码](../../../../methods/sct_lifecycle_replay/source_knowledge.py) · [86份参考代码检查](E:/ResearchRuns/CLE/20261105_six_questions/S3/reference_public_checks.json) · [50份材料的阶段记录](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S3_all50_source_stage_matrix.csv)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a4\"></a>\r\n### 【A4】相同题目和卡片为什么会产生不同结果？\r\n\r\n**结论：**13组历史案例中发现接口绑定、计划取值和代码实现的问题；5对相同提示和设置的经验分析请求，返回文字均不相同。\r\n\r\n**目的：**定位同题同卡时的错误，为改进卡片结构和生成提示提供依据。\r\n\r\n**步骤：**阅读13组历史案例和32份代码，对照卡片、计划、生成代码和测试；再核对其中5组的10对经验分析请求。这里的经验分析指模型选卡后，结合题目判断卡片建议是否适用。\r\n\r\n**结果与分析：**两个10月19日旧模型的历史案例分别出现生成代码清空已有字典、检查表达式时漏掉允许的运算符节点。10对经验分析请求中有5对保存的提示和模型设置相同，涉及2道题；这些请求的返回文字逐字比较均不同。卡片结构和生成提示的改动效果尚待生成对照。\r\n\r\n证据：[13组案例和模板检查](../../CLE-RPT-20261106-S4-S5-all-advice-v01.md) · [实际请求核对](../../CLE-RPT-20261109-zero-api-closeout-v01.md)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a5\"></a>\r\n### 【A5】经验对生成代码产生了什么影响？\r\n\r\n**结论：**4道失败题经人工修改后均通过原测试。\r\n\r\n**目的：**追踪经验、计划和代码中的具体动作，寻找影响功能与安全的错误。\r\n\r\n**步骤：**\r\n\r\n1. 从[【A2】](#a2)中选出有历史成功记录的4道失败题，阅读题面、卡片、失败代码与成功代码。\r\n2. 人工只修改公开信息支持的局部错误，再用原测试分别检查原失败代码、历史成功代码和修改后的代码。\r\n3. 对50例模型使用经验的记录按错误类型归类，并复查此前修改后的代码。\r\n\r\n**结果：**\r\n\r\n表3 四道失败题的错误和人工修改结果\r\n\r\n| 题目 | 失败代码的问题 | 人工修改 | 修改后功能与安全 |\r\n| --- | --- | --- | --- |\r\n| API重定向 | 覆盖了题目提供的域名和接口配置 | 使用已有配置 | 均通过 |\r\n| XML输出 | 增加了额外必填参数 | 保留单参数接口 | 均通过 |\r\n| 文档修改 | 把已有文档字典清空 | 保留已有文档字典 | 均通过 |\r\n| 页面渲染 | 覆盖了题目提供的模板 | 使用已有模板 | 均通过 |\r\n\r\n**分析：**4份原失败代码的功能测试均未通过，其中1份通过安全测试；4份历史成功代码和4份人工修改后的代码经原测试复核，功能和安全均通过。这些结果给出了保留已有配置、文档和模板以及遵守公开接口的具体检查点；经验卡或卡内建议造成了多少变化，需用移除对照测量。\r\n\r\n在另一项50例模型使用经验的记录检查中，研究者按错误类型归类：12例出现已有配置被重新赋值，14例出现计划与实现不一致；类别可以重叠。\r\n\r\n11月6日另一项检查对31道旧题的代码进行局部修改，其中19道原失败题修改后通过；这19题与本次4题重合1题，合计22题。相关37份修改后的代码经原测试再次验证，功能和安全结果均与各自已有记录一致。\r\n\r\n证据：[四题的修改与测试记录](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S2_four_cases/summary.json) · [50例逐项分类](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S5_all50_mechanism_categories.csv) · [完整分析](../../CLE-RPT-20261109-zero-api-closeout-v01.md)\r\n\r\n[返回本周主线](#main)\r\n\r\n<a id=\"a6\"></a>\r\n## 三、论文思路与证据\r\n\r\n### 【A6】怎样把这些发现形成有价值的论文？\r\n\r\n**研究问题：**经验卡的来源和使用方式怎样影响安全代码生成，改进提炼方式能否提高功能与安全同时通过的比例？\r\n\r\n**已有证据：**题面与测试存在冲突，部分候选参考代码不符合公开要求，历史案例中的经验使用和代码实现存在可定位的问题。[【A1】](#a1)　[【A3】](#a3)　[【A4】](#a4)　[【A5】](#a5)\r\n\r\n**论证安排：**先用这些实证结果说明问题，再说明提炼方式的改进；最后用同题对照和未参与设计的题目比较原生方法、改进方法与通用指导，报告通过数、救回和损失。若独立对照支持改进方法的优势，可围绕方法贡献展开；否则按实际结果组织实证分析与错误机制。\r\n\r\n**当前状态：**方法提高通过率的对照尚未完成；对照论文中Agent在Base和Plus上的可比成绩仍需核实。\r\n\r\n证据：[本周六个方向的证据归类](E:/ResearchRuns/CLE/20261105_six_questions/zero_api_closeout_20261109/S6_claim_evidence_classification.csv) · [本周对照计划](../../CLE-PLAN-20261109-minimal-paid-six-questions-v01.md)\r\n\r\n[返回本周主线](#main)\r\n",
+  "review": {
+    "reader_mode": "manuscript_only_v1",
+    "requires_change": true,
+    "issues": [
+      {
+        "id": "R001",
+        "location": "一、本周实验主线第2节；【A2】步骤1；【A5】结论",
+        "category": "experiment",
+        "quote": "54道已有测试题中有31道未同时通过功能和安全测试",
+        "problem": "The 54-task sample and the four-task subset are never intersected with A1's classification. The 31 failures may therefore include tasks whose public requirements conflict with the original tests, and the later four passes on original tests may not show compliance with the public statement.",
+        "evidence": "A1 reports 20 both-dimension conflicts, including 8 in the growth set; A2 and A5 report no intersection with the '条件充分' or '要求冲突' classes.",
+        "possible_misreading": "All 31 failures measure card-selection headroom, and all four fixes satisfy the public requirements because the original tests pass.",
+        "needed_explanation": "Report the A1 class of each task in the 54-task sample and the four-task set; exclude or separately report '要求冲突' tasks.",
+        "suggested_revision": "Add the A1 class for the 54 and 4 tasks and exclude '要求冲突' tasks from pass/fail claims.",
+        "severity": "main_chain"
+      },
+      {
+        "id": "R002",
+        "location": "【A3】结论；【A6】当前状态",
+        "category": "term",
+        "quote": "原生冷启动使用来源题的漏洞代码和修补代码",
+        "problem": "The baseline is named but not defined. The reader cannot tell what '原生冷启动' contains, whether it uses experience cards, or how it differs from the '原生方法' proposed for comparison in A6.",
+        "evidence": "A3 says only that it uses vulnerable and patched source code; A6 proposes comparing '原生方法' without listing its inputs.",
+        "possible_misreading": "It means a model with no experience at all, or the same pipeline without only the new extraction step.",
+        "needed_explanation": "A one-sentence definition of the baseline and its inputs.",
+        "suggested_revision": "Define 原生冷启动 as the pipeline with its exact inputs and state whether it uses experience cards.",
+        "severity": "main_chain"
+      },
+      {
+        "id": "R003",
+        "location": "【A3】分析第1段",
+        "category": "term",
+        "quote": "这里使用的是训练来源题的参考代码；目标题生成继续使用公开题面。",
+        "problem": "The source and target problem sets are not defined operationally, and their overlap is not stated. The reader cannot judge whether reference code is training material or leaks target answers.",
+        "evidence": "This sentence is the only place where '训练来源题' and '目标题' are distinguished; no counts or split are given.",
+        "possible_misreading": "Source and target are the same 874 tasks, so the reference code already contains target solutions.",
+        "needed_explanation": "Define both sets, give counts, and state whether they are disjoint.",
+        "suggested_revision": "Define 来源题 and 目标题 and state that they are disjoint, or report the overlap.",
+        "severity": "main_chain"
+      },
+      {
+        "id": "R004",
+        "location": "【A4】结论；【A5】结果与分析第2段",
+        "category": "term",
+        "quote": "13组历史案例中发现接口绑定、计划取值和代码实现的问题",
+        "problem": "The error categories '接口绑定' and '计划取值' are undefined. The reader cannot map the 13 cases or A5's 12/14 counts to concrete planning or code events.",
+        "evidence": "A4 says it compares '卡片、计划、生成代码和测试' but never defines the '计划' artifact or what a '取值' is.",
+        "possible_misreading": "'计划' is the experience card's advice or a chain-of-thought trace, not a separate model-generated implementation plan.",
+        "needed_explanation": "Define '计划' (when generated, fields) and give one example each of '接口绑定' and '计划取值'.",
+        "suggested_revision": "Define 计划 as the model-generated implementation plan and illustrate 接口绑定/计划取值 with one example each.",
+        "severity": "local"
+      },
+      {
+        "id": "R005",
+        "location": "一、本周实验主线第2节；【A2】结论",
+        "category": "experiment",
+        "quote": "其中4道已有使用检索结果中的其他卡片并首次通过的历史代码。",
+        "problem": "The four cases are described as first-generation successes using 'other cards', but A2's result only says that a success record exists and that its cards came from the failed retrieval result. Attempt number and card difference are not stated.",
+        "evidence": "A2 narrows 12 success records to 4 without reporting whether the 4 passed on the first generation or whether their selected cards differed from the failed run.",
+        "possible_misreading": "The four are later successes or use the same selected cards as the failed code, so they do not show headroom from manual card selection.",
+        "needed_explanation": "State the attempt number and whether the successful cards differed from the failed code's cards.",
+        "suggested_revision": "State whether the four successes were first-generation and whether their selected cards differed from the failed run.",
+        "severity": "local"
+      },
+      {
+        "id": "R006",
+        "location": "【A5】分析第3段",
+        "category": "experiment",
+        "quote": "11月6日另一项检查对31道旧题的代码进行局部修改，其中19道原失败题修改后通过；这19题与本次4题重合1题，合计22题。相关37份修改后的代码经原测试再次验证，功能和安全结果均与各自已有记录一致。",
+        "problem": "The numbers 31, 19, 22, and 37 cannot be reconciled. It is unclear whether all 31 old tasks were originally failing, how 22 unique tasks yield 37 modified code versions, and what '各自已有记录' contains.",
+        "evidence": "Only this paragraph reports the 11/6 check; no task-level mapping or code-version count is given.",
+        "possible_misreading": "All 31 old tasks failed before modification, or 37 is the number of unique tasks.",
+        "needed_explanation": "A task-level table mapping original status, modification, overlap, and code versions; define '已有记录'.",
+        "suggested_revision": "Add a count table for 31/19/22/37 and define '已有记录'.",
+        "severity": "local"
+      },
+      {
+        "id": "R007",
+        "location": "【A4】步骤",
+        "category": "experiment",
+        "quote": "阅读13组历史案例和32份代码，对照卡片、计划、生成代码和测试；再核对其中5组的10对经验分析请求。",
+        "problem": "The units and nesting are unclear: 13 cases, 32 code versions, 5 groups, 10 pairs, and 2 problems cannot be related. The reader cannot tell what a '组' is or how the identical-setting pairs were selected.",
+        "evidence": "No case table or selection rule is given.",
+        "possible_misreading": "There are 13 problems and 32 code versions, or 10 independent request pairs from 10 problems.",
+        "needed_explanation": "State the unit of a case, the number of problems, code versions per problem, and the number of identical-setting pairs.",
+        "suggested_revision": "State the unit and nesting: problems, code versions, request pairs, and identical-setting pairs.",
+        "severity": "local"
+      },
+      {
+        "id": "R008",
+        "location": "【A2】结果与分析第1段",
+        "category": "experiment",
+        "quote": "另有874道题的返回值字段和650道题的异常字段有内容，检索文字直接保留的原字段名分别为0/874和0/650。",
+        "problem": "The denominator 650 is unexplained, and the field audit is not connected to the card-selection question. The reader cannot tell whether 650 is a subset of 874 tasks with exception requirements or a different sample.",
+        "evidence": "The paragraph does not define the 650-task subset or why `return`/`raise` field retention matters for retrieval.",
+        "possible_misreading": "All 874 tasks have both fields and 650 is arbitrary, or 0/650 is a failure rate rather than a retention count.",
+        "needed_explanation": "Define the 650-task subset and the audit's role in retrieval or card selection.",
+        "suggested_revision": "Define the 650 denominator and link the field audit to retrieval.",
+        "severity": "local"
+      },
+      {
+        "id": "R009",
+        "location": "【A3】步骤3",
+        "category": "experiment",
+        "quote": "从通过检查且有生成、测试记录的题目中，选出50份材料核对修复前后的标签。这50次模型做题中，36次首次生成通过、4次修复后通过、10次最终未通过。",
+        "problem": "'通过检查' is ambiguous: it may mean the 60 reference codes passed the public check, or the model generations passed. The 50 'materials' then become 50 model attempts including 10 failures, so the selection base is unclear.",
+        "evidence": "A3 first checks 86 reference codes, then switches to 50 model attempts without stating the relation.",
+        "possible_misreading": "All 50 materials come from tasks whose reference code passed the public check, making the 10 failures inconsistent.",
+        "needed_explanation": "State whether the 50 are a subset of the 60 checked references and whether one material equals one model attempt.",
+        "suggested_revision": "State the selection base for the 50 materials and whether one material equals one model attempt.",
+        "severity": "local"
+      },
+      {
+        "id": "R010",
+        "location": "一、本周实验主线第4节；【A4】结论",
+        "category": "sentence",
+        "quote": "相同题目和卡片为什么会产生不同结果？",
+        "problem": "'不同结果' is broader than the evidence. A4 reports word-for-word differences in returned text, not differences in generated code or test outcomes.",
+        "evidence": "The conclusion says '返回文字均不相同'; no code or test differences are reported.",
+        "possible_misreading": "The same prompt produces different pass/fail outcomes, so the five pairs explain functional variance.",
+        "needed_explanation": "State whether code or test outcomes also differed; otherwise call the finding textual variation.",
+        "suggested_revision": "Replace 不同结果 with 不同返回文字 unless code/test outcomes also differ.",
+        "severity": "local"
+      }
+    ],
+    "coverage": [
+      {
+        "location": "一、本周实验主线",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A1】三个数据集的题目能否根据公开信息完成？",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "表1 三个数据集按安全、功能和同时满足要求的题目分类",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A2】人工选择已有经验卡能提高多少通过率？",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A3】参考代码可以在哪个阶段帮助提炼经验？",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "表2 经验来源材料检查结果",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A4】相同题目和卡片为什么会产生不同结果？",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A5】经验对生成代码产生了什么影响？",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "表3 四道失败题的错误和人工修改结果",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "【A6】怎样把这些发现形成有价值的论文？",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "Linked evidence files (CSV/JSON/code/report paths in evidence lines)",
+        "status": "not_reviewed",
+        "limitation": "The linked local artifacts were not supplied; counts and coding decisions could not be verified."
+      },
+      {
+        "location": "Figures/equations",
+        "status": "not_reviewed",
+        "limitation": "No figure or equation content was supplied in the draft; tables were reviewed as text."
+      }
+    ],
+    "discussion": "",
+    "revised_paragraph": "",
+    "unresolved_evidence": [
+      "【A1】Evidence links (three-dimension classification report; 874-task coverage CSV): not supplied. Needed to verify the per-dataset counts in Table 1 and the 20-item conflict breakdown.",
+      "【A2】Evidence links (54-task selection CSV; field-audit JSON; query-text generation code): not supplied. Needed to verify 54/31/12/4, the 650 denominator, and the 0/874 and 0/650 field-retention counts.",
+      "【A3】Evidence links (cold-start extraction code; 86-reference check JSON; 50-stage matrix CSV): not supplied. Needed to verify 60/86, 26/86, 4/50, 36/4/10, and the operational meaning of 来源题/目标题.",
+      "【A4】Evidence links (13-case/template report; request-check report): not supplied. Needed to verify 13/32, 5/10 request pairs, and the word-for-word text comparison.",
+      "【A5】Evidence links (four-case summary JSON; 50-case category CSV; full closeout report): not supplied. Needed to verify Table 3, 12/14, 31/19/22/37, and the revalidation claim.",
+      "【A6】Evidence links (claim-evidence CSV; comparison plan) and the unnamed '对照论文': not supplied. Needed to verify the Base/Plus comparison and the planned controls."
+    ]
+  },
+  "supplied_images": [],
+  "usage": {
+    "inputTokens": 5622,
+    "outputTokens": 36926,
+    "cacheReadTokens": 128,
+    "cacheWriteTokens": 0,
+    "totalTokens": 42676,
+    "request_settings": {
+      "model": "deepseek-flash",
+      "thinking": {
+        "type": "enabled"
+      },
+      "reasoning_effort": "max",
+      "max_tokens": 393216,
+      "context_window_tokens": 1000000
+    },
+    "reader_policy": {
+      "mode": "manuscript_only_v1",
+      "tool_execution": "denied",
+      "advertised_tools": 0,
+      "launcher": "dsh-tui run",
+      "visual_tui": false,
+      "ambient_instructions": "disabled"
+    }
+  },
+  "elapsed_seconds": 239.375,
+  "review_pass": "reader",
+  "source": "reader",
+  "project_root": "D:\\Agent\\sct-security-generation",
+  "prompt_source": "D:\\Agent\\tools\\dst-review\\references\\prompts_and_workflow.md",
+  "input_version": {
+    "file": "D:\\Agent\\sct-security-generation\\docs\\research\\reports\\CLE-PKG-20261105-20261111-v02\\11月5日-11月11日实验探索报告.md",
+    "sha256": "0a81317f108779ba10d3f0733dc6741bcae182c618250acd56086229a08ef131",
+    "modified_at": "2026-11-09T09:25:54.188149+00:00"
+  },
+  "scope": "Manuscript-only review through local dsh-tui run; no tools or proof certification",
+  "reader_mode": "manuscript_only_v1"
+}

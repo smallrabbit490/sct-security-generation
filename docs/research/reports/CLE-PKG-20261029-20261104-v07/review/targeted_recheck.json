@@ -1,0 +1,123 @@
+{
+  "session_id": "session-29874dc3-a02f-4f57-9321-3488bc6dd60b",
+  "draft": "# 10月29日-11月4日 本周结论与下一步\r\n\r\n<a id=\"summary\"></a>\r\n## 把成功修复写进经验卡，能提高代码通过率吗？\r\n\r\n原生 CLE 曾把“读取已有权限名单”写成“自建示例名单”。将来源题上验证有效的动作直接写入卡片后，三个参与设计的题族固定选卡、每题独立生成两次，功能与安全双通过率从 **1/6 升至 6/6，提高83.3个百分点**。加说明和仅动作两组各救回同五个题次，其中四次来自权限名单，一次来自数值类型。【A19】\r\n\r\n三种提炼方式在同一批开发题上的结果\r\n\r\n**接回正常流程后怎样？** 六个题族按正常流程检索和选卡，11个共同可测题次中，原生通过2次、新版3次。模型没有采纳三张新版卡。仅将成功代码的队列大小上限改回原生组的取值，唯一一次救回就消失。【A24】\r\n\r\n**本周决定**　固定动作在上述开发题上有效。自然检索结果尚未支持替换默认提炼方式，本周收口，已登记待做为空。\r\n\r\n统计截至11月4日18:56（北京时间）。　完整报告　思路图册\r\n\r\n\r\n# 10月29日-11月4日实验探索报告\r\n\r\n<a id=\"main\"></a>\r\n## 一、本周实验主线\r\n\r\n原生 CLE 在第 4 阶段把成功修复写成经验卡时，曾把“读取已有名单”写成“自建示例名单”。按两类人工预设规则将来源题上验证有效的代码动作直接写入卡片后，在三个参与规则设计的题族上固定选卡、每题独立生成两次，最终功能与安全双通过率（Joint）从 **1/6（16.7%）升至 6/6（100%），提高 83.3 个百分点**。【A19】\r\n\r\n<a id=\"r1\"></a>\r\n### 改进 CLE 撰写经验卡的方式，能提高最终通过率吗？\r\n\r\n两类预设规则分别处理数值类型和外部策略对象。固定动作后，另加模型说明和只给动作指令是两种呈现条件。两种条件各自相对原生救回同五个题次，分别是命令验证2次、API重定向2次和算术1次，两组均无损失。把动作卡放回自然检索，第一批六族对照的11个可测配对没有新增Joint。更新提炼提示再测，11个可比配对净多1次，三张新版卡均未被采纳；把队列代码的大小上限改回对照值，这次成功就消失了。因此保留原生提炼为默认。【A19】【A22】【A24】\r\n\r\n来源修复、卡片写法、采纳和代码执行各有证据。五条来源的复审说明卡文会写反，真实来源的单动作回放说明哪些指导有依据，代码复核则显示一份正确计划仍可能被错误实现。【A18】【A21】【A23】【A25】\r\n\r\n<a id=\"r2\"></a>\r\n### 给卡片打分、调整记忆详略或更换卡库，哪一环已经验证？\r\n\r\n冻结最终评分后，旧模型45对中42对改选了卡，新模型59对中50对改选。旧模型净多2次双通过，新模型净少1次。五档记忆实验同模型的合格训练范围只有5个题族，低于要求的30个合格训练题族。两题空库探针产出5张临时卡；检索候选池已经建完57题，尚无人工确认标签。【A5】【A3】【A4】\r\n\r\n<a id=\"r3\"></a>\r\n### 经验检查能发现通用测试遗漏的错误吗？\r\n\r\n“经验检查”指研究者根据卡片提醒，为已经生成的代码编写一个具体测试。例如，在收据模板中把姓名设成带花括号的普通文字，查看程序会不会把姓名再当成指令。这个错误在基础测试外被发现，加强后的通用测试也能发现。在另行冻结的21族中，经验独有的真实发现覆盖4族，却都属于车辆字段更新。这支持诊断一个具体机制，未达到跨机制扩大条件。【A6】【A7】【A8】【A9】【A11】\r\n\r\n<a id=\"r4\"></a>\r\n### 哪些错误可以从代码定位？直接精修卡片能否跨题迁移？\r\n\r\n局部删除覆盖外部数据的赋值，在114份保存代码中净救回12份，同时安全通过数从108降到88。面向生成模型统一收窄卡片前提，50族中反而比原卡净少2/100次。单卡精修在50个留出题族中净多3/100次，两个重复分别为+4和−1。固定动作迁移的2次救回都在一个已诊断题族。当前证据把收益限定在可复验的动作和具体条件。【A14】【A16】【A17】【A20】\r\n\r\n<a id=\"todo\"></a>\r\n## 二、当周待做实验\r\n\r\n截至11月4日18:56（北京时间），本周已登记的待做实验清单为空。检索人工标签、完整新卡库和独立新题族的稳定提分仍无完整结果。未达到扩样门槛的方案按原决定收口。图册上栏与本节共用本周截止；下栏详图为10月28日的历史存档，图上旧“待做”和“正在运行”均非本周任务。\r\n\r\n\r\n\r\n\r\n### 【A8】换成同等数量的通用边界测试，经验检查还多发现了什么？\r\n\r\n**591份可比较的首次生成代码中，两组都标出同样的32份，覆盖9个题族。**\r\n\r\n把常规对照加强到同样的检查数量，才能判断经验带来的是额外知识，还是多做了几次测试。\r\n\r\n1. 从82题、72个登记题族的820个单元起步，按公开规则与参考实现筛选出65题、57族的591份可比首次代码。\r\n2. 从相同四项公开输入中各选两项；两组所选检查均可执行且参考实现通过，才纳入比较。按条件筛掉有分歧、入口或依赖问题的单元；不把整个题族一律删除。逐份比较告警及公开反例。\r\n\r\n| 指标 | 常规 | 经验 |\r\n|---|---:|---:|\r\n| 可比首次代码出现告警 | 32 | 32 |\r\n| 出现告警的题族 | 9 | 9 |\r\n| 仅本臂发现的代码／题族 | 0／0 | 0／0 |\r\n| 告警且首次原生Joint失败 | 28 | 28 |\r\n| 告警且首次原生Joint通过 | 4 | 4 |\r\n| 筛选前72族中，至少一次与参考实现分歧的题族 | 11/72 | 12/72 |\r\n\r\n患者与学生模板出现过相同的二次解析错误，两种检查都能发现。筛选前72族是参考分歧的分母；筛选后57族、591份首次代码是32份共同告警的分母。经验在275/591份上改变了检查组合。旧收据例属于开发复验。229个未进入比较的单元不计作失败。\r\n\r\n逐单元记录 · 逐族计数 · 原生修复诊断 · 运行脚本 · 逐项数据与实验记录\r\n\r\n返回对应研究问题　返回本周主线\r\n\r\n\r\n\r\n### 【A10】离线检查使用的卡，当时真的进入了生成提示吗？\r\n\r\n**240份输出中只有23份在至少一次代码生成请求中明确列出离线检查所用的来源卡。**\r\n\r\n追溯原模型实际读到的文字，才能区分卡片自身的问题、研究者转写检查时加入的假设，以及看过代码后获得的新知识。\r\n\r\n1. 按同一运行合并首次和修复轮，从成功请求中提取实际列出的卡号。\r\n2. 逐题对照原卡、当时入模的文本、公开题意与离线协议，区分显式列出、声明采用和代码实现。\r\n\r\n|用途|原文问题|建议替换的行为|\r\n|模板卡|来源解释称 str.replace 会漏掉重复占位符。Python 的默认替换会替换所有相同子串。|只验证原模板中的占位符，保持未知或敏感字段的拒绝规则，按字面输出插入值。|\r\n\r\n每题对应10份输出，每格统计其中有多少份在对应阶段至少一次明确列出该来源卡。首次和修复轮合并去重。经验分析列合计31/240，代码生成列合计23/240。\r\n\r\n|题号|离线检查所用的来源卡|经验分析（份/每题10份）|代码生成（份/每题10份）|\r\n\r\n日志卡挂到HTML检查、命令模板卡挂到XML检查，首先暴露的是来源配错。计划文字也可能间接传递经验。只有卡号与实际输入对上、建议方向与代码一致，再有局部对照，才有依据讨论卡片在某次失败中的作用。\r\n\r\n原卡全文 · 实际入模卡文本和请求位置 · 同格式字段替换草案 · 来源卡与离线检查 · 逐项数据与实验记录\r\n\r\n返回对应研究问题　返回本周主线\r\n\r\n\r\n\r\n### 【A11】独立选取21个新题族，两组各做四个检查会怎样？\r\n\r\n**经验独有发现涉及4族，通用独有发现涉及3族，但经验独有的4族全部属于车辆字段更新这一种机制。**\r\n\r\n用先冻结的等预算通用检查检验经验能否发现多种独立错误。\r\n\r\n1. 排除曾用于设计的题族及别名，从105族中固定21族。每族10份保存单元中共209份有代码，两组各做836次检查。\r\n2. 按代码和按题族分别统计独有、共同及均未发现，核对公开正确对照与误报。\r\n\r\n|判定|仅经验|仅通用|共同发现|均未发现|\r\n|按同一份可测代码|42|24|6|137|\r\n|按整个登记题族|4|3|3|11|\r\n\r\n|题目|登记题族|仅经验|仅通用|共同|均未发现|缺测|\r\n|1062|a896cada1f98|10|0|0|0|0|\r\n|1064|3ef45078d6da|8|0|0|2|0|\r\n|1068|f2f7791aab7a|9|0|0|1|0|\r\n|1069|a5345172a499|5|0|3|2|0|\r\n|1369|ff4d70918950|10|0|0|0|0|\r\n\r\n1062、1064、1068、1369四题分别对应表中四个登记题族，公开任务均为按允许名单更新车辆字段；各有10、8、9、10份代码只被经验组检出。1069也有5份仅经验告警，但同族另有3份共同发现，按族计入共同组。门槛要求至少3个经验独有族、多于通用组、覆盖至少两种机制。前两项达到，机制数只有1。四族共同揭示的是更新字段白名单处理错误，足以支持局部诊断，不能外推到其他错误类型。\r\n\r\n冻结名单、公开题面与来源卡 · 逐输入结果与判读 · 正确对照 · 逐项数据与实验记录\r\n\r\n返回对应研究问题　返回本周主线\r\n\r\n\r\n\r\n### 【A19】把验证有效的动作固定到卡里，能纠正原生提炼吗？\r\n\r\n**固定选卡时，原生提炼1/6、固定动作加说明6/6、仅动作6/6。两种新规则分别救回5次、损失0次，提高83.3个百分点。**\r\n\r\n原生 CLE 的第4阶段要把成功修复写成下一题能用的动作。在命令验证和API重定向题中，原卡把读取已有权限名单写成了自行建立示例名单。\r\n\r\n1. 程序按研究者预设的两类规则提出局部修改，在来源代码上验证保留数值类型或外部策略对象后能通过原测试。三个题族均参与规则设计。\r\n2. 对同一题次固定一张卡、模型和首次分析。原生写卡、固定动作加可选说明、仅固定动作各独立重复两次，每次最多修复一轮。\r\n3. 按题配对评分，逐份读卡、计划、代码，并对失败代码单独回放。\r\n\r\n|参与设计的题族|原生提炼|固定动作加说明|仅动作|\r\n|---|---:|---:|---:|\r\n|算术表达式|1/2|2/2|2/2|\r\n|命令验证|0/2|2/2|2/2|\r\n|API重定向|0/2|2/2|2/2|\r\n\r\n|条件|首次 Joint|最终 Joint|使用修复次数|\r\n|---|---:|---:|---:|\r\n|原生提炼|0/6|1/6|6|\r\n|固定动作加说明|6/6|6/6|0|\r\n|仅动作|4/6|6/6|2|\r\n\r\n命令和API题各救回2次，原生组的4份失败代码仅删除覆盖名单的赋值就能通过。算术题另救回1次，需保留字面量及运算结果的类型。18份最终代码均通过安全测试，5次救回均来自功能恢复。两种新规则最终相同，修复次数分别为0和2。\r\n\r\n新增97次物理请求，当批已报告116,863 Token，63条用量未知；完整旧初析精确复用。\r\n\r\n完整步骤和逐题记录\r\n\r\n返回对应研究问题　返回本周主线\r\n\r\n\r\n\r\n### 【A22】让 CLE 自己检索来源验证过的卡，生成结果怎样？\r\n\r\n**六个库内题族上，原生2/12、来源验证2/11、公开规则2/12。11个共同可测配对中，来源验证相对原生净多3次功能通过，Joint救回和损失均为0。**\r\n\r\n固定背景库和卡位，恢复原 CLE 的自然检索、选择、采纳和生成，比较整条流程。\r\n\r\n1. 三库仅改变对应来源的指导内容，六个题族各独立重复两次，最多修复一次。\r\n2. 全部36单元回放，语法输出无法测量的1份单列。对11组同题同次且双方可测的结果比较。\r\n\r\n|条件|已测/交付|功能通过|安全通过|Joint通过|使用修复|\r\n|---|---:|---:|---:|---:|---:|\r\n|原生|12/12|5|5|2|10|\r\n|来源验证|11/12|8|4|2|10|\r\n|公开规则|12/12|6|4|2|11|\r\n\r\n签名题第一次和文档题两次贡献了三个功能改善；对应的安全条件仍未满足。把2/11与2/12直接比较百分比会掩盖共同配对中的持平，故继续使用原生提炼。\r\n\r\n本批模型和向量合计已报告1,563,797 Token，另1次未知用量保留预留。\r\n\r\n完整对照、逐题证据和成本\r\n\r\n返回对应研究问题　返回本周主线\r\n\r\n\r\n\r\n### 【A24】只更新写卡提示、保留正常检索，新版能稳定提分吗？\r\n\r\n**在11个共同可测配对中，原生2/11、新版3/11，救回1次、损失0次。三张新版来源卡实际采用0次，唯一救回由生成代码的数据大小阈值区分。**\r\n\r\n这个对照直接检验“模型自己写出新卡，并由正常流程检索使用”是否可以作为默认方法。\r\n\r\n1. 用三条真实成功修复运行新版提炼，卡文原样入库。同一检索缓存下比较原生、新版、公开规则，六族各做两次。\r\n2. 三组共36个交付单元；新版1份未得到可解析代码。只对双方可测的同题次配对，抽查不能替代的代码动作。\r\n\r\n|条件|交付/实测|功能通过|安全通过|Joint通过|使用修复|\r\n|---|---:|---:|---:|---:|---:|\r\n|同缓存原生|12/12|5|5|2|10|\r\n|新版真实提炼|12/11|6|5|3|10|\r\n|公开通用规则|12/12|7|4|2|10|\r\n\r\n选中指卡片经检索和终选后呈现给模型；采纳指模型明确声明将该卡用于本轮计划。三张新版卡至少一张出现在8/12个单元的终选中，声明采纳为0/12。队列题唯一救回使用的是旧背景卡。只把新版通过代码的大小上限65536改为原生组所用的1048576，功能仍过、安全转败，原有Joint随之消失。单独更换队列对象仍通过。这一次净增不能归给新版卡的内容。净救回不足3次、正向不足2族，默认提炼方式维持原生。\r\n\r\n本批已报告1,100,850 Token，另33次物理请求用量未知。\r\n\r\n完整结果与因果诊断\r\n\r\n返回对应研究问题　返回本周主线\r\n\r\n\r\n\r\n### 【A26】哪些并行线索支持局部修复，哪些已经测到边界？\r\n\r\n**模板字段与记录分隔可在特定已存代码上修正；换成生成前提醒时，两个条件各通过5/20。局部修法有效与模型会采用该修法需要分别检验。**\r\n\r\n表首行是11月2日的跨数据集实验。增长集取用户档案、权限修改、查询解析，审计集取角色修改、项目成员管理、算术表达式，各组三题，每题两次。两种提炼各通过11/12。A22另测六个库内题族、三种卡库，其原生组2/12。两批题目、条件和成绩各自统计。\r\n\r\n1. 生成对照固定题目、条件和重复；本地回放先复验原分，再单改一个行为。\r\n2. 按专题列出相应分母、来源和结论。重复引用同一批代码只作解释，不合并为新增生成量。\r\n\r\n|研究内容|方式|已经得到的结果|完整材料|\r\n|跨增长集和审计集的六族（11月2日）|模型生成|原生提炼与修改提炼各11/12次 Joint，救回1、损失1|跨数据集提炼|\r\n\r\n|原生1036来源卡|固定卡生成|四族各运行两次，通用1/8、加卡2/8，新增一次来自患者病历。|专题记录|\r\n\r\n学生模板和多记录留出回放分别净多4份和2份成功。检查两条旧字段规则在另一批19份代码上的触发时均未命中。另一次以真实接口和原卡作生成对照，单题有收益也有损失。只有目标端独立生成并通过原测试的改变，才计为当批正式Joint变化。\r\n\r\n返回对应研究问题　返回本周主线\r\n\r\n图册目录说明及图存档带：# 10月29日-11月4日研究思路图汇总\r\n\r\n<a id=\"index\"></a>\r\n## 目录\r\n\r\n统计截至11月4日18:56（北京时间）。每页上方为本周问题和证据。I01至I09下方保留早期原图，每张下栏标出10月28日图文件的保存时刻；包括C01在内的运行与待办状态只属于各图存档。本周已登记待办为空。I10至I12为本周的经验检查、卡文精修和提炼研究。\r\n\r\n一页结论　完整报告\r\n\r\n 前期存档（图文件保存于10月28日16:13／16:16／23:42，各图按各自实际文件标记），下方运行、待做标签仅指存档时；本周已登记待办为空。",
+  "review": {
+    "reader_mode": "manuscript_only_v1",
+    "requires_change": false,
+    "issues": [],
+    "coverage": [
+      {
+        "location": "Top summary '本周结论与下一步'",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "Section 一 '本周实验主线' and subsections r1–r4",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "Section 二 '当周待做实验'",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "A8 text and table",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "A10 text, table header and table note",
+        "status": "reviewed",
+        "limitation": "The per-question table body is omitted from the excerpt; only column definitions and totals are visible."
+      },
+      {
+        "location": "A11 text and provided five-row table excerpt",
+        "status": "reviewed",
+        "limitation": "Only five of the 21 registered-family rows are shown; the remaining rows are not supplied."
+      },
+      {
+        "location": "A19 text and tables",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "A22 text and table",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "A24 text, definitions and table",
+        "status": "reviewed",
+        "limitation": ""
+      },
+      {
+        "location": "A26 text and provided two-row table excerpt",
+        "status": "reviewed",
+        "limitation": "Only two rows of the parallel-lines table are shown; the remaining rows are not supplied."
+      },
+      {
+        "location": "Figure-album directory and archival-status note",
+        "status": "reviewed",
+        "limitation": "Text only; no rendered figure pages were supplied."
+      },
+      {
+        "location": "Rendered figure-album pages I01–I12 and any visual panels",
+        "status": "not_reviewed",
+        "limitation": "No image files or rendered pages were supplied."
+      },
+      {
+        "location": "External appendices, scripts, per-unit data and '完整报告' links",
+        "status": "not_reviewed",
+        "limitation": "Not supplied."
+      }
+    ],
+    "discussion": "",
+    "revised_paragraph": "",
+    "unresolved_evidence": [
+      "A19: per-unit paired records and actual card texts are not supplied; the per-condition rescue count and the two-mechanism attribution cannot be independently verified.",
+      "A10: the per-question table rows and original request logs are not supplied; the 23/240 and 31/240 totals cannot be recomputed.",
+      "A11: the full 21-family table, frozen family list and task-name mapping are not supplied; the four experience-only families are identified only in the prose and five-row excerpt.",
+      "A26: the full cross-dataset table and the 11月2 run records are not supplied; the 11/12 rows cannot be checked against A22's separate six-family run.",
+      "A24: prompt-adoption logs and the threshold counterfactual traces are not supplied; the 8/12 selected versus 0/12 adopted counts and the 65536/1048576 contrast cannot be recomputed.",
+      "A8: per-unit check-selection and adjudication records are not supplied; the 11/72 and 12/72 divergence counts and the 32/32 equality cannot be recomputed."
+    ]
+  },
+  "supplied_images": [],
+  "usage": {
+    "inputTokens": 9477,
+    "outputTokens": 12227,
+    "cacheReadTokens": 24576,
+    "cacheWriteTokens": 0,
+    "totalTokens": 46280,
+    "request_settings": {
+      "model": "deepseek-flash",
+      "thinking": {
+        "type": "enabled"
+      },
+      "reasoning_effort": "max",
+      "max_tokens": 393216,
+      "context_window_tokens": 1000000
+    },
+    "reader_policy": {
+      "mode": "manuscript_only_v1",
+      "tool_execution": "denied",
+      "advertised_tools": 0,
+      "launcher": "dsh-tui run",
+      "visual_tui": false,
+      "ambient_instructions": "disabled"
+    }
+  },
+  "elapsed_seconds": 68.656,
+  "review_pass": "reader",
+  "source": "reader",
+  "project_root": "D:\\Agent\\sct-security-generation",
+  "prompt_source": "D:\\Agent\\tools\\dst-review\\references\\prompts_and_workflow.md",
+  "input_version": {
+    "file": "D:\\Agent\\sct-security-generation\\translation_work\\temp\\weekly_package_20261104_v07\\reader-recheck.md",
+    "sha256": "6956abea20473f42ff899b9762a85a30f2f6fbd1a10553b486d0655beabaf975",
+    "modified_at": "2026-11-04T11:16:48.182435+00:00"
+  },
+  "scope": "Manuscript-only review through local dsh-tui run; no tools or proof certification",
+  "reader_mode": "manuscript_only_v1"
+}

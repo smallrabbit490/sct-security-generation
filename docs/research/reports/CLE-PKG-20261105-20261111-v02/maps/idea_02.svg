@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3080" height="660" viewBox="0 0 3080 660">
+<rect width="100%" height="100%" fill="#F6F8FA"/>
+<text x="38" y="70" font-family="Times New Roman,SimSun" font-size="43" fill="#142136">图3 用来提炼经验的参考材料可靠吗？</text>
+<text x="38" y="118" font-family="Times New Roman,SimSun" font-size="27" fill="#53677E">来源：本周实验要求　绿色：已完成　浅黄：下一步</text>
+<a xlink:href="../11月5日-11月11日实验探索报告.md#a3">
+<rect x="35" y="155" width="414" height="435" rx="12" fill="#F0FAF3" stroke="#A9B8C8" stroke-width="3"/>
+<rect x="35" y="155" width="414" height="72" rx="12" fill="#142136"/>
+<text x="53" y="203" font-family="Times New Roman,SimSun" font-size="29" fill="white">0 为什么做</text>
+<text x="53" y="291" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">检查提炼经验使用的来源是</text>
+<text x="53" y="337" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">否可靠</text>
+<text x="53" y="575" font-family="Times New Roman,SimSun" font-size="27" fill="#246B44">【A3】</text>
+</a>
+<line x1="452" y1="365" x2="465" y2="365" stroke="#9AAABC" stroke-width="3"/>
+<a xlink:href="../11月5日-11月11日实验探索报告.md#a3">
+<rect x="468" y="155" width="414" height="435" rx="12" fill="#F0FAF3" stroke="#A9B8C8" stroke-width="3"/>
+<rect x="468" y="155" width="414" height="72" rx="12" fill="#142136"/>
+<text x="486" y="203" font-family="Times New Roman,SimSun" font-size="29" fill="white">1 检查对象</text>
+<text x="486" y="291" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">86道来源题的参考代码</text>
+<text x="486" y="575" font-family="Times New Roman,SimSun" font-size="27" fill="#246B44">【A3】</text>
+</a>
+<line x1="885" y1="365" x2="898" y2="365" stroke="#9AAABC" stroke-width="3"/>
+<a xlink:href="../11月5日-11月11日实验探索报告.md#a3">
+<rect x="901" y="155" width="414" height="435" rx="12" fill="#F0FAF3" stroke="#A9B8C8" stroke-width="3"/>
+<rect x="901" y="155" width="414" height="72" rx="12" fill="#142136"/>
+<text x="919" y="203" font-family="Times New Roman,SimSun" font-size="29" fill="white">2 如何检查</text>
+<text x="919" y="291" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">依据各题题面编写并运行定</text>
+<text x="919" y="337" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">向检查</text>
+<text x="919" y="575" font-family="Times New Roman,SimSun" font-size="27" fill="#246B44">【A3】</text>
+</a>
+<line x1="1318" y1="365" x2="1331" y2="365" stroke="#9AAABC" stroke-width="3"/>
+<a xlink:href="../11月5日-11月11日实验探索报告.md#a3">
+<rect x="1334" y="155" width="414" height="435" rx="12" fill="#F0FAF3" stroke="#A9B8C8" stroke-width="3"/>
+<rect x="1334" y="155" width="414" height="72" rx="12" fill="#142136"/>
+<text x="1352" y="203" font-family="Times New Roman,SimSun" font-size="29" fill="white">3 参考结果</text>
+<text x="1352" y="291" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">60份通过检查，26份出现错</text>
+<text x="1352" y="337" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">误行为</text>
+<text x="1352" y="575" font-family="Times New Roman,SimSun" font-size="27" fill="#246B44">【A3】</text>
+</a>
+<line x1="1751" y1="365" x2="1764" y2="365" stroke="#9AAABC" stroke-width="3"/>
+<a xlink:href="../11月5日-11月11日实验探索报告.md#a3">
+<rect x="1767" y="155" width="414" height="435" rx="12" fill="#F0FAF3" stroke="#A9B8C8" stroke-width="3"/>
+<rect x="1767" y="155" width="414" height="72" rx="12" fill="#142136"/>
+<text x="1785" y="203" font-family="Times New Roman,SimSun" font-size="29" fill="white">4 选取记录</text>
+<text x="1785" y="291" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">从通过检查的题目中选50份</text>
+<text x="1785" y="337" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">历史记录</text>
+<text x="1785" y="575" font-family="Times New Roman,SimSun" font-size="27" fill="#246B44">【A3】</text>
+</a>
+<line x1="2184" y1="365" x2="2197" y2="365" stroke="#9AAABC" stroke-width="3"/>
+<a xlink:href="../11月5日-11月11日实验探索报告.md#a3">
+<rect x="2200" y="155" width="414" height="435" rx="12" fill="#F0FAF3" stroke="#A9B8C8" stroke-width="3"/>
+<rect x="2200" y="155" width="414" height="72" rx="12" fill="#142136"/>
+<text x="2218" y="203" font-family="Times New Roman,SimSun" font-size="29" fill="white">5 记录结果</text>
+<text x="2218" y="291" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">4份修复前后结果的标签容</text>
+<text x="2218" y="337" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">易混淆</text>
+<text x="2218" y="575" font-family="Times New Roman,SimSun" font-size="27" fill="#246B44">【A3】</text>
+</a>
+<line x1="2617" y1="365" x2="2630" y2="365" stroke="#9AAABC" stroke-width="3"/>
+<a xlink:href="../11月5日-11月11日实验探索报告.md#a3">
+<rect x="2633" y="155" width="414" height="435" rx="12" fill="#FFF8E8" stroke="#A9B8C8" stroke-width="3"/>
+<rect x="2633" y="155" width="414" height="72" rx="12" fill="#142136"/>
+<text x="2651" y="203" font-family="Times New Roman,SimSun" font-size="29" fill="white">6 下一步</text>
+<text x="2651" y="291" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">标清来源证据后比较不同提</text>
+<text x="2651" y="337" font-family="Times New Roman,SimSun" font-size="29" fill="#172B40">炼方式</text>
+<text x="2651" y="575" font-family="Times New Roman,SimSun" font-size="27" fill="#246B44">【A3】</text>
+</a>
+</svg>
