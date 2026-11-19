@@ -1,0 +1,16 @@
+{
+  "cli_version": "2.15.4",
+  "queries_commit": "e637eb720bb5d1061a8d99bc61d11dbe011d8b15",
+  "assets": [
+    {
+      "file": "codeql-linux64.zip",
+      "bytes": 649163561,
+      "sha256": "f1a3fe9e83289cf24a69d964710860211c5a9be26da14bab08f240e273a1f5a2"
+    },
+    {
+      "file": "queries-2.15.4.zip",
+      "bytes": 60262453,
+      "sha256": "2172d580baa1a88eaa0f3649b7402a85acf2fb1819f9954d32f3821eae71a6f3"
+    }
+  ]
+}

@@ -1,0 +1,602 @@
+[
+  {
+    "name": "last-secure-code-benchmark/cmdi_cachefs_mount_manager_function",
+    "digest": "sha256:d12f7d9a4103ba178e139cde92c59033c072623e8e2017656ae8377266204bc3"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2012-1617_function",
+    "digest": "sha256:f9fcc69569a28e951b0309197f6a9d08ab4907ebccfd0316ba392cf37bbeb73f"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2012-4456_function",
+    "digest": "sha256:6957ea9ebcdfb9fc4a83bed4bf37c2c7de5cce19360c6c3635e734231cafde86"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2012-6662_function",
+    "digest": "sha256:61a7f0354fb7dde9bd196f448155a959cdc5ab76cbfa1bb01f1f4082d6719bbe"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2014-2383_function",
+    "digest": "sha256:9d5b170c0309060a8df4cfcfcfba375d40c5393e3fd4fbbfe4e76c89b5487bc6"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2015-10043_function",
+    "digest": "sha256:930397c820bae5638f89fb97010d9155baac8d1c9df85b9f141b9082ddd9a36a"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2015-1789_function",
+    "digest": "sha256:4eb4db8d020ab1886467c159c2ef621f69cb5351059025cbc5142004e7668ec4"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2015-3010_function",
+    "digest": "sha256:8505597847cd5d3783dd8d9364352543567ba7f1958c4fac16b2b216d225d433"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2015-3902_function",
+    "digest": "sha256:3004a7f8f2cb91b6d92bd4fe90c9fd147516550f486c78874337ba1107f873fc"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2016-6897_function",
+    "digest": "sha256:6ba2a1701f40ed56b68619be56f6b879690229db8e50dcbb7a2696114917286c"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2017-12595_function",
+    "digest": "sha256:fdf01d879d96044bc37a4556c283a8fd6c36d81fcbe591fd968321f8217b53ef"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2017-14040_function",
+    "digest": "sha256:d4e9b76a5bc2c817454e11135fc35b241b2348143a73207ecb3e627d0cacc75e"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2017-15367_function",
+    "digest": "sha256:5fa349cc05ffddd9cbcbb2ba406a67502de87b773df91f67d9cb306dd80e0430"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2017-17714_function",
+    "digest": "sha256:1c0d57da284efe6f1556258155243cc7ffee3e21e2a4ce75c87a71a7abd61931"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2017-6839_function",
+    "digest": "sha256:b94dbd8e8c05f6d40dcca810a9d3442c39acdbd30412e64ae6b4cb864000278d"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2018-13449_function",
+    "digest": "sha256:d42ebd080f393accead26ca41b06589e4cbd6ccb0d3034a6dad754576fc02695"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2018-13797_function",
+    "digest": "sha256:a59902da1d081ac1da772c6f88b0ade59ccba3b0dcab33ac8e0cc5152fceabd4"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2018-20835_function",
+    "digest": "sha256:0074cab3676389bbdb34ffa22043db773b8f0f3df050ef37796a17a51c2660a5"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2018-8050_function",
+    "digest": "sha256:30116df55877aa5eea9ffecb27cc9466c91a5753ac503ca02db43c28e78ca32f"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-10749_function",
+    "digest": "sha256:f779a3555f87362b3fb56a03bd6527c8c5b84fa2efc8dc43a2d4911841d4b8af"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-10752_function",
+    "digest": "sha256:3d0fefedecfc0502348d20380d78509adaea4da39662e24b17273713e0cc03ec"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-10767_function",
+    "digest": "sha256:b79bb73db47c5fe7a589884121a68d2e7cf00b719bcd65402c905ee4473dc483"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-12980_function",
+    "digest": "sha256:e36f5b9691ecedac5cb4c2862fe8e8ec2ea0fef1653a91c9209515d0231465e7"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-15150_function",
+    "digest": "sha256:f1890a40215b3c9a9123d03f8b7add7dd73d1890875dd389505376bd9dd55b58"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-19923_function",
+    "digest": "sha256:d8930eb07d26c36426663d0f1712e64776a146bb5e9e0c15c720354ec3dceeb7"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-19925_function",
+    "digest": "sha256:355946c3e4ed767c99acedc1a39d0f513e5355432ce2d8c4cf39ce20e726b364"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2019-3817_function",
+    "digest": "sha256:1363fce8c52ff8d70b75060092c1694130c7731bcaedb09e9192de60e8836619"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-11008_function",
+    "digest": "sha256:8e875e9fccef880e10592efb72182fa7ad0823e187d98c45fd1fd69ee4442c3c"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-14067_function",
+    "digest": "sha256:77c4371b955b78d386b03da632119e6f9a8b4aa9ff29b70cc846735129b77ebf"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-14404_function",
+    "digest": "sha256:b560926c2ec6b87ffb0d5b822a6dad97c56f2cef26ebbbd724a8747a0e6c7dc7"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-15110_function",
+    "digest": "sha256:9c7a9a9d9a197b784865a43b31348c9809bb8a38491824ffb9fca809d1c6d238"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-15213_function",
+    "digest": "sha256:22bf12b6c6ea5f67c664e2bc668939a2be1ae0162a16b43e4a14396596e59d5c"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-15234_function",
+    "digest": "sha256:5574dc39aeccd7f8b2bbf202ce750a80c83139c7488273f132ecf24fa24728cc"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-15248_function",
+    "digest": "sha256:4e0cd31e874af5a4dbb124d782d513bcc3e8af49fd7af9062914e662a9ac5c31"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-15888_function",
+    "digest": "sha256:5160c7776d0ce6bae166bd2c05d598a916ed11f8ae498c38fdf59382de500b29"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-19499_function",
+    "digest": "sha256:7b62632457e9176da04230bf3e0048b6a2a56f51146ca825d0c7d83543ea546b"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-24855_function",
+    "digest": "sha256:847742b2951b15487dd99e7b973c7b1b454decd39d0729a5643c0a841aaa2c6b"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-26250_function",
+    "digest": "sha256:739354e8feb54a5d6fdf1a3ab23938af1251f97b004262fb2b8c5715d61789a4"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-26280_function",
+    "digest": "sha256:288d67cd611535c95b582b79731b7d846556553de2904d9734f5345baf337d56"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-26295_function",
+    "digest": "sha256:d0e364a768d41a90f1ea9543f0a36f3aff7801ebdc6582f05e7a9d02f1731b7d"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-28451_function",
+    "digest": "sha256:995dec9e4998c23256e86781836af2e318ae4303dbe4bfd6cd86b646a29684c5"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-36564_function",
+    "digest": "sha256:d799392e7a5292ca235bc8fec3ee4c7f6800aeb2e3cc3c1926336c29871bea44"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-5238_function",
+    "digest": "sha256:b43c097c023181dca7f20929042f0efc6c74cfc1b994abf869592ee95a6db9eb"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-5259_function",
+    "digest": "sha256:f6baadfde172135cffbc1359324bf330d80205eca9c9295de1093b7078b40d9a"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2020-7735_function",
+    "digest": "sha256:42cbadf554207118943cdbdfcf04a18d1e1867e662ed3ff00ad4419afb608da2"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-21421_function",
+    "digest": "sha256:311e081e3cd531251f0d861e6d2fb2288144b3126fb73fb0d74b05610aa0eca4"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-3119_function",
+    "digest": "sha256:8921a5b6c3ee1d2194201f84224c817e7a56a635397f860b61118ff80e1f157a"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-3223_function",
+    "digest": "sha256:8a31f793946535c7757a8b6a230d01868b56112d293b9a7035fcb1c0a5936263"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-36978_function",
+    "digest": "sha256:33397e9e86bcd3907a74b07e504536b10e47f23d212e92d9a5126d0cc65cbd50"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-39207_function",
+    "digest": "sha256:8027d712f1ae0f00f27ff2ce24383160defeb19cf99a114ec443bb2e25858274"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-40566_function",
+    "digest": "sha256:856a52e6ad9a296b0d9b23b94dc3d8e54b86f31eb0676c52b12cce887be69055"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-40812_function",
+    "digest": "sha256:75dc3678802de6dd2af93183eb7504af765ab63fcdc733f489783425c492e374"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-41146_function",
+    "digest": "sha256:888e7d2b47986cf73d4bd2bb19f1e7451f78157b4dee6a15dea2721e4767c0a0"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-41185_function",
+    "digest": "sha256:fb21cbb0d4603d75f5049e2eb0797bde8ce93597423eda4b6a66736ef66e90b1"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-4168_function",
+    "digest": "sha256:4fdc1489ebec52dcbadf2177ead65dcce782bf16f1d2914d31e9d56d61380372"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-4236_function",
+    "digest": "sha256:71b8e75c68124d780b83bb45dc5b910f0da4b5d80f2b58f30c85011a81b50ac8"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2021-46104_function",
+    "digest": "sha256:52fb587f20691209ee180dd5cf4c8d1741f252000b5b661a9328ad8ef07b0ec8"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-0871_function",
+    "digest": "sha256:b4778b1eec04292b100c56e3ab9ceb5a64d25becc2e34e6307c2ddfcfddddedb"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-1053_function",
+    "digest": "sha256:29052b4954a8b2ce9e850ceb57546e08a4dd82194cd4ba7541eb587c072c4cb5"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-1345_function",
+    "digest": "sha256:7b51b7389ef965619b07284d4586e4e96807738340890c4acdff44989b9e64d0"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-2014_function",
+    "digest": "sha256:79ce8c29ccfab503451c93d6bb5a038bfdb84ffab106d5739fbaec7415aabda9"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-21722_function",
+    "digest": "sha256:2fb6f22e7f34dbb0a66e641e6d1b254f99fa8e667cfb8c61c1050747bed91a37"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-24762_function",
+    "digest": "sha256:320193c85942835be81100f8e3fb4b610269a53e18790e14baaddeedb7ae88fa"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-24786_function",
+    "digest": "sha256:a40980d921965dc25b829e1852511099c565659b36a7cd43c5653efd0f61cb1b"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-24828_function",
+    "digest": "sha256:e052b224642720fa2225b276acf7f0c0c5935d5bc85bbcccad289ce9be8b647a"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-24840_function",
+    "digest": "sha256:de140e3c576a0792329b71e167c300348aaae594c66b73fc3c69155aa1c912bf"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-2553_function",
+    "digest": "sha256:d28a786af2249f9e79fe5e5483239638cb12743ffaa2ba99f44ea09d7c833fa2"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-25856_function",
+    "digest": "sha256:66e153ceaa5395fb83922555c18f360093c7bf93cd11ff279e7333d8e99fe4bc"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-25873_function",
+    "digest": "sha256:70a9cb95d6cea2bec5ad4907298ca16dca0023f79b68f6fc0195657bc4da9283"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-2900_function",
+    "digest": "sha256:8b9df9cbf972227b808195d0ed90653a8389a6185fdf2ec6fcdf527d627c7fab"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-29221_function",
+    "digest": "sha256:04ba30c7b534e10afc3cd730ae576fb63e064b2cefb3fa55919349518cb44a86"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-31032_function",
+    "digest": "sha256:d4189c8508e910a3022a057a6d4eb7ffd0b29a92fac7ba338ebb7e3ed1e71c7b"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-36081_function",
+    "digest": "sha256:527f9386af2af88859c2093dbdbb7b965e6d75bc210944222098ed3dd69924ec"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-36085_function",
+    "digest": "sha256:88edf82b143630fef0da008308467c1cfdc40beef7403935bbca4ffe8396e6f7"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-39209_function",
+    "digest": "sha256:6a4fadcad872e65c2d5d613cc7264636470fc425084675c1ba692a81e5285337"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-39213_function",
+    "digest": "sha256:36bc16667f5cd32722aa40fe43ca8f22f4849a9cc9be70ed31386387450a678c"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-40896_function",
+    "digest": "sha256:b2bcc164ad3d8113bd73e1ed908f5e1201494f212a52f845a8f4d08562a6f06d"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-41920_function",
+    "digest": "sha256:2f572582bc0d54cfc2a1ec8664e984461a45992d584ee1dd6f66579b0ba5c0ac"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2022-41922_function",
+    "digest": "sha256:bec5f2c01905760fe06d5f744cd0d2f1ce0eb48dcf365aa9c8862112ad1aa1ef"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-0434_function",
+    "digest": "sha256:1686cac97fc54a0029e182805f3e02a902dc12a28a5817c647a45ea4260097b2"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-24827_function",
+    "digest": "sha256:28dd177e471cfb6f08530f2ac67739b86decc13ebad9ebab3d4c5cca48825037"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-25652_function",
+    "digest": "sha256:c78bc75bdf02ede7803a919e0845412cd3aea03d13516e48bab866ef826fd5ee"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-25805_function",
+    "digest": "sha256:e57d30c745817912c381e5157db6ce55f024ae388b38f66badd70bca8c299633"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-2610_function",
+    "digest": "sha256:4abeebd55c7b984fcf9494ce83f94c9451065989512652e1552e9e0cc96ced14"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-26156_function",
+    "digest": "sha256:e84e97c4ec20e6715e4ff222c836d7527b17b129a1b02a369dee3a444d9b40b9"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-34105_function",
+    "digest": "sha256:206bb14924a1da93e79574e24951f400d191405a58c0ebe1b577cfcce62cd2aa"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-34237_function",
+    "digest": "sha256:49321f833500420cb874fffffd0940169d15b10f623b7171bf797668c2215c78"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-35163_function",
+    "digest": "sha256:dfb3fa7b128d31dd6cc40b834544df4a40df0a1e8cbf52567ccfa1e437414512"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-35934_function",
+    "digest": "sha256:fc8b236c36e3255f90b02ae6ef2e5d42766caa212fa09c29f027ffd8f22f3d51"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-36327_function",
+    "digest": "sha256:de4d098d3d206d3195d5bce473d24f8bce3ad476ef08a423d3fea558b6b7ca34"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-40017_function",
+    "digest": "sha256:1492459a01949dea1a41c38ff4ce166d89e5e32b07851ad7ff879e68b6638c42"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-45158_function",
+    "digest": "sha256:ec80428cdf3be758c64010ff35de241e404b58ed4991b8aec4acd7a1b145b9ce"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-4683_function",
+    "digest": "sha256:be129f7a818ab73394b2258758b11dde5e594e9600bafc3e9dde4e672d80143c"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-4782_function",
+    "digest": "sha256:09ba23e32d71340b63b9606dbff1309a05f72cb98865b13771e12ca7acd545d4"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-48218_function",
+    "digest": "sha256:1d3d7cc3a84de839c1382888f458767787d20693810f74d86fde3210742a2977"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-51450_function",
+    "digest": "sha256:25c0841601ca730033aaac6ed518fa99619e6d52a1b65ec656eafdd4a518066f"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-5595_function",
+    "digest": "sha256:3431ccc5de0195fefd8e8a231326fc7c40a57476abd7c18c939aa5461da516dd"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2023-6850_function",
+    "digest": "sha256:c372d1f3afff8b2f5befbcd8ce173c7c058658850d2d03001d460e7ab0f6d67f"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-0815_function",
+    "digest": "sha256:386f426c1783b0cb20e2cf6e89f591c40979c305f7e82b9396b4935f50241b46"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-1086_function",
+    "digest": "sha256:c7866010d8628e721c9bbce85120ca77d5adb948f6cdc302c6d2786eb9b00dc6"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-27920_function",
+    "digest": "sha256:a7007ed4e80deb9cc8c7e05a59593ae91f1e09b43e07b235b01f39aa8a3e374c"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-28117_function",
+    "digest": "sha256:b79370c6f329f72104ca6ebb595cbae667d8bc726982370adeb93bfa029e4ccb"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-28861_function",
+    "digest": "sha256:f7802cbe39a9d28f4a03413292c2d97ca008e51c7e6d3fafaf3cb7d3bb8fa88e"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-29031_function",
+    "digest": "sha256:14a1f45d73ec56d149d5184daf98599f8f59f5dc30d29761b33fa62c203a3bcd"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-3104_function",
+    "digest": "sha256:a0caf57429172207bc8f59aab630be72e3253c8dc58ea61c86e8741c010454aa"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-34352_function",
+    "digest": "sha256:cb935c84434f5177cbd264de1ae665b87222907e27268db037060d4ff4b4c776"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-35241_function",
+    "digest": "sha256:978d877e478c3da31d8b0589dda33ffb5476c997da661b3a58d22129d4e850a4"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-37300_function",
+    "digest": "sha256:3ff355c5571ee5fdb316280f0723953c6657c0a71251e4129ab73d1aa251c588"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-37890_function",
+    "digest": "sha256:b0150c22c51db8ef37115f5c58fd8923c159676fa771c8ddac16221cce6f010b"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-39690_function",
+    "digest": "sha256:1cb25f9b58c5ba864968ef7d34c2fdd4291ae7f4a33373aa9bacfd90f28c8710"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-4284_function",
+    "digest": "sha256:656ee7d894068b0851d033ba6cd3a0bfb8ea13c822d71f82751378ef1b66018e"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-45258_function",
+    "digest": "sha256:7f6e254521d8cb86f3e818617df88bfca86143a427d2be87d3e8ecd130f9a914"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-5181_function",
+    "digest": "sha256:1e96d30675815b6bbcdf60a1b3d55ea806297c3a6c33bc6bc098f23512b10a99"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-5751_function",
+    "digest": "sha256:de092e47d4ea4b70686881edcbcb652ab5206a1581e605e3bcbdb5355141a3f9"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-5982_function",
+    "digest": "sha256:3cd1e240cc3252ab041278243c2dd15c14bc0885de778df07268970f5af8f01d"
+  },
+  {
+    "name": "last-secure-code-benchmark/cve-2024-6095_function",
+    "digest": "sha256:ed0112a7abf4b1db76e08c6e3e21d3c83f1d1d07f7311c7c272f3b45d7de6a69"
+  },
+  {
+    "name": "last-secure-code-benchmark/deserialization_mse_config_import_function",
+    "digest": "sha256:dde082dc34fd7af27da33629cc9f0e3a8fab2a31640778e92e1010afc2d72718"
+  },
+  {
+    "name": "last-secure-code-benchmark/deserialization_ons_event_consumer_function",
+    "digest": "sha256:1f4f3aad25c4a4f7b8d0cc59ea024fb206f6d3871a7124140929cf495dd13d3b"
+  },
+  {
+    "name": "last-secure-code-benchmark/deserialization_rpc_task_dispatch_function",
+    "digest": "sha256:0e299f37406235d5d3141e74336c6656ecc323255b2b47c767add2ff00c37203"
+  },
+  {
+    "name": "last-secure-code-benchmark/deserialization_skillforge_yaml_parse_function",
+    "digest": "sha256:2b31c7dda9daedfb93eedef8074c2e56e0fbdd42dc1ed8dec21309d8357c9b93"
+  },
+  {
+    "name": "last-secure-code-benchmark/el_inject_inspector_resource_function",
+    "digest": "sha256:dea2601a109d5c5a7be49d054e14e01779aada6d9b0406d694e6487f10755ce9"
+  },
+  {
+    "name": "last-secure-code-benchmark/ffmpeg_filter_inject_imm_watermark_function",
+    "digest": "sha256:5d675caaaf20cb7b0d446c33914dcb7541a719ab88bcdedcba6d3705a4c8c01a"
+  },
+  {
+    "name": "last-secure-code-benchmark/idor_article_publish_takeover_function",
+    "digest": "sha256:fe61ddbb146eeafb9ccc94bdbe57bd83662e335894c9d046986de2d8682b5160"
+  },
+  {
+    "name": "last-secure-code-benchmark/idor_beian_order_info_function",
+    "digest": "sha256:b9abb6fcf69795986d54fb495078714372096fe0da2e6e403bf18d29c6ed07ba"
+  },
+  {
+    "name": "last-secure-code-benchmark/idor_contract_detail_access_function",
+    "digest": "sha256:23ad99821eb45344fe3bb875e2e07fd7f1ad457410e18332275f43f7debc5b98"
+  },
+  {
+    "name": "last-secure-code-benchmark/idor_delete_reading_task_function",
+    "digest": "sha256:d64b29016a6247cb0a88c83ea53ec07d533c30f7f545bd00a61af15d5ef78f88"
+  },
+  {
+    "name": "last-secure-code-benchmark/idor_hotword_update_function",
+    "digest": "sha256:2014849b7fd061661f9ebb8953796feb47a7f23eec5a8057b82968718857b1ec"
+  },
+  {
+    "name": "last-secure-code-benchmark/idor_workspace_add_member_function",
+    "digest": "sha256:c471b3055dccab61825c097f87e771169d5324c049ce5d78397db6da5c3aa808"
+  },
+  {
+    "name": "last-secure-code-benchmark/info_leak_password_reset_identity_function",
+    "digest": "sha256:cb8a6ab0fb877c499cbb9de2cc50db6c4d4c1b09b70eb432a620eb3dbc393c0b"
+  },
+  {
+    "name": "last-secure-code-benchmark/jdbc_rce_datasource_hub_function",
+    "digest": "sha256:93c645b24720171a767fa596aa8891672abaa17407493ac97a5658e3b6c538f6"
+  },
+  {
+    "name": "last-secure-code-benchmark/jexl_inject_excel_quotation_function",
+    "digest": "sha256:690f4100f9b8caaace8051be03207c97296ec769f64911d30ff41b465e8ec153"
+  },
+  {
+    "name": "last-secure-code-benchmark/negative_qty_catering_order_function",
+    "digest": "sha256:3cf8504aa107d7b09a8305dff977789855671664e37c0b3a327a925322fb902b"
+  },
+  {
+    "name": "last-secure-code-benchmark/param_tamper_order_duration_function",
+    "digest": "sha256:e62caea63fe8992bbcd2e30e370486e3a7d1c805ec2cfa5d669130407befde63"
+  },
+  {
+    "name": "last-secure-code-benchmark/path_traversal_absolute_resolve_function",
+    "digest": "sha256:7b4c38cf84ce1717cfdced5662d73806daccae731c1a32bc3da40b1fc899035f"
+  },
+  {
+    "name": "last-secure-code-benchmark/path_traversal_skill_manage_function",
+    "digest": "sha256:a7cceb681cd5f5f5aaece6470af22d4d708d569279dee29225476db21677c5d4"
+  },
+  {
+    "name": "last-secure-code-benchmark/path_traversal_zip_import_function",
+    "digest": "sha256:d95dee62cdaf9e22caab471cf79023886b4f08b0efc8374c0c7c525cd705f911"
+  },
+  {
+    "name": "last-secure-code-benchmark/rce_maven_build_service_function",
+    "digest": "sha256:4375eb09cd90516eb9ebc310fb033835c4ed036410f8cb015589110f122cf76b"
+  },
+  {
+    "name": "last-secure-code-benchmark/sqli_esf_service_query_function",
+    "digest": "sha256:e252b08d5683b267037d8529293743e0a30d4bbae8612cbb45cb5d6ecc00e252"
+  },
+  {
+    "name": "last-secure-code-benchmark/sqli_orderby_ak_monitor_function",
+    "digest": "sha256:3a34b56e5c30421280c3210ffd5fe2c59ce175d1674b0c80188539c4def06e80"
+  },
+  {
+    "name": "last-secure-code-benchmark/ssrf_ai_modelgate_validate_function",
+    "digest": "sha256:1e1ba3431b319959580921ed9520193e3352871c0d76588fa6efbb2cd9853984"
+  },
+  {
+    "name": "last-secure-code-benchmark/ssrf_dms_instance_ping_function",
+    "digest": "sha256:1747067d3458c0c92a4c5c91a7d6433c6d4cc050fee451af739d0e6dd6c94809"
+  },
+  {
+    "name": "last-secure-code-benchmark/ssrf_note_resource_proxy_function",
+    "digest": "sha256:4b802aca1df254356bbff6ee360a33d3c76bac71afc36cd9ba8a8117c4379b10"
+  },
+  {
+    "name": "last-secure-code-benchmark/ssrf_storyboard_source_fetch_function",
+    "digest": "sha256:b3b30f9a127175f32d64318f198c191d2224328943fe743fbb30f9253aa0d0c0"
+  },
+  {
+    "name": "last-secure-code-benchmark/upload_key_overwrite_shared_template_function",
+    "digest": "sha256:fc918d868e7dcbdeabcd94f15ea51abb4a9a003e7c807d619b98a12b02f06c1a"
+  },
+  {
+    "name": "last-secure-code-benchmark/upload_unrestricted_file_type_function",
+    "digest": "sha256:c79c13661562d86624e21c6862412fe844a183411229f4ee403edc4a75527cd3"
+  },
+  {
+    "name": "last-secure-code-benchmark/vert_priv_devops_invite_function",
+    "digest": "sha256:5b88e95bfb0e959ff6e41572bd8dc034116d8556a16d481b52faed4fbce4a461"
+  },
+  {
+    "name": "last-secure-code-benchmark/vert_priv_module_revoke_bypass_function",
+    "digest": "sha256:0ff36b3a5529a5edd5a26f635183f12fb80f83dd7d660dc9df2f2474eb7b3cff"
+  },
+  {
+    "name": "last-secure-code-benchmark/xss_codeforge_readme_render_function",
+    "digest": "sha256:d9f3410de3bdc239ed40b0ae88510e01df5e45f23da4821e85293413b57a0d44"
+  },
+  {
+    "name": "last-secure-code-benchmark/xss_content_type_passthrough_function",
+    "digest": "sha256:5af2794e8326b9ae37ea73bbfa46c00666cf19f9a86192fbe3e9cbf6b9beffb0"
+  },
+  {
+    "name": "last-secure-code-benchmark/xss_svg_upload_preview_function",
+    "digest": "sha256:32b35e9f95819ff49e93e60ae9b381896871c1cd51366e22c559ea1ff8f10365"
+  }
+]

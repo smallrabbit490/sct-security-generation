@@ -1,0 +1,47 @@
+{
+  "revision": "f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7",
+  "files": [
+    {
+      "path": "data\\external\\autosuit\\upstream_20261118\\.gitattributes",
+      "url": "https://huggingface.co/datasets/amazon/AutoSUIT/resolve/f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7/.gitattributes",
+      "bytes": 2664,
+      "sha256": "b03b12b195de4d061ffcbf8671ce412433776f097cad91b7c89fc1e7f5bef971"
+    },
+    {
+      "path": "data\\external\\autosuit\\upstream_20261118\\README.md",
+      "url": "https://huggingface.co/datasets/amazon/AutoSUIT/resolve/f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7/README.md",
+      "bytes": 10274,
+      "sha256": "5ded625e973409ecdadcac516c1526ca8506437c17e284c8da833a941a60989c"
+    },
+    {
+      "path": "data\\external\\autosuit\\upstream_20261118\\c\\test.jsonl",
+      "url": "https://huggingface.co/datasets/amazon/AutoSUIT/resolve/f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7/c/test.jsonl",
+      "bytes": 2968742,
+      "sha256": "ad94caa8e31320f914fc3868a09daef3982d10d17deaccb295ef515f1a3b0f85"
+    },
+    {
+      "path": "data\\external\\autosuit\\upstream_20261118\\convert_to_hf.py",
+      "url": "https://huggingface.co/datasets/amazon/AutoSUIT/resolve/f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7/convert_to_hf.py",
+      "bytes": 8057,
+      "sha256": "a3b0cb8073b5fade287b35e2ee973e324f2035637061004adbc9fc8a7f6fc64c"
+    },
+    {
+      "path": "data\\external\\autosuit\\upstream_20261118\\cpp\\test.jsonl",
+      "url": "https://huggingface.co/datasets/amazon/AutoSUIT/resolve/f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7/cpp/test.jsonl",
+      "bytes": 1702466,
+      "sha256": "7494d26ad243540fcf2e82f93d8d7623990585fb598a3e7517fc3ecc10e7b646"
+    },
+    {
+      "path": "data\\external\\autosuit\\upstream_20261118\\java\\test.jsonl",
+      "url": "https://huggingface.co/datasets/amazon/AutoSUIT/resolve/f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7/java/test.jsonl",
+      "bytes": 4445437,
+      "sha256": "5d4fe3734595d303baba5c19d5dc3a53787e3a9b50a7c85fae4139c6cf8518b7"
+    },
+    {
+      "path": "data\\external\\autosuit\\upstream_20261118\\python\\test.jsonl",
+      "url": "https://huggingface.co/datasets/amazon/AutoSUIT/resolve/f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7/python/test.jsonl",
+      "bytes": 1366142,
+      "sha256": "1a39fab8948a456af877a37be582d1f535c1c5fe20f8a3f72033e62c249d83d3"
+    }
+  ]
+}

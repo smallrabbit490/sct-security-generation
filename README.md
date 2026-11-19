@@ -568,3 +568,7 @@ SCT 的正式经验轮次 `R0–R3` 不是历史缓存：它们分别表示初�
 如果你要复现实验，请按 [复现实验指南](docs/reproduction_guide.md)；如果你要判断某条 baseline 是否忠实，请按 [Baseline 忠实性说明](docs/baseline_fidelity.md)；如果你要理解 SCT 当前还缺什么，请按 [SCT 差异审计](docs/sct_docx_gap_analysis.md)。
 
 代码采用 MIT 许可；外部 benchmark 数据仍受其原始许可证和再分发条件约束。
+
+## 带标签数据与人工复核（2026-11-18快照）
+
+[数据总入口](data/README.md) · [15库统计、实际审计prompt与标签口径](data/audit_release_20261118/README.md) · [150条人工标注规则与表格](data/audit_release_20261118/human_review_150/README.md)。共5,433题，保留合格/有缺陷/无法判定与缺测、分歧；人工候选以PLT、CodeSecEval Base/Plus为主。第三方许可及动态验证边界见发布说明。

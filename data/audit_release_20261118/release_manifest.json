@@ -1,0 +1,23 @@
+{
+  "total_tasks": 5433,
+  "sampled_tasks": 150,
+  "selection_seed": 20261118,
+  "sample_counts": {
+    "PLT": 60,
+    "CodeSecEval-Base": 40,
+    "CodeSecEval-Plus": 20,
+    "CodeGuard+": 3,
+    "AutoSUIT": 18,
+    "SALLM": 3,
+    "CWEval": 6
+  },
+  "six_rule_protocol_sha256": "ba7824e0961b483759e45b8e90e9d4a6e7800acb47d50ed792e962a38255aa1e",
+  "legacy_aggregation": "v2首判，保留第二判与分歧",
+  "currency_cost": "未测量",
+  "dynamic_validation": "未在发布阶段执行",
+  "inputs": {
+    "translation_work\\diagnostics\\20261117\\bank_verdict_final\\payloads.jsonl": "cfd33a23d10090751f7a8bfb6dbc76b507d071f0d09fd645287d7ffcc60783b9",
+    "translation_work\\diagnostics\\20261117\\external_bank_audit\\payloads.jsonl": "48b937181b450042952748eb5c774190156498fea50da09d0a52d3f88825af52",
+    "translation_work\\diagnostics\\20261118\\candidate_six_rule_audit\\payloads.jsonl": "aa892da0e42b59c8582742434970e89f48881a1f03a38a5cdc861f7b0d4307eb"
+  }
+}

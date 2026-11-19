@@ -1,0 +1,16 @@
+﻿dataset,tasks,qualified,defective,uncertain,valid_judgments,missing_pairs,materials
+AutoSUIT,951,381,453,117,1864,25,materials/autosuit.jsonl
+CWEval,119,97,9,13,237,1,materials/cweval.jsonl
+CodeGuard+,103,75,6,22,184,15,materials/codeguard_plus.jsonl
+CodeLMSec,280,87,0,193,560,0,materials/codelmsec.jsonl
+CodeSecEval-Base,115,9,106,0,230,0,materials/codeseceval-base.jsonl
+CodeSecEval-Plus,140,111,29,0,280,0,materials/codeseceval-plus.jsonl
+CyberSecEval,1681,1007,0,674,2034,664,materials/cyberseceval.jsonl
+LLMSecEval,150,150,0,0,300,0,本地上游恢复_许可未明确
+LSCBench-Function,150,0,0,150,300,0,materials/lscbench-function.jsonl
+PLT,874,539,335,0,1748,0,materials/plt.jsonl
+PythonSecurityEval,470,55,288,127,913,18,本地上游恢复_许可未明确
+SALLM,100,24,43,33,176,18,materials/sallm.jsonl
+SafeCoder,81,79,0,2,162,0,materials/safecoder.jsonl
+SecCodeBench-V2,98,0,0,98,0,98,materials/seccodebench-v2.jsonl
+SecurityEval,121,120,0,1,242,0,本地上游恢复_许可未明确

@@ -1,0 +1,7 @@
+[
+  {
+    "path": "data/external/cyberseceval/upstream_20261117/CodeShield/insecure_code_detector/tests/test_php_insecure_code_detector.py",
+    "reason": "GitHub push protection flags two upstream detector-test fixture strings as Stripe/Twilio credentials; unrelated to task audit; original preserved locally; restore from upstream frozen manifest if needed",
+    "original_sha256": "fb2768fda75d0981ea22289ff48d18fb642a07000d7db2602cbe7a3376ded673"
+  }
+]

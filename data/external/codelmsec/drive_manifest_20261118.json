@@ -1,0 +1,14 @@
+[
+  {
+    "path": "data\\external\\codelmsec\\upstream_20261118\\downloads\\benchmark.zip",
+    "url": "https://drive.google.com/uc?export=download&id=1c8aJYdwmpyB1OClK7uacAGz2LEyDw98Q",
+    "bytes": 118419,
+    "sha256": "580e4fe38d84f387cbfba6bac1d120f17a325d0ef7c722854b3d667d3a6e356b"
+  },
+  {
+    "path": "data\\external\\codelmsec\\upstream_20261118\\downloads\\queries.zip",
+    "url": "https://drive.google.com/uc?export=download&id=1bm7vxDmivb9kEv8m0hTQ79CkJ2swcykq",
+    "bytes": 337750,
+    "sha256": "954ddd389a4908cdcf1985a974aec80bbd886727b183b42c26e6eeb75a4ef265"
+  }
+]

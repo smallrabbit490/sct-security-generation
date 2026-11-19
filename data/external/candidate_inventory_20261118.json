@@ -1,0 +1,41 @@
+{
+  "autosuit": {
+    "files": 7,
+    "bytes": 10503782
+  },
+  "pythonsecurityeval": {
+    "files": 931,
+    "bytes": 513379
+  },
+  "lscbench_function": {
+    "files": 1467,
+    "bytes": 26132868,
+    "tasks": 150
+  },
+  "codelmsec": {
+    "files": 721,
+    "bytes": 1252458
+  },
+  "safecoder": {
+    "files": 888,
+    "bytes": 693240,
+    "groups": {
+      "trained": {
+        "py": 11,
+        "c": 13
+      },
+      "trained-new": {
+        "js": 9,
+        "rb": 7,
+        "java": 5,
+        "go": 6,
+        "c": 6,
+        "jsx": 1,
+        "py": 8
+      },
+      "not-trained": {
+        "py": 15
+      }
+    }
+  }
+}

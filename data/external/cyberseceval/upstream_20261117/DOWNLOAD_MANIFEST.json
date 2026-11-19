@@ -1,0 +1,1025 @@
+{
+  "dataset": "cyberseceval",
+  "source": "https://github.com/meta-llama/PurpleLlama",
+  "commit": "0654501399e7cbd560db9501965dc09c567a5563",
+  "download_date": "2026-11-17",
+  "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+  "file_count": 169,
+  "bytes": 10419793,
+  "files": [
+    {
+      "path": "CodeShield/LICENSE",
+      "bytes": 1088,
+      "git_blob_sha1": "b93be90515ccd0b9daedaa589e42bf5929693f1f",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/README.md",
+      "bytes": 2703,
+      "git_blob_sha1": "89e4dc1ff8e96c16b15f96669de2c6bf9df5e4ba",
+      "sha256": "e3d7eb329d2caf1257e50f13eafdffd5e0044de0b9b55fbed4c738ab3aad8e0f"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/analyzers.py",
+      "bytes": 344,
+      "git_blob_sha1": "1eb13f73149e54457c29c1d27467c0d89d6ae1d8",
+      "sha256": "f8459f19b2259c8957b5844597dc618241d9dd90117362638cb0817eea5e676d"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/insecure_code_detector.py",
+      "bytes": 10177,
+      "git_blob_sha1": "0de1d7291529b6238a53e309f8edacd9d5fd59b5",
+      "sha256": "30a89d2038efe08ab543b1734a8184bee23304f73fa9e9c62cb7dc8c496b3fd2"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/insecure_patterns.py",
+      "bytes": 4711,
+      "git_blob_sha1": "1851e060a2097ebd8dc6fd77bfd6582d2e975d6d",
+      "sha256": "e19d566ffb2d33ceb81fcd4f37a88774bf55c7c92841f32279580bc346395f73"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/issues.py",
+      "bytes": 1856,
+      "git_blob_sha1": "923cca2634d43143b11ff7a54496703914be874c",
+      "sha256": "52df0d91d75a136096abb4f7490f3af86655a202dfa05634c1c125c645e20c39"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/languages.py",
+      "bytes": 1860,
+      "git_blob_sha1": "ce62c93a3c220124b22959d187ac269ed10fe49f",
+      "sha256": "9690b4fb80a6b2958a7cc224e4b1337928831158bbc9e3e6c0604f9f98aa21f3"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/oss.py",
+      "bytes": 2343,
+      "git_blob_sha1": "b05f17ef223c9ef3177ebce61e510a922a128373",
+      "sha256": "4210de10ea3b96e9a925518dd9865caa3d9f3811e27ff0d79de438659ba52769"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/README.md",
+      "bytes": 1479,
+      "git_blob_sha1": "1cc13e1e65cf3cf61d809e153ea6b0294692e702",
+      "sha256": "1f75f60bc1a470906a06bd833fb5095cae13b70d1d719a17a752c51cd71860e4"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/config.yaml",
+      "bytes": 11429,
+      "git_blob_sha1": "75f5748d2a4f096e056efd4f5d6f40388af1958e",
+      "sha256": "664d82b752a60e2326abbd33ab7feec4f8ded1211bc05fc1d568cc4bd0b1a3b6"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/c.yaml",
+      "bytes": 3415,
+      "git_blob_sha1": "6daf43f311fb7f7877f2f11601356229644cabb9",
+      "sha256": "41f289e1458a0af133072e308a0a367fefe0c73385b9061baee6c8355c7e92c8"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/cpp.yaml",
+      "bytes": 845,
+      "git_blob_sha1": "ae1bbc0c3c7e1154f7a1af4d7f0e1d85f1c81c2e",
+      "sha256": "9d10bf48f72212c2a9f3a71df2b86fb923c88e5c6abc187244090b922b461a93"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/csharp.yaml",
+      "bytes": 903,
+      "git_blob_sha1": "882a6b27692eb927177b0550990a230bb49cea39",
+      "sha256": "282287067c98da77fec35fa297584a9925fe0cb1496b91347cc1d5f176e37ba6"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/hack.yaml",
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/java.yaml",
+      "bytes": 5394,
+      "git_blob_sha1": "c66083a7ef06dab82e082a20706b493a7c9fc0f2",
+      "sha256": "b08878ef29cd4414f0bbe496df12bed1c98e00393c310a788880744ba9e2127b"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/javascript.yaml",
+      "bytes": 360,
+      "git_blob_sha1": "dfce309e50af21b2c1455aef48c22a9b75dd856c",
+      "sha256": "33e4a9d1741d553144c6f8c479b03be711a840f85436b9172988a14efda495dc"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/language_agnostic.yaml",
+      "bytes": 1396,
+      "git_blob_sha1": "f0501d88874de9266e72e603782f3e4492da9f14",
+      "sha256": "abee2a53d66a8eebd2e402a8e509c4506d5eab5d5359a99b2e4fbd0e40ec9895"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/objective_c.yaml",
+      "bytes": 2358,
+      "git_blob_sha1": "4e6ff60df7e10a2ff1f03eed6f076449f90d331e",
+      "sha256": "0788ff9f37b1ddab04b2d03b011bf402a0b7f56ad50bb84bc6ab932b3705e1bb"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/php.yaml",
+      "bytes": 4706,
+      "git_blob_sha1": "682cfe8cf32778dc1455e3790c47149c4f16e71e",
+      "sha256": "957893edae8e87c5fa5f9f794ac839e058023a6cc22a58145429d0270b24daad"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/python.yaml",
+      "bytes": 922,
+      "git_blob_sha1": "73eb525ac51eab00b7b7a5a2a8325b03f2468d98",
+      "sha256": "42194a325435d3ac09ab2aadd16dc86c2c181b9845c04e5ef70c21b0353b9bd6"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/ruby.yaml",
+      "bytes": 346,
+      "git_blob_sha1": "d87e396703b631ac87b778f1e24f107d66b21837",
+      "sha256": "7ef57deb6e6a8886908616e5a420deb9c59f8bc40d5a120fd0124274534f84c1"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/rust.yaml",
+      "bytes": 2446,
+      "git_blob_sha1": "4dac2998d67f3bfdc5e7965ec15f17576195c52e",
+      "sha256": "6a0522f485ac4609361931646b6934bde6d5b42b886671e4b44d328e9cfdc7a2"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/swift.yaml",
+      "bytes": 2275,
+      "git_blob_sha1": "5792672de37a3a4e62584d8adc8ade9979bf5831",
+      "sha256": "69aeecca9292c939f3dade8880f8182bd1653733530ffeef598e3cbe4c915503"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/regex/xml.yaml",
+      "bytes": 552,
+      "git_blob_sha1": "7928595505ec9f687420c1ae564a8dc09f680bb9",
+      "sha256": "c973902b22b50cf3647db837b3ab41e48d2c0a9acf7222f9e10e498dee1cc31d"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/c_codeshield.json",
+      "bytes": 12953,
+      "git_blob_sha1": "42d0b688a4023831944c71c20663303cc9a3abf3",
+      "sha256": "26b8a0b06ef0120637258b637cb59bf27214f48422ca9a69045aefa6cd17fed7"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/c_cyberseceval.json",
+      "bytes": 15624,
+      "git_blob_sha1": "656174509fb5fdf647a450edd9f935448c1368e3",
+      "sha256": "f7dcfa85c2350f0f23cb4772c227aa229021f7224460c3015600a44047cf2608"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/cpp_codeshield.json",
+      "bytes": 12953,
+      "git_blob_sha1": "42d0b688a4023831944c71c20663303cc9a3abf3",
+      "sha256": "26b8a0b06ef0120637258b637cb59bf27214f48422ca9a69045aefa6cd17fed7"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/cpp_cyberseceval.json",
+      "bytes": 15624,
+      "git_blob_sha1": "656174509fb5fdf647a450edd9f935448c1368e3",
+      "sha256": "f7dcfa85c2350f0f23cb4772c227aa229021f7224460c3015600a44047cf2608"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/csharp_codeshield.json",
+      "bytes": 36852,
+      "git_blob_sha1": "5648fa19602a7e7262337503d2a89668d0adb976",
+      "sha256": "e137fd9e2aea6af494735b8fccd8e0b3a5eb3b1b29b56da38ea6c89efe2cab7b"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/csharp_cyberseceval.json",
+      "bytes": 36852,
+      "git_blob_sha1": "5648fa19602a7e7262337503d2a89668d0adb976",
+      "sha256": "e137fd9e2aea6af494735b8fccd8e0b3a5eb3b1b29b56da38ea6c89efe2cab7b"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/java_codeshield.json",
+      "bytes": 16169,
+      "git_blob_sha1": "4d604033b179a0c556fbe4376127cdf36ce01dcd",
+      "sha256": "5eec0d2a28894dab14439b89d56734502925d14e5acc14278efc366196de0ffe"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/java_cyberseceval.json",
+      "bytes": 17537,
+      "git_blob_sha1": "72a15333087cf294f760807a35dd1cdba4923c10",
+      "sha256": "7ecfcc0a69aa0220140eeb3da1cb9897391d813aa650bee44a7b2e844357277e"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/javascript_codeshield.json",
+      "bytes": 26897,
+      "git_blob_sha1": "4e32960ce6f1c6383ec2eebcd2c28a46ea01713a",
+      "sha256": "2f909432f06baf3c2c03fba4ca958628fab0f903c10c5a5a547f12f0f96918e5"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/javascript_cyberseceval.json",
+      "bytes": 43879,
+      "git_blob_sha1": "a470ad0b70a9f75e405703e7314d788b48200889",
+      "sha256": "219c9d77b74c67063a99ce8f1767c898339ee000bc4e042c968bd2e9496316e1"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/kotlin_codeshield.json",
+      "bytes": 17,
+      "git_blob_sha1": "7d00d1f4aad0dc0d70481d3d2cb192df32f5f1f5",
+      "sha256": "a55c9e162b49562f2f6db1a1ed4a15f561aa959830e5e2dbff670d26e3821d6e"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/kotlin_cyberseceval.json",
+      "bytes": 17,
+      "git_blob_sha1": "7d00d1f4aad0dc0d70481d3d2cb192df32f5f1f5",
+      "sha256": "a55c9e162b49562f2f6db1a1ed4a15f561aa959830e5e2dbff670d26e3821d6e"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/php_codeshield.json",
+      "bytes": 5243,
+      "git_blob_sha1": "6c017689cdf69a24110b36993975c1a03dde0543",
+      "sha256": "ee07c982a691fe26d71811b3dbb6aae2dd0f5b46918796eb23dbca4a2cac19ea"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/php_cyberseceval.json",
+      "bytes": 5243,
+      "git_blob_sha1": "6c017689cdf69a24110b36993975c1a03dde0543",
+      "sha256": "ee07c982a691fe26d71811b3dbb6aae2dd0f5b46918796eb23dbca4a2cac19ea"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/python_codeshield.json",
+      "bytes": 9708,
+      "git_blob_sha1": "cd81ef3f7d15776b6b7dbf3b76c926c29764b3dc",
+      "sha256": "6277ceb95986e00506854bf63577ca7b7b52641a35c51f959c32b6ccb2b90399"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/_generated_/python_cyberseceval.json",
+      "bytes": 11861,
+      "git_blob_sha1": "aa1fb138f9110233ce9d62ef8def070d286c8dfe",
+      "sha256": "0c6cdff18f936e6f973b3bb51525ccf5e77ca190827a9238c84bb73c86bbf30c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/blowfish_encryption_use.yaml",
+      "bytes": 473,
+      "git_blob_sha1": "af598ef308efac36cb25d30c9bc94ea4e4089e15",
+      "sha256": "42be816211f80e33b375487c631f72fe12e9ba93244f220ea1d72df58d5eaa7c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/bugprone-snprintf.yaml",
+      "bytes": 948,
+      "git_blob_sha1": "5c50c194d561261a5b55c805675b2cf53f579de0",
+      "sha256": "a5a70496351e1ffac2b7dfca5368756c292706b6cbc2810fe12f72b85078fde5"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/crypto-weak-prng.yaml",
+      "bytes": 394,
+      "git_blob_sha1": "fce713a1e8151f81476d0784ab43e5624bba4aac",
+      "sha256": "3ac1ce8a83d2ee3e9c6f78cec3d40e8604a23939424d85a41825186007af39aa"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/crypto_des_algorithm_use.yaml",
+      "bytes": 477,
+      "git_blob_sha1": "062822981d1feb374d34713fc4a67f459ca7088f",
+      "sha256": "6f606383a993d8ed6b30cf224bc09ac884434cf0e01128b045120e6280774451"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/crypto_ecb_mode_encryption_use.yaml",
+      "bytes": 441,
+      "git_blob_sha1": "50c9d35750763e38109c59365b080eca39dab7e9",
+      "sha256": "d903a814bd71f06ecf8ace782033a1ff7816955d01fac486a5f66eaee01e431b"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/crypto_rsa_key_size_insufficient.yaml",
+      "bytes": 845,
+      "git_blob_sha1": "099f570a87f5e9e12d43ea602babf75daaed9469",
+      "sha256": "27a7eafb6c5f82dd07c39b553bc783b91a3f735db5fa7d7b3fd44ecdf1e0bf6c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/crypto_unauthenticated_encryption_usage.yaml",
+      "bytes": 671,
+      "git_blob_sha1": "6009d5f03e5cbc95d267647aeef7fdf1f583bc05",
+      "sha256": "19fc8bd95dfdd4408c8368d454976d6b329a0b6169b9b929007b6f2c6b4b0c39"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/fixed_nonce_use.yaml",
+      "bytes": 639,
+      "git_blob_sha1": "112ead3b928a328adc884e9c2f3182efd0bdc95c",
+      "sha256": "fc9af97940c9379ec06245e2b230e7e8cd06c6d20f4e8924e05de29b4ac1389f"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/fixed_seed_use.yaml",
+      "bytes": 579,
+      "git_blob_sha1": "93df717d0f61187c0d82cc9033ea5a747b9f6a5f",
+      "sha256": "b6acd2c1ec5e1b89077b50a9d4ed80eb987211ebced8b6b70334065fb314b9cb"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/hardcoded_key_use.yaml",
+      "bytes": 562,
+      "git_blob_sha1": "da9f9e5e3597444247246272410b44a4b5c1b377",
+      "sha256": "6950b12df90d83a335cf676ee1382cf954b92be62deeea6375233d9d929f9efd"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/integer-overflow-to-buffer-overflow.yaml",
+      "bytes": 643,
+      "git_blob_sha1": "6a654648dc7117cab31fccb6fdb40ee793ba3381",
+      "sha256": "6478e395245324cc6fb40c08e55da930ac873529e912383d8840fd32e5edf740"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/invalid-free.yaml",
+      "bytes": 757,
+      "git_blob_sha1": "c44d0d3e9c1dc332d3895a7366bf048eeb02e7e8",
+      "sha256": "016c0dbead04c5858d7d8eb3ff09ded3e1c613ac282aab3567bd866e73ea5071"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/mcf-get-c-string-result-ignored.yaml",
+      "bytes": 670,
+      "git_blob_sha1": "b3be4e966cd59260f8695251dc0c10f2b4d91920",
+      "sha256": "8b293d256223c743316eb172254845fec803505b7d7464fa5435e9cabacb8d39"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/md2_or_md4_hash_use.yaml",
+      "bytes": 463,
+      "git_blob_sha1": "23140ddda362fc1a332726f1dab65b2d642fe762",
+      "sha256": "4f7f0a239d42aaa6077bc6956610a9ff92b0742b30d1eb746b08b2a5c73d93d1"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/md5_use.yaml",
+      "bytes": 371,
+      "git_blob_sha1": "2ea1eecf18866a47978de7e488e1302906e0e133",
+      "sha256": "10d129973db4fcf151a060922269df9a14f9850bf8c215e0db87ddd2f649dc0c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/potential-command-injection.yaml",
+      "bytes": 544,
+      "git_blob_sha1": "7d08755684a4dc5ebc82d83263f21c55fb43d22b",
+      "sha256": "372b5b58b1fbcab3cb66e3ced30a807600f2ce821bf82e5baabbd0108b16a760"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/sha1_use.yaml",
+      "bytes": 412,
+      "git_blob_sha1": "9ac140e94bc9048438991e5c279a2c0fbe85f834",
+      "sha256": "a522ad222817a075f978b6e73f9299e5898fec3129cc8c65e523e6f96c8b1134"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/vulnerable-sprintf.yaml",
+      "bytes": 422,
+      "git_blob_sha1": "9ad810f917dc555aadae4ddaeeec46ee5e4ed048",
+      "sha256": "12fc1edd2de98cc7bef6a72274a34a30611b4f23be6106ee42c1eb0ce1530c0c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/vulnerable-strcpy.yaml",
+      "bytes": 200,
+      "git_blob_sha1": "f78707e5383dc75126934b2f6b9b683108627fa5",
+      "sha256": "aa76aeda240d0da9129cffb6ce4c9beabfaf0faecf40748558e427d02be02e9f"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/c/write-to-stack-buffer.yaml",
+      "bytes": 816,
+      "git_blob_sha1": "3a0d2c44dafc519e5b7692d581ded421320b05e9",
+      "sha256": "eb5a0297c2846e576fc53a7e2243e2fa55bd3c156dc2c071c5ba93ed900f2cd1"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/command_injection.yaml",
+      "bytes": 1139,
+      "git_blob_sha1": "6a30efdb7e2717a39eb4d1777f354c899fdcd3c3",
+      "sha256": "edb009733310568929b60790fbca6a6c27c8eeaa79fefa9d8ca88f91561040f4"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/cookie_without_http_only_flag.yaml",
+      "bytes": 876,
+      "git_blob_sha1": "8ad0d939e00cf091e5fa905c5788c49766574f3f",
+      "sha256": "2d0e9fd514eba7791f2c43ba644d433241d84a5ce9b439273beb1559c87dfabf"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/cookie_without_ssl_flag.yaml",
+      "bytes": 746,
+      "git_blob_sha1": "8de4d719b67f4ca68b090ce6b8852cbdb6824deb",
+      "sha256": "f6df84dd2b5d0409d7a0270a912c01fea7099632e93e570223d4887aef885efe"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/crypto_certification_validation_disabled.yaml",
+      "bytes": 958,
+      "git_blob_sha1": "e717f3ad1e6ed7330eff900c2fcb02a6a5ba379a",
+      "sha256": "49772a3c7d0283d3bccb79e757eb447caaa6eb26716c013da6ec2fa82aeca5d5"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/crypto_weak_cipher_algorithm.yaml",
+      "bytes": 882,
+      "git_blob_sha1": "32dd483e67e19b76d719402ffbbd96862081beae",
+      "sha256": "06cc74c356b54816383b77127790a51c90810bd1213578ea6c968e7e906792c0"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/crypto_weak_cipher_mode.yaml",
+      "bytes": 927,
+      "git_blob_sha1": "558ac2bf57a3b7505a71bb12a22838cf69949081",
+      "sha256": "bd6efcb95eb827295b6104478143cae9a3d86e4dd20de812a9f5958425583b57"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/crypto_weak_hashing_function.yaml",
+      "bytes": 999,
+      "git_blob_sha1": "f1f26e4969411cfcafce5e5bdcea94898d897f19",
+      "sha256": "ddac6ef04c35c719ec6cf865189690e47da5efd69cbfd0104e70152baf35fe66"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/crypto_weak_prng.yaml",
+      "bytes": 586,
+      "git_blob_sha1": "e9eb8812c2a3fd0c95368994faefbc05692989af",
+      "sha256": "a532c0747158287550959a1f3d691a926e99c08b3bacc2bac7fb874154190334"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/csrf.yaml",
+      "bytes": 919,
+      "git_blob_sha1": "e45190aed2ff08721ad661d23862c72f34643c0d",
+      "sha256": "72c10c13e0aad3fe8f36cd8d2ad0bbb067d0e006334c56f5933d3a019202cab3"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/input_validation.yaml",
+      "bytes": 783,
+      "git_blob_sha1": "27ceec517670be847f04e6e40b8212b0649c9fc7",
+      "sha256": "d487a5678191fb922364819cbb8b5c33f05a6846451a2fca6f9c0730417a8576"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/insecure_deserialization.yaml",
+      "bytes": 1433,
+      "git_blob_sha1": "0e20ac4432c6a140bbd49acf2d7738bb3e9304b2",
+      "sha256": "84d129c224123986e55dd5c7917e81c71630afbda9e4afb70e9db1f6e7028e98"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/ldap_injection.yaml",
+      "bytes": 816,
+      "git_blob_sha1": "682dc412ab9eee67e7f144a39cf08bc065e1a416",
+      "sha256": "4d0dec7d2db261e0f896f418ec1e68c08cdd3370a42577ba41020ec733f077a5"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/path_traversal.yaml",
+      "bytes": 4656,
+      "git_blob_sha1": "467a2b26a6ed3a9ce78abd2db25be6f914afb484",
+      "sha256": "25983d4a677a012e0b68f92492ffd85d5f456d955124ff41ae86dee1334da57b"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/sql_injection.yaml",
+      "bytes": 2416,
+      "git_blob_sha1": "d11d98a9551d117aa29e09b38526f04d070b2ccd",
+      "sha256": "023083f58b1b783d3796777923c18f7cc6972968dc584c1cad8ed119d291fd7c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/unsafe_xslt_setting.yaml",
+      "bytes": 868,
+      "git_blob_sha1": "d419ea197a26224035bb7ca52777c1ec264e9034",
+      "sha256": "d7ebf075bd8f79be710ade90dbfa230d962c184aa9bcbefb2bf57df63f4db931"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/unvalidated_redirect.yaml",
+      "bytes": 1439,
+      "git_blob_sha1": "695a794b128b1947a428b873a500d078b35f780d",
+      "sha256": "6c8f7f5f448e6e5d68a9ed9aa79c542961e20528080786a10bdb7595594016c1"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/weak-password-requirements.yaml",
+      "bytes": 1199,
+      "git_blob_sha1": "99d1c68234f4ce5d760d6edb0f6fc063cf845b9e",
+      "sha256": "0b01b384e23b5589979db683bb8dc87cbc49a26e93dfdf360c107c1d8381f44b"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/xpath_injection.yaml",
+      "bytes": 1873,
+      "git_blob_sha1": "48bbb524419f9bf2e06e026d9c65c7bcffd7ffc6",
+      "sha256": "468e164a7c119588f8c4c485f1f00675e7b0b91cc9271b8002d43fd9915966e6"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/xss.yaml",
+      "bytes": 2819,
+      "git_blob_sha1": "2f4360e0e0d6212d9829712a6f82b5fb81b33878",
+      "sha256": "2e462b4adfd972f168dbca0a9680769183fa14e07d4bfbc09c0f5ee836e90b51"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/csharp/third-party/xxe.yaml",
+      "bytes": 1080,
+      "git_blob_sha1": "e77413f73522a50cdfff5ac2e24c96ea8dc0d157",
+      "sha256": "f70fc6247619b37db5f45f610a3d296070a6e461c8e444fe262381f3dcf5af57"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/deserialization_insecure.yaml",
+      "bytes": 370,
+      "git_blob_sha1": "01b307e9da774a9a421a3ff4cccdafac0b9b51c1",
+      "sha256": "705982e8ba2b6eb1cd0f81fbc41118a50a161e7cad57fef5b4b3388086c452eb"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/cors_header_injection.yaml",
+      "bytes": 1257,
+      "git_blob_sha1": "002f64423390059eb49ff6e4f8bd6d3f2cf28bea",
+      "sha256": "c5f48f2f666b46acfc4ebb5cb15f13620b3894336e99f40346a780040fe42e47"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/csrf_disabled.yaml",
+      "bytes": 809,
+      "git_blob_sha1": "3a081437a4d0805bfda84abc1d3a8a537b9a0ae1",
+      "sha256": "30a3782f0cefcf51d266b3177110c4ddb4b970a1fad3bb413fa03d40eed45229"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/ldap_anonymous.yaml",
+      "bytes": 779,
+      "git_blob_sha1": "78971f68b0e825cb86f51e911d62db52c4002beb",
+      "sha256": "9ce73a4be8bbda93a20674b2a40423eec7ae7af4b8f989a69ef51c0177938af8"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/random_number_generator.yaml",
+      "bytes": 1162,
+      "git_blob_sha1": "9beabe65d97b8ca94ca16d15f7d905ca4a3bf766",
+      "sha256": "a70df6fff0f74fd365d172c529dfe91d6600f2567eccb1799805c5530c37f46f"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/ssrf.yaml",
+      "bytes": 1975,
+      "git_blob_sha1": "087b41f14d2c47ada3408320ae9a5219052a4be7",
+      "sha256": "3158537bd8a92b7b90a1d52490aff3ccd963bd8d31ea5b6142b1334a09d6e6af"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/xpath_injection.yaml",
+      "bytes": 1184,
+      "git_blob_sha1": "3dede359f13b65dc3ad8e9363edaf9c931529d69",
+      "sha256": "1b4a240527ed2329c0b50d580feaf2c8f9506976fe7191d0ef28e26acb6f8474"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/xss_send_error_response.yaml",
+      "bytes": 1395,
+      "git_blob_sha1": "15c2675bdf915eaff918ccb2e7984d209fa5284a",
+      "sha256": "d8cd388840763b296d9230cf7f18b96934e4ee8a384cb88d2358ac888ca8ed4e"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/xss_servlet_response.yaml",
+      "bytes": 1444,
+      "git_blob_sha1": "ced9a6ce3110f5b8ae61cd5363a6313a7d9db1db",
+      "sha256": "844e612c6c9d86376a1e9883bdb66fc933a6839ea231ee8d9267e9a63f229a5a"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/xxe_sax_parser.yaml",
+      "bytes": 1242,
+      "git_blob_sha1": "8fc353ef80857d13c517653bac2545f10ab3d2a6",
+      "sha256": "7a688a1e64623f27d05206c61d0d1f6228990c097612193cec4a495f1d968489"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/xxe_xml_input_factory.yaml",
+      "bytes": 1541,
+      "git_blob_sha1": "dce8f2400c5c951714dfe7ee761c003b09891d8b",
+      "sha256": "3babe0487d238e2c59cc8f4611955297ad6a7d58f4363183eda081f320f17c01"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/java/third-party/xxe_xml_reader.yaml",
+      "bytes": 1209,
+      "git_blob_sha1": "9650566bfccc95ba8e21fb58185ccfd01ed63146",
+      "sha256": "faf266f62d2ce2d6c7ab2974932936f965dbc959680edafa79fa3e6a61597aa5"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/child-process.js",
+      "bytes": 1231,
+      "git_blob_sha1": "eda9c6e2ad5778a0239f1b4df8b78e20fc83f79e",
+      "sha256": "79cc3e9eb94ec45a8bb638a8c3e0849202215bc64ad51f2ffdc2ded718f1a536"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/child-process.yaml",
+      "bytes": 1488,
+      "git_blob_sha1": "7ff766b7910329056ac6772f916e5b5bbc281ee3",
+      "sha256": "1988f7ff2f4e0cc4a9852ef68fe8f4d2b3fc8442b609632c08213ac9561005af"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/post-message-origin.yaml",
+      "bytes": 375,
+      "git_blob_sha1": "ccca432f8d810945a38106058b78e7ad21b7e277",
+      "sha256": "0627eea677e998ccc7e3eb8118c93f415b72a1d0a2626a0825faae98f54da298"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/buffer-noassert.yaml",
+      "bytes": 2238,
+      "git_blob_sha1": "301b473e4b5a40415e66b529476547bfd9cd5276",
+      "sha256": "2f9ccbfb4332f5c0be1554b164a2e351b179a62cc500d7c47e91b585a0dee0f8"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/dangerously-set-inner-html.yaml",
+      "bytes": 922,
+      "git_blob_sha1": "a613073b285e8fe37b9bc18be16998ba491cafad",
+      "sha256": "7ce2e1347bd948c6f359b4486f03b18338d1304f3ffdc97c5bea5ba947a547ba"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/detect-new-buffer.yaml",
+      "bytes": 1165,
+      "git_blob_sha1": "b3ea02c1fe4ab98edb9e82c39bcc84718a49cb02",
+      "sha256": "fb6a77dfe945e71a1edaa1b00a4041289303ed46b54453d2e3e627dade9c8f77"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/eval-usage.js",
+      "bytes": 5181,
+      "git_blob_sha1": "ec6a1ceca43a7fbfaf3e3824f5dda739b7e2df11",
+      "sha256": "2c44f1a38b4bb901e230533c858a13fb33cd00eb8d840db9edf379afe0520368"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/eval-usage.yaml",
+      "bytes": 2634,
+      "git_blob_sha1": "3b37e9bf1196891ff632e1203c05e215cfc5d4f2",
+      "sha256": "c07c014ad5b8d6b14223c823da6beb8308cc706b6a4342c85647e1cdc432ef3c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/mustache-escape.yaml",
+      "bytes": 1336,
+      "git_blob_sha1": "66d2b7afc944cc0dbfc6343d8d01f9759c4aa16a",
+      "sha256": "554d2945b656930f09bbb0bf072d659e5821689bacce681214e806576233753d"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/non-literal-fs-filename.yaml",
+      "bytes": 5225,
+      "git_blob_sha1": "fa9243121ec54840d2e023e5dfd9771150b74d56",
+      "sha256": "829eb303b53f08c71e605aea041ccd14e5b23619546db8124d095f76896d5f31"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/non-literal-regexp.yaml",
+      "bytes": 1070,
+      "git_blob_sha1": "fd09d4728c4b9db95aec5dc44cb28d70ddb06e1b",
+      "sha256": "c3ef4608bef054db6f1df92929f67aaa32d5ccb929a1d734f8cff08f20ddfd73"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/non-literal-require.yaml",
+      "bytes": 1008,
+      "git_blob_sha1": "648e82b6166a59a42efc318ffacfadfffc107619",
+      "sha256": "e2a5a0066965355cffd069d74aea93adac1815c207a411a18a93752a303495c4"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/possible-timing-attacks.yaml",
+      "bytes": 11092,
+      "git_blob_sha1": "ef88aa057e3a55077c36106be9cb68f60fd567c7",
+      "sha256": "c09b2b0579967c640f66992714d6df5b4f4fbeb6adf6d0540f8343a4b29f94d2"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/third-party/pseudo-random-bytes.yaml",
+      "bytes": 1164,
+      "git_blob_sha1": "fc9f70a6e2c643766c7fd83c0f560d88f59eec56",
+      "sha256": "71c63bf0a4eb8bb759ffd89d26a1499420a7825308b9fa476df2853634572434"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/unchecked-origin-onmessage.js",
+      "bytes": 1881,
+      "git_blob_sha1": "496030cf64d09e87f6ffafe906d76f1bab1c9ff7",
+      "sha256": "d283a6d903d879478eaf7f039743a80b8438a0db2785bf58c71205ab918c8d0d"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/unchecked-origin-onmessage.yaml",
+      "bytes": 810,
+      "git_blob_sha1": "bfe77120dbacf7b27d4df8e3140a4da3d946a745",
+      "sha256": "51780e9f93debfdff2bc1105b4d2d64906a5160013e3b1452f028d3cb610dfbe"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/unencrypted-fetch.js",
+      "bytes": 2188,
+      "git_blob_sha1": "c939bcc3ebc6d538043eefc790cac23d3e34fbef",
+      "sha256": "b46214e5f1774b71aab0c949d5d6827eb43c2b950087a008df31694453834c2b"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/unencrypted-fetch.yaml",
+      "bytes": 855,
+      "git_blob_sha1": "1a0b1c3d66efbd2d4bb34547f2da418a2f11709b",
+      "sha256": "50a5ef580e19246e413b8463c4b414404632c1f579f30649cb9f3e8daa55d3fc"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/javascript/unsafe-alloc.yaml",
+      "bytes": 433,
+      "git_blob_sha1": "8d60581956e8e2a0e674c1101ff491b3ae834d07",
+      "sha256": "a43b553d66b0314d26f0bbc56e33a3a9398dbe1a8e86e824d0b1bab4d177f5a1"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/backticks_use.php",
+      "bytes": 412,
+      "git_blob_sha1": "debba55d2f2f3d7338b53d81a71ae4033f3caf9a",
+      "sha256": "04ade2be8a964cce1451aeed9b6e3a64e26f954397a5af170d02c00468e66ae9"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/backticks_use.yaml",
+      "bytes": 405,
+      "git_blob_sha1": "1c07fbae9c068648750d35e3fd0c5982e9fa952e",
+      "sha256": "a1afccccd0409d710078aac296d57c4d8ea163c51df3e9520cdac0ba4449ce1c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/eval_use.php",
+      "bytes": 312,
+      "git_blob_sha1": "6e7440f1e744319d25a02ff78802a59c090480b4",
+      "sha256": "cea6bb9e03f326ff5f25dd8797800a1ad9ef8f59121b9fab14354c6313bcada2"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/eval_use.yaml",
+      "bytes": 346,
+      "git_blob_sha1": "7ad6f939959ab88e2bed95eaa1afd319c6faed9b",
+      "sha256": "e18024fde01be33fe196f22c7d23c2eb88d8078ae0addff23497e4b64036cc20"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/mcrypt_use.php",
+      "bytes": 889,
+      "git_blob_sha1": "1406779a49b602301d559a7c813bf00033db11ea",
+      "sha256": "e6dfcf4c72890a124e8910244850f5851cd70ef40a775f51d8ff6386e0ec7424"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/mcrypt_use.yaml",
+      "bytes": 379,
+      "git_blob_sha1": "83e4c6c52ddb08c409b417d9d1cab85fdd6ea35d",
+      "sha256": "be28e73a287977705c0fcd72c0b6a0730d34dc78f403f5fb6b7fb8b4161a65ac"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/phpinfo_use.php",
+      "bytes": 231,
+      "git_blob_sha1": "256da949f6b7e23c26971baa7ed71296f0f5148d",
+      "sha256": "f39082b92dd7ecef09a5d02b96d7c09242dccf9a8c217eb37d941852dc5444f7"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/phpinfo_use.yaml",
+      "bytes": 346,
+      "git_blob_sha1": "4d7abc2c642e1859ebf5078f8b1bcebc93647268",
+      "sha256": "2be28401671472a3d1eb777e41ac2e50b964a2175cc1dcefb5688fe81a80018a"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/tainted_exec.php",
+      "bytes": 1000,
+      "git_blob_sha1": "0a85e63b99f8cfca88623bce6f02c936d611ad84",
+      "sha256": "14c98f3ff103e550d5f8471accf7a127317ed8a610bc0de2ffd21c1d75644e93"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/tainted_exec.yaml",
+      "bytes": 963,
+      "git_blob_sha1": "6de0908abc1a1559aca9f74ee5e29538fa9342dc",
+      "sha256": "e0dfae42d33b6cbea72332a5456ff309f4e4b03f2480f3922a28cdf1c635d8f9"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/unsafe_extract.php",
+      "bytes": 908,
+      "git_blob_sha1": "33eeffa1996e0bf780fe1921bb2fa2ec1d16c395",
+      "sha256": "45896b0cd36e4d63df3d6cb6e35752de6067619b60b66726eb4a272871979bfa"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/unsafe_extract.yaml",
+      "bytes": 653,
+      "git_blob_sha1": "6c3df510781f091b9fab6624dbf51916e499046a",
+      "sha256": "dd78b27781f67e7a1c5000dc62d317f8ee8d5a30100bedff75dc4f7941b6f580"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/unsafe_hash.php",
+      "bytes": 590,
+      "git_blob_sha1": "36c03ce12f15a153f0c8597c4559f72927ce14a5",
+      "sha256": "5380377b61c92567ba39dab62ad23e183d76a4127542a9f911dcfe2c2fab2242"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/php/unsafe_hash.yaml",
+      "bytes": 511,
+      "git_blob_sha1": "3d6530a73fe4d8310e8a02eeb6b291aa8adce187",
+      "sha256": "57e548fac03c1885359cd2118e3195c7491cdfeb8965852ee9b98734496de430"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/crypto_fixed_nonce.yaml",
+      "bytes": 539,
+      "git_blob_sha1": "4591cd28d513db1285ab75c5e840b0f45208a791",
+      "sha256": "0baf0030b78d030ec5f31fc536b1650e9154e7aad66d6f6576e89ff9fd0b45a4"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/crypto_fixed_prng_seed.yaml",
+      "bytes": 431,
+      "git_blob_sha1": "679fcbc46f5863a47deecc85ec8946966f021aec",
+      "sha256": "a88753e759b9ed70b0395a9890458a53a2eca6941e08634ebb04586012590156"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/crypto_prng_random.yaml",
+      "bytes": 580,
+      "git_blob_sha1": "856f9ed83107505cd03f328ca15191a36e70cce7",
+      "sha256": "eff0fbe830b5868bc6d0edef97d437727701e023d8a193f9902ac32c6a8152f7"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/deserialization_dill_use.yaml",
+      "bytes": 494,
+      "git_blob_sha1": "6201fbf31805ce786a8e01d5235da5357b9edd88",
+      "sha256": "987ad1d45f8415712e1389704676f4952fc774e23d12f3e58533822b655ab92c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/deserialization_json_pickle_use.yaml",
+      "bytes": 669,
+      "git_blob_sha1": "2d0bbbbf38a9126dd18ec748e2d2e682e12e56cb",
+      "sha256": "95608e93da2e0b38636fe7de5271899d9a96fa653d7f18e25cbd3199d0796155"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/deserialization_pickle_use.py",
+      "bytes": 481,
+      "git_blob_sha1": "65cd86d36edf62d5556853f5edc2e7d03b017fda",
+      "sha256": "9e8c02564d13df25768fbd6953ef228eac7f3de094911e698edc9d1588287ef0"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/deserialization_pickle_use.yaml",
+      "bytes": 468,
+      "git_blob_sha1": "2de572764b272bc4b76ed3ea7c974696444cd849",
+      "sha256": "64482912f04f066a0b6d2b299ff2fb5a936b519b44d9e6a66c74fc67c5b66af8"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/deserialization_yaml_use.yaml",
+      "bytes": 848,
+      "git_blob_sha1": "9c051625932bb616e6e75cef947d76c016411e8d",
+      "sha256": "0caebca28090545d48674c9d60c50df16f096b997a470de26e6975d044723ac5"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/eval_use.py",
+      "bytes": 421,
+      "git_blob_sha1": "020b1be75654fd08a1d51feccf2f4d4337567415",
+      "sha256": "bc137d9693e2c684eb29b0582eee226175e3e0783f1ddee9d46bc68fcb4a67b5"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/eval_use.yaml",
+      "bytes": 586,
+      "git_blob_sha1": "3231fcafcec1eed47530bf63848652c40f624f3d",
+      "sha256": "a84c2dd363583c72c0e68a0ae4e9547487ecac63df8cb27ee4558084ce75d1af"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/exec_use.py",
+      "bytes": 421,
+      "git_blob_sha1": "33b4a6644b4a44fdd6c56f854b6e8699e21cdb64",
+      "sha256": "098ef991add6a27ef0749a2b125bbe6096a268b17940fcaa7b7741a05e04c6b4"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/exec_use.yaml",
+      "bytes": 572,
+      "git_blob_sha1": "7fb032a7b3e4f13aa8114e5ac6ae278f9fc77a51",
+      "sha256": "d8b1d21c5cbad255289d9c2c5e725aa1a373f5fb117cf164a57994de1b4f430f"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/hardcoded_secrets.yaml",
+      "bytes": 584,
+      "git_blob_sha1": "b132e76ae624eca279e831b3408202f6059ad35b",
+      "sha256": "0ca4a55585b8d71bb91a4e0072cebacd6fda1c652683ec31a4da5107bea753ed"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/os_popen_use.yaml",
+      "bytes": 530,
+      "git_blob_sha1": "30ce0b49738951832870c331c9cfde7c824973cd",
+      "sha256": "c6a7ea70b0bd178f8be6998674a797c1d08455c5266c76e1019f7a7931104dab"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/os_system_use.yaml",
+      "bytes": 529,
+      "git_blob_sha1": "5ae8f72f27677e32afc00d688d2492e412cb9035",
+      "sha256": "29ade5e281bdca7b6f76931e5143b2eb6a09d2fc8218e366af14dbbb3b678cb8"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/sql_injection_cursor_execute.py",
+      "bytes": 2050,
+      "git_blob_sha1": "41d0a8e2fc279ecc39c6da6211000b29e0519293",
+      "sha256": "7beb3f5d1cfc6874d32c64292cd4fb4716cda8c5a893ab88ff8501050105f527"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/sql_injection_cursor_execute.yaml",
+      "bytes": 1542,
+      "git_blob_sha1": "218b946440a04cb756f0cad2f222b11994109bae",
+      "sha256": "3b51f672d25aa6d59bb31f76d94de1bec500862f3c3401e5302078eb49b9b866"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/subprocess_using_shell.py",
+      "bytes": 972,
+      "git_blob_sha1": "a40bf2c530c3ceabb8440b2f2f21d5c61fa3d895",
+      "sha256": "7ca092859fa49dd15a45717dffa2b603bd00ec86ed258cbb35a902b4faa50985"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/rules/semgrep/python/subprocess_using_shell.yaml",
+      "bytes": 1271,
+      "git_blob_sha1": "fe91f6a23aa08823530c75ba18e30676808ed5f4",
+      "sha256": "605cddad844bf877c2fafde7ec965ed1439a8fbda9c9310cf513dda31d1bfc90"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/__init__.py",
+      "bytes": 209,
+      "git_blob_sha1": "de97fe1d05263c9119107ab477c8752751086813",
+      "sha256": "2585057d8e5543f44b1c5b6448e047cf5f3c0f159a61fa42a3f1d3f67017f550"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/insecure_code_detector_test.py",
+      "bytes": 2697,
+      "git_blob_sha1": "416ef22b84c87808d27bb720467eefdaec754b20",
+      "sha256": "49f756b6d71929473ef4edff272021ebddcd433dd965a6e044e2f143739b916c"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_c_insecure_code_detector.py",
+      "bytes": 3091,
+      "git_blob_sha1": "ca82fc46b19cd5752f5d71157911eb2e6665c550",
+      "sha256": "3f2135706b96dbcdc09da7ea19d092166b0361c0f8911883e26f5fe7796b5090"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_cpp_insecure_code_detector.py",
+      "bytes": 1350,
+      "git_blob_sha1": "576eea65a7fc800ad06e148cf20331658c0c61ba",
+      "sha256": "6628874a9a96d09a9432580b5e30af2c688d84316a2bdaba152b6f073bd23fd6"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_csharp_insecure_code_detector.py",
+      "bytes": 828,
+      "git_blob_sha1": "8136433f716900f61f7c9449d81b6eea8bbf9027",
+      "sha256": "bf637c65fa47ba8acab50c2d72bdead385d08dc3a1e5fdbfaeb829dd25f09399"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_functional.py",
+      "bytes": 2597,
+      "git_blob_sha1": "6161e82e5ae686ca17e05947be6c583083f31416",
+      "sha256": "d60e788adf1f4e25b64cf5370785f89c1611ec7a61036f2ddd09c40d1f2e15ff"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_java_insecure_code_detector.py",
+      "bytes": 4788,
+      "git_blob_sha1": "2db1c6008aaa156908625e6f8bc462eba7261620",
+      "sha256": "3dae661975e58084d4568f109fa962543623b222f43e0061c493f67290daadf8"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_javascript_insecure_code_detector.py",
+      "bytes": 1096,
+      "git_blob_sha1": "4c283d1388ed84224105d99f954be406a857f22e",
+      "sha256": "d86074b9c4ff60d1ef2004efdcc8f4cd8570ac4e9a7013f92a64f6f9f7a73d62"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_kotlin_insecure_code_detector.py",
+      "bytes": 693,
+      "git_blob_sha1": "8ea51f72a99ec9f22b5e6bbe4d8d327ad45541be",
+      "sha256": "a4a9d7860a85954a4531ebcc64c9a98d7c232842fe542c5a204f54674146f68f"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_objective_c_code_detector.py",
+      "bytes": 1238,
+      "git_blob_sha1": "eba63332dfbabde0df04df26fa3a5324abc1ffde",
+      "sha256": "53c2bc6086b3820aef0aff1da9ea13514eb0073bab475970d648d9577ac35741"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_php_insecure_code_detector.py",
+      "bytes": 1966,
+      "git_blob_sha1": "d79279cb24514c578df7400eecb8eb2d7e0fe8b2",
+      "sha256": "fb2768fda75d0981ea22289ff48d18fb642a07000d7db2602cbe7a3376ded673"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_python_insecure_code_detector.py",
+      "bytes": 810,
+      "git_blob_sha1": "17edbb76ee3282b6646e505ea1308e25e729f764",
+      "sha256": "4a506dd18adfda46373bff77fcffb52f6a7c1eeb45d2fcfba306cc949ca33f0e"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_ruby_insecure_code_detector.py",
+      "bytes": 707,
+      "git_blob_sha1": "dd4c053b4d44cb187573c35047a3c6f74b14a8cf",
+      "sha256": "5b7d35588d44817792ee1ec816e51fcac8e86812e1bab45b4dbeb0173985d1bb"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_rust_insecure_code_detector.py",
+      "bytes": 1100,
+      "git_blob_sha1": "39e5f3114fb9594826862d31c2f30923924e38b0",
+      "sha256": "21aa736b29805c35fd6496b1010f4178881ca15b3522a18677616f31c9afb92d"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_swift_code_detector.py",
+      "bytes": 1386,
+      "git_blob_sha1": "de336d79168df1122422f818b99e6f12ff94433c",
+      "sha256": "65eeac44e220794c181bdec337174e0cf97e233d861e75c3a0b9c1c0f000b385"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/tests/test_xml_insecure_code_detector.py",
+      "bytes": 1441,
+      "git_blob_sha1": "813d82306474927f7ce8b407d5a66e4b83460d4d",
+      "sha256": "b8bc25990f2970427798af1c42e86650b71eb9d6499edab20614f1fab2b14066"
+    },
+    {
+      "path": "CodeShield/insecure_code_detector/usecases.py",
+      "bytes": 466,
+      "git_blob_sha1": "7d8423fe21e2cd994fa1e48b7ce71f5c03af622c",
+      "sha256": "ef8a07bc939ec1b0c6d38aff81d7e715c98705440dfa70bc444669b779ab5890"
+    },
+    {
+      "path": "CybersecurityBenchmarks/LICENSE",
+      "bytes": 1088,
+      "git_blob_sha1": "b93be90515ccd0b9daedaa589e42bf5929693f1f",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "CybersecurityBenchmarks/README.md",
+      "bytes": 49676,
+      "git_blob_sha1": "a6e3b355184c7773afe22f8f635eb247200e2695",
+      "sha256": "f148967d1b4dd581b518bebe4d00359cc693eadc1d0d2efb7b709b110ce7fdc4"
+    },
+    {
+      "path": "CybersecurityBenchmarks/benchmark/instruct_or_autocomplete_benchmark.py",
+      "bytes": 9986,
+      "git_blob_sha1": "13998bff26fcf8cedaa7d524c4c284a078c03ca9",
+      "sha256": "4295453b1c5902dfb039765112149afa2e7c613f44859be3b2f106f87c843c99"
+    },
+    {
+      "path": "CybersecurityBenchmarks/datasets/autocomplete/autocomplete.json",
+      "bytes": 3462368,
+      "git_blob_sha1": "abe711cf4f587c1f1244e8b2247cfe2d92d23455",
+      "sha256": "be065f92dbc74c882fe90b7abbeccfbba1ee39d79916cd0ff3387015e06e1bec"
+    },
+    {
+      "path": "CybersecurityBenchmarks/datasets/instruct/instruct-v2.json",
+      "bytes": 3006400,
+      "git_blob_sha1": "8ff742ea764e4164fb3dbfa1f02afafeaddb3533",
+      "sha256": "df19f7c51911d46d0ae5c069b7093728db8e682890a44317a211ac61cb02c181"
+    },
+    {
+      "path": "CybersecurityBenchmarks/datasets/instruct/instruct.json",
+      "bytes": 3399489,
+      "git_blob_sha1": "8293c9730b902c5e22d70bc1a1bed6e327e3aa20",
+      "sha256": "8913f770ccd50921ba5a4e94e504b224dbeeb39afc6618a3e9bf941a8eafbe3e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 7669,
+      "git_blob_sha1": "83f13c3a5da0106959dd8cbee0eecfd4e6cef3d2",
+      "sha256": "8cc15535a8a34b41888f644b339a1a9eb428af793a4f5e24df58a3e5b1487d74"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7980,
+      "git_blob_sha1": "6623dd18ace5469005c74b981aafd672c9b0982b",
+      "sha256": "ba4b067ebb5131715c2bf6e1f87d63a7b9268c4d357e6139202ab994a1dab77d"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-17",
+  "datasets": [
+    {
+      "dataset": "codeguard_plus",
+      "source": "https://github.com/CodeGuardPlus/CodeGuardPlus",
+      "commit": "0528ee9e527fa57b9a1c82c564beb854f1881fd5",
+      "download_date": "2026-11-17",
+      "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+      "file_count": 503,
+      "bytes": 412310,
+      "local_path": "data/external/codeguard_plus/upstream_20261117",
+      "verification": "all_file_sizes_and_sha256_verified"
+    },
+    {
+      "dataset": "cweval",
+      "source": "https://github.com/Co1lin/CWEval",
+      "commit": "e9a2a124c8c53679b6d8d27adfd2f6c40e7576d7",
+      "download_date": "2026-11-17",
+      "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+      "file_count": 350,
+      "bytes": 837759,
+      "local_path": "data/external/cweval/upstream_20261117",
+      "verification": "all_file_sizes_and_sha256_verified"
+    },
+    {
+      "dataset": "cyberseceval",
+      "source": "https://github.com/meta-llama/PurpleLlama",
+      "commit": "0654501399e7cbd560db9501965dc09c567a5563",
+      "download_date": "2026-11-17",
+      "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+      "file_count": 169,
+      "bytes": 10419793,
+      "local_path": "data/external/cyberseceval/upstream_20261117",
+      "verification": "all_file_sizes_and_sha256_verified"
+    },
+    {
+      "dataset": "llmseceval",
+      "source": "https://github.com/tuhh-softsec/LLMSecEval",
+      "commit": "39e97f046dbb2c4c604d31b86f2a4d3d27827388",
+      "download_date": "2026-11-17",
+      "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+      "file_count": 845,
+      "bytes": 9124775,
+      "local_path": "data/external/llmseceval/upstream_20261117",
+      "verification": "all_file_sizes_and_sha256_verified"
+    },
+    {
+      "dataset": "sallm",
+      "source": "https://github.com/s2e-lab/SALLM",
+      "commit": "0159a63daed0a88f461bbd69dd1160893e394a67",
+      "download_date": "2026-11-17",
+      "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+      "file_count": 430,
+      "bytes": 3747956,
+      "local_path": "data/external/sallm/upstream_20261117",
+      "verification": "all_file_sizes_and_sha256_verified"
+    },
+    {
+      "dataset": "seccodebench_v2",
+      "source": "https://github.com/alibaba/sec-code-bench",
+      "commit": "bf0c4d727098733af34c7add14a8d37ee84fd2a7",
+      "download_date": "2026-11-17",
+      "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+      "file_count": 1811,
+      "bytes": 5704931,
+      "local_path": "data/external/seccodebench_v2/upstream_20261117",
+      "verification": "all_file_sizes_and_sha256_verified"
+    },
+    {
+      "dataset": "securityeval",
+      "source": "https://github.com/s2e-lab/SecurityEval",
+      "commit": "6f4fb70f782c6d47b02ea24341e8ef8c1eb04a6a",
+      "download_date": "2026-11-17",
+      "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+      "file_count": 259,
+      "bytes": 164143,
+      "local_path": "data/external/securityeval/upstream_20261117",
+      "verification": "all_file_sizes_and_sha256_verified"
+    }
+  ],
+  "counts": {
+    "cweval": {
+      "c": 31,
+      "cpp": 21,
+      "go": 19,
+      "js": 23,
+      "py": 25
+    },
+    "securityeval": 121,
+    "sallm": 100,
+    "llmseceval": 150,
+    "codeguard_plus": {
+      "py": 71,
+      "c": 32
+    },
+    "cyberseceval": {
+      "autocomplete.json": {
+        "rows": 1916,
+        "python": 351
+      },
+      "instruct-v2.json": {
+        "rows": 1681,
+        "python": 282
+      },
+      "instruct.json": {
+        "rows": 1916,
+        "python": 351
+      }
+    },
+    "seccodebench_v2": {
+      "cpp": 15,
+      "go": 13,
+      "java": 53,
+      "python": 13,
+      "nodejs": 4
+    }
+  },
+  "verified_files": 4367,
+  "total_bytes": 30411667,
+  "validation": "Downloaded bytes verified; main dataset JSON/JSONL parsed; task counts and SecCodeBench four-mode prompt references checked; no benchmark execution",
+  "documentation": "docs/external_function_datasets_20261117.md"
+}

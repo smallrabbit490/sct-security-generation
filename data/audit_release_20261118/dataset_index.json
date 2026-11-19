@@ -1,0 +1,152 @@
+[
+  {
+    "dataset": "AutoSUIT",
+    "tasks": 951,
+    "qualified": 381,
+    "defective": 453,
+    "uncertain": 117,
+    "valid_judgments": 1864,
+    "missing_pairs": 25,
+    "materials": "materials/autosuit.jsonl"
+  },
+  {
+    "dataset": "CWEval",
+    "tasks": 119,
+    "qualified": 97,
+    "defective": 9,
+    "uncertain": 13,
+    "valid_judgments": 237,
+    "missing_pairs": 1,
+    "materials": "materials/cweval.jsonl"
+  },
+  {
+    "dataset": "CodeGuard+",
+    "tasks": 103,
+    "qualified": 75,
+    "defective": 6,
+    "uncertain": 22,
+    "valid_judgments": 184,
+    "missing_pairs": 15,
+    "materials": "materials/codeguard_plus.jsonl"
+  },
+  {
+    "dataset": "CodeLMSec",
+    "tasks": 280,
+    "qualified": 87,
+    "defective": 0,
+    "uncertain": 193,
+    "valid_judgments": 560,
+    "missing_pairs": 0,
+    "materials": "materials/codelmsec.jsonl"
+  },
+  {
+    "dataset": "CodeSecEval-Base",
+    "tasks": 115,
+    "qualified": 9,
+    "defective": 106,
+    "uncertain": 0,
+    "valid_judgments": 230,
+    "missing_pairs": 0,
+    "materials": "materials/codeseceval-base.jsonl"
+  },
+  {
+    "dataset": "CodeSecEval-Plus",
+    "tasks": 140,
+    "qualified": 111,
+    "defective": 29,
+    "uncertain": 0,
+    "valid_judgments": 280,
+    "missing_pairs": 0,
+    "materials": "materials/codeseceval-plus.jsonl"
+  },
+  {
+    "dataset": "CyberSecEval",
+    "tasks": 1681,
+    "qualified": 1007,
+    "defective": 0,
+    "uncertain": 674,
+    "valid_judgments": 2034,
+    "missing_pairs": 664,
+    "materials": "materials/cyberseceval.jsonl"
+  },
+  {
+    "dataset": "LLMSecEval",
+    "tasks": 150,
+    "qualified": 150,
+    "defective": 0,
+    "uncertain": 0,
+    "valid_judgments": 300,
+    "missing_pairs": 0,
+    "materials": "本地上游恢复_许可未明确"
+  },
+  {
+    "dataset": "LSCBench-Function",
+    "tasks": 150,
+    "qualified": 0,
+    "defective": 0,
+    "uncertain": 150,
+    "valid_judgments": 300,
+    "missing_pairs": 0,
+    "materials": "materials/lscbench-function.jsonl"
+  },
+  {
+    "dataset": "PLT",
+    "tasks": 874,
+    "qualified": 539,
+    "defective": 335,
+    "uncertain": 0,
+    "valid_judgments": 1748,
+    "missing_pairs": 0,
+    "materials": "materials/plt.jsonl"
+  },
+  {
+    "dataset": "PythonSecurityEval",
+    "tasks": 470,
+    "qualified": 55,
+    "defective": 288,
+    "uncertain": 127,
+    "valid_judgments": 913,
+    "missing_pairs": 18,
+    "materials": "本地上游恢复_许可未明确"
+  },
+  {
+    "dataset": "SALLM",
+    "tasks": 100,
+    "qualified": 24,
+    "defective": 43,
+    "uncertain": 33,
+    "valid_judgments": 176,
+    "missing_pairs": 18,
+    "materials": "materials/sallm.jsonl"
+  },
+  {
+    "dataset": "SafeCoder",
+    "tasks": 81,
+    "qualified": 79,
+    "defective": 0,
+    "uncertain": 2,
+    "valid_judgments": 162,
+    "missing_pairs": 0,
+    "materials": "materials/safecoder.jsonl"
+  },
+  {
+    "dataset": "SecCodeBench-V2",
+    "tasks": 98,
+    "qualified": 0,
+    "defective": 0,
+    "uncertain": 98,
+    "valid_judgments": 0,
+    "missing_pairs": 98,
+    "materials": "materials/seccodebench-v2.jsonl"
+  },
+  {
+    "dataset": "SecurityEval",
+    "tasks": 121,
+    "qualified": 120,
+    "defective": 0,
+    "uncertain": 1,
+    "valid_judgments": 242,
+    "missing_pairs": 0,
+    "materials": "本地上游恢复_许可未明确"
+  }
+]

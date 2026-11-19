@@ -1,0 +1,554 @@
+{
+  "repository": "codelmsec/codelmsec",
+  "commit": "1298694b7637e775e3a29451bf4b9ce62bf73b40",
+  "selection": "codelmsec",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2647,
+      "git_blob": "68f90dd408a88293f8998766b509201145a21811",
+      "sha256": "617558057339088477cba2757f0b126e771480ddf5842b34a877640e23c1d5b9"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 616,
+      "git_blob": "7ea6f5946ed98fd9018e09d7fbd64761a4bce2e6",
+      "sha256": "96e7a37237b88ff02878b13f5ed9b575720d4442f594de8a2b7f2cdaae1916c0"
+    },
+    {
+      "path": "config/config.yaml",
+      "bytes": 1291,
+      "git_blob": "ca5cc6b63eddc99b507921aad83c00debd49e758",
+      "sha256": "a03b59e334115b17b7127be37c401940f328908a0ad09645e9f40c7f4cbbca05"
+    },
+    {
+      "path": "data/list_of_cwes.json",
+      "bytes": 176,
+      "git_blob": "e24b1d376bfa76582537df2b0b8f9c8d5930559a",
+      "sha256": "1717af52a9127203bf3d64a562a6f69392d0f8ca0cd9e43d9699a2a5c8f68de6"
+    },
+    {
+      "path": "data/prompt_code_pairs.json",
+      "bytes": 31266,
+      "git_blob": "c5f818cd1b0b125b58f86b09d7e906b59ca78d23",
+      "sha256": "9a24e6b9ae14dafee9eab123e386251e3c621590bca37c2da6b7f767b7901ee8"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-022/fs-codes_CWE-022_0.c",
+      "bytes": 3244,
+      "git_blob": "b43b77d4b26e6464cef462e36bae1a8455747dd4",
+      "sha256": "b48d64688771c3a1776f5d93a857956282fae47b94fc2a7c060a5373aa0691dd"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-022/fs-codes_CWE-022_1.c",
+      "bytes": 3230,
+      "git_blob": "27951bcfd239a2fefe13b2d94a0b65f1e8e7f2ef",
+      "sha256": "94f52deaa5b50853e2b457490b647c894762cb5151249471c3b95e348dd270aa"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-022/fs-codes_CWE-022_2.c",
+      "bytes": 3235,
+      "git_blob": "d0c5b68aff4f4202b530b3178596e4cd272f254c",
+      "sha256": "f7c921d554a5f2690601133bfc9fc44fdfec8e246488782e51e8fb280a30c84a"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-022/fs-codes_CWE-022_3.c",
+      "bytes": 3077,
+      "git_blob": "5992d041e93024f06a70bcb684f056ba1016c9d0",
+      "sha256": "c7c1e706f63d1f44538ed514bed93a9de9f2fb1d8918f211e74d5c068fb9783d"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-022/fs-codes_CWE-022_4.c",
+      "bytes": 3244,
+      "git_blob": "83343c8e66063f5a7377964db0a5f8bd0e7598a3",
+      "sha256": "e52c34fc89cb5af8811361a18cdd6c03fb2eb2e4c7ae690dbfa50b11cd958ba2"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-190/fs-codes_CWE-190_0.c",
+      "bytes": 2851,
+      "git_blob": "b932795aaf9a412dcd48cded8db941e12c8b49e0",
+      "sha256": "bf22fb07d09088b166137686e92b6602e19c0caf20c4b46cbc46ee21c79ae03b"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-190/fs-codes_CWE-190_1.c",
+      "bytes": 2729,
+      "git_blob": "1937e0518d97e75b4d2eb00ee3cff25fae31dfac",
+      "sha256": "b373a002eb0403e7352a4af9b3cd5e5e006bcee4c66257806a2b430d332f31b4"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-190/fs-codes_CWE-190_2.c",
+      "bytes": 2646,
+      "git_blob": "b41f6bd475727a4ebb1d7bd808240cbf3f50697b",
+      "sha256": "eaa638241a17bc4a5e50dabe7056b200bd2fc77786d7a4c8cb7c95a43266ee39"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-190/fs-codes_CWE-190_3.c",
+      "bytes": 2705,
+      "git_blob": "fbed1072cccdf77f5085928d363bcfb5343f53ad",
+      "sha256": "803fd269410a45d5fd04f8046c9493ec14f91061e3a9ef2383125afb6649e11f"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-190/fs-codes_CWE-190_4.c",
+      "bytes": 2851,
+      "git_blob": "ddda942e90b1ee468b8e08146f6cc84ec87f1991",
+      "sha256": "587d1b6f1e9107025ba89184350012772cf5c740dd41f3f43883759f445a58d4"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-476/fs-codes_CWE-476_0.c",
+      "bytes": 2640,
+      "git_blob": "4f8afaf2c136c30765c083f1351defdadbe6d918",
+      "sha256": "86103a6b6b0ccd532beeded6bb4bceefb1a19b3f4aa61debc27fa245cdd4c25a"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-476/fs-codes_CWE-476_1.c",
+      "bytes": 2625,
+      "git_blob": "3a79badea9f45402776e2c834d0f283e795ce638",
+      "sha256": "f011c9b55cbd1e2e779a110e47a95b7c89771a6ef7cfdde774d99aaa18f0081a"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-476/fs-codes_CWE-476_2.c",
+      "bytes": 2596,
+      "git_blob": "09311ff49c0801b249f42143704aeac24da1d2ef",
+      "sha256": "e999ece6947f0b05da66845da542c64f4d6bd1d5e1d5038f37ec2c8533a0c7db"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-476/fs-codes_CWE-476_3.c",
+      "bytes": 2560,
+      "git_blob": "a66b3ada47edc7db7e5a69a952b449a2a756adb4",
+      "sha256": "ee8a38e173aae98e042be43d421594380dfc1afa5f0a814a57b135157b7789d4"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-476/fs-codes_CWE-476_4.c",
+      "bytes": 2640,
+      "git_blob": "40bfcb077255f505fdb51457f8ab95daa51bd685",
+      "sha256": "31c7641008fc25116f80e04d9d3f2a4d0d752e9a5cdd7269d74291ba051020f0"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-787/fs-codes_CWE-787_0.c",
+      "bytes": 2801,
+      "git_blob": "36d7557d9ae792a6d6b2e74c65e7d0e992ea87fe",
+      "sha256": "450d02cb2014069a218deb8e2a93ee40addb810fad5b6f6b81ec6cc5c4b44ec3"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-787/fs-codes_CWE-787_1.c",
+      "bytes": 2700,
+      "git_blob": "c6504c0deae091be4ad7c2ed71f6cc356900c49c",
+      "sha256": "27729f315043f7f1a557151c324be70dc71240f94a5825f6f01d2d0dbf03bc65"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-787/fs-codes_CWE-787_2.c",
+      "bytes": 2804,
+      "git_blob": "ada1a74544a7ead2a8972b02ace584a3e5c6c02d",
+      "sha256": "d3326b890884b12dc5b7a35770a529d203c057d2bd86060b2a7028ff008107bb"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-787/fs-codes_CWE-787_3.c",
+      "bytes": 2761,
+      "git_blob": "e2d2a7a671e17cc27f51ca264f8632c20e9c2dc4",
+      "sha256": "6a4264bd08962b8a335a1fb591bab56b28f312c71a15be2f38abf68c90b5a3b0"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/c/CWE-787/fs-codes_CWE-787_4.c",
+      "bytes": 2801,
+      "git_blob": "e6029f8d10205d453547fd2f522bd1558c205aca",
+      "sha256": "92481bf28ed6af76e58a2099061c8551ba7d992bd2d4ec34946ae7264d5a6b7e"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-020/fs-codes_CWE-020_0.py",
+      "bytes": 1385,
+      "git_blob": "65fe233fae28180fc698e77b6b6a722617f67f3f",
+      "sha256": "0f6dfafbae07c2546d33762883981efeaa91bec58a37ca3e1de61c70f91dc8e7"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-020/fs-codes_CWE-020_1.py",
+      "bytes": 1253,
+      "git_blob": "eb55e13be7408eb2fc102967a51aa741f9e31300",
+      "sha256": "f53bdd1984c343f0d9f62a62d22c3be9f442e374b3512fd8dc99d95571915e4e"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-020/fs-codes_CWE-020_2.py",
+      "bytes": 1227,
+      "git_blob": "df3f6b4391268637acf6be18d3d318d4ef374455",
+      "sha256": "b38cd0c807e1ebe917318efbf53c086e5f213d4e4a030338205ac5eb55caf775"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-020/fs-codes_CWE-020_3.py",
+      "bytes": 1301,
+      "git_blob": "d669c9a44c1a8ac9d69eaf2aaf08fee7805acc78",
+      "sha256": "be6b83699e3104c1ab9f0641ff50facc143c0c5f8ee4d548ea259b19933794b7"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-020/fs-codes_CWE-020_4.py",
+      "bytes": 1385,
+      "git_blob": "0d461a6df310d20dbc9369495e6aeea7d1b962bb",
+      "sha256": "bcbde8ad87c52a0af26e2920ee2a0d29addf382273eb76995b687c2c1d58bf53"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-022/fs-codes_CWE-022_0.py",
+      "bytes": 991,
+      "git_blob": "32dfbe4714a72db6d9bbc0fa25a88fb0a9b06759",
+      "sha256": "6d8fccafe750075c556b25981052cc2e640407923b195533ce4a7cb80bb51a07"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-022/fs-codes_CWE-022_1.py",
+      "bytes": 999,
+      "git_blob": "441f15e051d2548237c5989cb9d8ffc6b11228d7",
+      "sha256": "0a01d5941b28c29898ab65781403861c20dbfe775008030780ecfff899ba1ade"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-022/fs-codes_CWE-022_2.py",
+      "bytes": 1033,
+      "git_blob": "dd513edad7b4187ed92d18a4ca4fe0caeb163777",
+      "sha256": "6f201b9ee1e6afb0809b67f25879754b20eb93c9f6bafe756debcd7c83c90497"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-022/fs-codes_CWE-022_3.py",
+      "bytes": 979,
+      "git_blob": "1cb13006e541c91858df7bf3eb56a194341973ad",
+      "sha256": "a9bb4208c938603904e79a6f916eaac2dbed2b7ef20948f13321801d39c81cbe"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-022/fs-codes_CWE-022_4.py",
+      "bytes": 991,
+      "git_blob": "a174b2beb06cfc33bf1348e2383c058ff5aebfe7",
+      "sha256": "e38a18c46cb47d7f9dc875ced4f78de2d05683ca4c822ad51ea840aba8bf6956"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-078/fs-codes_CWE-078_0.py",
+      "bytes": 1075,
+      "git_blob": "4ea25f5d345ffd034aa43cf796ceb9166a7e3f59",
+      "sha256": "2985484f40a402597779e33de440ca927c1097fd5bad787bdef15e7bb63fc683"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-078/fs-codes_CWE-078_1.py",
+      "bytes": 1085,
+      "git_blob": "1107d0d3c161dfb5c00f64935b7e18bf607bbb38",
+      "sha256": "7d030e6df502465cb6e192c5d5f60b85f844e9e31f9c0a479711bdb50f4e2cfe"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-078/fs-codes_CWE-078_2.py",
+      "bytes": 1081,
+      "git_blob": "c0d69243dd55d6735e7e50db2c76097c2d26b4fc",
+      "sha256": "7cc51a3865744c950bc946d14cb872edec9cbd4cf3630a0b668cb4cf9ca35b58"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-078/fs-codes_CWE-078_3.py",
+      "bytes": 1075,
+      "git_blob": "c75d44d5c583b2978db5f56235c9ec9ea37ee74c",
+      "sha256": "66f1cb486f792ddb5a0271e36d9aa61d9194a47ab012c2890bfbb2af31fc90a8"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-078/fs-codes_CWE-078_4.py",
+      "bytes": 1085,
+      "git_blob": "b14033fd71a990275962b2b43bbc76f87d0454f4",
+      "sha256": "7176ec2c2c8f087fc1ec85397c703175dd904ab0031c559f6794f2d908a587b8"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-079/fs-codes_CWE-079_0.py",
+      "bytes": 1798,
+      "git_blob": "fde9f6cdd6b194ad1cb9c489b2ae989db7c5ee65",
+      "sha256": "80c18a64a4c285208a89766828e5aec6a0ed1734f63301720ec55aa04a274305"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-079/fs-codes_CWE-079_1.py",
+      "bytes": 1618,
+      "git_blob": "aef43195e8a7a0e0e3b88cddf2e4331c9e4360c7",
+      "sha256": "cae07e67bb3396a7c071217453c905a1e023bd6cbaffef462bdacca5b633ef64"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-079/fs-codes_CWE-079_2.py",
+      "bytes": 1738,
+      "git_blob": "6625cdfd266b571395fdd9f7cee6dc9d6c830caa",
+      "sha256": "c814c2315809665f841368c00ba4ed7f9f371a912ce1db8cff41d0e34e61589a"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-079/fs-codes_CWE-079_3.py",
+      "bytes": 1623,
+      "git_blob": "5f7fc10ed0cd00e1ac67a1519912128c46c1269b",
+      "sha256": "f66ce7895a588b063f7507bac6336c14745260f7de9cd8ac22511e1409556409"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-079/fs-codes_CWE-079_4.py",
+      "bytes": 1798,
+      "git_blob": "7d0f8cbcaff63ea31c2800b620df6f851d46eb37",
+      "sha256": "807c0998925610f2ea389033cd0902b95c04f95f73075c84a2fbc11393dea557"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-089/fs-codes_CWE-089_0.py",
+      "bytes": 2106,
+      "git_blob": "f88fa5b98e4f9ff5b605546891cb566ed8e2bc9c",
+      "sha256": "edb65119f8dc49044befe8a618435c3b3bb2bc6f786c8226bf17796fd9da92d5"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-089/fs-codes_CWE-089_1.py",
+      "bytes": 2000,
+      "git_blob": "e819feba344d4fd5519e1f996af771cdd7a58940",
+      "sha256": "8eeb51d2e1b37a0ed3a016d94c60414587c4ed6da36e34ed98814f5a06d71b18"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-089/fs-codes_CWE-089_2.py",
+      "bytes": 2182,
+      "git_blob": "570eba451e40de321fe32d29fba61f9f6105b066",
+      "sha256": "dcaf61efb9681ef50340fbe1f1e6ffe3dfa0d332f002fe544919ba18e7c36ea9"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-089/fs-codes_CWE-089_3.py",
+      "bytes": 2140,
+      "git_blob": "1a89e4b0929c672520f217e1121ed565d4c892f0",
+      "sha256": "4e170b5b6970798b7fd93bca9d301b5a022b3a3b55f5616b82f6de95c44e2389"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-089/fs-codes_CWE-089_4.py",
+      "bytes": 2106,
+      "git_blob": "0f0b4b7ce9d261e71672b877ab6355a763bb5a8c",
+      "sha256": "9838128dfe83d5ef318bb2bcb4058b5f1c4fecaec77e9ea99471389b16182deb"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-094/fs-codes_CWE-094_0.py",
+      "bytes": 926,
+      "git_blob": "fc611ea9d37b03a2293915314f2d1d70f61dcc6f",
+      "sha256": "ee9dd661b5cff93b18f1f58319a8ccd71e8ab69e45d96b11c0e5268f6789ca8d"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-094/fs-codes_CWE-094_1.py",
+      "bytes": 826,
+      "git_blob": "f821c38c845f3a2d914ecd8f68016b9a45ecf11f",
+      "sha256": "2674e2478d713c36a26af75e37bd43616dca425384de273e734785305337e7f3"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-094/fs-codes_CWE-094_2.py",
+      "bytes": 923,
+      "git_blob": "d18d88f1f379b771f01dfc477133305b6beb8271",
+      "sha256": "3b48b46b553a89acfaf0c955bef31296025be57d6ca78a94a57119d180fb775c"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-094/fs-codes_CWE-094_3.py",
+      "bytes": 926,
+      "git_blob": "3af54767b71fe3d451fe5ae687587e7574d4b7fd",
+      "sha256": "9afd0c555011bfcf6842a17d3ae2c58a607eb01699e3e990ac1341ac2c2cc626"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-094/fs-codes_CWE-094_4.py",
+      "bytes": 826,
+      "git_blob": "07364974db6274bc649ca24d7f1daf39e24ef8db",
+      "sha256": "cf1f8e28ad16728c05d5448fc56e03a4fd79a9d8d5f2979ed72790680d032885"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-117/fs-codes_CWE-117_0.py",
+      "bytes": 1155,
+      "git_blob": "a43085def42bacd4c7e0a58ef4af2bab356ee774",
+      "sha256": "5e83d7a77f4d6921bcb3fafa73b75a1ba22b61d708af414ac81ac8409e36e619"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-117/fs-codes_CWE-117_1.py",
+      "bytes": 1199,
+      "git_blob": "29386a47b49896a33eeb02731524c1d1a3da2149",
+      "sha256": "1fe2002ebba22d795d8603f95ddb239086f7803f351d19e9d19d84d7ddd35a2d"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-117/fs-codes_CWE-117_2.py",
+      "bytes": 1236,
+      "git_blob": "fac38eb1233f9701ead21b6539e652174be4ea59",
+      "sha256": "b01f332936df1a7ab9b3a0b8e3443866d3b1fc2ac9876dacae59d3c4963744cd"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-117/fs-codes_CWE-117_3.py",
+      "bytes": 1155,
+      "git_blob": "5757e0df9dfba7f896fbf4ed8b9712a251b6934f",
+      "sha256": "103fbbe852da8fc268752dd58337729ed8a1752cd530650385ae030c50d7c8d7"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-117/fs-codes_CWE-117_4.py",
+      "bytes": 1199,
+      "git_blob": "ae469a87803faf8aaaa0cca8bdeb0c1657c9bbb5",
+      "sha256": "c621a573e11665c23312163f0d2ff3ab3518e166240143c798d46d757c928750"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-327/fs-codes_CWE-327_0.py",
+      "bytes": 912,
+      "git_blob": "5f79d715966c4fb5a20b45ed5e3f4e03c159dfc1",
+      "sha256": "dc05f9906a736fc061f3a1befb3c40bc6cfcaf0c3ab6a3766a1b6508235b1334"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-327/fs-codes_CWE-327_1.py",
+      "bytes": 908,
+      "git_blob": "f4a15de37517234884f1079ad6387b445562d7e3",
+      "sha256": "8bf693caeabb496b1ba4cbe0531447f9dd7c8c210e7f11c5279c9df79a24ddae"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-327/fs-codes_CWE-327_2.py",
+      "bytes": 925,
+      "git_blob": "f26fdd1da7549eba2e54a61922a2dade949d18dc",
+      "sha256": "729d4b5ddb9481cdd2f68d476e3c8be6ea0086f5306d2587af54e727a1d46f70"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-327/fs-codes_CWE-327_3.py",
+      "bytes": 942,
+      "git_blob": "21eda839c810a741530f834566ab6aae99e9c845",
+      "sha256": "a3f2d7584e2acc4dd32bda3f451f0344ca0423eff616fbcfb8c40803c61da336"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-327/fs-codes_CWE-327_4.py",
+      "bytes": 912,
+      "git_blob": "7830b5b24c8e1ab541c198af4b82ad3be78374dd",
+      "sha256": "58a6e6d18d697a7c6b64e3e6763317ef9e618fd81015b63de27cd56873e6ee29"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-502/fs-codes_CWE-502_0.py",
+      "bytes": 1502,
+      "git_blob": "d9942d87afd1a991112735286383afcb9d8212e8",
+      "sha256": "b00878f952a6a7f622be328ee57935af567cb490889351abb03d56213db1423f"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-502/fs-codes_CWE-502_1.py",
+      "bytes": 1346,
+      "git_blob": "d3384078cedefc2758afef556c19a58fa43c6792",
+      "sha256": "7bdad77e7cfdff83c5baf550c8a8efc14b34e0afd8e139467d5d0d319aec14fa"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-502/fs-codes_CWE-502_2.py",
+      "bytes": 1546,
+      "git_blob": "c21c6c136b76f5c8b057ff621c803f07967a82a1",
+      "sha256": "1f4c36c75965635f83aa3d0bb7bb27787db1aec94f0ab3860b565a46704a558e"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-502/fs-codes_CWE-502_3.py",
+      "bytes": 1485,
+      "git_blob": "671ecfb27df5104a19d092769a3d43306adb1550",
+      "sha256": "dbffc8556b0f3eef3720298041a7b3f13074fc30d3a9627ace265063a34381fc"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-502/fs-codes_CWE-502_4.py",
+      "bytes": 1502,
+      "git_blob": "42207b7b86476a3f7c19e45eca693edcdb4a93d1",
+      "sha256": "fbf95a2463385457393d0e2a37207d3eb1eeb37aedb7ec303fc4fe93ec431cc5"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-601/fs-codes_CWE-601_0.py",
+      "bytes": 1041,
+      "git_blob": "ea032c90af3418b93d8470cf60ddb5c9658a0149",
+      "sha256": "9fafa90c43af9bbc9c5c133c5608c040d7bf038b9713b57f449df575af34842c"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-601/fs-codes_CWE-601_1.py",
+      "bytes": 1055,
+      "git_blob": "33c6fb61b2974378e73a80dfed46927be461c055",
+      "sha256": "b93c55a435abaab4817305bb2569f2b032c2041c65995c6a5dbc543b51bb9725"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-601/fs-codes_CWE-601_2.py",
+      "bytes": 1028,
+      "git_blob": "7ea079ad235b8f9a9879a7a44606142aa180b32a",
+      "sha256": "34e166c52343cbd61a2f403f02bdc23b267be2d2755ceefa2e2820aa6d412772"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-601/fs-codes_CWE-601_3.py",
+      "bytes": 992,
+      "git_blob": "d297efd6c247f7ee7765e9f145ca057d22e67328",
+      "sha256": "b0651630eb69bd5a0aa9e95200cd5ec6c71280d1aaa416092cb715441c5121f9"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-601/fs-codes_CWE-601_4.py",
+      "bytes": 1041,
+      "git_blob": "335f2e2d396a98135d4c12b4031fa4cae17d1f05",
+      "sha256": "d00422ede28b8132749c993084055ce39447c22605c64bc475c597b704b70c7e"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-611/fs-codes_CWE-611_0.py",
+      "bytes": 1287,
+      "git_blob": "31536eadaf24a12bd3df07dffba3a04112e58ec2",
+      "sha256": "4d82fcdc7a4d65a8491f993369a87f1bec2e0b80e8144c6fa3ca6a2bb62930b0"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-611/fs-codes_CWE-611_1.py",
+      "bytes": 1350,
+      "git_blob": "2d802e6ee848d7d918824a7aecc3253ed42717ba",
+      "sha256": "b87c337795c2c6ca7380a3c7666610975f6e709657614fcfaad03590f75c7611"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-611/fs-codes_CWE-611_2.py",
+      "bytes": 1400,
+      "git_blob": "21ca66db94e34601e924ff4d8b7eea66583c2497",
+      "sha256": "3ed244f0c246bdb4e01a07e68481618346d7d48302e9d1fc9374024361b7279e"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-611/fs-codes_CWE-611_3.py",
+      "bytes": 1381,
+      "git_blob": "6099b498886d05fbb2b5ea3771163cd8ab4ff5d6",
+      "sha256": "8167dcfb55829f8d37c389d18a2ba09b1ba64715b64781ab95e4772f3634fdee"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-611/fs-codes_CWE-611_4.py",
+      "bytes": 1287,
+      "git_blob": "5b7e2a97e0be0fc525caca5bdad33453370d154c",
+      "sha256": "b171c1a973fa47bca85b06122c7a1bae3558b6d131e21761b95d112b9b12056b"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-732/fs-codes_CWE-732_0.py",
+      "bytes": 1464,
+      "git_blob": "30ec5eefb211518daee235f8a65d80fbf8120bca",
+      "sha256": "0a329d6f9513526357adb632be37cd57c1774be211383f2eaf3661f4d9d4f865"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-732/fs-codes_CWE-732_1.py",
+      "bytes": 1309,
+      "git_blob": "30adaff8b44f830338cd3ca5de16c10b937beaad",
+      "sha256": "d48d5b59c8fa880e005ef6bf6ee0f3c0d12dbe3ce60f9c252ae655a78e5d44b9"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-732/fs-codes_CWE-732_2.py",
+      "bytes": 1464,
+      "git_blob": "29205214733fde49a93a87e6570cbc649124e743",
+      "sha256": "e862c07f3d0640f2080457caf0d88b0f7c8e6d91828c6948bccb391deaf52f19"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-732/fs-codes_CWE-732_3.py",
+      "bytes": 1464,
+      "git_blob": "2f841b46f59c115dca57d97b5ab9f48f288dbeb2",
+      "sha256": "d97d50cfccaded77ee48457751f7c8bfbd1e81e01110b27861a2a612b10f24ad"
+    },
+    {
+      "path": "outputs/few_shot_prompts/fs_codes/py/CWE-732/fs-codes_CWE-732_4.py",
+      "bytes": 1309,
+      "git_blob": "b09fac4ee48beec43ae2e8b41c1c7cd5803b5a0e",
+      "sha256": "9929b1e429f45cce936c3b9ccbfa0fa5ed625f5b8bd5ae6b418d169512f16791"
+    },
+    {
+      "path": "src/few_shot_prompt_generator.py",
+      "bytes": 6529,
+      "git_blob": "e89fde885c2a056ef16be86068ffa4f2866d22b3",
+      "sha256": "6f245a8427aae47d2c594444f100485f44bf878738446adce2b372f3ee705afe"
+    },
+    {
+      "path": "src/utils/__pycache__/config.cpython-39.pyc",
+      "bytes": 6019,
+      "git_blob": "a9599bc207d36b1683635892a896052213c8938a",
+      "sha256": "dac7e9285b31ea6d2e5192b1377c015fefd13766dfebc887e13dae1fd16a05c2"
+    },
+    {
+      "path": "src/utils/__pycache__/helpers.cpython-39.pyc",
+      "bytes": 2175,
+      "git_blob": "2ad8a5f7956ae055f01babdca96b4cad1d48a61f",
+      "sha256": "13f5696eb022460972658f296e0fbb3b6098dee971d13fd2f18f9342a768b260"
+    },
+    {
+      "path": "src/utils/config.py",
+      "bytes": 5160,
+      "git_blob": "ba57b83e2bbc521f573da725c4ad019888a987db",
+      "sha256": "bd0c10a17e9506f3e701f9314ce1c8e58d591ed52f9d94bedc94329e4fc786c3"
+    },
+    {
+      "path": "src/utils/helpers.py",
+      "bytes": 1792,
+      "git_blob": "6213311ace408a383afcb695ea2bf3673d481da3",
+      "sha256": "875eef64b9d69e55b66c53a1f144a06c3eb026d8e218d1757733a3b3bc82830d"
+    }
+  ],
+  "status": "complete"
+}

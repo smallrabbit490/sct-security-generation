@@ -1,0 +1,2 @@
+json.dumps(payload, ensure_ascii=False) + "\n独立判断编号：" + str(sample)
+sample取1、2；payload原文在materials，许可未明确库按恢复清单本地读取。

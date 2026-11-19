@@ -2,6 +2,8 @@
 
 本目录保存用于经验提取或补充实验的外部安全代码数据，与 `SecEvoBasePlus` 正式评测集分离。
 
+2026-11-17 新增官方冻结快照：CWEval、SecurityEval、LLMSecEval、SALLM、CodeGuard+、CyberSecEval 代码子集、SecCodeBench-V2。下载位置、实际题数、粒度、oracle 及许可证边界见[中文下载清单](../../docs/external_function_datasets_20261117.md)，机器清单见 `function_dataset_downloads_20261117.json`。原有数据保持原位。
+
 | 目录 | 内容 | 用途 |
 |---|---|---|
 | `secodeplt/secodeplt/` | 1,411 组漏洞/修复 Python 对 | 主要经验来源 |
@@ -21,3 +23,10 @@
 10 个 CWE（22/78/120/281/295/338/367/400/611/732，共 526 条）的空 `testcases` 用
 `rule` 字段 + LLM 评审处理，其余 18 个 CWE（874 条）用 capability/safety 动态单测，
 另将 1333（72-89）与 179（90-134、1261-1265、1392）索引列为错误数据点黑名单。
+
+
+2026-11-18 新增候选：AutoSUIT、PythonSecurityEval、LSCBench Function、CodeLMSec、SafeCoder；范围、版本、环境与限制见 [新增候选说明](../../docs/external_function_candidates_20261118.md)。
+
+## 带标签发布
+
+[15库逐题标签、统计索引、实际prompt与人工复核150条](../audit_release_20261118/README.md)。许可明确的冻结快照随本次提交上传；SecurityEval、LLMSecEval、PythonSecurityEval仅发布派生标签及下载清单，原文仍在本地。审计缺测和分歧不得当作合格。

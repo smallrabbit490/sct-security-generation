@@ -1,0 +1,2591 @@
+{
+  "dataset": "sallm",
+  "source": "https://github.com/s2e-lab/SALLM",
+  "commit": "0159a63daed0a88f461bbd69dd1160893e394a67",
+  "download_date": "2026-11-17",
+  "snapshot_scope": "Selected upstream data, tests and supporting files; no execution or dependencies installed",
+  "file_count": 430,
+  "bytes": 3747956,
+  "files": [
+    {
+      "path": "Dataset/Assertion/Author/A_cwe020_0.py",
+      "bytes": 459,
+      "git_blob_sha1": "106f169ab41a0ae77f003baa29dcefe7a9445055",
+      "sha256": "80c78a22e244af3a229a54355db2eb8a522e16a336bc345359af073a1f4b4836"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe020_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "54d29912279bd51786426ee4ffdd628359100e11",
+      "sha256": "e4390ccce6a0d8b738f87dbcfc8f9761d5e59271508d2079c95822e69503e087"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe020_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe020_1.py",
+      "bytes": 423,
+      "git_blob_sha1": "9806e4645a13182d409165d4af45a76c717686f2",
+      "sha256": "71798800d83b316630e527ba712e8a5d38e3ea0428b98f0b90feafa21e424773"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe020_1_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "e7fff7b300ada0fa67543b5e4bfd6eeff826d969",
+      "sha256": "934a47b3c9891835c512594e8f1b8a60d6f251a613e2f45e6287400468dd81e3"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe020_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe022_0.py",
+      "bytes": 585,
+      "git_blob_sha1": "ddee77f6315a36b540bf2c97a9aa3d3cb16a8368",
+      "sha256": "d52e8f3e46b0ac054a29fd312e9e150d6361250d23b1bfc0798bf166620275f6"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe022_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "d9a2f9401b2c8e16ca58bd2e8050bb2640d10c1a",
+      "sha256": "7171a4c92d0001513eaab0e3feecc41f223cb4f0ec4363bbcb13818907967a69"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe022_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe079_0.py",
+      "bytes": 371,
+      "git_blob_sha1": "dff29411bc6d330b98b76dd665d3fd9d889dc470",
+      "sha256": "c1d1054fa562e062a6b915d65f21434650fbbfe59e5c828b38834da3da6a4048"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe079_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "a36674a1c8b98bfab2db94a8a920de71c34286b6",
+      "sha256": "1c9284181c7ba43f3102ca2dfdd4e609f2da7e8c1925ed9ca7833e7f673334a5"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe079_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe116_0.py",
+      "bytes": 352,
+      "git_blob_sha1": "f84c249240822570423ed98fb2f2060e36796322",
+      "sha256": "496daae954dc703f7ff262a0dd081c7b1071e7e7d6ca17ca248f99ac7433ea4b"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe116_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "7831b5bd747d7d781283b9b7ac8c26a9e3575014",
+      "sha256": "1b0cf313a0a4cef478761809b8891ffae9dcf8d36a33eb57262d114d8977ebb2"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe116_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe200_0.py",
+      "bytes": 1874,
+      "git_blob_sha1": "c5af9655c6b770bd227d32577bf9c32ad59e4969",
+      "sha256": "e25c0eab88c4ed33d730eeadbeaf9e6f44bf9f9d035d4c78e55a6cc86d43a26a"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe200_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "ba3fd2ad7a9aa7bc484e5b65ef3683e47b9accae",
+      "sha256": "a6e44306d335984bc84f75cb7d6a28343cfe57e22ca33c918d1d2da3ecc6b3db"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe200_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe209_0.py",
+      "bytes": 1931,
+      "git_blob_sha1": "c2c6febe2e6bc54313f10cf4606a22b750b69a24",
+      "sha256": "ab56c40575ac7156a7c41b8953371264f816f7b7704fa635e41cc741faf050f4"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe209_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "5b58a38840dd87deccae9a67d1427d55ae0e66d7",
+      "sha256": "1d9b4e58572f577ee828d21b4b8c441f9d5b23025f6bdbdbdcd60a1ba9ce6656"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe209_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe215_0.py",
+      "bytes": 928,
+      "git_blob_sha1": "02395da1a6676f0b355eacfa820c424061d9638a",
+      "sha256": "669fa901ac7e5d889b701b6da0c6e5e11b7855fba042ca2db1bd30b5c7e0ca64"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe215_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "eb03edae2d0ee11f658ca6c99911865996d4ed00",
+      "sha256": "747652889e256071e78994e0a63e64956a32fb98a13569c4fcd51b577b8ba153"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe215_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe306_0.py",
+      "bytes": 1729,
+      "git_blob_sha1": "027a8603ee8de9ab21a8a0c3ff2a01bfd49a2f52",
+      "sha256": "febbf8e65c71529869800e4c198ba35d7b4f6f4e021981efbb28625065c7c89d"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe306_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "e1b8bba671950e587c8db086d47181cbfe1a28ec",
+      "sha256": "2f449ff05d0800851432b767eba299a79aad6328639321f08852290d570f6759"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe306_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe319_0.py",
+      "bytes": 1357,
+      "git_blob_sha1": "596036bbcb09c15baa425cc8dad5496bb172e98f",
+      "sha256": "30ac6bfa0ab5224cbc1ca86d864d0823bbb3a8163151b51b04dfcf7af25031a2"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe319_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "bb47628388379b339b424ba5e26b971eea42edb3",
+      "sha256": "b524c39c1056c47b014fbfcef799c7d0a076432f6daf6a2a79cb0e7e4d011467"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe319_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe369_0.py",
+      "bytes": 445,
+      "git_blob_sha1": "7bdf3a55a2eb4c2f4d78a04f3fdfe611a28829bc",
+      "sha256": "08fe3aaf6e154405d6094effcc9627d9eb3c2088731a7546c2fc7ac2b7cce458"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe369_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "9920ecbaa4b71e0a7734628ba088e8aefc8def70",
+      "sha256": "0303a84c031cc4d58db191b5058237c15cfe6fa3974422adbfe30b97cc766218"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe369_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe434_0.py",
+      "bytes": 666,
+      "git_blob_sha1": "2c4f2c41b3c152a1ee0625aaf48e9017d1bc9880",
+      "sha256": "1907115545ddb46fd6d93bee765a9c0bce0b0ec874287423be4edfab92098bde"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe434_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "8594475db9f551dc6d2ee719e7ff69221ef48124",
+      "sha256": "70b5abbb9ffc67b98a36ca307c911c834f7b4aec41e351484f6ec7b97f1e48ff"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe434_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe502_0.py",
+      "bytes": 968,
+      "git_blob_sha1": "d7c2020d4c9bbd6f91d37ccb565acf1c04d544fa",
+      "sha256": "8936421851bf8955e4835185300acc56ba581fcf6efe3bfabe7d11dd0bbab4cc"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe502_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "7b220b94755f1d318c1603d20da5c0b12030ddea",
+      "sha256": "409394adb6e3bc8c83994060d9d07d3daa0d63c2063ccf330eda0307cd203310"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe502_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe730_0.py",
+      "bytes": 465,
+      "git_blob_sha1": "b1561f7ec5d769e8a9d72cfa9aff943ce8a2afeb",
+      "sha256": "c87414a31adb43ae6896e691a2886ade8f1e608daef414ccf9c36fca28d3f859"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe730_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "d026190a0bb565d14f49dd20eaa1872d82326b52",
+      "sha256": "c7af0d00d2cef8eea09da20c4bb85f8ec7c3b165f6a5408de8fd3c77fe0a6926"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe730_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe798_0.py",
+      "bytes": 412,
+      "git_blob_sha1": "7d56d4cafa7321a9b48498a68ed9efcde5b14118",
+      "sha256": "51c6c9b3de8ecbe7efb1504f0295592fb51be3928aa2d0a0bf4a353175bd2e39"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe798_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "1def08de6588356d14e97686c6cacd560cf967fc",
+      "sha256": "d7c36e554d3d04023b484e64ebd459230031024e62390726474365278ff9495f"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe798_0_requirements.txt",
+      "bytes": 75,
+      "git_blob_sha1": "e6dc19e6c298eb03530302643d8dc64220845cf8",
+      "sha256": "386aa533875a4822d7eb4338b0f28406c9102435e3dbbe79868197b48195f74c"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe918_0.py",
+      "bytes": 448,
+      "git_blob_sha1": "56cf22c7c5cab108b2b5c9500d7d966ffaf94f33",
+      "sha256": "cfd20d82ff36952ba4ef22cac84a308c392f1c834409c0b88aaa0231def1472a"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe918_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "a8103069bc826056188fa454dcbcdf832b30829b",
+      "sha256": "df3dc7bcfe0ab669dd2c890f07030c04db21c8a3ef7da52bc572d6d7639db1f6"
+    },
+    {
+      "path": "Dataset/Assertion/Author/A_cwe918_0_requirements.txt",
+      "bytes": 75,
+      "git_blob_sha1": "da6ed9bff0e269bfdd0c6bcf7d93972a77966cc4",
+      "sha256": "e0be0dffb58f09f9981174db9307996eb3136b88324e7824517a7a47c3b8b637"
+    },
+    {
+      "path": "Dataset/Assertion/Author/assets/dummy.py",
+      "bytes": 91,
+      "git_blob_sha1": "0a96f36f8f5eb89279af5844ef3ae3119d193f54",
+      "sha256": "dd8b3d8e9d8b76db4a6ffdc519034a06348db2ac41b3e4fd51baba8e9dab72fd"
+    },
+    {
+      "path": "Dataset/Assertion/Author/assets/image.png",
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Dataset/Assertion/Author/assets/img/dummy.py",
+      "bytes": 20,
+      "git_blob_sha1": "e75154b7c390fdc4aa85d86e0a191be255a00627",
+      "sha256": "a84bb1230b2edd73f469afd5aba69b3ca191e6c25b444cf93d23342b64d6af18"
+    },
+    {
+      "path": "Dataset/Assertion/Author/assets/img/test_A_cwe434_0.png",
+      "bytes": 156,
+      "git_blob_sha1": "8075048531e98a2260c6f4946574d14f1a59728c",
+      "sha256": "966ec4bb6c68f6953d7f6fb5c70b6eed71afbc195c484c217cb698e3437198fd"
+    },
+    {
+      "path": "Dataset/Assertion/Author/assets/templates/template.html",
+      "bytes": 41,
+      "git_blob_sha1": "589c46556c3f27ad6146734fbc899bd020ff8e38",
+      "sha256": "bcfa0b6ff2c6caf1456e7b3394ff1c6299a2482d634c942986ccb7ec3476a497"
+    },
+    {
+      "path": "Dataset/Assertion/Author/static/dummy.png",
+      "bytes": 156,
+      "git_blob_sha1": "8075048531e98a2260c6f4946574d14f1a59728c",
+      "sha256": "966ec4bb6c68f6953d7f6fb5c70b6eed71afbc195c484c217cb698e3437198fd"
+    },
+    {
+      "path": "Dataset/Assertion/Author/static/dummy.py",
+      "bytes": 20,
+      "git_blob_sha1": "e75154b7c390fdc4aa85d86e0a191be255a00627",
+      "sha256": "a84bb1230b2edd73f469afd5aba69b3ca191e6c25b444cf93d23342b64d6af18"
+    },
+    {
+      "path": "Dataset/Assertion/Author/static/image.png",
+      "bytes": 41427,
+      "git_blob_sha1": "2567fe7ca4fda298a31b02ccf70974dbdd86cb3e",
+      "sha256": "4358b1e6137fd60a49ad90d108b73c0116738552d78cf4fceb56a89f044c342f"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe020_0.py",
+      "bytes": 373,
+      "git_blob_sha1": "f8e1c75620e657899f155607a66f76176730a646",
+      "sha256": "223b25b03ac1132efe4469b7965a7f21108c2a89449032afa70670083ea9caf4"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe020_1.py",
+      "bytes": 836,
+      "git_blob_sha1": "cc4b708f6dba1a5d70a4f6fcbeff00d058b7b6e2",
+      "sha256": "3df4960faf9667e96277214b86f2cdcce807755744c1d09772e34491063a781d"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe022_0.py",
+      "bytes": 1000,
+      "git_blob_sha1": "d7abd6d9e4f74f3cdf920baae018bf9f8f099402",
+      "sha256": "a36b09bcc30ac39d0c7d27be04a0ba39c7df8a72203a5e1c018047af1438b857"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe079_0.py",
+      "bytes": 732,
+      "git_blob_sha1": "86192e71f99fe15b37fc8569dd2d27c4eaf3f1f4",
+      "sha256": "6117e214d48399f2656a1a36c7a66fc7eb1472f46d7e15435f24c983d9a0d469"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe116_0.py",
+      "bytes": 698,
+      "git_blob_sha1": "e5e94859f65165961917b5006a3dfbf874a664ca",
+      "sha256": "afa1f960ed2f51dd9ab30c506053c2df40406f2521f1841fece2224510e1401d"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe200_0.py",
+      "bytes": 2704,
+      "git_blob_sha1": "a928c686c3f92a0fd515e4ce5848f5afe663f8da",
+      "sha256": "48b4798f9f7f1922085fd202812c3163579a5bf15d33a19e9f95092d526e76ed"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe209_0.py",
+      "bytes": 2746,
+      "git_blob_sha1": "2a71b535bb9157091f8d95d76b4495110e8ae833",
+      "sha256": "9642e9e9e719992b6d4f62fddc54b404646b84944ec8582c28c05baecafafe9b"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe369_0.py",
+      "bytes": 618,
+      "git_blob_sha1": "0980753b196d993ad20f213c6eb4ce5c10255d37",
+      "sha256": "b08262c362ed46530bf751bd91bc26446e5a0490efbdc01ae51478e421694a3b"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe434_0.py",
+      "bytes": 2043,
+      "git_blob_sha1": "97828b33d76d0129a2026ae06dbed604862ef39f",
+      "sha256": "273cdbacd4634ad6a87520a42724b4652c5a1e82046e8c20654166975313d760"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe502_0.py",
+      "bytes": 1444,
+      "git_blob_sha1": "d9a9be9926441efa5fec589301e3a45f470b0e23",
+      "sha256": "3b1e3faba829b8f90846f613a154053eb1133a20ee0fe175ebe0399cd76a2283"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe730_0.py",
+      "bytes": 683,
+      "git_blob_sha1": "5cd595eb6bcbac5e807a128fd6bb3cb66b6d0d5e",
+      "sha256": "7fa3ef5b2fca2fc6b587d8ad3d883e7660a1b5e1d816f4e58f5e3952e3b0e416"
+    },
+    {
+      "path": "Dataset/Assertion/Author/test_A_cwe918_0.py",
+      "bytes": 1204,
+      "git_blob_sha1": "9cd4b605c3f5b48721df981b2b1f6101e2e1b24b",
+      "sha256": "7e2be48a78ea023af27f6102f9fc327c8a6bf4e5bd9bea5fabf5f619c66bfdf6"
+    },
+    {
+      "path": "Dataset/Assertion/CWEList/Mitre_cwe250_0.py",
+      "bytes": 871,
+      "git_blob_sha1": "ed92bacafa2ea9822f680198877c12c48e530e73",
+      "sha256": "fd37c1926611453891ed1c4e4eb7fb186c8be0e88567887aecc2108f3d4bc2cb"
+    },
+    {
+      "path": "Dataset/Assertion/CWEList/Mitre_cwe250_0_Dockerfile",
+      "bytes": 2871,
+      "git_blob_sha1": "7af83b8573dada616be2c83587a4db1e11308dfe",
+      "sha256": "f86413e2ced2ac14ae6e8b5d7430236259c01246ce061093655c995ddb78acf6"
+    },
+    {
+      "path": "Dataset/Assertion/CWEList/Mitre_cwe250_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CWEList/test_Mitre_cwe250_0.py",
+      "bytes": 932,
+      "git_blob_sha1": "1e2e4c05d01664c6fa4dad26a3fe00c2b39ea678",
+      "sha256": "0ae41ddb9db4ea4d36623f09e9eea70304a2f26e671cc10d1851450d8dcb4763"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/assets/dummy.py",
+      "bytes": 77,
+      "git_blob_sha1": "3ea9e628bc810eee4c3feaa862b67b72dbe3e17d",
+      "sha256": "50460469f506af9820894aaf7388e53a0d8aa7f2416cf3ea011f51ff8d9065e7"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_0.py",
+      "bytes": 496,
+      "git_blob_sha1": "1033639685bbfa672972335739d5a80dee3834a3",
+      "sha256": "b097eacfa97fa4f698f2504cc6a3cdc7f72ce1c8e75778bbf7c7e4d06f4df4d6"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "90818bff3a9eca4c2d806fc6f45d89ba65a77458",
+      "sha256": "d54902b98871bc82ee417cd0bd3d0df497e009eca1a2292553b212fe29e1ddb4"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_1.py",
+      "bytes": 340,
+      "git_blob_sha1": "38a68d0e4435c1f4ea52a4259c3dea84ff0bb143",
+      "sha256": "ab27dccbe7343e908144d0aebcde3e66576e8511a981b2f6f60b1dabb24da12a"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_1_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "73c685601044369a034b2dd62cd393b48b80c1aa",
+      "sha256": "27e26e4bd88c6821dc99996c1c6b3ddb519ac07c2b633cb76689a7b41bc90b87"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_2.py",
+      "bytes": 580,
+      "git_blob_sha1": "a4df1d35f760f07136e8ce8778edf96e14a9802c",
+      "sha256": "29d25b86469494c283b53812d33241d1477b200a3f370c84289de152124790b0"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_2_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "1859d5bec2236f17b869bf117387c7369cda3867",
+      "sha256": "61c08c1c72e102e8c97c02883a603f980429d965bf8f3d38d6125a30631586ae"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_2_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_3.py",
+      "bytes": 497,
+      "git_blob_sha1": "a819d2c7a548d1139d4021aaa9bc8e7ff218f48b",
+      "sha256": "fcbe0a844a4c2c0a397fb9d4373ab3af2d1f85e620ba7b090d38e854b8a35fbd"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_3_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "e0231703de397cd2253011dd73ccfa61944a9ba1",
+      "sha256": "4b557ad2bcb436e20e23210e87c34bf9c39890adb3d994781d090f057c30f484"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe020_3_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe022_0.py",
+      "bytes": 336,
+      "git_blob_sha1": "edff7abb67638e290de6dfa86ba15a2826677697",
+      "sha256": "88345ab392f24bc5277670196a980eb2f45008ee0e57d27ee6992a3d1b620c18"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe022_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "350a366f44dd85b06016f3edc927c295bcbe3717",
+      "sha256": "81121f619c8b5786808240d5bcbe151c0aa67edf92895b56095a9ad5b146c361"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe022_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe022_1.py",
+      "bytes": 544,
+      "git_blob_sha1": "735e8fea57bbd462c395ae7c261a5f21f511a15b",
+      "sha256": "38c63699d4a18f0a31e74e83f67cc0e98d7e140eebbd7da66a49689edc9ddede"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe022_1_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "04b0cd4c508d60a50629fadf5cc1705eb3406806",
+      "sha256": "d844b9845041652baccb02e6a3b8895c0e5f3ab02618fb794f676d9058dfa535"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe022_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe079_0.py",
+      "bytes": 317,
+      "git_blob_sha1": "2d57262503ea7d48784236fd733aa3a5891a5940",
+      "sha256": "deb94ccfed444fb411a1ad6faa1644bb1c297443b7ee86784c273f25c1323812"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe079_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "22838c027b9755b075b949430e9414ada0237b85",
+      "sha256": "3225c702c2f4e65debd820a1e8a0750e7a404e18bf46949192ecec3d9ff198b3"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe079_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe116_0.py",
+      "bytes": 319,
+      "git_blob_sha1": "d5eadc4abcfa8205e00c10cc9d3d74aac68a7f47",
+      "sha256": "17cae1abc39004d1ceffa4f26cb7cf7396105835dae124e85236b712602e79f2"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe116_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "12ccf70b3edc62e2caa1b750874a8cddd4e450ac",
+      "sha256": "ccfb1ee2803659eb025862a0720284da482cadad5b6d47f7ed02ae90992a9430"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe116_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe117_0.py",
+      "bytes": 187,
+      "git_blob_sha1": "265f830521a735bf2a713705c988093070c71802",
+      "sha256": "c98bdc4dc5ae284f05ed989aa16717ffeb80d9d23097c566d191c4807878a7cc"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe117_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "3f73ae8a9aa6c826194362cb3091410bb4cbc8dc",
+      "sha256": "2d3fb20765b93ec45f24c4fe61cb3baa66bd0f7089db9503c2e77818f188d432"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe117_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe209_0.py",
+      "bytes": 994,
+      "git_blob_sha1": "1bb348a6f8c218ee6f7afb0571e579791a2172fb",
+      "sha256": "44bf474910636bc30f03b4e7bce7d36868b599cbeef9d24360833001319694ce"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe209_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "858fc15c630d15a8f61eb6aea871c3e0aca06223",
+      "sha256": "ffc2fec5dd10134b000822bcf81db40460cf6d1d41f248fbcee6862226adcfb7"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe209_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe601_0.py",
+      "bytes": 1984,
+      "git_blob_sha1": "856c511e88056c788dfb95f26721ab86d6ebad0b",
+      "sha256": "6f8f65c06852d43a650808bfd195a0bb29b4dc701caf8ebff460145e837f1fe2"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe601_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "bf10b37b3cb3cc43664a933f24bd71f6332605f5",
+      "sha256": "c40ebeeb13a5dfd31baa618fd78392ce1b33b2266061ab00558470feae788bbe"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe601_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe730_0.py",
+      "bytes": 447,
+      "git_blob_sha1": "97f9c37858ea59684475048bd110262242ddf491",
+      "sha256": "6563bb5934b2f05e2ca4f50f5b073f36a2c03e3b80d84f470554ba1c660ddfba"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe730_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "afdf72c902dafec5d4c939e2f28cec56b0c8f6a3",
+      "sha256": "db057aa787de91a4309cb0b37ac5d62c60177e619b9a0edfb266e420eb706f62"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe730_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe730_1.py",
+      "bytes": 578,
+      "git_blob_sha1": "233da00e9d0aedac2c6c3216cb40783d9da14a12",
+      "sha256": "0ff4baf05c4ebddd7f0f390fc9f95964ab25bfcf7dcb52d69e8ee3febf2e1489"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe730_1_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "6eb004bb73e6a63238baef0ef0d07bc031aced47",
+      "sha256": "29cc86ba735d69342b4752d2265a5de8ee4c4d9fbab1b10cf9b56ef581e12108"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/codeql_cwe730_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/templates/login.html",
+      "bytes": 418,
+      "git_blob_sha1": "ab3516d51fb5f538c8ca3fb8cc2f1dbc67ee8d11",
+      "sha256": "6d1c514aa014a95b55e2c401e75ee2474de782ca2d6810a445618ca9aa698397"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe020_0.py",
+      "bytes": 462,
+      "git_blob_sha1": "75e8d2feec3360be837c624bedfb1b0027020633",
+      "sha256": "5366cf2b682817bbf25f750ee8a3996863af1fc9412da750009c38737bfccc89"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe020_1.py",
+      "bytes": 473,
+      "git_blob_sha1": "2a4aa446edb2f0042bb8b11409b77fa3d1830227",
+      "sha256": "7f6e4f5e4294846e449d7672ea7e9b71ccaf9c029d0725596622d344be88a46a"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe020_2.py",
+      "bytes": 833,
+      "git_blob_sha1": "a03cd173017bab126ece5b60453eb34ac261b317",
+      "sha256": "4f7e5f4f45e65284dd7596723151827d92865cac08e3c20447e92422c638efa3"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe020_3.py",
+      "bytes": 855,
+      "git_blob_sha1": "cca324b5a001a38add054d231b0c2c2a52bc2682",
+      "sha256": "c3ae9e4d487984a2856bd33bc0eb3ad76453c2bcd124fcf1e78b7cd11c028259"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe022_0.py",
+      "bytes": 503,
+      "git_blob_sha1": "ec74369f96bdd4dbc10fd0cda48baa84b250771e",
+      "sha256": "7a62dcceceaee18e90e6199eca9e09c1577eb8ca4cdb77c962ce39f2044a83f2"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe022_1.py",
+      "bytes": 658,
+      "git_blob_sha1": "4b26552acf271d762e0f3728faf8b5e71062687c",
+      "sha256": "58f440d0365387c7339eb2bb1235ba2fd375577104f2c561b4a66d3de2555dae"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe079_0.py",
+      "bytes": 718,
+      "git_blob_sha1": "40046b72bf21dec8df54da3dd464322ad4db1f4b",
+      "sha256": "b1fd8cf4423ae811e4ced5ed257a1d5364d0015366443aeef03d972ca3757353"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe116_0.py",
+      "bytes": 587,
+      "git_blob_sha1": "bc6c49626f540f75eccd4210bad14b2ad1371a70",
+      "sha256": "82deb395be08ed5b89868f113710a627653cef4974ae8d95960205981e79896e"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe117_0.py",
+      "bytes": 939,
+      "git_blob_sha1": "8202e9ca1d5256fb104d0ad5e0fe001b466f8080",
+      "sha256": "615f75a5362f447a68fa2dd86a1cb974ee0db77005e192bf3aa4e71b2c621166"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe209_0.py",
+      "bytes": 1020,
+      "git_blob_sha1": "30b9e1606d1f57e9e8af4a42cd7276125fa7a9a7",
+      "sha256": "d5b2d392efdf594e20caee396703661a5c8ea55f7a3e4ade30bec448b65fb7cd"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe601_0.py",
+      "bytes": 1233,
+      "git_blob_sha1": "ab4c3b49cfa2cb674843669513e9a360e46ab0ac",
+      "sha256": "3fe85c4584c27db01f90bdb8b1b39b2a823a2cb7c1227c426f1c6ebb8fb43c04"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe730_0.py",
+      "bytes": 596,
+      "git_blob_sha1": "7b0570117a9ca0f50fbea12e83f142d44f4cde93",
+      "sha256": "42027f72884997109466c50ee99840653c6fabdb88258815ef73e9e24114336f"
+    },
+    {
+      "path": "Dataset/Assertion/CodeQL/test_codeql_cwe730_1.py",
+      "bytes": 1104,
+      "git_blob_sha1": "29f6e4d46552448aff6ac1a1ec3d1fc2de7ad4f5",
+      "sha256": "e4940a5bb25c681d66a211cd4d1c90a1e6d4322348d006771174056676395818"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe022_0.py",
+      "bytes": 306,
+      "git_blob_sha1": "a1858fe88ef81fc352da92618cb9a42b5624df25",
+      "sha256": "e500de29b3a19f37cb376ae935003d7773c7de21c154913f720574e35e130258"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe022_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "dc09d771be9b81b818de183fce5c088b1a6c43ae",
+      "sha256": "c68152050d09bd14d478a6489bd054a7a18ec267d2a8f3f8a564260b5703c6ae"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe022_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe252_0.py",
+      "bytes": 734,
+      "git_blob_sha1": "16ea3602b29160f16d934ceb73ab46a1b73ce63d",
+      "sha256": "3daecad27ab612eda1b8fc62ef725148f206bfb3c876e4fa6e653b145b59e655"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe252_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "4f659a50d3e9c18d4f4ee53be629de9a9dd4cb64",
+      "sha256": "972e21e8ffe4d5613509bfc5690fad9947397ca37304e0c90258ea00ea911081"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe252_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe295_0.py",
+      "bytes": 210,
+      "git_blob_sha1": "0d1430c6db1d5897143386831c733f8f13d6a4ef",
+      "sha256": "46379beff674ead093c27e04d528868a026784dec76cafd8f7db6999584c0b71"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe295_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "d20f88d6d283d3627e0db1210d07c0b8dad328b2",
+      "sha256": "7a70ab9db549be2afab18de5fc360728e009f2247279892d7966d9d2e1f4af8a"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/SE_cwe295_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/assets/dummy.py",
+      "bytes": 91,
+      "git_blob_sha1": "0a96f36f8f5eb89279af5844ef3ae3119d193f54",
+      "sha256": "dd8b3d8e9d8b76db4a6ffdc519034a06348db2ac41b3e4fd51baba8e9dab72fd"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/assets/image.png",
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/assets/img/dummy.py",
+      "bytes": 20,
+      "git_blob_sha1": "e75154b7c390fdc4aa85d86e0a191be255a00627",
+      "sha256": "a84bb1230b2edd73f469afd5aba69b3ca191e6c25b444cf93d23342b64d6af18"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/assets/img/test_A_cwe434_0.png",
+      "bytes": 156,
+      "git_blob_sha1": "8075048531e98a2260c6f4946574d14f1a59728c",
+      "sha256": "966ec4bb6c68f6953d7f6fb5c70b6eed71afbc195c484c217cb698e3437198fd"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/assets/templates/template.html",
+      "bytes": 41,
+      "git_blob_sha1": "589c46556c3f27ad6146734fbc899bd020ff8e38",
+      "sha256": "bcfa0b6ff2c6caf1456e7b3394ff1c6299a2482d634c942986ccb7ec3476a497"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/static/image.png",
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/test_SE_cwe022_0.py",
+      "bytes": 744,
+      "git_blob_sha1": "30304e8e5ba9eae4ce52c44c2ab38b1f9ed6f9b4",
+      "sha256": "86d9539404f193017cd156221af565db85daa39085597cb8d4f428b8b4802901"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/test_SE_cwe252_0.py",
+      "bytes": 513,
+      "git_blob_sha1": "39c0fc78c6a7c88655583331f4142feceaab634c",
+      "sha256": "c9632d839197526c966dedc2a26fa9cee5ceebfdeb0d1adc5623b5e254336947"
+    },
+    {
+      "path": "Dataset/Assertion/SecurityEval/test_SE_cwe295_0.py",
+      "bytes": 445,
+      "git_blob_sha1": "49b98ff53650d236b7ec9b5bd94d5f4ceb1942c9",
+      "sha256": "e3baf5c44d406ba0e3125cfa207c61b4b46b84932f10010613b196c51ce6a18e"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe079_0.py",
+      "bytes": 481,
+      "git_blob_sha1": "2cb6a1139480b8018c941d2413b3fab1b1713906",
+      "sha256": "29d034bd9270cd4f649a11f66fbdd73086ddeaee5d08cf8a9e2c6b0487cd08d2"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe079_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "ce7d717687a60cd3d09e8b303c5a5fb5526382b6",
+      "sha256": "0b1424cb5243c20d86b60a7635b1868bcddea68ccabc872ba87c81b2a1e23842"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe079_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe094_0.py",
+      "bytes": 442,
+      "git_blob_sha1": "81b0eee7fe3cff9d94c1119bcbf5f9666e3b9d5d",
+      "sha256": "fbdcdd82afbcf8937ca14ac466cc713bb182aafd916e839e41d426a76a5839a4"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe094_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "f4a57081de775339d166e036fe703c1486bf4e2e",
+      "sha256": "abf03f401327e735e4c2afe4d04d3a14f9f1688d267ff4dddbffd3408091648c"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe094_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe099_0.py",
+      "bytes": 318,
+      "git_blob_sha1": "365085cd0f408918a423642295aec846fcbb5ca9",
+      "sha256": "7f8ba091338bf10df52c28e2523c1ad3032be7d0a232d4295ad85f886fdd77ea"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe099_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "ae282a59cce816d6454a919a2c3e47be372e34e6",
+      "sha256": "3d56b38d2f8859f99cfcac4b5616d46050f4e8a8be29a59821a349c155045eaf"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe099_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe117_0.py",
+      "bytes": 256,
+      "git_blob_sha1": "804be2f1e5fdce308e349a9899ecdebe33ba6352",
+      "sha256": "4a3854c110ec3665bae9104fb4f48cff34d1ce465e321bfe1c21190633031a08"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe117_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "fcd983b0f022d19bf6c310ecaf5d9c2ccc2da9d8",
+      "sha256": "1eabdabb3f2e3867753a56e175af1f41b10915949fbba19e450854953b45f384"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe117_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe1204_0.py",
+      "bytes": 514,
+      "git_blob_sha1": "508b6ca86a0a4e567d69ce17fc2f691cb5b1195a",
+      "sha256": "4c1d18d4205da0dc3deb4de18554c650553da61d62b4135a68588303d38e722e"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe1204_0_Dockerfile",
+      "bytes": 2859,
+      "git_blob_sha1": "15182f0613713d2d0e12f3f3a92f04cbd2f20897",
+      "sha256": "fa43f809fe899026dacec782013e6a9b1c8f25f1bd225289d85fac20efa36a86"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe1204_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe379_0.py",
+      "bytes": 447,
+      "git_blob_sha1": "da3f8eb7567af3e10bf3c9ca9c589da76b0f6c12",
+      "sha256": "44e6af4c1af24422c8425cf9a4ecfff6b402cd8eeceec63e7f3c2a299e3b85ec"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe379_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "79bffdd675e38322db6240b0adc2794a15fe6def",
+      "sha256": "f03159b735ac92674f2176fdbf61875e8e696bdf83fe003e9ef3ecc07ff16a8e"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe379_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe400_0.py",
+      "bytes": 472,
+      "git_blob_sha1": "7d68ea95b4969c5a7acd9b7d4979d17dea0b141d",
+      "sha256": "d9e90b7ba81523f5b9096fffef6feb1ccdd2f7e4b43f764072f3c0d13eda63d8"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe400_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "c184cde04e5402a4477ab074660e6b67e5b95e75",
+      "sha256": "dc948bf7c2d96aaf170ec53b29d9b6e918b04eb79b32a6eb5b86e96a6cb80100"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe400_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe601_0.py",
+      "bytes": 449,
+      "git_blob_sha1": "629ee15794be333e56fd697c286bacad2eacfbb9",
+      "sha256": "24d94bd15e77f27368164f088cfee79014ece9d67c79c16d186ee4cd70d427dd"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe601_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "a48b8a960932aef12d47a591f9bd214d65956032",
+      "sha256": "10b588e5c51a7791aa801aeefe09af0bb5fb0262e1be7adc59294350aabc5218"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe601_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe827_0.py",
+      "bytes": 364,
+      "git_blob_sha1": "b819dff7adc7d41658ff232e9a4581ffc4b8de7c",
+      "sha256": "71628c0c59a0e4600818b0e6ec2a912d1db9b422c34750d115067e52ed2a53a8"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe827_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "bf4e69c6fb96ebf2c98ede87bac494608af0f554",
+      "sha256": "efb98ba4a9ac14d4eb0454417cf0aeee31cc6a481d630e621625102760b63dfd"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/SS_cwe827_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/assets/templates/template.html",
+      "bytes": 41,
+      "git_blob_sha1": "589c46556c3f27ad6146734fbc899bd020ff8e38",
+      "sha256": "bcfa0b6ff2c6caf1456e7b3394ff1c6299a2482d634c942986ccb7ec3476a497"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/static/dummy.py",
+      "bytes": 20,
+      "git_blob_sha1": "e75154b7c390fdc4aa85d86e0a191be255a00627",
+      "sha256": "a84bb1230b2edd73f469afd5aba69b3ca191e6c25b444cf93d23342b64d6af18"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe079_0.py",
+      "bytes": 695,
+      "git_blob_sha1": "862513d15d8ae4a7b6aeeba3ff4a6af414701829",
+      "sha256": "640afa7c87874021025067c3362d58284da3e27591975b01b6a0177fa0071237"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe094_0.py",
+      "bytes": 1060,
+      "git_blob_sha1": "1d2faa08947876fee736476251805d73262c844f",
+      "sha256": "68f483ab6d674d187eb46e1b413890973de9446944160cb07c47adf44dac0001"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe099_0.py",
+      "bytes": 924,
+      "git_blob_sha1": "014331204732ebc03f396e655023b5afa17fba38",
+      "sha256": "578e02e86567b6a565001302a2bf163a82cb05cefae5c7c4913657024b8cb600"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe117_0.py",
+      "bytes": 756,
+      "git_blob_sha1": "204fb388e982cbc9878d15bd1fc880c297005015",
+      "sha256": "fcf30f0fdf80de77a1e6321a6dc5ee998a219624fe10088de123a249d618b99b"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe1204_0.py",
+      "bytes": 739,
+      "git_blob_sha1": "4e462bf5d18e7382e09c6357ad0179a410d2a231",
+      "sha256": "3895f997622e70277f459360a886c7f6ae7cd6ae7b79a782f450bafeebda2a6c"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe379_0.py",
+      "bytes": 1357,
+      "git_blob_sha1": "52866f4ce622bf475e41ee729d47e3ec183b0fd5",
+      "sha256": "88b9661516b5481edd77d8622c3d7acb1bd762428afcc6424ef374bb524597c5"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe400_0.py",
+      "bytes": 1004,
+      "git_blob_sha1": "5f7d4b8a0d5c1585fc7d9e874bdd18b1ffbd318c",
+      "sha256": "3a9050f25ca405b07d248dc4e24eae788ab6fa2ef257816bde0f25661f1d1914"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe601_0.py",
+      "bytes": 683,
+      "git_blob_sha1": "34a8d65daad72612e97dea99dcaef8d906059c01",
+      "sha256": "6a70653b7fd1b56719938c7d055752c92534e6df669b770cc38457c2404e3fa9"
+    },
+    {
+      "path": "Dataset/Assertion/SonarSource/test_SS_cwe827_0.py",
+      "bytes": 1102,
+      "git_blob_sha1": "04df53154fc4ba8b649aa348b0d929e6c3f06d81",
+      "sha256": "038ec0185fbe1b5cf24f0e0ec6e8980b99432b61eea0b1689ee6d36c84cedc64"
+    },
+    {
+      "path": "Dataset/Assertion/StackOverflow/SO_cwe369_1.py",
+      "bytes": 232,
+      "git_blob_sha1": "f9a826c82a19c63eab6911f43b968c80263a08e4",
+      "sha256": "1a1089bb708edcb28b2d86e55e92562bdd25b5feb07ae8ec4bb4a42f3abcde78"
+    },
+    {
+      "path": "Dataset/Assertion/StackOverflow/SO_cwe369_1_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "6d3418db8588c88f120a9821209464454ac25c56",
+      "sha256": "7c2d7c0d85dcf7a5575c7fa6e01fbefc2d3d3667dc56d25905779c9fd2df7edd"
+    },
+    {
+      "path": "Dataset/Assertion/StackOverflow/SO_cwe369_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Assertion/StackOverflow/test_SO_cwe369_1.py",
+      "bytes": 520,
+      "git_blob_sha1": "f2e279a30eb25e392bff6c1a067ae57b062f9859",
+      "sha256": "5e6c5db9658ecf39f1300a006b0df12c5a272ab02e7c94034d141b9b0defd981"
+    },
+    {
+      "path": "Dataset/Dataset_creator.ipynb",
+      "bytes": 11670,
+      "git_blob_sha1": "42fd881981f6facb27312a8aa56be4cd971b5e04",
+      "sha256": "163aca75248c5952ac63f4cb9434846d0cd182ee5f95293cd5426e68d58b6e42"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe327_0.py",
+      "bytes": 513,
+      "git_blob_sha1": "382031eeb4a2bae347cfd4811ea2d5a94cf43ce2",
+      "sha256": "87b5ce8b03da4e6a6a1c96af85edae59d5fc45aabc7128a7c38caf04060375fa"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe327_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "82b8f65fe1433a87c71255027ff2a2eafce02a19",
+      "sha256": "5b438374b7cfcaef99f88af5b9676166dd7b12317de72fa16d081a7a94947564"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe327_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe338_0.py",
+      "bytes": 344,
+      "git_blob_sha1": "5f184c3f295a7b6998a6625d506aa5f126636b73",
+      "sha256": "ff6cf87f6e4436dff4803fb0621707bf4980636e91a088c4f826b737821e2e3c"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe338_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "d6f49b22dc59ae5b5fb78499070985ef5c3fce6b",
+      "sha256": "6e558c27f4c08e67887e2041b52009aad207fb2b49a6b6dea9ccff353c1f76d1"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe338_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe377_0.py",
+      "bytes": 484,
+      "git_blob_sha1": "6e9e51ed73fe787db3300524eaf55693f76f1450",
+      "sha256": "eb66df636ddf3dab2642793c98796122f23e27ea136824d243a29e6bc30e0f76"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe377_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "7d1029179d1c9c081ab9de1302db88184d47a49c",
+      "sha256": "717f57d1d76c3d79cd0795b0fc6ed26b17ea67701e4f3a0e1e9039d109b4c67b"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe377_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_0.py",
+      "bytes": 400,
+      "git_blob_sha1": "5d51096e209a38f9e936016f71c4896623765091",
+      "sha256": "ba24c1160aff41fb8cb946797b5500496ce77b5aece29d13ff3ff97eedb35c1a"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "7b220b94755f1d318c1603d20da5c0b12030ddea",
+      "sha256": "409394adb6e3bc8c83994060d9d07d3daa0d63c2063ccf330eda0307cd203310"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_1.py",
+      "bytes": 442,
+      "git_blob_sha1": "68a27a1c40a4ca80be80e00fd987c0aa51c662f0",
+      "sha256": "498aa06cb551b86d42b0111be24180202d86429fbbd8bbf9cdb4c102c8dbb870"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_1_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "feafb21fd6f39f8f051bb04d0380755b6431f83c",
+      "sha256": "b99a7157b4ad3bf123145152847d45e048aa2a66572deded6b5c72cc4a0e37b6"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_2.py",
+      "bytes": 366,
+      "git_blob_sha1": "3b00256e7522907f4ecc338ad47b630ceb67e8bc",
+      "sha256": "23edfe984e97da5a476fd9de2be82dfd820d352ce4f9c31c6921e1eede071978"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_2_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "852c5c8d6754649e5c6f2577d445c9eb5f506478",
+      "sha256": "bf18ed6106ff865be6c3c1b08e35557d57c647048dc56b3a6a84d5b62a3f56e7"
+    },
+    {
+      "path": "Dataset/Matching/Author/A_cwe502_2_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/Author/test_A_cwe327_0.py",
+      "bytes": 1631,
+      "git_blob_sha1": "d9c38a640f89723a56b3a2b6ff3354cedf69b094",
+      "sha256": "6a491f3e012880d5c3aec6fd6992f99d0401885c1aa340aa4cfd182e160bda44"
+    },
+    {
+      "path": "Dataset/Matching/Author/test_A_cwe338_0.py",
+      "bytes": 942,
+      "git_blob_sha1": "b785e1395aad8067ef6fc5e5609e72d1cdf6c1bf",
+      "sha256": "6b6d2999e29bc136a6780199be5b1769315d7c478ec88750d74e225909a47239"
+    },
+    {
+      "path": "Dataset/Matching/Author/test_A_cwe377_0.py",
+      "bytes": 988,
+      "git_blob_sha1": "6cce3f55f4ac97a830beb715b868dd798dd91c81",
+      "sha256": "18536ba5f884330dee9946e7d6d1654be023b89ffc774dbbd1296e5700a9e26d"
+    },
+    {
+      "path": "Dataset/Matching/Author/test_A_cwe502_0.py",
+      "bytes": 944,
+      "git_blob_sha1": "f0aac3b29dc5de2206073a9e30acbf79dab18f24",
+      "sha256": "afdba29a0a6a4bb20ed567433f68a858c81baca410ddd4c664328b2e7dcb3cdc"
+    },
+    {
+      "path": "Dataset/Matching/Author/test_A_cwe502_1.py",
+      "bytes": 962,
+      "git_blob_sha1": "760af6829cae1d18be0e90206bcb08f3112edd73",
+      "sha256": "3631c1b756a89279822fddcacecbacd8f21cc3ff6b31ba60afddbbbe9e01e32a"
+    },
+    {
+      "path": "Dataset/Matching/Author/test_A_cwe502_2.py",
+      "bytes": 934,
+      "git_blob_sha1": "3e43500b8b76f249c7870352d8e3fcbc24f0231d",
+      "sha256": "3f776f70962ad0c465c34943d658adc3d2d30d1e10fca62f88f2daa750123ab0"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe327_0.py",
+      "bytes": 520,
+      "git_blob_sha1": "e1758d65b0510f441bed50b7509c8fefec129dce",
+      "sha256": "a058ac4b7ecc45c5dd126abde70174437fdc34bb4e41491a24afb689c652e181"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe327_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "30477ef7855fa8a2be37fdb82deb0ac53e936f31",
+      "sha256": "c7556e09afc27a8670c01d67d1b92dabb00fddd47c5ee3b9e723c61fa91a6cb6"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe327_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe327_1.py",
+      "bytes": 386,
+      "git_blob_sha1": "e3acdbb5bee37e6ba8c0319c4fd565482478f8d8",
+      "sha256": "b1fcff50e012eadbacd80c250a2e00a92b1c55d7b3f22cbbefebf4036c74ffa7"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe327_1_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "9ee4158b9010f3841aa68ad1e49b049036fc09ed",
+      "sha256": "6bb5cc2975343aa6b19adcd9463499836ac99507014daaac792e106320d66d74"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe327_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe377_0.py",
+      "bytes": 383,
+      "git_blob_sha1": "d79660d53693f37a09cd62ee237f06193f6a77df",
+      "sha256": "68fc6f67b5a531bee50dda0bf6cf66423962df97fffa817aec939a3978843ebc"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe377_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "9f13acaa183a58be137a7aae2f9ac207d09cd5b9",
+      "sha256": "f1faf1b1377b1f756a48e02fe3b8e47cc56cd4b694ceb38230e158a9eca41564"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe377_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe502_0.py",
+      "bytes": 380,
+      "git_blob_sha1": "b6212c6167872f087f9ba0977b06f56ccc2ede1b",
+      "sha256": "dbebbdb6963cda8ad28cf4d45f8653a537a0ad8c028da9023a311e42401f522f"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe502_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "6b31d326bf467c945d12068d7583b2180da80cc1",
+      "sha256": "b8cd6cc701b7fca651e671d032604f978cd4132ae50174228340fe70d36be910"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe502_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe502_1.py",
+      "bytes": 372,
+      "git_blob_sha1": "eaba6d131bb0e70962dd173e63ed2c68b7b645db",
+      "sha256": "0533fb59c6cbab0e2d01b780d7230c5a89b3a7624f5ea34375dc03d415740769"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe502_1_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "ae4ecb2128610b51a67b5abe58278a550929a113",
+      "sha256": "efcc35cac9e6a6ecd88e3e4fcb2db0f9a0d7e685413e352255ae794f4b50aebc"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/codeql_cwe502_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/test_codeql_cwe327_0.py",
+      "bytes": 1718,
+      "git_blob_sha1": "f5161eb3315f2ec9e55d4d00ef193ea2c5fd50d2",
+      "sha256": "4fad84c0b4cb494b88c612dccf8df26d0ea3d98d0a0648e661cef3e8551158a7"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/test_codeql_cwe327_1.py",
+      "bytes": 524,
+      "git_blob_sha1": "66ccd6e06e91cf7a9357b27bee3ff570b4cbfa96",
+      "sha256": "110b0d756c53efb44acb5e27a60f53ae76004f007684a8b8e6c0e471542b046c"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/test_codeql_cwe377_0.py",
+      "bytes": 1002,
+      "git_blob_sha1": "5824621d62a819f7f0340d9a2a6b017967f423ba",
+      "sha256": "cbbb51aacd5f788e850ec108806ad75d5c06e498b219fc47258d33c97fca9512"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/test_codeql_cwe502_0.py",
+      "bytes": 950,
+      "git_blob_sha1": "a65319a0960df6a7c43a19253dbacf6e35498120",
+      "sha256": "ebddb41d3b3e1cbe5bbd62b770335dc3f8b2291495ebcea5f669fbfc2791d267"
+    },
+    {
+      "path": "Dataset/Matching/CodeQL/test_codeql_cwe502_1.py",
+      "bytes": 940,
+      "git_blob_sha1": "4216874b76774d728335ee2ad9ab73a62a6dd75d",
+      "sha256": "e25c6c7d615bfddf38ccb025f0b96ac5be4107cc8519f414793befede8dae827"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe078_0.py",
+      "bytes": 365,
+      "git_blob_sha1": "47f7b65a3870c84d33ccdcad6c1da6850c301a05",
+      "sha256": "234f71f382c31e1141cc51d43ce7cac20b1ec53fa511a3576ff7e0ec353b1da7"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe078_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "a906d44ada8014c7508fb7f6145959f5f045bbb0",
+      "sha256": "c1b79c844ed59fec85a0c8edcde15f642c93371479b43bcce9a039d56831344f"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe078_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe327_0.py",
+      "bytes": 342,
+      "git_blob_sha1": "6f267254f4fbe4899b7bb04c9f19188353063ab8",
+      "sha256": "540bea519bc24571605a6b75bc01ad816ec4caf38b75c434afb3d92f90a02f27"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe327_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "c16be1821996d3897f991f4dcc005b81dfd1faf3",
+      "sha256": "0a7fc241409ca7c6396211b3200e4fa6ea7e85878acf87423e89c100b508f759"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe327_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe502_0.py",
+      "bytes": 373,
+      "git_blob_sha1": "bc6f2180c6dab81a0240a9a953d8e930d6377eea",
+      "sha256": "c6121dbf63081106c2168f8c361a3371be45755322f7b579c2f944b61df08990"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe502_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "243fadf284cf28c4958d30d892039eeb59e094d5",
+      "sha256": "8ec04a77620986caca067a32250ce19d71f21ab89fbac64b303d7c3eb0c2f1aa"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/SO_cwe502_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/test_SO_cwe078_0.py",
+      "bytes": 830,
+      "git_blob_sha1": "214c2a3e7de54a72510677cf4f14bc2d263f9ce2",
+      "sha256": "ddf24720e35d7dcdfb1df443be003313770022430e451113bdc1b966af1e3a58"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/test_SO_cwe327_0.py",
+      "bytes": 1491,
+      "git_blob_sha1": "06082a8c2da7fffb77c565ff7875023cde0e5207",
+      "sha256": "a8b5ae9a9f0a2ab89a968a0fd95e30eda5b1c79baaa6324bedf2f85557787e22"
+    },
+    {
+      "path": "Dataset/Matching/StackOverflow/test_SO_cwe502_0.py",
+      "bytes": 944,
+      "git_blob_sha1": "98a1b6cfa9a53e7442ceb4dcbbdcb49135f29ab4",
+      "sha256": "019eb76e541634f02dce69a0d6e7567135ce03c7f6c0b9a79a66ae82e77b7dfb"
+    },
+    {
+      "path": "Dataset/Matching/codeql_job.sh",
+      "bytes": 1189,
+      "git_blob_sha1": "66809cde390f34d953ff2e7b253bc3e760021172",
+      "sha256": "ace3d9ec2ffe684e58ce4fcdc11f8e97080b9dd115d50da78564283737846e3e"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_0.py",
+      "bytes": 286,
+      "git_blob_sha1": "1a16b5182ce27a663a88d4c4966cdfde337d0a87",
+      "sha256": "337cb2194ea15b43b38b694443710985e304ec6fbd5bc5d2c9a7ec43f36561dd"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "410dcb00a935b1c4d3cf7895124b256320f6bdaf",
+      "sha256": "fda4e21707e41df74be95241182267c11b39763d824cf33522f0712ddd05ac36"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_1.py",
+      "bytes": 380,
+      "git_blob_sha1": "f4208628343dc137852e428d147bdee6da14549b",
+      "sha256": "4ca26244f921f0c12fffa15a00de74718207915f582abf0664e06c4eb195211e"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_1_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "63c23d5f4678da20765180991d02e06223be204d",
+      "sha256": "ca2505642030c17b85de3be0dabaaf2d4323aa776aafa2c23312cc94a9158e7c"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_2.py",
+      "bytes": 352,
+      "git_blob_sha1": "194a00c8869240b39e900d7a31d3c629cff36b77",
+      "sha256": "9656e35e7c76ec0720eb39deed7b34a5d232485f619327eb04c01f116577a644"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_2_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "122adeab9806ae948638ca34eb1a310ca07a156f",
+      "sha256": "93d02903d971b9593748ed3abe39a128e290e2015939a0f769f94f85f25f2fdf"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe078_2_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe089_0.py",
+      "bytes": 584,
+      "git_blob_sha1": "7ce3966856d552d45de9ca1b5448207202f8b12c",
+      "sha256": "0d504435862c43b09d18f13fa9cf59bb1964bbd239e59dc4a2bf66b3f6208b5d"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe089_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "485cfb59d33ebe81295879b61e4b585cd9ee541a",
+      "sha256": "f053b1a79e496c6e02da93678a3e8d1ba8e52a182c6bd5436d662a04600d0bd0"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe089_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe089_1.py",
+      "bytes": 604,
+      "git_blob_sha1": "06a5ffb7679489bedd3dbac3df2705090b160553",
+      "sha256": "0a4446daa925a45752fd33b1562ae6e696853b755611ac9d76e8a48f8f064740"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe089_1_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "06cc2d171176d9c6cacf6de63135408515666830",
+      "sha256": "99cec3fb9fc93620a66e876e1a71c382950f84b2fe9464e3bc5aa42b9fb9e441"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe089_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe094_0.py",
+      "bytes": 465,
+      "git_blob_sha1": "43dbd28798568bd0b10f75d6a1a2cd4e6d0d7473",
+      "sha256": "6faf0bad36909fbca2bc7375f91cc757e2c774f0111ef1dc407a3310fb55ede0"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe094_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "5537dff5ea415d0d37d9f528aeb52dda0e8a5415",
+      "sha256": "86cfbce26b5e8698a7a0c6f865c1e91b7d1b27e2c9b61115dddc56cae363b9d6"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe094_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe095_0.py",
+      "bytes": 969,
+      "git_blob_sha1": "b05feb6adbc28c06bc3f5d5aeb8f1f73e9127f7f",
+      "sha256": "df6512f878510d19f0cd5f13e85adfb0afb289d8fdb250e76d5b584311306fd0"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe095_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "e13a1fe45fb94e9f327370756f806c5bab279065",
+      "sha256": "84c8c88d9536645ce632681f4985e87d16afbfcdc71b2172f3d4d038de62abb9"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe095_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe117_0.py",
+      "bytes": 392,
+      "git_blob_sha1": "23a07b0b151440368839da1e0a30ec7125b71bff",
+      "sha256": "e9f0f95ee1ba9e033996faa508d78272888b86209911cd217bc9b81c53d00957"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe117_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "ecc22ec91247d07b434da1bce988c5acec70abb2",
+      "sha256": "0a3dde1baf572f49f6bc33da4d935f39c88134551750438527036cd0bbc34bf3"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe117_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe347_0.py",
+      "bytes": 247,
+      "git_blob_sha1": "4370dd8d1b4aa0140d6bed2bf1fdb9902d337c30",
+      "sha256": "5026441923a17ccd7fb3bbcdb9e5c91821063e3dd89bca6e310e0d7a5aaa9b2f"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe347_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "9b228d855ef20e282d265a26c26eb05be3330ae6",
+      "sha256": "42db7fc1f543ea8c026a10d9ed25d9c478d22e6b1307519d5be73c87d2e4fcc5"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe347_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe348_0.py",
+      "bytes": 461,
+      "git_blob_sha1": "6079b2dcfaa6a8a23adfbb7be256e9a0c8563637",
+      "sha256": "8de3d9da689ee2c0f5d99576058d6b9ada16cfe9f52b8316a28a23f279624dda"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe348_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "70468e5626e4eb957722bc82b8fc9fe17e71dd5d",
+      "sha256": "1f06d1c3f2970ddc6a3c63d8d4d962a25c973db53119ab44151b6ca9e57d45ef"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe348_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe611_0.py",
+      "bytes": 391,
+      "git_blob_sha1": "810cfade73df2df156be3bf5ae37e3078937699d",
+      "sha256": "398c2af19c66fd05d5c29ebd23030d194d92c6bb51f14d213dbde9ae290edeb7"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe611_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "edd438652161d61c4c0fed54cd7e24e80b2e0666",
+      "sha256": "165a8a4b0a44d5adc66263d58177ef322ceefec9261bc5055a97127ac16d7dd5"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe611_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe776_0.py",
+      "bytes": 402,
+      "git_blob_sha1": "e72c2b27237d3615683a055a83e1ee89dd4ea28a",
+      "sha256": "cdf45984021ac65f222089a8b6394ecc9091c0b49560ba8cba1c940729900e40"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe776_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "1f058ef8086794ec8d2736589d7d445bfdb6c7db",
+      "sha256": "29115f680b76d905b5b046ad8797debba0c15addb395a5418740c7a28983d337"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe776_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe943_0.py",
+      "bytes": 1467,
+      "git_blob_sha1": "6a79b48c4fe2b0d62c357643dbd8cb809f07b71b",
+      "sha256": "5efa40ae50c784656da86e354d0a99fcfe0d3e2396d34ed953bf21c925a534b3"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe943_0_Dockerfile",
+      "bytes": 2847,
+      "git_blob_sha1": "b2fe48085fe4374146cc2bad6cd648bf1003c6ae",
+      "sha256": "16dce645856fd03045432b120daee2f7eb804f48f6641fee426fb48c8736f84c"
+    },
+    {
+      "path": "Dataset/Tainted/Author/A_cwe943_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/Author/Database/database.db",
+      "bytes": 12288,
+      "git_blob_sha1": "878c85e7ebe67f75b59f586ddc092fb68ef75042",
+      "sha256": "7881ed4be776ea48695736c903449406d1a4ec2c71312c700d2bce1836ed9991"
+    },
+    {
+      "path": "Dataset/Tainted/Author/Database/init_db.py",
+      "bytes": 472,
+      "git_blob_sha1": "b2afd00920aade6ef1a5c1527556c3e9d155b6c8",
+      "sha256": "37fa96bef65b0bfcabc081a90aed99aa9052d9a770fac461dd997c2f76203e04"
+    },
+    {
+      "path": "Dataset/Tainted/Author/Database/schema.sql",
+      "bytes": 204,
+      "git_blob_sha1": "1f1ce543b014fdb7eb6e91277dcbc4fd7e73722e",
+      "sha256": "4144dff877750c49b4b828280d0769548ac601dcc40822f2929b5c160bdb2d39"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe078_0.py",
+      "bytes": 734,
+      "git_blob_sha1": "96e9a532548920829aed14130a5ad3ea19e0423f",
+      "sha256": "8c33e4b49f26f156065ecd1555ea1dfc83a506561855d049955ef518ea7f616a"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe078_1.py",
+      "bytes": 1253,
+      "git_blob_sha1": "23dbe1a133f6f218ced968e323774a50634999fe",
+      "sha256": "1a3da8ae0f997d36c928c6fb1fcbf7cba608fe0bd5cf5ab591e8a60f471ce229"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe078_2.py",
+      "bytes": 830,
+      "git_blob_sha1": "eef730fe8bc63848a9b5ccbbb0acc6443391ba35",
+      "sha256": "69dd231b6f77967ff7ec403ec62476c154aa215b879fff7b2dddfc1547fe091e"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe089_0.py",
+      "bytes": 983,
+      "git_blob_sha1": "b60eb798faea0d092476d99d33f7a0c6980609f1",
+      "sha256": "a4dbb922a0658b66767dab83281c9ffdb4a86ab73e100505c25b23abcaf7f8d6"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe089_1.py",
+      "bytes": 834,
+      "git_blob_sha1": "e0531fbcf5962b53b4b803335e4cb5f593ee1bba",
+      "sha256": "107156df1ecb164e8d98805abb9791354ecfe29065f94dd608059b5664e75099"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe094_0.py",
+      "bytes": 1040,
+      "git_blob_sha1": "6a14757c5cce33d03f8823dacc406142ca666408",
+      "sha256": "b09fa3dd65ff0922828a930ea8cd5d52bb9bca7778894d7250c2e37f6a0218ec"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe095_0.py",
+      "bytes": 1268,
+      "git_blob_sha1": "596c4734b63b079b9de8321b31fa7bae6f647e70",
+      "sha256": "c7951921ae1e2132715f72330d60992979db4807531a9520357780ccdf79651e"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe117_0.py",
+      "bytes": 1006,
+      "git_blob_sha1": "0ad737ddeee2406e774b451d1d9adb9f7874409c",
+      "sha256": "4c4faf9448bfcf89e58aa2e9be730323c69297a372823e842be8142692368f37"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe347_0.py",
+      "bytes": 717,
+      "git_blob_sha1": "35aeead8f41a95a9786853f0f8b5a24d499a1b88",
+      "sha256": "6dc200c4a20a29297c882924261d457132a98e50d75aee73a11badae0870fc8e"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe348_0.py",
+      "bytes": 1144,
+      "git_blob_sha1": "f60e8f0a3b9684e0891332eb87e39bf0233e9cc2",
+      "sha256": "540b850f5155dee6292449d0daca5f8ce9b09ef1393df69f12090397b694c519"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe611_0.py",
+      "bytes": 1304,
+      "git_blob_sha1": "2c38d0eb763ebe290c2cbf4248f36319d940b42c",
+      "sha256": "575bd0ceab833333d6315d16759f593b96f22d932fc194726a5f26c2d17e2264"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe776_0.py",
+      "bytes": 1495,
+      "git_blob_sha1": "f15785bdb7c003994aa2481ee6130af3eed129a3",
+      "sha256": "7e161cc968c12bb4937f4742cb4d531322e617c9578379ecd7d8fd3b8a3ebfa5"
+    },
+    {
+      "path": "Dataset/Tainted/Author/test_A_cwe943_0.py",
+      "bytes": 1279,
+      "git_blob_sha1": "e04885bbc960d3d57ce3a83d228f0797ca587357",
+      "sha256": "e3387701bded407d3762fdb1394d0c2560bcf30fdd175fe783b62868c450b9a1"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/.DS_Store",
+      "bytes": 6148,
+      "git_blob_sha1": "66544f017c880eea9e05fd2d544a58a0a328c19d",
+      "sha256": "f726bafcec9062090be366115234f7a90c662304d6630ebf231f65eacf263060"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe074_0.py",
+      "bytes": 733,
+      "git_blob_sha1": "17e81d62f73b3c60c6535b58fed2b8c676b35edf",
+      "sha256": "e8b32f7f27fff4724f4b97983381fe331719c1711b7d996b9c333bda660c94dd"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe074_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "d01d4dd10aad68fb4b3212d8e366f57959f8ce35",
+      "sha256": "c7c5d58b1edd045c2e51c32a0aabf0e4fa627097303853c897ddc066e3acbfce"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe074_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe078_0.py",
+      "bytes": 346,
+      "git_blob_sha1": "02a99b99cbb38d52905b0c1e5620a6d613297e52",
+      "sha256": "b633f4f135a56a75bc79028e4c7b54464631071372c8845a663873c57c72b86c"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe078_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "09be3c09e95a84fdae17a25abc190f4109ce5f7e",
+      "sha256": "23cd52fe94d6d52af6e09f905e501f7b2c3f5b9a875a66bff1b7551b2e028ce2"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe078_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe079_0.py",
+      "bytes": 554,
+      "git_blob_sha1": "8734783c354f069aaadd9222617ded6f9b3068ab",
+      "sha256": "5f6c1ce4d9dbb86f2120c4f9a8b92aa45941c5a4525c84e90aaab5dde06441a4"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe079_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "22838c027b9755b075b949430e9414ada0237b85",
+      "sha256": "3225c702c2f4e65debd820a1e8a0750e7a404e18bf46949192ecec3d9ff198b3"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe079_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe091_0.py",
+      "bytes": 558,
+      "git_blob_sha1": "cbfa9e6fa5dd569a80bb889ed2a7704c63f86803",
+      "sha256": "6efad9e6854d5fa8e661fd64407d7fa2e9f5ee672d4da8b7a72ac65936cb3bf6"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe091_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "22392ba61d22729ed1ad2fcf7819d76ab5b0c865",
+      "sha256": "49fe755c67271dd7368fc146a76f7ba14d9d38a839b2670faa61c09768b2f72b"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe091_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe113_0.py",
+      "bytes": 447,
+      "git_blob_sha1": "39a8a38ef8ff023138ec4c26bfd002e4ca6a0422",
+      "sha256": "fd2617ff7f0296b00426c84c9e464caf839acbf4162e096f8b2a65f3e4fdd3a7"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe113_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "994c186d4a18d01c23fa0657372af7566422fc14",
+      "sha256": "fe2fcce3890033cb46bbd678c4c1e4d1470d1ad9bf8474303b2a166da4820c65"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe113_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe117_0.py",
+      "bytes": 412,
+      "git_blob_sha1": "44091285aedd05b996cc5ae480b76c6ff4e63b4e",
+      "sha256": "90a7648455e10b80de53d2ed1ee0fbf8d73719eaca8c878b2ae8a78c39a692ca"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe117_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "3f73ae8a9aa6c826194362cb3091410bb4cbc8dc",
+      "sha256": "2d3fb20765b93ec45f24c4fe61cb3baa66bd0f7089db9503c2e77818f188d432"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe117_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe1236_0.py",
+      "bytes": 492,
+      "git_blob_sha1": "f80299c37e1d7e94aee061fd504de16d2b0cbd13",
+      "sha256": "a7eb907c35ff2a8556465acd5ac574e88d8c14188df52fc1718c0fe0c7eb3002"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe1236_0_Dockerfile",
+      "bytes": 2883,
+      "git_blob_sha1": "bb34eae606286e4d899d975030633d4254fefc89",
+      "sha256": "999ef76c4c0f36c1a5af5920aca8202fbf9f1b028feb21979a7a7e89da208827"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe1236_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe176_0.py",
+      "bytes": 524,
+      "git_blob_sha1": "f36011126b566f94327bab58ff0cefa4c7a794d3",
+      "sha256": "3a6121488965f55ed3aa43a6710c81cb56b4818577e75b5ca3739b6bb9ae2ebd"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe176_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "ea34d665a4746734bd060134de77c4b6ce245942",
+      "sha256": "4523f8924f2efcf170d78e670312515e6d94f4c7fcfd990f0394ae123a474b2a"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe176_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe208_0.py",
+      "bytes": 403,
+      "git_blob_sha1": "62c2e2e03a967585e614599c66c919af48a26eb6",
+      "sha256": "e803880bf068e68579f8fea3eb01131422b3954a7cd41ef5f0eacaa1c897d233"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe208_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "e7e918e9419e28cf9b8583e1d85c7e3472d4e8f1",
+      "sha256": "73ffc7a1380673e48dd0b552c54ca8ae9d42e386c61e7605a1c12591600e1e4a"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe208_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe208_1.py",
+      "bytes": 626,
+      "git_blob_sha1": "d5519b354ee83e0be9d7713a7d16d292d513c896",
+      "sha256": "0cc91e748e7c08e5f7d70cf4c8636075d7a982564e3a89ad6398aab8b51082fb"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe208_1_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "daf95f4931248c1ee3ac6022c7d4f73389d6e3cd",
+      "sha256": "79a35663d29f516473d09b9206fe892e9ed3cc613259b448f340d56db87904be"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe208_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe338_0.py",
+      "bytes": 211,
+      "git_blob_sha1": "da9669833c16f178e9beaf443348d80ffbb0d47c",
+      "sha256": "87435a1b6b1047969ef3ebe0b0f8b3eef2a8b967b5823d0e53e924db741963b1"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe338_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "9170bd50891f96ea3df2596ccb69b4eefa1053ab",
+      "sha256": "4640b62ef50f3b98cbc2998eee35d16ef4a482afbe8f17b5aa792fe7c05908ac"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe338_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe347_0.py",
+      "bytes": 255,
+      "git_blob_sha1": "2c9bbae6b61c4db4b263047701b011b505621e6c",
+      "sha256": "6aff3202be677d40ad7e8139c67709276454cd1bd8de0976f3a9bbf275b19550"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe347_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "e0cc66e5d3b34714bbf03410eb22c0468d92a946",
+      "sha256": "1cf1c09bdd0255fc07502852cf6a56655e193b72ab9313aac78d61ad7b7be383"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe347_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe348_0.py",
+      "bytes": 448,
+      "git_blob_sha1": "e83bc38d83ca8fff3e9f92a533b9a47137660a0e",
+      "sha256": "988ff309e377a04e7e68255b90b2c4b28de9987020dc56c4b647da43d4f8d882"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe348_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "73ee1500d5f0501716dbd25bef77e8cd92c653be",
+      "sha256": "06951fd934126b6f3d5541425408294e31b68363d2f62fa3b4e8fef997f25337"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe348_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe611_0.py",
+      "bytes": 506,
+      "git_blob_sha1": "9f15625a663702f5c1190befd3980052d26a1556",
+      "sha256": "2efd803aa97134113318a20af4848fa42fd8a139bfb48781f557da1f92e386cc"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe611_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "937b9c9da7245995806a2670fb0babd99c7f01c1",
+      "sha256": "3da1ecea2832831ab95a1a83b82835d727c16ddb57ce782b4170e4b1be9be890"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe611_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe614_0.py",
+      "bytes": 394,
+      "git_blob_sha1": "a5ea22931c01b0d948e3626ce77e22c9136fb4a3",
+      "sha256": "a92ee83f8ffb504caf3d98afd509fa54a3882defd0b579c6b394c662c6872923"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe614_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "926c57d08af0a44dded8cffc58c8b217738527d2",
+      "sha256": "60492df76e925eabed0d534be3c785e86357ab817f0fff3db1deb106d31572c2"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe614_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe643_0.py",
+      "bytes": 576,
+      "git_blob_sha1": "8297c3c1b24a472a8e3e6a642adae967e9b16cad",
+      "sha256": "99cadc89c3cb1d81584f04896eaf5147468698a6ba769abfeb139cb3c45688e9"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe643_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "375f1cac9edf9558d8e6d96d3e0d5fcf56c437a9",
+      "sha256": "899cebe41fcc35b96ffe75949dd374ded6e7f4a4cd0267e561a8c1fc4135d8d6"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe643_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe776_0.py",
+      "bytes": 389,
+      "git_blob_sha1": "c900d6b6f2aec83e2e5c7b3f960cf9f330cc5502",
+      "sha256": "9a46c1a4497c503e68f772d27ccdd77b1315e092b7b12cd3a91cdacd48a97e00"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe776_0_Dockerfile",
+      "bytes": 2877,
+      "git_blob_sha1": "c4c1578e9ad4fa32ac33aa737464f29d5d8cf8d7",
+      "sha256": "c17cc39a4bb23336d1b8fab03df4bffb1ed76ba6aaed5e1b14e19674c66b2d40"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/codeql_cwe776_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/static/csv_data.csv",
+      "bytes": 18,
+      "git_blob_sha1": "4dfe9c0f0e43bfbb47cd7d092e9dca0dda084b2c",
+      "sha256": "e6dfb901e3f967497b0e34aa9dc06ec4ee2f172efc0773245ca4f71be3506b56"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/templates/result.html",
+      "bytes": 13,
+      "git_blob_sha1": "f3fbf4a3dc714f1ceb77d765bc2287d644202b1e",
+      "sha256": "014ec0cca8ffff336b44bcc39a34e4f65482502f7314878cc0ac0af5dc2b6449"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/templates/template.html",
+      "bytes": 17,
+      "git_blob_sha1": "963eab9726e15b92150f0eb6935d171028419b80",
+      "sha256": "25361d56fa848703cce466c45b1ef87d0394d1a46a1a6138f7cca9531a682bb6"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe074_0.py",
+      "bytes": 815,
+      "git_blob_sha1": "d2bc5c8f68460296edc38bf56fdd6a1aaf1dd7ba",
+      "sha256": "bc877c46cea8a4e31da1e75268a9e536903089707ecbec6156b103166523ef7f"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe078_0.py",
+      "bytes": 846,
+      "git_blob_sha1": "f012c2650705cd942a01e7cc57b95d581a573f47",
+      "sha256": "da4a7f20051bf570f59c42c7cd4ba7e689afba9a05149335316678507ee5c8d2"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe079_0.py",
+      "bytes": 659,
+      "git_blob_sha1": "8327db5976125382b29ac014e092f44996349e18",
+      "sha256": "ea6200f9d8c8cb7a0beef0157992dff58b1f219ed3c53381c98013abd891ac64"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe091_0.py",
+      "bytes": 1829,
+      "git_blob_sha1": "3522938cae2f3d908eddd031cff03f6cb68dba3e",
+      "sha256": "f0384371c6c218655ca6de18bd437d3b266bd3b192fb9eb6afaf5848644a64a8"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe113_0.py",
+      "bytes": 1210,
+      "git_blob_sha1": "f39d9d66dae5d2245c5261aa891719e2b9af8559",
+      "sha256": "b4dbc6247064e543f6c8876715a1a633b7f4b3271167cf5f872193952e5d7dc9"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe117_0.py",
+      "bytes": 871,
+      "git_blob_sha1": "706eb25421ec8fd7de1b627741b11c37066195fd",
+      "sha256": "4a96ec27714af6ae69deae34456638d0064d435db8172f5460a701f1a4340507"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe1236_0.py",
+      "bytes": 1608,
+      "git_blob_sha1": "b0d6fe0619e5809d2720625e2a7c0553cfcfda40",
+      "sha256": "179cf088c44c0dd0def5e8166a0c083a07c467fa17a0e30f534d7ba91a460de4"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe176_0.py",
+      "bytes": 717,
+      "git_blob_sha1": "a279cdadfde3719e40d0064b9cacccb17e519c5d",
+      "sha256": "b8abe0719422b650862f0f7e979fe8e545d2893b3d49f5a3f841828b4cc8b62b"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe208_0.py",
+      "bytes": 854,
+      "git_blob_sha1": "ed11ec4149f03b5fec4c8eb2bed39984210eb870",
+      "sha256": "17d268052c80629de02a11cf689f80922d11923d1544af1e43746ef04a775e22"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe208_1.py",
+      "bytes": 1419,
+      "git_blob_sha1": "c939ad67f3ad6675e5572deeaae275953a0666bd",
+      "sha256": "12837454a3c8510eaf6e9d34d8b0b74ca1e423c5a3351f98f08fef3a6502579e"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe338_0.py",
+      "bytes": 496,
+      "git_blob_sha1": "d03da04026437ec3eda37bdf388a7d15f3ce7014",
+      "sha256": "4fc282c08d56fc9b2a90a723d4f5407f6dbd18b33b933f87ed7c711c40052c0c"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe347_0.py",
+      "bytes": 627,
+      "git_blob_sha1": "1f368aab550dab7781e66d1d320dbf718312af9c",
+      "sha256": "061ec3e4ca167b49672752cbecaa9a5949753ef7993fe6f974fe8eb95092523c"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe348_0.py",
+      "bytes": 1154,
+      "git_blob_sha1": "095e2ac05fec1e59d33806d0e272332ae1ee25f9",
+      "sha256": "74f7e1c14dadb27d06f4f0922d144f44beb7077c08a2f022506a40dfea5ef70e"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe611_0.py",
+      "bytes": 1402,
+      "git_blob_sha1": "8ca40815c229493b76c738d420f75a798b781445",
+      "sha256": "12b3fae4d8013e28da4dd99a08c6d2d5b0fd624962233760d54a8b9f8ae8b9f7"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe614_0.py",
+      "bytes": 1033,
+      "git_blob_sha1": "1909516b7bb49dba1c4b242b0e3380f416920289",
+      "sha256": "5baeed194eef2f65a10afba6d2daee8b87056cd836b367ec9f83356f7daf5183"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe643_0.py",
+      "bytes": 798,
+      "git_blob_sha1": "b854e55adb9e2df40ae7e83f0f8243200bd4c9f0",
+      "sha256": "aca049841ff7a72f311481250afcc486ccacfd22a1e9e3246cbfcd5e0d830cb1"
+    },
+    {
+      "path": "Dataset/Tainted/CodeQL/test_codeql_cwe776_0.py",
+      "bytes": 1435,
+      "git_blob_sha1": "113caff85c1cd56f99aa5c71fdb1a477ebd06ee0",
+      "sha256": "2a1a02765f7b31f8f32027544060e71e4ab0b98ac1655ce77b7ca37bb08816a3"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe078_0.py",
+      "bytes": 331,
+      "git_blob_sha1": "1f61db2135c02baf514196617ff45a60cb6f6898",
+      "sha256": "ddc5f265a30851f7cc8c02d84782b1d72a83f691a2cc81ed6aebefd02f2e38e3"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe078_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "dd17ebffdaacf2517a1ddfb8fd3aa11e66d2ead6",
+      "sha256": "2c12acc690df6cbff39d561a104d3152947fb5394a3ab862bd7c8f584ea9a6ec"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe078_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe078_1.py",
+      "bytes": 306,
+      "git_blob_sha1": "4a8bcc02ab83363810de13ef695e849408e64604",
+      "sha256": "95ed0b09ce24669ada6b366b31005feba69ddf9fc23edb04ab1a9ab8302cd2cc"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe078_1_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "1cd81a30bd82582a11dcabcd40102724b333c531",
+      "sha256": "5abc0ab2f5bec1c084d7c506da5e2275e5c7089917d110abdc55fafce9dd7aab"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe078_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe094_0.py",
+      "bytes": 272,
+      "git_blob_sha1": "6c4b43c0fa08c95c67be6caed3a87ba3d04b3954",
+      "sha256": "05c5d98850a73e2efbb271399da2830a8fd0832c8455ca2a47d4eb2c11cf1a42"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe094_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "ab08fa8a5a16abd48c4225a0a771f298566ddc03",
+      "sha256": "8e200eaa4fd336958b68c4066e50037f21eb4aaf1a19077e07bba7d9bc4e5dcc"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe094_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe094_1.py",
+      "bytes": 321,
+      "git_blob_sha1": "e656fe0317d6c702f68bb9af60d68c8b1fc44248",
+      "sha256": "fa23f19ddeeef357d3787924da2b382d398990b30c2a12e1986068254645a014"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe094_1_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "564ebb72a73435e9916467b5da0f563cb3d34f8d",
+      "sha256": "c286e546ab8c49a58ecdfe9f46212a6839442650a78bff7160e6a8983c18b8ba"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/SE_cwe094_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/test_SE_cwe078_0.py",
+      "bytes": 1014,
+      "git_blob_sha1": "8ededca5334b2079552438f5805ca8ae1035506e",
+      "sha256": "cb85fa370765e9e7e5b4e3984e5bce4394571391937e187c27c59da1101889b6"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/test_SE_cwe078_1.py",
+      "bytes": 838,
+      "git_blob_sha1": "54a9123f9eebe6fccc2d9a3077f0abe0f4a9647f",
+      "sha256": "368ee24e22ed0decf8e97f33cc0fc318d8bfc882df3653a658d463a23cff5bfc"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/test_SE_cwe094_0.py",
+      "bytes": 663,
+      "git_blob_sha1": "95abf292963f29cd178a13488a2a30a067c91e2c",
+      "sha256": "6671e18bf2600a50c38ee4e3d6342455209e2227665957b1ececd2d1c8c69416"
+    },
+    {
+      "path": "Dataset/Tainted/SecurityEval/test_SE_cwe094_1.py",
+      "bytes": 708,
+      "git_blob_sha1": "2c272feaad10c76857f8af6f26a817582e691f75",
+      "sha256": "0a65754be3b8e2f8118063c0ff517dbaf0e2562aa0f133f478dfc13d0e2d18e4"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_0.py",
+      "bytes": 328,
+      "git_blob_sha1": "a8e6acb56ebb41f541f4b26a9253792497375e61",
+      "sha256": "4bb3bfc31edb5550aac7526d2fa7579489684b75ca3631e9ea56873d859da13e"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "a906d44ada8014c7508fb7f6145959f5f045bbb0",
+      "sha256": "c1b79c844ed59fec85a0c8edcde15f642c93371479b43bcce9a039d56831344f"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_1.py",
+      "bytes": 346,
+      "git_blob_sha1": "660d38cef4355fe539ad720976e77a9ac80b09db",
+      "sha256": "779656de7315cea35b53f66507f96847bde0628b33fc0298422e435dfa4212d1"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_1_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "55ae5c6ec65a35391c4fab6d4bd3daee4fef5a05",
+      "sha256": "13d4d8b90dacb836286cf0e7fec1e4cd14adbe3b3ba941691fa33df56d013cd0"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_2.py",
+      "bytes": 536,
+      "git_blob_sha1": "4ad94ec7af5ef494b7ee189a0debc9e8fc5825ec",
+      "sha256": "013f2cf9fe1983bb0d8bb672cb5b3db44793ddda56290b4ab7be9701fa9b21ac"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_2_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "293da753bd65d824035e5d3da9933c197dafdfa8",
+      "sha256": "3d9fe838549e569666903523e63ec37efb82b4cb8a5afc9ad49b22d4dea1c517"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe078_2_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_0.py",
+      "bytes": 343,
+      "git_blob_sha1": "216f673404fb2d465642520479d0a3ef47bcc0e4",
+      "sha256": "8b0760ce02afa9f23d3c50f2c1f490e47d02266d074c16797f0cd154d84a8b27"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_0_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "a2fce0cc878e20428bc69eba889d5e6b6c41c866",
+      "sha256": "2d56f9461cd1e7bc27c029f89b1e97e3a9a5ad6b2e18e5e2158e0d3888f125ed"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_0_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_1.py",
+      "bytes": 286,
+      "git_blob_sha1": "8cdb9518d19ad93bcf35b107db55f194e369ab70",
+      "sha256": "4132c4ca27361436c1b05aadf1384d64f0b6d2ad702ceaa8a4fa028d915c1712"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_1_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "50fc269795ff963bc87872c943b514917da187d6",
+      "sha256": "fd4307e9a2b978f8eb745c01b59b84239088e0f8af06b8fb03c14537f334d6c8"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_1_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_2.py",
+      "bytes": 324,
+      "git_blob_sha1": "37b6f8009e8b390291b53fdf1885574754e4de34",
+      "sha256": "3a1d871d5590dafec4966d8b651fb440ed16e4cf83174a88e889c660f6bf5962"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_2_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "b2101ae6c3b07cf0ba987996fb184b3bc3699fcc",
+      "sha256": "841d55a99afc31400bb5d33b884729d48358cde87fa5bb7b00118c3235d26fca"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_2_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_3.py",
+      "bytes": 321,
+      "git_blob_sha1": "10da9575955ecc479ce0fb742550372a87c0b202",
+      "sha256": "39b7940ebeefae8d6e9a43517b84102da0a60d5080037abc50a6fb50ea34f07d"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_3_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "4adf245bcfb9eb8485b015e4e767ead75e8ce78f",
+      "sha256": "59fc0dd0487946953fa66c4722262c6ea62e29eb485056b86f066731cb564087"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_3_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_4.py",
+      "bytes": 341,
+      "git_blob_sha1": "b44f0927acbd4f05700b3cc9d7de3900d2373b89",
+      "sha256": "d138fcf8001b1f381d7a63dbf086a645463848ec5936bfed56e946cf6b44996a"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_4_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "84012553f5771abc6fb60753f1345da4e3abe175",
+      "sha256": "0c5ff34fae7727c7f94cf338d51ed22ffe5a7f5b9bbabc0bad2797962c126929"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_4_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_5.py",
+      "bytes": 819,
+      "git_blob_sha1": "8ae132e59b2dbdf50264fe38530d394703bb8021",
+      "sha256": "a5cc42deb8f4cd2ceefaba302cf55fd8b2d87f678c90df0be97861289b254bc9"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_5_Dockerfile",
+      "bytes": 2853,
+      "git_blob_sha1": "9d0cc2d6242bd58cfa0b0071138532bf71c27734",
+      "sha256": "3690cad3334fe192ba7867daf851294972f6e053d74ee5f21b895cce2d388896"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/SO_cwe094_5_requirements.txt",
+      "bytes": 58,
+      "git_blob_sha1": "485aa6251ce758299df17855a7ecf19c88f624b2",
+      "sha256": "20c9f4b7423a63395425f9cc54315fc1de5583bf8eedee6a8e1d006bf35e3f99"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe078_0.py",
+      "bytes": 746,
+      "git_blob_sha1": "767c9a743bccc77d9548195722ef9fd645a6d359",
+      "sha256": "b202d1c93d1e078bd1fd6de6d5988afbe4eae1a389d624224633b200b4186cff"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe078_1.py",
+      "bytes": 759,
+      "git_blob_sha1": "4f8d800e84f799a05f36dad181afc0f9354f86bf",
+      "sha256": "9723faf7e4559af39f591bdf6af94a16b66185f65502c223271150e74012f880"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe078_2.py",
+      "bytes": 1029,
+      "git_blob_sha1": "b44897821032fd5edfefaebf04c3f96e59d0ce87",
+      "sha256": "fc3ea81e2e23fb284ae0b7d4e19dc59d231abbc81817090f083a8eb39aebc611"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe094_0.py",
+      "bytes": 828,
+      "git_blob_sha1": "e95e3b8c0fc4c4f8b6b35c55e955d6a80618a666",
+      "sha256": "8d3b30490777d748a00611687f0cd5d1edc0446c48ca05224e6246c80f2035ec"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe094_1.py",
+      "bytes": 700,
+      "git_blob_sha1": "8bc44726f7c7939405f65df0ba2b51dedb91979b",
+      "sha256": "90eeb4f44881713b83dc3a9e64254eade6b6c4a1ec66c3308b5024acfd151d95"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe094_2.py",
+      "bytes": 881,
+      "git_blob_sha1": "6f13193aa0f5ded4f8891d30f3401b22b676f217",
+      "sha256": "5e5a46060a3b6fc959a35affa2429d7e31097614a14ff4727161a0cb944e68d2"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe094_3.py",
+      "bytes": 682,
+      "git_blob_sha1": "a50255e37bb729dad9f4fdff4bb53bb5e23bcb85",
+      "sha256": "4d76a23b56f09d818272af5b6531aaac41285542666fe4c5a9e1d107bf28845c"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe094_4.py",
+      "bytes": 944,
+      "git_blob_sha1": "a4d033ab4f51c6284b3f87e0f342a7348c56b48a",
+      "sha256": "abde378542b517ecf05163e2004424008db1b5f0068ad083c50bea3d9760a6ec"
+    },
+    {
+      "path": "Dataset/Tainted/StackOverflow/test_SO_cwe094_5.py",
+      "bytes": 1086,
+      "git_blob_sha1": "a311e686efd02cdcf60813c15e6d3ed703967f08",
+      "sha256": "3571c48336129418893a838231e456f59afd96664afc7f6cdf3f36a0ce351641"
+    },
+    {
+      "path": "Dataset/Tainted/codeql_job.sh",
+      "bytes": 5219,
+      "git_blob_sha1": "e13031ea1c407783f373d6cbf750b2a1eb74e7ea",
+      "sha256": "01e0da7022e9f66ead5082d4be72e82d26dea0fae621e43e9bf79d6c1e2463bc"
+    },
+    {
+      "path": "Dataset/dataset.jsonl",
+      "bytes": 104642,
+      "git_blob_sha1": "c94a9b544656431a6c980430d4c795c24d994819",
+      "sha256": "6704778bb972b4bf73c4e664d8bd71e6e21e3046b8f63557854c71a87abb9c6c"
+    },
+    {
+      "path": "Dataset/multi-dataset.jsonl",
+      "bytes": 3097229,
+      "git_blob_sha1": "c728b2401a0c99189a782e2030fbadd4e756c55f",
+      "sha256": "77cde5f8a82671e849a2b273308268bd2b43c8aa4d7870e5dace84cbdf4a0171"
+    },
+    {
+      "path": "Evaluation/codeql_job_runner.py",
+      "bytes": 3116,
+      "git_blob_sha1": "be74a5458a7052e359baf8ff8301757d937556f4",
+      "sha256": "e5d41ba199d1c4919440461fc20e461c496a59aa533c3678a6356a8a71746191"
+    },
+    {
+      "path": "Evaluation/run_tests.py",
+      "bytes": 9370,
+      "git_blob_sha1": "0d49a2d400343f61f5fb54246158fe390f9d0db5",
+      "sha256": "1eaf9f4bd68120d81a6389a6e10f81f04cd0e385e09d58d700c26a0af7f560ee"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4015,
+      "git_blob_sha1": "e12ed4b0a7e23c19995c29f5bf8023b0cdca671d",
+      "sha256": "fb54212af3ccd720d3a82f8bf0bb52c3de1fef00e5f828b58f388d8ea7051729"
+    }
+  ]
+}

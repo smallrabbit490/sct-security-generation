@@ -1,0 +1,16 @@
+# 构建上下文：translation_work/downloads/codeql；CLI 版本按 SafeCoder 上游固定。
+FROM golang:1.22 AS go-toolchain
+FROM maven:3.9-eclipse-temurin-11 AS maven-toolchain
+FROM cle-external-bank:20261117
+USER root
+COPY --from=go-toolchain /usr/local/go /usr/local/go
+COPY --from=maven-toolchain /usr/share/maven /usr/share/maven
+COPY codeql /opt/codeql
+COPY query-source /opt/codeql-query-source
+RUN chmod -R a+rx /opt/codeql /opt/codeql-query-source
+ENV PATH="/opt/codeql:/usr/local/go/bin:/usr/share/maven/bin:${PATH}"
+RUN python -m pip install --no-cache-dir pandas bcrypt pymongo mysql-connector-python flask-login flask-wtf sqlalchemy libcst
+RUN apt-get update && apt-get install -y --no-install-recommends ruby-full && rm -rf /var/lib/apt/lists/*
+RUN npm install -g @babel/core @babel/cli @babel/preset-react
+WORKDIR /work
+CMD ["tail", "-f", "/dev/null"]

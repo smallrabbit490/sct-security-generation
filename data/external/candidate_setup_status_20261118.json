@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-18",
+  "paid_model_requests": 0,
+  "upstreams": {
+    "pythonsecurityeval": {
+      "commit": "0278aa04404908eff8129a2ed0be58c6c736bf36",
+      "files": 931,
+      "status": "complete"
+    },
+    "lscbench_function": {
+      "commit": "8d66a7fa5b6498e1e2d7b070461c907f8a75f0b3",
+      "files": 1467,
+      "status": "complete"
+    },
+    "codelmsec": {
+      "commit": "1298694b7637e775e3a29451bf4b9ce62bf73b40",
+      "files": 91,
+      "status": "complete"
+    },
+    "safecoder": {
+      "commit": "1bf9d57b42b785ca1bf5454c040cc9d2d27c4ab5",
+      "files": 888,
+      "status": "complete"
+    },
+    "autosuit": {
+      "revision": "f76ff8b1cbf0f4859064a60b7621f2a62bdf03d7",
+      "tasks": 951
+    }
+  },
+  "environment": {
+    "image": "cle-candidates:20261118",
+    "watchdog": "PASS",
+    "full_dataset_validation": false,
+    "summary": "translation_work\\validation_runs\\candidates_20261118\\summary.json"
+  }
+}
