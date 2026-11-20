@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>安全代码数据集 · 人工复核工作台</title>
+  <style>/*__STYLES__*/</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="人工复核工作台首页"><span class="brand-icon">审</span><span>数据集复核<span class="brand-sub">SECURITY BENCHMARK REVIEW</span></span></a>
+    <div class="top-progress"><span id="overall-count">0 / 150</span><span>已完成</span><progress id="overall-progress" max="150" value="0"></progress></div>
+    <div class="top-actions"><span id="save-status" role="status">正在加载</span><button id="import-button" class="button quiet">导入进度</button><button id="backup-button" class="button quiet">备份 JSON</button><button id="export-button" class="button primary">导出 CSV</button></div>
+  </header>
+  <div id="storage-warning" class="storage-warning" hidden></div>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="复核任务导航">
+      <div class="sidebar-heading"><span class="eyebrow">REVIEW QUEUE</span><h1>复核任务 <span id="queue-count">150</span></h1></div>
+      <label class="search-label"><span class="sr-only">搜索任务</span><input id="search" type="search" placeholder="搜索编号、函数、题面…"></label>
+      <label class="filter-label">数据集<select id="bank-filter"><option value="">全部数据集</option></select></label>
+      <div class="status-filters" role="group" aria-label="按进度筛选"><button data-filter="all" class="active">全部</button><button data-filter="pending">待完成</button><button data-filter="completed">已完成</button></div>
+      <div id="task-list" class="task-list"></div>
+      <div class="sidebar-footer"><span class="privacy-mark">本地离线</span><p>题包与标注仅在本机处理。<br>建议定期导出备份。</p><button id="help-button" class="text-button">查看标注规则</button></div>
+    </aside>
+    <main class="reading-pane" id="reading-pane">
+      <div class="task-heading"><div><div class="task-badges" id="task-badges"></div><h2 id="task-title"></h2><p id="task-key"></p></div><span id="task-position" class="position"></span></div>
+      <div class="material-toolbar"><div class="tabs" role="tablist" aria-label="审核材料"><button id="tab-public" role="tab" aria-selected="true" data-tab="public">公开题面</button><button id="tab-tests" role="tab" aria-selected="false" data-tab="tests">审核用测试</button><button id="tab-rules" role="tab" aria-selected="false" data-tab="rules">判定规则</button></div><label class="language-control"><span class="sr-only">阅读语言</span><select id="language"><option value="both">中文与原文</option><option value="zh">中文优先</option><option value="en">仅原文</option></select></label></div>
+      <div id="material-content" class="material-content" role="tabpanel" aria-labelledby="tab-public"></div>
+      <div class="reading-footer"><span id="material-note">中文译文仅辅助阅读，证据请引用原文。</span><button id="quote-selection" class="button small">将选中文本填入证据</button></div>
+    </main>
+    <aside class="annotation-pane" aria-label="人工标注表单">
+      <div class="annotation-heading"><div><span class="eyebrow">YOUR ANNOTATION</span><h2>人工判断</h2></div><span id="row-state" class="state-pill">未开始</span></div>
+      <form id="annotation-form" novalidate>
+        <label class="field">标注人 <span class="required">必填</span><input name="annotator" id="annotator" autocomplete="off" placeholder="姓名或标注人编号"></label>
+        <fieldset class="verdict-field"><legend>这道题是否有缺陷？ <span class="required">必选</span></legend><div class="verdict-options" id="verdict-options"></div></fieldset>
+        <div id="defect-section" hidden><label class="field">首要缺陷类型<select name="human_defect_type" id="human_defect_type"></select></label><p class="field-help">多个缺陷选首要原因，其他写在补充说明。</p></div>
+        <div class="form-section"><h3>判断证据 <span id="evidence-badge">可补充</span></h3><label class="field">断言或调用<textarea name="assertion_or_call" id="assertion_or_call" rows="3" placeholder="引用原始断言或关键字调用，附字段路径 / 用例序号 / 行号"></textarea></label><label class="field">缺失或冲突的要求<textarea name="missing_requirement" id="missing_requirement" rows="2" placeholder="缺少什么？若为冲突，分别引用题面与测试。"></textarea></label><label class="field">为什么无法推断<textarea name="why_not_inferable" id="why_not_inferable" rows="2" placeholder="为什么无法从签名、示例、上下文或常规约定推出？"></textarea></label></div>
+        <div class="form-section"><h3>测试质量 <span>与题面结论分开</span></h3><label class="field">测试完整性<select name="human_test_integrity" id="human_test_integrity"></select></label><label class="field">测试质量<select name="human_test_quality" id="human_test_quality"></select></label><p class="field-help" id="test-quality-hint">测试损坏不自动构成题面缺陷。</p></div>
+        <div class="form-section"><label class="field">判断信心<select name="confidence" id="confidence"></select></label><label class="field">补充说明 <span id="notes-required">选填</span><textarea name="notes" id="notes" rows="3" placeholder="无法判定时写缺少什么；绕过未运行时注明静态推测。"></textarea></label></div>
+        <div class="comparison-section"><div class="section-label"><span class="step-marker">2</span><h3>核对机器标签</h3></div><p id="comparison-intro">先完成上方独立判断，再查看机器结论。</p><button id="reveal-button" type="button" class="button reveal">提交独立判断并查看标签</button><div id="model-content" hidden></div><div id="comparison-fields" hidden><label class="field">类型一致性<select name="type_consistency" id="type_consistency"></select></label><p id="consistency-hint" class="field-help"></p><label class="field">分歧理由<textarea name="disagreement_reason" id="disagreement_reason" rows="3" placeholder="人工否定机器缺陷或修改类型时必填。"></textarea></label></div></div>
+        <div id="validation-errors" role="alert" hidden></div>
+      </form>
+      <footer class="annotation-footer"><div class="task-navigation"><button id="prev-button" class="button quiet">上一题</button><button id="next-button" class="button quiet">下一题</button></div><button id="complete-button" class="button primary complete">完成并继续 <kbd>Ctrl Enter</kbd></button></footer>
+    </aside>
+  </div>
+  <dialog id="export-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form><span class="eyebrow">EXPORT ANNOTATIONS</span><h2>导出标注 CSV</h2><p id="export-summary"></p><p class="dialog-note">UTF-8 BOM 编码，保留模板全部 13 列。文本中的逗号、引号和换行会完整保留。</p><div class="export-options"><button id="export-completed" class="button primary">导出已完成</button><button id="export-all" class="button">导出全部（含草稿）</button></div><p class="dialog-note">JSON 备份另含独立判断快照和核对状态，可用于完整恢复。</p></dialog>
+  <dialog id="import-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form><span class="eyebrow">RESTORE ANNOTATIONS</span><h2>导入进度</h2><p id="import-summary"></p><p class="dialog-note">只替换文件内有填写内容的题目，其他题目保留。CSV 不包含查看标签前的历史快照。</p><div class="export-options"><button id="confirm-import" class="button primary">确认导入</button><button id="cancel-import" class="button">取消</button></div></dialog>
+  <input id="import-file" type="file" accept=".csv,.json" hidden>
+  <div id="toast" role="status" hidden></div>
+  <script id="review-data" type="application/json">/*__DATA__*/</script>
+  <script>/*__CORE__*/</script>
+  <script>/*__APP__*/</script>
+</body>
+</html>
