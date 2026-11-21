@@ -84,7 +84,13 @@
   }
   function addOptions(id, key) {
     const select = $(id); select.append(node("option", "", "请选择")); select.firstChild.value = "";
-    for (const value of C.OPTIONS[key]) { const opt = node("option", "", value); opt.value = value; select.append(opt); }
+    for (const value of C.OPTIONS[key]) {
+      if (key === "type_consistency") {
+        const allowed = data.review_kind === "qualified_risk" ? ["确认原合格", "推翻原合格", "无法判定"] : ["一致", "类型不一致", "不适用_人工判合格", "无法判定"];
+        if (!allowed.includes(value)) continue;
+      }
+      const opt = node("option", "", value); opt.value = value; select.append(opt);
+    }
   }
   for (const key of Object.keys(C.OPTIONS)) if (key !== "human_verdict") addOptions(key, key);
   for (const value of C.OPTIONS.human_verdict) {
@@ -203,8 +209,9 @@
     const intro = textCard("先独立判断，再核对标签", "合格：题面、签名、示例和常规工程约定足以确定要求。\n有缺陷：存在不可推断的必要要求，或题面与具体断言直接冲突。\n无法判定：材料不足或公开边界不清，需要在补充说明中写明缺什么。"); container.append(intro);
     container.append(textCard("有缺陷必须给出三项证据", "1. 具体断言或调用：引用原文，附路径、字段、用例序号或行号。\n2. 缺失或冲突的必要要求：冲突时分别引用题面与测试。\n3. 无法推断的理由：说明为何不能从签名、示例、上下文和常规约定推出。\n\n接口契约：参数名、默认值、返回形态或异常类型等缺失且不可推断。\n业务规则或数据：必要阈值、白名单、数据源或全局状态未给。\n题面与测试冲突：公开要求与断言直接矛盾。\n环境依赖：测试所需外部服务、数据或环境缺少公开契约；本机没装包不算。"));
     container.append(textCard("将测试问题单列", "测试损坏：仅记录完整性，测试质量为“无法判定”，不自动判题面有缺陷。\n安全组偏弱：一律拒绝能过安全组，但功能组会拦住。\nJoint 可被绕过：违反题意的实现能同时过功能与安全组；未运行时只记静态推测。\n输出格式过严：过度依赖逐字符格式。\n缺少正例：缺少合法输入验证。\n仅有静态安全检查时，不能推断同题双动态 oracle 的 Joint。"));
-    container.append(textCard("样本和数据隔离", "150 条均为机器判为缺陷且两次类型一致的候选，不能据此估计全库缺陷率或机器召回率。\n建议两名标注者独立完成，保留各自文件，分歧由第三人裁决。\nBase/Plus 的最终测试反馈不得用于 SCT 经验生成、门控或长期记忆更新。\n参考实现出错、实现困难和测试偏弱不自动构成题面缺陷。"));
-    container.append(textCard("文件与导出", "输入：data/audit_release_20261118/human_review_150/\n原始数据只读；CSV 保留 annotation_template.csv 的 13 列。\n自动保存仅属于当前浏览器和当前文件/站点；换浏览器或更换打开地址时，请用 JSON 备份恢复。\nJSON 保留查看标签前的独立判断快照。CSV 用于最终汇总，不含该历史。\n未执行编译、功能、安全或静态分析，相关动态验证均为未测量。", "题包 SHA-256", data.dataset_hash));
+    const scope = data.review_kind === "qualified_risk" ? "本批来自原合格题中“历史低通过∩规格风险双判一致”的交集。先独立判断，后核对是否确认原合格标签；风险不等于缺陷。此定向样本不能估计全体合格题准确率。" : "150 条均为机器判为缺陷且两次类型一致的候选，不能据此估计全库缺陷率或机器召回率。";
+    container.append(textCard("样本和数据隔离", scope + "\n建议两名标注者独立完成，保留各自文件，分歧由第三人裁决。\nBase/Plus 的最终测试反馈不得用于 SCT 经验生成、门控或长期记忆更新。\n参考实现出错、实现困难和测试偏弱不自动构成题面缺陷。"));
+    container.append(textCard("文件与导出", `输入：${data.review_path || "data/audit_release_20261118/human_review_150/"}\n原始数据只读；CSV 保留 annotation_template.csv 的 13 列。\n自动保存仅属于当前浏览器和当前文件/站点；换浏览器或更换打开地址时，请用 JSON 备份恢复。\nJSON 保留查看标签前的独立判断快照。CSV 用于最终汇总，不含该历史。\n未执行编译、功能、安全或静态分析，相关动态验证均为未测量。`, "题包 SHA-256", data.dataset_hash));
   }
   function renderMaterial() {
     const content = $("material-content"); content.replaceChildren();
@@ -220,6 +227,7 @@
     const r = currentRow(), m = currentTask().model, box = $("model-content"); box.replaceChildren();
     if (!r._revealed) return;
     const labels = node("div", "model-labels"); labels.append(node("span", "model-label", `机器：${m.verdict}`), node("span", "model-label", m.defect_type || "无缺陷类型")); box.append(labels);
+    if (m.review_kind === "qualified_risk") box.append(textCard("原合格标签与新增风险意见", `原标签：合格（不覆盖）。新风险：${m.risk_level} / ${m.risk_type}。\n风险不自动等于缺陷。请核对是否确认原合格；若推翻，填写自己的缺陷类型与三项证据。`), textCard("事后历史表现", JSON.stringify(m.history, null, 2)));
     const reasons = m.judgments || [];
     reasons.forEach((judgment, i) => {
       if (!judgment) return;

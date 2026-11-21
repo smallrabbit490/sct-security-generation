@@ -51,6 +51,27 @@ class DatasetReviewBuildTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "translation_work"):
             BUILDER.build(ROOT / "data/forbidden_review.html")
 
+    def test_qualified_packet_can_build_without_fabricated_translation(self):
+        temp_root = ROOT / "translation_work/temp"
+        temp_root.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=temp_root, prefix="qualified_ui_") as directory:
+            review = Path(directory) / "review"
+            review.mkdir()
+            packet = {"review_id": "QR-001", "material": {"bank": "PLT", "key": "PLT-1",
+                       "sources": [{"path": "public.arguments", "role": "public", "text": "dict"}]}}
+            model = {"review_id": "QR-001", "verdict": "合格", "defect_type": None,
+                     "review_kind": "qualified_risk"}
+            for name, row in [("blinded_tasks.jsonl", packet), ("model_labels.jsonl", model)]:
+                (review / name).write_text(json.dumps(row) + "\n", encoding="utf-8")
+            output = Path(directory) / "index.html"
+            metadata = BUILDER.build(output, review=review)
+            self.assertEqual(metadata["tasks"], 1)
+            self.assertEqual(metadata["translations"], 0)
+            text = output.read_text(encoding="utf-8")
+            self.assertIn("未提供中文译文", text)
+            self.assertIn("原合格标签", text)
+            self.assertIn('max="1"', text)
+
 
 if __name__ == "__main__":
     unittest.main()

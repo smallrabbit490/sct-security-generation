@@ -574,3 +574,5 @@ SCT 的正式经验轮次 `R0–R3` 不是历史缓存：它们分别表示初�
 [数据总入口](data/README.md) · [15库统计、实际审计prompt与标签口径](data/audit_release_20261118/README.md) · [150条人工标注规则与表格](data/audit_release_20261118/human_review_150/README.md)。共5,433题，保留合格/有缺陷/无法判定与缺测、分歧；人工候选以PLT、CodeSecEval Base/Plus为主。第三方许可及动态验证边界见发布说明。
 
 [人工复核可视化工作台](docs/dataset_human_review_ui.md)：运行 `python tools/dataset_review.py --open`，离线查看150条中英文题面、选择标注字段、保存进度并导出CSV；无需API或额外依赖。
+
+[原合格题规格风险复核与人工交集样本（2026-11-21）](data/audit_release_20261118/qualified_risk_review_20261121/README.md)：659题双判，历史低通过与风险共识交集，至多50条；保留原标签，接入可视化工作台。

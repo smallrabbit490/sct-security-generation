@@ -11,12 +11,18 @@
     human_defect_type: ["接口契约", "业务规则或数据", "题面与测试冲突", "环境依赖"],
     human_test_integrity: ["完整", "不完整或语法错误", "未提供", "无法判定"],
     human_test_quality: ["充分", "安全组偏弱", "Joint 可被绕过", "输出格式过严", "缺少正例", "无法判定"],
-    type_consistency: ["一致", "类型不一致", "不适用_人工判合格", "无法判定"],
+    type_consistency: ["一致", "类型不一致", "不适用_人工判合格", "无法判定", "确认原合格", "推翻原合格"],
     confidence: ["高", "中", "低"]
   };
   const LABELS = {annotator: "标注人", human_verdict: "题目结论", human_defect_type: "首要缺陷类型", assertion_or_call: "断言或调用证据", missing_requirement: "缺失或冲突的要求", why_not_inferable: "无法推断的理由", human_test_integrity: "测试完整性", human_test_quality: "测试质量", type_consistency: "与机器类型的一致性", disagreement_reason: "分歧理由", confidence: "判断信心", notes: "补充说明"};
   function blank(id) { return Object.fromEntries(FIELDS.map(f => [f, f === "review_id" ? id : ""])); }
   function expectedConsistency(row, model) {
+    if (model && model.review_kind === "qualified_risk") {
+      if (row.human_verdict === "合格") return "确认原合格";
+      if (row.human_verdict === "有缺陷") return "推翻原合格";
+      if (row.human_verdict === "无法判定") return "无法判定";
+      return "";
+    }
     if (row.human_verdict === "合格") return "不适用_人工判合格";
     if (row.human_verdict === "无法判定") return "无法判定";
     if (row.human_verdict === "有缺陷" && row.human_defect_type && model) return row.human_defect_type === model.defect_type ? "一致" : "类型不一致";
@@ -35,7 +41,7 @@
       if (!row.type_consistency) errors.push("请先核对机器标签并选择类型一致性");
       const expected = expectedConsistency(row, model);
       if (row.type_consistency && expected && row.type_consistency !== expected) errors.push(`按当前人工结论，一致性应为“${expected}”`);
-      if (["类型不一致", "不适用_人工判合格"].includes(row.type_consistency) && !String(row.disagreement_reason || "").trim()) errors.push("请填写否定或改类的分歧理由");
+      if (["类型不一致", "不适用_人工判合格", "推翻原合格"].includes(row.type_consistency) && !String(row.disagreement_reason || "").trim()) errors.push("请填写否定或改类的分歧理由");
     }
     return errors;
   }

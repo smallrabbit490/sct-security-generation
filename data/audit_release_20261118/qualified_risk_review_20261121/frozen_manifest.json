@@ -1,0 +1,30 @@
+{
+  "tasks": 659,
+  "planned_judgments": 1318,
+  "maximum_attempts": 3954,
+  "payloads_sha256": "d18bc51615248fcbf30a3b9fab0fc030200e3a723b4bfbdd6858f6cd0c3de2da",
+  "history_sha256": "ed47ca1a39f235596af270c0eb85f93aed913f31f6a8600b224e3da840167315",
+  "sources": {
+    "translation_work\\diagnostics\\20261106\\plt_partition\\rows_full.jsonl": "6e5167ce4077cadc05f29aaa7d424f1f0cb23ac00ac78dd6245130560c5cc325",
+    "translation_work\\baseline_runs\\agents_full_gpt51_20260906\\Base\\rows.jsonl": "1b1b4502e0b469cdd836586dec3ce572f70a31c1ffb3d489898265397bdeeabf",
+    "translation_work\\baseline_runs\\agents_full_gemini25flash_20260906\\Base\\rows.jsonl": "22ea319f0a04a844d4be527ca7c1be586fc7ec3c6805ddf8434e095dc33a18d1",
+    "translation_work\\baseline_runs\\agents_full_deepseek_v32_20260906\\Base\\rows.jsonl": "e2fd7d875f4e006570b35276f913af7e22a207e72559ee662c31b063f7a89a27",
+    "translation_work\\validation_runs\\cle_plus_gemini25_20260923_full\\python\\rows.jsonl": "452fb9f852b7ebb5be411606be6ab4cd3ffd3df0813707701a3ed6bcffd7e113",
+    "translation_work\\validation_runs\\cle_plus_deepseek41_8192_20260923_full\\python\\rows.jsonl": "444080dfd8213e5bf2b9cca46bbc2513cdc964f192f79882046b11d836f932f8",
+    "data\\SecEvoBasePlus\\Plus\\Python_Plus.json": "35dbb5a5bded68e31a02dab263e67f71aad1759a5babcb2a8f4de95f9d739e15",
+    "data\\audit_release_20261118\\materials\\plt.jsonl": "6322f3dd11095775b0dab2e2093d97f9b0840073c20939e4025ab6bd80e5f171",
+    "data\\audit_release_20261118\\materials\\codeseceval-base.jsonl": "e29d9d859423ea7d124765515cddf482220f60959a2acb3b3b692c63fa7bbcff",
+    "data\\audit_release_20261118\\materials\\codeseceval-plus.jsonl": "25ac82253ee4cb91e1a2cafc721b3cba1c1049351f8fe687270d279b180fd050"
+  },
+  "original_labels": {
+    "plt": "77e1297e3e557d851598ea4781e622a823b7c228205893582e4cc02a7b399819",
+    "codeseceval-base": "a59efc3b0c716311cdc5d45cb03d4a38de99437502d9538ec0b3e06ee9461fa9",
+    "codeseceval-plus": "91e8e3bf62e9426dfbaed8e672af25e84eaea7e013d591a9379692cb4248c179"
+  },
+  "low_performance_by_bank": {
+    "CodeSecEval-Base": 6,
+    "CodeSecEval-Plus": 32,
+    "PLT": 174
+  },
+  "protocol_sha256": "cb7cdb83115477b62f91dae81953b9da905806782ef9e577597e92dec27dc451"
+}

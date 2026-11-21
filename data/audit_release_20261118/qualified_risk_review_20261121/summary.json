@@ -1,0 +1,99 @@
+{
+  "tasks": 659,
+  "valid_judgments": 1318,
+  "planned_judgments": 1318,
+  "selected": 50,
+  "by_bank": {
+    "CodeSecEval-Base": {
+      "tasks": 9,
+      "valid_judgments": 18,
+      "historical_low": 6,
+      "risk_consensus": 4,
+      "intersection": 4,
+      "selected": 4,
+      "new_verdict_consensus": {
+        "合格": 5,
+        "有缺陷": 4
+      },
+      "risk_levels": {
+        "无": 2,
+        "低": 1,
+        "高": 4,
+        "无法判定": 2
+      }
+    },
+    "CodeSecEval-Plus": {
+      "tasks": 111,
+      "valid_judgments": 222,
+      "historical_low": 32,
+      "risk_consensus": 55,
+      "intersection": 18,
+      "selected": 18,
+      "new_verdict_consensus": {
+        "合格": 55,
+        "有缺陷": 44,
+        "无法判定": 12
+      },
+      "risk_levels": {
+        "低": 14,
+        "高": 44,
+        "中": 11,
+        "无": 16,
+        "无法判定": 26
+      }
+    },
+    "PLT": {
+      "tasks": 539,
+      "valid_judgments": 1078,
+      "historical_low": 174,
+      "risk_consensus": 115,
+      "intersection": 65,
+      "selected": 28,
+      "new_verdict_consensus": {
+        "合格": 405,
+        "无法判定": 44,
+        "有缺陷": 90
+      },
+      "risk_levels": {
+        "低": 74,
+        "中": 26,
+        "高": 89,
+        "无法判定": 152,
+        "无": 198
+      }
+    }
+  },
+  "attempt_status": {
+    "ok": 1318,
+    "invalid_evidence": 3,
+    "http_error": 12,
+    "transport_or_parse_error": 1
+  },
+  "usage": {
+    "prompt_tokens": 2478906,
+    "completion_tokens": 879439,
+    "total_tokens": 3481364,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "unknown_usage_attempts": 12,
+  "currency_cost": "未测量",
+  "protocol_sha256": "cb7cdb83115477b62f91dae81953b9da905806782ef9e577597e92dec27dc451",
+  "run_status": {
+    "ok": 1312,
+    "reused": 6,
+    "invalid": 3,
+    "failed": 0,
+    "stopped": 0
+  },
+  "selected_by_risk_type": {
+    "业务规则或数据": 23,
+    "接口契约": 27
+  },
+  "selected_by_new_verdict": {
+    "有缺陷": 48,
+    "合格": 2
+  }
+}

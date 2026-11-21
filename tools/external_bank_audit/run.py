@@ -50,11 +50,11 @@ def parse(text):
     return json.loads(text)
 
 
-def main():
+def main(max_workers=5):
     global OUT
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,default=OUT);ap.add_argument('--smoke',action='store_true');ap.add_argument('--workers',type=int,default=5);ap.add_argument('--samples',type=int,default=2);ap.add_argument('--model',default='gpt-6.1-sol');ap.add_argument('--max-attempts',type=int,default=3);args=ap.parse_args()
     OUT=args.out.resolve()
-    assert 1<=args.workers<=5 and args.samples==2
+    assert 1<=args.workers<=max_workers and args.samples==2
     rows=[json.loads(l) for l in (OUT/'payloads.jsonl').read_text(encoding='utf-8').splitlines()]
     if args.smoke:
         seen=set(); selected=[]

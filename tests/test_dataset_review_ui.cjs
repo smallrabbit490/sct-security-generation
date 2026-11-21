@@ -14,7 +14,7 @@ const labels = new Map(jsonl(sourcePath + "model_labels.jsonl").map(r => [r.revi
 const translations = JSON.parse(read("tools/dataset_review/translations.zh-CN.json")).tasks;
 const data = {version:1, dataset_hash:crypto.createHash("sha256").update(read(sourcePath + "blinded_tasks.jsonl")).digest("hex"), tasks:jsonl(sourcePath + "blinded_tasks.jsonl").map(t => ({...t, model:labels.get(t.review_id), translation:translations[t.review_id].text, search_text:JSON.stringify(t).toLowerCase()}))};
 
-function harness(storage = new Map()) {
+function harness(storage = new Map(), packetData = data) {
   const nodes = [], timers = new Map(), downloads = [], blobs = new Map(); let sequence = 0;
   class Element {
     constructor(tag) { this.tagName = tag.toUpperCase(); this.children = []; this.handlers = {}; this.dataset = {}; this.value = ""; this.textContent = ""; this.hidden = false; this.className = ""; this.attrs = {}; this.classList = {toggle:() => {}}; nodes.push(this); }
@@ -39,7 +39,7 @@ function harness(storage = new Map()) {
     if (/\bhidden\b/.test(match[2])) n.hidden = true;
   }
   const get = id => nodes.find(n => n.id === id);
-  get("review-data").textContent = JSON.stringify(data);
+  get("review-data").textContent = JSON.stringify(packetData);
   const doc = {
     getElementById:get, createElement:tag => new Element(tag), body:nodes.find(n => n.tagName === "BODY"),
     addEventListener(){},
@@ -58,7 +58,7 @@ function harness(storage = new Map()) {
     flush(){for (const [key,fn] of [...timers]) {timers.delete(key);fn();}},
     async fill(field,value){const el=get(field);el.value=value;await get("annotation-form").fire(el.tagName === "SELECT" ? "change" : "input", el);},
     async verdict(value){const radio=nodes.find(n => n.tagName === "INPUT" && n.name === "human_verdict" && n.value === value);radio.checked=true;await get("annotation-form").fire("change",radio);},
-    state(){return JSON.parse(storage.get(`sct-human-review-v1:${data.dataset_hash}`));}
+    state(){return JSON.parse(storage.get(`sct-human-review-v1:${packetData.dataset_hash}`));}
   };
 }
 
@@ -105,4 +105,21 @@ test("不可读的浏览器旧进度不会被页面初始化或保存覆盖", as
   await h.get("export-all").click();
   assert.equal(storage.get(key), "invalid-json"); assert.equal(h.get("storage-warning").hidden, false);
   assert.equal(C.parseCSV(await h.downloads[0].blob.text())[0].notes, "暂存新标注");
+});
+
+test("合格复核题包支持实际独立判断、确认原合格及存储隔离", async () => {
+  const task = {...data.tasks[0], review_id:"QR-001",
+    model:{verdict:"合格", defect_type:null, review_kind:"qualified_risk",
+      risk_level:"中", risk_type:"接口契约", history:{joint_rate:0}, judgments:[]}};
+  const h = harness(new Map(), {...data, dataset_hash:"qualified-test", review_kind:"qualified_risk", tasks:[task]});
+  assert.equal(h.get("overall-count").textContent, "0 / 1");
+  assert.equal(h.get("model-content").hidden, true);
+  await h.fill("annotator", "复核员"); await h.verdict("合格");
+  await h.fill("human_test_integrity", "完整"); await h.fill("human_test_quality", "无法判定"); await h.fill("confidence", "高");
+  await h.get("reveal-button").click();
+  assert.equal(h.get("model-content").hidden, false);
+  await h.fill("type_consistency", "确认原合格"); await h.get("complete-button").click();
+  assert.equal(h.get("overall-count").textContent, "1 / 1");
+  assert.equal(h.state().rows["QR-001"]._independent.fields.human_verdict, "合格");
+  assert.equal(h.storage.has(`sct-human-review-v1:${data.dataset_hash}`), false);
 });
