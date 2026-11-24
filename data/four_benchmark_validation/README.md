@@ -10,12 +10,12 @@
 | CodeSecEval Base，Python | 115 | 114 | 1 项参考检查失败 |
 | CodeSecEval Plus，Python | 140 | 137 | 3 项参考检查失败 |
 | AutoSUIT，Python、Java、C、C++ | 951 | 132 | 656 项缺上游 `secure_code`，163 项至少一套测试未通过或缺测 |
-| CWEval，Python、JavaScript、C、C++、Go | 119 | 106 | 12 项测试阶段错误，1 项编译超时 |
+| CWEval，Python、JavaScript、C、C++、Go | 119 | 106 | 10 项测试阶段错误，3 项 Go 编译超时 |
 | 合计 | 2,199 | 1,241 | 958 项未达到参考回放通过条件 |
 
-`results.csv` 提供按语言和状态的汇总。基数取 `tasks.csv`，结果按 `(group,id)` 去重。以首轮 2,199 行为底，使用 AutoSUIT Java 365 行、C/C++ 473 行和 CWEval 119 行的复跑结果覆盖对应题。AutoSUIT 另有 27 道 C 题无安全套件，这一计数可与缺参考实现重叠。CWEval 使用上游的 `functionality`、`security` 标记检查参考实现。命令退出码 0 表示 runner 正常结束，单题是否通过以 JSONL 的 `status` 为准。
+`results.csv` 提供按语言和状态的汇总。基数取 `tasks.csv`，结果按 `(group,id)` 去重。表中数据来自发布入口的一次连续全量回放。此前 CWEval 定向复跑同为 106/119 通过，当时有 12 项测试阶段错误和 1 项 Go 编译超时，说明两次运行的失败分布有所变化。AutoSUIT 另有 27 道 C 题无安全套件，这一计数可与缺参考实现重叠。CWEval 使用上游的 `functionality`、`security` 标记检查参考实现。命令退出码 0 表示 runner 正常结束，单题是否通过以 JSONL 的 `status` 为准。
 
-首轮及 Java 修正复跑的 VHDX 检查为 FAIL，采样期间分别增长 1,073,741,824 和 3,892,314,112 字节，与镜像准备有时间重叠。CWEval 和 AutoSUIT C/C++ 定向复跑各自通过 VHDX 检查，增量均为 0 字节，池容器均正常收尾。使用本目录的发布入口在独立 checkout 重跑 CodeSecEval Base/Plus 共 255 项，参考通过数分别为 114、137，VHDX 增量为 0 字节。
+首轮及 Java 修正复跑的 VHDX 检查为 FAIL，采样期间分别增长 1,073,741,824 和 3,892,314,112 字节，与镜像准备有时间重叠。CWEval 和 AutoSUIT C/C++ 定向复跑各自通过 VHDX 检查，增量均为 0 字节，池容器均正常收尾。使用本目录的发布入口在独立 checkout 重跑 CodeSecEval Base/Plus 共 255 项，参考通过数分别为 114、137，VHDX 增量为 0 字节。随后同一入口连续回放 2,199 项，耗时 1,944.74 秒，退出码 0，VHDX 检查通过且增量为 0 字节。峰值为一个池容器，结束时无残留。
 
 ## 准备数据和 Java 依赖
 

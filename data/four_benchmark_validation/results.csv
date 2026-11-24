@@ -8,10 +8,10 @@ codeseceval-base,all,115,0,0,0,114,1,0
 codeseceval-base,python,115,0,0,0,114,1,0
 codeseceval-plus,all,140,0,0,0,137,3,0
 codeseceval-plus,python,140,0,0,0,137,3,0
-cweval,all,119,12,0,0,106,0,1
-cweval,c,31,7,0,0,24,0,0
+cweval,all,119,10,0,0,106,0,3
+cweval,c,31,5,0,0,26,0,0
 cweval,cpp,21,1,0,0,20,0,0
-cweval,go,19,0,0,0,18,0,1
+cweval,go,19,0,0,0,16,0,3
 cweval,js,23,3,0,0,20,0,0
 cweval,py,25,1,0,0,24,0,0
 plt,all,874,1,0,0,752,121,0
