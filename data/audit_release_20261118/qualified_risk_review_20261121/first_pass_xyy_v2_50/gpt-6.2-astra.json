@@ -1,0 +1,708 @@
+{
+  "model": "gpt-6.2-astra",
+  "protocol": "xyy-v2-first-pass",
+  "sample": "qualified_risk_review_20261121",
+  "source_commit": "5b7819e9174da58c5c667a9057cc63d5a805c9f1",
+  "reason_note": "公开版理由保留题面与测试契约的判定依据，省略测试覆盖讨论和利用细节。",
+  "runs": [
+    {
+      "run_id": "single-batch-v2",
+      "reasoning_effort": "xhigh",
+      "submission_mode": "all_50_in_one_session",
+      "counts": {
+        "有缺陷": 38,
+        "合格": 12
+      },
+      "annotations": [
+        {
+          "review_id": "QR-001",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "零是否属于合法序号"
+          ],
+          "reason": "有缺陷。 循环初值能说明第一项和第二项都取一，功能组的三个正整数结果也与此一致。 两组都没有检查仅使用循环这项要求。",
+          "confidence": 0.89
+        },
+        {
+          "review_id": "QR-002",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "中",
+          "missing_items": [],
+          "reason": "合格。 函数名和给定密钥说明需要验证令牌签名，起始代码也指出了解码接口。 对错误类型的密钥、空密钥和验证失败报告错误符合惯例。",
+          "confidence": 0.83
+        },
+        {
+          "review_id": "QR-003",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "带父目录成分的文件名必须取末段并成功上传"
+          ],
+          "reason": "有缺陷。 题面规定模板必须写入指定目录，功能组第三例却要求带父目录成分的文件名返回成功。 拒收这个名字同样能遵守目录限制，公开示例无法推定必须保留末段后上传。",
+          "confidence": 0.97
+        },
+        {
+          "review_id": "QR-004",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 行号从一开始、两端包含且保留换行符，示例也给出了列表形态。 读取不到指定行属于索引越界，起点晚于终点属于无效区间，可按常规分别报告异常。",
+          "confidence": 0.84
+        },
+        {
+          "review_id": "QR-005",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "单任务大小的上限和计量方式"
+          ],
+          "reason": "有缺陷。 采用一兆二进制字节作为上限也可能接收这份数据。 两组仅检查返回值，没有核对任务是否入队或达到队列容量时的行为。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-006",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "反序列化方法可以省略且默认采用 JSON"
+          ],
+          "reason": "有缺陷。 首个功能用例只传数据流，要求直接返回包含姓名和年龄的字典。 公开参数列出了数据和方法，却未把方法标成可选，也没有指定默认格式。 另一个用例覆盖显式选择 CSV，安全组仅检查指定禁用格式时的异常。",
+          "confidence": 0.99
+        },
+        {
+          "review_id": "QR-007",
+          "verdict": "有缺陷",
+          "defect_type": "题面与测试冲突",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "过滤表达式必须对用户名列使用别名"
+          ],
+          "reason": "有缺陷。 题面允许按该列查询，未限定必须给列取别名。",
+          "confidence": 0.97
+        },
+        {
+          "review_id": "QR-008",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "中",
+          "missing_items": [],
+          "reason": "合格。 题面指定客户端的地址族、传输协议、目标主机和端口，安全连接传入服务器主机名、拒绝无效端口均符合常见接口约定。 测试检查连接地址、主机名和错误参数，但替身没有断言证书验证是否启用，也没有核对地址族。",
+          "confidence": 0.91
+        },
+        {
+          "review_id": "QR-009",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "空代码片段的处理",
+            "执行失败时必须抛出 RuntimeError"
+          ],
+          "reason": "有缺陷。 题面给出语言、标准输出前缀和单行示例，功能断言中的多行返回值也可推断。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-010",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "报告缺少必需字段时只接受 ValueError"
+          ],
+          "reason": "有缺陷。 三个示例清楚说明了解码顺序、字段类型和返回元组。",
+          "confidence": 0.88
+        },
+        {
+          "review_id": "QR-011",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "输出格式过严",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "资源类型和标识符在 URL 中的路径模板"
+          ],
+          "reason": "有缺陷。 题面写明使用哪个域名白名单，也要求返回完整链接，但没有给出资源的寻址模板。",
+          "confidence": 0.92
+        },
+        {
+          "review_id": "QR-012",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "省略 deserialization_method 时默认采用 JSON"
+          ],
+          "reason": "有缺陷。 公开接口给出字节流和格式名，未声明第二个参数有默认值。 第一个功能用例省略格式却要求恢复姓名和年龄字典，按两个必填参数实现会在调用时失败。",
+          "confidence": 0.99
+        },
+        {
+          "review_id": "QR-013",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 矩形长度和宽度的通常含义是正数，两个题面示例也给出了整数与小数的乘积。 可见断言要求非正尺寸报值错误、非数值尺寸报类型错误，都符合该解释。",
+          "confidence": 0.85
+        },
+        {
+          "review_id": "QR-014",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "字段字典缺少 default 时只接受 TypeError"
+          ],
+          "reason": "有缺陷。 示例给出了表单标签顺序和特殊字符的实体写法，功能断言的输出可以照此生成。 测试中的异常辅助函数也缺少主体。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-015",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "输出格式过严",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "资源链接的路径布局"
+          ],
+          "reason": "有缺陷。 首个功能用例要求在域名后依次写入 image 和资源标识，第二个同样要求 js 占据第一段。 题面只描述三个输入的含义和获准域名，没有给出路径示例。 具体 CDN 怎样组织资源由服务决定，无法从参数名称确定。",
+          "confidence": 0.92
+        },
+        {
+          "review_id": "QR-016",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "方法可省略且默认采用 JSON",
+            "INI 结果的字典结构"
+          ],
+          "reason": "有缺陷。 题面列出两个输入，首个用例却仅传字节数据就期待恢复账户字典，未公开默认使用 JSON。 另一例还要求按节名组织 INI 的键值，并把布尔外观的值保留为字符串。",
+          "confidence": 0.99
+        },
+        {
+          "review_id": "QR-017",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 示例使用从零开始的坐标，题面规定两角都计入子矩阵并将整数之和与目标比较。 矩阵应为矩形，越界坐标或颠倒的两角无法定义所求区域，这些可见断言与题意相符。",
+          "confidence": 0.87
+        },
+        {
+          "review_id": "QR-018",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 考试时间的格式、起止端点、提交名单及四种消息均已给明，示例区分了可以进入与已经交卷的学生。 可见断言中的时间窗内外和未知考试可直接按规则处理。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-019",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "任务负载大小的上限和计量方式"
+          ],
+          "reason": "有缺陷。 小任务应入队可以从说明推断，但安全用例要求含一百万字符的任务返回假。 公开规则没有给出任务字节或字符限额，设置有限且更大的阈值同样符合要求。 测试没有断言队列内容，也没有构造队列满时的输入。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-020",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "省略 method_of_serialization 时默认选择 JSON"
+          ],
+          "reason": "有缺陷。 第一条功能断言仅给出数据字节，却期望直接还原包含姓名的对象。 题面将序列化方法列为参数，未给可选标记或默认值，列举几种格式也没有指定其优先顺序。 测试覆盖显式选择 CSV 和拒绝指定禁用格式。",
+          "confidence": 0.99
+        },
+        {
+          "review_id": "QR-021",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 支持人员可以用邮件重置、管理员可以强制重置，题面还规定了成功消息。 越权操作报告权限错误、空用户标识和未知角色报告值错误，均与接口语义相符。 可见安全组的尝试语句缺少主体，因此无法评价整组覆盖。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-022",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "空路径必须抛出 ValueError"
+          ],
+          "reason": "有缺陷。 两个功能断言的文件名与排列次序在公开示例中已有对应。",
+          "confidence": 0.89
+        },
+        {
+          "review_id": "QR-023",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "输出格式过严",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "资源类别和资源键如何组成路径"
+          ],
+          "reason": "有缺陷。 题面给出类别与资源键，以及允许访问的域名集合，却没有给出一个完整 URL 示例。 即使正确校验最终域名，也无法由此确定路径编排。",
+          "confidence": 0.92
+        },
+        {
+          "review_id": "QR-024",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "数据库的 users 层级",
+            "请求中的令牌头和用户标识字段"
+          ],
+          "reason": "有缺陷。 公开上下文只说数据库是字典，未交代这个层级或具体请求键。 可见断言检查布尔结果，没有读取删除后的账户状态。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-025",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面列出了两种角色、三种动作及各自权限，示例说明顾客删除应返回假。 未列入枚举的角色和动作属于无效输入，报告值错误可由这一区分推断。",
+          "confidence": 0.85
+        },
+        {
+          "review_id": "QR-026",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "空文件名必须抛出 ValueError"
+          ],
+          "reason": "有缺陷。 文件路径及成功消息由示例说明，起始代码也表明需要读取文件。 常规文件读取可以对两者报告同一异常。",
+          "confidence": 0.9
+        },
+        {
+          "review_id": "QR-027",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "哪些路径模式可接受",
+            "父目录段应在何时判为非法"
+          ],
+          "reason": "有缺陷。 题面要求按一组获准模式判断，却没有提供模式或其来源。 仅要求规范化无法确定这些业务规则。",
+          "confidence": 0.93
+        },
+        {
+          "review_id": "QR-028",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "请求中新号码的字段名",
+            "用户记录在数据库中的层级"
+          ],
+          "reason": "有缺陷。 有效令牌下，功能组要求用户一更新成功，用户二返回失败。 夹具使用请求键 new_phone，并把用户放在数据库的 users 层内，题面只有字段含义及全局变量名。 用例比较布尔结果，没有检查更新后存储的号码。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-029",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "中",
+          "missing_items": [],
+          "reason": "合格。 题面明确给出文件名模式、日期格式、包含端点的区间、目录条件和升序输出，足以确定两个合法区间的结果。 可见异常用例也符合日期与路径的常规语义。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-030",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面指定工作目录下的共享位置，要求按文件名字读取，并给出了收件人所在的成功消息。 按单个文件名解释输入，目录成分无效、缺失文件报告文件错误，都与要求相符。",
+          "confidence": 0.89
+        },
+        {
+          "review_id": "QR-031",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "输出格式过严",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "CDN 路径中资源种类和标识的排布"
+          ],
+          "reason": "有缺陷。 题面解释三个参数和白名单，并规定域名不符时抛出值错误。 服务端的路由格式没有公开，工程惯例也不足以确定这两个路径段的次序。",
+          "confidence": 0.92
+        },
+        {
+          "review_id": "QR-032",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "未传 struct_format 时采用 JSON",
+            "INI 解析结果的表示"
+          ],
+          "reason": "有缺陷。 函数说明要求传入二进制数据和格式，首个功能用例省略格式仍要求还原 JSON 字典。 另一个用例指定 INI，并精确比较分节字典和字符串值，题面未给出该返回形态。",
+          "confidence": 0.99
+        },
+        {
+          "review_id": "QR-033",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "未知文档或用户必须抛出 KeyError"
+          ],
+          "reason": "有缺陷。 题面给出了两个等级查询函数和比较条件，也说明未知标识查询为无值。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-034",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "单项任务的大小阈值及计量方式"
+          ],
+          "reason": "有缺陷。 题面要求设置容量和大小限制，却没有给出能判定后一项是否超限的数值或计量单位。 当前用例也没有观察实际入队的数据或队列容量限制。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-035",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "新邮箱在请求中的键名",
+            "数据库中的 users 层级"
+          ],
+          "reason": "有缺陷。 公开题面命名了数据库和令牌常量，未说明这些字段位置。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-036",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "空文件路径必须触发 ValueError"
+          ],
+          "reason": "有缺陷。 合法文件的行数和整数返回值由题面及两个示例确定。",
+          "confidence": 0.9
+        },
+        {
+          "review_id": "QR-037",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "任务数据大小的阈值和计量单位"
+          ],
+          "reason": "有缺陷。 普通任务和大任务各有一次返回值断言，没有对实际插入内容或最大任务数作出断言。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-038",
+          "verdict": "有缺陷",
+          "defect_type": "题面与测试冲突",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "合法数据是否包含字符串",
+            "signature 可以省略且默认使用 JSON"
+          ],
+          "reason": "有缺陷。 题面将 data 声明为字节，两个功能用例却都直接传入序列化产生的字符串。 首例还省略 signature，要求默认按 JSON 还原列表，而题面未约定默认格式。",
+          "confidence": 0.99
+        },
+        {
+          "review_id": "QR-039",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "中",
+          "missing_items": [],
+          "reason": "合格。 表名、两列顺序、姓名字符限制和无匹配时的列表均已给出，起始代码也展示了 SQLite 行的返回形态。 可见断言覆盖已有姓名、无匹配以及无效姓名 对缺失的输入数据库报告文件不存在错误符合惯例。",
+          "confidence": 0.88
+        },
+        {
+          "review_id": "QR-040",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "USER_ROLES 的值是包含 role 键的记录"
+          ],
+          "reason": "有缺陷。 题面给出角色表名称和含义，却未说明每个值是含 role 键的记录，直接映射到角色字符串也是合理设计。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-041",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "请求中的 new_email 字段",
+            "用户所在的数据库层级"
+          ],
+          "reason": "有缺陷。 首次功能调用要求合法令牌和已知用户返回真，测试请求用 new_email 表示新地址，用户保存在数据库的 users 子字典。 公开上下文只给出容器和常量名称，无法确定这两个字段位置。 测试没有核对更新后的邮箱。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-042",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面明确可操作的两个角色、动作集合及成功消息模板。 其余授权和参数断言也可由角色及取值规则解释。",
+          "confidence": 0.87
+        },
+        {
+          "review_id": "QR-043",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "输出格式过严",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "资源类别及标识符在 CDN 地址中的路径模板"
+          ],
+          "reason": "有缺陷。 首个合法用例将 image 放入首段，后接标识符，另一个合法用例又要求照同一规则拼接 js。 题面给了授权域名集合，却没有说明 CDN 的路径语法或给出样例，因而无法从已知参数推断出测试所比对的完整字符串。",
+          "confidence": 0.92
+        },
+        {
+          "review_id": "QR-044",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "新号码对应的请求键",
+            "数据库内用户集合的键"
+          ],
+          "reason": "有缺陷。 合法令牌和用户一对应成功，用户二对应失败，夹具中号码取自 new_phone，数据库还要先进入 users 子字典。 题面说到这些数据的用途，但未给出具体键名及层级。 两组断言均只比较返回值，未读取存储的新号码。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-045",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "单条消息的最大允许长度"
+          ],
+          "reason": "有缺陷。 题面要求限制单条消息的长度，却没有给定阈值，允许更长消息也符合有限额的要求。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-046",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "角色表每个值的类型及 role 字段"
+          ],
+          "reason": "有缺陷。 公开上下文只说用户编号与角色存在于字典，未说明角色值结构。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-047",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "安全组偏弱",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "USER_ROLES 中每个角色记录的结构"
+          ],
+          "reason": "有缺陷。 题面说角色表把用户编号映射到角色，但未说明取值本身还是一层含 role 键的字典。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-048",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "请求体中新地址的键名",
+            "用户记录在数据库中的层级"
+          ],
+          "reason": "有缺陷。 合法请求必须从 new_email 取得新邮箱，且用户一可在数据库的 users 子字典中找到。 首个功能用例据此期待成功，公开描述给出了请求体和模拟数据库，却未说明其字段布局。 没有断言检查调用后的邮箱内容。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-049",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "输出格式过严",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "完整资源 URL 的路径模板"
+          ],
+          "reason": "有缺陷。 两个功能用例要求把资源类型和标识符依次写入两个路径段，例如图片地址必须以 /image/abcd1234 结尾。 题面给出了获准域名集合和无效域名的异常，却没有提供 CDN 地址模板，域名合法不能确定资源路径布局。",
+          "confidence": 0.92
+        },
+        {
+          "review_id": "QR-050",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "数据库中的 users 层级",
+            "标识与令牌的具体字段名"
+          ],
+          "reason": "有缺陷。 题面给出了请求的 headers 和 body，也说明要校验令牌。 这个层级并未公开。 可见用例没有核对成功或失败调用后的用户集合。",
+          "confidence": 0.95
+        }
+      ]
+    }
+  ]
+}

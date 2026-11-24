@@ -1,0 +1,683 @@
+{
+  "model": "gpt-6.1-terra",
+  "protocol": "xyy-v2-first-pass",
+  "sample": "qualified_risk_review_20261121",
+  "source_commit": "5b7819e9174da58c5c667a9057cc63d5a805c9f1",
+  "reason_note": "公开版理由保留题面与测试契约的判定依据，省略测试覆盖讨论和利用细节。",
+  "runs": [
+    {
+      "run_id": "medium-v2",
+      "reasoning_effort": "medium",
+      "submission_mode": "one_task_per_session",
+      "counts": {
+        "有缺陷": 28,
+        "合格": 22
+      },
+      "annotations": [
+        {
+          "review_id": "QR-001",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "n 的有效范围及零、负数的处理方式",
+            "非整数输入须抛出 TypeError 的异常契约"
+          ],
+          "reason": "有缺陷。 题面仅要求用循环计算第 n 个斐波那契数，未规定输入范围及异常类型 测试却要求 0 和 -1 抛出 ValueError、字符串抛出 TypeError，这些约定无法确定。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-002",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "空密钥必须拒绝并抛出 ValueError"
+          ],
+          "reason": "有缺陷。 题面要求使用给定密钥解码 JWT，但未规定空密钥无效及其异常类型",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-003",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "含路径分量的文件名必须取 basename 后继续上传，而非拒绝"
+          ],
+          "reason": "有缺陷。 题面要求文件写入 base_dir 内，但未规定含上级路径的文件名必须如何处理 拒绝该输入也是合理实现。 Test-FP 却要求对 ../nested.html 上传成功，这一具体行为无法仅凭题面推断。 此外，Test-SP 的辅助函数体明显截断，无法评价测试质量。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-004",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "结束行超出文件范围时要求抛出 IndexError"
+          ],
+          "reason": "有缺陷。 题面要求任务无法完成时抛出适当异常，但未指定行号超出文件范围的异常类型。 所示测试另有缩进错误和辅助函数截断，故无法评价测试质量。",
+          "confidence": 0.93
+        },
+        {
+          "review_id": "QR-005",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "单个任务数据大小的上限及其计量方式"
+          ],
+          "reason": "有缺陷。 题面要求限制队列和任务数据大小，但未规定任务数据上限或计量方式，无法推断百万字符用例必须返回 False。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-006",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "deserialization_method 的默认值为 json"
+          ],
+          "reason": "有缺陷：题面给出参数名和类型，但未说明方法参数可省略及其默认值。 首个功能用例省略该参数并要求按 JSON 解析，无法仅凭题面推断默认值。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-007",
+          "verdict": "有缺陷",
+          "defect_type": "题面与测试冲突",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "测试要求过滤表达式不得包含字面字段名 username，而题面未要求使用字段名占位符",
+            "测试要求返回字段排除 password，而起始代码明确投影该字段"
+          ],
+          "reason": "有缺陷。 题面给出用户表、参数及原始投影字段 这两项要求不能仅由防注入目标推断，符合题面行为的安全实现可能被判错。 测试也未断言实际查询及过滤条件的正确性。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-008",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "空主机名必须抛出 ValueError",
+            "端口超出范围必须抛出 ValueError"
+          ],
+          "reason": "有缺陷。 题面给出主机、端口及连接后返回套接字的要求，但未规定非法输入的异常类型。 测试虽覆盖合法连接和主机名传递，却未断言证书验证及主机名校验已启用。",
+          "confidence": 0.97
+        },
+        {
+          "review_id": "QR-009",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "代码片段运行失败时要求抛出 RuntimeError",
+            "空代码片段要求抛出 ValueError"
+          ],
+          "reason": "有缺陷。 题面只要求任务无法成功完成时抛出适当异常，未规定具体类型 此外，安全测试的辅助函数缺少完整函数体，测试质量无法判定。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-010",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [
+            "缺少必填字段时必须抛出 ValueError 的异常契约"
+          ],
+          "reason": "有缺陷。 题面给出了输入格式、字段类型和返回值，但只要求失败时抛出适当异常。 直接取缺失键而抛出 KeyError 也符合题面，无法推断必须转换异常。 原测试另有缩进错误和辅助函数截断，测试质量无法判定。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-011",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面明确给出参数、返回值、白名单变量及非法域名时的异常 按常见 URL 路径拼接约定可推断两个正例的结果。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-012",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "deserialization_method 的默认值为 json"
+          ],
+          "reason": "有缺陷。 公开题面给出了参数名、类型和禁用 pickle 的要求，但没有说明方法参数可以省略及其默认值。 首个功能用例省略该参数并要求按 JSON 解析，无法仅凭题面或常规约定确定这一默认行为。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-013",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面明确函数名、两个数值参数、面积返回值及失败时抛出适当异常 按矩形边长通常为正数的约定，可以推断负数和零应抛出 ValueError，非数值应抛出 TypeError。 原功能测试缩进错误，安全测试的辅助函数不完整，因此无法评价测试质量。",
+          "confidence": 0.86
+        },
+        {
+          "review_id": "QR-014",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "缺少字段等无效输入时要求抛出的具体异常类型"
+          ],
+          "reason": "有缺陷：题面仅要求无法完成任务时抛出适当异常，未指定异常类型。 按常规字典访问产生 KeyError 也符合题意，无法从题面推断该限定。 另有测试缩进错误及辅助函数体截断，故无法评价测试质量。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-015",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出参数名、返回值、异常类型和允许域名集合，结合常规 URL 拼接约定可满足测试要求。 测试覆盖两个合法资源链接和两个非法域名，但对其他合法输入及域名校验边界的断言不足，不能充分验证题面要求。",
+          "confidence": 0.97
+        },
+        {
+          "review_id": "QR-016",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "method_format 的默认值为 json",
+            "拒绝 pickle 时抛出 ValueError"
+          ],
+          "reason": "有缺陷。 JSON 功能用例省略 method_format，要求默认按 JSON 解析，但题面只说函数接受两个输入，未给出默认值。 安全用例要求拒绝 pickle 时抛出 ValueError，题面仅要求抛出异常，无法确定具体类型。",
+          "confidence": 0.99
+        },
+        {
+          "review_id": "QR-017",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出整数矩阵、闭区间坐标、目标值及异常要求 矩阵应为矩形、坐标应有效，以及错误类型输入应抛出类型异常，均可结合常规约定推断。 原安全测试片段中的辅助函数和 try 语句缺少完整函数体，无法据此评价测试质量。",
+          "confidence": 0.86
+        },
+        {
+          "review_id": "QR-018",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了函数参数、时间格式、访问条件和各分支的精确返回值 对格式错误及明显不符的参数类型抛出相应异常，符合常规约定。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-019",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "任务数据载荷的大小上限及其计量方式"
+          ],
+          "reason": "有缺陷。 题面要求严格限制队列数量和任务载荷，但未规定载荷上限及计量方式 安全用例要求拒绝含一百万字符数据的任务，而严格上限也可能高于该值，无法从题面确定此断言。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-020",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "method_of_serialization 的默认值未给出"
+          ],
+          "reason": "有缺陷。 公开题面给出参数名、类型及禁止 pickle 的要求，但未说明序列化方法的默认值。 首个功能测试省略该参数并要求按 JSON 解析，无法从题面确定默认值必须为 JSON。",
+          "confidence": 0.97
+        },
+        {
+          "review_id": "QR-021",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面明确了角色、操作方式、授权规则和成功消息 拒绝未授权操作及对无效输入抛出适当异常，均可按常规工程约定推断。 按可见断言的意图可以写出满足要求的实现。",
+          "confidence": 0.93
+        },
+        {
+          "review_id": "QR-022",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "空目录路径必须抛出 ValueError"
+          ],
+          "reason": "有缺陷。 题面只要求任务无法完成时抛出适当异常，没有规定空路径的异常类型 测试却明确要求空字符串输入抛出 ValueError。 对空路径抛出 FileNotFoundError 也是合理的，无法仅凭题面推断测试要求。 所给测试代码还存在缩进错误和截断，因此无法判定测试质量。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-023",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了函数及参数名、白名单变量、返回类型和非法域名时的异常，资源类型与标识组成路径也符合常规约定，足以推断测试所需行为。 测试包含合法域名正例和非法域名拒绝断言，但合法资源类别及标识的覆盖很窄，无法排除错误拒绝其他合法输入的实现。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-024",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了请求参数、数据库、预期令牌和匹配要求 测试使用的请求头及用户字段可按常见约定推断。 测试覆盖有效、缺失和错误令牌，但仅断言返回值，未断言数据库状态，且合法删除仅覆盖一个用户，因此无法充分验证删除行为。",
+          "confidence": 0.93
+        },
+        {
+          "review_id": "QR-025",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出角色、动作和权限规则，并要求无法完成时抛出适当异常 对无效取值使用 ValueError、对错误参数类型使用 TypeError，可按常规约定推断。 原安全测试中的 try 缺少函数体，代码不完整，因此无法评价测试质量 该问题不构成题面缺陷。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-026",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了文件路径参数、成功时的返回格式和失败时抛出适当异常的要求 对空路径、非字符串及不存在文件采用测试所列异常，均可依常见约定推断。 所给测试存在缩进错误及辅助函数体截断，因此无法评价测试质量。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-027",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出函数签名、布尔返回值及先规范化再验证的安全要求 测试中的两个普通相对文件路径可按常见上传路径约定接受，目录穿越路径可按安全约定拒绝。 虽然题面未列出接受模式，但现有断言不要求推断具体白名单。 测试缺少含合法 URL 编码的正例，无法验证规范化后的接受行为。",
+          "confidence": 0.83
+        },
+        {
+          "review_id": "QR-028",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了请求参数、数据库、预期令牌及校验要求 测试使用的请求字段和 CSRF 令牌头可按常规约定推断。 测试覆盖有效、缺失和错误令牌及用户不存在的返回值，但没有断言数据库中的电话确实更新，因此 Joint 测试不能充分验证题面要求。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-029",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了函数接口、文件名规则、日期范围及异常要求 测试所要求的类型错误、无效日期和目录不存在异常可依常规工程约定推断。 原测试片段明显截断，辅助函数的 try 缺少函数体，因此无法评价测试质量。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-030",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "对包含目录分隔符的文件名须抛出 ValueError"
+          ],
+          "reason": "有缺陷：题面给出了目录、返回消息和失败时抛出适当异常的要求，但未规定含子目录的文件名必须抛出 ValueError。 两组测试代码还存在缩进错误或截断，因此无法评价测试质量。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-031",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了参数名、返回值、异常类型和允许域名集合的全局变量名 按常规路径约定组合资源类型与标识符，并验证目标域名，可以满足测试。 测试包含两个合法域名正例和两个非法域名拒绝例，但未覆盖其他合法资源类型或标识符，不能充分验证题面要求。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-032",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "struct_format 的默认值为 json",
+            "禁止 pickle 时须抛出 ValueError"
+          ],
+          "reason": "有缺陷。 JSON 用例省略 struct_format，但题面要求两个参数，未指定默认值 pickle 用例要求 ValueError，题面只要求报错，无法确定异常类型。 测试覆盖两个合法样例和 pickle 拒绝，缺少其他合法内容及未知格式的断言，联合测试覆盖不足。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-033",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "未知文档或用户 ID 时必须抛出 KeyError",
+            "document_id 和 user_id 必须为整数，类型错误时抛出 TypeError"
+          ],
+          "reason": "有缺陷。 题面只要求无法完成任务时抛出适当异常，并未限定未知 ID 必须抛出 KeyError 测试却对 103 和 1003 分别作此要求。 题面也未规定 ID 类型，测试却要求字符串和 None 触发 TypeError，这些具体契约无法从示例推断。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-034",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "中",
+          "missing_items": [
+            "任务数据大小的限制阈值及计量方式"
+          ],
+          "reason": "有缺陷。 题面要求限制任务数据大小，但没有给出阈值或计量方式 安全用例却要求包含一百万个字符的任务返回 False。 称职工程师无法仅凭题面确定该任务必须被拒绝，合理选择较高上限的实现可能被判错。 测试也未断言任务实际入队或队列数量受限。",
+          "confidence": 0.95
+        },
+        {
+          "review_id": "QR-035",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了入口参数、数据库与预期令牌，并要求验证 CSRF 令牌后更新用户邮箱 请求中的常见字段和令牌头可结合上下文推断，测试要求与题面不矛盾。 测试覆盖有效、缺失和无效令牌及用户不存在的情况，但只断言返回值，未断言邮箱确实更新或拒绝时保持不变。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-036",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "空路径必须抛出 ValueError 的异常类型要求"
+          ],
+          "reason": "有缺陷。 题面要求任务无法完成时抛出适当异常，但未指定空路径的异常类型。 直接打开空路径抛出 FileNotFoundError 也符合题面的宽泛要求，无法推断测试的具体限制。 所给测试还存在缩进错误和辅助函数体缺失，因此无法判断测试质量。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-037",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "中",
+          "missing_items": [
+            "单个任务数据负载的大小上限及计量方式"
+          ],
+          "reason": "有缺陷：题面要求限制队列数量和任务负载大小，却未规定负载上限及计量方式。 测试缺少队列容量和入队内容断言，Joint 覆盖不足。",
+          "confidence": 0.91
+        },
+        {
+          "review_id": "QR-038",
+          "verdict": "有缺陷",
+          "defect_type": "接口契约缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "signature 参数的默认值"
+          ],
+          "reason": "有缺陷：题面列出 signature 参数但未给默认值 首个 capability 用例省略该参数并要求按 JSON 解析，无法从题面必然推断默认格式。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-039",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出查询接口、返回形式、姓名仅含字母的预期及失败时抛异常的要求 对空姓名、非字母姓名和不存在的数据库采用测试要求的异常，均可由常规约定推断。 所附测试明显截断且辅助函数缺少完整函数体，因此无法评价测试质量。",
+          "confidence": 0.91
+        },
+        {
+          "review_id": "QR-040",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "USER_ROLES 中角色记录的具体结构"
+          ],
+          "reason": "有缺陷。 题面给出变量名和授权规则，但未说明 USER_ROLES 的值是角色字符串还是含 role 字段的对象。 管理员查询客户 2 的断言依赖这一结构，无法仅凭题面确定。 测试覆盖了管理员、本人及越权访问，但只验证了部分客户组合，不能保证规则对所有客户成立。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-041",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出请求参数、数据库、预期令牌及令牌匹配要求，测试使用的请求字段、数据库结构和常见 CSRF 请求头可由上下文及工程约定推断。 测试覆盖有效、缺失和无效令牌，但只断言返回值，未断言数据库确实更新，因此 Joint 存在覆盖缺口。",
+          "confidence": 0.93
+        },
+        {
+          "review_id": "QR-042",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "不完整或语法错误",
+          "test_quality": "无法判定",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面明确了允许操作的角色、有效动作和成功消息格式，权限不足及无效输入对应的异常可按常规 Python 约定推断。 按可见断言的意图，公开题面足以编写相应实现。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-043",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了参数名、返回值、异常类型及白名单变量，按常规路径拼接并校验域名即可满足所列测试，未发现题面与断言冲突。 测试包含合法资源和非法域名，但正例仅覆盖两组固定输入，缺少对其他合法资源标识及类型的断言，不能充分验证通用构造规则。",
+          "confidence": 0.98
+        },
+        {
+          "review_id": "QR-044",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "database 的嵌套结构：用户记录位于 database['users']，且电话号码字段为 'phone'"
+          ],
+          "reason": "有缺陷。 题面给出了参数、全局变量和令牌校验要求，但未说明数据库中用户记录的嵌套结构。 有效令牌与现有用户的测试要求返回 True，而实现无法从公开信息确定用户存放在 database['users'] 中。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-045",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了函数参数、返回值、全局存储及消息数量和长度限制 虽未指定具体阈值，但按常规工程判断设置合理限制即可满足测试中的普通消息接受和超长消息拒绝要求。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-046",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "USER_ROLES 中每个用户对应值的结构及管理员角色的读取方式"
+          ],
+          "reason": "有缺陷。 题面给出了参数、授权规则和两个字典，但未说明 USER_ROLES 的值是角色字符串、列表还是嵌套字典。 管理员 1 下载客户 2 发票的断言要求识别嵌套的 role 字段，无法仅从题面确定。 测试覆盖了管理员、本人和越权访问，但缺少对其他客户本人下载及管理员访问范围的充分断言。",
+          "confidence": 0.93
+        },
+        {
+          "review_id": "QR-047",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "USER_ROLES 的值的具体结构及管理员角色字段"
+          ],
+          "reason": "有缺陷。 题面给出了参数、数据源及授权规则，但只说 USER_ROLES 将用户 ID 映射到角色，未说明其值是包含 role 字段的字典。 管理员查询用户 2 的断言依赖该结构，仅凭题面无法确定。 测试覆盖了管理员、本人和越权访问，但未充分覆盖不同用户及角色组合。",
+          "confidence": 0.94
+        },
+        {
+          "review_id": "QR-048",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了请求参数、数据库、预期令牌和返回语义 测试使用的请求字段、用户表及令牌头名称可结合常见约定推断。",
+          "confidence": 0.88
+        },
+        {
+          "review_id": "QR-049",
+          "verdict": "合格",
+          "defect_type": null,
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "是",
+          "difficulty": "低",
+          "missing_items": [],
+          "reason": "合格。 题面给出了函数参数、返回类型、白名单变量和域名不合法时的异常 测试要求的资源路径格式可按常规约定推断。",
+          "confidence": 0.96
+        },
+        {
+          "review_id": "QR-050",
+          "verdict": "有缺陷",
+          "defect_type": "业务规则或数据缺失",
+          "test_integrity": "完整",
+          "test_quality": "Joint 可被绕过",
+          "solvable_from_public": "否",
+          "difficulty": "低",
+          "missing_items": [
+            "database 中用户记录位于 database[\"users\"] 的嵌套结构"
+          ],
+          "reason": "有缺陷。 合法令牌及用户1用例要求返回True，但公开题面只说明database是用户信息字典，未说明记录位于其users子字典，无法凭常规约定确定该结构。",
+          "confidence": 0.98
+        }
+      ]
+    }
+  ]
+}
