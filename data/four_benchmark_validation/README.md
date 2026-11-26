@@ -62,3 +62,5 @@ docker build -t cle-four-bank-go:20261124 -f data/four_benchmark_validation/Dock
 [GitHub Release](https://github.com/smallrabbit490/sct-security-generation/releases/tag/four-benchmark-replay-20261124) 提供实际回放镜像 `four-benchmark-image.tar` 以及归档的 `SHA256SUMS.txt`。镜像适用于 `linux/amd64`。下载后对照 SHA-256，再运行 `docker image load -i four-benchmark-image.tar`。加载后可跳过两步 Docker 构建，随后按上文准备数据、Java 依赖和 Go 模块缓存。
 
 [逐题结果](task_outcomes.csv) 保留 1,241 条通过及 958 条未通过或缺测记录。[修复清单](REPAIR_QUEUE.md) 汇总待定位项、已知缺测及排查顺序，[逐题待处理表](repair_queue.csv) 给出任务键。上游快照通过固定版本下载，[SHA-256 清单](upstream_SHA256SUMS.txt) 用于核对本次用到的 354 个快照文件。
+
+SeCodePLT 的 35 道安全侧失败题已补齐[原始逐用例回执及批次校验值](security_evidence_20261124/README.md)。
