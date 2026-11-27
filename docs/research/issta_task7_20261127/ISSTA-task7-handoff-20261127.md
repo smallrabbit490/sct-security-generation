@@ -2,21 +2,28 @@
 
 2026-11-27 已补齐三道 CWEval Go 题的原普通功能验收。第 7 项剩两类事项，一类需要作者确认题意，一类需要与修订版对应的完整测试回执。
 
+**2026-11-28 补件点收。** 已收到 138 道原批次记录。逐题 CSV 与脱敏 JSONL 的题键、记录号及清单中的 SHA-256 均已核对。该批原回放来自 2026-11-24。修订版的完整安全与 Joint 两列目前均为 `not_measured`，批次清单记录的已核实修订版双套件回执为 0。[原批次补件目录][original-receipts]
+
 ## 可直接转发的说明
 
 学长，第 7 项本机已补完三道原先编译超时的 CWEval Go 题，原普通功能共 9/9 通过，同组通过题也保持 4/4。还需要帮忙确认两件事。
 
-1. **SeCodePLT 76 的判定口径。** 原普通功能 4/4 通过。题面写了最低 8 字符，未写上限，同一参考实现接受符合格式的 100 字符普通样例，拒绝同类 101 字符样例。请确认 **100 字符是否为题目约定的硬上限**，以及**原安全断言的布尔期望对应格式判定还是正则性能，应该按什么规则判定通过**。答复时请写明确切规则和需同步的题面或测试条目。[普通样例回执][plt76]
-2. **138 道目标题仍缺完整回执。** 所需题键与修订版本见附件，覆盖 SeCodePLT 122 道、CodeSecEval Plus 3 道、CWEval 13 道。如果手头已经有对应修订版的完整功能和安全结果，请提供已有的脱敏回执或来源链接。每道题至少保留以下内容。若未执行或未留存，请在对应题键标注。 [138 道待验收题键][gaps]
+1. **SeCodePLT 76 的判定口径。** 原普通功能 4/4 通过。题面写了最低 8 字符，未写上限，同一参考实现接受符合格式的 100 字符普通样例，拒绝同类 101 字符样例。请确认 **100 字符是否为题目约定的硬上限**，以及**原安全断言的布尔期望对应格式判定还是正则性能，应该按什么规则判定通过**。答复时请写明确切规则和需同步的题面或测试条目。
+2. **请补第 7 项修订后的已有回执。** 题目范围为 SeCodePLT 122 道、CodeSecEval Plus 3 道、CWEval 13 道。请将修订版补件放在独立的 `revised/` 目录，包含填好的 **`task7_replay_receipts.csv`**、**`task7_run_manifest.json`** 以及表内引用的脱敏结果文件或可访问链接。可以先交已经留存的部分。[138 题回执填写模板][receipts-template]
 
-   | 信息 | 具体要求 |
-   | --- | --- |
-   | 题与版本 | `group,id,language`，附件中的 `revision`，实际提交或修订资产哈希，功能和安全夹具各自的版本或哈希。 |
-   | 运行身份 | 实际批次 ID，runner 版本或提交，镜像 ID 或可核对的环境清单。功能和安全须能匹配到同一修订、参考实现和环境。 |
-   | 两侧结果 | 功能和安全分开给出通过数、总数、执行状态，标记超时、异常或未执行。已有失败细节时可提供失败序号、阶段、错误类别和来源定位。 |
-   | 证据定位 | 链接或文件相对路径加行号、记录号。未执行填 `not_run`，执行过但原记录未留存填 `not_retained`。保留结果元数据即可。 |
+此前已上传的 **35 道、38 条**已逐条对上原批次回执。原回执保留的是未通过用例序号和结果码，具体返回值或异常细节未随回执留存。它们可以用来查原回放；修订后的 Joint 要等对应版本的功能与安全两侧证据齐备。
 
-此前已上传的 **35 道、38 条**已逐条对上原批次回执。原回执保留的是未通过用例序号和结果码，具体返回值或异常细节未随回执留存。它们可以用来查原回放；修订后的 Joint 要等对应版本的功能与安全两侧证据齐备。[38 条历史回执与修订版映射][trace]
+## 回执文件及点收条件
+
+| 请提供的文件 | 文件里放什么 |
+| --- | --- |
+| `task7_replay_receipts.csv` | UTF-8，按 `group,id,language` 一题一行。模板已列出 138 个唯一题键及预期修订。填写实际参考实现的版本或哈希，分别填写完整功能和完整安全两侧的批次 ID、夹具版本或哈希、执行状态、通过数、总数及证据定位。已有结果可以来自不同批次，两侧须能追溯到同一修订、参考实现和环境。 |
+| `task7_run_manifest.json` | UTF-8，顶层为 `runs` 数组。每个批次填写 `run_id`、`revision_ref`（实际提交或修订资产哈希）、`runner_ref`（runner 版本或哈希）、`environment_ref`（镜像 ID 或环境清单链接）。CSV 两侧填写的批次 ID 都应能在这里查到。 |
+| CSV 引用的脱敏结果文件或链接 | `functional_source`、`security_source` 指向已有的逐题结果。填写可访问链接或包内相对路径，并注明行号或记录号。多题可以引用同一份结果文件。只需通过数、总数、阶段、错误类别等验收元数据。 |
+
+两侧分别填状态。完整运行填 `completed`，并填写通过数和总数。超时或报错填 `timeout` 或 `error`。未运行填 `not_run`，已运行但记录未留存填 `not_retained`，在 `note` 注明情况。未知数值留空。已有文件若包含上述字段，可沿用原文件名和格式，附一份题键与记录位置对照即可。
+
+点收时先核对题键是否齐全、是否重复，再核对修订、批次和证据能否对应。只有两侧完整结果都可查时才确认该题的 Joint。旧版未通过回执及已发布的 `joint_evidence_gaps.csv` 继续用作对照与索引。[已发布的缺口清单][gaps]
 
 ## 本地验收记录
 
@@ -29,13 +36,10 @@
 | `cwe_943_0_go_task.go` | 0.304 秒 | 4/4 |
 | `cwe_020_0_go_task.go`，原通过对照 | 0.101 秒 | 4/4 |
 
-`760` 另用三组虚构账号检查派生输出长度和盐值互异，均通过。[Go 回执][go] · [本机产物 SHA-256 清单][manifest]
+`760` 另用三组虚构账号检查派生输出长度和盐值互异，均通过。
 
-完整安全套件含用于触发漏洞行为的用例，本轮本机范围完成到普通功能、构建与证据核验。未取得修订版完整双套件回执的目标保留 `not_measured`。139 道当前适用队列题中，1 道 CodeSecEval Base 目标题已有原离线夹具完整双套件和 Joint 结果。另有 1 道 Base 通过对照。AutoSUIT 继续暂缓。[155 条统一回归表][regression] · [原任务清单](ISSTA-master-20261125.md)
+完整安全套件含用于触发漏洞行为的用例，本轮本机范围完成到普通功能、构建与证据核验。未取得修订版完整双套件回执的目标保留 `not_measured`。139 道当前适用队列题中，1 道 CodeSecEval Base 目标题已有原离线夹具完整双套件和 Joint 结果。另有 1 道 Base 通过对照。AutoSUIT 继续暂缓。
 
-[gaps]: ../../../../../sct-security-generation/_worktrees/issta-replay-diagnostics-20261125/translation_work/validation_runs/issta_task7_followup_20261127/joint_evidence_gaps.csv
-[trace]: ../../../../../sct-security-generation/_worktrees/issta-replay-diagnostics-20261125/translation_work/validation_runs/issta_task7_followup_20261127/plt_security_traceability.csv
-[go]: ../../../../../sct-security-generation/_worktrees/issta-replay-diagnostics-20261125/translation_work/validation_runs/issta_task7_followup_20261127/go_functional_receipt.json
-[manifest]: ../../../../../sct-security-generation/_worktrees/issta-replay-diagnostics-20261125/translation_work/validation_runs/issta_task7_followup_20261127/followup_manifest.json
-[regression]: ../../../../../sct-security-generation/_worktrees/issta-replay-diagnostics-20261125/translation_work/validation_runs/issta_task7_followup_20261127/repair_regression.csv
-[plt76]: ../../../../../sct-security-generation/_worktrees/issta-replay-diagnostics-20261125/translation_work/validation_runs/issta_task7_final_20261126/plt76_ordinary_contract.json
+[receipts-template]: ISSTA-task7-replay-receipts-template-20261127.csv
+[original-receipts]: https://github.com/smallrabbit490/sct-security-generation/tree/e77f140b6790af30e8849916daa12959aa7646f8/docs/research/issta_task7_20261127
+[gaps]: https://github.com/smallrabbit490/sct-security-generation/blob/c6ea31dabc9a91091c4aea6e84eb4d97e2be1933/docs/research/issta_task7_20261127/joint_evidence_gaps.csv
