@@ -1,0 +1,69 @@
+{
+  "as_of": "2026-11-28",
+  "scope_by_group": {
+    "plt": 122,
+    "codeseceval-plus": 3,
+    "cweval": 13
+  },
+  "files": {
+    "task7_replay_receipts.csv": {
+      "sha256": "d6c43226dea368d0de374224f32225cf78fea25f3d87d69a5100d297a38dc5c5",
+      "records": 138
+    },
+    "task7_sanitized_receipts.jsonl": {
+      "sha256": "dd8c0bea5bf9f1324ab9a196532950a8de50e20006101cd2ced2e007177708c5",
+      "records": 138
+    }
+  },
+  "original_batch": {
+    "id": "four_benchmark_20261124",
+    "date": "2026-11-24",
+    "publication_commit": "3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b",
+    "evidence_index_commit": "542bcdaadd43c6a1412be193611f5ffac7898baa",
+    "runner_url": "https://github.com/smallrabbit490/sct-security-generation/blob/3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b/data/four_benchmark_validation/worker_replay.py",
+    "runner_sha256": "08f3df8540484e19904365de55777e85b5c7fcc03c5169ac49218800e61c94de",
+    "launch_url": "https://github.com/smallrabbit490/sct-security-generation/blob/3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b/data/four_benchmark_validation/launch.py",
+    "run_records": 2199,
+    "replay_sha256": "776816ec341beb2683dbe6ff3e34ddca068f26de5f090147a486412ac37dd52c",
+    "execution_receipt_sha256": "540cdbf01d6a1755e1cb384d04fd2b08e01a52ffb9a7acf3dc2b9c8cb4304b5f",
+    "execution_exit_code": 0,
+    "environment": {
+      "image_tag": "cle-four-bank-go:20261124",
+      "platform": "linux/amd64",
+      "network": "disabled during replay",
+      "image_archive_sha256": "bee2080dcc26492241f7477cbe9c1b2a0751c8e6d91869b019e88bd483601123",
+      "archive_url": "https://github.com/smallrabbit490/sct-security-generation/releases/tag/four-benchmark-replay-20261124",
+      "environment_source": "https://github.com/smallrabbit490/sct-security-generation/blob/3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b/data/four_benchmark_validation/README.md",
+      "upstream_assets": "https://github.com/smallrabbit490/sct-security-generation/blob/3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b/data/four_benchmark_validation/upstream_SHA256SUMS.txt"
+    },
+    "source_checksum_index": "https://github.com/smallrabbit490/sct-security-generation/blob/542bcdaadd43c6a1412be193611f5ffac7898baa/data/four_benchmark_validation/security_evidence_20261124/SHA256SUMS.txt",
+    "original_case_code_records": 121,
+    "code_map": {
+      "1": "passed",
+      "0": "comparison mismatch",
+      "-1": "execution error",
+      "-2": "timeout"
+    }
+  },
+  "requested_revisions": {
+    "per_task_revision_and_ordinary_result": "https://github.com/smallrabbit490/sct-security-generation/blob/c6ea31dabc9a91091c4aea6e84eb4d97e2be1933/docs/research/issta_task7_20261127/joint_evidence_gaps.csv",
+    "handoff": "https://github.com/smallrabbit490/sct-security-generation/blob/c6ea31dabc9a91091c4aea6e84eb4d97e2be1933/docs/research/issta_task7_20261127/ISSTA-task7-handoff-20261127.md",
+    "provenance": "逐题 revision 是交接表的修订标签。普通功能为交接报告值。对应修订的实现与双套件哈希、完整双侧回执均未取得。",
+    "verified_full_functional_and_security_pairs": 0,
+    "reported_go_followup": {
+      "reported_environment": "Go 1.23.3, original Docker image, 2 CPU, 4 GB, offline; build cache prepared; original 40 s compilation limit",
+      "evidence": "https://github.com/smallrabbit490/sct-security-generation/blob/c6ea31dabc9a91091c4aea6e84eb4d97e2be1933/docs/research/issta_task7_20261127/ISSTA-task7-handoff-20261127.md",
+      "targets": [
+        "cwe_643_0_go_task.go",
+        "cwe_760_0_go_task.go",
+        "cwe_943_0_go_task.go"
+      ]
+    },
+    "other_revision_runner_environment": "未核实"
+  },
+  "reading_notes": [
+    "CSV 顺序与 138 题模板一致。以题键和 JSONL 的 1 起始记录号点收。",
+    "original_* 和 JSONL 均属于原批次；after_* 属于交接表列明的修订。",
+    "布尔结果保留原套件判定，缺少分侧计数记 not_measured；编译超时和测试错误保留原阶段。修订版功能列保留原分母或 pass 字样。"
+  ]
+}
