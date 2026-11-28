@@ -1,0 +1,73 @@
+{
+  "as_of": "2026-11-28",
+  "scope_baseline": {
+    "description": "ISSTA第7项：132道目标题的已有修订版脱敏结果；功能与安全各占一条记录。",
+    "checklist": "task7_submission_checklist_132.csv",
+    "checklist_sha256": "21e37529d0bf63290ede845817e3457e294ea0a051c5ce07cdc41c17487dce8f",
+    "tasks": 132,
+    "records": 264,
+    "scope_by_group": {
+      "plt": 122,
+      "codeseceval-plus": 3,
+      "cweval": 7
+    }
+  },
+  "runs": [
+    {
+      "run_id": "task7_security_not_run_no_batch",
+      "revision_ref": "not_applicable：127题没有安全执行批次，此标识只用于显式登记缺测，不得解释为一次运行。",
+      "runner_ref": "not_applicable",
+      "environment_ref": "not_applicable"
+    },
+    {
+      "run_id": "issta_task7_intake_132_20261128",
+      "revision_ref": "not_retained：task7_submission_checklist_132.csv#revision仅为请求修订标签，非实际提交或资产哈希。",
+      "requested_revision_ref": "task7_submission_checklist_132.csv#revision",
+      "runner_ref": "not_retained：任务说明与逐题点收清单登记已有功能复跑；原运行器文件、提交及环境清单未随附件交付，待原执行方补充。",
+      "environment_ref": "not_retained：附件未提供原功能复跑的环境清单、镜像ID或依赖锁定文件。"
+    },
+    {
+      "run_id": "task7_ordinary_prefix_20261128",
+      "revision_ref": "not_retained：实际修订资产哈希未随附件交付。",
+      "requested_revision_ref": "task7_submission_checklist_132.csv#revision（仅CodeSecEval Plus 3题）",
+      "runner_ref": "not_retained：仅有ordinary_prefix_pass摘要，原check()入口前置调用运行器未留存。",
+      "environment_ref": "not_retained：原前置调用的环境清单未随附件交付。"
+    },
+    {
+      "run_id": "task7_reviewed_security_20261128",
+      "revision_ref": "not_retained：实际修订资产哈希未随附件交付。",
+      "requested_revision_ref": "task7_submission_checklist_132.csv#revision（仅SeCodePLT 105、108）",
+      "runner_ref": "not_retained：任务说明及清单登记的安全普通子集复跑；原task7_reviewed_security_receipt.json未随附件交付。",
+      "environment_ref": "not_retained：原安全普通子集复跑的环境清单未随附件交付。"
+    }
+  ],
+  "files_sha256": {
+    "task7_replay_receipts.csv": "094cba13382a9dabdec116c2403b608a2c9636a6f9452eceea0762911a6b9834",
+    "task7_sanitized_receipts.jsonl": "b905ebdce9135d60b07791b12f5d1cf78c425838b57b897c77ad2371d76f0d6b",
+    "plt76_author_decision.md": "73c16d6bc196e1fd33ef526c7ab4c06221ce961aa4fdc53f376184395a028d1c",
+    "evidence/source_task7_existing_results.jsonl": "dc1b400013e9608ade1687b2d37e8e20dae8e0694b3bc81d36a3fcd784d94f65"
+  },
+  "source_receipt_links": {
+    "all_suites": "evidence/source_task7_existing_results.jsonl"
+  },
+  "intake_provenance": {
+    "request_file": "ISSTA-task7-intake-132-20261128.md",
+    "request_sha256": "e6e31f4bdc256a3182a6be2065ef41d4b75912d01f7e5f56d9aa2ca1f1b6e534",
+    "template_and_original_validator_status": "not_retained：任务说明中的相对链接指向已不存在的工作树，四份模板、原validate_task7_intake.py及task7_reviewed_security_receipt.json均未随附件提供。",
+    "replacement_validator": "validate_task7_intake.py",
+    "replacement_validator_scope": "按任务说明重新实现的结构、键、行号、计数、状态、哈希和包内证据校验；不代表原执行方的结果认证。",
+    "fixture_identity_review": {
+      "cweval": "7个原安全测试文件的本机SHA-256已与清单逐项复算一致。",
+      "plt_and_codeseceval_plus": "字段级身份哈希算法未随附件提供，保留清单登记值，未声称独立复算。"
+    }
+  },
+  "evidence_boundary": [
+    "132条功能记录均为completed，是用户交付的点收清单所报告的已有普通功能结果；包内保存摘要附件，不宣称已重新执行原套件。",
+    "127条安全记录为not_run且计数留空，表示现有材料没有安全执行结果，而不是套件失败。",
+    "CodeSecEval Plus 3条安全记录为partial，保留完整check()的计划总数1，普通前置调用通过不计作完整安全通过。",
+    "SeCodePLT 105和108的安全记录为partial，分别仅执行3/8和4/8普通安全子集；不能据此结算完整安全或Joint。",
+    "本包完整功能与完整安全可追溯对数为0，完整Joint通过与失败均未结算。",
+    "JSONL仅含脱敏结果元数据；所有source_locator均为包内相对路径及JSONL行号，不使用本机绝对路径。",
+    "SeCodePLT 76的作者裁定保留pending，不推断长度上限或原安全断言含义。"
+  ]
+}
