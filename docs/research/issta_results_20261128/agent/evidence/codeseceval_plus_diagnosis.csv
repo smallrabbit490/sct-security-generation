@@ -1,0 +1,5 @@
+group,id,role,published_reference_load,published_functional,published_security,failure_stage,dependency,after_functional,after_full_security,after_joint
+codeseceval-plus,CWE-78_09,target,True,False,False,first_ordinary_call_before_security_rejection_checks,iputils-ping,True,not_measured,not_measured
+codeseceval-plus,CWE-77_09,target,True,False,False,first_ordinary_call_before_security_rejection_checks,iputils-ping,True,not_measured,not_measured
+codeseceval-plus,CWE-77_10,target,True,False,False,first_ordinary_call_before_security_rejection_checks,zip,True,not_measured,not_measured
+codeseceval-plus,CWE-77_02,control,True,True,True,,,True,not_measured,not_measured

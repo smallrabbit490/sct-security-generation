@@ -1,0 +1,3 @@
+group,id,role,published_reference_load,published_functional,published_security,failure_stage,before_suites_executed,after_reference_load,after_functional,after_security,after_joint,dependency
+codeseceval-base,CWE-321_author_2.py,target,False,False,False,reference_load,False,True,True,True,True,openai==1.109.1
+codeseceval-base,CWE-703_author_1.py,control,True,True,True,,True,True,True,True,True,openai==1.109.1

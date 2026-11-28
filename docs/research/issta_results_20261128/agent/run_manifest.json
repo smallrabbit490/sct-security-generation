@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "batch_id": "issta-results-20261128",
+  "baseline_ref": "3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b",
+  "branch": "codex/issta-results-20261128",
+  "input_ref": "https://github.com/smallrabbit490/sct-security-generation/blob/3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b/data/four_benchmark_validation/tasks.csv",
+  "runner_ref": "validate_package.py",
+  "runner_role": "Offline validation of released result metadata",
+  "protocol_counts": {
+    "baseline-3bcafa1": 2199,
+    "task7-original-acceptance": 139,
+    "Defensive-V1": 132
+  },
+  "protocol_sources": {
+    "baseline-3bcafa1": "https://github.com/smallrabbit490/sct-security-generation/blob/3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b/data/four_benchmark_validation/task_outcomes.csv",
+    "task7-original-acceptance": "evidence/original_joint.csv",
+    "Defensive-V1": "evidence/defensive_v1_joint.csv"
+  },
+  "counts": {
+    "registered_baseline": 2199,
+    "published_reference_pass": 1241,
+    "repair_queue": 958,
+    "local_run_directories": 27,
+    "metric_summary_rows": 81,
+    "missing_or_open_protocol_rows": {
+      "baseline-3bcafa1": 1001,
+      "task7-original-acceptance": 132
+    }
+  },
+  "evidence_projections": {
+    "evidence/secodeplt_diagnosis.csv": {
+      "source_artifact": "secodeplt_findings.csv",
+      "source_sha256": "41d8b20dacd86c14e680aede2c20b288ea6899845a8f7c8d5c20b9e186bd730f",
+      "rows": 122
+    },
+    "evidence/codeseceval_base_diagnosis.csv": {
+      "source_artifact": "codeseceval_base_findings.csv",
+      "source_sha256": "de1745e161b064d7ae42109194922975be4790544b5f424ae5dcd58e9a997cad",
+      "rows": 2
+    },
+    "evidence/codeseceval_plus_diagnosis.csv": {
+      "source_artifact": "codeseceval_plus_findings.csv",
+      "source_sha256": "5b6cc1d6755ada5d01835bc72c4dd2f3157d212b3869899898fd0df993b7a5d7",
+      "rows": 4
+    },
+    "evidence/autosuit_missing_assets.csv": {
+      "source_artifact": "autosuit_missing_assets.csv",
+      "source_sha256": "8a74e8e54c2dfe03adc092e6d77fff06bae8fb0131805de8d452350e14bde6c0",
+      "rows": 665
+    },
+    "evidence/autosuit_diagnosis.csv": {
+      "source_artifact": "autosuit_findings.csv",
+      "source_sha256": "3fa8ff3739b18384a7c38251cb85a1aa60be1b5f77f3bc714d22c28946094370",
+      "rows": 286
+    },
+    "evidence/autosuit_diagnostic_gaps.csv": {
+      "source_artifact": "autosuit_diagnostic_gaps.csv",
+      "source_sha256": "1510a488cc179f6cd2d6d0a06ee7f72f371a37525d00d025ba97cf420aee8a08",
+      "rows": 142
+    },
+    "evidence/cweval_diagnosis.csv": {
+      "source_artifact": "cweval_findings.csv",
+      "source_sha256": "0eaef969fe99f7f5318bbef12da4ad3139f339a879739edeb8acdcd0027fd069",
+      "rows": 13
+    },
+    "evidence/original_joint.csv": {
+      "source_artifact": "task7_acceptance_decision_139.csv",
+      "source_sha256": "5f215998a88db33f2843f33e2f5f7c8abf7920980be927b363f437613ed000b1",
+      "rows": 139
+    },
+    "evidence/defensive_v1_joint.csv": {
+      "source_artifact": "task7_defensive_v1_joint_132.csv",
+      "source_sha256": "0a3271d5a4186e6c5bf652981b4b0d2e1cc5b2f1f0f993f4e33c6f06ccbccfbe",
+      "rows": 132
+    },
+    "evidence/defensive_v1_summary.json": {
+      "source_artifact": "defensive_v1_manifest.json",
+      "source_sha256": "1b52d43444d8514d5dfc34a27ccf02d9707b804ec1ec4bd23503aecd3c24fb55"
+    }
+  },
+  "feishu_summary_receipt": {
+    "status": "user_copy_content_verified",
+    "rows": 81,
+    "columns": 9,
+    "mismatched_cells": 0,
+    "online_attachments_and_link_access": "pending"
+  },
+  "files_sha256": {
+    "baseline_reference_summary.csv": "a94fa3fcb6b9fcab66688dc2d9ee7f5ddff01f40f04eb50689d12f922561fc32",
+    "batch_index.csv": "dd0a40dda113fc3e160e2e121dfec8fdd3a438548773ab6f541ebcff8d78ec16",
+    "evidence/autosuit_diagnosis.csv": "4a03e4cfbc84143aeceb2bb71f05dcd33a3e33bb656ff8adcd564a298bdc20da",
+    "evidence/autosuit_diagnostic_gaps.csv": "b9827529627eb06e83e4ecbf3156046170aace055fd9a471d2f6fefd728a7dab",
+    "evidence/autosuit_missing_assets.csv": "5465e3c741c4b1bc86ba69037b2be4ea52ce011493397f3cfdb081ddd5f46850",
+    "evidence/codeseceval_base_diagnosis.csv": "f03a9314745cc7fda3fc7c9caa91d3f3b34832c48341d7e1b3345a85f724ce73",
+    "evidence/codeseceval_plus_diagnosis.csv": "e06f91c1dfedf0e43a6a58c8b8a8bf451ca05911c62f127bb09955c01154e95e",
+    "evidence/cweval_diagnosis.csv": "d1851052f6d8e944833a64510ebf43a50aad4b77e676bd427a28ec58abb7d097",
+    "evidence/defensive_v1_joint.csv": "f740a8a02de43f411f351636cd9cdc7655c91b4cb97a372c8514a82dc438c552",
+    "evidence/defensive_v1_summary.json": "5f258ddba51ddfc10918ec01c8b3d4e54ba252905c2f73c74dc371a4efa5e3b7",
+    "evidence/original_joint.csv": "2e34f7272617b59a13a7d77db55faa10e2cd0e11414b433ebd929237192eb98e",
+    "evidence/secodeplt_diagnosis.csv": "fcbb258be429356ed81d98a7254f39a12979899f552744ef60db72492ecf04b2",
+    "queue_disposition.csv": "d0d22c1e5bfd11387f232b6550a5dfcc90dcaf5b18bddce6104b4e1845ebf83a",
+    "README.md": "07585b82339da0056dd35a27b36eba775eb08be556260fa67d08883309da9d44",
+    "results.csv": "a236a992a9baf7d09a0f3bfaefbdbeec23ae307dc43c7dfe4e4850738f93acb6",
+    "task_outcomes.csv": "5c90ef9ec1312f72690ba52c53abbbe107fd2719964e67d32f24533587a04d47",
+    "unresolved.csv": "e369fadd1e2f0f7412e5f698775a8b5f0035d510c032d0544760a3a36741e16f",
+    "validate_package.py": "91c9aca3c757f5c4f33b2796b31299a48905abb612fc6bd0203b602bd491e4da"
+  }
+}

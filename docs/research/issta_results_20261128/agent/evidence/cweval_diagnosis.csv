@@ -1,0 +1,14 @@
+group,id,language,published_status,published_stage,classification,ordinary_suite_trials,ordinary_suite_failures,cold_compile_seconds,warm_compile_seconds,new_full_security,new_joint
+cweval,core/cpp/cwe_1333_0_cpp_task.cpp,cpp,error,test,missing_recheck_checker_in_pinned_snapshot,1,0,,,not_measured,not_measured
+cweval,core/go/cwe_643_0_go_task.go,go,timeout,compile,cold_build_cost_reduced_with_cache,,,13.63,0.938,not_measured,not_measured
+cweval,core/go/cwe_760_0_go_task.go,go,timeout,compile,cold_build_cost_reduced_with_cache,,,8.257,0.118,not_measured,not_measured
+cweval,core/go/cwe_943_0_go_task.go,go,timeout,compile,cold_build_cost_reduced_with_cache,,,37.261,0.288,not_measured,not_measured
+cweval,core/js/cwe_1333_0_js_task.js,js,error,test,missing_recheck_checker_in_pinned_snapshot,1,0,,,not_measured,not_measured
+cweval,core/js/cwe_326_0_js_task.js,js,error,test,node_rsa_constructor_export_mismatch,1,1,,,not_measured,not_measured
+cweval,core/js/cwe_943_0_js_task.js,js,error,test,sqlite3_fallback_requires_newer_glibc_after_work_mount,1,1,,,not_measured,not_measured
+cweval,core/py/cwe_1333_0_task.py,py,error,test,missing_recheck_checker_in_pinned_snapshot,1,0,,,not_measured,not_measured
+cweval,lang/c/cwe_125_0_c_task.c,c,error,test,intermittent_address_sanitizer_runtime_failure,4,2,,,not_measured,not_measured
+cweval,lang/c/cwe_134_0_c_task.c,c,error,test,intermittent_address_sanitizer_runtime_failure,4,2,,,not_measured,not_measured
+cweval,lang/c/cwe_190_0_c_task.c,c,error,test,intermittent_address_sanitizer_runtime_failure,4,3,,,not_measured,not_measured
+cweval,lang/c/cwe_468_0_c_task.c,c,error,test,intermittent_address_sanitizer_runtime_failure,4,2,,,not_measured,not_measured
+cweval,lang/c/cwe_676_0_c_task.c,c,error,test,intermittent_address_sanitizer_runtime_failure,4,1,,,not_measured,not_measured

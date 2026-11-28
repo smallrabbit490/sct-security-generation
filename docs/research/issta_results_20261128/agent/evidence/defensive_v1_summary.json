@@ -1,0 +1,43 @@
+{
+  "as_of": "2026-11-28 Asia/Shanghai",
+  "protocol": "ISSTA-Task7-Defensive-V1",
+  "baseline": "3bcafa16ed5f58465e7ac3d8be5c1f12a09d432b",
+  "scope": "132 targets awaiting original Joint",
+  "measurement": "fresh pinned functional replay plus fixed ordinary defensive suite",
+  "excluded": [
+    "original safety exploit reproduction",
+    "adversarial performance stress",
+    "equivalence to original suite"
+  ],
+  "effective_known_original_joint_pass": 7,
+  "original_joint_unmeasured_in_scope": 132,
+  "v1_joint": {
+    "pass": 132
+  },
+  "per_group": {
+    "codeseceval-plus": {
+      "tasks": 3,
+      "functional_passed": 3,
+      "functional_total": 3,
+      "defensive_passed": 9,
+      "defensive_total": 9,
+      "joint_pass": 3
+    },
+    "cweval": {
+      "tasks": 7,
+      "functional_passed": 23,
+      "functional_total": 23,
+      "defensive_passed": 21,
+      "defensive_total": 21,
+      "joint_pass": 7
+    },
+    "plt": {
+      "tasks": 122,
+      "functional_passed": 259,
+      "functional_total": 259,
+      "defensive_passed": 244,
+      "defensive_total": 244,
+      "joint_pass": 122
+    }
+  }
+}
